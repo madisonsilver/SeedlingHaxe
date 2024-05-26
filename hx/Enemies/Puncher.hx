@@ -27,7 +27,7 @@ private var imgPuncher : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprPuncher);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPuncher);
         
         sprPuncher.centerOO();
         
@@ -119,7 +119,7 @@ private var imgPuncher : Class<Dynamic>;
 {                
                 if ((try cast(graphic, Spritemap) catch(e:Dynamic) null).currentAnim != "attack")
                 {
-                    Music.playSoundDistPlayer(x, y, "Punch");
+                    Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Punch");
                 }
                 setSprite("attack");
             }

@@ -51,7 +51,7 @@ private var imgWitchPic : Class<Dynamic>;
         if (Main.hasWand && !Main.hasDarkSword)
         {
             var p : Player = try cast(FP.world.nearestToPoint("Player", x, y), Player) catch(e:Dynamic) null;
-            FP.world.add(new DarkSword(p.x - Tile.w / 2, p.y - Tile.h / 2));
+            FP.world.add(new DarkSword(Std.int(p.x - Tile.w / 2), Std.int(p.y - Tile.h / 2)));
         }
     }
     

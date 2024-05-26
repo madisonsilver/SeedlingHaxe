@@ -30,7 +30,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprLavaTrap);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLavaTrap);
         
         sprLavaTrap.centerOO();
         //the animation "" will reset it to the world frame speed
@@ -45,7 +45,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
         
         setHitbox(10, 10, 5, 5);
         
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
     
     override public function update() : Void
@@ -88,7 +88,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
                     {
                         tongueAngle = Math.atan2(player.y - y, player.x - x);
                     }
-                    if (!FP.world.collideLine("Solid", x, y, player.x, player.y) && sprLavaTrap.currentAnim != "chomp")
+                    if (!FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)) && sprLavaTrap.currentAnim != "chomp")
                     {
                         launch();
                         Music.playSoundDistPlayer(x, y, "Enemy Attack", 3);
@@ -145,7 +145,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
             sprLavaTrapTongue.play("out");
         }
         var ind : Int = getTongueLength();
-        var pHit : Player = try cast(FP.world.collideLine("Player", x, y, x + tongueLengths[ind] * Math.cos(tongueAngle), y + tongueLengths[ind] * Math.sin(tongueAngle)), Player) catch(e:Dynamic) null;
+        var pHit : Player = try cast(FP.world.collideLine("Player", Std.int(x), Std.int(y), Std.int(x + tongueLengths[ind] * Math.cos(tongueAngle)), Std.int(y + tongueLengths[ind] * Math.sin(tongueAngle))), Player) catch(e:Dynamic) null;
         if (pHit != null)
         {
             attached = pHit;

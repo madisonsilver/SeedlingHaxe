@@ -32,7 +32,7 @@ private var imgTreeGrow : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _bloody : Bool = false, _text : String = "", _tree : Bool = false)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, (_bloody) ? sprSeedBloody : sprSeed, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), (_bloody) ? sprSeedBloody : sprSeed, null, false);
         sprSeed.centerOO();
         sprSeedBloody.centerOO();
         
@@ -82,12 +82,12 @@ private var imgTreeGrow : Class<Dynamic>;
                     Game.menu = true;
                     Game.cutscene[2] = false;
                     Main.unlockMedal(Main.badges[14]);
-                    FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Game.currentPlayerPosition.x, Game.currentPlayerPosition.y, false, 2);
+                    FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Std.int(Game.currentPlayerPosition.x), Std.int(Game.currentPlayerPosition.y), false, 2);
                 }
                 else
                 {
                     Game.cutscene[2] = true;
-                    FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Game.currentPlayerPosition.x, Game.currentPlayerPosition.y);
+                    FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Std.int(Game.currentPlayerPosition.x), Std.int(Game.currentPlayerPosition.y));
                 }
             }
         }

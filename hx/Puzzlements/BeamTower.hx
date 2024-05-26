@@ -48,7 +48,7 @@ private var imgBeamTower : Class<Dynamic>;
         direction = _startdirection;
         rate = _rate;
         
-        layer = -y;
+        layer = Std.int(-y);
     }
     
     override public function update() : Void
@@ -140,9 +140,9 @@ private var imgBeamTower : Class<Dynamic>;
         for (i in 0...n)
         {
             line = getLine(d, i);
-            Draw.linePlus(line[0].x, line[0].y, line[1].x, line[1].y, ((i <= 0 || i >= n - 1)) ? 0xFF0000 : 0xFFFF00, a);
+            Draw.linePlus(Std.int(line[0].x), Std.int(line[0].y), Std.int(line[1].x), Std.int(line[1].y), ((i <= 0 || i >= n - 1)) ? 0xFF0000 : 0xFFFF00, a);
             Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-            Draw.linePlus(line[0].x, line[0].y, line[1].x, line[1].y, ((i <= 0 || i >= n - 1)) ? 0xFF0000 : 0xFFFF00, a);
+            Draw.linePlus(Std.int(line[0].x), Std.int(line[0].y), Std.int(line[1].x), Std.int(line[1].y), ((i <= 0 || i >= n - 1)) ? 0xFF0000 : 0xFFFF00, a);
             Draw.resetTarget();
         }
     }

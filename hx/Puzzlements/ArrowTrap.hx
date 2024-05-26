@@ -23,9 +23,9 @@ private var imgArrowTrap : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int = 0, _shoot : Bool = false)
     {
-        super(_x + Tile.w / 2, _y + sprArrowTrap.height / 2, sprArrowTrap, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + sprArrowTrap.height / 2), sprArrowTrap, _t);
         sprArrowTrap.centerOO();
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         shootDefault = _shoot;
     }
     
@@ -55,10 +55,10 @@ private var imgArrowTrap : Class<Dynamic>;
         }
         else
         {
-            Music.playSoundDistPlayer(x, y, "Arrow", 0);
-            FP.world.add(new Arrow(x - sprArrowTrap.width / 4, y - 2, new Point(0, 5)));
-            FP.world.add(new Arrow(x, y - 2, new Point(0, 5)));
-            FP.world.add(new Arrow(x + sprArrowTrap.width / 4, y - 2, new Point(0, 5)));
+            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Arrow", 0);
+            FP.world.add(new Arrow(Std.int(x - sprArrowTrap.width / 4), Std.int(y - 2), new Point(0, 5)));
+            FP.world.add(new Arrow(Std.int(x), Std.int(y - 2), new Point(0, 5)));
+            FP.world.add(new Arrow(Std.int(x + sprArrowTrap.width / 4), Std.int(y - 2), new Point(0, 5)));
             shootTimer = shootTimerMax;
         }
     }

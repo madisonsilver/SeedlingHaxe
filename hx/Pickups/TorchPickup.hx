@@ -20,7 +20,7 @@ private var imgTorchPickup : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprTorchPickup, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTorchPickup, null, false);
         sprTorchPickup.centerOO();
         setHitbox(8, 8, 4, 4);
         

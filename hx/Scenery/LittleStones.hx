@@ -20,7 +20,7 @@ private var imgLittleStones : Class<Dynamic>;
     public function new(_x : Int, _y : Int)
     {
         super(_x, _y, sprLittleStones);
-        layer = -y;
+        layer = Std.int(-y);
         for (i in 0...grassPosX.length)
         {
             FP.world.add(new Grass(x + Reflect.field(grassPosX, Std.string(i)), y + Reflect.field(grassPosY, Std.string(i))));

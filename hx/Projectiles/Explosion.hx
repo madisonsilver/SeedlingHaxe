@@ -47,7 +47,7 @@ private var imgExplosion : Class<Dynamic>;
     override public function added() : Void
     {
         super.added();
-        Music.playSoundDistPlayer(x, y, "Explosion", -1, 120);
+        Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Explosion", -1, 120);
         var v : Array<Entity> = new Array<Entity>();
         for (i in 0...hitables.length)
         {

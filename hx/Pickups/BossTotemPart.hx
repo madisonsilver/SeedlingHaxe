@@ -20,12 +20,12 @@ private var imgBossTotemPart : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprBossTotemPart, new Point(), false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprBossTotemPart, new Point(), false);
         sprBossTotemPart.frame = _t;
         sprBossTotemPart.centerOO();
         setHitbox(16, 16, 8, 8);
         totemPart = _t;
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         
         special = true;
     }

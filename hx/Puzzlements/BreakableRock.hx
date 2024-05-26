@@ -41,7 +41,7 @@ private var imgBreakableRockGhost : Class<Dynamic>;
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).add("break", [0, 1, 2, 3], 20);
         type = "Solid";  //Was "Rock"; If it's buggy, that might be why  
         setHitbox(16, 16, 8, 8);
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         tag = _tag;
     }
     

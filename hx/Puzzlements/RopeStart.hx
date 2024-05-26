@@ -21,12 +21,12 @@ private var imgRope : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _xend : Int, _t : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprRope, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRope, _t);
         sprRope.centerOO();
         xend = as3hx.Compat.parseInt(_xend + Tile.w / 2);
         type = "Rope";
         setHitbox(_xend - _x + 16, 16, 8, 8);
-        layer = -(y - originY + height / 2);
+        layer = Std.int(-(y - originY + height / 2));
         tag = _tag;
     }
     

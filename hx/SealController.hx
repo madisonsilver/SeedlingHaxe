@@ -197,7 +197,7 @@ private static var imgSeal : Class<Dynamic>;
         sprSeal.scaleX = sc;
         if (j >= sprSeal.frameCount)
         {
-            sprSeal.frame = (j + sprSeal.frameCount / 2) % sprSeal.frameCount;
+            sprSeal.frame = Std.int((j + sprSeal.frameCount / 2) % sprSeal.frameCount);
             sprSeal.scaleX = -sc;
         }
         sprSeal.scaleY = sc;
@@ -210,7 +210,7 @@ private static var imgSeal : Class<Dynamic>;
     
     private function drawCover(a : Float) : Void
     {
-        Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height, 0, a);
+        Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, 0, a);
     }
     
     override public function removed() : Void

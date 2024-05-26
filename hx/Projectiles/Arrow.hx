@@ -58,7 +58,7 @@ private var imgArrow : Class<Dynamic>;
             }
             if (hits.length > 0)
             {
-                Music.playSoundDistPlayer(x, y, "Arrow", 1);
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Arrow", 1);
                 v.x = v.y = 0;
                 die = true;
             }

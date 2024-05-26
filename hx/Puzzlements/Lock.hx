@@ -30,12 +30,12 @@ private var imgLock : Class<Dynamic>;
         {
             _g = sprLock;
         }
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g, _t);
         (try cast(graphic, Image) catch(e:Dynamic) null).centerOO();
         setHitbox(16, 16, 8, 8);
         type = normType;
         tag = _tag;
-        layer = -y;
+        layer = Std.int(-y);
     }
     
     override public function check() : Void
@@ -58,7 +58,7 @@ private var imgLock : Class<Dynamic>;
     {
         if (!_active && a)
         {
-            Music.playSoundDistPlayer(x, y, "Lock");
+            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Lock");
         }
         _active = a;
         return a;

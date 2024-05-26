@@ -25,7 +25,7 @@ private var imgTurret : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprTurret);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTurret);
         
         sprTurret.centerOO();
         //the animation "" will reset it to the world frame speed
@@ -36,7 +36,7 @@ private var imgTurret : Class<Dynamic>;
         
         setHitbox(16, 16, 8, 8);
         
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
     
     override public function check() : Void
@@ -103,7 +103,7 @@ private var imgTurret : Class<Dynamic>;
             case "startshot":
                 sprTurret.play("finishshot");
                 var a : Float = -sprTurret.angle / 180 * Math.PI;
-                FP.world.add(new TurretSpit(x, y, new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
+                FP.world.add(new TurretSpit(Std.int(x), Std.int(y), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
             case "die":
                 destroy = true;
                 (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("");

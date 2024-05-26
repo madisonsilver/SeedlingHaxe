@@ -44,14 +44,14 @@ private var imgPod : Class<Dynamic>;
         type = "Pod";
         
         
-        myPodBody = FP.world.addGraphic(sprPodBody, -(y - Tile.h * 3), x, y);
+        myPodBody = FP.world.addGraphic(sprPodBody, Std.int(-(y - Tile.h * 3)), Std.int(x), Std.int(y));
     }
     
     override public function update() : Void
     {
         super.update();
         
-        layer = (sprPod.frame <= 3) ? -(y + Tile.h * 3) : myPodBody.layer - 1;
+        layer = (sprPod.frame <= 3) ? Std.int(-(y + Tile.h * 3)) : myPodBody.layer - 1;
         
         var v : Array<Entity> = new Array<Entity>();
         collideTypesInto(hitables, x, y, v);

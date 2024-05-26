@@ -23,7 +23,7 @@ private var imgRockLock : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprRockLock, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRockLock, _t);
         sprRockLock.centerOO();
         setHitbox(16, 16, 8, 8);
         type = normType;
@@ -43,7 +43,7 @@ private var imgRockLock : Class<Dynamic>;
     {
         if (!_active && a)
         {
-            Music.playSoundDistPlayer(x, y, "Lock");
+            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Lock");
         }
         _active = a;
         return a;

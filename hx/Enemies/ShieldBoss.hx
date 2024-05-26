@@ -31,7 +31,7 @@ private var imgShieldBoss : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w * 1.5, _y + Tile.h * 2, sprShieldBoss);
+        super(Std.int(_x + Tile.w * 1.5), _y + Tile.h * 2, sprShieldBoss);
         sprShieldBoss.centerOO();
         sprShieldBoss.add("sit", [0]);
         sprShieldBoss.add("stab", [3, 4, 5, 6, 7, 8], 15);
@@ -42,7 +42,7 @@ private var imgShieldBoss : Class<Dynamic>;
         sprShieldBoss.play("sit");
         
         tag = _tag;
-        layer = -(y - sprShieldBoss.originY + sprShieldBoss.height);
+        layer = Std.int(-(y - sprShieldBoss.originY + sprShieldBoss.height));
         
         type = "ShieldBoss";
         

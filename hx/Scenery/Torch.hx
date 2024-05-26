@@ -22,8 +22,8 @@ private var imgTorch : Class<Dynamic>;
         super(_x + Tile.w / 2, _y + Tile.h / 2, sprTorch);
         sprTorch.centerOO();
         color = _c;
-        layer = -(y - sprTorch.originY + sprTorch.height + Tile.h / 2);
-        FP.world.add(new Light(x, y, sprTorch.frameCount, 1, color, false));
+        layer = Std.int(-(y - sprTorch.originY + sprTorch.height + Tile.h / 2));
+        FP.world.add(new Light(Std.int(x), Std.int(y), sprTorch.frameCount, 1, color, false));
     }
     
     override public function render() : Void

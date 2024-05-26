@@ -20,7 +20,7 @@ private var imgShieldStatue : Class<Dynamic>;
         sprShieldStatue.originY = 11;
         setHitbox(32, 32);
         type = "Solid";
-        layer = -(y - originY);
+        layer = Std.int(-(y - originY));
     }
 }
 

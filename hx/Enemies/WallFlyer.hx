@@ -25,7 +25,7 @@ private var imgWallFlyer : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprWallFlyer);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWallFlyer);
         
         v = new Point();
         sprWallFlyer.centerOO();
@@ -63,7 +63,7 @@ private var imgWallFlyer : Class<Dynamic>;
         vTriggered = decideMotion(moveSpeed);
         if (vTriggered.length > 0)
         {
-            var player : Player = try cast(FP.world.collideLine("Player", x, y, x + attackRange * (vTriggered.x / vTriggered.length), y + attackRange * (vTriggered.y / vTriggered.length)), Player) catch(e:Dynamic) null;
+            var player : Player = try cast(FP.world.collideLine("Player", Std.int(x), Std.int(y), Std.int(x + attackRange * (vTriggered.x / vTriggered.length)), Std.int(y + attackRange * (vTriggered.y / vTriggered.length))), Player) catch(e:Dynamic) null;
             if (player != null)
             {
                 v = vTriggered;

@@ -30,7 +30,7 @@ private var imgSpinner : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprSpinner);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpinner);
         
         v = new Point(moveSpeed * Math.cos(-Math.PI / 4), moveSpeed * Math.sin(-Math.PI / 4));
         
@@ -70,7 +70,7 @@ private var imgSpinner : Class<Dynamic>;
         
         var hammerLength : Int = as3hx.Compat.parseInt(sprSpinner.width - sprSpinner.originX);
         hammerAngle = (Game.time % Game.timePerFrame) / Game.timePerFrame * 2 * Math.PI;
-        var player : Player = try cast(FP.world.collideLine("Player", x, y, x + hammerLength * Math.cos(hammerAngle), y + hammerLength * Math.sin(hammerAngle)), Player) catch(e:Dynamic) null;
+        var player : Player = try cast(FP.world.collideLine("Player", Std.int(x), Std.int(y), Std.int(x + hammerLength * Math.cos(hammerAngle)), Std.int(y + hammerLength * Math.sin(hammerAngle))), Player) catch(e:Dynamic) null;
         if (player != null)
         {
             player.hit(this, hitForce, new Point(x, y));
@@ -80,7 +80,7 @@ private var imgSpinner : Class<Dynamic>;
         if (player != null)
         {
             var d : Float = FP.distance(x, y, player.x, player.y);
-            if (d <= runRange && !FP.world.collideLine("Solid", x, y, player.x, player.y))
+            if (d <= runRange && !FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)))
             {
                 var a : Float = Math.atan2(player.y - y, player.x - x);
                 var toV : Point = new Point(moveSpeed * Math.cos(a), moveSpeed * Math.sin(a));

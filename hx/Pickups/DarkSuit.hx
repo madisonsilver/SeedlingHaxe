@@ -19,7 +19,7 @@ private var imgDarkSuit : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprDarkSuit, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSuit, null, false);
         sprDarkSuit.centerOO();
         setHitbox(10, 10, 5, 5);
         

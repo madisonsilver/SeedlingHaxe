@@ -29,7 +29,7 @@ private var imgButtonRoom : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int, _tag : Int, _flip : Bool, _room : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprButtonRoom, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButtonRoom, _t);
         sprButtonRoom.centerOO();
         setHitbox(8, 6, 4, 3);
         type = "ButtonRoom";

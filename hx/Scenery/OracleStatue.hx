@@ -21,7 +21,7 @@ private var imgOracleStatue : Class<Dynamic>;
         sprOracleStatue.originY = -sprOracleStatue.y;
         setHitbox(32, 32);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
     
     override public function render() : Void

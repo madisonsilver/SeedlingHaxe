@@ -34,7 +34,7 @@ private var imgRock : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprRock, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRock, _t);
         fallTo = y;
         sprRock.centerOO();
         setHitbox(16, 16, 8, 8);

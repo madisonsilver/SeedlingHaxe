@@ -51,10 +51,10 @@ class LightBossController extends Entity
         if (Game.checkPersistence(tag))
         {
             spinCenter = new Point(x + Tile.w / 2, y + Tile.h / 2);
-            FP.world.add(myText = new NPC(x, y, null, -1, text, 4, 34));
+            FP.world.add(myText = new NPC(Std.int(x), Std.int(y), null, -1, text, 4, 34));
             myText.align = "CENTER";
             myText.setTemp(this, true, false, true);
-            FP.world.add(myTotem = new LightBossTotem(x, y));
+            FP.world.add(myTotem = new LightBossTotem(Std.int(x), Std.int(y)));
         }
         else
         {
@@ -77,7 +77,7 @@ class LightBossController extends Entity
             {
                 while (myFliers.length < flierNumber)
                 {
-                    myFliers.push(new LightBoss(spinCenter.x, -32, myFliers.length, this));
+                    myFliers.push(new LightBoss(Std.int(spinCenter.x), -32, myFliers.length, this));
                     FP.world.add(myFliers[myFliers.length - 1]);
                 }
                 madeFliers = true;
@@ -99,7 +99,7 @@ class LightBossController extends Entity
     
     public function endState() : Void
     {
-        FP.world.add(new Teleporter(x, y, 36, 112, 96, true));
+        FP.world.add(new Teleporter(Std.int(x), Std.int(y), 36, 112, 96, true));
         Game.levelMusics[(try cast(FP.world, Game) catch(e:Dynamic) null).level] = -1;
         Game.setPersistence(tag, false);
     }

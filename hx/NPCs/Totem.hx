@@ -17,7 +17,7 @@ private var imgTotem : Class<Dynamic>;
     {
         super();
         //The weird tiles for the constructor are because NPC offsets by Tile.w/2, Tile.h/2 automagically.
-        super(_x + Tile.w / 2, _y + Tile.h * 5 / 2, sprTotem, _tag, _text, _talkingSpeed);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h * 5 / 2), sprTotem, _tag, _text, _talkingSpeed);
         facePlayer = false;
         
         sprTotem.originX = 16;

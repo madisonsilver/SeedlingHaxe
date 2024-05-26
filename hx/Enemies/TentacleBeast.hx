@@ -48,7 +48,7 @@ private var imgTentacleBeast : Class<Dynamic>;
         mask = new Pixelmask(imgTentacleBeastMask, -23, -22);
         type = "Solid";
         
-        layer = -(y - sprTentacleBeast.originY + 46);
+        layer = Std.int(-(y - sprTentacleBeast.originY + 46));
         
         tag = _tag;
         
@@ -219,7 +219,7 @@ private var imgTentacleBeast : Class<Dynamic>;
     
     public function createMouthEntrance() : Void
     {
-        FP.world.add(new Teleporter(x - Tile.w / 2, y - Tile.h / 2, 58, 56, 96));
+        FP.world.add(new Teleporter(Std.int(x - Tile.w / 2), Std.int(y - Tile.h / 2), 58, 56, 96));
     }
 }
 

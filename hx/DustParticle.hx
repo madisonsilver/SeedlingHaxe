@@ -48,7 +48,7 @@ class DustParticle extends Entity
     
     override public function render() : Void
     {
-        Draw.rect(x, y, w, h, c, a);
+        Draw.rect(Std.int(x), Std.int(y), w, h, c, a);
     }
 }
 

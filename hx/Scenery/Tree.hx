@@ -23,7 +23,7 @@ class Tree extends Entity
         super(_x + Tile.w, _y + Tile.h, _g);
         setHitbox(32, 32, 16, 16);
         type = "Tree";
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         active = false;
         bare = _bare;
     }

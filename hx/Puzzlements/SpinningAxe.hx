@@ -54,14 +54,14 @@ private var imgSpinningAxeRed : Class<Dynamic>;
         sprSpinningAxe.angle += spinRate;
         
         var a : Float = -sprSpinningAxe.angle / 180 * Math.PI;
-        var p : Player = try cast(FP.world.collideLine("Player", x, y, x + length * Math.cos(a), y + length * Math.sin(a)), Player) catch(e:Dynamic) null;
+        var p : Player = try cast(FP.world.collideLine("Player", Std.int(x), Std.int(y), Std.int(x + length * Math.cos(a)), Std.int(y + length * Math.sin(a))), Player) catch(e:Dynamic) null;
         if (p == null)
         {
             p = try cast(FP.world.collideRect("Player", x - endRectSide / 2, y - endRectSide / 2, endRectSide, endRectSide), Player) catch(e:Dynamic) null;
         }
         hitPlayer(p, a);
         
-        layer = -(y + length);
+        layer = Std.int(-(y + length));
     }
     
     public function hitPlayer(p : Player, a : Float) : Void

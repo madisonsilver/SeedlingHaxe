@@ -117,7 +117,7 @@ private var imgOraclePic : Class<Dynamic>;
     private function exitToMenu() : Void
     {
         Game.menu = true;
-        FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Game.currentPlayerPosition.x, Game.currentPlayerPosition.y);
+        FP.world = new Game((try cast(FP.world, Game) catch(e:Dynamic) null).level, Std.int(Game.currentPlayerPosition.x), Std.int(Game.currentPlayerPosition.y));
     }
     
     public function animEnd() : Void

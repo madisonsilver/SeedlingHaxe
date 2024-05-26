@@ -41,7 +41,7 @@ private var imgPulser : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprPulser, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPulser, _t);
         (try cast(graphic, Image) catch(e:Dynamic) null).centerOO();
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).add("pulse", [0, 1, 2, 3, 4], 20);
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).add("", [0]);
@@ -64,7 +64,7 @@ private var imgPulser : Class<Dynamic>;
                 else if (pulseTimer == 0)
                 {
                     (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("pulse");
-                    Music.playSoundDistPlayer(x, y, "Energy Pulse", -1, 120);
+                    Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Energy Pulse", -1, 120);
                     pulseTimer = -1;
                 }
                 else
@@ -123,9 +123,9 @@ private var imgPulser : Class<Dynamic>;
         if (radius > radiusMin)
         {
             var rVal : Float = 1 - radius / radiusMax;
-            Draw.circlePlus(x, y, radius, pulseColor, rVal, false, (thicknessMax - thicknessMin) * rVal + thicknessMin);
+            Draw.circlePlus(Std.int(x), Std.int(y), radius, pulseColor, rVal, false, Std.int((thicknessMax - thicknessMin) * rVal + thicknessMin));
             Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-            Draw.circlePlus(x, y, radius, pulseColor, rVal, false, (thicknessMax - thicknessMin) * rVal + thicknessMin + thicknessLightExtra);
+            Draw.circlePlus(Std.int(x), Std.int(y), radius, pulseColor, rVal, false, Std.int((thicknessMax - thicknessMin) * rVal + thicknessMin + thicknessLightExtra));
             Draw.resetTarget();
         }
         Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);

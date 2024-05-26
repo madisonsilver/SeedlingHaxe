@@ -95,7 +95,7 @@ private var imgIceTurret : Class<Dynamic>;
         {
             type = "Solid";
         }
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function render() : Void
@@ -159,10 +159,10 @@ private var imgIceTurret : Class<Dynamic>;
             case "startshot":
                 sprIceTurret.play("finishshot");
                 var a : Float = -sprIceTurret.angle / 180 * Math.PI;
-                FP.world.add(new IceTurretBlast(x, y, new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
+                FP.world.add(new IceTurretBlast(Std.int(x), Std.int(y), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
                 var distBtwnShots : Int = 12;
-                FP.world.add(new IceTurretBlast(x + distBtwnShots * Math.cos(a + Math.PI / 2), y + distBtwnShots * Math.sin(a + Math.PI / 2), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
-                FP.world.add(new IceTurretBlast(x - distBtwnShots * Math.cos(a + Math.PI / 2), y - distBtwnShots * Math.sin(a + Math.PI / 2), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
+                FP.world.add(new IceTurretBlast(Std.int(x + distBtwnShots * Math.cos(a + Math.PI / 2)), Std.int(y + distBtwnShots * Math.sin(a + Math.PI / 2)), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
+                FP.world.add(new IceTurretBlast(Std.int(x - distBtwnShots * Math.cos(a + Math.PI / 2)), Std.int(y - distBtwnShots * Math.sin(a + Math.PI / 2)), new Point(shotSpeed * Math.cos(a), shotSpeed * Math.sin(a))));
             case "dead":
             default:
                 sprIceTurret.play("");

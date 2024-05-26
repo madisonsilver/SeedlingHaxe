@@ -779,8 +779,8 @@ private static var imgBossKey4 : Class<Dynamic>;
     {
         currentPlayerPosition = p.clone();
         _playerPosition = p.clone();
-        Main.playerPositionX = p.x;
-        Main.playerPositionY = p.y;
+        Main.playerPositionX = Std.int(p.x);
+        Main.playerPositionY = Std.int(p.y);
         return p;
     }
     private function get_playerPosition() : Point
@@ -1013,7 +1013,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         
         if (sign >= 0)
         {
-            add(new Message(FP.screen.width / 2, 0, sign));
+            add(new Message(Std.int(FP.screen.width / 2), 0, sign));
             sign = -1;
         }
         
@@ -1062,7 +1062,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         if (menu)
         {
             var cursor : String = MouseCursor.ARROW;
-            var renderPt : Point = ngPos(menuOffset.x, menuOffset.y);
+            var renderPt : Point = ngPos(Std.int(menuOffset.x), Std.int(menuOffset.y));
             if (Input.mouseX >= renderPt.x - sprNG.originX && Input.mouseX < renderPt.x - sprNG.originX + sprNG.width &&
                 Input.mouseY >= renderPt.y - sprNG.originY && Input.mouseY < renderPt.y - sprNG.originY + sprNG.height)
             {
@@ -1134,7 +1134,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                 timeRate = Math.max(timeRate - 0.0025, 0);
                 if (classCount(DustParticle) <= 100 && timeRate > 0)
                 {
-                    FP.world.add(new DustParticle(FP.camera.x, Math.random() * FP.screen.height + FP.camera.y));
+                    FP.world.add(new DustParticle(Std.int(FP.camera.x), Std.int(Math.random() * FP.screen.height + FP.camera.y)));
                 }
                 
                 if (cutsceneTimer[0][0] > 0)
@@ -1220,7 +1220,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                 var rainingRectTemp : Rectangle = rainingRect.intersection(new Rectangle(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height));
                 if (rainingRectTemp != null)
                 {
-                    FP.world.add(new Droplet(rainingRectTemp.x + Math.random() * rainingRectTemp.width, rainingRectTemp.y + rainingRectTemp.height * Math.random(), rainingHeight, rainingColor));
+                    FP.world.add(new Droplet(Std.int(rainingRectTemp.x + Math.random() * rainingRectTemp.width), Std.int(rainingRectTemp.y + rainingRectTemp.height * Math.random()), rainingHeight, rainingColor));
                 }
             }
         }
@@ -1256,7 +1256,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         talk();
         if (newCoverDraw)
         {
-            Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height, newCoverColor, newCoverAlpha);
+            Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, newCoverColor, newCoverAlpha);
         }
         if (canInventory())
         {
@@ -1293,10 +1293,10 @@ private static var imgBossKey4 : Class<Dynamic>;
                 menuOffset.x = 0;
             }
             
-            drawPromos(menuOffset.x + stateInterval * 3, menuOffset.y);
-            drawCreditsText(menuOffset.x + stateInterval * 2, menuOffset.y);
-            drawHelpText(menuOffset.x + stateInterval, menuOffset.y);
-            drawLogo(menuOffset.x, menuOffset.y);
+            drawPromos(Std.int(menuOffset.x + stateInterval * 3), Std.int(menuOffset.y));
+            drawCreditsText(Std.int(menuOffset.x + stateInterval * 2), Std.int(menuOffset.y));
+            drawHelpText(Std.int(menuOffset.x + stateInterval), Std.int(menuOffset.y));
+            drawLogo(Std.int(menuOffset.x), Std.int(menuOffset.y));
             
             var arrowScaleRate : Float = 0.1;
             if (rightArrowScale > 1)
@@ -1332,7 +1332,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         
         if (menu && restart)
         {
-            Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height, 0, 0.8);
+            Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, 0, 0.8);
             Text.size = 8;
             var text : Text = new Text("Would you like to restart? <Y>/<N>");
             text.color = 0xFFFFFF;
@@ -1355,7 +1355,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             var r : Int = Math.min(Math.max(maxIndex(hist[1]) + range, range), 255);
             var g : Int = Math.min(Math.max(maxIndex(hist[2]) + range, range), 255);
             var b : Int = Math.min(Math.max(maxIndex(hist[3]) + range, range), 255);
-            var minCol : Int = FP.getColorRGB(Math.max(r - range * 2, 0), Math.max(g - range * 2, 0), Math.max(b - range * 2, 0));
+            var minCol : Int = FP.getColorRGB(Std.int(Math.max(r - range * 2, 0)), Std.int(Math.max(g - range * 2, 0)), Std.int(Math.max(b - range * 2, 0)));
             var col : Int = as3hx.Compat.parseInt(0xFF000000 + (FP.getColorRGB(r, g, b) - minCol) / cols.length * i + minCol);
             c.threshold(c, c.rect, new Point(), "<", col);
             c.threshold(c, c.rect, new Point(), ">=", col, cols[i]);
@@ -1528,7 +1528,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                 {
                     Input.clear();
                     menu = false;
-                    FP.world = new Game(level, playerPosition.x, playerPosition.y);
+                    FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
                 }
             }
             Game.freezeObjects = true;
@@ -1545,7 +1545,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             {
                 undrawCover();
                 menuIndex = as3hx.Compat.parseInt((menuIndex + 1) % menuLevels.length);
-                FP.world = new Game(level, playerPosition.x, playerPosition.y);
+                FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
                 return;
             }
         }
@@ -1553,12 +1553,12 @@ private static var imgBossKey4 : Class<Dynamic>;
         {
             menu = true;
             Input.clear();
-            FP.world = new Game(level, playerPosition.x, playerPosition.y, true);
+            FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y), true);
         }
         else if (Input.released(escapeKey))
         {
             menu = true;
-            FP.world = new Game(level, playerPosition.x, playerPosition.y);
+            FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
         }
     }
     
@@ -1584,7 +1584,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         spGames.visible = true;
         
         var rectW : Int = as3hx.Compat.parseInt((spGames.width * FP.screen.scale + 4) / 2);
-        Draw.rect(FP.camera.x + basePos.x + _xoff - rectW, FP.camera.y, rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
+        Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW), Std.int(FP.camera.y), rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
         
         spGames.alpha = tweenScale;
         spGames.x = (basePos.x + _xoff) * FP.screen.scale - spGames.width / 2;
@@ -1612,7 +1612,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         }
         
         var rectW : Int = as3hx.Compat.parseInt(tweenScale * (Reflect.field(menuMaxWidth, "credits") + rectToTextMargin));
-        Draw.rect(FP.camera.x + basePos.x + _xoff - rectW, FP.camera.y, rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
+        Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW), Std.int(FP.camera.y), rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
         
         var height : Int = 0;
         for (i in 0...menuCreditsTitles.length)
@@ -1671,7 +1671,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             left : tweenScale * (Reflect.field(Reflect.field(menuMaxWidth, "controls"), "left") + margin),
             right : tweenScale * (Reflect.field(Reflect.field(menuMaxWidth, "controls"), "right") + margin)
         };
-        Draw.rect(FP.camera.x + basePos.x + _xoff - Reflect.field(rectW, "left"), FP.camera.y, Reflect.field(rectW, "left") + Reflect.field(rectW, "right"), FP.screen.height, 0, tweenScale * maxRectAlpha);
+        Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - Reflect.field(rectW, "left")), Std.int(FP.camera.y), Reflect.field(rectW, "left") + Reflect.field(rectW, "right"), FP.screen.height, 0, tweenScale * maxRectAlpha);
         
         Text.size = 16;
         text = new Text("Controls");
@@ -1900,8 +1900,8 @@ private static var imgBossKey4 : Class<Dynamic>;
         if (talking && talkingText != null)
         {
             var n : Int = 6;
-            Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height / n, speakingColor, speakingAlpha);
-            Draw.rect(FP.camera.x, FP.camera.y + FP.screen.height * (n - 1) / n, FP.screen.width, FP.screen.height / n + 1, speakingColor, speakingAlpha);
+            Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, Std.int(FP.screen.height / n), speakingColor, speakingAlpha);
+            Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y + FP.screen.height * (n - 1) / n), FP.screen.width, Std.int(FP.screen.height / n + 1), speakingColor, speakingAlpha);
             var minM : Int = 4;  //The margin between the image border and the text area  
             var textToImageMargin : Int = 8;  //The distance between the text and the image  
             var d : Int = as3hx.Compat.parseInt(FP.screen.height / n);
@@ -1949,7 +1949,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             if (talkingPic != null)
             {
                 var m : Int = as3hx.Compat.parseInt((d - talkingPic.height * talkingPic.scale) / 2);
-                Draw.rect(FP.camera.x + minM, FP.camera.y + FP.screen.height * (n - 1) / n + minM, m * 2 + talkingPic.width - minM * 2, m * 2 + talkingPic.height - minM * 2, 0xFFFFFF, 1);
+                Draw.rect(Std.int(FP.camera.x + minM), Std.int(FP.camera.y + FP.screen.height * (n - 1) / n + minM), m * 2 + talkingPic.width - minM * 2, m * 2 + talkingPic.height - minM * 2, 0xFFFFFF, 1);
                 talkingPic.render(new Point(m, FP.screen.height * (n - 1) / n + m), new Point());
             }
             var w : Int = textToImageMargin;  //The distance of the text to the left edge.  
@@ -2017,7 +2017,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         {
             if (blackCover > 0)
             {
-                Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height, 0x000000, blackCover);
+                Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, 0x000000, blackCover);
             }
         }
         if (blackCoverRate > 0 && blackCover < 1)
@@ -2138,7 +2138,7 @@ private static var imgBossKey4 : Class<Dynamic>;
     
     public function restartLevel() : Void
     {
-        FP.world = new Game(level, playerPosition.x, playerPosition.y);
+        FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
     }
     
     public function loadlevel(_level : Class<Dynamic>) : Void
@@ -2336,7 +2336,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                     }
                 }
                 var player : Player;
-                add(player = new Player(playerPosition.x, playerPosition.y));
+                add(player = new Player(Std.int(playerPosition.x), Std.int(playerPosition.y)));
                 FP.camera.x = player.x - FP.screen.width / 2;
                 FP.camera.y = player.y - FP.screen.height / 2;
                 player.fallFromCeiling = setFallFromCeiling;
@@ -2914,7 +2914,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                 {
                     pt = new Point(n.att.x, n.att.y);
                 }
-                add(new RopeStart(o.att.x, o.att.y, pt.x, o.att.tset, o.att.tag));
+                add(new RopeStart(o.att.x, o.att.y, Std.int(pt.x), o.att.tset, o.att.tag));
             }
         }
         setFallFromCeiling = false;

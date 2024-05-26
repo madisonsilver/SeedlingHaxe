@@ -20,7 +20,7 @@ private var imgDungeonSpire : Class<Dynamic>;
         sprDungeonSpire.originY = 8;
         setHitbox(16, 16);
         type = "Solid";
-        layer = -(y - originY + height * 2 / 3);
+        layer = Std.int(-(y - originY + height * 2 / 3));
     }
 }
 

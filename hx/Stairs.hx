@@ -43,7 +43,7 @@ private var imgStairs : Class<Dynamic>;
         super.update();
         if (!Math.isNaN(originY) && !Math.isNaN(height))
         {
-            layer = -y;
+            layer = Std.int(-y);
         }
     }
 }

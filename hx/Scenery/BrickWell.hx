@@ -22,7 +22,7 @@ private var imgBrickWell : Class<Dynamic>;
         sprBrickWell.originX = 1;
         setHitbox(16, 16);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
 }
 

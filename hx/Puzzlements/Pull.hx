@@ -56,7 +56,7 @@ class Pull extends Entity
     override public function render() : Void
     {
         Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-        Draw.circlePlus(x - originX + width / 2, y - originY + height / 2, radius, color, alpha);
+        Draw.circlePlus(Std.int(x - originX + width / 2), Std.int(y - originY + height / 2), radius, color, alpha);
         Draw.resetTarget();
     }
 }

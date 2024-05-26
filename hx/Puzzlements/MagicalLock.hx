@@ -43,7 +43,7 @@ private var imgMagicalLockFire : Class<Dynamic>;
         
         lockType = _type;
         
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function check() : Void
@@ -67,7 +67,7 @@ private var imgMagicalLockFire : Class<Dynamic>;
         //If the type of shot is more powerful than this lock, break it (so the firewand breaks both locks)
 {            
             {
-                Music.playSoundDistPlayer(x, y, "Lock");
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Lock");
                 Game.setPersistence(tag, false);
                 (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("destroy");
             }

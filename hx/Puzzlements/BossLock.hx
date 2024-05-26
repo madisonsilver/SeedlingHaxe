@@ -29,13 +29,13 @@ class BossLock extends Activators
     
     public function new(_x : Int, _y : Int, _t : Int = 0, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, Game.bossLocks[_t], -1);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossLocks[_t], -1);
         myKey = Game.bossKeys[_t];
         setHitbox(16, 16, 8, 8);
         type = normType;
         tag = _tag;
         keyType = _t;
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function check() : Void
@@ -51,7 +51,7 @@ class BossLock extends Activators
     {
         if (!_active && a)
         {
-            Music.playSoundDistPlayer(x, y, "Lock");
+            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Lock");
         }
         _active = a;
         return a;
@@ -61,7 +61,7 @@ class BossLock extends Activators
     {
         super.update();
         var m : Int = 2;  //The distance to check from the edges of the chest  
-        var p : Player = try cast(FP.world.collideLine("Player", x - originX + m, y - originY + height + 1, x - originX + width - 2 * m, y - originY + height + 1), Player) catch(e:Dynamic) null;
+        var p : Player = try cast(FP.world.collideLine("Player", Std.int(x - originX + m), Std.int(y - originY + height + 1), Std.int(x - originX + width - 2 * m), Std.int(y - originY + height + 1)), Player) catch(e:Dynamic) null;
         if (p != null && Player.hasKey(keyType))
         {
             activate = true;

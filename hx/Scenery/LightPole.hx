@@ -32,15 +32,15 @@ private var imgLightPole : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int = 0, _tag : Int = -1, _color : Int = 0xFFFFFF, _invert : Bool = false)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprLightPole, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLightPole, _t);
         startY = y;
         sprLightPole.centerOO();
         
         tag = _tag;
-        layer = -(y - sprLightPole.originY + sprLightPole.height);
+        layer = Std.int(-(y - sprLightPole.originY + sprLightPole.height));
         
         color = _color;
-        FP.world.add(myLight = new Light(x, y, 100, loops, color, true, 28, 32, lightAlpha));
+        FP.world.add(myLight = new Light(Std.int(x), Std.int(y), 100, Std.int(loops), color, true, 28, 32, lightAlpha));
         myLight.layer = layer - 1;
         myLight.i_radius_factor = 0.8;
         

@@ -98,7 +98,7 @@ class Droplet extends Entity
         {
             Game.sprDroplet.alpha *= Math.max(1 - FP.distance(x, y, player.x, player.y) / maxDist, 0);
         }
-        Game.sprDroplet.frame = frame;
+        Game.sprDroplet.frame = Std.int(frame);
         Game.sprDroplet.color = color;
         Game.sprDroplet.render(new Point(x, y), FP.camera);
         

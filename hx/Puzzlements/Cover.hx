@@ -28,12 +28,12 @@ private var imgCover : Class<Dynamic>;
         {
             _g = sprCover;
         }
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g, _t);
         (try cast(graphic, Image) catch(e:Dynamic) null).centerOO();
         setHitbox(16, 16, 8, 8);
         type = normType;
         
-        layer = -(y - originY + height + 1);
+        layer = Std.int(-(y - originY + height + 1));
     }
     
     override public function update() : Void

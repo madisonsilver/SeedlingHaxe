@@ -19,7 +19,7 @@ private var imgCactus : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprCactus);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprCactus);
         sprCactus.centerOO();
         sprCactus.add("sit", [0]);
         sprCactus.add("chomp", [0, 1], chompAnimSpeed, true);

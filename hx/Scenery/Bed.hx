@@ -18,7 +18,7 @@ private var imgBed : Class<Dynamic>;
         super(_x, _y, sprBed);
         setHitbox(16, 32);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
 }
 

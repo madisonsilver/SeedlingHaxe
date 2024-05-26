@@ -20,7 +20,7 @@ private var imgDresser : Class<Dynamic>;
         sprDresser.originY = -sprDresser.y;
         setHitbox(32, 16);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
 }
 

@@ -20,7 +20,7 @@ private var imgFire : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprFire, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFire, null, false);
         sprFire.centerOO();
         sprFire.alpha = 0;
         setHitbox(8, 8, 4, 4);

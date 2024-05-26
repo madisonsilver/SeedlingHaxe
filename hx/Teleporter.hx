@@ -91,7 +91,7 @@ private var imgPortal : Class<Dynamic>;
             if (!playerTouching)
             {
                 Music.playSound(sound, soundIndex);
-                FP.world = new Game(to, playerPos.x, playerPos.y);
+                FP.world = new Game(to, Std.int(playerPos.x), Std.int(playerPos.y));
                 Game.sign = sign;
             }
         }

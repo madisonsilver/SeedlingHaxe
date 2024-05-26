@@ -42,7 +42,7 @@ private var imgPlantTorch : Class<Dynamic>;
         }
         
         var lightOffset : Point = new Point(0, -5);
-        FP.world.add(myLight = new Light(x + lightOffset.x * sprPlantTorch.scaleX, y + lightOffset.y, 100, loops, _color, true));
+        FP.world.add(myLight = new Light(Std.int(x + lightOffset.x * sprPlantTorch.scaleX), Std.int(y + lightOffset.y), 100, Std.int(loops), _color, true));
     }
     
     override public function render() : Void

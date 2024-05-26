@@ -35,7 +35,7 @@ private var imgLavaBall : Class<Dynamic>;
         sprLavaBall.play("fly");
         v = _v;
         f = 0;
-        setHitbox(24 * sc, 24 * sc, 12 * sc, 12 * sc);
+        setHitbox(Std.int(24 * sc), Std.int(24 * sc), Std.int(12 * sc), 12 * sc);
         type = "LavaBall";
         solids = [];
         if (v.length > 0)
@@ -80,7 +80,7 @@ private var imgLavaBall : Class<Dynamic>;
             }
             if (hits.length > 0)
             {
-                FP.world.add(new Explosion(x + v.x, y + v.y, hitables, 32 * sc, 1));
+                FP.world.add(new Explosion(Std.int(x + v.x), Std.int(y + v.y), hitables, Std.int(32 * sc), 1));
                 FP.world.remove(this);
             }
         }

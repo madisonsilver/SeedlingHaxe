@@ -33,7 +33,7 @@ private var imgGrenade : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _active : Bool = false, _exTime : Int = 60)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2 - fallHeight, sprGrenade);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);
         endY = as3hx.Compat.parseInt(_y + Tile.h / 2);
         startY = y;
         
@@ -137,8 +137,8 @@ private var imgGrenade : Class<Dynamic>;
                 {
                     p.hit(null, force, new Point(x, endY), damage);
                 }
-                Music.playSoundDistPlayer(x, y, "Explosion", -1, 120);
-                FP.world.add(myLight = new Light(x, endY, 2, 1, 0xFFFF00, false, hitRadius, hitRadius, 1));
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Explosion", -1, 120);
+                FP.world.add(myLight = new Light(Std.int(x), endY, 2, 1, 0xFFFF00, false, hitRadius, hitRadius, 1));
                 sprGrenade.play("hit");
             case "hit":
                 FP.world.remove(this);

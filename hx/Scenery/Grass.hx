@@ -20,7 +20,7 @@ class Grass extends Entity
     {
         super(_x, _y, Game.sprGrass);
         active = false;
-        layer = -y;
+        layer = Std.int(-y);
         type = "Grass";
         setHitbox(16, 4, 8, 4);
     }

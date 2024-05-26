@@ -19,11 +19,11 @@ private var imgButton : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _t : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprButton, _t);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);
         sprButton.centerOO();
         setHitbox(8, 6, 4, 3);
         type = "Button";
-        layer = -y;
+        layer = Std.int(-y);
     }
     
     override public function update() : Void
@@ -45,7 +45,7 @@ private var imgButton : Class<Dynamic>;
     {
         if (_active != a)
         {
-            Music.playSoundDistPlayer(x, y, "Switch");
+            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Switch");
         }
         _active = a;
         activateAll(this, t, activate);

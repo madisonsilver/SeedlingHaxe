@@ -103,7 +103,7 @@ class Pickup extends Mobile
                 specialTimer--;
                 if (specialTimer <= 0 && text != "")
                 {
-                    FP.world.add(myText = new NPC(x, y, null, -1, text, DEF_TEXT_SPEED, 32));
+                    FP.world.add(myText = new NPC(Std.int(x), Std.int(y), null, -1, text, DEF_TEXT_SPEED, 32));
                     myText.setTemp(this);
                     Game.ALIGN = "CENTER";
                 }

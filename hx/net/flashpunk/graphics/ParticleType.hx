@@ -119,7 +119,7 @@ class ParticleType
         {
             return;
         }
-        _buffer = new BitmapData(_frame.width, _frame.height, true, 0);
+        _buffer = new BitmapData(Std.int(_frame.width), Std.int(_frame.height), true, 0);
         _bufferRect = _buffer.rect;
     }
     

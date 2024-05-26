@@ -76,7 +76,7 @@ class Enemy extends Mobile
             case 6:
                 if (canFallInPit && !fallInPit)
                 {
-                    Music.playSoundDistPlayer(x, y, "Enemy Fall");
+                    Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Fall");
                     fallInPit = true;
                 }
             case 17:  //Lava  
@@ -116,7 +116,7 @@ class Enemy extends Mobile
         for (i in 0...coins)
         {
             var a : Float = i / coins * Math.PI * 2 + astart;
-            FP.world.add(new Coin(x, y, new Point(l * Math.cos(a), l * Math.sin(a))));
+            FP.world.add(new Coin(Std.int(x), Std.int(y), new Point(l * Math.cos(a), l * Math.sin(a))));
         }
     }
     
@@ -149,12 +149,12 @@ class Enemy extends Mobile
                         hitByDarkStuff = (t == "Shield" || t == "Suit");
                         if (hits >= hitsMax)
                         {
-                            Music.playSoundDistPlayer(x, y, dieSound, dieSoundIndex);
+                            Music.playSoundDistPlayer(Std.int(x), Std.int(y), dieSound, dieSoundIndex);
                             startDeath(t);
                         }
                         else
                         {
-                            Music.playSoundDistPlayer(x, y, hitSound, hitSoundIndex);
+                            Music.playSoundDistPlayer(Std.int(x), Std.int(y), hitSound, hitSoundIndex);
                             knockback(f, p);
                         }
                     }
@@ -193,9 +193,9 @@ class Enemy extends Mobile
         switch (t)
         {
             case "Sword", "Spear":
-                FP.world.add(new SlashHit(x + _xoff, y + _yoff, _sc));
+                FP.world.add(new SlashHit(Std.int(x + _xoff), Std.int(y + _yoff), _sc));
             case "Wand":
-                FP.world.add(new Explosion(x + _xoff, y + _yoff, ["Player", "Enemy"], Math.max(width, height), 1));
+                FP.world.add(new Explosion(Std.int(x + _xoff), Std.int(y + _yoff), ["Player", "Enemy"], Std.int(Math.max(width, height)), 1));
             default:
         }
     }

@@ -28,7 +28,7 @@ class Shadow extends Entity
         a = _a;
         w = _w;
         h = _h;
-        layer = -(y);
+        layer = Std.int(-(y));
         
         myBmp = new BitmapData(w, h, true, as3hx.Compat.parseInt(a * 255) * 0x01000000 + c);
     }

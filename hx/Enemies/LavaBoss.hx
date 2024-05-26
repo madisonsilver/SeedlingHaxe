@@ -41,7 +41,7 @@ private var imgLavaBoss : Class<Dynamic>;
         sprLavaBoss.play("sit");
         
         tag = _tag;
-        layer = -(y - sprLavaBoss.originY + sprLavaBoss.height);
+        layer = Std.int(-(y - sprLavaBoss.originY + sprLavaBoss.height));
         
         type = "LavaBoss";
         
@@ -230,7 +230,7 @@ private var imgLavaBoss : Class<Dynamic>;
                     if (!FP.world.collideRect("Enemy", x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2, y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2, Tile.w, Tile.h))
                     {
                         var lr : LavaRunner;
-                        FP.world.add(lr = new LavaRunner(x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2, y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2));
+                        FP.world.add(lr = new LavaRunner(Std.int(x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2), Std.int(y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2)));
                         lr.runRange = 1000;
                         lr.activeOffScreen = true;
                         lr.jump(!cast(i, Bool));
@@ -250,7 +250,7 @@ private var imgLavaBoss : Class<Dynamic>;
                 for (i in 0...numLavaBalls)
                 {
                     var ang : Float = -angle / 2 + i / (numLavaBalls - 1) * angle + Math.PI / 2;
-                    FP.world.add(new LavaBall(x, y + 32, new Point(shotSpeed * Math.cos(ang), shotSpeed * Math.sin(ang))));
+                    FP.world.add(new LavaBall(Std.int(x), Std.int(y + 32), new Point(shotSpeed * Math.cos(ang), shotSpeed * Math.sin(ang))));
                 }
             case "hit":
                 sprLavaBoss.play("sit");

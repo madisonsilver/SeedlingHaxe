@@ -22,7 +22,7 @@ private var imgSlashHit : Class<Dynamic>;
         sprSlashHit.add("slash", [0, 1], 15);
         sprSlashHit.play("slash");
         sprSlashHit.scale = _scx / sprSlashHit.width + 0.35;
-        layer = -(y + Tile.h * 3 / 2);
+        layer = Std.int(-(y + Tile.h * 3 / 2));
     }
     
     override public function render() : Void

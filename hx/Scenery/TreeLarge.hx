@@ -28,7 +28,7 @@ private var imgTreeLarge : Class<Dynamic>;
         sprTreeLarge.centerOO();
         mask = new Pixelmask(imgTreeLargeMask, -80, -96);  //  
         type = "Solid";
-        layer = -(y - originY + 138);
+        layer = Std.int(-(y - originY + 138));
         active = false;
     }
     

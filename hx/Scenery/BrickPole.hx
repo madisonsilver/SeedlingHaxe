@@ -20,7 +20,7 @@ private var imgBrickPole : Class<Dynamic>;
         sprBrickPole.originY = 4;
         setHitbox(16, 16);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
 }
 

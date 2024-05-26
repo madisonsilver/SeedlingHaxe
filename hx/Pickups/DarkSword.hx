@@ -21,7 +21,7 @@ private var imgDarkSword : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprDarkSword, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSword, null, false);
         sprDarkSword.centerOO();
         setHitbox(8, 8, 4, 4);
         

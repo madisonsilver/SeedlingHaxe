@@ -35,7 +35,7 @@ private var imgIceBlast : Class<Dynamic>;
         {
             sprIceBlast.angle = Math.atan2(-v.y, v.x) * 180 / Math.PI;
         }
-        Music.playSoundDistPlayer(x, y, "Other", 2, 200, 0.4);
+        Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Other", 2, 200, 0.4);
     }
     
     override public function update() : Void

@@ -106,7 +106,7 @@ class Image extends Graphic
     /** @private Creates the buffer. */
     private function createBuffer() : Void
     {
-        _buffer = new BitmapData(_sourceRect.width, _sourceRect.height, true, 0);
+        _buffer = new BitmapData(Std.int(_sourceRect.width), Std.int(_sourceRect.height), true, 0);
         _bufferRect = _buffer.rect;
     }
     

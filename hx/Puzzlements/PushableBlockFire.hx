@@ -32,12 +32,12 @@ private var imgPushableBlockFire : Class<Dynamic>;
         type = "Solid";
         solids.push("Enemy", "Player");
         
-        tile = getPos(x, y);
+        tile = getPos(Std.int(x), Std.int(y));
     }
     
     override public function input() : Void
     {
-        if (gridPos(x, y).equals(new Point(x, y)))
+        if (gridPos(Std.int(x), Std.int(y)).equals(new Point(x, y)))
         {
             var myTile : Tile = try cast(FP.world.nearestToPoint("Tile", x - originX + width / 2, y - originY + height / 2), Tile) catch(e:Dynamic) null;
             if (myTile != null)
@@ -57,7 +57,7 @@ private var imgPushableBlockFire : Class<Dynamic>;
         v.y = moveSpeed * FP.sign(tile.y - y - Tile.h / 2);
         
         
-        if (!collideTypes(solids, gridPos(x, y).x, gridPos(x, y).y))
+        if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y))
         {
             if (Math.abs(v.x) <= 0.01)
             {
@@ -90,8 +90,8 @@ private var imgPushableBlockFire : Class<Dynamic>;
         
         if (_relative)
         {
-            tile.x = getPos(x, y).x - p.x * Tile.w;
-            tile.y = getPos(x, y).y - p.y * Tile.h;
+            tile.x = getPos(Std.int(x), Std.int(y)).x - p.x * Tile.w;
+            tile.y = getPos(Std.int(x), Std.int(y)).y - p.y * Tile.h;
             return;
         }
         var cont : Bool = false;
@@ -111,22 +111,22 @@ private var imgPushableBlockFire : Class<Dynamic>;
             {
                 if (Math.cos(a) > 0)
                 {
-                    tile.x = getPos(x, y).x - Tile.w;
+                    tile.x = getPos(Std.int(x), Std.int(y)).x - Tile.w;
                 }
                 else
                 {
-                    tile.x = getPos(x, y).x + Tile.w;
+                    tile.x = getPos(Std.int(x), Std.int(y)).x + Tile.w;
                 }
             }
             if (Math.abs(Math.sin(a)) > Math.abs(Math.cos(a)) - bothRange)
             {
                 if (Math.sin(a) > 0)
                 {
-                    tile.y = getPos(x, y).y - Tile.h;
+                    tile.y = getPos(Std.int(x), Std.int(y)).y - Tile.h;
                 }
                 else
                 {
-                    tile.y = getPos(x, y).y + Tile.h;
+                    tile.y = getPos(Std.int(x), Std.int(y)).y + Tile.h;
                 }
             }
         }
@@ -139,13 +139,13 @@ private var imgPushableBlockFire : Class<Dynamic>;
         //If we're going to hit something, get rid of our velocity.
         if (moveX(v.x))
         {
-            tile.x = getPos(x, y).x;
+            tile.x = getPos(Std.int(x), Std.int(y)).x;
         }
         if (moveY(v.y))
         {
-            tile.y = getPos(x, y).y;
+            tile.y = getPos(Std.int(x), Std.int(y)).y;
         }
-        if (!tile.equals(getPos(x + Tile.w / 2, y + Tile.h / 2)) && vMusicCheck.equals(new Point()))
+        if (!tile.equals(getPos(Std.int(x + Tile.w / 2), Std.int(y + Tile.h / 2))) && vMusicCheck.equals(new Point()))
         {
             Music.playSound("Push Rock", -1, 0.5);
         }

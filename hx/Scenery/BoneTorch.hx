@@ -45,9 +45,9 @@ private var imgBoneTorch2 : Class<Dynamic>;
         {
             sprBoneTorch.scaleX = -Math.abs(sprBoneTorch.scaleX);
         }
-        FP.world.add(new Light(x + lightOffset.x * sprBoneTorch.scaleX, y + lightOffset.y, frames.length, loops, _color, false));
+        FP.world.add(new Light(Std.int(x + lightOffset.x * sprBoneTorch.scaleX), Std.int(y + lightOffset.y), frames.length, loops, _color, false));
         
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function render() : Void

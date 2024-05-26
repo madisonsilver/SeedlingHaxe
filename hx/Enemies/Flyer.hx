@@ -81,7 +81,7 @@ private var imgFlyer : Class<Dynamic>;
     
     override public function layering() : Void
     {
-        layer = -(y - targetOffset.y);
+        layer = Std.int(-(y - targetOffset.y));
     }
     
     override public function hitPlayer() : Void

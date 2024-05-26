@@ -36,12 +36,12 @@ private var imgOrb : Class<Dynamic>;
         startY = y;
         
         color = _c;
-        layer = -(y - sprOrb.originY + sprOrb.height + Tile.h / 2);
+        layer = Std.int(-(y - sprOrb.originY + sprOrb.height + Tile.h / 2));
         
         sprOrb.centerOO();
         sprOrb.color = color;
         
-        FP.world.add(myLight = new Light(x, y, 60, 2, color, true, radiusMin, radiusMax, alpha));
+        FP.world.add(myLight = new Light(Std.int(x), Std.int(y), 60, 2, color, true, radiusMin, radiusMax, alpha));
     }
     
     override public function update() : Void

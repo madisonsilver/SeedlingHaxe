@@ -20,7 +20,7 @@ private var imgFrozenBoss : Class<Dynamic>;
         super(_x, _y, sprFrozenBoss);
         setHitbox(80, 32, -32, -128);
         type = "Solid";
-        layer = -(y - originY + height * 2 / 3);
+        layer = Std.int(-(y - originY + height * 2 / 3));
     }
     
     override public function render() : Void

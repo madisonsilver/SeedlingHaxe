@@ -28,7 +28,7 @@ private var imgChest : Class<Dynamic>;
         sprChest.centerOO();
         type = "Solid";
         setHitbox(16, 16, 8, 8);
-        layer = -(y - originY);
+        layer = Std.int(-(y - originY));
         
         tag = _tag;
         
@@ -60,7 +60,7 @@ private var imgChest : Class<Dynamic>;
     {
         checkBySeal();
         var m : Int = 2;  //The distance to check from the edges of the chest  
-        if (!collide("Solid", x, y) && FP.world.collideLine("Player", x - originX + m, y - originY + height + 1, x - originX + width - 2 * m, y - originY + height + 1))
+        if (!collide("Solid", x, y) && FP.world.collideLine("Player", Std.int(x - originX + m), Std.int(y - originY + height + 1), Std.int(x - originX + width - 2 * m), Std.int(y - originY + height + 1)))
         {
             open();
         }
@@ -75,7 +75,7 @@ private var imgChest : Class<Dynamic>;
             sprChest.frame = 1;
             openTimer = openTimerMax;
             type = "";
-            FP.world.add(new SealPiece(x, y));
+            FP.world.add(new SealPiece(Std.int(x), Std.int(y)));
             /*var m:int = 2; //The margin from each side of the chest to randomly add the object
 				for (var i:int = 0; i < coins; i++)
 				{

@@ -52,7 +52,7 @@ class Light extends Entity
             return;
         }
         super.render();
-        layer = -FP.height * 3 / 2;
+        layer = Std.int(-FP.height * 3 / 2);
         if (darkLight)
         {
             draw();
@@ -76,8 +76,8 @@ class Light extends Entity
         {
             c_radius = as3hx.Compat.parseInt((radiusMax - radiusMin) * Game.worldFrame(frames, loops) / (frames - 1) + radiusMin);
         }
-        Draw.circlePlus(x, y, c_radius, color, alpha);
-        Draw.circlePlus(x, y, c_radius * i_radius_factor, color, alpha);
+        Draw.circlePlus(Std.int(x), Std.int(y), c_radius, color, alpha);
+        Draw.circlePlus(Std.int(x), Std.int(y), c_radius * i_radius_factor, color, alpha);
     }
 }
 

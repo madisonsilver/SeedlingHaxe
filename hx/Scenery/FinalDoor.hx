@@ -26,7 +26,7 @@ private var imgFinalDoor : Class<Dynamic>;
         sprFinalDoor.centerOO();
         setHitbox(32, 32, 16, 16);
         type = "Solid";
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         tag = _tag;
         
         sprFinalDoor.add("open", [1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25], 15);

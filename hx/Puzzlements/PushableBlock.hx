@@ -59,7 +59,7 @@ private var imgPushableBlock : Class<Dynamic>;
             tile.y = cTile.y - 1;
         }
         v.x = moveSpeed * FP.sign(tile.x - cTile.x);
-        if (!collideTypes(solids, gridPos(x, y).x, gridPos(x, y).y))
+        if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y))
         {
             if (v.x == 0)
             {
@@ -67,7 +67,7 @@ private var imgPushableBlock : Class<Dynamic>;
             }
         }
         v.y = moveSpeed * FP.sign(tile.y - cTile.y);
-        if (!collideTypes(solids, gridPos(x, y).x, gridPos(x, y).y))
+        if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y))
         {
             if (v.y == 0)
             {

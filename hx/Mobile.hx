@@ -51,7 +51,7 @@ class Mobile extends Entity
     {
         if (!Math.isNaN(originY) && !Math.isNaN(height))
         {
-            layer = -(y - originY + height);
+            layer = Std.int(-(y - originY + height));
         }
     }
     

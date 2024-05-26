@@ -20,7 +20,7 @@ private var imgBar : Class<Dynamic>;
         sprBar.y = -4;
         sprBar.originY = -sprBar.y;
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
     }
 }
 

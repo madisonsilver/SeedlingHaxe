@@ -53,7 +53,7 @@ private var imgTentacle : Class<Dynamic>;
         
         hitsMax = 1;
         
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function update() : Void
@@ -108,7 +108,7 @@ private var imgTentacle : Class<Dynamic>;
                 sprTentacle.play("hit");
             case "hit":
                 sprTentacle.play("hitting");
-                Music.playSoundDistPlayer(x, y, "Tentacle");
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Tentacle");
             case "hitting":
                 sprTentacle.play("sink");
             case "sink":
@@ -121,7 +121,7 @@ private var imgTentacle : Class<Dynamic>;
     override public function startDeath(t : String = "") : Void
     {
         destroy = true;
-        dieEffects(t, 24, sprTentacle.scaleX * 8, -8);
+        dieEffects(t, 24, Std.int(sprTentacle.scaleX * 8), -8);
     }
 }
 

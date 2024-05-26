@@ -48,7 +48,7 @@ private var imgLightBoss : Class<Dynamic>;
         
         hitsMax = 3;
         
-        FP.world.add(myLight = new Light(x, y, 100, 1, 0xFFFF00, true));
+        FP.world.add(myLight = new Light(Std.int(x), Std.int(y), 100, 1, 0xFFFF00, true));
         
         hitSoundIndex = 1;  //Big hit sound  
         dieSoundIndex = 1;
@@ -115,7 +115,7 @@ private var imgLightBoss : Class<Dynamic>;
     
     public function shoot() : Void
     {
-        FP.world.add(new LightBossShot(x + lightLength * Math.cos(angleFace), y + lightLength * Math.sin(angleFace), new Point(shotSpeed * Math.cos(angleFace), shotSpeed * Math.sin(angleFace))));
+        FP.world.add(new LightBossShot(Std.int(x + lightLength * Math.cos(angleFace)), Std.int(y + lightLength * Math.sin(angleFace)), new Point(shotSpeed * Math.cos(angleFace), shotSpeed * Math.sin(angleFace))));
     }
 }
 

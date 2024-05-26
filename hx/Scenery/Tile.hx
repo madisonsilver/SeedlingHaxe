@@ -107,7 +107,7 @@ class Tile extends Entity
         grass = _grass;
         t = _t;
         
-        setHitbox(w, h, w / 2, h / 2);
+        setHitbox(w, h, Std.int(w / 2), Std.int(h / 2));
         type = "Tile";
         
         pit = _pit;
@@ -194,7 +194,7 @@ class Tile extends Entity
                 var scale : Float = 1.5;
                 if (myEdges == null)
                 {
-                    myEdges = new BitmapData(scale * Game.sprLava.width, scale * Game.sprLava.height, true, 0);
+                    myEdges = new BitmapData(Std.int(scale * Game.sprLava.width), Std.int(scale * Game.sprLava.height), true, 0);
                     
                     Draw.setTarget(myEdges, new Point());
                     Game.sprLava.scale = scale;
@@ -408,7 +408,7 @@ class Tile extends Entity
                 var smoothed : Float = (Math.sin(Game.worldFrame(phases, loops) / phases * 2 * Math.PI + randVal * 2 * Math.PI) + 1) / 2;
                 
                 Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).underBmp, FP.camera);
-                Draw.circlePlus(x, y, smoothed * (maxRadius - minRadius) + minRadius, 0xFFFFFF, smoothed);
+                Draw.circlePlus(Std.int(x), Std.int(y), smoothed * (maxRadius - minRadius) + minRadius, 0xFFFFFF, smoothed);
                 Draw.resetTarget();
                 
                 Game.sprOddTile.frame = img;
@@ -494,7 +494,7 @@ class Tile extends Entity
             case 23:
                 drawEdges(15 - img, 0x0088FF, 0.25);
             case 24:
-                FP.world.add(new Light(x, y, 60, 1, 0x0088FF, true));
+                FP.world.add(new Light(Std.int(x), Std.int(y), 60, 1, 0x0088FF, true));
                 drawEdges(15 - img, 0x0088FF, 0.5);
             case 25:
                 if (spray)
@@ -503,7 +503,7 @@ class Tile extends Entity
                     _em.newType("spray", [0, 1, 2, 3]);
                     _em.setAlpha("spray", 1, 0);
                     _em.setMotion("spray", 90, 6, 0.8, 10, 4, 0.3);
-                    _emObj = FP.world.addGraphic(_em, -(y - originY + height + 3));
+                    _emObj = FP.world.addGraphic(_em, Std.int(-(y - originY + height + 3)));
                 }
             case 26, 27, 33, 36:
                 drawEdges(15 - img, 0x000000, 0.4);
@@ -515,7 +515,7 @@ class Tile extends Entity
     {
         for (i in 0...bladesOfGrass)
         {
-            FP.world.add(new Grass(x + Tile.w * (Math.random() - 0.5), y + Tile.h * (Math.random() - 0.5)));
+            FP.world.add(new Grass(Std.int(x + Tile.w * (Math.random() - 0.5)), Std.int(y + Tile.h * (Math.random() - 0.5))));
         }
     }
     

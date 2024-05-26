@@ -367,8 +367,8 @@ private var imgBossTotem : Class<Dynamic>;
                             var shotPosition : Point = new Point(30, 75);
                             var shotSpeed : Point = new Point(0, 2);
                             Music.playSound("Enemy Attack", 2, 0.2);
-                            FP.world.add(new BossTotemShot(x + shotPosition.x, y + shotPosition.y, shotSpeed));
-                            FP.world.add(new BossTotemShot(x - shotPosition.x, y + shotPosition.y, new Point(-shotSpeed.x, shotSpeed.y)));
+                            FP.world.add(new BossTotemShot(Std.int(x + shotPosition.x), Std.int(y + shotPosition.y), shotSpeed));
+                            FP.world.add(new BossTotemShot(Std.int(x - shotPosition.x), Std.int(y + shotPosition.y), new Point(-shotSpeed.x, shotSpeed.y)));
                         }
                         if (currentFrame + Reflect.field(animateRate, currentAnimation) * rate >= Reflect.field(animateFrames, currentAnimation))
                         {
@@ -574,7 +574,7 @@ private var imgBossTotem : Class<Dynamic>;
             rumblingTime++;
             (try cast(FP.world, Game) catch(e:Dynamic) null).drawCover(0xFFFFFF, rumblingTime / rumblingTimeMax * 2);
             Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-            Draw.rect(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height, 0xFFFFFF, rumblingTime / rumblingTimeMax * 2);
+            Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, 0xFFFFFF, rumblingTime / rumblingTimeMax * 2);
             Draw.resetTarget();
             if (rumblingTime >= rumblingTimeMax)
             {
@@ -642,9 +642,9 @@ private var imgBossTotem : Class<Dynamic>;
         {
             Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
             var rect : Rectangle = getLaserRect(1, headPos, laserPos);
-            Draw.rect(rect.x, rect.y, rect.width, rect.height, laserCol, activationStage);
+            Draw.rect(Std.int(rect.x), Std.int(rect.y), Std.int(rect.width), Std.int(rect.height), laserCol, activationStage);
             rect = getLaserRect(-1, headPos, laserPos);
-            Draw.rect(rect.x, rect.y, rect.width, rect.height, laserCol, activationStage);
+            Draw.rect(Std.int(rect.x), Std.int(rect.y), Std.int(rect.width), Std.int(rect.height), laserCol, activationStage);
             Draw.resetTarget();
         }
     }

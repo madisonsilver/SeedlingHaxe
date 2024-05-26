@@ -27,16 +27,16 @@ class Building extends Entity
         switch (_t)
         {
             case 4:
-                layer = -(y - originY + 1 / 2 * height);
+                layer = Std.int(-(y - originY + 1 / 2 * height));
             case 6:
-                layer = -(y - originY + 72);
+                layer = Std.int(-(y - originY + 72));
             case 7:
-                layer = -(y - originY + 16);
+                layer = Std.int(-(y - originY + 16));
             case 8:
-                layer = -(y - originY + 48);
+                layer = Std.int(-(y - originY + 48));
                 Game.buildings[_t].y = 0;
             default:
-                layer = -(y - originY + height);
+                layer = Std.int(-(y - originY + height));
         }
     }
     

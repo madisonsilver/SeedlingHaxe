@@ -17,7 +17,7 @@ class Pole extends Entity
         super(_x + Tile.w / 2, _y + Tile.h / 2);
         setHitbox(16, 16, 8, 8);
         type = "Solid";
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function render() : Void

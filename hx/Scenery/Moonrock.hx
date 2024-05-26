@@ -138,7 +138,7 @@ private var imgMoonrock : Class<Dynamic>;
             var stairs : Entity = collide("Teleporter", x, y);
             if (Std.is(stairs, Stairs))
             {
-                FP.world.add(new Teleporter(stairs.x, stairs.y, 2, 48, 32));
+                FP.world.add(new Teleporter(Std.int(stairs.x), Std.int(stairs.y), 2, 48, 32));
                 Game.setPersistence(0, false, 2);
                 FP.world.remove(stairs);
             }
@@ -156,7 +156,7 @@ private var imgMoonrock : Class<Dynamic>;
             }
         }
         super.update();
-        layer = -(fallTo - originY + height / 2);
+        layer = Std.int(-(fallTo - originY + height / 2));
     }
     
     public function playersDirection(d : Int) : Void
@@ -194,15 +194,15 @@ private var imgMoonrock : Class<Dynamic>;
     public function drawFlares() : Void
     {
         var m : Int = 2;
-        Draw.rect(x + sprMoonrock.width / 2 - Tile.w / 2 - m, y + sprMoonrock.height / 2 - m, Tile.w, fallTo - y + Tile.h / 2, 0xFFFFFF, 0.5);
+        Draw.rect(Std.int(x + sprMoonrock.width / 2 - Tile.w / 2 - m), Std.int(y + sprMoonrock.height / 2 - m), Tile.w, Std.int(fallTo - y + Tile.h / 2), 0xFFFFFF, 0.5);
         for (i in 0...20)
         {
-            var c : Int = FP.getColorRGB(192 + 64 * Math.random(), 192 + 64 * Math.random(), 192 * Math.random());
+            var c : Int = FP.getColorRGB(Std.int(192 + 64 * Math.random()), Std.int(192 + 64 * Math.random()), Std.int(192 * Math.random()));
             var dx : Int = as3hx.Compat.parseInt(Tile.w * 2 * Math.random() - Tile.w);  //The distance each beam can be from the center  
             var dy : Int = as3hx.Compat.parseInt(Tile.h * 2 * Math.random() - Tile.h);
             var alpha : Float = Math.random() / 2;
             var thick : Float = Math.random() * 3 + 0.5;
-            Draw.linePlus(x + sprMoonrock.width / 2 + dx - m, y + sprMoonrock.height / 2 - m, x + sprMoonrock.width / 2 + dx - m, fallTo + sprMoonrock.height / 2 + dy - m, c, alpha, thick);
+            Draw.linePlus(Std.int(x + sprMoonrock.width / 2 + dx - m), Std.int(y + sprMoonrock.height / 2 - m), Std.int(x + sprMoonrock.width / 2 + dx - m), Std.int(fallTo + sprMoonrock.height / 2 + dy - m), c, alpha, thick);
         }
     }
 }

@@ -26,7 +26,7 @@ private var imgSandTrap : Class<Dynamic>;
         {
             _g = sprSandTrap;
         }
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
         
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).centerOO();
         //the animation "" will reset it to the world frame speed
@@ -36,7 +36,7 @@ private var imgSandTrap : Class<Dynamic>;
         
         setHitbox(16, 16, 8, 8);
         
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
         tag = _tag;
     }
     
@@ -63,7 +63,7 @@ private var imgSandTrap : Class<Dynamic>;
             var d : Int = FP.distance(x, y, player.x, player.y);
             if (d <= chompRange && (try cast(graphic, Spritemap) catch(e:Dynamic) null).currentAnim != "chomp")
             {
-                Music.playSoundDistPlayer(x, y, "Enemy Attack", 3);
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Attack", 3);
                 (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("chomp");
             }
         }

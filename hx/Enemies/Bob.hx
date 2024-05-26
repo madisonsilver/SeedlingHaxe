@@ -33,7 +33,7 @@ private var imgBob : Class<Dynamic>;
         {
             _g = sprBob;
         }
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
         sprBob.centerOO();
         sprBob.add("walk", sitFrames, walkAnimSpeed, false);
         sprBob.add("die", [3, 4, 5, 6], 5);
@@ -76,7 +76,7 @@ private var imgBob : Class<Dynamic>;
                     }
                     if (animateNormally && (try cast(graphic, Spritemap) catch(e:Dynamic) null).currentAnim != "walk")
                     {
-                        Music.playSoundDistPlayer(x, y, "Enemy Hop", hopSoundIndex);
+                        Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Hop", hopSoundIndex);
                         (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("walk");
                     }
                 }

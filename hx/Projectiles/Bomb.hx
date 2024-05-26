@@ -32,7 +32,7 @@ private var imgBomb : Class<Dynamic>;
         v = new Point(_p.x - x, _p.y - y);
         v.normalize(v.length / tMax);
         f = 0;
-        setHitbox(sprBomb.width, sprBomb.height, sprBomb.width / 2, sprBomb.height / 2);
+        setHitbox(sprBomb.width, sprBomb.height, Std.int(sprBomb.width / 2), Std.int(sprBomb.height / 2));
         type = "Bomb";
         solids = [];
     }
@@ -61,7 +61,7 @@ private var imgBomb : Class<Dynamic>;
     override public function removed() : Void
     {
         super.removed();
-        FP.world.add(new Explosion(x, y, hitables, 24));
+        FP.world.add(new Explosion(Std.int(x), Std.int(y), hitables, 24));
     }
 }
 

@@ -16,7 +16,7 @@ class SnowHill extends Entity
         Game.sprSnowHill.y = -8;
         mask = new Pixelmask(Game.imgSnowHillMask, 0, 0);
         type = "Solid";
-        layer = -(y - originY + height - 32);
+        layer = Std.int(-(y - originY + height - 32));
         active = false;
     }
 }

@@ -57,7 +57,7 @@ private var imgCrusher : Class<Dynamic>;
                 {
                     var checkMovement : Bool = true;
                     type = "BS";
-                    var c : Entity = FP.world.collideLine("Solid", x, y, p.x, p.y);
+                    var c : Entity = FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(p.x), Std.int(p.y));
                     type = "Solid";
                     if (c == null)
                     {
@@ -78,7 +78,7 @@ private var imgCrusher : Class<Dynamic>;
             }
             else if (Music.soundPercentage("Other", 4) >= 0.1 || !Music.soundIsPlaying("Other", 4))
             {
-                Music.playSoundDistPlayer(x, y, "Other", 4, 120, 0.5);
+                Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Other", 4, 120, 0.5);
             }
             moveX(v.x);
             moveY(v.y);
@@ -121,7 +121,7 @@ private var imgCrusher : Class<Dynamic>;
             var offsetY : Int = as3hx.Compat.parseInt(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
             var w : Int = as3hx.Compat.parseInt(width + intDist * Math.abs(directions[i].x));
             var h : Int = as3hx.Compat.parseInt(height + intDist * Math.abs(directions[i].y));
-            Draw.rect(x + offsetX, y + offsetY, w, h);
+            Draw.rect(Std.int(x + offsetX), Std.int(y + offsetY), w, h);
         }
         Draw.resetTarget();
         super.render();

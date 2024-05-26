@@ -55,7 +55,7 @@ private var imgBobSoldier : Class<Dynamic>;
         {
             _g = sprBobSoldier;
         }
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
         
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).centerOO();
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).add("walk", walkFrames, walkAnimSpeed, true);
@@ -109,12 +109,12 @@ private var imgBobSoldier : Class<Dynamic>;
                 }
                 if ((try cast(graphic, Spritemap) catch(e:Dynamic) null).currentAnim != "walk")
                 {
-                    Music.playSoundDistPlayer(x, y, "Enemy Hop", hopSoundIndex);
+                    Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Hop", hopSoundIndex);
                     (try cast(graphic, Spritemap) catch(e:Dynamic) null).play("walk");
                 }
             }
         }
-        swordSpinningBeginCheck(d);
+        swordSpinningBeginCheck(Std.int(d));
     }
     
     public function swordSpinningBeginCheck(d : Int = 0) : Void
@@ -170,8 +170,8 @@ private var imgBobSoldier : Class<Dynamic>;
     {
         for (i in 0...swords)
         {
-            var hitPlayer : Player = try cast(FP.world.collideLine("Player", x + weaponLength / 2 * Math.cos(-swordSpin[i]), y + weaponLength / 2 * Math.sin(-swordSpin[i]), 
-                    x + weaponLength * Math.cos(-swordSpin[i]), y + weaponLength * Math.sin(-swordSpin[i])
+            var hitPlayer : Player = try cast(FP.world.collideLine("Player", Std.int(x + weaponLength / 2 * Math.cos(-swordSpin[i])), Std.int(y + weaponLength / 2 * Math.sin(-swordSpin[i])), 
+                    Std.int(x + weaponLength * Math.cos(-swordSpin[i])), Std.int(y + weaponLength * Math.sin(-swordSpin[i]))
             ), Player) catch(e:Dynamic) null;
             if (hitPlayer != null)
             {

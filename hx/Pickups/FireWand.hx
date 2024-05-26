@@ -26,7 +26,7 @@ private var imgFireWandPickup : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprFireWandPickup, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFireWandPickup, null, false);
         sprFireWandPickup.centerOO();
         setHitbox(8, 8, 4, 4);
         
@@ -87,8 +87,8 @@ private var imgFireWandPickup : Class<Dynamic>;
         var alpha : Float = (try cast(graphic, Spritemap) catch(e:Dynamic) null).alpha * 0.2;
         var frame : Int = sprFireWandPickup.frame;
         Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-        Draw.circlePlus(x + offsetX, y + offsetY, (radiusMax - radiusMin) * frame / (frameCount - 1) + radiusMin, color, alpha);
-        Draw.circlePlus(x + offsetX, y + offsetY, ((radiusMax - radiusMin) * frame / (frameCount - 1) + radiusMin) / 2, color, alpha);
+        Draw.circlePlus(Std.int(x + offsetX), Std.int(y + offsetY), (radiusMax - radiusMin) * frame / (frameCount - 1) + radiusMin, color, alpha);
+        Draw.circlePlus(Std.int(x + offsetX), Std.int(y + offsetY), ((radiusMax - radiusMin) * frame / (frameCount - 1) + radiusMin) / 2, color, alpha);
         Draw.resetTarget();
     }
 }

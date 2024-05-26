@@ -436,7 +436,7 @@ private static var imgTank : Class<Dynamic>;
         }
         if (text != null && FP.world.classCount(Help) <= 0 && open)
         {
-            Draw.rect(FP.camera.x + helpTextOffset.x, FP.camera.y + helpTextOffset.y - text.height / 2 - margin, text.width + margin * 2, text.height + margin * 2, 0x000000, 0.95);
+            Draw.rect(Std.int(FP.camera.x + helpTextOffset.x), Std.int(FP.camera.y + helpTextOffset.y - text.height / 2 - margin), text.width + margin * 2, text.height + margin * 2, 0x000000, 0.95);
             text.render(new Point(helpTextOffset.x + margin, helpTextOffset.y - text.height / 2), new Point());
         }
         

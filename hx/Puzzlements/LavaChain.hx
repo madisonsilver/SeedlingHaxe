@@ -45,7 +45,7 @@ private var imgLavaChain : Class<Dynamic>;
         
         type = "Solid";
         setHitbox(16, 16, 8, 8);
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function update() : Void

@@ -191,11 +191,11 @@ private var imgBobBossWeapons : Class<Dynamic>;
             {
                 if (bossType < 2)
                 {
-                    FP.world.add(new BobBoss(FP.width / 2 - Tile.w / 2, FP.height / 2 - Tile.h / 2, bossType + 1));
+                    FP.world.add(new BobBoss(Std.int(FP.width / 2 - Tile.w / 2), Std.int(FP.height / 2 - Tile.h / 2), bossType + 1));
                 }
                 else
                 {
-                    FP.world.add(new Fire(FP.width / 2 - Tile.w / 2, FP.height / 2 - Tile.h / 2, -1));
+                    FP.world.add(new Fire(Std.int(FP.width / 2 - Tile.w / 2), Std.int(FP.height / 2 - Tile.h / 2), -1));
                     Game.levelMusics[(try cast(FP.world, Game) catch(e:Dynamic) null).level] = -1;
                     Main.unlockMedal(Main.badges[5]);
                 }
@@ -215,7 +215,7 @@ private var imgBobBossWeapons : Class<Dynamic>;
                 v.y = Math.min(0, v.y);
                 v.y -= 1.2;
                 y += v.y;
-                (try cast(player.graphic, Image) catch(e:Dynamic) null).color = FP.getColorRGB(255 * (1 - nextBossTimer / nextBossTimerMax), 255 * (1 - nextBossTimer / nextBossTimerMax), 255);
+                (try cast(player.graphic, Image) catch(e:Dynamic) null).color = FP.getColorRGB(Std.int(255 * (1 - nextBossTimer / nextBossTimerMax)), Std.int(255 * (1 - nextBossTimer / nextBossTimerMax)), 255);
                 
                 
                 if (nextBossTimer <= nextBossTimerMax / 3)

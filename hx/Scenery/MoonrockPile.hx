@@ -21,7 +21,7 @@ private var imgMoonrockPile : Class<Dynamic>;
         super(_x, _y, sprMoonrockPile);
         setHitbox(sprMoonrockPile.width, sprMoonrockPile.height);
         type = "Solid";
-        layer = -(y - originY + height * 4 / 5);
+        layer = Std.int(-(y - originY + height * 4 / 5));
         tag = 0;
     }
     

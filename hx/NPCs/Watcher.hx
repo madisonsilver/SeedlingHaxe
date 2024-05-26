@@ -73,7 +73,7 @@ private var imgWatcherPic : Class<Dynamic>;
             sprWatcher.frame = seedFrame;
             if (seed == null)
             {
-                FP.world.add(seed = new Seed(x - 18, y - 8, false));
+                FP.world.add(seed = new Seed(Std.int(x - 18), Std.int(y - 8), false));
             }
         }
         else
@@ -81,7 +81,7 @@ private var imgWatcherPic : Class<Dynamic>;
             var p : Player = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
             if (p != null)
             {
-                sprWatcher.frame = ((Math.atan2(y - p.y, p.x - x) + 2 * Math.PI) / (2 * Math.PI) * normalFrames + normalFrames) % normalFrames;
+                sprWatcher.frame = Std.int(((Math.atan2(y - p.y, p.x - x) + 2 * Math.PI) / (2 * Math.PI) * normalFrames + normalFrames) % normalFrames);
             }
             if (seed != null)
             {
@@ -113,7 +113,7 @@ private var imgWatcherPic : Class<Dynamic>;
                 sprWatcher.frame = Reflect.field(dieFrames, Std.string(hits - 1));
             }
         }
-        (text == "") ? layer = -(y + Tile.h * 8) : layer = -(y - originY + height * 2 / 3);
+        (text == "") ? layer = Std.int(-(y + Tile.h * 8)) : layer = Std.int(-(y - originY + height * 2 / 3));
         visible = Player.hasShield;
     }
     

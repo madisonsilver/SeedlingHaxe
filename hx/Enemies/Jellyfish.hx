@@ -25,7 +25,7 @@ private var imgJelly : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprJelly);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprJelly);
         
         sprJelly.centerOO();
         sprJelly.add("walk", walkFrames, walkAnimSpeed, false);

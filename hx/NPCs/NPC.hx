@@ -49,7 +49,7 @@ private var imgTalk : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _g : Image, _tag : Int = -1, _text : String = "", _talkingSpeed : Int = 0, _lineLength : Int = 28)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, _g);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
         lineLength = _lineLength;
         if (_talkingSpeed < 0)
         {
@@ -58,7 +58,7 @@ private var imgTalk : Class<Dynamic>;
         if (graphic)
         {
             (try cast(graphic, Image) catch(e:Dynamic) null).centerOO();
-            setHitbox(_g.width, _g.height, _g.width / 2, _g.height / 2);
+            setHitbox(_g.width, _g.height, Std.int(_g.width / 2), Std.int(_g.height / 2));
         }
         type = "Solid";
         

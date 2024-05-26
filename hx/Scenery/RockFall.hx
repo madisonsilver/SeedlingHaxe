@@ -36,8 +36,8 @@ private var imgRockFall : Class<Dynamic>;
         sprRockFall.scaleX = FP.choose([1, -1]);
         sprRockFall.add("break", [0, 1, 2, 3, 4, 5, 6, 7], 15);
         
-        setHitbox(32 * sprRockFall.scale, 16 * sprRockFall.scale);
-        setHitbox(width, height, width / 2, -sprRockFall.scale * sprRockFall.height / 2 + height);
+        setHitbox(Std.int(32 * sprRockFall.scale), Std.int(16 * sprRockFall.scale));
+        setHitbox(width, height, Std.int(width / 2), Std.int(-sprRockFall.scale * sprRockFall.height / 2 + height));
         
         v.y = startingSpeed;
         f = 0;
@@ -89,8 +89,8 @@ private var imgRockFall : Class<Dynamic>;
     {
         
         var m : Int = 4;
-        Draw.rect(x - originX + m, goto - 1 - m / 2 + height * 2 / 3, width - m * 2, height / 2 + m, 0x000000, 0.5);
-        Draw.rect(x - originX, goto - 1 + height * 2 / 3, width, height / 2, 0x000000, 0.5);
+        Draw.rect(Std.int(x - originX + m), Std.int(goto - 1 - m / 2 + height * 2 / 3), width - m * 2, Std.int(height / 2 + m), 0x000000, 0.5);
+        Draw.rect(Std.int(x - originX), Std.int(goto - 1 + height * 2 / 3), width, Std.int(height / 2), 0x000000, 0.5);
         //Draw.resetTarget();
         if (!Game.freezeObjects)
         {

@@ -23,18 +23,18 @@ class LightRay extends Entity
         a = _a;
         w = _w;
         h = _h;
-        layer = -(y + h);
+        layer = Std.int(-(y + h));
     }
     
     override public function render() : Void
     {
         if (y - FP.camera.y + h >= 0)
         {
-            Draw.rect(x, FP.camera.y, w, y - FP.camera.y + h, c, 0.2);
+            Draw.rect(Std.int(x), Std.int(FP.camera.y), w, Std.int(y - FP.camera.y + h), c, 0.2);
             Draw.blend = BlendMode.SCREEN;
-            Draw.rect(x, y, w, h, c, a / 2);
+            Draw.rect(Std.int(x), Std.int(y), w, h, c, a / 2);
             Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-            Draw.rect(x, FP.camera.y, w, y - FP.camera.y + h, c, a);
+            Draw.rect(Std.int(x), Std.int(FP.camera.y), w, Std.int(y - FP.camera.y + h), c, a);
             Draw.resetTarget();
             Draw.blend = BlendMode.NORMAL;
         }

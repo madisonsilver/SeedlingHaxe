@@ -44,7 +44,7 @@ private var imgOwlPic : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprFinalBoss);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFinalBoss);
         sprFinalBoss.centerOO();
         sprFinalBoss.add("walk", [0, 1, 2, 3], 15);
         sprFinalBoss.add("die", [4, 5, 6, 7, 8, 9, 10, 11], 5);
@@ -159,7 +159,7 @@ private var imgOwlPic : Class<Dynamic>;
             var grenadeFrequency : Int = 40;
             if (!Math.floor(Math.random() * grenadeFrequency))
             {
-                FP.world.add(new Grenade(x - 8, y - 8, true, 30));
+                FP.world.add(new Grenade(Std.int(x - 8), Std.int(y - 8), true, 30));
             }
             
             var to : Point = new Point(pods[cpod].x - x, pods[cpod].y - y);
@@ -188,7 +188,7 @@ private var imgOwlPic : Class<Dynamic>;
             sprFinalBoss.frame = sitFrames[Game.worldFrame(sitFrames.length, sitLoops)];
         }
         
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
     }
     
     override public function removed() : Void
@@ -215,7 +215,7 @@ private var imgOwlPic : Class<Dynamic>;
                 var n : Int = 5;
                 for (i in 0...n)
                 {
-                    FP.world.add(new RockFall(120 + Math.random() * 8 - 4, i / n * Tile.h * 2));
+                    FP.world.add(new RockFall(Std.int(120 + Math.random() * 8 - 4), Std.int(i / n * Tile.h * 2)));
                 }
                 Button.activateAll(null, 0, true);
                 if (Game.checkPersistence(tag))

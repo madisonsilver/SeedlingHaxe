@@ -70,7 +70,7 @@ private var imgBossTotemShot : Class<Dynamic>;
             }
             if (destroy || y - originY + height >= roomBottom)
             {
-                FP.world.add(new Explosion(x + v.x, y + v.y, hitables, 24, 1));
+                FP.world.add(new Explosion(Std.int(x + v.x), Std.int(y + v.y), hitables, 24, 1));
                 FP.world.remove(this);
             }
         }

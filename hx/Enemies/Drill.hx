@@ -22,7 +22,7 @@ private var imgDrill : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprDrill);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDrill);
         
         sprDrill.centerOO();
         sprDrill.add("sit", [0]);  //doesn't matter the frame--turns invisible when sitting.  
@@ -86,7 +86,7 @@ private var imgDrill : Class<Dynamic>;
             if (player != null)
             {
                 var d : Float = FP.distance(x, y, player.x, player.y);
-                if (sprDrill.currentAnim == "sit" && d <= runRange && !FP.world.collideLine("Solid", x, y, player.x, player.y))
+                if (sprDrill.currentAnim == "sit" && d <= runRange && !FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)))
                 {
                     var tox : Int = x;
                     var toy : Int = y;

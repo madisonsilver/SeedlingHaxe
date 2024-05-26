@@ -22,7 +22,7 @@ private var imgHealth : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int, _tag : Int = -1)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, sprHealth, null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprHealth, null, false);
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).centerOO();
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).scaleX = FP.choose([1, -1]);
         (try cast(graphic, Spritemap) catch(e:Dynamic) null).scaleY = FP.choose([1, -1]);

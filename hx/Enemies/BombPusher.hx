@@ -25,13 +25,13 @@ private var imgBombPusher : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w * 3 / 2, _y + Tile.h * 3 / 2, sprBombPusher);
+        super(Std.int(_x + Tile.w * 3 / 2), Std.int(_y + Tile.h * 3 / 2), sprBombPusher);
         sprBombPusher.centerOO();
         setHitbox(48, 48, 24, 24);
         sprBombPusher.add("shoot", shootAnimation, 5);
         sprBombPusher.add("sit", sitAnimation, 2);
         type = "Solid";
-        layer = -(y - originY + height);
+        layer = Std.int(-(y - originY + height));
         
         activeOffScreen = true;
     }
@@ -59,7 +59,7 @@ private var imgBombPusher : Class<Dynamic>;
             var p : Player = try cast(FP.world.nearestToPoint("Player", x, y), Player) catch(e:Dynamic) null;
             if (p != null)
             {
-                FP.world.add(new Bomb(x, y, new Point(p.x, p.y)));
+                FP.world.add(new Bomb(Std.int(x), Std.int(y), new Point(p.x, p.y)));
             }
             sprBombPusher.play("sit");
         }

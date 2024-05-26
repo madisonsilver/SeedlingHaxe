@@ -15,7 +15,7 @@ class Rock extends Entity
         super(_x, _y, Game.rocks[_t]);
         setHitbox(_w, _h);
         type = "Solid";
-        layer = -(y - originY + height * 3 / 4);
+        layer = Std.int(-(y - originY + height * 3 / 4));
     }
 }
 

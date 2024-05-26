@@ -20,7 +20,7 @@ private var imgBarstool : Class<Dynamic>;
         sprBarstool.y = -4;
         sprBarstool.originY = -sprBarstool.y;
         type = "Solid";
-        layer = -(y - originY);
+        layer = Std.int(-(y - originY));
     }
 }
 

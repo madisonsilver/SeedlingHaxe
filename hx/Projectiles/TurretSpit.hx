@@ -36,7 +36,7 @@ private var imgTurretSpit : Class<Dynamic>;
         {
             sprTurretSpit.angle = Math.atan2(-v.y, v.x) * 180 / Math.PI;
         }
-        Music.playSoundDistPlayer(x, y, "Turret Shoot");
+        Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Turret Shoot");
     }
     
     override public function update() : Void

@@ -17,7 +17,7 @@ class BossKey extends Pickup
     
     public function new(_x : Int, _y : Int, _t : Int = 0)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2, Game.bossKeys[_t], null, false);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossKeys[_t], null, false);
         setHitbox(8, 8, 4, 4);
         keyType = _t;
         
@@ -55,7 +55,7 @@ class BossKey extends Pickup
                 var phases : Int = 5;
                 if (keyType == 2)
                 {
-                    Draw.circlePlus(x, y, Math.max(width, height) * (1 + minsc + sc * Game.worldFrame(phases) / phases), 0xFFFFCC, alph);
+                    Draw.circlePlus(Std.int(x), Std.int(y), Math.max(width, height) * (1 + minsc + sc * Game.worldFrame(phases) / phases), 0xFFFFCC, alph);
                 }
                 super.render();
                 Draw.resetTarget();

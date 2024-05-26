@@ -401,7 +401,7 @@ private var imgShield : Class<Dynamic>;
     
     public function new(_x : Int, _y : Int)
     {
-        super(_x + Tile.w / 2, _y + Tile.h / 2);
+        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2));
         yStart = y;
         solids.push("LavaBoss");
         
@@ -461,7 +461,7 @@ private var imgShield : Class<Dynamic>;
         sprDeathRay.add("ray", [0, 1, 2, 3], 10, true);
         
         type = "Player";
-        setHitbox(normalHitbox.width, normalHitbox.height, normalHitbox.x, normalHitbox.y);
+        setHitbox(Std.int(normalHitbox.width), Std.int(normalHitbox.height), Std.int(normalHitbox.x), normalHitbox.y);
         
         checkOffsetY = as3hx.Compat.parseInt(-originY + height - 2);
     }
@@ -526,7 +526,7 @@ private var imgShield : Class<Dynamic>;
         
         if (myLight == null && hasTorch)
         {
-            FP.world.add(myLight = new PlayerLight(x, y, this));
+            FP.world.add(myLight = new PlayerLight(Std.int(x), Std.int(y), this));
         }
         if (fallFromCeiling)
         {
@@ -537,7 +537,7 @@ private var imgShield : Class<Dynamic>;
             (try cast(graphic, Spritemap) catch(e:Dynamic) null).angle += 10;
             if (y >= yStart)
             {
-                if (bouncedFromCeiling || getStatePos(x, yStart) ==6 || getStatePos(x, yStart) ==1 || getStatePos(x, yStart) ==17  /* Lava */    /* WATER */    /* PIT */  )
+                if (bouncedFromCeiling || getStatePos(Std.int(x), yStart) ==6 || getStatePos(Std.int(x), yStart) ==1 || getStatePos(Std.int(x), yStart) ==17  /* Lava */    /* WATER */    /* PIT */  )
                 {
                     fallFromCeiling = false;
                     directionFace = -1;
@@ -789,7 +789,7 @@ private var imgShield : Class<Dynamic>;
                     y = as3hx.Compat.parseInt(Math.floor(Math.max(fallInPitPos.y - Game.fallthroughOffset.y, 0) / Tile.h) * Tile.h);
                     Game.setFallFromCeiling = true;
                     Game.sign = Game.fallthroughSign;
-                    FP.world = new Game(Game.fallthroughLevel, x, y);
+                    FP.world = new Game(Game.fallthroughLevel, Std.int(x), Std.int(y));
                 }
                 else
                 {
@@ -948,7 +948,7 @@ private var imgShield : Class<Dynamic>;
                 if ((FP.distance(x, y, v[i].x, v[i].y) <= slashingSprite.width * slashingSprite.scaleX && Std.is(v[i], Grass)) ||
                     (FP.distanceRectPoint(x, y, v[i].x - v[i].originX, v[i].y - v[i].originY, v[i].width, v[i].height) <= slashingSprite.width * slashingSprite.scaleX && !(Std.is(v[i], Grass))))
                 {
-                    if (!FP.world.collideLine("Solid", x, y, v[i].x, v[i].y) || hasGhostSword || v[i].type == "Solid" || v[i].type == "Rope" || Std.is(v[i], Flyer))
+                    if (!FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(v[i].x), Std.int(v[i].y)) || hasGhostSword || v[i].type == "Solid" || v[i].type == "Rope" || Std.is(v[i], Flyer))
                     {
                         if (hasGhostSword)
                         {
@@ -1023,7 +1023,7 @@ private var imgShield : Class<Dynamic>;
             var a : Float = direction * Math.PI / 2;
             var pos : Point = new Point(x + sprWand.width * Math.cos(a), y - sprWand.width * Math.sin(a));
             var v : Point = new Point(wandSpeed * Math.cos(a), -wandSpeed * Math.sin(a));
-            FP.world.add(new WandShot(pos.x, pos.y, v, hasFireWand));
+            FP.world.add(new WandShot(Std.int(pos.x), Std.int(pos.y), v, hasFireWand));
         }
     }
     
@@ -1032,7 +1032,7 @@ private var imgShield : Class<Dynamic>;
         if (deathRaying)
         {
             var a : Float = direction * Math.PI / 2;
-            FP.world.add(new RayShot(x + sprDeathRay.width * Math.cos(a), y - sprDeathRay.width * Math.sin(a), new Point(deathRaySpeed * Math.cos(a), -deathRaySpeed * Math.sin(a))));
+            FP.world.add(new RayShot(Std.int(x + sprDeathRay.width * Math.cos(a)), Std.int(y - sprDeathRay.width * Math.sin(a)), new Point(deathRaySpeed * Math.cos(a), -deathRaySpeed * Math.sin(a))));
         }
     }
     
@@ -1206,7 +1206,7 @@ private var imgShield : Class<Dynamic>;
         {
             if (direction == 1 && v.x == 0)
             {
-                shieldObj.setHitbox(sprShield.width, sprShield.height, sprShield.width / 2, sprShield.height / 2);
+                shieldObj.setHitbox(sprShield.width, sprShield.height, Std.int(sprShield.width / 2), Std.int(sprShield.height / 2));
                 shieldObj.x = x - shieldOffset.x;
                 shieldObj.y = y - shieldOffset.y + as3hx.Compat.parseInt(slashing);
                 sprShield.frame = 2 * as3hx.Compat.parseInt(hasDarkShield);
@@ -1254,7 +1254,7 @@ private var imgShield : Class<Dynamic>;
         {
             if (direction == 3 && v.x == 0)
             {
-                shieldObj.setHitbox(sprShield.width, sprShield.height, sprShield.width / 2, sprShield.height / 2);
+                shieldObj.setHitbox(sprShield.width, sprShield.height, Std.int(sprShield.width / 2), Std.int(sprShield.height / 2));
                 shieldObj.x = x + shieldOffset.x;
                 shieldObj.y = y + shieldOffset.y - as3hx.Compat.parseInt(slashing);
                 sprShield.frame = 2 * as3hx.Compat.parseInt(hasDarkShield);
@@ -1263,7 +1263,7 @@ private var imgShield : Class<Dynamic>;
             }
             else if (v.x < 0 || (v.x == 0 && direction == 2))
             {
-                shieldObj.setHitbox(3, sprShield.height, 2, sprShield.height / 2);
+                shieldObj.setHitbox(3, sprShield.height, 2, Std.int(sprShield.height / 2));
                 shieldObj.x = x - shieldSideOffset.x;
                 shieldObj.y = y + shieldSideOffset.y;
                 sprShield.alpha = (try cast(graphic, Image) catch(e:Dynamic) null).alpha;
@@ -1272,7 +1272,7 @@ private var imgShield : Class<Dynamic>;
             }
             else if (v.x > 0 || (v.x == 0 && direction == 0))
             {
-                shieldObj.setHitbox(3, sprShield.height, 2, sprShield.height / 2);
+                shieldObj.setHitbox(3, sprShield.height, 2, Std.int(sprShield.height / 2));
                 shieldObj.x = x + shieldSideOffset.x;
                 shieldObj.y = y + shieldSideOffset.y;
                 sprShield.alpha = (try cast(graphic, Image) catch(e:Dynamic) null).alpha;
@@ -1414,7 +1414,7 @@ private var imgShield : Class<Dynamic>;
     
     public function hitUpdate() : Void
     {
-        Game.health(hits, hitsMax);
+        Game.health(Std.int(hits), hitsMax);
         if (hitsTimer > 0)
         {
             if (hitsTimer % hitsTimerInt == 0)

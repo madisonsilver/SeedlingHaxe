@@ -59,19 +59,19 @@ class Tree extends Entity
     public function getFrame() : Int
     {
         var v : Int = 0;
-        if (collide("Tree", x + 1, y) || x + width - originX + 1 > FP.width)
+        if (collide("Tree", x + 1, y) != null || x + width - originX + 1 > FP.width)
         {
             v++;
         }
-        if (collide("Tree", x, y - 1) || y - originY - 1 < 0)
+        if (collide("Tree", x, y - 1) != null || y - originY - 1 < 0)
         {
             v += 2;
         }
-        if (collide("Tree", x - 1, y) || x - originX - 1 < 0)
+        if (collide("Tree", x - 1, y) != null || x - originX - 1 < 0)
         {
             v += 4;
         }
-        if (collide("Tree", x, y + 1) || y + height - originY + 1 > FP.height)
+        if (collide("Tree", x, y + 1) != null || y + height - originY + 1 > FP.height)
         {
             v += 8;
         }

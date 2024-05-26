@@ -577,7 +577,7 @@ private var imgShield : Class<Dynamic>;
                 moveSpeed = moveSpeeds[state];
                 if (inWater || inLava)
                 {
-                    f = WATER_FRICTION;
+                    f = Mobile.WATER_FRICTION;
                     moveSpeed = moveSpeeds[state] + 0.25 * as3hx.Compat.parseInt(Music.soundPosition("Swim") < 0.1);
                     if (v.length > 0 && !Music.soundIsPlaying("Swim"))
                     {
@@ -586,7 +586,7 @@ private var imgShield : Class<Dynamic>;
                 }
                 else
                 {
-                    f = DEFAULT_FRICTION;
+                    f = Mobile.DEFAULT_FRICTION;
                 }
             }
             
@@ -948,7 +948,7 @@ private var imgShield : Class<Dynamic>;
                 if ((FP.distance(x, y, v[i].x, v[i].y) <= slashingSprite.width * slashingSprite.scaleX && Std.is(v[i], Grass)) ||
                     (FP.distanceRectPoint(x, y, v[i].x - v[i].originX, v[i].y - v[i].originY, v[i].width, v[i].height) <= slashingSprite.width * slashingSprite.scaleX && !(Std.is(v[i], Grass))))
                 {
-                    if (!FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(v[i].x), Std.int(v[i].y)) || hasGhostSword || v[i].type == "Solid" || v[i].type == "Rope" || Std.is(v[i], Flyer))
+                    if ((FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(v[i].x), Std.int(v[i].y))==null) || hasGhostSword || v[i].type == "Solid" || v[i].type == "Rope" || Std.is(v[i], Flyer))
                     {
                         if (hasGhostSword)
                         {
@@ -1096,7 +1096,7 @@ private var imgShield : Class<Dynamic>;
         deathRaying = false;
     }
     
-    public function genericHit(e : Entity, t : String = "", f : Float = swordForce, d : Float = swordDamage) : Void
+    public function genericHit(e : Entity, t : String = "", f : Float, d : Float) : Void
     {
         if (Game.freezeObjects)
         {
@@ -1698,7 +1698,7 @@ private var imgShield : Class<Dynamic>;
     {
         if (shieldObj != null && v.length > 0)
         {
-            var c_s_pos : Array<Entity> = new Array<Entity>();
+            var c_s_pos : Array<Enemy> = new Array<Enemy>();
             shieldObj.collideTypesInto(enemies, shieldObj.x, shieldObj.y, c_s_pos);
             for (o in c_s_pos)
             {

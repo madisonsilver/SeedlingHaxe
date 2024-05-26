@@ -1,0 +1,41 @@
+package nPCs;
+
+import net.flashpunk.graphics.Image;
+import net.flashpunk.graphics.Spritemap;
+import net.flashpunk.FP;
+
+/**
+	 * ...
+	 * @author Time
+	 */
+class IntroCharacter extends NPC
+{
+    @:meta(Embed(source="../../assets/graphics/NPCs/IntroCharacter.png"))
+private var imgIntroChar : Class<Dynamic>;
+    private var sprIntroChar : Spritemap = new Spritemap(imgIntroChar, 8, 8);
+    @:meta(Embed(source="../../assets/graphics/NPCs/IntroCharacterPic.png"))
+private var imgIntroCharPic : Class<Dynamic>;
+    private var sprIntroCharPic : Image = new Image(imgIntroCharPic);
+    
+    public function new(_x : Int, _y : Int, _tag : Int = -1, _text : String = "", _talkingSpeed : Int = 10)
+    {
+        super(_x, _y, sprIntroChar, _tag, _text, _talkingSpeed);
+        sprIntroChar.add("talk", [0, 1, 0, 2], 5);
+        
+        myPic = sprIntroCharPic;
+    }
+    
+    override public function render() : Void
+    {
+        if (talking)
+        {
+            sprIntroChar.play("talk");
+        }
+        else
+        {
+            sprIntroChar.frame = Game.worldFrame(2);
+        }
+        super.render();
+    }
+}
+

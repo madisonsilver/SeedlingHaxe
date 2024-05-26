@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"output": "bin/Seedling.swf",
+		"default-frame-rate": 30,
+		"default-background-color": "#000000",
+		"default-size": {
+			"width": 480,
+			"height": 480
+		},
+		"target-player": "11.0",
+		"accessible": false,
+		"benchmark": false,
+		"optimize": true,
+		"show-unused-type-selector-warnings": true,
+		"strict": true,
+		"use-network": true,
+		"use-resource-bundle-metadata": true,
+		"warnings": true,
+		"verbose-stacktraces": false,
+		"static-link-runtime-shared-libraries": true,
+		"library-path": [
+			"src/NewgroundsAPI.swc"
+		]
+	},
+	"files": [
+		"src/Preloader.as"
+	],
+	"additionalOptions": "-frame start Main"
+}

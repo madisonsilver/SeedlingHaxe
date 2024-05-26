@@ -18,7 +18,7 @@ private var imgBarstool : Class<Dynamic>;
         super(_x + Tile.w / 4, _y + Tile.h / 4, sprBarstool);
         setHitbox(8, 8);
         sprBarstool.y = -4;
-        sprBarstool.originY = -sprBarstool.y;
+        sprBarstool.originY =Std.int( -sprBarstool.y);
         type = "Solid";
         layer = Std.int(-(y - originY));
     }

@@ -28,7 +28,7 @@ private var imgLavaRunner : Class<Dynamic>;
     public function new(_x : Int, _y : Int)
     {
         super(_x, _y, sprLavaRunner);
-        startY = y;
+        startY =Std.int( y);
         
         sprLavaRunner.centerOO();
         sprLavaRunner.add("walk", [0, 2, 3, 4], 15);

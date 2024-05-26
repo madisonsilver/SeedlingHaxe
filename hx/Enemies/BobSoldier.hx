@@ -62,7 +62,7 @@ private var imgBobSoldier : Class<Dynamic>;
         
         weapon = sprLameSword;
         sprLameSword.y = -3;
-        sprLameSword.originY = -sprLameSword.y;
+        sprLameSword.originY =Std.int( -sprLameSword.y);
         
         setHitbox(8, 8, 4, 2);
     }

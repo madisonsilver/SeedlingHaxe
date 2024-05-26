@@ -71,10 +71,10 @@ private var imgWhirlpool : Class<Dynamic>;
                 if (player != null && FP.distance(x, y, player.x, player.y) < ((try cast(graphic, Image) catch(e:Dynamic) null).width - (try cast(graphic, Image) catch(e:Dynamic) null).originX) * (try cast(graphic, Image) catch(e:Dynamic) null).scale)
                 {
                     var a : Float = Math.atan2(player.y - y, player.x - x);
-                    var r : Int = FP.distance(x, y, player.x, player.y);
+                    var r : Int =Std.int( FP.distance(x, y, player.x, player.y));
                     player.x -= r * Math.cos(a);
                     player.y -= r * Math.sin(a);
-                    r *= 0.999;
+                    r *=Std.int( 0.999);
                     a -= spinRate / 180 * Math.PI;
                     player.x += r * Math.cos(a);
                     player.y += r * Math.sin(a);

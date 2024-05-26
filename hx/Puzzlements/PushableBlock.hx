@@ -63,7 +63,7 @@ private var imgPushableBlock : Class<Dynamic>;
         {
             if (v.x == 0)
             {
-                x = gridPos(x, y).x;
+                x =Std.int(Std.int(Std.int( gridPos(x, y).x)));
             }
         }
         v.y = moveSpeed * FP.sign(tile.y - cTile.y);
@@ -71,7 +71,7 @@ private var imgPushableBlock : Class<Dynamic>;
         {
             if (v.y == 0)
             {
-                y = gridPos(x, y).y;
+                y =Std.int(Std.int(Std.int( gridPos(x, y).y)));
             }
         }
         

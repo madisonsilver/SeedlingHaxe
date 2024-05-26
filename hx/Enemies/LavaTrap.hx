@@ -40,7 +40,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
         
         sprLavaTrapTongue.add("out", [5, 2, 0], tongueAnimSpeed);
         sprLavaTrapTongue.add("in", [0, 1, 2, 3, 4, 5], tongueAnimSpeed);
-        sprLavaTrapTongue.originY = sprLavaTrapTongue.height / 2;
+        sprLavaTrapTongue.originY =Std.int( sprLavaTrapTongue.height / 2);
         sprLavaTrapTongue.y = -sprLavaTrapTongue.originY;
         
         setHitbox(10, 10, 5, 5);
@@ -81,7 +81,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
             var player : Player = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
             if (player != null)
             {
-                var d : Int = FP.distance(x, y, player.x, player.y);
+                var d : Int =Std.int( FP.distance(x, y, player.x, player.y));
                 if (d <= chompRange && !wait)
                 {
                     if (sprLavaTrap.currentAnim == "")

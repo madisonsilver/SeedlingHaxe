@@ -18,7 +18,7 @@ private var imgBar : Class<Dynamic>;
         super(_x, _y, sprBar);
         setHitbox(64, 16);
         sprBar.y = -4;
-        sprBar.originY = -sprBar.y;
+        sprBar.originY =Std.int( -sprBar.y);
         type = "Solid";
         layer = Std.int(-(y - originY + height * 4 / 5));
     }

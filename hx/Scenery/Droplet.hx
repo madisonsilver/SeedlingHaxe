@@ -26,7 +26,7 @@ class Droplet extends Entity
     public function new(_x : Int, _y : Int, _height : Int, _color : Int)
     {
         super(_x, _y - _height);
-        startY = y;
+        startY =Std.int( y);
         endY = _y;
         layer = -startY;
         

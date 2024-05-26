@@ -35,7 +35,7 @@ private var imgCactus : Class<Dynamic>;
         var player : Player = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
         if (player != null)
         {
-            var d : Int = FP.distance(x, y, player.x, player.y);
+            var d : Int =Std.int( FP.distance(x, y, player.x, player.y));
             if (d <= chompRange)
             {
                 sprCactus.play("chomp");

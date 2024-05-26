@@ -38,7 +38,7 @@ private var imgOraclePic : Class<Dynamic>;
         }
         
         sprOracle.y = -16;
-        sprOracle.originY = -sprOracle.y;
+        sprOracle.originY =Std.int( -sprOracle.y);
         setHitbox(16, 16, 8, 8);
         
         sprOracle.add("waken", [0, 1, 2], 5);
@@ -66,7 +66,7 @@ private var imgOraclePic : Class<Dynamic>;
             var player : Player = try cast(FP.world.nearestToPoint("Player", x, y), Player) catch(e:Dynamic) null;
             if (player != null)
             {
-                var d : Int = FP.distance(x, y, player.x, player.y);
+                var d : Int =Std.int( FP.distance(x, y, player.x, player.y));
                 if (d <= wakenDistance)
                 {
                     if (sprOracle.currentAnim != "awake")

@@ -28,12 +28,12 @@ class Enemy extends Mobile
     public var normalColor : Int = 0xFFFFFF;
     public var hitByDarkStuff : Bool = false;
     
-    private var coins(default, never) : Int = 4 + Math.random() * 4;  //The number of coins to throw upon death  
+    private var coins(default, never) : Int =Std.int( 4 + Math.random() * 4);  //The number of coins to throw upon death  
     private var healths(default, never) : Int = 1;
     
     public var canFallInPit : Bool = true;
     public var fallInPit : Bool = false;
-    public var fallSpinSpeed(default, never) : Int = 8 * FP.choose([-1, 1]);
+    public var fallSpinSpeed(default, never) : Int =Std.int( 8 * FP.choose([-1, 1]));
     public var fallAlphaSpeed(default, never) : Float = 0.05;
     
     public var hitByFire : Bool = false;

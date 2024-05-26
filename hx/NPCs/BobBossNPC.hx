@@ -45,7 +45,7 @@ private var imgBobBoss3Pic : Class<Dynamic>;
                 }
                 else
                 {
-                    Game.currentCharacter = myText[myCurrentText].length - 1;
+                    Game.currentCharacter =Std.int( myText[myCurrentText].length - 1);
                 }
                 if (myCurrentText >= myText.length)
                 {

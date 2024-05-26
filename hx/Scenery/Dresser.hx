@@ -17,7 +17,7 @@ private var imgDresser : Class<Dynamic>;
     {
         super(_x, _y, sprDresser);
         sprDresser.y = -8;
-        sprDresser.originY = -sprDresser.y;
+        sprDresser.originY =Std.int( -sprDresser.y);
         setHitbox(32, 16);
         type = "Solid";
         layer = Std.int(-(y - originY + height * 4 / 5));

@@ -23,9 +23,9 @@ private var imgIceBlast : Class<Dynamic>;
     {
         super(_x, _y, sprIceBlast);
         sprIceBlast.x = -8;
-        sprIceBlast.originX = -sprIceBlast.x;
+        sprIceBlast.originX =Std.int( -sprIceBlast.x);
         sprIceBlast.y = -4;
-        sprIceBlast.originY = -sprIceBlast.y;
+        sprIceBlast.originY =Std.int( -sprIceBlast.y);
         v = _v;
         f = 0;
         setHitbox(4, 4, 2, 2);

@@ -32,8 +32,8 @@ private var imgOrb : Class<Dynamic>;
     public function new(_x : Int, _y : Int, _c : Int = 0xFFFFFF)
     {
         super(_x, _y, sprOrb);
-        startX = x;
-        startY = y;
+        startX =Std.int( x);
+        startY =Std.int( y);
         
         color = _c;
         layer = Std.int(-(y - sprOrb.originY + sprOrb.height + Tile.h / 2));

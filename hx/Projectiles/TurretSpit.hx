@@ -24,9 +24,9 @@ private var imgTurretSpit : Class<Dynamic>;
     {
         super(_x, _y, sprTurretSpit);
         sprTurretSpit.x = -8;
-        sprTurretSpit.originX = -sprTurretSpit.x;
+        sprTurretSpit.originX =Std.int( -sprTurretSpit.x);
         sprTurretSpit.y = -4;
-        sprTurretSpit.originY = -sprTurretSpit.y;
+        sprTurretSpit.originY =Std.int( -sprTurretSpit.y);
         v = _v;
         f = 0;
         setHitbox(4, 4, 2, 2);

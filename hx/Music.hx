@@ -553,7 +553,7 @@ class Music {
 				cplayIndex = Math.floor(Math.random() * sounds[strInd].length);
 			} while ((cplayIndex == currentIndex && sounds[strInd].length > 1 && currentSet == strInd));
 		} else {
-			cplayIndex = Math.min(Math.max(intInd, 0), sounds[strInd].length - 1);
+			cplayIndex =Std.int( Math.min(Math.max(intInd, 0), sounds[strInd].length - 1));
 		}
 		currentSet = strInd;
 		currentIndex = cplayIndex;
@@ -608,7 +608,7 @@ class Music {
 				soundsO[strInd][i].volume = vol;
 			}
 		} else {
-			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].volume = vol;
+			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].volume =Std.int(Std.int(Std.int( vol)));
 		}
 	}
 

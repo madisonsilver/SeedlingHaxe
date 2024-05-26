@@ -29,7 +29,7 @@ private var imgStairs : Class<Dynamic>;
         {
             soundIndex = 2;
         }
-        sprStairs.originX = sprStairs.width / 2;
+        sprStairs.originX =Std.int( sprStairs.width / 2);
         
         if (_flip)
         {

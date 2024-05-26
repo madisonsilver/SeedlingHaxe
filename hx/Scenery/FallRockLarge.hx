@@ -41,7 +41,7 @@ private var imgRockLarge : Class<Dynamic>;
     {
         super(_x + Tile.w, _y + Tile.h, sprRock, _t);
         bossRock = _bRock;
-        fallTo = y;
+        fallTo =Std.int( y);
         sprRock.centerOO();
         setHitbox(32, 32, 16, 16);
         type = "";

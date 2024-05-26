@@ -37,7 +37,7 @@ private var imgSpinningAxeRed : Class<Dynamic>;
         }
         super(_x + Tile.w / 2, _y + Tile.h / 2, sprSpinningAxe);
         sprSpinningAxe.originX = 4;
-        sprSpinningAxe.originY = sprSpinningAxe.height / 2;
+        sprSpinningAxe.originY =Std.int( sprSpinningAxe.height / 2);
         sprSpinningAxe.x = -sprSpinningAxe.originX;
         sprSpinningAxe.y = -sprSpinningAxe.originY;
         

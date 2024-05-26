@@ -58,8 +58,8 @@ class Spritemap extends Image
         }
         _width = this.source.width;
         _height = this.source.height;
-        _columns = _width / _rect.width;
-        _rows = _height / _rect.height;
+        _columns =Std.int( _width / _rect.width);
+        _rows =Std.int( _height / _rect.height);
         _frameCount = as3hx.Compat.parseInt(_columns * _rows);
         this.callback = callback;
         updateBuffer();

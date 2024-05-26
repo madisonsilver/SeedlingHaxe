@@ -23,7 +23,7 @@ private var imgSpinner : Class<Dynamic>;
     
     public var moveSpeed : Float = 1;
     private var runRange(default, never) : Int = 0;  //Range at which the Spinner will run after the character  
-    private var coins : Int = 4 + Math.random() * 4;  //The number of coins to throw upon death  
+    private var coins : Int =Std.int( 4 + Math.random() * 4);  //The number of coins to throw upon death  
     private var hammerAngle : Float = 0;
     
     private var hitForce(default, never) : Float = 4;
@@ -35,9 +35,9 @@ private var imgSpinner : Class<Dynamic>;
         v = new Point(moveSpeed * Math.cos(-Math.PI / 4), moveSpeed * Math.sin(-Math.PI / 4));
         
         sprSpinner.x = -5;
-        sprSpinner.originX = -sprSpinner.x;
+        sprSpinner.originX =Std.int( -sprSpinner.x);
         sprSpinner.y = -5;
-        sprSpinner.originY = -sprSpinner.y;
+        sprSpinner.originY =Std.int( -sprSpinner.y);
         
         tag = _tag;
         

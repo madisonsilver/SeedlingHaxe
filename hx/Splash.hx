@@ -104,7 +104,7 @@ public static var imgMusicBy : Class<Dynamic>;
             {
                 sp[t].alpha = 1 - (frame - frameCount) / extraFadeFrames;
             }
-            var cframe : Int = Math.min(Math.floor(frame), frameCount - 2);
+            var cframe : Int =Std.int( Math.min(Math.floor(frame), frameCount - 2));
             sp[t].scrollRect = new Rectangle(cframe % cols * frameWidth, Math.floor(cframe / cols) * frameHeight, frameWidth, frameHeight);
             sp[t].x = WIDTH / 2 - frameWidth / 2;
             sp[t].y = HEIGHT / 2 - frameHeight / 2;

@@ -388,7 +388,7 @@ private var imgShield : Class<Dynamic>;
     
     public var fallInPit : Bool = false;
     public var fallInPitPos : Point = new Point();
-    public var fallSpinSpeed(default, never) : Int = 8 * FP.choose([-1, 1]);
+    public var fallSpinSpeed(default, never) : Int =Std.int( 8 * FP.choose([-1, 1]));
     public var fallAlphaSpeed(default, never) : Float = 0.05;
     
     private var frozenTimer : Int = 0;
@@ -402,7 +402,7 @@ private var imgShield : Class<Dynamic>;
     public function new(_x : Int, _y : Int)
     {
         super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2));
-        yStart = y;
+        yStart =Std.int( y);
         solids.push("LavaBoss");
         
         sprShrum.centerOO();

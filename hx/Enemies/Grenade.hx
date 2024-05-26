@@ -35,7 +35,7 @@ private var imgGrenade : Class<Dynamic>;
     {
         super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);
         endY = as3hx.Compat.parseInt(_y + Tile.h / 2);
-        startY = y;
+        startY =Std.int( y);
         
         hitsMax = 1;
         

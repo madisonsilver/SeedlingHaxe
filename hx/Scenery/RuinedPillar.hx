@@ -18,7 +18,7 @@ private var imgRuinedPillar : Class<Dynamic>;
     {
         super(_x, _y, sprRuinedPillar);
         sprRuinedPillar.y = -16;
-        sprRuinedPillar.originY = -sprRuinedPillar.y;
+        sprRuinedPillar.originY =Std.int( -sprRuinedPillar.y);
         setHitbox(32, 32);
         type = "Solid";
         layer = Std.int(-(y - originY + height * 4 / 5));

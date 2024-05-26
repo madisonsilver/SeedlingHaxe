@@ -29,7 +29,7 @@ private var imgRockFall : Class<Dynamic>;
         super(_x, _y - fallHeight, sprRockFall);
         goto = _y;
         
-        angleRate *= FP.choose([1, -1]);
+        angleRate *=Std.int( FP.choose([1, -1]));
         
         sprRockFall.centerOO();
         sprRockFall.scale = Math.random() / 2 + 0.25;

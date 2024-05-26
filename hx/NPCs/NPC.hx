@@ -64,7 +64,7 @@ private var imgTalk : Class<Dynamic>;
         
         sprTalk.centerOO();
         sprTalk.y = -sprTalk.height;
-        sprTalk.originY = sprTalk.y;
+        sprTalk.originY =Std.int( sprTalk.y);
         
         talkingSpeed = _talkingSpeed;
         tag = _tag;
@@ -206,7 +206,7 @@ private var imgTalk : Class<Dynamic>;
                     }
                     else
                     {
-                        Game.currentCharacter = Reflect.field(myText, Std.string(myCurrentText)).length - 1;
+                        Game.currentCharacter =Std.int( Reflect.field(myText, Std.string(myCurrentText)).length - 1);
                     }
                     if (myCurrentText >= myText.length)
                     {

@@ -33,7 +33,7 @@ private var imgLightPole : Class<Dynamic>;
     public function new(_x : Int, _y : Int, _t : Int = 0, _tag : Int = -1, _color : Int = 0xFFFFFF, _invert : Bool = false)
     {
         super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLightPole, _t);
-        startY = y;
+        startY =Std.int( y);
         sprLightPole.centerOO();
         
         tag = _tag;

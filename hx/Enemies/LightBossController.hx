@@ -182,7 +182,7 @@ class LightBossController extends Entity
             {
                 myFliers[i].id--;
             }
-            state = Math.min(state + 1, states - 1);
+            state =Std.int( Math.min(state + 1, states - 1));
         }
     }
 }

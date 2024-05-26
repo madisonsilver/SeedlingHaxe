@@ -117,7 +117,7 @@ class Pickup extends Mobile
                 return;
             }
             x = player.x + specialOffset.x;
-            var offY : Int = Math.min(height - originY, (try cast(graphic, Image) catch(e:Dynamic) null).height - (try cast(graphic, Image) catch(e:Dynamic) null).originY);
+            var offY : Int =Std.int( Math.min(height - originY, (try cast(graphic, Image) catch(e:Dynamic) null).height - (try cast(graphic, Image) catch(e:Dynamic) null).originY));
             y = player.y - player.originY - offY + specialOffset.y * Math.min(2 * (1 - specialTimer / specialTimerMax), 1);
             player.directionFace = 3;
             layer = -FP.height;

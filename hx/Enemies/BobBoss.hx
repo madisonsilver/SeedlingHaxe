@@ -54,7 +54,7 @@ private var imgBobBossWeapons : Class<Dynamic>;
         
         weapon = sprBobBossWeapons;
         sprBobBossWeapons.y = -3;
-        sprBobBossWeapons.originY = -sprBobBossWeapons.y;
+        sprBobBossWeapons.originY =Std.int( -sprBobBossWeapons.y);
         sprBobBossWeapons.frame = _st;
         weaponLength = sprBobBossWeapons.width;
         

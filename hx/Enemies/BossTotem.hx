@@ -698,8 +698,8 @@ private var imgBossTotem : Class<Dynamic>;
     
     public function setOrigin(_s : Image, _p : Point) : Void
     {
-        _s.originX = _p.x;
-        _s.originY = _p.y;
+        _s.originX =Std.int( _p.x);
+        _s.originY =Std.int( _p.y);
         _s.x = -_s.originX;
         _s.y = -_s.originY;
     }

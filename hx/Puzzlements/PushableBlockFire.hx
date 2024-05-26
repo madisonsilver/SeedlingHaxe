@@ -61,11 +61,11 @@ private var imgPushableBlockFire : Class<Dynamic>;
         {
             if (Math.abs(v.x) <= 0.01)
             {
-                x = as3hx.Compat.parseInt(gridPos(x, y).x);
+                x =Std.int(Std.int(Std.int( as3hx.Compat.parseInt(gridPos(x, y).x))));
             }
             if (Math.abs(v.y) <= 0.01)
             {
-                y = as3hx.Compat.parseInt(gridPos(x, y).y);
+                y =Std.int(Std.int(Std.int( as3hx.Compat.parseInt(gridPos(x, y).y))));
             }
         }
     }

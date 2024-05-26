@@ -66,25 +66,25 @@ private var imgBeamTower : Class<Dynamic>;
                 if (!playedSound)
                 {
                     var p : Player = try cast(FP.world.nearestToPoint("Player", x, y), Player) catch(e:Dynamic) null;
-                    var xT : Int = x;
-                    var yT : Int = y;
+                    var xT : Int =Std.int( x);
+                    var yT : Int =Std.int( y);
                     if (p != null)
                     {
                         if (direction == 0)
                         {
-                            xT = Math.max(p.x, x);
+                            xT =Std.int( Math.max(p.x, x));
                         }
                         else if (direction == 1)
                         {
-                            yT = Math.min(p.y, y);
+                            yT =Std.int( Math.min(p.y, y));
                         }
                         else if (direction == 2)
                         {
-                            xT = Math.min(p.x, x);
+                            xT =Std.int( Math.min(p.x, x));
                         }
                         else if (direction == 3)
                         {
-                            yT = Math.max(p.y, y);
+                            yT =Std.int( Math.max(p.y, y));
                         }
                     }
                     Music.playSoundDistPlayer(xT, yT, "Energy Beam");

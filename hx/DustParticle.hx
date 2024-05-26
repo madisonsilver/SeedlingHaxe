@@ -21,7 +21,7 @@ class DustParticle extends Entity
     {
         super(_x, _y);
         startY = as3hx.Compat.parseInt(y - FP.camera.y);
-        startT = Game.time;
+        startT =Std.int( Game.time);
         
         layer = -FP.height;
     }

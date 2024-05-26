@@ -1173,7 +1173,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                             //If we're all done showing the text, go ahead and reactivate the player.
 {                                
                                 {
-                                    cTextIndex = cutsceneText[0][cutsceneText[0].length - 1];
+                                    cTextIndex =Std.int(Std.int(Std.int( cutsceneText[0][cutsceneText[0].length - 1])));
                                     cutsceneTimer[0][0] = -1;
                                     talking = false;
                                     freezeObjects = false;
@@ -1352,9 +1352,9 @@ private static var imgBossKey4 : Class<Dynamic>;
             var c : BitmapData = FP.buffer.clone();
             
             var range : Int = 128;
-            var r : Int = Math.min(Math.max(maxIndex(hist[1]) + range, range), 255);
-            var g : Int = Math.min(Math.max(maxIndex(hist[2]) + range, range), 255);
-            var b : Int = Math.min(Math.max(maxIndex(hist[3]) + range, range), 255);
+            var r : Int =Std.int( Math.min(Math.max(maxIndex(hist[1]) + range, range), 255));
+            var g : Int =Std.int( Math.min(Math.max(maxIndex(hist[2]) + range, range), 255));
+            var b : Int =Std.int( Math.min(Math.max(maxIndex(hist[3]) + range, range), 255));
             var minCol : Int = FP.getColorRGB(Std.int(Math.max(r - range * 2, 0)), Std.int(Math.max(g - range * 2, 0)), Std.int(Math.max(b - range * 2, 0)));
             var col : Int = as3hx.Compat.parseInt(0xFF000000 + (FP.getColorRGB(r, g, b) - minCol) / cols.length * i + minCol);
             c.threshold(c, c.rect, new Point(), "<", col);
@@ -1871,9 +1871,9 @@ private static var imgBossKey4 : Class<Dynamic>;
         var sum : Int = 0;
         for (i in 0...v.length)
         {
-            sum += v[i];
+            sum +=Std.int( v[i]);
         }
-        return sum /= v.length;
+        return sum /=Std.int(Std.int(Std.int( v.length)));
     }
     
     public function bufferRestore() : Void

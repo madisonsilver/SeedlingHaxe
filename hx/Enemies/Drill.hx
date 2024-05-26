@@ -88,8 +88,8 @@ private var imgDrill : Class<Dynamic>;
                 var d : Float = FP.distance(x, y, player.x, player.y);
                 if (sprDrill.currentAnim == "sit" && d <= runRange && !FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)))
                 {
-                    var tox : Int = x;
-                    var toy : Int = y;
+                    var tox : Int =Std.int( x);
+                    var toy : Int =Std.int( y);
                     if (Math.abs(player.x - x) > Tile.w / 2)
                     {
                         tox += as3hx.Compat.parseInt((2 * as3hx.Compat.parseInt(player.x > x) - 1) * Tile.w);

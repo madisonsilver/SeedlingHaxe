@@ -10,79 +10,68 @@ import scenery.Tile;
 import net.flashpunk.utils.Draw;
 
 /**
-	 * ...
-	 * @author Time
-	 */
-class RayShot extends Mobile
-{
-    @:meta(Embed(source="../../assets/graphics/DeathRayShot.png"))
-private var imgRayShot : Class<Dynamic>;
-    private var sprRayShot : Spritemap = new Spritemap(imgRayShot, 8, 3, animEnd);
-    
-    private var force(default, never) : Int = 3;  //The knockback when hitting enemies  
-    private var damage : Float = 100;
-    
-    public function new(_x : Int, _y : Int, _v : Point)
-    {
-        super(_x, _y, sprRayShot);
-        sprRayShot.centerOO();
-        sprRayShot.add("flare", [0, 1], 15);
-        sprRayShot.play("flare");
-        
-        setHitbox(3, 3, 2, 2);
-        type = "Projectile";
-        
-        v = _v;
-        sprRayShot.angle = -Math.atan2(v.y, v.x) * 180 / Math.PI;
-        f = 0;
-        solids.push("Enemy");
-    }
-    
-    public function animEnd() : Void
-    {
-        destroy = true;
-    }
-    
-    override public function update() : Void
-    {
-        var margin : Int = 160;  //The distance outside of the camera view for which the wandshot will survive  
-        if (x < FP.camera.x - margin || x > FP.camera.x + FP.screen.width + margin || y < FP.camera.y - margin || y > FP.camera.y + FP.screen.height + margin)
-        {
-            destroy = true;
-        }
-        var hitX : Entity = moveX(v.x);
-        var hitY : Entity = moveY(v.y);
-        if (hitX != null)
-        {
-            checkEntity(hitX);
-        }
-        else if (hitY != null)
-        {
-            checkEntity(hitY);
-        }
-        layering();
-        death();
-    }
-    
-    override public function render() : Void
-    {
-        super.render();
-        Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-        super.render();
-        Draw.resetTarget();
-    }
-    
-    public function checkEntity(_e : Entity) : Void
-    {
-        if (Std.is(_e, Enemy))
-        {
-            (try cast(_e, Enemy) catch(e:Dynamic) null).hit(force, new Point(x, y), damage);
-        }
-        else if (Std.is(_e, MagicalLock))
-        {
-            (try cast(_e, MagicalLock) catch(e:Dynamic) null).hit(100);
-        }
-        destroy = true;
-    }
-}
+ * ...
+ * @author Time
+ */
+class RayShot extends Mobile {
+	@:meta(Embed(source = "../../assets/graphics/DeathRayShot.png"))
+	private var imgRayShot:Class<Dynamic>;
+	private var sprRayShot:Spritemap = new Spritemap(imgRayShot, 8, 3, animEnd);
 
+	private var force(default, never):Int = 3; // The knockback when hitting enemies
+	private var damage:Float = 100;
+
+	public function new(_x:Int, _y:Int, _v:Point) {
+		super(_x, _y, sprRayShot);
+		sprRayShot.centerOO();
+		sprRayShot.add("flare", [0, 1], 15);
+		sprRayShot.play("flare");
+
+		setHitbox(3, 3, 2, 2);
+		type = "Projectile";
+
+		v = _v;
+		sprRayShot.angle = -Math.atan2(v.y, v.x) * 180 / Math.PI;
+		f = 0;
+		solids.push("Enemy");
+	}
+
+	public function animEnd():Void {
+		destroy = true;
+	}
+
+	override public function update():Void {
+		var margin:Int = 160; // The distance outside of the camera view for which the wandshot will survive
+		if (x < FP.camera.x - margin
+			|| x > FP.camera.x + FP.screen.width + margin
+			|| y < FP.camera.y - margin
+			|| y > FP.camera.y + FP.screen.height + margin) {
+			destroy = true;
+		}
+		var hitX:Entity = moveX(v.x);
+		var hitY:Entity = moveY(v.y);
+		if (hitX != null) {
+			checkEntity(hitX);
+		} else if (hitY != null) {
+			checkEntity(hitY);
+		}
+		layering();
+		death();
+	}
+
+	override public function render():Void {
+		super.render();
+		Draw.setTarget((try cast(FP.world, Game) catch (e:Dynamic) null).nightBmp, FP.camera);
+		super.render();
+		Draw.resetTarget();
+	}
+
+	public function checkEntity(_e:Entity):Void {
+		if (Std.is(_e, Enemy)) {
+			(try cast(_e, Enemy) catch (e:Dynamic) null).hit(force, new Point(x, y), damage);
+		} else if (Std.is(_e, MagicalLock)) {
+			(try cast(_e, MagicalLock) catch (e:Dynamic) null).hit(100);
+		}
+		destroy = true;
+	}
+}

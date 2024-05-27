@@ -177,7 +177,14 @@ class Music {
 	private static var soundPlayerFall:Array<Dynamic> = [sndPlayerFall1];
 	private static var soundBossDie:Array<Dynamic> = [sndBossDie1, sndBossDie2, sndBossDie3, sndBossDie4, sndBossDie5];
 	private static var soundEnemyAttack:Array<Dynamic> = [sndEnemyAttack1, sndEnemyAttack2, sndEnemyAttack3, sndEnemyAttack4];
-	private static var soundBoss6Move:Array<Dynamic> = [sndBoss6Move1, sndBoss6Move2, sndBoss6Move3, sndBoss6Move1, sndBoss6Move2, sndBoss6Move3];
+	private static var soundBoss6Move:Array<Dynamic> = [
+		sndBoss6Move1,
+		sndBoss6Move2,
+		sndBoss6Move3,
+		sndBoss6Move1,
+		sndBoss6Move2,
+		sndBoss6Move3
+	];
 	private static var soundWandFire:Array<Dynamic> = [sndWandFire1, sndWandFire1];
 	private static var soundWandFizzle:Array<Dynamic> = [sndWandFizzle1, sndWandFizzle1];
 	private static var soundTurretShoot:Array<Dynamic> = [sndTurretShoot1, sndTurretShoot1, sndTurretShoot1];
@@ -263,7 +270,10 @@ class Music {
 	private static var sndBoss:Class<Dynamic>;
 	public static var sndOBoss:Sfx = new Sfx(sndBoss);
 
-	public static var songs:Array<Dynamic> = [sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher,		sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic, sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss];
+	public static var songs:Array<Dynamic> = [
+		sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic,
+		sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss
+	];
 
 	private static var overSong:Sfx; // The song that gets played over the background song on interruption
 	private static var bkgdSong:Sfx; // The song that represents the currently playing background music
@@ -553,7 +563,7 @@ class Music {
 				cplayIndex = Math.floor(Math.random() * sounds[strInd].length);
 			} while ((cplayIndex == currentIndex && sounds[strInd].length > 1 && currentSet == strInd));
 		} else {
-			cplayIndex =Std.int( Math.min(Math.max(intInd, 0), sounds[strInd].length - 1));
+			cplayIndex = Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1));
 		}
 		currentSet = strInd;
 		currentIndex = cplayIndex;
@@ -608,7 +618,7 @@ class Music {
 				soundsO[strInd][i].volume = vol;
 			}
 		} else {
-			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].volume =Std.int(Std.int(Std.int( vol)));
+			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].volume = Std.int(Std.int(Std.int(vol)));
 		}
 	}
 
@@ -659,14 +669,12 @@ class Music {
 		if (intInd == -1) {
 			var soundPos:Float = 0;
 			for (i in 0...sounds[strInd].length) {
-				soundPos = Math.max(soundPos,
-					soundsO[strInd][i]
-						.position / soundsO[strInd][i]
-						.length);
+				soundPos = Math.max(soundPos, soundsO[strInd][i].position / soundsO[strInd][i].length);
 			}
 			return soundPos;
 		} else {
-			return soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].position / soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].length;
+			return soundsO[strInd][Math.min(Math.max(intInd, 0),
+				sounds[strInd].length - 1)].position / soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].length;
 		}
 	}
 }

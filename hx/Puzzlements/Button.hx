@@ -6,64 +6,53 @@ import net.flashpunk.FP;
 import scenery.Tile;
 
 /**
-	 * ...
-	 * @author Time
-	 */
-class Button extends Activators
-{
-    @:meta(Embed(source="../../assets/graphics/Button.png"))
-private var imgButton : Class<Dynamic>;
-    private var sprButton : Spritemap = new Spritemap(imgButton, 8, 8);
-    
-    private var hitables : Dynamic = ["Player", "Enemy", "Solid"];  //Things that push down the button  
-    
-    public function new(_x : Int, _y : Int, _t : Int)
-    {
-        super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);
-        sprButton.centerOO();
-        setHitbox(8, 6, 4, 3);
-        type = "Button";
-        layer = Std.int(-y);
-    }
-    
-    override public function update() : Void
-    {
-        var v : Array<Entity> = new Array<Entity>();
-        collideTypesInto(hitables, x, y, v);
-        var tempCheck : Bool = false;
-        for (c in v)
-        {
-            if (c != null && !(Std.is(c, Cover)))
-            {
-                tempCheck = true;
-            }
-        }
-        activate = tempCheck;
-    }
-    
-    override private function set_activate(a : Bool) : Bool
-    {
-        if (_active != a)
-        {
-            Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Switch");
-        }
-        _active = a;
-        activateAll(this, t, activate);
-        sprButton.frame = as3hx.Compat.parseInt(_active);
-        return a;
-    }
-    
-    public static function activateAll(_exclude : Activators, _t : Int, _activate : Bool) : Void
-    {
-        var v : Array<Activators> = new Array<Activators>();
-        FP.world.getClass(Activators, v);
-        for (i in 0...v.length)
-        {
-            if (v[i] != _exclude && v[i].t == _t)
-            {
-                v[i].activate = _activate;
-            }
-        }
-    }
-}
+ * ...
+ * @author Time
+ */
+class Button extends Activators {
+	@:meta(Embed(source = "../../assets/graphics/Button.png"))
+	private var imgButton:Class<Dynamic>;
+	private var sprButton:Spritemap = new Spritemap(imgButton, 8, 8);
 
+	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
+
+	public function new(_x:Int, _y:Int, _t:Int) {
+		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);
+		sprButton.centerOO();
+		setHitbox(8, 6, 4, 3);
+		type = "Button";
+		layer = Std.int(-y);
+	}
+
+	override public function update():Void {
+		var v:Array<Entity> = new Array<Entity>();
+		collideTypesInto(hitables, x, y, v);
+		var tempCheck:Bool = false;
+		for (c in v) {
+			if (c != null && !(Std.is(c, Cover))) {
+				tempCheck = true;
+			}
+		}
+		activate = tempCheck;
+	}
+
+	override private function set_activate(a:Bool):Bool {
+		if (_active != a) {
+			Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Switch");
+		}
+		_active = a;
+		activateAll(this, t, activate);
+		sprButton.frame = as3hx.Compat.parseInt(_active);
+		return a;
+	}
+
+	public static function activateAll(_exclude:Activators, _t:Int, _activate:Bool):Void {
+		var v:Array<Activators> = new Array<Activators>();
+		FP.world.getClass(Activators, v);
+		for (i in 0...v.length) {
+			if (v[i] != _exclude && v[i].t == _t) {
+				v[i].activate = _activate;
+			}
+		}
+	}
+}

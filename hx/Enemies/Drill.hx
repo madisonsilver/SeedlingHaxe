@@ -86,7 +86,7 @@ private var imgDrill : Class<Dynamic>;
             if (player != null)
             {
                 var d : Float = FP.distance(x, y, player.x, player.y);
-                if (sprDrill.currentAnim == "sit" && d <= runRange && !FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)))
+                if (sprDrill.currentAnim == "sit" && d <= runRange && FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y))==null)
                 {
                     var tox : Int =Std.int( x);
                     var toy : Int =Std.int( y);
@@ -98,13 +98,13 @@ private var imgDrill : Class<Dynamic>;
                     {
                         toy += as3hx.Compat.parseInt((2 * as3hx.Compat.parseInt(player.y > y) - 1) * Tile.h);
                     }
-                    if (tox != x && !collideTypes(solids, tox, y))
+                    if (tox != x && collideTypes(solids, tox, y) == null)
                     {
                         x = tox;
                         sprDrill.play("drill");
                         Music.playSound("Drill", 0.6);
                     }
-                    if (toy != y && !collideTypes(solids, x, toy))
+                    if (toy != y && collideTypes(solids, x, toy) == null)
                     {
                         y = toy;
                         sprDrill.play("drill");

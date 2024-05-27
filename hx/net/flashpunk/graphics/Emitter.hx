@@ -1,5 +1,6 @@
 package net.flashpunk.graphics;
 
+import openfl.utils.Dictionary;
 import openfl.errors.Error;
 import haxe.Constraints.Function;
 import openfl.display.BitmapData;
@@ -49,7 +50,7 @@ class Emitter extends Graphic
         {
             _source = source;
         }
-        if (!_source)
+        if (_source == null)
         {
             throw new Error("Invalid source image.");
         }
@@ -64,7 +65,7 @@ class Emitter extends Graphic
     // quit if there are no particles
     {
         
-        if (!_particle)
+        if (_particle == null)
         {
             return;
         }
@@ -76,7 +77,7 @@ class Emitter extends Graphic
         var t : Float;
         
         // loop through the particles
-        while (p)
+        while (p != null)
         
         // update time scale
 {            
@@ -86,11 +87,11 @@ class Emitter extends Graphic
             // remove on time-out
             if (p._time >= p._duration)
             {
-                if (p._next)
+                if (p._next != null)
                 {
                     p._next._prev = p._prev;
                 }
-                if (p._prev)
+                if (p._prev != null)
                 {
                     p._prev._next = p._next;
                 }
@@ -117,7 +118,7 @@ class Emitter extends Graphic
     // quit if there are no particles
     {
         
-        if (!_particle)
+        if (_particle==null)
         {
             return;
         }
@@ -134,7 +135,7 @@ class Emitter extends Graphic
         var rect : Rectangle;
         
         // loop through the particles
-        while (p)
+        while (p != null)
         
         // get time scale
 {            
@@ -155,7 +156,7 @@ class Emitter extends Graphic
             rect.x %= type._width;
             
             // draw particle
-            if (type._buffer)
+            if (type._buffer != null)
             
             // get alpha
 {                
@@ -191,11 +192,12 @@ class Emitter extends Graphic
 		 */
     public function newType(name : String, frames : Array<Dynamic> = null) : ParticleType
     {
-        if (Reflect.field(_types, name) != null)
+        if (_types[name] != null)
         {
             throw new Error("Cannot add multiple particle types of the same name");
         }
-        return (Reflect.setField(_types, name, new ParticleType(name, frames, _source, _frameWidth, _frameHeight)));
+        _types[name] = new ParticleType(name, frames, _source, _frameWidth, _frameHeight);
+        return _types[name];
     }
     
     /**
@@ -212,7 +214,7 @@ class Emitter extends Graphic
 		 */
     public function setMotion(name : String, angle : Float, distance : Float, duration : Float, angleRange : Float = 0, distanceRange : Float = 0, durationRange : Float = 0, ease : Function = null) : ParticleType
     {
-        return (try cast(Reflect.field(_types, name), ParticleType) catch(e:Dynamic) null).setMotion(angle, distance, duration, angleRange, distanceRange, durationRange, ease);
+        return _types[name].setMotion(angle, distance, duration, angleRange, distanceRange, durationRange, ease);
     }
     
     /**
@@ -225,7 +227,7 @@ class Emitter extends Graphic
 		 */
     public function setAlpha(name : String, start : Float = 1, finish : Float = 0, ease : Function = null) : ParticleType
     {
-        return (try cast(Reflect.field(_types, name), ParticleType) catch(e:Dynamic) null).setAlpha(start, finish, ease);
+        return _types[name].setAlpha(start, finish, ease);
     }
     
     /**
@@ -238,7 +240,7 @@ class Emitter extends Graphic
 		 */
     public function setColor(name : String, start : Int = 0xFFFFFF, finish : Int = 0, ease : Function = null) : ParticleType
     {
-        return (try cast(Reflect.field(_types, name), ParticleType) catch(e:Dynamic) null).setColor(start, finish, ease);
+        return _types[name].setColor(start, finish, ease);
     }
     
     /**
@@ -250,14 +252,14 @@ class Emitter extends Graphic
 		 */
     public function emit(name : String, x : Float, y : Float) : Particle
     {
-        if (Reflect.field(_types, name) == null)
+        if (_types[name] == null)
         {
             throw new Error("Particle type \"" + name + "\" does not exist.");
         }
         var p : Particle;
-        var type : ParticleType = Reflect.field(_types, name);
+        var type : ParticleType = _types[name];
         
-        if (_cache)
+        if (_cache != null)
         {
             p = _cache;
             _cache = p._next;
@@ -268,7 +270,7 @@ class Emitter extends Graphic
         }
         p._next = _particle;
         p._prev = null;
-        if (p._next)
+        if (p._next != null)
         {
             p._next._prev = p;
         }
@@ -295,7 +297,7 @@ class Emitter extends Graphic
     }
     
     // Particle infromation.
-    /** @private */private var _types : Dynamic = { };
+    /** @private */private var _types : Dictionary<String, ParticleType> = new Dictionary();
     /** @private */private var _particle : Particle;
     /** @private */private var _cache : Particle;
     /** @private */private var _particleCount : Int;

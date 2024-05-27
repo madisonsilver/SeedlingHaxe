@@ -28,11 +28,11 @@ class Message extends Entity
     public function new(_x : Int, _y : Int, _sign : Int)
     {
         super(_x, _y);
-        Text.size = titleSize;
+        Text.static_size = titleSize;
         titleText = new Text(titles[_sign]);
-        Text.size = subtitleSize;
+        Text.static_size = subtitleSize;
         subtitleText = new Text(subtitles[_sign]);
-        Text.size = 16;
+        Text.static_size = 16;
         titleText.color = titleColor[_sign];
         subtitleText.color = subtitleColor[_sign];
         

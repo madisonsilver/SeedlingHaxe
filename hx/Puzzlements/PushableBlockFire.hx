@@ -57,15 +57,15 @@ private var imgPushableBlockFire : Class<Dynamic>;
         v.y = moveSpeed * FP.sign(tile.y - y - Tile.h / 2);
         
         
-        if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y))
+        if (collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y) == null)
         {
             if (Math.abs(v.x) <= 0.01)
             {
-                x =Std.int(Std.int(Std.int( as3hx.Compat.parseInt(gridPos(x, y).x))));
+                x =Std.int( as3hx.Compat.parseInt(gridPos(Std.int(x), Std.int(y)).x));
             }
             if (Math.abs(v.y) <= 0.01)
             {
-                y =Std.int(Std.int(Std.int( as3hx.Compat.parseInt(gridPos(x, y).y))));
+                y =Std.int( as3hx.Compat.parseInt(gridPos(Std.int(x), Std.int(y)).y));
             }
         }
     }
@@ -137,11 +137,11 @@ private var imgPushableBlockFire : Class<Dynamic>;
         friction();
         input();
         //If we're going to hit something, get rid of our velocity.
-        if (moveX(v.x))
+        if (moveX(v.x) != null)
         {
             tile.x = getPos(Std.int(x), Std.int(y)).x;
         }
-        if (moveY(v.y))
+        if (moveY(v.y) != null)
         {
             tile.y = getPos(Std.int(x), Std.int(y)).y;
         }

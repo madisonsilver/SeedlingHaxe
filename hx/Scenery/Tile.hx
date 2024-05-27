@@ -76,12 +76,12 @@ class Tile extends Entity
     private var closedBridge(default, never) : Array<Dynamic> = [0, 1];
     private var openingBridge(default, never) : Array<Dynamic> = [1, 2, 3, 4, 5, 6];
     private var openBridge(default, never) : Array<Dynamic> = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-    private var bridgeOpeningTimerMax(default, never) : Int = 60;
+    private static inline var  bridgeOpeningTimerMax : Int = 60;
     public var bridgeOpeningTimer : Int = bridgeOpeningTimerMax;
     
     private static inline var igneousAlpha : Float = 0.25;
     private var igneousFrame : Int = 0;
-    private var igneousCounterMax(default, never) : Int = 8;
+    private static inline final igneousCounterMax : Int = 8;
     private var igneousCounter : Int = igneousCounterMax;
     public var igneousBreakApart : Bool = false;
     
@@ -266,8 +266,8 @@ class Tile extends Entity
                 if (!Game.snowing)
                 {
                     Draw.setTarget((try cast(FP.world, Game) catch(e:Dynamic) null).nightBmp, FP.camera);
-                    lightFrames = 60;
-                    lightLoops = 5;
+                    var lightFrames : Int = 60;
+                    var lightLoops : Int = 5;
                     Game.sprIceWallLit.alpha = (Math.sin(Game.worldFrame(lightFrames, lightLoops) / lightFrames * 2 * Math.PI) + 1) / 2 * 0.3 + 0.1;
                     Game.sprIceWallLit.render(new Point(x, y), FP.camera);
                     Game.sprIceWallLit.alpha = 1;
@@ -528,15 +528,15 @@ class Tile extends Entity
         {
             Draw.linePlus(width - 1, 0, width - 1, height, _c, _a, _thick);
         }
-        if ((_f & 2) / 2)
+        if (Std.int((_f & 2) / 2) != 0)
         {
             Draw.linePlus(0, 0, width, 0, _c, _a, _thick);
         }
-        if ((_f & 4) / 4)
+        if (Std.int((_f & 4) / 4) != 0)
         {
             Draw.linePlus(0, 0, 0, height, _c, _a, _thick);
         }
-        if ((_f & 8) / 8)
+        if (Std.int((_f & 8) / 8) != 0)
         {
             Draw.linePlus(0, height - 1, width, height - 1, _c, _a, _thick);
         }

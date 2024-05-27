@@ -91,7 +91,7 @@ private var imgIceTurret : Class<Dynamic>;
                 sprIceTurret.frame = 0;
             }
         }
-        else if (!collide("Player", x, y))
+        else if (collide("Player", x, y)==null)
         {
             type = "Solid";
         }
@@ -241,7 +241,7 @@ private var imgIceTurret : Class<Dynamic>;
         
         if (x == Math.floor(x / Tile.w) * Tile.w + Tile.w / 2 && y == Math.floor(y / Tile.h) * Tile.h + Tile.h / 2)
         {
-            if (v.length > 0 && !collideTypes(solids, x + v.x, y + v.y))
+            if (v.length > 0 && collideTypes(solids, x + v.x, y + v.y)==null)
             {
                 Music.playSound("Push Rock", -1, 0.5);
             }

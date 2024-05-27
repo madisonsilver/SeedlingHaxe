@@ -41,7 +41,7 @@ public static var imgMusicBy : Class<Dynamic>;
     public static inline var rek : Int = 2;
     private var t : Int;
     
-    private var timerSplash : Int = 150;
+    private static inline var timerSplash : Int = 150;
     private var timerAll : Int = timerSplash;
     
     public var percentageFinished : Float = 1 - timerSplash / timerAll;

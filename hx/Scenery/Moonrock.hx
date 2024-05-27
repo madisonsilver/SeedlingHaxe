@@ -32,7 +32,7 @@ private var imgMoonrock : Class<Dynamic>;
     {
         return Main.beam;
     }
-    private var beamTimeMax(default, never) : Int = Main.FPS * 5;
+    private inline static final beamTimeMax: Int = Main.FPS * 5;
     private var beamTime : Int = beamTimeMax;
     private var canBeam : Bool = false;
     
@@ -79,8 +79,10 @@ private var imgMoonrock : Class<Dynamic>;
             canBeam = false;
             var vp : Array<Player> = new Array<Player>();
             FP.world.getClass(Player, vp);
-            for (p in vp)
+            var p : Player = null;
+            for (temp_p in vp)
             {
+                p = temp_p;
                 if (FP.distance(x + sprMoonrock.width / 2, fallTo + sprMoonrock.height / 2, p.x, p.y) > sprMoonrock.width * 3 / 4)
                 {
                     canBeam = true;
@@ -129,8 +131,8 @@ private var imgMoonrock : Class<Dynamic>;
         }
         else
         {
-            p = try cast(collide("Player", x, y), Player) catch(e:Dynamic) null;
-            if (p && !p.fallFromCeiling && !p.fallInPit)
+            var p = try cast(collide("Player", x, y), Player) catch(e:Dynamic) null;
+            if ((p!=null) && !p.fallFromCeiling && !p.fallInPit)
             {
                 p.y = y - originY + p.originY - p.height;
             }

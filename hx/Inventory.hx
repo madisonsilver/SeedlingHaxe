@@ -56,7 +56,7 @@ private static var imgTank : Class<Dynamic>;
     private var totemPosition(default, never) : Point = new Point(5, 19);
     
     private var selected : Int = 0;
-    private static var items : Array<Dynamic> = [];
+    private static var items : Array<Int> = [];
     
     private var scaleMin(default, never) : Float = 1;
     private var scaleMax(default, never) : Float = 1.5;
@@ -411,7 +411,7 @@ private static var imgTank : Class<Dynamic>;
         
         //Text
         var m : Int = 4;
-        Text.size = 8;
+        Text.static_size = 8;
         var t : Text = new Text("X");
         t.scale = textScale[0];
         t.color = 0x000000;
@@ -440,7 +440,7 @@ private static var imgTank : Class<Dynamic>;
             text.render(new Point(helpTextOffset.x + margin, helpTextOffset.y - text.height / 2), new Point());
         }
         
-        Text.size = 16;
+        Text.static_size = 16;
     }
     
     private function ngTankPos() : Point

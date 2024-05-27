@@ -60,7 +60,7 @@ private var imgPortal : Class<Dynamic>;
     override public function check() : Void
     {
         super.check();
-        if (collide("Player", x, y))
+        if (collide("Player", x, y) != null)
         {
             playerTouching = true;
         }
@@ -86,7 +86,7 @@ private var imgPortal : Class<Dynamic>;
         {
             return;
         }
-        if (collide("Player", x, y))
+        if (collide("Player", x, y) != null)
         {
             if (!playerTouching)
             {

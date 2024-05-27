@@ -138,12 +138,12 @@ private var imgOwlPic : Class<Dynamic>;
             var rockFrequency : Int = 6;
             var stepsAhead : Int = -15;
             var radius : Int = 20;
-            p = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
+            var p = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
             if (p != null)
             {
-                if (!Math.floor(Math.random() * rockFrequency))
+                if (Math.floor(Math.random() * rockFrequency) == 0)
                 {
-                    FP.world.add(new RockFall(p.x + p.v.x * stepsAhead + Math.random() * radius * 2 - radius, p.y + p.v.y * stepsAhead + Math.random() * radius * 2 - radius));
+                    FP.world.add(new RockFall(Std.int(p.x + p.v.x * stepsAhead + Math.random() * radius * 2 - radius), Std.int(p.y + p.v.y * stepsAhead + Math.random() * radius * 2 - radius)));
                 }
             }
         }
@@ -157,7 +157,7 @@ private var imgOwlPic : Class<Dynamic>;
         else if (v.length <= moveSpeed)
         {
             var grenadeFrequency : Int = 40;
-            if (!Math.floor(Math.random() * grenadeFrequency))
+            if (Math.floor(Math.random() * grenadeFrequency)==0)
             {
                 FP.world.add(new Grenade(Std.int(x - 8), Std.int(y - 8), true, 30));
             }

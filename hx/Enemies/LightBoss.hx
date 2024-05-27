@@ -68,7 +68,7 @@ private var imgLightBoss : Class<Dynamic>;
             v.y += (goto.y - y) / divisor;
         }
         
-        if (!Math.floor(Math.random() * 90))
+        if (Math.floor(Math.random() * 90) == 0)
         {
             Music.playSound("Boss 6 Move");
         }

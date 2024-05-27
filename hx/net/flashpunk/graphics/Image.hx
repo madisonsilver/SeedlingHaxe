@@ -1,5 +1,6 @@
 package net.flashpunk.graphics;
 
+import openfl.utils.Dictionary;
 import openfl.errors.Error;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -251,13 +252,13 @@ class Image extends Graphic
     }
     private function set_flipped(value : Bool) : Bool
     {
-        if (_flipped == value || !_class)
+        if (_flipped == value || _class == null || _class == "")
         {
             return value;
         }
         _flipped = value;
         var temp : BitmapData = _source;
-        if (!value || _flip)
+        if (!value || _flip != null)
         {
             _source = _flip;
             _flip = temp;
@@ -347,5 +348,5 @@ class Image extends Graphic
     /** @private */private var _class : String;
     /** @private */private var _flipped : Bool;
     /** @private */private var _flip : BitmapData;
-    /** @private */private static var _flips : Dynamic = { };
+    /** @private */private static var _flips : Dictionary<String, BitmapData> = new Dictionary();
 }

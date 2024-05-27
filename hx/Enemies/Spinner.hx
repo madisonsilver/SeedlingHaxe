@@ -22,8 +22,7 @@ private var imgSpinner : Class<Dynamic>;
     private var doActions : Bool = true;
     
     public var moveSpeed : Float = 1;
-    private var runRange(default, never) : Int = 0;  //Range at which the Spinner will run after the character  
-    private var coins : Int =Std.int( 4 + Math.random() * 4);  //The number of coins to throw upon death  
+    private var runRange(default, never) : Int = 0;  //Range at which the Spinner will run after the character   
     private var hammerAngle : Float = 0;
     
     private var hitForce(default, never) : Float = 4;
@@ -80,7 +79,7 @@ private var imgSpinner : Class<Dynamic>;
         if (player != null)
         {
             var d : Float = FP.distance(x, y, player.x, player.y);
-            if (d <= runRange && !FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)))
+            if (d <= runRange && FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y))==null)
             {
                 var a : Float = Math.atan2(player.y - y, player.x - x);
                 var toV : Point = new Point(moveSpeed * Math.cos(a), moveSpeed * Math.sin(a));
@@ -137,7 +136,8 @@ private var imgSpinner : Class<Dynamic>;
     
     override public function moveX(_xrel : Float) : Entity  //returns the object that is hit  
     {
-        for (i in 0...Math.abs(_xrel))
+        var i: Int = 0;
+        while (i < Math.abs(_xrel))
         {
             var c : Entity = collideTypes(solids, x + Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel), y);
             if (c == null)
@@ -149,13 +149,15 @@ private var imgSpinner : Class<Dynamic>;
                 v.x = -v.x;
                 return c;
             }
+            i += 1;
         }
         return null;
     }
     
     override public function moveY(_yrel : Float) : Entity  //returns the object that is hit  
     {
-        for (i in 0...Math.abs(_yrel))
+        var i: Int = 0;
+        while (i < Math.abs(_yrel))
         {
             var c : Entity = collideTypes(solids, x, y + Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel));
             if (c == null)
@@ -167,6 +169,7 @@ private var imgSpinner : Class<Dynamic>;
                 v.y = -v.y;
                 return c;
             }
+            i = i+1;
         }
         return null;
     }

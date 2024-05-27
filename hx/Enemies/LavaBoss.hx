@@ -227,7 +227,7 @@ private var imgLavaBoss : Class<Dynamic>;
                 //This area covered must be >= the area covered by the hitbox of the lava runner,
 {                    
                     //or else they will stick on top of one another.
-                    if (!FP.world.collideRect("Enemy", x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2, y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2, Tile.w, Tile.h))
+                    if (FP.world.collideRect("Enemy", x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2, y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2, Tile.w, Tile.h) == null)
                     {
                         var lr : LavaRunner;
                         FP.world.add(lr = new LavaRunner(Std.int(x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2), Std.int(y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2)));

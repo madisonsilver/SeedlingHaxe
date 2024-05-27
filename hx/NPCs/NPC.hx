@@ -55,7 +55,7 @@ private var imgTalk : Class<Dynamic>;
         {
             _talkingSpeed = Game.framesPerCharacterDefault;
         }
-        if (graphic)
+        if (graphic != null)
         {
             (try cast(graphic, Image) catch(e:Dynamic) null).centerOO();
             setHitbox(_g.width, _g.height, Std.int(_g.width / 2), Std.int(_g.height / 2));

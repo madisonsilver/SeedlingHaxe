@@ -35,19 +35,19 @@ class Wire extends Entity
             img = 0;
             var c : Bool;
             var types : Dynamic = ["Wire", "ButtonRoom"];
-            if (collideTypes(types, x + Tile.w / 2, y) || x - originX + width + 1 >= FP.width)
+            if (collideTypes(types, x + Tile.w / 2, y) != null || x - originX + width + 1 >= FP.width)
             {
                 img++;
             }
-            if (collideTypes(types, x, y - Tile.h / 2) || y - originY - 1 < 0)
+            if (collideTypes(types, x, y - Tile.h / 2) != null || y - originY - 1 < 0)
             {
                 img += 2;
             }
-            if (collideTypes(types, x - Tile.w / 2, y) || x - originX - 1 < 0)
+            if (collideTypes(types, x - Tile.w / 2, y) != null || x - originX - 1 < 0)
             {
                 img += 4;
             }
-            if (collideTypes(types, x, y + Tile.h / 2) || y - originY + height + 1 >= FP.height)
+            if (collideTypes(types, x, y + Tile.h / 2) != null || y - originY + height + 1 >= FP.height)
             {
                 img += 8;
             }

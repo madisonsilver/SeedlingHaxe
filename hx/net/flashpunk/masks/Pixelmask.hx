@@ -54,7 +54,7 @@ class Pixelmask extends Hitbox
     }
     
     /** @private Collide against an Entity. */
-    private function collideMask(other : Mask) : Bool
+    private override function collideMask(other : Mask) : Bool
     {
         _point.x = parent.x + _x;
         _point.y = parent.y + _y;
@@ -66,7 +66,7 @@ class Pixelmask extends Hitbox
     }
     
     /** @private Collide against a Hitbox. */
-    private function collideHitbox(other : Hitbox) : Bool
+    private override function collideHitbox(other : Hitbox) : Bool
     {
         _point.x = parent.x + _x;
         _point.y = parent.y + _y;

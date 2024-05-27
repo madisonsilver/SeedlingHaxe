@@ -103,14 +103,14 @@ private var imgShield : Class<Dynamic>;
     private var inLava : Bool = false;
     private var checkOffsetY : Int;  //Set in the constructor--determines the relative position at which the state is checked.  
     
-    private var dMS(default, never) : Float = 0.8;  //Walking speed  
-    private var dMSstair(default, never) : Float = 0.4;  //Walking speed on stairs  
-    private var dwASstair(default, never) : Int = 12;  //Walking animation speed on stairs  
-    private var dwAS(default, never) : Int = 15;  //Walking animation speed  
-    private var dsAS(default, never) : Int = 1;  //Standing animation speed  
-    private var dMSwater(default, never) : Float = 0.45;
-    private var dwASwater(default, never) : Int = 5;
-    private var slidingFriction(default, never) : Float = 0.025;
+    private static inline final dMS = 0.8;  //Walking speed  
+    private static inline final dMSstair : Float = 0.4;  //Walking speed on stairs  
+    private static inline final dwASstair : Int = 12;  //Walking animation speed on stairs  
+    private static inline final dwAS : Int = 15;  //Walking animation speed  
+    private static inline final dsAS : Int = 1;  //Standing animation speed  
+    private static inline final dMSwater : Float = 0.45;
+    private static inline final dwASwater : Int = 5;
+    private static inline final slidingFriction : Float = 0.025;
     
     private var states(default, never) : Array<Dynamic> = ["", "swim-", "", "", "", "", "", "", "", "", 
         "", "", "", "", "", "", "", "swim-", "", "", 
@@ -616,7 +616,7 @@ private var imgShield : Class<Dynamic>;
         }
     }
     
-    public function freeze(frozenTime : Int = frozenTimerMax) : Void
+    public function freeze(frozenTime : Int) : Void
     {
         frozenTimer = frozenTime;
     }

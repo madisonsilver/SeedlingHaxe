@@ -1,6 +1,5 @@
 package enemies;
 
-import adobe.utils.CustomActions;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import net.flashpunk.graphics.Spritemap;

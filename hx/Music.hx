@@ -324,7 +324,7 @@ class Music {
 		sounds["Text"] = soundText;
 		sounds["Other"] = soundOther;
 
-		for (key in sounds.iterator) {
+		for (key in sounds.iterator()) {
 			setNames.push(key);
 			soundsO[key] = [];
 			for (j in 0...sounds[key].length) {

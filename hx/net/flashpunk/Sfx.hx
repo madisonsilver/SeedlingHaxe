@@ -32,7 +32,7 @@ class Sfx
     public function new(source : Class<Dynamic>, complete : Function = null)
     {
         _sound = _sounds[source];
-        if (!_sound)
+        if (_sound == null)
         {
             var new_sound = Type.createInstance(source, []);
             _sound = new_sound;
@@ -48,7 +48,7 @@ class Sfx
 		 */
     public function play(vol : Float = 1, pan : Float = 0) : Void
     {
-        if (_channel)
+        if (_channel != null)
         {
             stop();
         }
@@ -67,7 +67,7 @@ class Sfx
 		 */
     public function loop(vol : Float = 1, pan : Float = 0) : Void
     {
-        if (_channel)
+        if (_channel != null)
         {
             stop();
         }
@@ -85,7 +85,7 @@ class Sfx
 		 */
     public function stop() : Bool
     {
-        if (!_channel)
+        if (_channel == null)
         {
             return false;
         }
@@ -134,7 +134,7 @@ class Sfx
         {
             value = 0;
         }
-        if (!_channel || _vol == value)
+        if (_channel == null || _vol == value)
         {
             return value;
         }
@@ -160,7 +160,7 @@ class Sfx
         {
             value = 1;
         }
-        if (!_channel || _pan == value)
+        if (_channel==null || _pan == value)
         {
             return value;
         }
@@ -182,7 +182,7 @@ class Sfx
 		 */
     private function get_position() : Float
     {
-        return ((_channel) ? _channel.position : _position) / 1000;
+        return ((_channel != null) ? _channel.position : _position) / 1000;
     }
     
     /**

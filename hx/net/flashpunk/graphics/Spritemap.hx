@@ -88,7 +88,7 @@ class Spritemap extends Image
     /** @private Updates the animation. */
     override public function update() : Void
     {
-        if (_anim && !complete)
+        if (_anim != null && !complete)
         {
             _timer += ((FP.fixed) ? _anim._frameRate : _anim._frameRate * FP.elapsed) * rate;
             if (_timer >= 1)
@@ -119,7 +119,7 @@ class Spritemap extends Image
                         }
                     }
                 }
-                if (_anim)
+                if (_anim != null)
                 {
                     _frame = as3hx.Compat.parseInt(_anim._frames[_index]);
                 }
@@ -241,11 +241,11 @@ class Spritemap extends Image
 		 */
     private function get_index() : Int
     {
-        return (_anim) ? _index : 0;
+        return (_anim != null) ? _index : 0;
     }
     private function set_index(value : Int) : Int
     {
-        if (!_anim)
+        if (_anim == null)
         {
             return value;
         }

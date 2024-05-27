@@ -52,9 +52,9 @@ private static var imgSeal : Class<Dynamic>;
         parent = _parent;
         text = _text;
         
-        Text.size = 8;
+        Text.static_size = 8;
         textO = new Text(text);
-        Text.size = 16;
+        Text.static_size = 16;
     }
     
     public static function getSealPart(index : Int) : Bool

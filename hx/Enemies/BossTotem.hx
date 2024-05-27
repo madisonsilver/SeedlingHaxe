@@ -189,8 +189,8 @@ private var imgBossTotem : Class<Dynamic>;
     
     private var headPos : Point = new Point();
     private var laserPos : Point = new Point(-8, -11);
-    private var laserWidthDef(default, never) : Int = 6;
-    private var laserColDef(default, never) : Int = 0xFFFFFF;
+    private static inline final laserWidthDef : Int = 6;
+    private static inline final laserColDef : Int = 0xFFFFFF;
     private var laserColHit(default, never) : Int = 0xFF0000;
     private var laserColMax(default, never) : Int = 0xFFFF00;
     private var laserWidth : Float = laserWidthDef;
@@ -218,14 +218,14 @@ private var imgBossTotem : Class<Dynamic>;
     
     private var rumbleDistMax(default, never) : Int = 3;
     private var rumbleAngleMax(default, never) : Int = 20;
-    private var rumblingTimeMax(default, never) : Int = 240;
+    private static inline final rumblingTimeMax : Int = 240;
     private var rumblingTime : Int = rumblingTimeMax;
     public var activated : Bool = false;
     private var activationRate : Float = 0.02;
     public var activationStage : Float = 0;
     public var fullyActivated : Bool = false;
     private var bodyAngMax(default, never) : Int = 10;  // The rotation of the body components.  
-    private var activationRestTimeMax(default, never) : Int = 120;
+    private static inline final activationRestTimeMax : Int = 120;
     public var activationRestTime : Int = activationRestTimeMax;
     
     private var rate : Float = 0;  //a scale for the boss's movement and animation speed.  
@@ -657,7 +657,7 @@ private var imgBossTotem : Class<Dynamic>;
         while (i < FP.width)
         {
             laserTo = new Point(laserStart.x, laserStart.y + i);
-            if (FP.world.collideRect("Solid", x + laserTo.x * dir - as3hx.Compat.parseInt(dir < 0) * laserWidth, y + laserTo.y, laserWidth, 1))
+            if (FP.world.collideRect("Solid", x + laserTo.x * dir - as3hx.Compat.parseInt(dir < 0) * laserWidth, y + laserTo.y, laserWidth, 1) != null)
             {
                 break;
             }

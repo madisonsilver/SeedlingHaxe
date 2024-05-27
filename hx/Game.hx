@@ -40,6 +40,8 @@ import puzzlements.*;
 import pickups.*;
 import openfl.display.BlendMode;
 import net.flashpunk.utils.Ease;
+import haxe.xml.Access;
+import openfl.utils.Dictionary;
 
 /**
 	 * ...
@@ -808,13 +810,11 @@ private static var imgBossKey4 : Class<Dynamic>;
     private static var menuState : Int = 0;
     private static var menuTween : Tween;
     private static var menuScroll : Float = 0;
-    private var menuMaxWidth : Dynamic = {
-            controls : {
-                left : 0,
-                right : 0
-            },
-            credits : 0
-        };
+
+    private var menuMaxWidthCredits: Int = 0;
+    private var menuMaxWidthControlsLeft: Int = 0;
+    private var menuMaxWidthControlsRight: Int = 0;
+
     private var menuText(default, never) : Array<Dynamic> = ["Arrows", "X", "C", "V or I", "----------", "Esc", "R", "M", "W"];
     private var menuTextAppend(default, never) : Array<Dynamic> = ["move", "action", "secondary", "inventory", "----------", "menu", "restart game", "mute", "soundtrack"];
     private var menuCreditsTitles(default, never) : Array<Dynamic> = ["Programming\n & Graphics", "Sound", "Concept", "Thanks to"];
@@ -834,7 +834,7 @@ private static var imgBossKey4 : Class<Dynamic>;
     
     public static var cutscene : Array<Dynamic> = [false, false, false, false];
     private var cTextIndex : Int = 0;
-    private static var cutsceneText : Array<Dynamic> = [
+    private static var cutsceneText : Array<Array<String>> = [
         ["Wind calls you to life.", "Go, learn of good and evil.", "Answers lie in this house."], 
         []];
     private static inline var textTime : Int = 10;  //Time between each message.  
@@ -1029,7 +1029,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         
         if (Input.released(muteKey))
         {
-            FP.volume = as3hx.Compat.parseInt(!FP.volume);
+            FP.volume = as3hx.Compat.parseInt(FP.volume == 0 || Math.isNaN(FP.volume));
             Input.clear();
         }
         else
@@ -1173,7 +1173,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                             //If we're all done showing the text, go ahead and reactivate the player.
 {                                
                                 {
-                                    cTextIndex =Std.int(Std.int(Std.int( cutsceneText[0][cutsceneText[0].length - 1])));
+                                    cTextIndex =Std.int( cutsceneText[0][cutsceneText[0].length - 1]);
                                     cutsceneTimer[0][0] = -1;
                                     talking = false;
                                     freezeObjects = false;
@@ -1215,7 +1215,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         if (raining)
         {
             var rainingHeavinessMax : Int = 100;
-            if (!Math.floor(Math.random() * (rainingHeavinessMax - rainingHeaviness)))
+            if (Math.floor(Math.random() * (rainingHeavinessMax - rainingHeaviness)) == 0)
             {
                 var rainingRectTemp : Rectangle = rainingRect.intersection(new Rectangle(FP.camera.x, FP.camera.y, FP.screen.width, FP.screen.height));
                 if (rainingRectTemp != null)
@@ -1333,11 +1333,11 @@ private static var imgBossKey4 : Class<Dynamic>;
         if (menu && restart)
         {
             Draw.rect(Std.int(FP.camera.x), Std.int(FP.camera.y), FP.screen.width, FP.screen.height, 0, 0.8);
-            Text.size = 8;
+            Text.static_size = 8;
             var text : Text = new Text("Would you like to restart? <Y>/<N>");
             text.color = 0xFFFFFF;
             text.render(new Point(FP.screen.width / 2 - text.width / 2, FP.screen.height / 2 - text.height / 2), new Point());
-            Text.size = 16;
+            Text.static_size = 16;
         }
         bufferRestore();
     }
@@ -1345,7 +1345,7 @@ private static var imgBossKey4 : Class<Dynamic>;
     {
         var cols : Array<Dynamic> = [0xFF0E380F, 0xFF306230, 0xFF8BAC0F, 0xFF9BBC0F];
         //(0xFF000000, 0xFF222222, 0xFF444444, 0xFF666666, 0xFF888888, 0xFFAAAAAA, 0xFFCCCCCC, 0xFFFFFFFF);//
-        var hist : Array<Array<Float>> = FP.buffer.histogram();
+        var hist : Array<Array<Float>> = (cast FP.buffer.histogram(): Array<Array<Float>>);
         var temp : BitmapData = new BitmapData(FP.buffer.width, FP.buffer.height, true, 0);
         for (i in 0...cols.length)
         {
@@ -1611,13 +1611,13 @@ private static var imgBossKey4 : Class<Dynamic>;
             menuScroll -= tweenScale * menuScrollSpeed;
         }
         
-        var rectW : Int = as3hx.Compat.parseInt(tweenScale * (Reflect.field(menuMaxWidth, "credits") + rectToTextMargin));
+        var rectW : Int = as3hx.Compat.parseInt(tweenScale * (menuMaxWidthCredits + rectToTextMargin));
         Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW), Std.int(FP.camera.y), rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
         
         var height : Int = 0;
         for (i in 0...menuCreditsTitles.length)
         {
-            Text.size = 16;
+            Text.static_size = 16;
             text = new Text(menuCreditsTitles[i]);
             text.x = basePos.x + _xoff;
             text.y = basePos.y + menuScroll + text.height / 2 + height + _yoff;
@@ -1627,9 +1627,9 @@ private static var imgBossKey4 : Class<Dynamic>;
             drawTextBold(text, null, 0x002200);
             height += as3hx.Compat.parseInt(text.height + titleToTextMargin);
             
-            Reflect.setField(menuMaxWidth, "credits", Math.max(text.width / 2, Reflect.field(menuMaxWidth, "credits")));
+            menuMaxWidthCredits = Math.max(text.width / 2, menuMaxWidthCredits);
             
-            Text.size = 8;
+            Text.static_size = 8;
             var textName : Text;
             for (j in 0...menuCreditsNames[i].length)
             {
@@ -1642,7 +1642,7 @@ private static var imgBossKey4 : Class<Dynamic>;
                 textName.render(new Point(), new Point());
                 //drawTextBold(textName, null, 0x000044);
                 height += as3hx.Compat.parseInt(textName.height + ((j + 1 < menuCreditsNames[i].length) ? nameToNameMargin : sectionToSectionMargin));
-                Reflect.setField(menuMaxWidth, "credits", Math.max(textName.width / 2, Reflect.field(menuMaxWidth, "credits")));
+                menuMaxWidthCredits = Math.max(textName.width / 2, menuMaxWidthCredits);
             }
         }
         if (basePos.y + menuScroll + height + _yoff < 0)
@@ -1652,7 +1652,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             addTween(menuTween, true);
             menuScroll = FP.screen.height - basePos.y;
         }
-        Text.size = 16;
+        Text.static_size = 16;
     }
     private function drawHelpText(_xoff : Int = 0, _yoff : Int = 0) : Void
     {
@@ -1668,12 +1668,12 @@ private static var imgBossKey4 : Class<Dynamic>;
         var text : Text;
         
         var rectW : Dynamic = {
-            left : tweenScale * (Reflect.field(Reflect.field(menuMaxWidth, "controls"), "left") + margin),
-            right : tweenScale * (Reflect.field(Reflect.field(menuMaxWidth, "controls"), "right") + margin)
+            left : tweenScale * (menuMaxWidthControlsLeft + margin),
+            right : tweenScale * (menuMaxWidthControlsRight + margin)
         };
         Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - Reflect.field(rectW, "left")), Std.int(FP.camera.y), Reflect.field(rectW, "left") + Reflect.field(rectW, "right"), FP.screen.height, 0, tweenScale * maxRectAlpha);
         
-        Text.size = 16;
+        Text.static_size = 16;
         text = new Text("Controls");
         text.centerOO();
         text.scaleX = tweenScale;
@@ -1682,7 +1682,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         text.color = 0xFFFFFF;
         drawTextBold(text, null, 0);
         
-        Text.size = 8;
+        Text.static_size = 8;
         var texts : Array<Text> = new Array<Text>();
         for (i in 0...menuText.length)
         {
@@ -1696,7 +1696,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             texts[i].alpha = texts[i].scaleX = tweenScale;
             texts[i].color = 0x88FF44;
             drawTextBold(texts[i], null, 0x002200);
-            Reflect.setField(Reflect.field(menuMaxWidth, "controls"), "left", Math.max(texts[i].width, Reflect.field(Reflect.field(menuMaxWidth, "controls"), "left")));
+            menuMaxWidthControlsLeft = Math.max(texts[i].width, menuMaxWidthControlsLeft);
         }
         for (i in 0...menuTextAppend.length)
         {
@@ -1706,10 +1706,10 @@ private static var imgBossKey4 : Class<Dynamic>;
             text.alpha = text.scaleX = tweenScale;
             text.color = 0x8844FF;
             drawTextBold(text, null, 0x000022);
-            Reflect.setField(Reflect.field(menuMaxWidth, "controls"), "right", Math.max(text.width, Reflect.field(Reflect.field(menuMaxWidth, "controls"), "right")));
+            menuMaxWidthControlsRight = Math.max(text.width, menuMaxWidthControlsRight);
         }
-        Reflect.setField(Reflect.field(menuMaxWidth, "controls"), "left", Reflect.setField(Reflect.field(menuMaxWidth, "controls"), "right", Math.max(Reflect.field(Reflect.field(menuMaxWidth, "controls"), "left"), Reflect.field(Reflect.field(menuMaxWidth, "controls"), "right"))));
-        Text.size = 16;
+        menuMaxWidthControlsLeft = menuMaxWidthControlsRight = Math.max(menuMaxWidthControlsLeft, menuMaxWidthControlsRight);
+        Text.static_size = 16;
     }
     
     private function renderMenu(_xoff : Int, _yoff : Int) : Void
@@ -1724,14 +1724,14 @@ private static var imgBossKey4 : Class<Dynamic>;
         sprLogo.color = 0xFFFFFF;
         sprLogo.render(renderPt.clone(), new Point());
         
-        Text.size = 8;
+        Text.static_size = 8;
         var t : Text = new Text("press any key to play", 26, 46);
         t.alpha = sprLogo.alpha;
         t.color = 0;
         t.render(new Point(renderPt.x - sprLogo.originX, renderPt.y + 1 - sprLogo.originY), new Point());
         t.color = 0xFFFFFF;
         t.render(new Point(renderPt.x - sprLogo.originX, renderPt.y - sprLogo.originY), new Point());
-        Text.size = 16;
+        Text.static_size = 16;
         
         sprNG.alpha = sprLogo.alpha;
         sprNG.render(ngPos(_xoff, _yoff), new Point());
@@ -1764,7 +1764,7 @@ private static var imgBossKey4 : Class<Dynamic>;
     public function canInventory() : Bool
     {
         var p : Player = try cast(nearestToPoint("Player", 0, 0), Player) catch(e:Dynamic) null;
-        return inventory && !talking && p && p.receiveInput && !p.destroy;
+        return inventory != null && !talking && p != null && p.receiveInput && !p.destroy;
     }
     
     public function bufferTransforms() : Void
@@ -1873,7 +1873,8 @@ private static var imgBossKey4 : Class<Dynamic>;
         {
             sum +=Std.int( v[i]);
         }
-        return sum /=Std.int(Std.int(Std.int( v.length)));
+        sum = Std.int(sum/v.length);
+        return sum;
     }
     
     public function bufferRestore() : Void
@@ -1905,7 +1906,7 @@ private static var imgBossKey4 : Class<Dynamic>;
             var minM : Int = 4;  //The margin between the image border and the text area  
             var textToImageMargin : Int = 8;  //The distance between the text and the image  
             var d : Int = as3hx.Compat.parseInt(FP.screen.height / n);
-            Text.size = 8;
+            Text.static_size = 8;
             
             //Scrolling text
             if (framesThisCharacter > 0)
@@ -1946,16 +1947,16 @@ private static var imgBossKey4 : Class<Dynamic>;
             fullString = talkingText.substr(0, currentCharacter);
             
             var t : Text = new Text(fullString);
+            var w : Int = textToImageMargin;  //The distance of the text to the left edge. 
             if (talkingPic != null)
             {
                 var m : Int = as3hx.Compat.parseInt((d - talkingPic.height * talkingPic.scale) / 2);
                 Draw.rect(Std.int(FP.camera.x + minM), Std.int(FP.camera.y + FP.screen.height * (n - 1) / n + minM), m * 2 + talkingPic.width - minM * 2, m * 2 + talkingPic.height - minM * 2, 0xFFFFFF, 1);
                 talkingPic.render(new Point(m, FP.screen.height * (n - 1) / n + m), new Point());
-            }
-            var w : Int = textToImageMargin;  //The distance of the text to the left edge.  
-            if (talkingPic != null)
-            {
-                w += as3hx.Compat.parseInt(m + talkingPic.width * talkingPic.scale);
+                if (talkingPic != null)
+                {
+                    w += as3hx.Compat.parseInt(m + talkingPic.width * talkingPic.scale);
+                }
             }
             var alignOffsetX : Int = 0;
             switch (ALIGN)
@@ -2315,7 +2316,7 @@ private static var imgBossKey4 : Class<Dynamic>;
         
         if (!menu)
         {
-            var v : Array<Entity> = new Array<Entity>();
+            var v : Array<Player> = new Array<Player>();
             getClass(Player, v);
             if (v.length > 0)
             {

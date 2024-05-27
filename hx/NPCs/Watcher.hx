@@ -99,10 +99,10 @@ private var imgWatcherPic : Class<Dynamic>;
             {
                 if (!createdSeed)
                 {
-                    p = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
-                    if (p)
+                    var p = try cast(FP.world.nearestToEntity("Player", this), Player) catch(e:Dynamic) null;
+                    if (p != null)
                     {
-                        FP.world.add(new Seed(p.x - 8, p.y - 8, true, "The seed, covered in the blood of the Watcher, seems almost to cower from your grasp.~This was supposed to be a triumph..."));
+                        FP.world.add(new Seed(Std.int(p.x - 8), Std.int(p.y - 8), true, "The seed, covered in the blood of the Watcher, seems almost to cower from your grasp.~This was supposed to be a triumph..."));
                         createdSeed = true;
                     }
                 }

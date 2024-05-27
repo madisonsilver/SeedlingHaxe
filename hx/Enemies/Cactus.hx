@@ -42,7 +42,7 @@ private var imgCactus : Class<Dynamic>;
             }
         }
         
-        if (hitsTimer <= 0 && collide("Player", x, y))
+        if (hitsTimer <= 0 && collide("Player", x, y) != null)
         {
             if (sprCactus.frame == 1)
             

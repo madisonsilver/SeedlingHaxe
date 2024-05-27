@@ -35,7 +35,7 @@ private var imgLavaBall : Class<Dynamic>;
         sprLavaBall.play("fly");
         v = _v;
         f = 0;
-        setHitbox(Std.int(24 * sc), Std.int(24 * sc), Std.int(12 * sc), 12 * sc);
+        setHitbox(Std.int(24 * sc), Std.int(24 * sc), Std.int(12 * sc), Std.int(12 * sc));
         type = "LavaBall";
         solids = [];
         if (v.length > 0)

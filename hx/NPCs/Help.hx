@@ -127,9 +127,9 @@ private var imgHelp : Class<Dynamic>;
     {
         if (timeExtraHelp <= 0)
         {
-            Text.size = 8;
+            Text.static_size = 8;
             var t : Text = new Text(texts[sprHelp.frame]);
-            Text.size = 16;
+            Text.static_size = 16;
             
             var ptText : Point = new Point(pt.x - t.width / 2, FP.screen.height - t.height);
             t.alpha = sprHelp.alpha;

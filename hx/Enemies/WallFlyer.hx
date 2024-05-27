@@ -18,8 +18,7 @@ class WallFlyer extends Enemy
 private var imgWallFlyer : Class<Dynamic>;
     private var sprWallFlyer : Spritemap = new Spritemap(imgWallFlyer, 20, 16, endAnim);
     
-    public var moveSpeed : Float = 4;
-    private var coins : Int =Std.int( 4 + Math.random() * 4);  //The number of coins to throw upon death  
+    public var moveSpeed : Float = 4;  
     private var attackRange : Int = FP.screen.width;  //The range at which the wall flyer will jump if the player is intersecting.  
     private var vTriggered : Point = new Point();  // The vector of motion of the wall flyer when it is triggered by the player.  
     

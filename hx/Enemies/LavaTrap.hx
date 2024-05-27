@@ -91,7 +91,7 @@ private var imgLavaTrapTongue : Class<Dynamic>;
                     if (!FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y)) && sprLavaTrap.currentAnim != "chomp")
                     {
                         launch();
-                        Music.playSoundDistPlayer(x, y, "Enemy Attack", 3);
+                        Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Attack", 3);
                         sprLavaTrap.play("chomp");
                     }
                     else

@@ -68,7 +68,7 @@ class Image extends Graphic
     
     /**
 		 * Constructor.
-		 * @param	source		Source image.
+		 * @param	source		Source image.  (Class or BitmapData)
 		 * @param	clipRect	Optional rectangle defining area of the source image to draw.
 		 */
     public function new(source : Dynamic = null, clipRect : Rectangle = null)
@@ -90,11 +90,11 @@ class Image extends Graphic
         _sourceRect = _source.rect;
         if (clipRect != null)
         {
-            if (!clipRect.width)
+            if (clipRect.width == 0 || Math.isNaN(clipRect.width))
             {
                 clipRect.width = _sourceRect.width;
             }
-            if (!clipRect.height)
+            if (clipRect.height == 0 || Math.isNaN(clipRect.height))
             {
                 clipRect.height = _sourceRect.height;
             }
@@ -116,7 +116,7 @@ class Image extends Graphic
     // quit if no graphic is assigned
     {
         
-        if (!_buffer)
+        if (_buffer==null)
         {
             return;
         }
@@ -306,7 +306,7 @@ class Image extends Graphic
 		 */
     private function get_width() : Int
     {
-        return _bufferRect.width;
+        return Std.int(_bufferRect.width);
     }
     
     /**
@@ -314,7 +314,7 @@ class Image extends Graphic
 		 */
     private function get_height() : Int
     {
-        return _bufferRect.height;
+        return Std.int(_bufferRect.height);
     }
     
     /**

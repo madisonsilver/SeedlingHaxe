@@ -5,6 +5,7 @@ import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
 import scenery.Tile;
+import openfl.utils.Assets;
 
 /**
 	 * ...
@@ -12,12 +13,8 @@ import scenery.Tile;
 	 */
 class BreakableRock extends Entity
 {
-    @:meta(Embed(source="../../assets/graphics/BreakableRock.png"))
-private var imgBreakableRock : Class<Dynamic>;
-    private var sprBreakableRock : Spritemap = new Spritemap(imgBreakableRock, 16, 16, endAnim);
-    @:meta(Embed(source="../../assets/graphics/BreakableRockGhost.png"))
-private var imgBreakableRockGhost : Class<Dynamic>;
-    private var sprBreakableRockGhost : Spritemap = new Spritemap(imgBreakableRockGhost, 16, 16, endAnim);
+    private var sprBreakableRock : Spritemap;
+    private var sprBreakableRockGhost : Spritemap;
     
     private var tag : Int;
     private var rockType : Int;
@@ -25,6 +22,9 @@ private var imgBreakableRockGhost : Class<Dynamic>;
     public function new(_x : Int, _y : Int, _tag : Int = -1, _type : Int = 0)
     {
         super(_x + Tile.w / 2, _y + Tile.h / 2);
+
+        sprBreakableRock = new Spritemap(Assets.getBitmapData ("assets/graphics/BreakableRock.png"), 16, 16, endAnim);
+        sprBreakableRockGhost = new Spritemap(Assets.getBitmapData ("assets/graphics/BreakableRockGhost.png"), 16, 16, endAnim);
         
         switch (_type)
         {

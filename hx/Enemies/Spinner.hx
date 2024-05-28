@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class Spinner extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Spinner.png"))
 	private var imgSpinner:Class<Dynamic>;
-	private var sprSpinner:Spritemap ;
+	private var sprSpinner:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
@@ -28,7 +28,7 @@ class Spinner extends Enemy {
 	private var hitForce(default, never):Float = 4;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprSpinner =  new Spritemap(imgSpinner, 18, 9);
+		sprSpinner = new Spritemap(imgSpinner, 18, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpinner);
 
 		v = new Point(moveSpeed * Math.cos(-Math.PI / 4), moveSpeed * Math.sin(-Math.PI / 4));

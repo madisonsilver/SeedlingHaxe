@@ -12,7 +12,7 @@ import net.flashpunk.utils.Draw;
 class LavaRunner extends Bob {
 	@:meta(Embed(source = "../../assets/graphics/LavaRunner.png"))
 	private var imgLavaRunner:Class<Dynamic>;
-	private var sprLavaRunner:Spritemap ;
+	private var sprLavaRunner:Spritemap;
 
 	private static inline var waterFrameAddition:Int = 5;
 	private static inline var swimSpeed:Float = 1;
@@ -25,7 +25,7 @@ class LavaRunner extends Bob {
 	private var inAir:Bool = false;
 
 	public function new(_x:Int, _y:Int) {
-sprLavaRunner =  new Spritemap(imgLavaRunner, 20, 20, endAnim);
+		sprLavaRunner = new Spritemap(imgLavaRunner, 20, 20, endAnim);
 		super(_x, _y, sprLavaRunner);
 		startY = Std.int(y);
 

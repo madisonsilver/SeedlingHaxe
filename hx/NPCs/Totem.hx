@@ -10,10 +10,10 @@ import scenery.Tile;
 class Totem extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/Totem.png"))
 	private var imgTotem:Class<Dynamic>;
-	private var sprTotem:Spritemap ;
+	private var sprTotem:Spritemap;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
-sprTotem =  new Spritemap(imgTotem, 32, 64);
+		sprTotem = new Spritemap(imgTotem, 32, 64);
 		super();
 		// The weird tiles for the constructor are because NPC offsets by Tile.w/2, Tile.h/2 automagically.
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h * 5 / 2), sprTotem, _tag, _text, _talkingSpeed);

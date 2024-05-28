@@ -22,11 +22,11 @@ import pickups.Coin;
 class BobSoldier extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/LameSword.png"))
 	private var imgLameSword:Class<Dynamic>;
-	private var sprLameSword:Spritemap ;
+	private var sprLameSword:Spritemap;
 
 	@:meta(Embed(source = "../../assets/graphics/BobSoldier.png"))
 	private var imgBobSoldier:Class<Dynamic>;
-	private var sprBobSoldier:Spritemap ;
+	private var sprBobSoldier:Spritemap;
 
 	public var moveSpeed:Float = 0.8;
 	public var walkAnimSpeed:Int = 10;
@@ -37,7 +37,7 @@ class BobSoldier extends Enemy {
 	public var attackRange(default, never):Int = 32; // Range at which the Bob will attack the character
 
 	public var weapon:Spritemap;
-	public var weaponLength:Int ;
+	public var weaponLength:Int;
 
 	public var swordSpinning:Bool = false;
 	public var swordIndex:Int = 0;
@@ -51,9 +51,9 @@ class BobSoldier extends Enemy {
 	public var hopSoundIndex:Int = 0;
 
 	public function new(_x:Int, _y:Int, _g:Spritemap = null) {
-sprBobSoldier =  new Spritemap(imgBobSoldier, 10, 10, endAnim);
-sprLameSword =  new Spritemap(imgLameSword, 16, 5);
-weaponLength =  sprLameSword.width;
+		sprBobSoldier = new Spritemap(imgBobSoldier, 10, 10, endAnim);
+		sprLameSword = new Spritemap(imgLameSword, 16, 5);
+		weaponLength = sprLameSword.width;
 		if (_g == null) {
 			_g = sprBobSoldier;
 		}

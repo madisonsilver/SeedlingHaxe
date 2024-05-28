@@ -15,12 +15,12 @@ class LightBossTotem extends Entity {
 
 	@:meta(Embed(source = "../../assets/graphics/LightBossTotem.png"))
 	private var imgLightBossTotem:Class<Dynamic>;
-	private var sprLightBossTotem:Image ;
+	private var sprLightBossTotem:Image;
 
 	private var _die:Bool = false;
 
 	public function new(_x:Int, _y:Int) {
-sprLightBossTotem =  new Image(imgLightBossTotem);
+		sprLightBossTotem = new Image(imgLightBossTotem);
 		super(_x, _y, sprLightBossTotem);
 		setHitbox(16, 16);
 		sprLightBossTotem.originY = 8;

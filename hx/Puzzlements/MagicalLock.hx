@@ -12,17 +12,17 @@ import net.flashpunk.FP;
 class MagicalLock extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/MagicalLock.png"))
 	private var imgMagicalLock:Class<Dynamic>;
-	private var sprMagicalLock:Spritemap ;
+	private var sprMagicalLock:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/MagicalLockFire.png"))
 	private var imgMagicalLockFire:Class<Dynamic>;
-	private var sprMagicalLockFire:Spritemap ;
+	private var sprMagicalLockFire:Spritemap;
 
 	private var tag:Int;
 	private var lockType:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
-sprMagicalLock =  new Spritemap(imgMagicalLock, 22, 21, animEnd);
-sprMagicalLockFire =  new Spritemap(imgMagicalLockFire, 22, 21, animEnd);
+		sprMagicalLock = new Spritemap(imgMagicalLock, 22, 21, animEnd);
+		sprMagicalLockFire = new Spritemap(imgMagicalLockFire, 22, 21, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2);
 
 		switch (_type) {

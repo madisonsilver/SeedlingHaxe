@@ -13,7 +13,7 @@ import pickups.Coin;
 class Puncher extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Puncher.png"))
 	private var imgPuncher:Class<Dynamic>;
-	private var sprPuncher:Spritemap ;
+	private var sprPuncher:Spritemap;
 
 	private var direction:Int = 3; // 0 = right, counter-clockwise from there.
 
@@ -27,7 +27,7 @@ class Puncher extends Enemy {
 	private var punchForce(default, never):Float = 5;
 
 	public function new(_x:Int, _y:Int) {
-sprPuncher =  new Spritemap(imgPuncher, 20, 20, endAnim);
+		sprPuncher = new Spritemap(imgPuncher, 20, 20, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPuncher);
 
 		sprPuncher.centerOO();

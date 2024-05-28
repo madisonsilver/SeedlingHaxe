@@ -16,13 +16,13 @@ import net.flashpunk.utils.Draw;
 class RayShot extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/DeathRayShot.png"))
 	private var imgRayShot:Class<Dynamic>;
-	private var sprRayShot:Spritemap ;
+	private var sprRayShot:Spritemap;
 
 	private var force(default, never):Int = 3; // The knockback when hitting enemies
 	private var damage:Float = 100;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
-sprRayShot =  new Spritemap(imgRayShot, 8, 3, animEnd);
+		sprRayShot = new Spritemap(imgRayShot, 8, 3, animEnd);
 		super(_x, _y, sprRayShot);
 		sprRayShot.centerOO();
 		sprRayShot.add("flare", [0, 1], 15);

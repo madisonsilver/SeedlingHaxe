@@ -13,7 +13,7 @@ import pickups.Coin;
 class Chest extends Entity {
 	@:meta(Embed(source = "../assets/graphics/Chest.png"))
 	private var imgChest:Class<Dynamic>;
-	private var sprChest:Spritemap ;
+	private var sprChest:Spritemap;
 
 	private var openTimerMax(default, never):Int = 60;
 	private var openTimer:Int = 0;
@@ -21,7 +21,7 @@ class Chest extends Entity {
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprChest =  new Spritemap(imgChest, 16, 16);
+		sprChest = new Spritemap(imgChest, 16, 16);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprChest);
 		sprChest.centerOO();
 		type = "Solid";

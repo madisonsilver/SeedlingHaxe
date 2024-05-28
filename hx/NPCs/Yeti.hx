@@ -11,16 +11,16 @@ import net.flashpunk.FP;
 class Yeti extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/Yeti.png"))
 	private var imgYeti:Class<Dynamic>;
-	private var sprYeti:Spritemap ;
+	private var sprYeti:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/YetiPic.png"))
 	private var imgYetiPic:Class<Dynamic>;
-	private var sprYetiPic:Image ;
+	private var sprYetiPic:Image;
 
 	private var createdPortal:Bool = false;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
-sprYeti =  new Spritemap(imgYeti, 10, 12);
-sprYetiPic =  new Image(imgYetiPic);
+		sprYeti = new Spritemap(imgYeti, 10, 12);
+		sprYetiPic = new Image(imgYetiPic);
 		super(_x, _y, sprYeti, _tag, _text, _talkingSpeed);
 		sprYeti.add("talk", [0, 1], 5);
 

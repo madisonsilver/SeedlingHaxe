@@ -12,10 +12,10 @@ import net.flashpunk.utils.Draw;
 class SlashHit extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/SlashHit.png"))
 	private var imgSlashHit:Class<Dynamic>;
-	private var sprSlashHit:Spritemap ;
+	private var sprSlashHit:Spritemap;
 
 	public function new(_x:Int, _y:Int, _scx:Float) {
-sprSlashHit =  new Spritemap(imgSlashHit, 32, 16, endAnim);
+		sprSlashHit = new Spritemap(imgSlashHit, 32, 16, endAnim);
 		super(_x, _y, sprSlashHit);
 		sprSlashHit.centerOO();
 		sprSlashHit.add("slash", [0, 1], 15);

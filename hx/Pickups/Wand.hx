@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class Wand extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/WandPickup.png"))
 	private var imgWandPickup:Class<Dynamic>;
-	private var sprWandPickup:Spritemap ;
+	private var sprWandPickup:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
@@ -25,7 +25,7 @@ class Wand extends Pickup {
 	private var tset:Int = 0;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprWandPickup =  new Spritemap(imgWandPickup, 5, 9);
+		sprWandPickup = new Spritemap(imgWandPickup, 5, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWandPickup, null, false);
 		sprWandPickup.centerOO();
 		setHitbox(3, 8, 2, 4);

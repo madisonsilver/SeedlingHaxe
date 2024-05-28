@@ -12,7 +12,7 @@ import net.flashpunk.FP;
 class FinalDoor extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/FinalDoor.png"))
 	private var imgFinalDoor:Class<Dynamic>;
-	private var sprFinalDoor:Spritemap ;
+	private var sprFinalDoor:Spritemap;
 
 	private var seeDistance(default, never):Int = 32;
 	private var seenSeal:Bool = false;
@@ -22,7 +22,7 @@ class FinalDoor extends Entity {
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprFinalDoor =  new Spritemap(imgFinalDoor, 32, 32, animEnd);
+		sprFinalDoor = new Spritemap(imgFinalDoor, 32, 32, animEnd);
 		super(_x + Tile.w, _y + Tile.h, sprFinalDoor);
 		sprFinalDoor.centerOO();
 		setHitbox(32, 32, 16, 16);

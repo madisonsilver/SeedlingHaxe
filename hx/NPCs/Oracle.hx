@@ -11,10 +11,10 @@ import net.flashpunk.FP;
 class Oracle extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/Oracle.png"))
 	private var imgOracle:Class<Dynamic>;
-	private var sprOracle:Spritemap ;
+	private var sprOracle:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/OraclePic.png"))
 	private var imgOraclePic:Class<Dynamic>;
-	private var sprOraclePic:Image ;
+	private var sprOraclePic:Image;
 
 	private var wakenDistance(default, never):Int = 48;
 
@@ -24,8 +24,8 @@ class Oracle extends NPC {
 	private var text2(default, never):String = "You have brought the seed. Good work.~Your purpose is fulfilled, but now you are not needed.~Goodbye.";
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 10) {
-sprOracle =  new Spritemap(imgOracle, 16, 24, animEnd);
-sprOraclePic =  new Image(imgOraclePic);
+		sprOracle = new Spritemap(imgOracle, 16, 24, animEnd);
+		sprOraclePic = new Image(imgOraclePic);
 		super(_x, _y, sprOracle, _tag, (Game.cutscene[1] != null) ? text2 : ((Game.checkPersistence(_tag)) ? _text : _text1), _talkingSpeed);
 		if (Game.cutscene[1] != null) {
 			text = text1 = text2;

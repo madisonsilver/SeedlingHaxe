@@ -13,13 +13,13 @@ import net.flashpunk.graphics.Spritemap;
 class IceTurretBlast extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/IceBlast.png"))
 	private var imgIceBlast:Class<Dynamic>;
-	private var sprIceBlast:Spritemap ;
+	private var sprIceBlast:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
 	private var freezeTime(default, never):Int = 15;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
-sprIceBlast =  new Spritemap(imgIceBlast, 16, 7);
+		sprIceBlast = new Spritemap(imgIceBlast, 16, 7);
 		super(_x, _y, sprIceBlast);
 		sprIceBlast.x = -8;
 		sprIceBlast.originX = Std.int(-sprIceBlast.x);

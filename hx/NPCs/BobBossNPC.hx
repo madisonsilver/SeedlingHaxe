@@ -16,10 +16,10 @@ class BobBossNPC extends NPC {
 	private var imgBobBoss2Pic:Class<Dynamic>;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/BobBoss3Pic.png"))
 	private var imgBobBoss3Pic:Class<Dynamic>;
-	private var pics(default, never):Array<Dynamic> ;
+	private var pics(default, never):Array<Dynamic>;
 
 	public function new(_x:Int, _y:Int, _st:Int = 0, _text:String = "", _talkingSpeed:Int = 10) {
-pics =  [imgBobBoss1Pic, imgBobBoss2Pic, imgBobBoss3Pic];
+		pics = [imgBobBoss1Pic, imgBobBoss2Pic, imgBobBoss3Pic];
 		super(_x, _y, null, -1, _text, _talkingSpeed);
 		myPic = new Image(pics[_st]);
 	}

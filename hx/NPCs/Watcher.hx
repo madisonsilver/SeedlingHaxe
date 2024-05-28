@@ -16,10 +16,10 @@ import scenery.Tile;
 class Watcher extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/Watcher.png"))
 	private var imgWatcher:Class<Dynamic>;
-	private var sprWatcher:Spritemap ;
+	private var sprWatcher:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/WatcherPic.png"))
 	private var imgWatcherPic:Class<Dynamic>;
-	private var sprWatcherPic:Image ;
+	private var sprWatcherPic:Image;
 
 	private var seedIndexMin(default, never):Int = 9; // The minimum index of talking at which the seed is shown
 	private var seedIndexMax(default, never):Int = 19; // The maximum index of talking at which the seed is shown
@@ -38,8 +38,8 @@ class Watcher extends NPC {
 	private var text1:String;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 4) {
-sprWatcher =  new Spritemap(imgWatcher, 12, 15);
-sprWatcherPic =  new Image(imgWatcherPic);
+		sprWatcher = new Spritemap(imgWatcher, 12, 15);
+		sprWatcherPic = new Image(imgWatcherPic);
 		super(_x, _y, sprWatcher, _tag, (Game.checkPersistence(_tag)) ? _text : _text1, _talkingSpeed);
 		text = _text;
 		text1 = _text1;

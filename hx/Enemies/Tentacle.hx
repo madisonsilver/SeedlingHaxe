@@ -13,7 +13,7 @@ import net.flashpunk.FP;
 class Tentacle extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Tentacle.png"))
 	private var imgTentacle:Class<Dynamic>;
-	private var sprTentacle:Spritemap ;
+	private var sprTentacle:Spritemap;
 
 	private var right:Bool;
 	private var hitRect:Rectangle;
@@ -22,7 +22,7 @@ class Tentacle extends Enemy {
 	private var force(default, never):Int = 2;
 
 	public function new(_x:Int, _y:Int, _parent:TentacleBeast = null, _right:Bool = true) {
-sprTentacle =  new Spritemap(imgTentacle, 80, 49, animEnd);
+		sprTentacle = new Spritemap(imgTentacle, 80, 49, animEnd);
 		super(_x, _y, sprTentacle);
 
 		parent = _parent;

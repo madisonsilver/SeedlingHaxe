@@ -11,14 +11,14 @@ import net.flashpunk.FP;
 class AdnanCharacter extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/AdnanCharacter.png"))
 	private var imgAdnanCharacter:Class<Dynamic>;
-	private var sprAdnanCharacter:Spritemap ;
+	private var sprAdnanCharacter:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/AdnanCharacterPic.png"))
 	private var imgAdnanCharacterPic:Class<Dynamic>;
-	private var sprAdnanCharacterPic:Image ;
+	private var sprAdnanCharacterPic:Image;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
-sprAdnanCharacter =  new Spritemap(imgAdnanCharacter, 8, 8);
-sprAdnanCharacterPic =  new Image(imgAdnanCharacterPic);
+		sprAdnanCharacter = new Spritemap(imgAdnanCharacter, 8, 8);
+		sprAdnanCharacterPic = new Image(imgAdnanCharacterPic);
 		super(_x, _y, sprAdnanCharacter, _tag, _text, _talkingSpeed);
 		sprAdnanCharacter.add("talk", [0, 1, 0, 2], 5);
 		myPic = sprAdnanCharacterPic;

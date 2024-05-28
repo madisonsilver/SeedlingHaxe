@@ -17,17 +17,17 @@ class Pod extends Entity {
 
 	@:meta(Embed(source = "../../assets/graphics/PodBody.png"))
 	private var imgPodBody:Class<Dynamic>;
-	private var sprPodBody:Image ;
+	private var sprPodBody:Image;
 	@:meta(Embed(source = "../../assets/graphics/Pod.png"))
 	private var imgPod:Class<Dynamic>;
-	private var sprPod:Spritemap ;
+	private var sprPod:Spritemap;
 
 	private var myPodBody:Entity;
 	private var hitables(default, never):Dynamic = ["Player"];
 
 	public function new(_x:Int, _y:Int) {
-sprPodBody =  new Image(imgPodBody);
-sprPod =  new Spritemap(imgPod, 24, 24, animEnd);
+		sprPodBody = new Image(imgPodBody);
+		sprPod = new Spritemap(imgPod, 24, 24, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprPod);
 		sprPod.centerOO();
 		sprPodBody.centerOO();

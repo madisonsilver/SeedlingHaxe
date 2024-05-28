@@ -12,7 +12,7 @@ import scenery.Tile;
 class SandTrap extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/SandTrap.png"))
 	private var imgSandTrap:Class<Dynamic>;
-	private var sprSandTrap:Spritemap ;
+	private var sprSandTrap:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 20; // The distance at which the cactus will start chomping from a player
@@ -20,7 +20,7 @@ class SandTrap extends Enemy {
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _g:Spritemap = null) {
-sprSandTrap =  new Spritemap(imgSandTrap, 14, 14, endAnim);
+		sprSandTrap = new Spritemap(imgSandTrap, 14, 14, endAnim);
 		if (_g == null) {
 			_g = sprSandTrap;
 		}

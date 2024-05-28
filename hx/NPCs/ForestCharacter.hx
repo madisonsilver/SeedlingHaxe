@@ -11,14 +11,14 @@ import net.flashpunk.FP;
 class ForestCharacter extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/ForestCharacter.png"))
 	private var imgForestChar:Class<Dynamic>;
-	private var sprForestChar:Spritemap ;
+	private var sprForestChar:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/ForestCharacterPic.png"))
 	private var imgForestCharPic:Class<Dynamic>;
-	private var sprForestCharPic:Image ;
+	private var sprForestCharPic:Image;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
-sprForestChar =  new Spritemap(imgForestChar, 8, 9);
-sprForestCharPic =  new Image(imgForestCharPic);
+		sprForestChar = new Spritemap(imgForestChar, 8, 9);
+		sprForestCharPic = new Image(imgForestCharPic);
 		super(_x, _y, sprForestChar, _tag, _text, _talkingSpeed);
 		sprForestChar.add("talk", [0, 1], 5);
 		myPic = sprForestCharPic;

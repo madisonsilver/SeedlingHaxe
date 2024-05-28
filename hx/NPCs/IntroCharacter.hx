@@ -11,14 +11,14 @@ import net.flashpunk.FP;
 class IntroCharacter extends NPC {
 	@:meta(Embed(source = "../../assets/graphics/NPCs/IntroCharacter.png"))
 	private var imgIntroChar:Class<Dynamic>;
-	private var sprIntroChar:Spritemap ;
+	private var sprIntroChar:Spritemap;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/IntroCharacterPic.png"))
 	private var imgIntroCharPic:Class<Dynamic>;
-	private var sprIntroCharPic:Image ;
+	private var sprIntroCharPic:Image;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
-sprIntroChar =  new Spritemap(imgIntroChar, 8, 8);
-sprIntroCharPic =  new Image(imgIntroCharPic);
+		sprIntroChar = new Spritemap(imgIntroChar, 8, 8);
+		sprIntroCharPic = new Image(imgIntroCharPic);
 		super(_x, _y, sprIntroChar, _tag, _text, _talkingSpeed);
 		sprIntroChar.add("talk", [0, 1, 0, 2], 5);
 

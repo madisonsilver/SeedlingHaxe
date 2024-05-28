@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class Whirlpool extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/WhirlPool.png"))
 	private var imgWhirlpool:Class<Dynamic>;
-	private var sprWhirlpool:Spritemap ;
+	private var sprWhirlpool:Spritemap;
 
 	private var whirlFrames(default, never):Array<Dynamic> = [0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1];
 	private var spinRate:Int = 20;
@@ -23,14 +23,14 @@ class Whirlpool extends Entity {
 	private var timerSetGrow(default, never):Int = 150;
 	private var timerSetLive(default, never):Int = 60;
 	private var timerSetDies(default, never):Int = 30;
-	private var timerSet:Int ;
+	private var timerSet:Int;
 	private var useTimer:Bool;
 
 	private var maxAlpha(default, never):Float = 0.5;
 
 	public function new(_x:Int, _y:Int, _timer:Bool = false) {
-sprWhirlpool =  new Spritemap(imgWhirlpool, 32, 32);
-timerSet =  timerSetGrow + timerSetLive + timerSetDies;
+		sprWhirlpool = new Spritemap(imgWhirlpool, 32, 32);
+		timerSet = timerSetGrow + timerSetLive + timerSetDies;
 		super(_x + Tile.w, _y + Tile.h, sprWhirlpool);
 
 		useTimer = _timer;

@@ -10,12 +10,12 @@ import net.flashpunk.graphics.Spritemap;
 class Stairs extends Teleporter {
 	@:meta(Embed(source = "../assets/graphics/Stairs.png"))
 	private var imgStairs:Class<Dynamic>;
-	private var sprStairs:Spritemap ;
+	private var sprStairs:Spritemap;
 
 	private var up:Bool;
 
 	public function new(_x:Int, _y:Int, _up:Bool = true, _flip:Bool = false, _to:Int = 0, _px:Int = 0, _py:Int = 0, _sign:Int = 0) {
-sprStairs =  new Spritemap(imgStairs, 16, 16);
+		sprStairs = new Spritemap(imgStairs, 16, 16);
 		super(_x, _y, _to, _px, _py, true, -1, false, _sign);
 		up = _up;
 		graphic = sprStairs;

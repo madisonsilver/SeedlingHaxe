@@ -13,7 +13,7 @@ import scenery.Tile;
 class ShieldBoss extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/ShieldBoss.png"))
 	private var imgShieldBoss:Class<Dynamic>;
-	private var sprShieldBoss:Spritemap ;
+	private var sprShieldBoss:Spritemap;
 
 	private var tag:Int;
 
@@ -29,7 +29,7 @@ class ShieldBoss extends Enemy {
 	private var playedSound:Bool = false;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprShieldBoss =  new Spritemap(imgShieldBoss, 56, 80, endAnim);
+		sprShieldBoss = new Spritemap(imgShieldBoss, 56, 80, endAnim);
 		super(Std.int(_x + Tile.w * 1.5), _y + Tile.h * 2, sprShieldBoss);
 		sprShieldBoss.centerOO();
 		sprShieldBoss.add("sit", [0]);

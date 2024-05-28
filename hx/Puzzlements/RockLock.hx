@@ -15,13 +15,13 @@ import openfl.display.BlendMode;
 class RockLock extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/RockLock.png"))
 	private var imgRockLock:Class<Dynamic>;
-	private var sprRockLock:Image ;
+	private var sprRockLock:Image;
 
 	private var normType:String = "Solid";
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
-sprRockLock =  new Image(imgRockLock);
+		sprRockLock = new Image(imgRockLock);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRockLock, _t);
 		sprRockLock.centerOO();
 		setHitbox(16, 16, 8, 8);

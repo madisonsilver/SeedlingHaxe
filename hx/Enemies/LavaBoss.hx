@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class LavaBoss extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/LavaBoss.png"))
 	private var imgLavaBoss:Class<Dynamic>;
-	private var sprLavaBoss:Spritemap ;
+	private var sprLavaBoss:Spritemap;
 
 	private var shotSpeed(default, never):Int = 1;
 	private var tag:Int;
@@ -23,7 +23,7 @@ class LavaBoss extends Enemy {
 	private var startAttacking:Bool = false;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprLavaBoss =  new Spritemap(imgLavaBoss, 160, 82, endAnim);
+		sprLavaBoss = new Spritemap(imgLavaBoss, 160, 82, endAnim);
 		super(_x + 48, _y + 40, sprLavaBoss);
 		sprLavaBoss.centerOO();
 		sprLavaBoss.add("sit", [0, 1, 2, 3, 4], 8);

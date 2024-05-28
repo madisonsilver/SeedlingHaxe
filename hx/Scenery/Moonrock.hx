@@ -17,7 +17,7 @@ class Moonrock extends Entity {
 
 	@:meta(Embed(source = "../../assets/graphics/Moonrock.png"))
 	private var imgMoonrock:Class<Dynamic>;
-	private var sprMoonrock:Spritemap ;
+	private var sprMoonrock:Spritemap;
 
 	private var tag:Int;
 
@@ -44,7 +44,7 @@ class Moonrock extends Entity {
 	private var fallTo:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprMoonrock =  new Spritemap(imgMoonrock, 52, 52);
+		sprMoonrock = new Spritemap(imgMoonrock, 52, 52);
 		super(_x, _y, sprMoonrock);
 		fallTo = _y;
 		sprMoonrock.x = sprMoonrock.y = -2;

@@ -13,7 +13,7 @@ import scenery.Tile;
 class Turret extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Turret.png"))
 	private var imgTurret:Class<Dynamic>;
-	private var sprTurret:Spritemap ;
+	private var sprTurret:Spritemap;
 
 	private var attackAnimSpeed(default, never):Int = 10;
 	private var attackRange(default, never):Int = 64;
@@ -23,7 +23,7 @@ class Turret extends Enemy {
 	private var shotSpeed(default, never):Int = 3;
 
 	public function new(_x:Int, _y:Int) {
-sprTurret =  new Spritemap(imgTurret, 16, 16, endAnim);
+		sprTurret = new Spritemap(imgTurret, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTurret);
 
 		sprTurret.centerOO();

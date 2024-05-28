@@ -11,13 +11,13 @@ import scenery.Tile;
 class Cactus extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Cactus.png"))
 	private var imgCactus:Class<Dynamic>;
-	private var sprCactus:Spritemap ;
+	private var sprCactus:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 20; // The distance at which the cactus will start chomping from a player
 
 	public function new(_x:Int, _y:Int) {
-sprCactus =  new Spritemap(imgCactus, 8, 8, endAnim);
+		sprCactus = new Spritemap(imgCactus, 8, 8, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprCactus);
 		sprCactus.centerOO();
 		sprCactus.add("sit", [0]);

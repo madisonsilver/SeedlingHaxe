@@ -16,7 +16,7 @@ import net.flashpunk.utils.Draw;
 class BossTotemShot extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/BossTotemShot.png"))
 	private var imgBossTotemShot:Class<Dynamic>;
-	private var sprBossTotemShot:Spritemap ;
+	private var sprBossTotemShot:Spritemap;
 
 	public var hitables:Dynamic = ["Player", "Solid"];
 
@@ -24,7 +24,7 @@ class BossTotemShot extends Mobile {
 	private var spinRate(default, never):Int = -6;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
-sprBossTotemShot =  new Spritemap(imgBossTotemShot, 20, 20);
+		sprBossTotemShot = new Spritemap(imgBossTotemShot, 20, 20);
 		super(_x, _y, sprBossTotemShot);
 		sprBossTotemShot.centerOO();
 		sprBossTotemShot.add("fly", [0, 1, 2], 10);

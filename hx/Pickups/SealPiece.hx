@@ -11,12 +11,12 @@ import net.flashpunk.FP;
 class SealPiece extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Seal.png"))
 	private var imgSeal:Class<Dynamic>;
-	private var sprSeal:Spritemap ;
+	private var sprSeal:Spritemap;
 
 	private var index:Int = -1;
 
 	public function new(_x:Int, _y:Int, _v:Point = null) {
-sprSeal =  new Spritemap(imgSeal, 4, 4);
+		sprSeal = new Spritemap(imgSeal, 4, 4);
 		super(_x, _y, sprSeal, _v);
 		sprSeal.centerOO();
 		type = "Seal";

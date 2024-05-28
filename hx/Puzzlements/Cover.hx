@@ -16,14 +16,14 @@ class Cover extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Cover.png"))
 	private var imgCover:Class<Dynamic>;
 
-	public var sprCover:Spritemap ;
+	public var sprCover:Spritemap;
 
 	private var normType:String = "Solid";
 
 	private var hitables:Dynamic = ["Solid", "Player"];
 
 	public function new(_x:Int, _y:Int, _t:Int, _g:Graphic = null) {
-sprCover =  new Spritemap(imgCover, 16, 16);
+		sprCover = new Spritemap(imgCover, 16, 16);
 		if (_g == null) {
 			_g = sprCover;
 		}

@@ -13,13 +13,14 @@ import scenery.Tile;
 class HealthPickup extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/HealthPickup.png"))
 	private var imgHealth:Class<Dynamic>;
-	private var sprHealth:Spritemap = new Spritemap(imgHealth, 8, 8);
+	private var sprHealth:Spritemap ;
 
 	private var angleRate(default, never):Int = 10;
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprHealth =  new Spritemap(imgHealth, 8, 8);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprHealth, null, false);
 		(try cast(graphic, Spritemap) catch (e:Dynamic) null).centerOO();
 		(try cast(graphic, Spritemap) catch (e:Dynamic) null).scaleX = FP.choose([1, -1]);

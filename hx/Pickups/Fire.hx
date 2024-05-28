@@ -12,12 +12,13 @@ import scenery.Moonrock;
 class Fire extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/FirePickup.png"))
 	private var imgFire:Class<Dynamic>;
-	private var sprFire:Spritemap = new Spritemap(imgFire, 16, 16);
+	private var sprFire:Spritemap ;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprFire =  new Spritemap(imgFire, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFire, null, false);
 		sprFire.centerOO();
 		sprFire.alpha = 0;

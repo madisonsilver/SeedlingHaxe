@@ -17,7 +17,7 @@ class TentacleBeast extends Enemy {
 	private var imgTentacleBeastMask:Class<Dynamic>;
 	@:meta(Embed(source = "../../assets/graphics/TentacleBeast.png"))
 	private var imgTentacleBeast:Class<Dynamic>;
-	private var sprTentacleBeast:Spritemap = new Spritemap(imgTentacleBeast, 46, 44, animEnd);
+	private var sprTentacleBeast:Spritemap ;
 
 	private var sittingFrames(default, never):Array<Dynamic> = [0, 1, 2, 1];
 	private var sittingDeadFrames(default, never):Array<Dynamic> = [17, 18, 19, 18];
@@ -36,6 +36,7 @@ class TentacleBeast extends Enemy {
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprTentacleBeast =  new Spritemap(imgTentacleBeast, 46, 44, animEnd);
 		super(_x + 24, _y + 24, sprTentacleBeast);
 		sprTentacleBeast.add("sink", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 8);
 		sprTentacleBeast.add("rise", [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 8);

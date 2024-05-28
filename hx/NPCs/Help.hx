@@ -16,7 +16,7 @@ import net.flashpunk.utils.Draw;
 class Help extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Help.png"))
 	private var imgHelp:Class<Dynamic>;
-	private var sprHelp:Spritemap = new Spritemap(imgHelp, 67, 44);
+	private var sprHelp:Spritemap ;
 
 	// Inventory
 	// Mute
@@ -37,12 +37,14 @@ class Help extends Entity {
 	private var scMax(default, never):Float = 1.5;
 	private var scMin(default, never):Float = 1;
 	private var scRate:Float = 0.01;
-	private var sc:Float = scMin;
+	private var sc:Float ;
 
 	private var timeExtraHelp:Int = 240;
 	private var texts(default, never):Array<Dynamic> = ["press V", "press M to mute", "press an arrow key", "press X or C"];
 
 	public function new(_t:Int = 0, _button:Bool = true, _p:Point = null) {
+sprHelp =  new Spritemap(imgHelp, 67, 44);
+sc =  scMin;
 		super(0, 0, sprHelp);
 		sprHelp.frame = _t;
 		sprHelp.centerOO();

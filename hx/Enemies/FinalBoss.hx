@@ -19,10 +19,10 @@ import net.flashpunk.utils.Key;
 class FinalBoss extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/FinalBoss.png"))
 	private var imgFinalBoss:Class<Dynamic>;
-	private var sprFinalBoss:Spritemap = new Spritemap(imgFinalBoss, 16, 16, endAnim);
+	private var sprFinalBoss:Spritemap ;
 	@:meta(Embed(source = "../../assets/graphics/NPCs/OwlPic.png"))
 	private var imgOwlPic:Class<Dynamic>;
-	private var sprOwlPic:Spritemap = new Spritemap(imgOwlPic, 16, 16, endAnim);
+	private var sprOwlPic:Spritemap ;
 
 	public var moveSpeed:Float = 1;
 	public var sitFrames:Array<Dynamic> = [0, 1, 2, 3];
@@ -43,6 +43,8 @@ class FinalBoss extends Enemy {
 	private var started:Bool = false;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprFinalBoss =  new Spritemap(imgFinalBoss, 16, 16, endAnim);
+sprOwlPic =  new Spritemap(imgOwlPic, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFinalBoss);
 		sprFinalBoss.centerOO();
 		sprFinalBoss.add("walk", [0, 1, 2, 3], 15);

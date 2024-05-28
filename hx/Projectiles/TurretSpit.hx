@@ -15,11 +15,12 @@ import net.flashpunk.utils.Draw;
 class TurretSpit extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/TurretSpit.png"))
 	private var imgTurretSpit:Class<Dynamic>;
-	private var sprTurretSpit:Spritemap = new Spritemap(imgTurretSpit, 12, 8);
+	private var sprTurretSpit:Spritemap ;
 
 	public var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
 
 	public function new(_x:Int, _y:Int, _v:Point) {
+sprTurretSpit =  new Spritemap(imgTurretSpit, 12, 8);
 		super(_x, _y, sprTurretSpit);
 		sprTurretSpit.x = -8;
 		sprTurretSpit.originX = Std.int(-sprTurretSpit.x);

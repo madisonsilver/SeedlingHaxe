@@ -17,10 +17,10 @@ import net.flashpunk.graphics.Image;
 class WandShot extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/WandShot.png"))
 	private var imgWandShot:Class<Dynamic>;
-	private var sprWandShot:Spritemap = new Spritemap(imgWandShot, 7, 7, animEnd);
+	private var sprWandShot:Spritemap ;
 	@:meta(Embed(source = "../../assets/graphics/FireWandShot.png"))
 	private var imgFireWandShot:Class<Dynamic>;
-	private var sprFireWandShot:Spritemap = new Spritemap(imgFireWandShot, 9, 9, animEnd);
+	private var sprFireWandShot:Spritemap ;
 
 	private var tilesMove(default, never):Int = 3; // The number of tiles that the shot will travel in a given direction.
 	private var force(default, never):Int = 3; // The knockback when hitting enemies
@@ -36,6 +36,8 @@ class WandShot extends Mobile {
 	private var fizzleVolume(default, never):Float = 0.3;
 
 	public function new(_x:Int, _y:Int, _v:Point, _fire:Bool = false) {
+sprWandShot =  new Spritemap(imgWandShot, 7, 7, animEnd);
+sprFireWandShot =  new Spritemap(imgFireWandShot, 9, 9, animEnd);
 		super(_x, _y, sprWandShot);
 		sprWandShot.centerOO();
 		sprWandShot.add("flare", [0, 1, 2], 5);

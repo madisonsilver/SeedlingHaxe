@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class WallFlyer extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/WallFlyer.png"))
 	private var imgWallFlyer:Class<Dynamic>;
-	private var sprWallFlyer:Spritemap = new Spritemap(imgWallFlyer, 20, 16, endAnim);
+	private var sprWallFlyer:Spritemap ;
 
 	public var moveSpeed:Float = 4;
 
@@ -23,6 +23,7 @@ class WallFlyer extends Enemy {
 	private var vTriggered:Point = new Point(); // The vector of motion of the wall flyer when it is triggered by the player.
 
 	public function new(_x:Int, _y:Int) {
+sprWallFlyer =  new Spritemap(imgWallFlyer, 20, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWallFlyer);
 
 		v = new Point();

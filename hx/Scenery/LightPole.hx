@@ -15,7 +15,7 @@ import puzzlements.Activators;
 class LightPole extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/LightPole.png"))
 	private var imgLightPole:Class<Dynamic>;
-	private var sprLightPole:Image = new Image(imgLightPole);
+	private var sprLightPole:Image ;
 
 	private var loops(default, never):Float = 1.5;
 	private var lightAlpha(default, never):Float = 0.5;
@@ -30,6 +30,7 @@ class LightPole extends Activators {
 	private var invert:Bool;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1, _color:Int = 0xFFFFFF, _invert:Bool = false) {
+sprLightPole =  new Image(imgLightPole);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLightPole, _t);
 		startY = Std.int(y);
 		sprLightPole.centerOO();

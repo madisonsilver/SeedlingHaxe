@@ -13,12 +13,13 @@ import scenery.Moonrock;
 class DarkSword extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/SwordDark.png"))
 	private var imgDarkSword:Class<Dynamic>;
-	private var sprDarkSword:Spritemap = new Spritemap(imgDarkSword, 16, 16);
+	private var sprDarkSword:Spritemap ;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprDarkSword =  new Spritemap(imgDarkSword, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSword, null, false);
 		sprDarkSword.centerOO();
 		setHitbox(8, 8, 4, 4);

@@ -13,7 +13,7 @@ import net.flashpunk.utils.Draw;
 class RockFall extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/RockFall.png"))
 	private var imgRockFall:Class<Dynamic>;
-	private var sprRockFall:Spritemap = new Spritemap(imgRockFall, 64, 32, endAnim);
+	private var sprRockFall:Spritemap ;
 
 	private var fallHeight(default, never):Int = 96;
 	private var g:Float = 0.05;
@@ -24,6 +24,7 @@ class RockFall extends Mobile {
 	private var startingSpeed:Float = 6;
 
 	public function new(_x:Int, _y:Int) {
+sprRockFall =  new Spritemap(imgRockFall, 64, 32, endAnim);
 		super(_x, _y - fallHeight, sprRockFall);
 		goto = _y;
 

@@ -50,9 +50,10 @@ class Splash extends World {
 
 	private var timerAll:Int = timerSplash;
 
-	public var percentageFinished:Float = 1 - timerSplash / timerAll;
+	public var percentageFinished:Float ;
 
 	public function new(_t:Int = 0) {
+percentageFinished =  1 - timerSplash / timerAll;
 		super();
 		t = _t;
 

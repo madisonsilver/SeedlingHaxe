@@ -12,11 +12,12 @@ import net.flashpunk.FP;
 class LightBossShot extends TurretSpit {
 	@:meta(Embed(source = "../../assets/graphics/LightBossShot.png"))
 	private var imgLightBossShot:Class<Dynamic>;
-	private var sprLightBossShot:Spritemap = new Spritemap(imgLightBossShot, 8, 8);
+	private var sprLightBossShot:Spritemap ;
 
 	private var angleSpinRate(default, never):Int = 10;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
+sprLightBossShot =  new Spritemap(imgLightBossShot, 8, 8);
 		super(_x, _y, _v);
 		graphic = sprLightBossShot;
 		sprLightBossShot.centerOO();

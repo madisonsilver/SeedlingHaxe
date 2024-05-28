@@ -13,7 +13,7 @@ import net.flashpunk.utils.Draw;
 class Flyer extends Bob {
 	@:meta(Embed(source = "../../assets/graphics/Flyer.png"))
 	private var imgFlyer:Class<Dynamic>;
-	private var sprFlyer:Spritemap = new Spritemap(imgFlyer, 18, 26, endAnim);
+	private var sprFlyer:Spritemap ;
 
 	private static inline var normalSpeed:Float = 1;
 	private static inline var animSpeed:Int = 15;
@@ -21,6 +21,7 @@ class Flyer extends Bob {
 	private static inline var droppedFrame:Int = 10; // The frame at which the flyer is on the ground (when to hit the player)
 
 	public function new(_x:Int, _y:Int) {
+sprFlyer =  new Spritemap(imgFlyer, 18, 26, endAnim);
 		super(_x, _y, sprFlyer);
 
 		sitFrames = [0, 1, 2, 3];

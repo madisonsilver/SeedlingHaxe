@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class Explosion extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Explosion.png"))
 	private var imgExplosion:Class<Dynamic>;
-	private var sprExplosion:Spritemap = new Spritemap(imgExplosion, 128, 128, endAnim);
+	private var sprExplosion:Spritemap ;
 
 	private var animSpeed(default, never):Int = 20;
 	private var force(default, never):Int = 4;
@@ -25,6 +25,7 @@ class Explosion extends Entity {
 	private var damage:Int;
 
 	public function new(_x:Int, _y:Int, _hit:Dynamic, _r:Int = 16, _d:Int = 1) {
+sprExplosion =  new Spritemap(imgExplosion, 128, 128, endAnim);
 		super(_x, _y, sprExplosion);
 		sprExplosion.add("explode", [0, 1, 2, 3, 4, 5, 6, 7], animSpeed);
 		sprExplosion.play("explode");

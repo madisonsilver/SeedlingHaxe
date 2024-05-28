@@ -57,39 +57,39 @@ class Player extends Mobile {
 	@:meta(Embed(source = "../assets/graphics/ShrumBlue.png"))
 	private var imgShrum:Class<Dynamic>;
 	// [Embed(source = "../assets/graphics/ShrumBlue.png")] private var imgShrumBlue:Class;
-	private var sprShrum:Spritemap = new Spritemap(imgShrum, 16, 16);
+	private var sprShrum:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/ShrumDark.png"))
 	private var imgShrumDark:Class<Dynamic>;
 
-	public var sprShrumDark:Spritemap = new Spritemap(imgShrumDark, 16, 16, endAnim);
+	public var sprShrumDark:Spritemap ;
 
 	@:meta(Embed(source = "../assets/graphics/Slash.png"))
 	private var imgSlash:Class<Dynamic>;
-	private var sprSlash:Spritemap = new Spritemap(imgSlash, 16, 32, slashEnd);
+	private var sprSlash:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/SlashDark.png"))
 	private var imgSlashDark:Class<Dynamic>;
-	private var sprSlashDark:Spritemap = new Spritemap(imgSlashDark, 16, 32, slashEnd);
+	private var sprSlashDark:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/GhostSword.png"))
 	private var imgGhostSword:Class<Dynamic>;
-	private var sprGhostSword:Spritemap = new Spritemap(imgGhostSword, 24, 7, slashEnd);
+	private var sprGhostSword:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/GhostSpearStab.png"))
 	private var imgSpear:Class<Dynamic>;
-	private var sprSpear:Spritemap = new Spritemap(imgSpear, 36, 7, spearEnd);
+	private var sprSpear:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/Wand.png"))
 	private var imgWand:Class<Dynamic>;
-	private var sprWand:Spritemap = new Spritemap(imgWand, 16, 10, wandEnd);
+	private var sprWand:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/FireWand.png"))
 	private var imgFireWand:Class<Dynamic>;
-	private var sprFireWand:Spritemap = new Spritemap(imgFireWand, 17, 10, wandEnd);
+	private var sprFireWand:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/Fire.png"))
 	private var imgFire:Class<Dynamic>;
-	private var sprFire:Spritemap = new Spritemap(imgFire, 32, 32, fireEnd);
+	private var sprFire:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/DeathRay.png"))
 	private var imgDeathRay:Class<Dynamic>;
-	private var sprDeathRay:Spritemap = new Spritemap(imgDeathRay, 10, 5, deathRayEnd);
+	private var sprDeathRay:Spritemap ;
 	@:meta(Embed(source = "../assets/graphics/Shield.png"))
 	private var imgShield:Class<Dynamic>;
-	private var sprShield:Spritemap = new Spritemap(imgShield, 7, 7);
+	private var sprShield:Spritemap ;
 
 	// Right, Up, Left, Down, Primary, Secondary, Talk, Inventory, Inventory 1
 	public var keys(default, never):Array<Dynamic> = [Key.RIGHT, Key.UP, Key.LEFT, Key.DOWN, Key.X, Key.C, Key.X, Key.V, Key.I];
@@ -417,6 +417,17 @@ class Player extends Mobile {
 	private var coverAlphaRate:Float = 0.005;
 
 	public function new(_x:Int, _y:Int) {
+sprShrumDark =  new Spritemap(imgShrumDark, 16, 16, endAnim);
+sprShrum =  new Spritemap(imgShrum, 16, 16);
+sprGhostSword =  new Spritemap(imgGhostSword, 24, 7, slashEnd);
+sprSlashDark =  new Spritemap(imgSlashDark, 16, 32, slashEnd);
+sprSlash =  new Spritemap(imgSlash, 16, 32, slashEnd);
+sprSpear =  new Spritemap(imgSpear, 36, 7, spearEnd);
+sprShield =  new Spritemap(imgShield, 7, 7);
+sprFireWand =  new Spritemap(imgFireWand, 17, 10, wandEnd);
+sprWand =  new Spritemap(imgWand, 16, 10, wandEnd);
+sprFire =  new Spritemap(imgFire, 32, 32, fireEnd);
+sprDeathRay =  new Spritemap(imgDeathRay, 10, 5, deathRayEnd);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2));
 		yStart = Std.int(y);
 		solids.push("LavaBoss");

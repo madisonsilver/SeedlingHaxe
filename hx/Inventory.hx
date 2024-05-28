@@ -67,12 +67,12 @@ class Inventory {
 	private var scaleMin(default, never):Float = 1;
 	private var scaleMax(default, never):Float = 1.5;
 	private var scaleRate(default, never):Float = 0.1;
-	private var scale:Float = scaleMin;
+	private var scale:Float ;
 
 	private var textScaleMin(default, never):Float = 1;
 	private var textScaleMax(default, never):Float = 2;
 	private var textScaleRate(default, never):Float = 0.2;
-	private var textScale:Array<Dynamic> = [textScaleMin, textScaleMin];
+	private var textScale:Array<Dynamic> ;
 
 	public static var drawFirstUseHelp:Bool = false;
 	public static var drawExtendedHelp:Bool = false;
@@ -87,6 +87,8 @@ class Inventory {
 	private static var EXtexts:Array<Dynamic> = ["This new tab shows your keys and other items you've obtained."];
 
 	public function new() {
+scale =  scaleMin;
+textScale =  [textScaleMin, textScaleMin];
 		offset.x = offsetMin.x;
 		offset.y = offsetMin.y;
 

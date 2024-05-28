@@ -13,9 +13,10 @@ import net.flashpunk.utils.Draw;
 class Bulb extends Bob {
 	@:meta(Embed(source = "../../assets/graphics/Bulb.png"))
 	private var imgBulb:Class<Dynamic>;
-	private var sprBulb:Spritemap = new Spritemap(imgBulb, 16, 16, endAnim);
+	private var sprBulb:Spritemap ;
 
 	public function new(_x:Int, _y:Int) {
+sprBulb =  new Spritemap(imgBulb, 16, 16, endAnim);
 		super(_x, _y, sprBulb);
 
 		sprBulb.centerOO();

@@ -23,7 +23,7 @@ class Pickup extends Mobile {
 
 	public var playerHit:Player;
 	public var special:Bool = false;
-	public var specialTimer:Int = specialTimerMax;
+	public var specialTimer:Int ;
 
 	private var DEF_TEXT_SPEED(default, never):Int = 6;
 
@@ -37,6 +37,7 @@ class Pickup extends Mobile {
 	public var myVolume:Float = 0.5;
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null, _v:Point = null, _attract:Bool = true) {
+specialTimer =  specialTimerMax;
 		super(_x, _y, _g);
 		if (_v != null) {
 			v = _v;

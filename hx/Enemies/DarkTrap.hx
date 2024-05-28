@@ -13,12 +13,13 @@ import net.flashpunk.utils.Draw;
 class DarkTrap extends SandTrap {
 	@:meta(Embed(source = "../../assets/graphics/DarkTrap.png"))
 	private var imgDarkTrap:Class<Dynamic>;
-	private var sprDarkTrap:Spritemap = new Spritemap(imgDarkTrap, 14, 14, endAnim);
+	private var sprDarkTrap:Spritemap ;
 
 	private var deathCounter:Int = 30;
 	private var startDying:Bool = false;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprDarkTrap =  new Spritemap(imgDarkTrap, 14, 14, endAnim);
 		super(_x, _y, _tag, sprDarkTrap);
 
 		sprDarkTrap.add("die1", [4, 0, 1, 0, 4, 5, 4, 5, 6, 7, 8, 9, 10, 11], 10);

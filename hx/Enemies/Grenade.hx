@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class Grenade extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Grenade.png"))
 	private var imgGrenade:Class<Dynamic>;
-	private var sprGrenade:Spritemap = new Spritemap(imgGrenade, 16, 16, animEnd);
+	private var sprGrenade:Spritemap ;
 
 	private var hitRadius(default, never):Int = 20;
 	private var fallHeight(default, never):Int = 48;
@@ -31,6 +31,7 @@ class Grenade extends Enemy {
 	private var activated:Bool;
 
 	public function new(_x:Int, _y:Int, _active:Bool = false, _exTime:Int = 60) {
+sprGrenade =  new Spritemap(imgGrenade, 16, 16, animEnd);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);
 		endY = as3hx.Compat.parseInt(_y + Tile.h / 2);
 		startY = Std.int(y);

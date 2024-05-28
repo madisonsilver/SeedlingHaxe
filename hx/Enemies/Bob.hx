@@ -14,7 +14,7 @@ import pickups.Coin;
 class Bob extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Bob.png"))
 	private var imgBob:Class<Dynamic>;
-	private var sprBob:Spritemap = new Spritemap(imgBob, 8, 8, endAnim);
+	private var sprBob:Spritemap ;
 
 	public var moveSpeed:Float = 0.5;
 
@@ -29,6 +29,7 @@ class Bob extends Enemy {
 	public var hopSoundIndex:Int = 0;
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
+sprBob =  new Spritemap(imgBob, 8, 8, endAnim);
 		if (_g == null) {
 			_g = sprBob;
 		}

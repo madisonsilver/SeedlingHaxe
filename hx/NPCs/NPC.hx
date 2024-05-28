@@ -20,7 +20,7 @@ class NPC extends Mobile {
 
 	@:meta(Embed(source = "../../assets/graphics/NPCs/Talk.png"))
 	private var imgTalk:Class<Dynamic>;
-	private var sprTalk:Spritemap = new Spritemap(imgTalk, 10, 14);
+	private var sprTalk:Spritemap ;
 
 	public var talked:Bool = false; // If the player has already talked to him since he came in range
 
@@ -49,6 +49,7 @@ class NPC extends Mobile {
 	public var align:String = "LEFT";
 
 	public function new(_x:Int, _y:Int, _g:Image, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 0, _lineLength:Int = 28) {
+sprTalk =  new Spritemap(imgTalk, 10, 14);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
 		lineLength = _lineLength;
 		if (_talkingSpeed < 0) {

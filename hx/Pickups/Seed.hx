@@ -11,15 +11,15 @@ import scenery.Tile;
 class Seed extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Seed.png"))
 	private var imgSeed:Class<Dynamic>;
-	private var sprSeed:Spritemap = new Spritemap(imgSeed, 9, 13);
+	private var sprSeed:Spritemap ;
 	@:meta(Embed(source = "../../assets/graphics/SeedBloody.png"))
 	private var imgSeedBloody:Class<Dynamic>;
-	private var sprSeedBloody:Spritemap = new Spritemap(imgSeedBloody, 11, 15);
+	private var sprSeedBloody:Spritemap ;
 
 	@:meta(Embed(source = "../../assets/graphics/TreeGrow.png"))
 	private var imgTreeGrow:Class<Dynamic>;
 
-	public var sprTreeGrow:Spritemap = new Spritemap(imgTreeGrow, 16, 24, endAnim);
+	public var sprTreeGrow:Spritemap ;
 
 	private var sitFrames(default, never):Dynamic = [0, 1, 2, 1];
 	private var drawCover:Bool = false;
@@ -32,6 +32,9 @@ class Seed extends Pickup {
 	public var tree:Bool = false;
 
 	public function new(_x:Int, _y:Int, _bloody:Bool = false, _text:String = "", _tree:Bool = false) {
+sprSeed =  new Spritemap(imgSeed, 9, 13);
+sprSeedBloody =  new Spritemap(imgSeedBloody, 11, 15);
+sprTreeGrow =  new Spritemap(imgTreeGrow, 16, 24, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), (_bloody) ? sprSeedBloody : sprSeed, null, false);
 		sprSeed.centerOO();
 		sprSeedBloody.centerOO();

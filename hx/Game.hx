@@ -616,23 +616,23 @@ class Game extends World {
 
 	@:meta(Embed(source = "../assets/graphics/TreeLarge.png"))
 	private var imgTreeLarge:Class<Dynamic>;
-	private var sprTreeLarge:Spritemap = new Spritemap(imgTreeLarge, 160, 192);
+	private var sprTreeLarge:Spritemap ;
 
 	@:meta(Embed(source = "../assets/graphics/Logo2.png"))
 	private var imgLogo:Class<Dynamic>;
-	private var sprLogo:Spritemap = new Spritemap(imgLogo, 152, 62);
+	private var sprLogo:Spritemap ;
 
 	@:meta(Embed(source = "../assets/graphics/pixel_logo_medium.png"))
 	private var imgNG:Class<Dynamic>;
-	private var sprNG:Spritemap = new Spritemap(imgNG, 87, 75);
+	private var sprNG:Spritemap ;
 
 	@:meta(Embed(source = "../assets/graphics/promos.png"))
 	private var imgGames:Class<Dynamic>;
-	private var spGames:DisplayObject = Type.createInstance(imgGames, []);
+	private var spGames:DisplayObject ;
 
 	@:meta(Embed(source = "../assets/graphics/MenuArrow.png"))
 	private var imgMenuArrow:Class<Dynamic>;
-	private var sprMenuArrow:Spritemap = new Spritemap(imgMenuArrow, 16, 16);
+	private var sprMenuArrow:Spritemap ;
 
 	/*BOSS KEYS/LOCKS*/
 	@:meta(Embed(source = "../assets/graphics/BossLock.png"))
@@ -899,6 +899,11 @@ class Game extends World {
 	private var cutsceneTimer:Array<Dynamic> = [[3 * Main.FPS, 210], []]; // used for live counting.
 
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
+spGames =  Type.createInstance(imgGames, []);
+sprTreeLarge =  new Spritemap(imgTreeLarge, 160, 192);
+sprLogo =  new Spritemap(imgLogo, 152, 62);
+sprNG =  new Spritemap(imgNG, 87, 75);
+sprMenuArrow =  new Spritemap(imgMenuArrow, 16, 16);
 		super();
 		level = _level;
 		playerPosition = new Point(_playerx, _playery);

@@ -10,7 +10,7 @@ import net.flashpunk.FP;
 class PlayerLight extends Light {
 	@:meta(Embed(source = "../assets/graphics/PlayerLight.png"))
 	private var imgPlayerLight:Class<Dynamic>;
-	private var sprPlayerLight:Image = new Image(imgPlayerLight);
+	private var sprPlayerLight:Image ;
 
 	private var follow:Player;
 	private var colorLoops:Int = 12;
@@ -19,6 +19,7 @@ class PlayerLight extends Light {
 	private var colors(default, never):Array<Dynamic> = [0xFFCC00, 0xFFFFFF, 0xFF0000, 0x00FF00, 0x0000FF];
 
 	public function new(_x:Int, _y:Int, _follow:Player) {
+sprPlayerLight =  new Image(imgPlayerLight);
 		super(_x, _y, 100, 3, colors[0], true, 20);
 		alpha = 0.5;
 		follow = _follow;

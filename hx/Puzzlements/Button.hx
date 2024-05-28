@@ -12,11 +12,12 @@ import scenery.Tile;
 class Button extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Button.png"))
 	private var imgButton:Class<Dynamic>;
-	private var sprButton:Spritemap = new Spritemap(imgButton, 8, 8);
+	private var sprButton:Spritemap ;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
 
 	public function new(_x:Int, _y:Int, _t:Int) {
+sprButton =  new Spritemap(imgButton, 8, 8);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);
 		sprButton.centerOO();
 		setHitbox(8, 6, 4, 3);

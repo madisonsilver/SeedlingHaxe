@@ -11,7 +11,7 @@ import net.flashpunk.utils.Draw;
 class Teleporter extends Entity {
 	@:meta(Embed(source = "../assets/graphics/Portal.png"))
 	private var imgPortal:Class<Dynamic>;
-	private var sprPortal:Spritemap = new Spritemap(imgPortal, 18, 18);
+	private var sprPortal:Spritemap ;
 
 	private var to:Int;
 	private var playerPos:Point;
@@ -28,6 +28,7 @@ class Teleporter extends Entity {
 	public var soundIndex:Int = 0;
 
 	public function new(_x:Int, _y:Int, _to:Int = 0, _px:Int = 0, _py:Int = 0, _show:Bool = false, _tag:Int = -1, _invert:Bool = false, _sign:Int = -1) {
+sprPortal =  new Spritemap(imgPortal, 18, 18);
 		super(_x, _y, sprPortal);
 		to = _to;
 		playerPos = new Point(_px, _py);

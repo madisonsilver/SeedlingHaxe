@@ -14,7 +14,7 @@ import scenery.Light;
 class LightBoss extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/LightBoss.png"))
 	private var imgLightBoss:Class<Dynamic>;
-	private var sprLightBoss:Spritemap = new Spritemap(imgLightBoss, 17, 16, animEnd);
+	private var sprLightBoss:Spritemap ;
 
 	private var divisor(default, never):Int = 20;
 	private var lightLength(default, never):Int = 4;
@@ -31,6 +31,7 @@ class LightBoss extends Enemy {
 	private var angleFace:Float;
 
 	public function new(_x:Int, _y:Int, _id:Int, _parent:LightBossController) {
+sprLightBoss =  new Spritemap(imgLightBoss, 17, 16, animEnd);
 		super(_x, _y, sprLightBoss);
 		sprLightBoss.centerOO();
 		sprLightBoss.add("sit", [0]);

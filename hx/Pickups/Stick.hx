@@ -11,9 +11,10 @@ import net.flashpunk.graphics.Image;
 class Stick extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Stick.png"))
 	private var imgStick:Class<Dynamic>;
-	private var sprStick:Image = new Image(imgStick);
+	private var sprStick:Image ;
 
 	public function new(_x:Int, _y:Int, _v:Point = null) {
+sprStick =  new Image(imgStick);
 		super(_x, _y, sprStick, _v);
 		sprStick.centerOO();
 		sprStick.angle = Math.random() * 360;

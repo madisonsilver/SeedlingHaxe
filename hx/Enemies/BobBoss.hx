@@ -24,15 +24,15 @@ class BobBoss extends BobSoldier {
 
 	@:meta(Embed(source = "../../assets/graphics/BobBossWeapons.png"))
 	private var imgBobBossWeapons:Class<Dynamic>;
-	private var sprBobBossWeapons:Spritemap = new Spritemap(imgBobBossWeapons, 24, 5);
+	private var sprBobBossWeapons:Spritemap ;
 
 	private var bossType:Int;
 
 	private var nextBossTimerMax(default, never):Int = 120;
-	private var nextBossTimer:Int = nextBossTimerMax; // The time between bosses.
+	private var nextBossTimer:Int ; // The time between bosses.
 
 	private var formingTimerMax(default, never):Int = 60;
-	private var formingTimer:Int = formingTimerMax; // The time after creation that this boss does its animation before beginning its actions.
+	private var formingTimer:Int ; // The time after creation that this boss does its animation before beginning its actions.
 
 	private var text(default, never):Array<Dynamic> = [
 		"..., ...?~...~...!",
@@ -41,6 +41,9 @@ class BobBoss extends BobSoldier {
 	];
 
 	public function new(_x:Int, _y:Int, _st:Int = 0) {
+sprBobBossWeapons =  new Spritemap(imgBobBossWeapons, 24, 5);
+nextBossTimer =  nextBossTimerMax;
+formingTimer =  formingTimerMax;
 		super();
 		// Tile offsets are multiplied by the BobSoldier constructor
 		super(_x, _y, new Spritemap(images[_st], 20, 20, endAnim));

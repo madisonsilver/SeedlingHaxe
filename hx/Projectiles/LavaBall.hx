@@ -16,7 +16,7 @@ import net.flashpunk.utils.Draw;
 class LavaBall extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/LavaBall.png"))
 	private var imgLavaBall:Class<Dynamic>;
-	private var sprLavaBall:Spritemap = new Spritemap(imgLavaBall, 48, 32);
+	private var sprLavaBall:Spritemap ;
 
 	public var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
 
@@ -24,6 +24,7 @@ class LavaBall extends Mobile {
 	private var beenHit:Bool = false;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
+sprLavaBall =  new Spritemap(imgLavaBall, 48, 32);
 		super(_x, _y, sprLavaBall);
 		sprLavaBall.scale = sc;
 		sprLavaBall.originX = 32;

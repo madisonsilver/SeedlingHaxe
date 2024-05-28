@@ -14,7 +14,7 @@ import scenery.Tile;
 class IceTurret extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/IceTurret.png"))
 	private var imgIceTurret:Class<Dynamic>;
-	private var sprIceTurret:Spritemap = new Spritemap(imgIceTurret, 32, 32, endAnim);
+	private var sprIceTurret:Spritemap ;
 
 	private var attackAnimSpeed(default, never):Int = 10;
 	private var attackRange(default, never):Int = 128;
@@ -29,6 +29,7 @@ class IceTurret extends Enemy {
 	private var tile:Point;
 
 	public function new(_x:Int, _y:Int) {
+sprIceTurret =  new Spritemap(imgIceTurret, 32, 32, endAnim);
 		super(_x + Tile.w, _y + Tile.h, sprIceTurret);
 
 		sprIceTurret.originX = 12;

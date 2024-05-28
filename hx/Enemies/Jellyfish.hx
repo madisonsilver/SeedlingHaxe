@@ -13,10 +13,10 @@ import pickups.Coin;
 class Jellyfish extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/Jellyfish.png"))
 	private var imgJelly:Class<Dynamic>;
-	private var sprJelly:Spritemap = new Spritemap(imgJelly, 14, 15, endAnim);
+	private var sprJelly:Spritemap ;
 
 	public var moveSpeedNormal(default, never):Float = 0.8;
-	public var moveSpeed:Float = moveSpeedNormal;
+	public var moveSpeed:Float ;
 
 	private var walkAnimSpeed(default, never):Int = 15;
 	private var walkFrames(default, never):Array<Dynamic> = [0, 1, 2, 3, 2, 1];
@@ -24,6 +24,8 @@ class Jellyfish extends Enemy {
 	private var runRange(default, never):Int = 160; // Range at which the Jellyfish will run after the character
 
 	public function new(_x:Int, _y:Int) {
+sprJelly =  new Spritemap(imgJelly, 14, 15, endAnim);
+moveSpeed =  moveSpeedNormal;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprJelly);
 
 		sprJelly.centerOO();

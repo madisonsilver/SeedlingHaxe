@@ -11,9 +11,10 @@ import net.flashpunk.FP;
 class Coin extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Coin.png"))
 	private var imgCoin:Class<Dynamic>;
-	private var sprCoin:Spritemap = new Spritemap(imgCoin, 4, 4);
+	private var sprCoin:Spritemap ;
 
 	public function new(_x:Int, _y:Int, _v:Point = null) {
+sprCoin =  new Spritemap(imgCoin, 4, 4);
 		super(_x, _y, sprCoin, _v);
 		sprCoin.centerOO();
 		type = "Coin";

@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class PushableBlockFire extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/PushableBlockFire.png"))
 	private var imgPushableBlockFire:Class<Dynamic>;
-	private var sprPushableBlockFire:Spritemap = new Spritemap(imgPushableBlockFire, 16, 16);
+	private var sprPushableBlockFire:Spritemap ;
 
 	private var moveSpeed(default, never):Float = 0.5;
 	private var tile:Point; // The middle of the tile that you want to move toward
@@ -24,6 +24,7 @@ class PushableBlockFire extends Mobile {
 	public var moveTypes:Array<Dynamic> = ["Fire", "Pulse"];
 
 	public function new(_x:Int, _y:Int) {
+sprPushableBlockFire =  new Spritemap(imgPushableBlockFire, 16, 16);
 		super(_x, _y, sprPushableBlockFire);
 		sprPushableBlockFire.color = 0xFF0000;
 		setHitbox(16, 16);

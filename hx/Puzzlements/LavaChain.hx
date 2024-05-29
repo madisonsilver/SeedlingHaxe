@@ -49,7 +49,7 @@ class LavaChain extends Entity {
 	override public function update():Void {
 		super.update();
 		(try cast(graphic, Spritemap) catch (e:Dynamic) null).angle = 90 * direction;
-		if (!Game.worldFrame(Main.FPS, loops)) {
+		if (Game.worldFrame(Main.FPS, loops) == 0) {
 			(try cast(graphic, Spritemap) catch (e:Dynamic) null).play("extend");
 		}
 		if ((try cast(graphic, Spritemap) catch (e:Dynamic) null).currentAnim == "hit"

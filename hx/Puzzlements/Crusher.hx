@@ -59,7 +59,7 @@ class Crusher extends Activators {
 							var offsetY:Int = as3hx.Compat.parseInt(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
 							var w:Int = as3hx.Compat.parseInt(width + intDist * Math.abs(directions[i].x));
 							var h:Int = as3hx.Compat.parseInt(height + intDist * Math.abs(directions[i].y));
-							if (FP.world.collideRect("Player", x + offsetX, y + offsetY, w, h)) {
+							if (FP.world.collideRect("Player", x + offsetX, y + offsetY, w, h) != null) {
 								v.x = directions[i].x * speed;
 								v.y = directions[i].y * speed;
 							}
@@ -109,7 +109,8 @@ class Crusher extends Activators {
 
 	public function moveX(_xrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_xrel)) {
+		var i : Int = 0;
+		while (i < Math.abs(_xrel)) {
 			var c:Entity = collideTypes(solids, x + Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel), y);
 			if (c == null) {
 				x += Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel);
@@ -117,13 +118,15 @@ class Crusher extends Activators {
 				v.x = 0;
 				return c;
 			}
+			i += 1;
 		}
 		return null;
 	}
 
 	public function moveY(_yrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_yrel)) {
+		var i: Int = 0;
+		while (i < Math.abs(_yrel)) {
 			var c:Entity = collideTypes(solids, x, y + Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel));
 			if (c == null) {
 				y += Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel);
@@ -131,6 +134,7 @@ class Crusher extends Activators {
 				v.y = 0;
 				return c;
 			}
+			i+= 1;
 		}
 		return null;
 	}

@@ -2142,7 +2142,7 @@ class Game extends World {
 						default:
 							tile = null;
 					}
-					tiles[Math.floor(o.setAttribute("x", Tile.w))][Math.floor(o.setAttribute("y", Tile.h))];
+					tiles[Math.floor(Std.parseInt(o.att.x)/Tile.w)][Math.floor(Std.parseInt(o.att.y)/Tile.h)] = tile;
 				}
 			}
 		}

@@ -77,8 +77,8 @@ class BeamTower extends Entity {
 					playedSound = true;
 				}
 				var rect:Rectangle = getRect(direction);
-				p = try cast(FP.world.collideRect("Player", rect.x, rect.y, rect.width, rect.height), Player) catch (e:Dynamic) null;
-				if (p) {
+				var p : Player = try cast(FP.world.collideRect("Player", rect.x, rect.y, rect.width, rect.height), Player) catch (e:Dynamic) null;
+				if (p != null) {
 					p.hit(null, force, new Point(x, y), damage);
 					Game.shake = 15;
 				}

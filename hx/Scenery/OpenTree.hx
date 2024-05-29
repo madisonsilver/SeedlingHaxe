@@ -16,7 +16,7 @@ class OpenTree extends Tree {
 
 	override public function update():Void {
 		super.update();
-		if (!mask) {
+		if (mask==null) {
 			setHitbox();
 			mask = new Pixelmask(Game.imgOpenTreeMask, -16, -16);
 		}

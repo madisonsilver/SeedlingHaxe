@@ -41,7 +41,7 @@ class ButtonRoom extends Activators {
 		super.check();
 		_active = !Game.checkPersistence(tag); // Notted so that it starts off as up (not down, as "true" would imply)
 		activate = _active;
-		if (collide("Wire", x, y + Tile.h)) {
+		if (collide("Wire", x, y + Tile.h) != null) {
 			frameAdd = 2;
 			sprButtonRoom.frame = as3hx.Compat.parseInt(activate) + frameAdd;
 		}

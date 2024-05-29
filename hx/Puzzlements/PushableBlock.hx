@@ -52,15 +52,15 @@ class PushableBlock extends Mobile {
 			tile.y = cTile.y - 1;
 		}
 		v.x = moveSpeed * FP.sign(tile.x - cTile.x);
-		if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y)) {
+		if (collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y) == null) {
 			if (v.x == 0) {
-				x = Std.int(Std.int(Std.int(gridPos(x, y).x)));
+				x = (gridPos(Std.int(x), Std.int(y)).x);
 			}
 		}
 		v.y = moveSpeed * FP.sign(tile.y - cTile.y);
-		if (!collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y)) {
+		if (collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y) == null) {
 			if (v.y == 0) {
-				y = Std.int(Std.int(Std.int(gridPos(x, y).y)));
+				y = (gridPos(Std.int(x), Std.int(y)).y);
 			}
 		}
 
@@ -78,7 +78,7 @@ class PushableBlock extends Mobile {
 						}
 					}
 				}
-				if (v.length > 0 && !collideTypes(solids, x + v.x, y + v.y)) {
+				if (v.length > 0 && collideTypes(solids, x + v.x, y + v.y) == null) {
 					Music.playSound("Push Rock", -1, 0.5);
 				}
 			}
@@ -93,10 +93,10 @@ class PushableBlock extends Mobile {
 		friction();
 		input();
 		// If we're going to hit something, get rid of our velocity.
-		if (moveX(v.x)) {
+		if (moveX(v.x) != null) {
 			tile.x = cTile.x;
 		}
-		if (moveY(v.y)) {
+		if (moveY(v.y) != null) {
 			tile.y = cTile.y;
 		}
 		layering();

@@ -68,7 +68,7 @@ class Lock extends Activators {
 			if (type == normType) {
 				(try cast(graphic, Image) catch (e:Dynamic) null).alpha = 1;
 			}
-			if (!collideTypes(hitables, x, y)) {
+			if (collideTypes(hitables, x, y) == null) {
 				returnToNormal();
 			}
 		}

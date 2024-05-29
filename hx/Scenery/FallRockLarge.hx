@@ -17,7 +17,7 @@ import net.flashpunk.utils.Draw;
 class FallRockLarge extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/FallRockLarge.png"))
 	private var imgRockLarge:Class<Dynamic>;
-	private var sprRock:Image = new Image(imgRockLarge);
+	private var sprRock:Image ;
 
 	private var bossRock:Bool;
 	private var thirdBoss:Bool;
@@ -37,6 +37,7 @@ class FallRockLarge extends Activators {
 	private var waitToFallTimer:Int = 0;
 
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _bRock:Bool = false, _tboss:Bool = false) {
+sprRock =  new Image(imgRockLarge);
 		super(_x + Tile.w, _y + Tile.h, sprRock, _t);
 		bossRock = _bRock;
 		fallTo = Std.int(y);

@@ -10,9 +10,10 @@ import net.flashpunk.graphics.Spritemap;
 class OracleStatue extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/OracleStatue.png"))
 	private var imgOracleStatue:Class<Dynamic>;
-	private var sprOracleStatue:Spritemap = new Spritemap(imgOracleStatue, 32, 48);
+	private var sprOracleStatue:Spritemap ;
 
 	public function new(_x:Int, _y:Int) {
+sprOracleStatue =  new Spritemap(imgOracleStatue, 32, 48);
 		super(_x, _y, sprOracleStatue);
 		sprOracleStatue.y = -16;
 		sprOracleStatue.originY = Std.int(-sprOracleStatue.y);

@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class BeamTower extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/BeamTower.png"))
 	private var imgBeamTower:Class<Dynamic>;
-	private var sprBeamTower:Spritemap = new Spritemap(imgBeamTower, 16, 40, animEnd);
+	private var sprBeamTower:Spritemap ;
 
 	private var direction:Int;
 	private var rate:Float;
@@ -25,6 +25,7 @@ class BeamTower extends Entity {
 	private var playedSound:Bool = false;
 
 	public function new(_x:Int, _y:Int, _startdirection:Int = 0, _rate:Float = 1, speed:Float = 1) {
+sprBeamTower =  new Spritemap(imgBeamTower, 16, 40, animEnd);
 		super(_x + 8, _y + 16, sprBeamTower);
 
 		sprBeamTower.originX = 8;

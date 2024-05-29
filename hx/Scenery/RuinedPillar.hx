@@ -10,9 +10,10 @@ import net.flashpunk.graphics.Spritemap;
 class RuinedPillar extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/RuinedPillar.png"))
 	private var imgRuinedPillar:Class<Dynamic>;
-	private var sprRuinedPillar:Spritemap = new Spritemap(imgRuinedPillar, 32, 48);
+	private var sprRuinedPillar:Spritemap ;
 
 	public function new(_x:Int, _y:Int) {
+sprRuinedPillar =  new Spritemap(imgRuinedPillar, 32, 48);
 		super(_x, _y, sprRuinedPillar);
 		sprRuinedPillar.y = -16;
 		sprRuinedPillar.originY = Std.int(-sprRuinedPillar.y);

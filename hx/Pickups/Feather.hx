@@ -11,12 +11,13 @@ import scenery.Tile;
 class Feather extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Feather.png"))
 	private var imgFeather:Class<Dynamic>;
-	private var sprFeather:Spritemap = new Spritemap(imgFeather, 12, 12);
+	private var sprFeather:Spritemap ;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprFeather =  new Spritemap(imgFeather, 12, 12);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFeather, null, false);
 		sprFeather.centerOO();
 		setHitbox(8, 8, 4, 4);

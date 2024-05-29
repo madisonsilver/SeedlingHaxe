@@ -9,10 +9,10 @@ import net.flashpunk.graphics.Spritemap;
 class ShieldLock extends Lock {
 	@:meta(Embed(source = "../../assets/graphics/ShieldLockNorm.png"))
 	private var imgShieldLockNorm:Class<Dynamic>;
-	private var sprShieldLockNorm:Spritemap = new Spritemap(imgShieldLockNorm, 16, 16);
+	private var sprShieldLockNorm:Spritemap ;
 	@:meta(Embed(source = "../../assets/graphics/ShieldLock.png"))
 	private var imgShieldLock:Class<Dynamic>;
-	private var sprShieldLock:Spritemap = new Spritemap(imgShieldLock, 16, 16);
+	private var sprShieldLock:Spritemap ;
 
 	private var p:Player;
 	private var shieldType:Int;
@@ -24,6 +24,8 @@ class ShieldLock extends Lock {
 	 * @param	_type	Represents which shield type (0=normal, 1=dark)
 	 */
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 1) {
+sprShieldLockNorm =  new Spritemap(imgShieldLockNorm, 16, 16);
+sprShieldLock =  new Spritemap(imgShieldLock, 16, 16);
 		super(_x, _y, -2, _tag, (_type == 0) ? sprShieldLockNorm : sprShieldLock);
 		shieldType = _type;
 	}

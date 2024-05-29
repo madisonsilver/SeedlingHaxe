@@ -13,10 +13,10 @@ import net.flashpunk.utils.Draw;
 class LavaTrap extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/LavaTrap.png"))
 	private var imgLavaTrap:Class<Dynamic>;
-	private var sprLavaTrap:Spritemap = new Spritemap(imgLavaTrap, 16, 16, endAnim);
+	private var sprLavaTrap:Spritemap ;
 	@:meta(Embed(source = "../../assets/graphics/LavaTrapTongue.png"))
 	private var imgLavaTrapTongue:Class<Dynamic>;
-	private var sprLavaTrapTongue:Spritemap = new Spritemap(imgLavaTrapTongue, 32, 6, tongueOut);
+	private var sprLavaTrapTongue:Spritemap ;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var tongueAnimSpeed(default, never):Int = 30;
@@ -28,6 +28,8 @@ class LavaTrap extends Enemy {
 	private var wait:Bool = true;
 
 	public function new(_x:Int, _y:Int) {
+sprLavaTrap =  new Spritemap(imgLavaTrap, 16, 16, endAnim);
+sprLavaTrapTongue =  new Spritemap(imgLavaTrapTongue, 32, 6, tongueOut);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLavaTrap);
 
 		sprLavaTrap.centerOO();

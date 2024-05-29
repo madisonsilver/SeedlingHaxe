@@ -17,7 +17,7 @@ import net.flashpunk.utils.Draw;
 class Crusher extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Crusher.png"))
 	private var imgCrusher:Class<Dynamic>;
-	private var sprCrusher:Spritemap = new Spritemap(imgCrusher, 32, 32);
+	private var sprCrusher:Spritemap ;
 
 	private var hitables(default, never):Dynamic = ["Player", "Solid", "Enemy", "ShieldBoss"];
 	private var solids(default, never):Dynamic = ["Solid"];
@@ -34,6 +34,7 @@ class Crusher extends Activators {
 	private var damage:Int = 1000; // KILL EVERYTHING
 
 	public function new(_x:Int, _y:Int, _t:Int) {
+sprCrusher =  new Spritemap(imgCrusher, 32, 32);
 		super(_x + Tile.w, _y + Tile.h, sprCrusher, _t);
 		(try cast(graphic, Image) catch (e:Dynamic) null).centerOO();
 		setHitbox(32, 32, 16, 16);

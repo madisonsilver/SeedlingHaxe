@@ -10,9 +10,10 @@ import net.flashpunk.graphics.Image;
 class BrickPole extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/BrickPole.png"))
 	private var imgBrickPole:Class<Dynamic>;
-	private var sprBrickPole:Image = new Image(imgBrickPole);
+	private var sprBrickPole:Image ;
 
 	public function new(_x:Int, _y:Int) {
+sprBrickPole =  new Image(imgBrickPole);
 		super(_x, _y, sprBrickPole);
 		sprBrickPole.y = -4;
 		sprBrickPole.originY = 4;

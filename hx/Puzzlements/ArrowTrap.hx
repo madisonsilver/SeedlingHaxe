@@ -14,13 +14,14 @@ import projectiles.Arrow;
 class ArrowTrap extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/ArrowTrap.png"))
 	private var imgArrowTrap:Class<Dynamic>;
-	private var sprArrowTrap:Spritemap = new Spritemap(imgArrowTrap, 16, 5);
+	private var sprArrowTrap:Spritemap ;
 
 	private var shootTimer:Int = 0;
 	private var shootTimerMax(default, never):Int = 10;
 	private var shootDefault:Bool; // Whether it should default to shooting when not activated or vice versa
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _shoot:Bool = false) {
+sprArrowTrap =  new Spritemap(imgArrowTrap, 16, 5);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + sprArrowTrap.height / 2), sprArrowTrap, _t);
 		sprArrowTrap.centerOO();
 		layer = Std.int(-(y - originY + height));

@@ -386,7 +386,7 @@ class Inventory {
 			+ itemOffsetIncrement.y * Main.secondary),
 			new Point());
 
-		var text:Text;
+		var text:Text = null;
 		var helpTextOffset:Point = new Point(offset.x + sprInventory.width, FP.screen.height / 2); // Left aligned horizontally, but center aligned vertically
 		var margin:Int = 4;
 		if (drawFirstUseHelp) {

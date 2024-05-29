@@ -12,12 +12,13 @@ import scenery.Moonrock;
 class Shield extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Shield.png"))
 	private var imgShield:Class<Dynamic>;
-	private var sprShield:Spritemap = new Spritemap(imgShield, 7, 7);
+	private var sprShield:Spritemap ;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprShield =  new Spritemap(imgShield, 7, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprShield, null, false);
 		sprShield.centerOO();
 		setHitbox(8, 8, 4, 4);

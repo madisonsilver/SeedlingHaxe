@@ -13,7 +13,7 @@ import scenery.Wire;
 class ButtonRoom extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/ButtonRoom.png"))
 	private var imgButtonRoom:Class<Dynamic>;
-	private var sprButtonRoom:Spritemap = new Spritemap(imgButtonRoom, 16, 16);
+	private var sprButtonRoom:Spritemap ;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
 	private var flip:Bool; // Changes the actions of the button so that there's persistence in the room.
@@ -27,6 +27,7 @@ class ButtonRoom extends Activators {
 	// tset matches up with "tag" for objects in other rooms, not their tsets.
 
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int, _flip:Bool, _room:Int) {
+sprButtonRoom =  new Spritemap(imgButtonRoom, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButtonRoom, _t);
 		sprButtonRoom.centerOO();
 		setHitbox(8, 6, 4, 3);

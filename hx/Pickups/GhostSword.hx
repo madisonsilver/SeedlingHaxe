@@ -12,12 +12,13 @@ import net.flashpunk.utils.Draw;
 class GhostSword extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/GhostSwordPickup.png"))
 	private var imgGhostSword:Class<Dynamic>;
-	private var sprGhostSword:Spritemap = new Spritemap(imgGhostSword, 24, 7);
+	private var sprGhostSword:Spritemap ;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+sprGhostSword =  new Spritemap(imgGhostSword, 24, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprGhostSword, null, false);
 		sprGhostSword.centerOO();
 		setHitbox(20, 4, 10, 2);

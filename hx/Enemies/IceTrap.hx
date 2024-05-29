@@ -12,12 +12,13 @@ import scenery.Tile;
 class IceTrap extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/IceTrap.png"))
 	private var imgIceTrap:Class<Dynamic>;
-	private var sprIceTrap:Spritemap = new Spritemap(imgIceTrap, 16, 16, endAnim);
+	private var sprIceTrap:Spritemap ;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 8; // The distance at which the ice trap will start chomping from a player
 
 	public function new(_x:Int, _y:Int) {
+sprIceTrap =  new Spritemap(imgIceTrap, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprIceTrap);
 
 		sprIceTrap.centerOO();

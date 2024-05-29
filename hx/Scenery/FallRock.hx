@@ -15,7 +15,7 @@ import net.flashpunk.utils.Draw;
 class FallRock extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/FallRock.png"))
 	private var imgRock:Class<Dynamic>;
-	private var sprRock:Image = new Image(imgRock);
+	private var sprRock:Image ;
 
 	private var tag:Int;
 
@@ -32,6 +32,7 @@ class FallRock extends Activators {
 	private var waitToFallTimer:Int = 0;
 
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+sprRock =  new Image(imgRock);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRock, _t);
 		fallTo = Std.int(y);
 		sprRock.centerOO();

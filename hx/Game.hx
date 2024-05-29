@@ -2607,8 +2607,8 @@ class Game extends World {
 				// get the end point of the electricity (via nodes)
 				for (n in o.nodes.node) {
 					pt = new Point(Std.parseFloat(n.att.x), Std.parseFloat(n.att.y));
+					add(new RopeStart(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.int(pt.x), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 				}
-				add(new RopeStart(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.int(pt.x), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 		}
 		setFallFromCeiling = false;

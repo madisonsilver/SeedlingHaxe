@@ -14,7 +14,7 @@ import scenery.Tile;
 class BombPusher extends Enemy {
 	@:meta(Embed(source = "../../assets/graphics/BombPusher.png"))
 	private var imgBombPusher:Class<Dynamic>;
-	private var sprBombPusher:Spritemap = new Spritemap(imgBombPusher, 48, 48, endAnim);
+	private var sprBombPusher:Spritemap ;
 
 	private var sitAnimation(default, never):Array<Dynamic> = [0, 3];
 	private var shootAnimation(default, never):Array<Dynamic> = [0, 2, 1, 2, 3];
@@ -23,6 +23,7 @@ class BombPusher extends Enemy {
 	private var maxDistance(default, never):Int = 256;
 
 	public function new(_x:Int, _y:Int) {
+sprBombPusher =  new Spritemap(imgBombPusher, 48, 48, endAnim);
 		super(Std.int(_x + Tile.w * 3 / 2), Std.int(_y + Tile.h * 3 / 2), sprBombPusher);
 		sprBombPusher.centerOO();
 		setHitbox(48, 48, 24, 24);

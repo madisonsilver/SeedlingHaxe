@@ -24,9 +24,10 @@ class BossLock extends Activators {
 	private var alpha:Float = 1;
 
 	private var keyTimerMax(default, never):Int = 60;
-	private var keyTimer:Int = keyTimerMax;
+	private var keyTimer:Int ;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1) {
+keyTimer =  keyTimerMax;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossLocks[_t], -1);
 		myKey = Game.bossKeys[_t];
 		setHitbox(16, 16, 8, 8);

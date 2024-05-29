@@ -10,9 +10,10 @@ import net.flashpunk.graphics.Image;
 class Bed extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Bed.png"))
 	private var imgBed:Class<Dynamic>;
-	private var sprBed:Image = new Image(imgBed);
+	private var sprBed:Image ;
 
 	public function new(_x:Int, _y:Int) {
+sprBed =  new Image(imgBed);
 		super(_x, _y, sprBed);
 		setHitbox(16, 32);
 		type = "Solid";

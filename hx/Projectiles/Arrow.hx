@@ -14,12 +14,13 @@ import net.flashpunk.graphics.Spritemap;
 class Arrow extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/Arrow.png"))
 	private var imgArrow:Class<Dynamic>;
-	private var sprArrow:Image = new Image(imgArrow);
+	private var sprArrow:Image ;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Tree", "Solid", "Shield"];
 	private var die:Bool = false;
 
 	public function new(_x:Int, _y:Int, _v:Point) {
+sprArrow =  new Image(imgArrow);
 		super(_x, _y, sprArrow);
 		sprArrow.centerOO();
 		v = _v;

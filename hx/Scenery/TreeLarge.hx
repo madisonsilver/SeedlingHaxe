@@ -15,13 +15,14 @@ class TreeLarge extends Entity {
 	private var imgTreeLargeMask:Class<Dynamic>;
 	@:meta(Embed(source = "../../assets/graphics/TreeLarge.png"))
 	private var imgTreeLarge:Class<Dynamic>;
-	private var sprTreeLarge:Spritemap = new Spritemap(imgTreeLarge, 160, 192);
+	private var sprTreeLarge:Spritemap ;
 
 	private static var shine:Array<Dynamic> = [0, 1, 2, 3, 2, 1];
 	private static inline var phases:Int = 100;
 	private static inline var loops:Int = 3;
 
 	public function new(_x:Int, _y:Int) {
+sprTreeLarge =  new Spritemap(imgTreeLarge, 160, 192);
 		super(_x + 80, _y + 96, sprTreeLarge);
 		sprTreeLarge.centerOO();
 		mask = new Pixelmask(imgTreeLargeMask, -80, -96); //

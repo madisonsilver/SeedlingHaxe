@@ -2047,98 +2047,98 @@ class Game extends World {
 		}
 		if (xml.hasNode.tiles) {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),tiles),EConst(CInt(0))),tile) type: null */ in xml.nodes.tiles[0].nodes.tile) {
-				if (Math.floor(o.att.x / Tile.w) < tiles.length && Math.floor(o.att.y / Tile.h) < tiles[0].length) {
-					switch (Math.floor(o.att.tx / Tile.w)) {
+				if (Math.floor(Std.parseInt(o.att.x) / Tile.w) < tiles.length && Math.floor(Std.parseInt(o.att.y) / Tile.h) < tiles[0].length) {
+					switch (Math.floor(Std.parseInt(o.att.tx) / Tile.w)) {
 						case 0:
-							add(tile = new Tile(o.att.x, o.att.y, 0, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0, false));
 						case 1:
-							add(tile = new Tile(o.att.x, o.att.y, 0));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0));
 						case 2:
-							add(tile = new Tile(o.att.x, o.att.y, 1));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1));
 						case 3:
-							add(tile = new Tile(o.att.x, o.att.y, 2));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 2));
 						case 4:
-							add(tile = new Tile(o.att.x, o.att.y, 3));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 3));
 						case 5:
-							add(tile = new Tile(o.att.x, o.att.y, 4));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 4));
 						case 6:
-							add(tile = new Tile(o.att.x, o.att.y, 5));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 5));
 						case 7:
-							add(tile = new Tile(o.att.x, o.att.y, 6));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 6));
 						case 8:
-							add(tile = new Tile(o.att.x, o.att.y, 7));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 7));
 						case 9:
-							add(tile = new Tile(o.att.x, o.att.y, 8, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 8, false));
 						case 10:
-							add(tile = new Tile(o.att.x, o.att.y, 8));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 8));
 						case 11:
-							add(tile = new Tile(o.att.x, o.att.y, 9));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 9));
 						case 12:
-							add(tile = new Tile(o.att.x, o.att.y, 10));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 10));
 						case 13:
-							add(tile = new Tile(o.att.x, o.att.y, 11));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 11));
 						case 14:
-							add(tile = new Tile(o.att.x, o.att.y, 12));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 12));
 						case 15:
-							add(tile = new Tile(o.att.x, o.att.y, 13));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 13));
 						case 16:
-							add(tile = new Tile(o.att.x, o.att.y, 14));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 14));
 						case 17:
-							add(tile = new Tile(o.att.x, o.att.y, 15));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 15));
 						case 18:
-							add(tile = new Tile(o.att.x, o.att.y, 16));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 16));
 						case 19:
-							add(tile = new Tile(o.att.x, o.att.y, 17));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 17));
 						case 20:
-							add(tile = new Tile(o.att.x, o.att.y, 18));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 18));
 						case 21:
-							add(tile = new Tile(o.att.x, o.att.y, 19));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 19));
 						case 22:
-							add(tile = new Tile(o.att.x, o.att.y, 20));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 20));
 						case 23:
-							add(tile = new Tile(o.att.x, o.att.y, 21));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 21));
 						case 24:
-							add(tile = new Tile(o.att.x, o.att.y, 22));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 22));
 						case 25:
-							add(tile = new Tile(o.att.x, o.att.y, 23));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 23));
 						case 26:
-							add(tile = new Tile(o.att.x, o.att.y, 24));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 24));
 						case 27:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, false, true, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, false, true, false));
 						case 28:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, false, false, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, false, false, false));
 						case 29:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, true, false, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, true, false, false));
 						case 30:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, true, true, false));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, true, true, false));
 						case 31:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, false, true, true));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, false, true, true));
 						case 32:
-							add(tile = new Tile(o.att.x, o.att.y, 25, false, null, false, false, true));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 25, false, null, false, false, true));
 						case 33:
-							add(tile = new Tile(o.att.x, o.att.y, 26));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 26));
 						case 34:
-							add(tile = new Tile(o.att.x, o.att.y, 27));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 27));
 						case 35:
-							add(tile = new Tile(o.att.x, o.att.y, 28));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 28));
 						case 36:
-							add(tile = new Tile(o.att.x, o.att.y, 29));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 29));
 						case 37:
-							add(tile = new Tile(o.att.x, o.att.y, 30));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 30));
 						case 38:
-							add(tile = new Tile(o.att.x, o.att.y, 31));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 31));
 						case 39:
-							add(tile = new Tile(o.att.x, o.att.y, 32));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 32));
 						case 40:
-							add(tile = new Tile(o.att.x, o.att.y, 33));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 33));
 						case 41:
-							add(tile = new Tile(o.att.x, o.att.y, 34));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 34));
 						case 42:
-							add(tile = new Tile(o.att.x, o.att.y, 35));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 35));
 						case 43:
-							add(tile = new Tile(o.att.x, o.att.y, 36));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 36));
 						case 44:
-							add(tile = new Tile(o.att.x, o.att.y, 37));
+							add(tile = new Tile(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 37));
 						default:
 							tile = null;
 					}
@@ -2148,7 +2148,7 @@ class Game extends World {
 		}
 		if (xml.hasNode.cliffsides) {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),cliffsides),EConst(CInt(0))),tile) type: null */ in xml.nodes.cliffsides[0].nodes.tile) {
-				add(new CliffSide(o.att.x, o.att.y, Math.floor(o.att.tx / Tile.w)));
+				add(new CliffSide(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Math.floor(Std.parseInt(o.att.tx) / Tile.w)));
 			}
 		}
 
@@ -2164,7 +2164,7 @@ class Game extends World {
 			} else {
 				if (xml.hasNode.objects) {
 					for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),player) type: null */ in xml.nodes.objects[0].nodes.player) {
-						playerPosition = new Point(o.att.x, o.att.y);
+						playerPosition = new Point(Std.parseInt(o.att.x), Std.parseInt(o.att.y));
 					}
 				}
 				var player:Player;
@@ -2179,436 +2179,436 @@ class Game extends World {
 				// Used to be above the player block, so check if it will cause issues.
 			{
 				{
-					fallthroughLevel = o.att.fallthrough;
-					fallthroughOffset = new Point(o.att.x, o.att.y);
-					var tempOffset:Point = new Point(o.att.xOff, o.att.yOff);
+					fallthroughLevel = Std.parseInt(o.att.fallthrough);
+					fallthroughOffset = new Point(Std.parseInt(o.att.x), Std.parseInt(o.att.y));
+					var tempOffset:Point = new Point(Std.parseInt(o.att.xOff), Std.parseInt(o.att.yOff));
 					fallthroughOffset = new Point(fallthroughOffset.x + tempOffset.x, fallthroughOffset.y + tempOffset.y);
-					fallthroughSign = as3hx.Compat.parseInt(as3hx.Compat.parseInt(o.att.sign) - 1);
+					fallthroughSign = as3hx.Compat.parseInt(as3hx.Compat.parseInt(Std.parseInt(o.att.sign)) - 1);
 				}
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),droplet) type: null */ in xml.nodes.objects[0].nodes.droplet) {
 				raining = true;
-				rainingHeaviness = o.att.heaviness;
-				rainingRect = new Rectangle(o.att.x, o.att.y, o.att.width, o.att.height);
+				rainingHeaviness = Std.parseInt(o.att.heaviness);
+				rainingRect = new Rectangle(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.width), Std.parseInt(o.att.height));
 				rainingRect.width = rainingRect.width != -(1) ? rainingRect.width : FP.width;
 				rainingRect.height = rainingRect.height != -(1) ? rainingRect.height : FP.height;
-				rainingHeight = o.att.startheight;
-				rainingColor = o.att.color;
+				rainingHeight = Std.parseInt(o.att.startheight);
+				rainingColor = Std.parseInt(o.att.color);
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bob) type: null */ in xml.nodes.objects[0].nodes.bob) {
-				add(new Bob(o.att.x, o.att.y));
+				add(new Bob(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bobsoldier) type: null */ in xml.nodes.objects[0].nodes.bobsoldier) {
-				add(new BobSoldier(o.att.x, o.att.y));
+				add(new BobSoldier(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bobboss1) type: null */ in xml.nodes.objects[0].nodes.bobboss1) {
-				add(new BobBoss(o.att.x, o.att.y, 0));
+				add(new BobBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bobboss2) type: null */ in xml.nodes.objects[0].nodes.bobboss2) {
-				add(new BobBoss(o.att.x, o.att.y, 1));
+				add(new BobBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bobboss3) type: null */ in xml.nodes.objects[0].nodes.bobboss3) {
-				add(new BobBoss(o.att.x, o.att.y, 2));
+				add(new BobBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 2));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bosstotem) type: null */ in xml.nodes.objects[0].nodes.bosstotem) {
-				add(new BossTotem(o.att.x, o.att.y, o.att.tag));
+				add(new BossTotem(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightbosscontroller) type: null */ in xml.nodes.objects[0].nodes.lightbosscontroller) {
-				add(new LightBossController(o.att.x, o.att.y, o.att.fliernum, o.att.tag));
+				add(new LightBossController(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.fliernum), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lavaboss) type: null */ in xml.nodes.objects[0].nodes.lavaboss) {
-				add(new LavaBoss(o.att.x, o.att.y, o.att.tag));
+				add(new LavaBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),finalboss) type: null */ in xml.nodes.objects[0].nodes.finalboss) {
-				add(new FinalBoss(o.att.x, o.att.y, o.att.tag));
+				add(new FinalBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),flyer) type: null */ in xml.nodes.objects[0].nodes.flyer) {
-				add(new Flyer(o.att.x, o.att.y));
+				add(new Flyer(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),jellyfish) type: null */ in xml.nodes.objects[0].nodes.jellyfish) {
-				add(new Jellyfish(o.att.x, o.att.y));
+				add(new Jellyfish(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lavarunner) type: null */ in xml.nodes.objects[0].nodes.lavarunner) {
-				add(new LavaRunner(o.att.x, o.att.y));
+				add(new LavaRunner(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bulb) type: null */ in xml.nodes.objects[0].nodes.bulb) {
-				add(new Bulb(o.att.x, o.att.y));
+				add(new Bulb(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),tentaclebeast) type: null */ in xml.nodes.objects[0].nodes.tentaclebeast) {
-				add(new TentacleBeast(o.att.x, o.att.y, o.att.tag));
+				add(new TentacleBeast(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),drill) type: null */ in xml.nodes.objects[0].nodes.drill) {
-				add(new Drill(o.att.x, o.att.y));
+				add(new Drill(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),sandtrap) type: null */ in xml.nodes.objects[0].nodes.sandtrap) {
-				add(new SandTrap(o.att.x, o.att.y, o.att.tag));
+				add(new SandTrap(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),icetrap) type: null */ in xml.nodes.objects[0].nodes.icetrap) {
-				add(new IceTrap(o.att.x, o.att.y));
+				add(new IceTrap(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lavatrap) type: null */ in xml.nodes.objects[0].nodes.lavatrap) {
-				add(new LavaTrap(o.att.x, o.att.y));
+				add(new LavaTrap(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),darktrap) type: null */ in xml.nodes.objects[0].nodes.darktrap) {
-				add(new DarkTrap(o.att.x, o.att.y, o.att.tag));
+				add(new DarkTrap(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),turret) type: null */ in xml.nodes.objects[0].nodes.turret) {
-				add(new Turret(o.att.x, o.att.y));
+				add(new Turret(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),iceturret) type: null */ in xml.nodes.objects[0].nodes.iceturret) {
-				add(new IceTurret(o.att.x, o.att.y));
+				add(new IceTurret(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),beamtower) type: null */ in xml.nodes.objects[0].nodes.beamtower) {
-				add(new BeamTower(o.att.x, o.att.y, o.att.direction, o.att.rate, o.att.speed));
+				add(new BeamTower(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.direction), Std.parseInt(o.att.rate), Std.parseInt(o.att.speed)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),grenade) type: null */ in xml.nodes.objects[0].nodes.grenade) {
-				add(new Grenade(o.att.x, o.att.y));
+				add(new Grenade(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bombpusher) type: null */ in xml.nodes.objects[0].nodes.bombpusher) {
-				add(new BombPusher(o.att.x, o.att.y));
+				add(new BombPusher(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),crusher) type: null */ in xml.nodes.objects[0].nodes.crusher) {
-				add(new Crusher(o.att.x, o.att.y, o.att.tset));
+				add(new Crusher(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),puncher) type: null */ in xml.nodes.objects[0].nodes.puncher) {
-				add(new Puncher(o.att.x, o.att.y));
+				add(new Puncher(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),treelarge) type: null */ in xml.nodes.objects[0].nodes.treelarge) {
-				add(new TreeLarge(o.att.x, o.att.y));
+				add(new TreeLarge(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),tree) type: null */ in xml.nodes.objects[0].nodes.tree) {
-				add(new Tree(o.att.x, o.att.y));
+				add(new Tree(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),treebare) type: null */ in xml.nodes.objects[0].nodes.treebare) {
-				add(new Tree(o.att.x, o.att.y, true));
+				add(new Tree(Std.parseInt(o.att.x), Std.parseInt(o.att.y), true));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),burnabletree) type: null */ in xml.nodes.objects[0].nodes.burnabletree) {
-				add(new BurnableTree(o.att.x, o.att.y, o.att.tag));
+				add(new BurnableTree(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),opentree) type: null */ in xml.nodes.objects[0].nodes.opentree) {
-				add(new OpenTree(o.att.x, o.att.y));
+				add(new OpenTree(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),snowhill) type: null */ in xml.nodes.objects[0].nodes.snowhill) {
-				add(new SnowHill(o.att.x, o.att.y));
+				add(new SnowHill(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building) type: null */ in xml.nodes.objects[0].nodes.building) {
-				add(new Building(o.att.x, o.att.y, 0));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building1) type: null */ in xml.nodes.objects[0].nodes.building1) {
-				add(new Building(o.att.x, o.att.y, 1));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building2) type: null */ in xml.nodes.objects[0].nodes.building2) {
-				add(new Building(o.att.x, o.att.y, 2));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 2));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building3) type: null */ in xml.nodes.objects[0].nodes.building3) {
-				add(new Building(o.att.x, o.att.y, 3));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 3));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building4) type: null */ in xml.nodes.objects[0].nodes.building4) {
-				add(new Building(o.att.x, o.att.y, 4));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 4));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building5) type: null */ in xml.nodes.objects[0].nodes.building5) {
-				add(new Building(o.att.x, o.att.y, 5));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 5));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building6) type: null */ in xml.nodes.objects[0].nodes.building6) {
-				add(new Building(o.att.x, o.att.y, 6));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 6));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building7) type: null */ in xml.nodes.objects[0].nodes.building7) {
-				add(new Building(o.att.x, o.att.y, 7));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 7));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),building8) type: null */ in xml.nodes.objects[0].nodes.building8) {
-				add(new Building(o.att.x, o.att.y, 8));
+				add(new Building(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 8));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),wire) type: null */ in xml.nodes.objects[0].nodes.wire) {
-				add(new Wire(o.att.x, o.att.y, o.att.img));
+				add(new Wire(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.img)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bed) type: null */ in xml.nodes.objects[0].nodes.bed) {
-				add(new Bed(o.att.x, o.att.y));
+				add(new Bed(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),dresser) type: null */ in xml.nodes.objects[0].nodes.dresser) {
-				add(new Dresser(o.att.x, o.att.y));
+				add(new Dresser(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bar) type: null */ in xml.nodes.objects[0].nodes.bar) {
-				add(new Bar(o.att.x, o.att.y));
+				add(new Bar(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),barstool) type: null */ in xml.nodes.objects[0].nodes.barstool) {
-				add(new Barstool(o.att.x, o.att.y));
+				add(new Barstool(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rock) type: null */ in xml.nodes.objects[0].nodes.rock) {
-				add(new Rock(o.att.x, o.att.y, 0));
+				add(new Rock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rock2) type: null */ in xml.nodes.objects[0].nodes.rock2) {
-				add(new Rock(o.att.x, o.att.y, 1));
+				add(new Rock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rock3) type: null */ in xml.nodes.objects[0].nodes.rock3) {
-				add(new Rock(o.att.x, o.att.y, 2));
+				add(new Rock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 2));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rock4) type: null */ in xml.nodes.objects[0].nodes.rock4) {
-				add(new Rock(o.att.x, o.att.y, 3));
+				add(new Rock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 3));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pole) type: null */ in xml.nodes.objects[0].nodes.pole) {
-				add(new Pole(o.att.x, o.att.y));
+				add(new Pole(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),sword) type: null */ in xml.nodes.objects[0].nodes.sword) {
-				add(new Sword(o.att.x, o.att.y, o.att.tag));
+				add(new Sword(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),feather) type: null */ in xml.nodes.objects[0].nodes.feather) {
-				add(new Feather(o.att.x, o.att.y, o.att.tag));
+				add(new Feather(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),ghostspear) type: null */ in xml.nodes.objects[0].nodes.ghostspear) {
-				add(new GhostSpear(o.att.x, o.att.y, o.att.tag));
+				add(new GhostSpear(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),ghostsword) type: null */ in xml.nodes.objects[0].nodes.ghostsword) {
-				add(new GhostSword(o.att.x, o.att.y, o.att.tag));
+				add(new GhostSword(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),darkshield) type: null */ in xml.nodes.objects[0].nodes.darkshield) {
-				add(new DarkShield(o.att.x, o.att.y, o.att.tag));
+				add(new DarkShield(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),darksuit) type: null */ in xml.nodes.objects[0].nodes.darksuit) {
-				add(new DarkSuit(o.att.x, o.att.y, o.att.tag));
+				add(new DarkSuit(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),conch) type: null */ in xml.nodes.objects[0].nodes.conch) {
-				add(new Conch(o.att.x, o.att.y, o.att.tag));
+				add(new Conch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shield) type: null */ in xml.nodes.objects[0].nodes.shield) {
-				add(new Shield(o.att.x, o.att.y, o.att.tag));
+				add(new Shield(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),torchpickup) type: null */ in xml.nodes.objects[0].nodes.torchpickup) {
-				add(new TorchPickup(o.att.x, o.att.y, o.att.tag));
+				add(new TorchPickup(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),fire) type: null */ in xml.nodes.objects[0].nodes.fire) {
-				add(new Fire(o.att.x, o.att.y, o.att.tag));
+				add(new Fire(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),button) type: null */ in xml.nodes.objects[0].nodes.button) {
-				add(new Button(o.att.x, o.att.y, o.att.tset));
+				add(new Button(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),buttonroom) type: null */ in xml.nodes.objects[0].nodes.buttonroom) {
-				add(new ButtonRoom(o.att.x, o.att.y, o.att.tset, o.att.tag, cast(as3hx.Compat.parseInt(o.att.flip), Bool), o.att.room));
+				add(new ButtonRoom(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool), Std.parseInt(o.att.room)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),arrowtrap) type: null */ in xml.nodes.objects[0].nodes.arrowtrap) {
-				add(new ArrowTrap(o.att.x, o.att.y, o.att.tset, cast(as3hx.Compat.parseInt(o.att.shoot), Bool)));
+				add(new ArrowTrap(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.shoot)), Bool)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bosskey) type: null */ in xml.nodes.objects[0].nodes.bosskey) {
-				add(new BossKey(o.att.x, o.att.y, o.att.keyType));
+				add(new BossKey(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.keyType)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),totempart) type: null */ in xml.nodes.objects[0].nodes.totempart) {
-				add(new BossTotemPart(o.att.x, o.att.y, o.att.totempart));
+				add(new BossTotemPart(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.totempart)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),health) type: null */ in xml.nodes.objects[0].nodes.health) {
-				add(new HealthPickup(o.att.x, o.att.y, o.att.tag));
+				add(new HealthPickup(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),seed) type: null */ in xml.nodes.objects[0].nodes.seed) {
-				add(new Seed(o.att.x, o.att.y, false, o.att.text, cutscene[2]));
+				add(new Seed(Std.parseInt(o.att.x), Std.parseInt(o.att.y), false, o.att.text, cutscene[2]));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pull) type: null */ in xml.nodes.objects[0].nodes.pull) {
-				add(new Pull(o.att.x, o.att.y, o.att.direction, o.att.force));
+				add(new Pull(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.direction), Std.parseInt(o.att.force)));
 			} // o.@direction goes from 0-1
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),fallrock) type: null */ in xml.nodes.objects[0].nodes.fallrock) {
-				add(new FallRock(o.att.x, o.att.y, o.att.tset, o.att.tag));
+				add(new FallRock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),fallrocklarge) type: null */ in xml.nodes.objects[0].nodes.fallrocklarge) {
-				add(new FallRockLarge(o.att.x, o.att.y, o.att.tset, o.att.tag, cast(as3hx.Compat.parseInt(o.att.bossrock), Bool),
-					cast(as3hx.Compat.parseInt(o.att.thirdboss), Bool)));
+				add(new FallRockLarge(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.bossrock)), Bool),
+					cast(as3hx.Compat.parseInt(Std.parseInt(o.att.thirdboss)), Bool)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rocklock) type: null */ in xml.nodes.objects[0].nodes.rocklock) {
-				add(new RockLock(o.att.x, o.att.y, o.att.tset, o.att.tag));
+				add(new RockLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lock) type: null */ in xml.nodes.objects[0].nodes.lock) {
-				add(new Lock(o.att.x, o.att.y, o.att.tset, o.att.tag));
+				add(new Lock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pulser) type: null */ in xml.nodes.objects[0].nodes.pulser) {
-				add(new Pulser(o.att.x, o.att.y, o.att.tset));
+				add(new Pulser(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),spinningaxe) type: null */ in xml.nodes.objects[0].nodes.spinningaxe) {
-				add(new SpinningAxe(o.att.x, o.att.y, o.att.rate, o.att.colortype));
+				add(new SpinningAxe(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.rate), Std.parseInt(o.att.colortype)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lavachain) type: null */ in xml.nodes.objects[0].nodes.lavachain) {
-				add(new LavaChain(o.att.x, o.att.y, o.att.dir));
+				add(new LavaChain(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.dir)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),cover) type: null */ in xml.nodes.objects[0].nodes.cover) {
-				add(new Cover(o.att.x, o.att.y, o.att.tset));
+				add(new Cover(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),grasslock) type: null */ in xml.nodes.objects[0].nodes.grasslock) {
-				add(new GrassLock(o.att.x, o.att.y, o.att.tset, o.att.tag));
+				add(new GrassLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldlocknorm) type: null */ in xml.nodes.objects[0].nodes.shieldlocknorm) {
-				add(new ShieldLock(o.att.x, o.att.y, o.att.tag, 0));
+				add(new ShieldLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldlock) type: null */ in xml.nodes.objects[0].nodes.shieldlock) {
-				add(new ShieldLock(o.att.x, o.att.y, o.att.tag, 1));
+				add(new ShieldLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),wandlock) type: null */ in xml.nodes.objects[0].nodes.wandlock) {
-				add(new WandLock(o.att.x, o.att.y, o.att.tset, o.att.tag));
+				add(new WandLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bosslock) type: null */ in xml.nodes.objects[0].nodes.bosslock) {
-				add(new BossLock(o.att.x, o.att.y, o.att.keyType, o.att.tag));
+				add(new BossLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.keyType), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),magicallock) type: null */ in xml.nodes.objects[0].nodes.magicallock) {
-				add(new MagicalLock(o.att.x, o.att.y, o.att.tag, 0));
+				add(new MagicalLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),magicallockfire) type: null */ in xml.nodes.objects[0].nodes.magicallockfire) {
-				add(new MagicalLock(o.att.x, o.att.y, o.att.tag, 1));
+				add(new MagicalLock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),moonrock) type: null */ in xml.nodes.objects[0].nodes.moonrock) {
-				add(new Moonrock(o.att.x, o.att.y, o.att.tag));
+				add(new Moonrock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),torch) type: null */ in xml.nodes.objects[0].nodes.torch) {
-				add(new Torch(o.att.x, o.att.y, o.att.c));
+				add(new Torch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.c)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bonetorch) type: null */ in xml.nodes.objects[0].nodes.bonetorch) {
-				add(new BoneTorch(o.att.x, o.att.y, 0, o.att.c, cast(as3hx.Compat.parseInt(o.att.flip), Bool)));
+				add(new BoneTorch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0, Std.parseInt(o.att.c), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),bonetorch2) type: null */ in xml.nodes.objects[0].nodes.bonetorch2) {
-				add(new BoneTorch(o.att.x, o.att.y, 1, o.att.c, cast(as3hx.Compat.parseInt(o.att.flip), Bool)));
+				add(new BoneTorch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1, Std.parseInt(o.att.c), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),planttorch) type: null */ in xml.nodes.objects[0].nodes.planttorch) {
-				add(new PlantTorch(o.att.x, o.att.y, o.att.c, cast(as3hx.Compat.parseInt(o.att.flip), Bool), o.att.distance));
+				add(new PlantTorch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.c), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool), Std.parseInt(o.att.distance)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightpole) type: null */ in xml.nodes.objects[0].nodes.lightpole) {
-				add(new LightPole(o.att.x, o.att.y, o.att.tset, o.att.tag, o.att.c, cast(as3hx.Compat.parseInt(o.att.invert), Bool)));
+				add(new LightPole(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag), Std.parseInt(o.att.c), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.invert)), Bool)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),orb) type: null */ in xml.nodes.objects[0].nodes.orb) {
-				add(new Orb(o.att.x, o.att.y, o.att.c));
+				add(new Orb(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.c)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),breakablerock) type: null */ in xml.nodes.objects[0].nodes.breakablerock) {
-				add(new BreakableRock(o.att.x, o.att.y, o.att.tag, 0));
+				add(new BreakableRock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),breakablerockghost) type: null */ in xml.nodes.objects[0].nodes.breakablerockghost) {
-				add(new BreakableRock(o.att.x, o.att.y, o.att.tag, 1));
+				add(new BreakableRock(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), 1));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),chest) type: null */ in xml.nodes.objects[0].nodes.chest) {
-				add(new Chest(o.att.x, o.att.y, o.att.tag));
+				add(new Chest(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),dungeonspire) type: null */ in xml.nodes.objects[0].nodes.dungeonspire) {
-				add(new DungeonSpire(o.att.x, o.att.y));
+				add(new DungeonSpire(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightbosstotem) type: null */ in xml.nodes.objects[0].nodes.lightbosstotem) {
-				add(new LightBossTotem(o.att.x, o.att.y));
+				add(new LightBossTotem(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),littlestones) type: null */ in xml.nodes.objects[0].nodes.littlestones) {
-				add(new LittleStones(o.att.x, o.att.y));
+				add(new LittleStones(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),whirlpool) type: null */ in xml.nodes.objects[0].nodes.whirlpool) {
-				add(new Whirlpool(o.att.x, o.att.y));
+				add(new Whirlpool(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pushableblock) type: null */ in xml.nodes.objects[0].nodes.pushableblock) {
-				add(new PushableBlock(o.att.x, o.att.y));
+				add(new PushableBlock(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pushableblockfire) type: null */ in xml.nodes.objects[0].nodes.pushableblockfire) {
-				add(new PushableBlockFire(o.att.x, o.att.y));
+				add(new PushableBlockFire(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pushableblockspear) type: null */ in xml.nodes.objects[0].nodes.pushableblockspear) {
-				add(new PushableBlockSpear(o.att.x, o.att.y));
+				add(new PushableBlockSpear(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),stairsup) type: null */ in xml.nodes.objects[0].nodes.stairsup) {
-				add(new Stairs(o.att.x, o.att.y, true, cast(as3hx.Compat.parseInt(o.att.flip), Bool), o.att.to, o.att.playerx, o.att.playery, o.att.sign));
+				add(new Stairs(Std.parseInt(o.att.x), Std.parseInt(o.att.y), true, cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool), Std.parseInt(o.att.to), Std.parseInt(o.att.playerx), Std.parseInt(o.att.playery), Std.parseInt(o.att.sign)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),stairsdown) type: null */ in xml.nodes.objects[0].nodes.stairsdown) {
-				add(new Stairs(o.att.x, o.att.y, false, cast(as3hx.Compat.parseInt(o.att.flip), Bool), o.att.to, o.att.playerx, o.att.playery, o.att.sign));
+				add(new Stairs(Std.parseInt(o.att.x), Std.parseInt(o.att.y), false, cast(as3hx.Compat.parseInt(Std.parseInt(o.att.flip)), Bool), Std.parseInt(o.att.to), Std.parseInt(o.att.playerx), Std.parseInt(o.att.playery), Std.parseInt(o.att.sign)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),teleporter) type: null */ in xml.nodes.objects[0].nodes.teleporter) {
-				add(new Teleporter(o.att.x, o.att.y, o.att.to, o.att.playerx, o.att.playery, cast(as3hx.Compat.parseInt(o.att.show), Bool),
-					(Std.string(o.att.tag) == "") ? -1 : o.att.tag, cast(as3hx.Compat.parseInt(o.att.invert), Bool), o.att.sign));
+				add(new Teleporter(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.to), Std.parseInt(o.att.playerx), Std.parseInt(o.att.playery), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.show)), Bool),
+					(Std.string(Std.parseInt(o.att.tag)) == "") ? -1 : Std.parseInt(o.att.tag), cast(as3hx.Compat.parseInt(Std.parseInt(o.att.invert)), Bool), Std.parseInt(o.att.sign)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldboss) type: null */ in xml.nodes.objects[0].nodes.shieldboss) {
-				add(new ShieldBoss(o.att.x, o.att.y, o.att.tag));
+				add(new ShieldBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),introchar) type: null */ in xml.nodes.objects[0].nodes.introchar) {
-				add(new IntroCharacter(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new IntroCharacter(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rekcahdam) type: null */ in xml.nodes.objects[0].nodes.rekcahdam) {
-				add(new Rekcahdam(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Rekcahdam(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),forestchar) type: null */ in xml.nodes.objects[0].nodes.forestchar) {
-				add(new ForestCharacter(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new ForestCharacter(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),karlore) type: null */ in xml.nodes.objects[0].nodes.karlore) {
-				add(new Karlore(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Karlore(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),adnanchar) type: null */ in xml.nodes.objects[0].nodes.adnanchar) {
-				add(new AdnanCharacter(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new AdnanCharacter(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),watcher) type: null */ in xml.nodes.objects[0].nodes.watcher) {
-				add(new Watcher(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.text1, o.att.frames));
+				add(new Watcher(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, o.att.text1, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),oracle) type: null */ in xml.nodes.objects[0].nodes.oracle) {
-				add(new Oracle(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.text1, o.att.frames));
+				add(new Oracle(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, o.att.text1, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),witch) type: null */ in xml.nodes.objects[0].nodes.witch) {
-				add(new Witch(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Witch(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),hermit) type: null */ in xml.nodes.objects[0].nodes.hermit) {
-				add(new Hermit(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Hermit(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),yeti) type: null */ in xml.nodes.objects[0].nodes.yeti) {
-				add(new Yeti(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Yeti(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),sensei) type: null */ in xml.nodes.objects[0].nodes.sensei) {
-				add(new Sensei(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Sensei(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),sign) type: null */ in xml.nodes.objects[0].nodes.sign) {
-				add(new Sign(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Sign(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),totem) type: null */ in xml.nodes.objects[0].nodes.totem) {
-				add(new Totem(o.att.x, o.att.y, o.att.tag, o.att.text, o.att.frames));
+				add(new Totem(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag), o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),wand) type: null */ in xml.nodes.objects[0].nodes.wand) {
-				add(new Wand(o.att.x, o.att.y, o.att.tag));
+				add(new Wand(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),firewand) type: null */ in xml.nodes.objects[0].nodes.firewand) {
-				add(new FireWand(o.att.x, o.att.y, o.att.tag));
+				add(new FireWand(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),brickpole) type: null */ in xml.nodes.objects[0].nodes.brickpole) {
-				add(new BrickPole(o.att.x, o.att.y));
+				add(new BrickPole(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),statue1) type: null */ in xml.nodes.objects[0].nodes.statue1) {
-				add(new Statue(o.att.x, o.att.y, 0, o.att.text, o.att.frames));
+				add(new Statue(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 0, o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),statue2) type: null */ in xml.nodes.objects[0].nodes.statue2) {
-				add(new Statue(o.att.x, o.att.y, 1, o.att.text, o.att.frames));
+				add(new Statue(Std.parseInt(o.att.x), Std.parseInt(o.att.y), 1, o.att.text, Std.parseInt(o.att.frames)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),brickwell) type: null */ in xml.nodes.objects[0].nodes.brickwell) {
-				add(new BrickWell(o.att.x, o.att.y));
+				add(new BrickWell(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),finaldoor) type: null */ in xml.nodes.objects[0].nodes.finaldoor) {
-				add(new FinalDoor(o.att.x, o.att.y, o.att.tag));
+				add(new FinalDoor(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pod) type: null */ in xml.nodes.objects[0].nodes.pod) {
-				add(new Pod(o.att.x, o.att.y));
+				add(new Pod(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),frozenboss) type: null */ in xml.nodes.objects[0].nodes.frozenboss) {
-				add(new FrozenBoss(o.att.x, o.att.y));
+				add(new FrozenBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),moonrockpile) type: null */ in xml.nodes.objects[0].nodes.moonrockpile) {
-				add(new MoonrockPile(o.att.x, o.att.y));
+				add(new MoonrockPile(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldstatue) type: null */ in xml.nodes.objects[0].nodes.shieldstatue) {
-				add(new ShieldStatue(o.att.x, o.att.y));
+				add(new ShieldStatue(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),oraclestatue) type: null */ in xml.nodes.objects[0].nodes.oraclestatue) {
-				add(new OracleStatue(o.att.x, o.att.y));
+				add(new OracleStatue(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),ruinedpillar) type: null */ in xml.nodes.objects[0].nodes.ruinedpillar) {
-				add(new RuinedPillar(o.att.x, o.att.y));
+				add(new RuinedPillar(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),wallflyer) type: null */ in xml.nodes.objects[0].nodes.wallflyer) {
-				add(new WallFlyer(o.att.x, o.att.y));
+				add(new WallFlyer(Std.parseInt(o.att.x), Std.parseInt(o.att.y)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),spinner) type: null */ in xml.nodes.objects[0].nodes.spinner) {
-				add(new Spinner(o.att.x, o.att.y, o.att.tag));
+				add(new Spinner(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightray) type: null */ in xml.nodes.objects[0].nodes.lightray) {
-				add(new LightRay(o.att.x, o.att.y, o.att.color, o.att.alpha, o.att.width, o.att.height));
+				add(new LightRay(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.color), Std.parseInt(o.att.alpha), Std.parseInt(o.att.width), Std.parseInt(o.att.height)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shadow) type: null */ in xml.nodes.objects[0].nodes.shadow) {
-				add(new Shadow(o.att.x, o.att.y, o.att.color, o.att.alpha, o.att.width, o.att.height));
+				add(new Shadow(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.color), Std.parseInt(o.att.alpha), Std.parseInt(o.att.width), Std.parseInt(o.att.height)));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rope) type: null */ in xml.nodes.objects[0].nodes.rope) {
 				var pt:Point;
 				// get the end point of the electricity (via nodes)
-				for (n in o.node.node.innerData) {
-					pt = new Point(n.att.x, n.att.y);
+				for (n in o.nodes.node) {
+					pt = new Point(Std.parseFloat(n.att.x), Std.parseFloat(n.att.y));
 				}
-				add(new RopeStart(o.att.x, o.att.y, Std.int(pt.x), o.att.tset, o.att.tag));
+				add(new RopeStart(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.int(pt.x), Std.parseInt(o.att.tset), Std.parseInt(o.att.tag)));
 			}
 		}
 		setFallFromCeiling = false;

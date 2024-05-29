@@ -52,9 +52,9 @@ class Chest extends Entity {
 	override public function update():Void {
 		checkBySeal();
 		var m:Int = 2; // The distance to check from the edges of the chest
-		if (!collide("Solid", x, y)
+		if (collide("Solid", x, y) == null
 			&& FP.world.collideLine("Player", Std.int(x - originX + m), Std.int(y - originY + height + 1), Std.int(x - originX + width - 2 * m),
-				Std.int(y - originY + height + 1))) {
+				Std.int(y - originY + height + 1)) != null) {
 			open();
 		}
 		timerStep();

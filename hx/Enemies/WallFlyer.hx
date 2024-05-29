@@ -99,16 +99,16 @@ class WallFlyer extends Enemy {
 		var ang:Float = 0;
 		var d:Int = 0;
 		var types:Dynamic = ["Solid", "Tree"];
-		if (collideTypes(types, x + width, y)) {
+		if (collideTypes(types, x + width, y) != null) {
 			d += 1;
 		}
-		if (collideTypes(types, x, y - height)) {
+		if (collideTypes(types, x, y - height) != null) {
 			d += 2;
 		}
-		if (collideTypes(types, x - width, y)) {
+		if (collideTypes(types, x - width, y) != null) {
 			d += 4;
 		}
-		if (collideTypes(types, x, y + height)) {
+		if (collideTypes(types, x, y + height) != null) {
 			d += 8;
 		}
 		switch (d) {
@@ -153,7 +153,8 @@ class WallFlyer extends Enemy {
 
 	override public function moveX(_xrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_xrel)) {
+		var i:Int = 0;
+		while (i < Math.abs(_xrel)) {
 			var c:Entity = collideTypes(solids, x + Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel), y);
 			if (c == null) {
 				x += Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel);
@@ -167,13 +168,15 @@ class WallFlyer extends Enemy {
 				}
 				return c;
 			}
+			i = i + 1;
 		}
 		return null;
 	}
 
 	override public function moveY(_yrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_yrel)) {
+		var i:Int = 0;
+		while (i < Math.abs(_yrel)) {
 			var c:Entity = collideTypes(solids, x, y + Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel));
 			if (c == null) {
 				y += Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel);
@@ -187,6 +190,7 @@ class WallFlyer extends Enemy {
 				}
 				return c;
 			}
+			i = i + 1;
 		}
 		return null;
 	}

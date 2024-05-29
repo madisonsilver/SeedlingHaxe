@@ -44,7 +44,6 @@ class BobBoss extends BobSoldier {
 		sprBobBossWeapons = new Spritemap(imgBobBossWeapons, 24, 5);
 		nextBossTimer = nextBossTimerMax;
 		formingTimer = formingTimerMax;
-		super();
 		// Tile offsets are multiplied by the BobSoldier constructor
 		super(_x, _y, new Spritemap(images[_st], 20, 20, endAnim));
 		if (Player.hasFire) {

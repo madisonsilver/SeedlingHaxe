@@ -488,7 +488,7 @@ class Player extends Mobile {
 		sprDeathRay.add("ray", [0, 1, 2, 3], 10, true);
 
 		type = "Player";
-		setHitbox(Std.int(normalHitbox.width), Std.int(normalHitbox.height), Std.int(normalHitbox.x), normalHitbox.y);
+		setHitbox(Std.int(normalHitbox.width), Std.int(normalHitbox.height), Std.int(normalHitbox.x), Std.int(normalHitbox.y));
 
 		checkOffsetY = as3hx.Compat.parseInt(-originY + height - 2);
 	}

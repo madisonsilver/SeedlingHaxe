@@ -8,6 +8,7 @@ import openfl.display.SpreadMethod;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import net.flashpunk.FP;
+import openfl.utils.Dictionary;
 
 /**
  * Performance-optimized animated Image. Can have multiple animations,
@@ -119,11 +120,12 @@ class Spritemap extends Image {
 	 * @return	A new Anim object for the animation.
 	 */
 	public function add(name:String, frames:Array<Dynamic>, frameRate:Float = 0, loop:Bool = true):Anim {
-		if (Reflect.field(_anims, name) != null) {
+		if (_anims[name] != null) {
 			throw new Error("Cannot have multiple animations with the same name");
 		}
-		(Reflect.setField(_anims, name, new Anim(name, frames, frameRate, loop)))._parent;
-		return Reflect.field(_anims, name);
+		_anims[name] = new Anim(name, frames, frameRate, loop);
+		_anims[name]._parent = this;
+		return _anims[name];
 	}
 
 	/**
@@ -133,11 +135,11 @@ class Spritemap extends Image {
 	 * @return	Anim object representing the played animation.
 	 */
 	public function play(name:String = "", reset:Bool = false):Anim {
-		if (!reset && _anim && _anim._name == name) {
+		if (!reset && _anim != null && _anim._name == name) {
 			return _anim;
 		}
-		_anim = Reflect.field(_anims, name);
-		if (!_anim) {
+		_anim = _anims[name];
+		if (_anim == null) {
 			_frame = _index = 0;
 			complete = true;
 			updateBuffer();
@@ -252,7 +254,7 @@ class Spritemap extends Image {
 	 * The currently playing animation.
 	 */
 	private function get_currentAnim():String {
-		return (_anim) ? _anim._name : "";
+		return (_anim != null) ? _anim._name : "";
 	}
 
 	// Spritemap information.
@@ -276,7 +278,7 @@ class Spritemap extends Image {
 	private var _frameCount:Int;
 
 	/** @private */
-	private var _anims:Dynamic = {};
+	private var _anims:Dictionary<String, Anim> = new Dictionary();
 
 	/** @private */
 	private var _anim:Anim;

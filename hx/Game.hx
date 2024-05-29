@@ -1185,7 +1185,7 @@ class Game extends World {
 								// If we're all done showing the text, go ahead and reactivate the player.
 							{
 								{
-									cTextIndex = Std.int(cutsceneText[0][cutsceneText[0].length - 1]);
+									cTextIndex = cutsceneText[0][cutsceneText[0].length - 1];
 									cutsceneTimer[0][0] = -1;
 									talking = false;
 									freezeObjects = false;
@@ -1560,7 +1560,7 @@ class Game extends World {
 			drawTextBold(text, null, 0x002200);
 			height += as3hx.Compat.parseInt(text.height + titleToTextMargin);
 
-			menuMaxWidthCredits = Math.max(text.width / 2, menuMaxWidthCredits);
+			menuMaxWidthCredits = Std.int(Math.max(text.width / 2, menuMaxWidthCredits));
 
 			Text.static_size = 8;
 			var textName:Text;
@@ -1574,7 +1574,7 @@ class Game extends World {
 				textName.render(new Point(), new Point());
 				// drawTextBold(textName, null, 0x000044);
 				height += as3hx.Compat.parseInt(textName.height + ((j + 1 < menuCreditsNames[i].length) ? nameToNameMargin : sectionToSectionMargin));
-				menuMaxWidthCredits = Math.max(textName.width / 2, menuMaxWidthCredits);
+				menuMaxWidthCredits = Std.int(Math.max(textName.width / 2, menuMaxWidthCredits));
 			}
 		}
 		if (basePos.y + menuScroll + height + _yoff < 0) {
@@ -1625,7 +1625,7 @@ class Game extends World {
 			texts[i].alpha = texts[i].scaleX = tweenScale;
 			texts[i].color = 0x88FF44;
 			drawTextBold(texts[i], null, 0x002200);
-			menuMaxWidthControlsLeft = Math.max(texts[i].width, menuMaxWidthControlsLeft);
+			menuMaxWidthControlsLeft = Std.int(Math.max(texts[i].width, menuMaxWidthControlsLeft));
 		}
 		for (i in 0...menuTextAppend.length) {
 			text = new Text(menuTextAppend[i]);
@@ -1634,9 +1634,9 @@ class Game extends World {
 			text.alpha = text.scaleX = tweenScale;
 			text.color = 0x8844FF;
 			drawTextBold(text, null, 0x000022);
-			menuMaxWidthControlsRight = Math.max(text.width, menuMaxWidthControlsRight);
+			menuMaxWidthControlsRight = Std.int(Math.max(text.width, menuMaxWidthControlsRight));
 		}
-		menuMaxWidthControlsLeft = menuMaxWidthControlsRight = Math.max(menuMaxWidthControlsLeft, menuMaxWidthControlsRight);
+		menuMaxWidthControlsLeft = menuMaxWidthControlsRight = Std.int(Math.max(menuMaxWidthControlsLeft, menuMaxWidthControlsRight));
 		Text.static_size = 16;
 	}
 
@@ -2000,11 +2000,11 @@ class Game extends World {
 		var o:Access;
 		var n:Access;
 
-		FP.width = xml.node.width.innerData;
-		FP.height = xml.node.height.innerData;
+		FP.width = Std.parseInt(xml.node.width.innerData);
+		FP.height = Std.parseInt(xml.node.height.innerData);
 
-		var w:Int = xml.node.width.innerData;
-		var h:Int = xml.node.height.innerData;
+		var w:Int = Std.parseInt(xml.node.width.innerData);
+		var h:Int = Std.parseInt(xml.node.height.innerData);
 
 		lightAlpha = 1;
 		dayNight = false;
@@ -2014,34 +2014,38 @@ class Game extends World {
 		blurRegion = false;
 		blurRegion2 = false;
 
-		if (xml.node.exists.innerData("objects")) {
-			if (xml.nodes.objects.get(0).node.exists.innerData("lightalpha")) {
+		if (xml.hasNode.objects) {
+			if (xml.nodes.objects.get(0).hasNode.lightalpha) {
 				lightAlpha = minLightAlpha + as3hx.Compat.parseFloat(xml.nodes.objects.get(0).node.lightalpha.innerData.att.alpha);
 			}
-			if (xml.nodes.objects.get(0).node.exists.innerData("daynight")) {
+			if (xml.nodes.objects.get(0).hasNode.daynight) {
 				dayNight = true;
 			}
-			if (xml.nodes.objects.get(0).node.exists.innerData("snow")) {
+			if (xml.nodes.objects.get(0).hasNode.snow) {
 				snowing = true;
 				blackAndWhite = true;
 			}
-			if (xml.nodes.objects.get(0).node.exists.innerData("blur")) {
+			if (xml.nodes.objects.get(0).hasNode.blur) {
 				blurRegion = true;
 			}
-			if (xml.nodes.objects.get(0).node.exists.innerData("blur2")) {
+			if (xml.nodes.objects.get(0).hasNode.blur2) {
 				blurRegion2 = true;
 			}
 		}
 
 		var tile:Tile;
 		tiles = new Array<Array<Tile>>();
-		for (i in 0...FP.width / Tile.w) {
+		var i:Int = 0;
+		while (i < (FP.width / Tile.w)) {
 			tiles.push(new Array<Tile>());
-			for (j in 0...FP.height / Tile.h) {
+			var j:Int = 0;
+			while (j < FP.height / Tile.h) {
 				tiles[i].push(null);
+				j += 1;
 			}
+			i += 1;
 		}
-		if (xml.node.exists.innerData("tiles")) {
+		if (xml.hasNode.tiles) {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),tiles),EConst(CInt(0))),tile) type: null */ in xml.nodes.tiles.get(0)
 				.node.tile.innerData) {
 				if (Math.floor(o.att.x / Tile.w) < tiles.length && Math.floor(o.att.y / Tile.h) < tiles[0].length) {
@@ -2143,7 +2147,7 @@ class Game extends World {
 				}
 			}
 		}
-		if (xml.node.exists.innerData("cliffsides")) {
+		if (xml.hasNode.cliffsides) {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),cliffsides),EConst(CInt(0))),tile) type: null */ in xml.nodes.cliffsides.get(0)
 				.node.tile.innerData) {
 				add(new CliffSide(o.att.x, o.att.y, Math.floor(o.att.tx / Tile.w)));
@@ -2160,7 +2164,7 @@ class Game extends World {
 					p.fallFromCeiling = setFallFromCeiling;
 				}
 			} else {
-				if (xml.node.exists.innerData("objects")) {
+				if (xml.hasNode.objects) {
 					for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),player) type: null */ in xml.nodes.objects.get(0)
 						.node.player.innerData) {
 						playerPosition = new Point(o.att.x, o.att.y);
@@ -2173,7 +2177,7 @@ class Game extends World {
 				player.fallFromCeiling = setFallFromCeiling;
 			}
 		}
-		if (xml.node.exists.innerData("objects")) {
+		if (xml.hasNode.objects) {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),control) type: null */ in xml.nodes.objects.get(0)
 				.node.control.innerData)
 				// Used to be above the player block, so check if it will cause issues.

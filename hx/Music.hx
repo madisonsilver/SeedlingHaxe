@@ -603,7 +603,7 @@ class Music {
 				soundsO[strInd][i].stop();
 			}
 		} else {
-			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].stop();
+			soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1))].stop();
 		}
 	}
 
@@ -618,7 +618,7 @@ class Music {
 				soundsO[strInd][i].volume = vol;
 			}
 		} else {
-			soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].volume = Std.int(Std.int(Std.int(vol)));
+			soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1))].volume = Std.int(Std.int(Std.int(vol)));
 		}
 	}
 
@@ -637,7 +637,7 @@ class Music {
 			}
 			return false;
 		} else {
-			return soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].playing;
+			return soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1))].playing;
 		}
 	}
 
@@ -655,7 +655,7 @@ class Music {
 			}
 			return soundPos;
 		} else {
-			return soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].position;
+			return soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1))].position;
 		}
 	}
 
@@ -673,8 +673,8 @@ class Music {
 			}
 			return soundPos;
 		} else {
-			return soundsO[strInd][Math.min(Math.max(intInd, 0),
-				sounds[strInd].length - 1)].position / soundsO[strInd][Math.min(Math.max(intInd, 0), sounds[strInd].length - 1)].length;
+			return soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0),
+				sounds[strInd].length - 1))].position / soundsO[strInd][Std.int(Math.min(Math.max(intInd, 0), sounds[strInd].length - 1))].length;
 		}
 	}
 }

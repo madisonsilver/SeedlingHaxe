@@ -74,7 +74,7 @@ class LavaTrap extends Enemy {
 					if (sprLavaTrap.currentAnim == "") {
 						tongueAngle = Math.atan2(player.y - y, player.x - x);
 					}
-					if (!FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y))
+					if (FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(player.x), Std.int(player.y) == null)
 						&& sprLavaTrap.currentAnim != "chomp") {
 						launch();
 						Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Enemy Attack", 3);

@@ -189,7 +189,7 @@ class NPC extends Mobile {
 				}
 			}
 			if (inRange) {
-				if (facePlayer && graphic) {
+				if (facePlayer && graphic != null) {
 					(try cast(graphic, Image) catch (e:Dynamic) null).scaleX = as3hx.Compat.parseInt(x < p.x) * 2 - 1;
 				}
 				if ((hitKey || !keyNeeded) && !Game.talking && !Game.inventory.open) {

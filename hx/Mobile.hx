@@ -69,26 +69,30 @@ class Mobile extends Entity {
 
 	public function moveX(_xrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_xrel)) {
+		var i:Int = 0;
+		while (i < Math.abs(_xrel)) {
 			var c:Entity = collideTypes(solids, x + Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel), y);
 			if (c == null) {
 				x += Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel);
 			} else {
 				return c;
 			}
+			i += 1;
 		}
 		return null;
 	}
 
 	public function moveY(_yrel:Float):Entity // returns the object that is hit
 	{
-		for (i in 0...Math.abs(_yrel)) {
+		var i:Int = 0;
+		while (i < Math.abs(_yrel)) {
 			var c:Entity = collideTypes(solids, x, y + Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel));
 			if (c == null) {
 				y += Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel);
 			} else {
 				return c;
 			}
+			i += 1;
 		}
 		return null;
 	}

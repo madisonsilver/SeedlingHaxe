@@ -47,7 +47,7 @@ class RockFall extends Mobile {
 	override public function added():Void {
 		super.added();
 		solids = []; // "Enemy", "Pod", "Solid"];
-		if (collideTypes(solids, x, y)) {
+		if (collideTypes(solids, x, y) != null) {
 			active = false;
 			visible = false;
 			FP.world.remove(this);

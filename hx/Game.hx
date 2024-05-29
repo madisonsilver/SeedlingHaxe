@@ -1185,7 +1185,7 @@ class Game extends World {
 								// If we're all done showing the text, go ahead and reactivate the player.
 							{
 								{
-									cTextIndex = cutsceneText[0][cutsceneText[0].length - 1];
+									//cTextIndex = cutsceneText[0][cutsceneText[0].length - 1]; TODO: Literally what is happening here??
 									cutsceneTimer[0][0] = -1;
 									talking = false;
 									freezeObjects = false;

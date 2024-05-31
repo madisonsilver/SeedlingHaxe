@@ -27,7 +27,7 @@ class Splash extends World {
 
 	private static inline var WIDTH:Int = 480;
 	private static inline var HEIGHT:Int = 480;
-	private static var url:Dynamic = [
+	private static var url:Array<String> = [
 		"http://www.newgrounds.com/",
 		"http://www.connorullmann.com/",
 		"http://www.rekcahdam.com/"
@@ -142,7 +142,7 @@ class Splash extends World {
 		if (inBounds()) {
 			Mouse.cursor = MouseCursor.BUTTON;
 			if (Input.mouseReleased) {
-				new GetURL(Reflect.field(url, Std.string(t)));
+				new GetURL(url[t]);
 			}
 		} else {
 			Mouse.cursor = MouseCursor.ARROW;

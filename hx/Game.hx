@@ -1027,7 +1027,7 @@ class Game extends World {
 		}
 
 		if (menu) {
-			loadlevel(Reflect.field(levels, Std.string(menuLevels[menuIndex])));
+			loadlevel(levels[menuLevels[menuIndex]]);
 			cameraTarget = new Point((FP.width - FP.screen.width) * (menuIndex % 2), (FP.height - FP.screen.height) * (menuIndex % 2));
 			FP.camera = cameraTarget.clone();
 			// trace(menuLevels[menuIndex] + ": " + FP.camera.x + ", " + FP.camera.y);
@@ -1597,12 +1597,10 @@ class Game extends World {
 
 		var text:Text;
 
-		var rectW:Dynamic = {
-			left: tweenScale * (menuMaxWidthControlsLeft + margin),
-			right: tweenScale * (menuMaxWidthControlsRight + margin)
-		};
-		Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - Reflect.field(rectW, "left")), Std.int(FP.camera.y),
-			Reflect.field(rectW, "left") + Reflect.field(rectW, "right"), FP.screen.height, 0, tweenScale * maxRectAlpha);
+		var rectW_left: Float = tweenScale * (menuMaxWidthControlsLeft + margin);
+		var rectW_right: Float = tweenScale * (menuMaxWidthControlsRight + margin);
+		Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW_left), Std.int(FP.camera.y),
+		Std.int(rectW_left + rectW_right), FP.screen.height, 0, tweenScale * maxRectAlpha);
 
 		Text.static_size = 16;
 		text = new Text("Controls");

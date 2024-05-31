@@ -1,3 +1,4 @@
+import openfl.utils.Dictionary;
 import enemies.Enemy;
 import enemies.Flyer;
 import enemies.IceTurret;
@@ -136,7 +137,7 @@ class Player extends Mobile {
 		dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS
 	];
 
-	private var hitables:Dynamic = [
+	private var hitables:Array<String> = [
 		"Enemy", "Grass", "Tree", "Rock", "Rope", "ShieldBoss", "Solid", "LightPole", "LavaBall", "LavaBoss", "Watcher"
 	]; // Solid added so that you can hit burnable trees.
 	private var enemies:Dynamic = ["Enemy", "ShieldBoss"];
@@ -172,7 +173,7 @@ class Player extends Mobile {
 		return _hgs;
 	}
 
-	private var ghostSwordAnimFrames:Dynamic;
+	private var ghostSwordAnimFrames:Dictionary<String, Int> = new Dictionary();
 	private var swordSpeed(default, never):Int = 30;
 	private var swordSpeedDash(default, never):Int = 20;
 
@@ -458,10 +459,8 @@ class Player extends Mobile {
 		sprGhostSword.x = sprGhostSword.originX = 0;
 		sprGhostSword.add("slash", ghostSwordFrames, swordSpeed, true);
 		sprGhostSword.add("slashnarrow", ghostSwordFramesNarrow, swordSpeedDash, true);
-		ghostSwordAnimFrames = {
-			slash: ghostSwordFrames.length,
-			slashnarrow: ghostSwordFramesNarrow.length * 2
-		};
+		ghostSwordAnimFrames["slash"] = ghostSwordFrames.length;
+		ghostSwordAnimFrames["slashnarrow"] = ghostSwordFramesNarrow.length * 2;
 
 		sprSpear.centerOO();
 		sprSpear.originX = 4;
@@ -872,7 +871,7 @@ class Player extends Mobile {
 			var v:Array<Entity> = new Array<Entity>();
 			for (i in 0...hitables.length) {
 				var rect:Rectangle = getSlashRect();
-				FP.world.collideRectInto(Reflect.field(hitables, Std.string(i)), rect.x, rect.y, rect.width, rect.height, v);
+				FP.world.collideRectInto(hitables[i], rect.x, rect.y, rect.width, rect.height, v);
 			}
 			for (i in 0...v.length) {
 				if ((FP.distance(x, y, v[i].x, v[i].y) <= slashingSprite.width * slashingSprite.scaleX && Std.is(v[i], Grass))
@@ -957,7 +956,7 @@ class Player extends Mobile {
 						rect.height = length;
 					default:
 				}
-				FP.world.collideRectInto(Reflect.field(hitables, Std.string(i)), rect.x, rect.y, rect.width, rect.height, v);
+				FP.world.collideRectInto(hitables[i], rect.x, rect.y, rect.width, rect.height, v);
 			}
 			for (i in 0...v.length) {
 				genericHit(v[i], "Spear", spearForce, spearDamage);
@@ -989,7 +988,7 @@ class Player extends Mobile {
 			if (sprFire.frame >= fireHitFrameStart && sprFire.frame <= fireHitFrameEnd) {
 				var vc:Array<Entity> = new Array<Entity>();
 				for (i in 0...hitables.length) {
-					FP.world.collideRectInto(Reflect.field(hitables, Std.string(i)), x - sprFire.originX, y - sprFire.originY, sprFire.width, sprFire.height,
+					FP.world.collideRectInto(hitables[i], x - sprFire.originX, y - sprFire.originY, sprFire.width, sprFire.height,
 						vc);
 					for (e in vc) {
 						if (FP.distanceRects(x - originX, y - originY, width, height, e.x - e.originX, e.y - originY, e.width, e.height) > sprFire.width / 2)
@@ -1170,7 +1169,7 @@ class Player extends Mobile {
 
 			slashingSprite.angle = 90 * slashDirection;
 			if (hasGhostSword) {
-				var animFrames:Int = Reflect.field(ghostSwordAnimFrames, Std.string(slashingSprite.currentAnim));
+				var animFrames:Int = ghostSwordAnimFrames[slashingSprite.currentAnim];
 				slashingSprite.angle += 90 - 180 * slashingSprite.index / (animFrames - 1);
 				slashingSprite.angle -= 45 * as3hx.Compat.parseInt(slashingSprite.currentAnim == "slashnarrow");
 			}

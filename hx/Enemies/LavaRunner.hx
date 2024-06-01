@@ -26,6 +26,7 @@ class LavaRunner extends Bob {
 	private var inAir:Bool = false;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgLavaRunner = Assets.getBitmapData("assets/graphics/LavaRunner.png");
 	}
 

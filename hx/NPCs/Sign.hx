@@ -13,6 +13,7 @@ class Sign extends NPC {
 	private var sprSign:Spritemap;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgSign = Assets.getBitmapData("assets/graphics/Sign.png");
 	}
 

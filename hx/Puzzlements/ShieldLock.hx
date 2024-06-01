@@ -24,6 +24,7 @@ class ShieldLock extends Lock {
 	 * @param	_type	Represents which shield type (0=normal, 1=dark)
 	 */
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgShieldLockNorm = Assets.getBitmapData("assets/graphics/ShieldLockNorm.png");
 		imgShieldLock = Assets.getBitmapData("assets/graphics/ShieldLock.png");
 	}

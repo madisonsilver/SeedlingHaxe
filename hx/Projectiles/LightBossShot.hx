@@ -18,6 +18,7 @@ class LightBossShot extends TurretSpit {
 	private var angleSpinRate(default, never):Int = 10;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgLightBossShot = Assets.getBitmapData("assets/graphics/LightBossShot.png");
 	}
 

@@ -17,6 +17,7 @@ class Bulb extends Bob {
 	private var sprBulb:Spritemap;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgBulb = Assets.getBitmapData("assets/graphics/Bulb.png");
 	}
 

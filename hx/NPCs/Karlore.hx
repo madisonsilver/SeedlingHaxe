@@ -17,6 +17,7 @@ class Karlore extends NPC {
 	private var sprKarlorePic:Image;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgKarlore = Assets.getBitmapData("assets/graphics/NPCs/Karlore.png");
 		imgKarlorePic = Assets.getBitmapData("assets/graphics/NPCs/KarlorePic.png");
 	}

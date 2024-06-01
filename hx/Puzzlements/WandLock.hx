@@ -13,6 +13,7 @@ class WandLock extends Lock {
 	private var sprWandLock:Spritemap;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgWandLock = Assets.getBitmapData("assets/graphics/WandLock.png");
 	}
 

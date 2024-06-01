@@ -17,6 +17,7 @@ class IntroCharacter extends NPC {
 	private var sprIntroCharPic:Image;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgIntroChar = Assets.getBitmapData("assets/graphics/NPCs/IntroCharacter.png");
 		imgIntroCharPic = Assets.getBitmapData("assets/graphics/NPCs/IntroCharacterPic.png");
 	}

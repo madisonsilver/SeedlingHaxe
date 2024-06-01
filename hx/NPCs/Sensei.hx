@@ -19,6 +19,7 @@ class Sensei extends NPC {
 	private var standAnimFrames(default, never):Array<Dynamic> = [0, 1];
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgSensei = Assets.getBitmapData("assets/graphics/NPCs/Sensei.png");
 		imgSenseiPic = Assets.getBitmapData("assets/graphics/NPCs/SenseiPic.png");
 	}

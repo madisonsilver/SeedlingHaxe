@@ -19,6 +19,7 @@ class Yeti extends NPC {
 	private var createdPortal:Bool = false;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgYeti = Assets.getBitmapData("assets/graphics/NPCs/Yeti.png");
 		imgYetiPic = Assets.getBitmapData("assets/graphics/NPCs/YetiPic.png");
 	}

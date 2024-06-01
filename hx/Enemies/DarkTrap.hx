@@ -20,6 +20,7 @@ class DarkTrap extends SandTrap {
 	private var startDying:Bool = false;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgDarkTrap = Assets.getBitmapData("assets/graphics/DarkTrap.png");
 	}
 

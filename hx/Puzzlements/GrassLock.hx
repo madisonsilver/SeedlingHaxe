@@ -13,6 +13,7 @@ class GrassLock extends Lock {
 	private var sprGrassLock:Spritemap;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgGrassLock = Assets.getBitmapData("assets/graphics/GrassLock.png");
 	}
 

@@ -19,6 +19,7 @@ class Hermit extends NPC {
 	private var standAnimFrames(default, never):Array<Dynamic> = [0, 2];
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgHermit = Assets.getBitmapData("assets/graphics/NPCs/Hermit.png");
 		imgHermitPic = Assets.getBitmapData("assets/graphics/NPCs/HermitPic.png");
 	}

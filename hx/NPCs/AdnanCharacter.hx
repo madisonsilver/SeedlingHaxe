@@ -17,6 +17,7 @@ class AdnanCharacter extends NPC {
 	private var sprAdnanCharacterPic:Image;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgAdnanCharacter = Assets.getBitmapData("assets/graphics/NPCs/AdnanCharacter.png");
 		imgAdnanCharacterPic = Assets.getBitmapData("assets/graphics/NPCs/AdnanCharacterPic.png");
 	}

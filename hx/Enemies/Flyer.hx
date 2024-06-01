@@ -22,6 +22,7 @@ class Flyer extends Bob {
 	private static inline var droppedFrame:Int = 10; // The frame at which the flyer is on the ground (when to hit the player)
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgFlyer = Assets.getBitmapData("assets/graphics/Flyer.png");
 	}
 

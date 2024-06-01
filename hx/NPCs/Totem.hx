@@ -14,6 +14,7 @@ class Totem extends NPC {
 	private var sprTotem:Spritemap;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgTotem = Assets.getBitmapData("assets/graphics/Totem.png");
 	}
 

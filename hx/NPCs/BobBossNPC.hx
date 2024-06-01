@@ -18,6 +18,7 @@ class BobBossNPC extends NPC {
 	private var pics:Array<Dynamic>;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgBobBoss1Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss1Pic.png");
 		imgBobBoss2Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss2Pic.png");
 		imgBobBoss3Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss3Pic.png");

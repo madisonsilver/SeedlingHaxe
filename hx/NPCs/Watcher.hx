@@ -38,6 +38,7 @@ class Watcher extends NPC {
 	private var text1:String;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgWatcher = Assets.getBitmapData("assets/graphics/NPCs/Watcher.png");
 		imgWatcherPic = Assets.getBitmapData("assets/graphics/NPCs/WatcherPic.png");
 	}

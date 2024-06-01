@@ -24,6 +24,7 @@ class Witch extends NPC {
 	private var textExtra1(default, never):String = "May you do only good with that sword.~I presume you can be trusted?";
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgWitch = Assets.getBitmapData("assets/graphics/NPCs/Witch.png");
 		imgWitchPic = Assets.getBitmapData("assets/graphics/NPCs/WitchPic.png");
 	}

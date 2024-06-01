@@ -16,6 +16,7 @@ class Stairs extends Teleporter {
 	private var up:Bool;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgStairs = Assets.getBitmapData("assets/graphics/Stairs.png");
 	}
 

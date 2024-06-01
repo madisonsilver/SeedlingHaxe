@@ -17,6 +17,7 @@ class ForestCharacter extends NPC {
 	private var sprForestCharPic:Image;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgForestChar = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacter.png");
 		imgForestCharPic = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacterPic.png");
 	}

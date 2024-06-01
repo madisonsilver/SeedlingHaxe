@@ -24,6 +24,7 @@ class Oracle extends NPC {
 	private var text2(default, never):String = "You have brought the seed. Good work.~Your purpose is fulfilled, but now you are not needed.~Goodbye.";
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgOracle = Assets.getBitmapData("assets/graphics/NPCs/Oracle.png");
 		imgOraclePic = Assets.getBitmapData("assets/graphics/NPCs/OraclePic.png");
 	}

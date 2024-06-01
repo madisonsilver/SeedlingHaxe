@@ -39,6 +39,7 @@ class BobBoss extends BobSoldier {
 	];
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgBobBoss1 = Assets.getBitmapData("assets/graphics/BobBoss1.png");
 		imgBobBoss2 = Assets.getBitmapData("assets/graphics/BobBoss2.png");
 		imgBobBoss3 = Assets.getBitmapData("assets/graphics/BobBoss3.png");

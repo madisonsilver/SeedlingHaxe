@@ -17,6 +17,7 @@ class Rekcahdam extends NPC {
 	private var sprRekcahdamPic:Image;
 
 	private override function load_image_assets():Void {
+		super.load_image_assets();
 		imgRekcahdam = Assets.getBitmapData("assets/graphics/NPCs/Rekcahdam.png");
 		imgRekcahdamPic = Assets.getBitmapData("assets/graphics/NPCs/RekcahdamPic.png");
 	}

@@ -457,8 +457,8 @@ class World extends Tweener {
 		}
 
 		// Get information about the line we're about to raycast.
-		var xDelta:Int = (cast Math.abs(toX - fromX) : Int);
-		var yDelta:Int = (cast Math.abs(toY - fromY) : Int);
+		var xDelta:Int = Std.int(Math.abs(toX - fromX));
+		var yDelta:Int = Std.int(Math.abs(toY - fromY));
 		var xSign:Float = (toX > fromX) ? precision : -precision;
 		var ySign:Float = (toY > fromY) ? precision : -precision;
 		var x:Float = fromX;
@@ -480,7 +480,7 @@ class World extends Tweener {
 							p.y = y - ySign;
 							return e;
 						}
-						return collideLine(type, (cast x - xSign : Int), (cast y - ySign : Int), toX, toY, 1, p);
+						return collideLine(type, Std.int(x - xSign), Std.int(y - ySign), toX, toY, 1, p);
 					}
 					x += xSign;
 					y += ySign;
@@ -497,7 +497,7 @@ class World extends Tweener {
 							p.y = y - ySign;
 							return e;
 						}
-						return collideLine(type, (cast x - xSign : Int), (cast y - ySign : Int), toX, toY, 1, p);
+						return collideLine(type, Std.int(x - xSign), Std.int(y - ySign), toX, toY, 1, p);
 					}
 					x += xSign;
 					y += ySign;
@@ -517,7 +517,7 @@ class World extends Tweener {
 							p.y = y - ySign;
 							return e;
 						}
-						return collideLine(type, (cast x - xSign : Int), (cast y - ySign : Int), toX, toY, 1, p);
+						return collideLine(type, Std.int(x - xSign), Std.int(y - ySign), toX, toY, 1, p);
 					}
 					x += xSign;
 					y += ySign;
@@ -534,7 +534,7 @@ class World extends Tweener {
 							p.y = y - ySign;
 							return e;
 						}
-						return collideLine(type, (cast x - xSign : Int), (cast y - ySign : Int), toX, toY, 1, p);
+						return collideLine(type, Std.int(x - xSign), Std.int(y - ySign), toX, toY, 1, p);
 					}
 					x += xSign;
 					y += ySign;
@@ -548,7 +548,7 @@ class World extends Tweener {
 				return collidePoint(type, toX, toY);
 			}
 			if (collidePoint(type, toX, toY) != null) {
-				return collideLine(type, (cast x - xSign : Int), (cast y - ySign : Int), toX, toY, 1, p);
+				return collideLine(type, Std.int(x - xSign), Std.int(y - ySign), toX, toY, 1, p);
 			}
 		}
 

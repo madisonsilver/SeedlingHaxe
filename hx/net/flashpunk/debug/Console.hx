@@ -596,7 +596,7 @@ class Console {
 		FP.point.x = ((Input.pressed(Key.RIGHT)) ? 1 : 0) - ((Input.pressed(Key.LEFT)) ? 1 : 0);
 		FP.point.y = ((Input.pressed(Key.DOWN)) ? 1 : 0) - ((Input.pressed(Key.UP)) ? 1 : 0);
 		if (FP.point.x != 0 || FP.point.y != 0) {
-			moveSelected((cast FP.point.x : Int), (cast FP.point.y : Int));
+			moveSelected(Std.int(FP.point.x), Std.int(FP.point.y));
 		}
 	}
 
@@ -605,7 +605,7 @@ class Console {
 		FP.point.x = ((Input.check(Key.RIGHT)) ? 1 : 0) - ((Input.check(Key.LEFT)) ? 1 : 0);
 		FP.point.y = ((Input.check(Key.DOWN)) ? 1 : 0) - ((Input.check(Key.UP)) ? 1 : 0);
 		if (FP.point.x != 0 || FP.point.y != 0) {
-			panCamera((cast FP.point.x : Int), (cast FP.point.y : Int));
+			panCamera(Std.int(FP.point.x), Std.int(FP.point.y));
 		}
 	}
 
@@ -686,7 +686,7 @@ class Console {
 				// Draw the log scrollbar handle.
 			{
 				_logRead.graphics.beginFill(0xFFFFFF, 1);
-				var h:Int = (cast FP.clamp(_logBar.height * (_logLines / LOG.length), 12, _logBar.height - 4) : Int);
+				var h:Int = Std.int(FP.clamp(_logBar.height * (_logLines / LOG.length), 12, _logBar.height - 4));
 				var y:Int = as3hx.Compat.parseInt(_logBar.y + 2 + (_logBar.height - 16) * _logScroll);
 				_logRead.graphics.drawRoundRectComplex(_logBar.x + 2, y, 12, 12, 6, 6, 6, 6);
 			}

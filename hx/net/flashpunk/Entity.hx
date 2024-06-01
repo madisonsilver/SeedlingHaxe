@@ -273,8 +273,8 @@ class Entity extends Tweener {
 			this.y = y;
 			FP.entity.x = rX;
 			FP.entity.y = rY;
-			FP.entity.width = (cast rWidth : Int);
-			FP.entity.height = (cast rHeight : Int);
+			FP.entity.width = Std.int(rWidth);
+			FP.entity.height = Std.int(rHeight);
 			if (_mask.collide(FP.entity.HITBOX)) {
 				this.x = _x;
 				this.y = _y;

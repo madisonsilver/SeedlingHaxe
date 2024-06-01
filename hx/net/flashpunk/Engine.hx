@@ -85,7 +85,7 @@ class Engine extends MovieClip {
 	{
 		var t:Float = Math.round(haxe.Timer.stamp() * 1000);
 		if (_frameLast == 0) {
-			_frameLast = (cast t : Int);
+			_frameLast = Std.int(t);
 		}
 
 		// render loop
@@ -99,12 +99,12 @@ class Engine extends MovieClip {
 
 		// more timing stuff
 		t = Math.round(haxe.Timer.stamp() * 1000);
-		_frameListSum += (_frameList[_frameList.length] = (cast t - _frameLast : Int));
+		_frameListSum += (_frameList[_frameList.length] = Std.int(t - _frameLast));
 		if (_frameList.length > 10) {
 			_frameListSum -= _frameList.shift();
 		}
 		FP.frameRate = 1000 / (_frameListSum / _frameList.length);
-		_frameLast = (cast t : Int);
+		_frameLast = Std.int(t);
 	}
 
 	/**
@@ -160,8 +160,8 @@ class Engine extends MovieClip {
 	private function onEnterFrame(e:Event):Void // update timer
 	{
 		_time = _gameTime = Math.round(haxe.Timer.stamp() * 1000);
-		FP._flashTime = (cast _time - _flashTime : Int);
-		_updateTime = (cast _time : Int);
+		FP._flashTime = Std.int(_time - _flashTime);
+		_updateTime = Std.int(_time);
 		FP.elapsed = (_time - _last) / 1000;
 		if (FP.elapsed > MAX_ELAPSED) {
 			FP.elapsed = MAX_ELAPSED;
@@ -184,7 +184,7 @@ class Engine extends MovieClip {
 
 		// update timer
 		_time = _renderTime = Math.round(haxe.Timer.stamp() * 1000);
-		FP._updateTime = (cast _time - _updateTime : Int);
+		FP._updateTime = Std.int(_time - _updateTime);
 
 		// render loop
 		if (!paused) {
@@ -193,8 +193,8 @@ class Engine extends MovieClip {
 
 		// update timer
 		_time = _flashTime = Math.round(haxe.Timer.stamp() * 1000);
-		FP._renderTime = (cast _time - _renderTime : Int);
-		FP._gameTime = (cast _time - _gameTime : Int);
+		FP._renderTime = Std.int(_time - _renderTime);
+		FP._gameTime = Std.int(_time - _gameTime);
 	}
 
 	/** @private Fixed framerate game loop. */
@@ -210,8 +210,8 @@ class Engine extends MovieClip {
 		}
 
 		// update timer
-		_gameTime = (cast _time : Int);
-		FP._flashTime = (cast _time : Int) - _flashTime;
+		_gameTime = Std.int(_time);
+		FP._flashTime = Std.int(_time) - _flashTime;
 
 		// update console
 		if (FP._console != null) {
@@ -225,7 +225,7 @@ class Engine extends MovieClip {
 		while (_delta > _rate)
 			// update timer
 		{
-			_updateTime = (cast _time : Int);
+			_updateTime = Std.int(_time);
 			_delta -= _rate;
 			FP.elapsed = (_time - _prev) / 1000;
 			if (FP.elapsed > MAX_ELAPSED) {
@@ -244,11 +244,11 @@ class Engine extends MovieClip {
 
 			// update timer
 			_time = Math.round(haxe.Timer.stamp() * 1000);
-			FP._updateTime = (cast _time - _updateTime : Int);
+			FP._updateTime = Std.int(_time - _updateTime);
 		}
 
 		// update timer
-		_renderTime = (cast _time : Int);
+		_renderTime = Std.int(_time);
 
 		// render loop
 		if (!paused) {
@@ -257,8 +257,8 @@ class Engine extends MovieClip {
 
 		// update timer
 		_time = _flashTime = Math.round(haxe.Timer.stamp() * 1000);
-		FP._renderTime = (cast _time - _renderTime : Int);
-		FP._gameTime = (cast _time - _gameTime : Int);
+		FP._renderTime = Std.int(_time - _renderTime);
+		FP._gameTime = Std.int(_time - _gameTime);
 	}
 
 	/** @private Switch Worlds if they've changed. */

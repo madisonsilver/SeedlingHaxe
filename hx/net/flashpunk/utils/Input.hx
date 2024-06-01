@@ -78,14 +78,14 @@ class Input {
 	 * The absolute mouse x position on the screen (unscaled).
 	 */
 	private static function get_mouseFlashX():Int {
-		return (cast FP.stage.mouseX : Int);
+		return Std.int(FP.stage.mouseX);
 	}
 
 	/**
 	 * The absolute mouse y position on the screen (unscaled).
 	 */
 	private static function get_mouseFlashY():Int {
-		return (cast FP.stage.mouseY : Int);
+		return Std.int(FP.stage.mouseY);
 	}
 
 	/**

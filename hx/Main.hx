@@ -155,7 +155,7 @@ class Main extends Engine {
 
 		var s:String = "";
 		for (i in 0...Game.tagsPerLevel) {
-			s += Std.string(as3hx.Compat.parseInt(levelPersistence((cast Math.max(level, 0) : Int), i)));
+			s += Std.string(as3hx.Compat.parseInt(levelPersistence(Std.int(Math.max(level, 0)), i)));
 		}
 		trace(level + ": " + s);
 	}

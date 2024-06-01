@@ -58,10 +58,10 @@ class Draw {
 		}
 
 		// get the drawing positions
-		x1 -= (cast _camera.x : Int);
-		y1 -= (cast _camera.y : Int);
-		x2 -= (cast _camera.x : Int);
-		y2 -= (cast _camera.y : Int);
+		x1 -= Std.int(_camera.x);
+		y1 -= Std.int(_camera.y);
+		x2 -= Std.int(_camera.x);
+		y2 -= Std.int(_camera.y);
 
 		// get the drawing difference
 		var screen:BitmapData = _target;
@@ -191,8 +191,8 @@ class Draw {
 		if (color < 0xFF000000) {
 			color = 0xFF000000 | color;
 		}
-		x -= (cast _camera.x : Int);
-		y -= (cast _camera.y : Int);
+		x -= Std.int(_camera.x);
+		y -= Std.int(_camera.y);
 		var f:Int = as3hx.Compat.parseInt(1 - radius);
 		var fx:Int = 1;
 		var fy:Int = as3hx.Compat.parseInt(-2 * radius);

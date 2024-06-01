@@ -1250,9 +1250,9 @@ class Player extends Mobile {
 		var extra:Int = 4;
 		var r:Int = as3hx.Compat.parseInt(rMin + fireTimer / fireTimerMax * (rMax - rMin)); // + Game.worldFrame(2) * extra;
 
-		Draw.circlePlus((cast x : Int), (cast y : Int), r, 0xFF0000, fireTimer / fireTimerMax * a);
-		Draw.circlePlus((cast x : Int), (cast y : Int), r * 2 / 3, 0xFF8800, fireTimer / fireTimerMax * a);
-		Draw.circlePlus((cast x : Int), (cast y : Int), r / 3, 0xFFFF00, fireTimer / fireTimerMax * a);
+		Draw.circlePlus(Std.int(x), Std.int(y), r, 0xFF0000, fireTimer / fireTimerMax * a);
+		Draw.circlePlus(Std.int(x), Std.int(y), r * 2 / 3, 0xFF8800, fireTimer / fireTimerMax * a);
+		Draw.circlePlus(Std.int(x), Std.int(y), r / 3, 0xFFFF00, fireTimer / fireTimerMax * a);
 
 		(try cast(FP.world, Game) catch (e:Dynamic) null).drawCover(0xFF0000, fireTimer / fireTimerMax / 3);
 	}
@@ -1515,7 +1515,7 @@ class Player extends Mobile {
 	}
 
 	override public function moveX(_xrel:Float):Entity {
-		for (i in 0...(cast Math.abs(_xrel) : Int)) {
+		for (i in 0...Std.int(Math.abs(_xrel))) {
 			var d:Float = Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel);
 			var c_s:Entity = null;
 			if (shieldObj != null) {
@@ -1534,7 +1534,7 @@ class Player extends Mobile {
 	}
 
 	override public function moveY(_yrel:Float):Entity {
-		for (i in 0...(cast Math.abs(_yrel) : Int)) {
+		for (i in 0...Std.int(Math.abs(_yrel))) {
 			var d:Float = Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel);
 			var c_s:Entity = null;
 			if (shieldObj != null) {

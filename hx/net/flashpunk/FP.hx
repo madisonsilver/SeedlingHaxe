@@ -424,7 +424,7 @@ class FP {
 	}
 
 	private static function set_randomSeed(value:Int):Int {
-		_seed = (cast clamp(value, 1, 2147483646) : Int);
+		_seed = Std.int(clamp(value, 1, 2147483646));
 		_getSeed = _seed;
 		return value;
 	}
@@ -479,7 +479,7 @@ class FP {
 		if (loop) {
 			return options[((Lambda.indexOf(options, current) - 1) + options.length) % options.length];
 		}
-		return options[(cast Math.max(Lambda.indexOf(options, current) - 1, 0) : Int)];
+		return options[Std.int(Math.max(Lambda.indexOf(options, current) - 1, 0))];
 	}
 
 	/**

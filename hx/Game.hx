@@ -338,28 +338,8 @@ class Game extends World {
 	public static var sprBuilding8:Spritemap;
 	public static var imgBuilding8Mask:BitmapData;
 
-	public static var buildings:Array<Dynamic> = [
-		sprBuilding,
-		sprBuilding1,
-		sprBuilding2,
-		sprBuilding3,
-		sprBuilding4,
-		sprBuilding5,
-		sprBuilding6,
-		sprBuilding7,
-		sprBuilding8
-	];
-	public static var buildingMasks:Array<Dynamic> = [
-		imgBuildingMask,
-		imgBuilding1Mask,
-		imgBuilding2Mask,
-		imgBuilding3Mask,
-		imgBuilding4Mask,
-		imgBuilding5Mask,
-		imgBuilding6Mask,
-		imgBuilding7Mask,
-		imgBuilding8Mask
-	];
+	public static var buildings:Array<Image>;
+	public static var buildingMasks:Array<BitmapData>;
 
 	/*STATUES*/
 	private static var imgStatues:BitmapData;
@@ -1008,6 +988,28 @@ class Game extends World {
 			OverWorld_mountain, OverWorld_mountain1, OverWorld_finalboss, OverWorld_treelarge, OverWorld_d6entrance, Dungeon7_11, Dungeon7_12,
 			Dungeon8_Entrance, Dungeon8_1, Dungeon8_2, Dungeon8_3, Dungeon8_4, Dungeon8_5, Dungeon8_6, Dungeon8_7, Dungeon8_8, Dungeon8_9, Dungeon8_10,
 			Dungeon8_11, Dungeon8_12, End_1, End_Boss, End_2, End_3, End_4
+		];
+		buildings = [
+			sprBuilding,
+			sprBuilding1,
+			sprBuilding2,
+			sprBuilding3,
+			sprBuilding4,
+			sprBuilding5,
+			sprBuilding6,
+			sprBuilding7,
+			sprBuilding8
+		];
+		buildingMasks = [
+			imgBuildingMask,
+			imgBuilding1Mask,
+			imgBuilding2Mask,
+			imgBuilding3Mask,
+			imgBuilding4Mask,
+			imgBuilding5Mask,
+			imgBuilding6Mask,
+			imgBuilding7Mask,
+			imgBuilding8Mask
 		];
 
 		spGames = new Bitmap(imgGames);

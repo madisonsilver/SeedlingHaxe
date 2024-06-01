@@ -571,8 +571,8 @@ class Game extends World {
 	private static var imgBossKey4:BitmapData;
 	public static var sprBossKey4:Spritemap;
 
-	public static var bossLocks:Array<Dynamic> = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
-	public static var bossKeys:Array<Dynamic> = [sprBossKey, sprBossKey1, sprBossKey2, sprBossKey3, sprBossKey4];
+	public static var bossLocks:Array<Spritemap>;
+	public static var bossKeys:Array<Spritemap>;
 
 	/*Main variables*/
 	public static var cheats:Bool = false;
@@ -985,6 +985,8 @@ class Game extends World {
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
 		load_image_assets();
 		initialize_image_assets();
+		bossLocks = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
+		bossKeys = [sprBossKey, sprBossKey1, sprBossKey2, sprBossKey3, sprBossKey4];
 
 		spGames = new Bitmap(imgGames);
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);

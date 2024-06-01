@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.FP;
 import scenery.Tile;
@@ -10,18 +11,18 @@ import scenery.Tile;
  * @author Time
  */
 class DarkSuit extends Pickup {
-private var imgDarkSuit:BitmapData;
+	private var imgDarkSuit:BitmapData;
 	private var sprDarkSuit:Image;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
-private function load_image_assets():Void {
-imgDarkSuit = Assets.getBitmapData("assets/graphics/DarkSuit.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgDarkSuit = Assets.getBitmapData("assets/graphics/DarkSuit.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprDarkSuit = new Image(imgDarkSuit);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSuit, null, false);
 		sprDarkSuit.centerOO();

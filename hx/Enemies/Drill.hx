@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -13,18 +14,18 @@ import pickups.Coin;
  * @author Time
  */
 class Drill extends Enemy {
-private var imgDrill:BitmapData;
+	private var imgDrill:BitmapData;
 	private var sprDrill:Spritemap;
 
 	private var runRange(default, never):Int = 48; // Range at which the Drill will move after the character
 	private var drillAnimSpeed(default, never):Int = 20;
 
-private function load_image_assets():Void {
-imgDrill = Assets.getBitmapData("assets/graphics/Drill.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgDrill = Assets.getBitmapData("assets/graphics/Drill.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprDrill = new Spritemap(imgDrill, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDrill);
 

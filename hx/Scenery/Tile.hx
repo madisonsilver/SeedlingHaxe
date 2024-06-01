@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.BitmapData;
 import openfl.geom.Matrix;
 import openfl.geom.Point;
@@ -112,8 +113,6 @@ class Tile extends Entity {
 	private var randVal2:Float = Math.random();
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _grass:Bool = true, _g:Graphic = null, _pit:Bool = false, _continuous:Bool = false, _spray:Bool = true) {
-
-
 		super(_x + w / 2, _y + h / 2);
 		layer = LAYER;
 

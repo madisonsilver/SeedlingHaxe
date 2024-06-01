@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
 
@@ -9,15 +10,15 @@ import net.flashpunk.graphics.Image;
  * @author Time
  */
 class ShieldStatue extends Entity {
-private var imgShieldStatue:BitmapData;
+	private var imgShieldStatue:BitmapData;
 	private var sprShieldStatue:Image;
 
-private function load_image_assets():Void {
-imgShieldStatue = Assets.getBitmapData("assets/graphics/ShieldStatue.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgShieldStatue = Assets.getBitmapData("assets/graphics/ShieldStatue.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprShieldStatue = new Image(imgShieldStatue);
 		super(_x + Tile.w / 2, _y, sprShieldStatue);
 		sprShieldStatue.y = -11;

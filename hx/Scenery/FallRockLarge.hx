@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.BobBoss;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -16,7 +17,7 @@ import net.flashpunk.utils.Draw;
  * 
  */
 class FallRockLarge extends Activators {
-private var imgRockLarge:BitmapData;
+	private var imgRockLarge:BitmapData;
 	private var sprRock:Image;
 
 	private var bossRock:Bool;
@@ -36,12 +37,12 @@ private var imgRockLarge:BitmapData;
 	private var waitToFallTimerMax(default, never):Int = 60; // The length of time before the rock falls
 	private var waitToFallTimer:Int = 0;
 
-private function load_image_assets():Void {
-imgRockLarge = Assets.getBitmapData("assets/graphics/FallRockLarge.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _bRock:Bool = false, _tboss:Bool = false) {
+	private function load_image_assets():Void {
+		imgRockLarge = Assets.getBitmapData("assets/graphics/FallRockLarge.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _bRock:Bool = false, _tboss:Bool = false) {
+		load_image_assets();
 		sprRock = new Image(imgRockLarge);
 		super(_x + Tile.w, _y + Tile.h, sprRock, _t);
 		bossRock = _bRock;

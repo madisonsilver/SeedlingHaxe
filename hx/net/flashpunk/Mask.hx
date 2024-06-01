@@ -1,6 +1,7 @@
 package net.flashpunk;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.utils.Dictionary;
 import net.flashpunk.masks.Hitbox;
 import net.flashpunk.masks.Masklist;
@@ -23,8 +24,6 @@ class Mask {
 	 * Constructor.
 	 */
 	public function new() {
-
-
 		_class = cast((Type.resolveClass(Type.getClassName(Type.getClass(this)))), Class<Dynamic>);
 		_check[Mask] = collideMask;
 		_check[Masklist] = collideMasklist;

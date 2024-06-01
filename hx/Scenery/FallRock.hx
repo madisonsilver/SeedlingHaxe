@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
@@ -14,7 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class FallRock extends Activators {
-private var imgRock:BitmapData;
+	private var imgRock:BitmapData;
 	private var sprRock:Image;
 
 	private var tag:Int;
@@ -31,12 +32,12 @@ private var imgRock:BitmapData;
 	private var waitToFallTimerMax(default, never):Int = 60; // The length of time before the rock falls
 	private var waitToFallTimer:Int = 0;
 
-private function load_image_assets():Void {
-imgRock = Assets.getBitmapData("assets/graphics/FallRock.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgRock = Assets.getBitmapData("assets/graphics/FallRock.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprRock = new Image(imgRock);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRock, _t);
 		fallTo = Std.int(y);

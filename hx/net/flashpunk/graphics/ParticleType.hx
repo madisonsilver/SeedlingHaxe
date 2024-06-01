@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import haxe.Constraints.Function;
 import openfl.display.BitmapData;
 import openfl.geom.Rectangle;
@@ -21,8 +22,6 @@ class ParticleType {
 	 * @param	frameCount		Frame count.
 	 */
 	public function new(name:String, frames:Array<Dynamic>, source:BitmapData, frameWidth:Int, frameHeight:Int) {
-
-
 		_name = name;
 		_source = source;
 		_width = source.width;

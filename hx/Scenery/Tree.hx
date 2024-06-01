@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.Graphic;
@@ -20,8 +21,6 @@ class Tree extends Entity {
 	private var bare:Bool;
 
 	public function new(_x:Int, _y:Int, _bare:Bool = false, _g:Graphic = null) {
-
-
 		super(_x + Tile.w, _y + Tile.h, _g);
 		setHitbox(32, 32, 16, 16);
 		type = "Tree";

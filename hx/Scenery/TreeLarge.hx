@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.masks.Pixelmask;
@@ -12,21 +13,21 @@ import net.flashpunk.FP;
  * @author Time
  */
 class TreeLarge extends Entity {
-private var imgTreeLargeMask:BitmapData;
-private var imgTreeLarge:BitmapData;
+	private var imgTreeLargeMask:BitmapData;
+	private var imgTreeLarge:BitmapData;
 	private var sprTreeLarge:Spritemap;
 
 	private static var shine:Array<Dynamic> = [0, 1, 2, 3, 2, 1];
 	private static inline var phases:Int = 100;
 	private static inline var loops:Int = 3;
 
-private function load_image_assets():Void {
-imgTreeLargeMask = Assets.getBitmapData("assets/graphics/TreeLargeMask.png");
-imgTreeLarge = Assets.getBitmapData("assets/graphics/TreeLarge.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgTreeLargeMask = Assets.getBitmapData("assets/graphics/TreeLargeMask.png");
+		imgTreeLarge = Assets.getBitmapData("assets/graphics/TreeLarge.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);
 		super(_x + 80, _y + 96, sprTreeLarge);
 		sprTreeLarge.centerOO();

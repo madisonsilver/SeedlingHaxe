@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -14,7 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class WallFlyer extends Enemy {
-private var imgWallFlyer:BitmapData;
+	private var imgWallFlyer:BitmapData;
 	private var sprWallFlyer:Spritemap;
 
 	public var moveSpeed:Float = 4;
@@ -22,12 +23,12 @@ private var imgWallFlyer:BitmapData;
 	private var attackRange:Int = FP.screen.width; // The range at which the wall flyer will jump if the player is intersecting.
 	private var vTriggered:Point = new Point(); // The vector of motion of the wall flyer when it is triggered by the player.
 
-private function load_image_assets():Void {
-imgWallFlyer = Assets.getBitmapData("assets/graphics/WallFlyer.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgWallFlyer = Assets.getBitmapData("assets/graphics/WallFlyer.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprWallFlyer = new Spritemap(imgWallFlyer, 20, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWallFlyer);
 

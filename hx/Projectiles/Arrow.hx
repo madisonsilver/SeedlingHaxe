@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -13,18 +14,18 @@ import net.flashpunk.graphics.Spritemap;
  * @author Time
  */
 class Arrow extends Mobile {
-private var imgArrow:BitmapData;
+	private var imgArrow:BitmapData;
 	private var sprArrow:Image;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Tree", "Solid", "Shield"];
 	private var die:Bool = false;
 
-private function load_image_assets():Void {
-imgArrow = Assets.getBitmapData("assets/graphics/Arrow.png");
-}
-	public function new(_x:Int, _y:Int, _v:Point) {
+	private function load_image_assets():Void {
+		imgArrow = Assets.getBitmapData("assets/graphics/Arrow.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _v:Point) {
+		load_image_assets();
 		sprArrow = new Image(imgArrow);
 		super(_x, _y, sprArrow);
 		sprArrow.centerOO();

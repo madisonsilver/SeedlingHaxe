@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.BitmapData;
 import openfl.geom.ColorTransform;
 import openfl.geom.Matrix;
@@ -18,8 +19,8 @@ import scenery.FinalDoor;
  * @author Time
  */
 class SealController extends Entity {
-private static var imgSeal:BitmapData;
-private static var sprSeal : Spritemap;
+	private static var imgSeal:BitmapData;
+	private static var sprSeal:Spritemap;
 
 	public static inline var SEALS:Int = 16;
 
@@ -42,15 +43,17 @@ private static var sprSeal : Spritemap;
 
 	private var playedSound:Bool = false;
 
-private function load_image_assets():Void {
-imgSeal = Assets.getBitmapData("assets/graphics/Seal.png");
-}
-private function initialize_image_assets():Void {
-sprSeal = new Spritemap(imgSeal, 4, 4);
-}
+	private function load_image_assets():Void {
+		imgSeal = Assets.getBitmapData("assets/graphics/Seal.png");
+	}
+
+	private function initialize_image_assets():Void {
+		sprSeal = new Spritemap(imgSeal, 4, 4);
+	}
+
 	public function new(_showNewest:Bool = true, _parent:FinalDoor = null, _text:String = "") {
-initialize_image_assets();
-load_image_assets();
+		initialize_image_assets();
+		load_image_assets();
 		super();
 		Game.freezeObjects = true;
 		layer = -FP.height * 2;

@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.utils.Draw;
@@ -11,17 +12,17 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Torch extends Entity {
-private var imgTorch:BitmapData;
+	private var imgTorch:BitmapData;
 	private var sprTorch:Spritemap;
 
 	private var color:Int;
 
-private function load_image_assets():Void {
-imgTorch = Assets.getBitmapData("assets/graphics/Torch.png");
-}
-	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
+	private function load_image_assets():Void {
+		imgTorch = Assets.getBitmapData("assets/graphics/Torch.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
+		load_image_assets();
 		sprTorch = new Spritemap(imgTorch, 4, 10);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprTorch);
 		sprTorch.centerOO();

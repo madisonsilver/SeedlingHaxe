@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -12,7 +13,7 @@ import scenery.Wire;
  * @author Time
  */
 class ButtonRoom extends Activators {
-private var imgButtonRoom:BitmapData;
+	private var imgButtonRoom:BitmapData;
 	private var sprButtonRoom:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
@@ -26,12 +27,12 @@ private var imgButtonRoom:BitmapData;
 
 	// tset matches up with "tag" for objects in other rooms, not their tsets.
 
-private function load_image_assets():Void {
-imgButtonRoom = Assets.getBitmapData("assets/graphics/ButtonRoom.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int, _tag:Int, _flip:Bool, _room:Int) {
+	private function load_image_assets():Void {
+		imgButtonRoom = Assets.getBitmapData("assets/graphics/ButtonRoom.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int, _tag:Int, _flip:Bool, _room:Int) {
+		load_image_assets();
 		sprButtonRoom = new Spritemap(imgButtonRoom, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButtonRoom, _t);
 		sprButtonRoom.centerOO();

@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.utils.Dictionary;
 import openfl.errors.Error;
 import openfl.display.Bitmap;
@@ -73,8 +74,6 @@ class Image extends Graphic {
 	 * @param	clipRect	Optional rectangle defining area of the source image to draw.
 	 */
 	public function new(source:Dynamic = null, clipRect:Rectangle = null) {
-
-
 		super();
 		if (Std.is(source, Class)) {
 			_source = FP.getBitmap(source);

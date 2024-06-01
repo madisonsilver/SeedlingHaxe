@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
 import scenery.Tile;
@@ -10,12 +11,12 @@ import scenery.Tile;
  * @author Time
  */
 class Seed extends Pickup {
-private var imgSeed:BitmapData;
+	private var imgSeed:BitmapData;
 	private var sprSeed:Spritemap;
-private var imgSeedBloody:BitmapData;
+	private var imgSeedBloody:BitmapData;
 	private var sprSeedBloody:Spritemap;
 
-private var imgTreeGrow:BitmapData;
+	private var imgTreeGrow:BitmapData;
 
 	public var sprTreeGrow:Spritemap;
 
@@ -29,14 +30,14 @@ private var imgTreeGrow:BitmapData;
 
 	public var tree:Bool = false;
 
-private function load_image_assets():Void {
-imgSeed = Assets.getBitmapData("assets/graphics/Seed.png");
-imgSeedBloody = Assets.getBitmapData("assets/graphics/SeedBloody.png");
-imgTreeGrow = Assets.getBitmapData("assets/graphics/TreeGrow.png");
-}
-	public function new(_x:Int, _y:Int, _bloody:Bool = false, _text:String = "", _tree:Bool = false) {
+	private function load_image_assets():Void {
+		imgSeed = Assets.getBitmapData("assets/graphics/Seed.png");
+		imgSeedBloody = Assets.getBitmapData("assets/graphics/SeedBloody.png");
+		imgTreeGrow = Assets.getBitmapData("assets/graphics/TreeGrow.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _bloody:Bool = false, _text:String = "", _tree:Bool = false) {
+		load_image_assets();
 		sprSeed = new Spritemap(imgSeed, 9, 13);
 		sprSeedBloody = new Spritemap(imgSeedBloody, 11, 15);
 		sprTreeGrow = new Spritemap(imgTreeGrow, 16, 24, endAnim);

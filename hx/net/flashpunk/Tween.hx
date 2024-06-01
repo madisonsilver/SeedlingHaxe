@@ -1,6 +1,7 @@
 package net.flashpunk;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import haxe.Constraints.Function;
 
 /**
@@ -43,8 +44,6 @@ class Tween {
 	 * @param	ease			Optional easer function to apply to the Tweened value.
 	 */
 	public function new(duration:Float, type:Int = 0, complete:Function = null, ease:Function = null) {
-
-
 		_target = duration;
 		_type = type;
 		this.complete = complete;

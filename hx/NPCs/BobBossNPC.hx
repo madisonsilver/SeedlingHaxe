@@ -1,6 +1,7 @@
 package nPCs;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -11,19 +12,19 @@ import net.flashpunk.utils.Input;
  * @author Time
  */
 class BobBossNPC extends NPC {
-private var imgBobBoss1Pic:BitmapData;
-private var imgBobBoss2Pic:BitmapData;
-private var imgBobBoss3Pic:BitmapData;
+	private var imgBobBoss1Pic:BitmapData;
+	private var imgBobBoss2Pic:BitmapData;
+	private var imgBobBoss3Pic:BitmapData;
 	private var pics:Array<Dynamic>;
 
-private override function load_image_assets():Void {
-imgBobBoss1Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss1Pic.png");
-imgBobBoss2Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss2Pic.png");
-imgBobBoss3Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss3Pic.png");
-}
-	public function new(_x:Int, _y:Int, _st:Int = 0, _text:String = "", _talkingSpeed:Int = 10) {
+	private override function load_image_assets():Void {
+		imgBobBoss1Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss1Pic.png");
+		imgBobBoss2Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss2Pic.png");
+		imgBobBoss3Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss3Pic.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _st:Int = 0, _text:String = "", _talkingSpeed:Int = 10) {
+		load_image_assets();
 		pics = [imgBobBoss1Pic, imgBobBoss2Pic, imgBobBoss3Pic];
 		super(_x, _y, null, -1, _text, _talkingSpeed);
 		myPic = new Image(pics[_st]);

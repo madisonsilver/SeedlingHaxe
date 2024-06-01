@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.FinalBoss;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -16,21 +17,21 @@ import net.flashpunk.utils.Draw;
 class Pod extends Entity {
 	public var open(get, set):Bool;
 
-private var imgPodBody:BitmapData;
+	private var imgPodBody:BitmapData;
 	private var sprPodBody:Image;
-private var imgPod:BitmapData;
+	private var imgPod:BitmapData;
 	private var sprPod:Spritemap;
 
 	private var myPodBody:Entity;
 	private var hitables(default, never):Dynamic = ["Player"];
 
-private function load_image_assets():Void {
-imgPodBody = Assets.getBitmapData("assets/graphics/PodBody.png");
-imgPod = Assets.getBitmapData("assets/graphics/Pod.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgPodBody = Assets.getBitmapData("assets/graphics/PodBody.png");
+		imgPod = Assets.getBitmapData("assets/graphics/Pod.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprPodBody = new Image(imgPodBody);
 		sprPod = new Spritemap(imgPod, 24, 24, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprPod);

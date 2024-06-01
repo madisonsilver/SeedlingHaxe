@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import net.flashpunk.Entity;
@@ -13,7 +14,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class BeamTower extends Entity {
-private var imgBeamTower:BitmapData;
+	private var imgBeamTower:BitmapData;
 	private var sprBeamTower:Spritemap;
 
 	private var direction:Int;
@@ -24,12 +25,12 @@ private var imgBeamTower:BitmapData;
 
 	private var playedSound:Bool = false;
 
-private function load_image_assets():Void {
-imgBeamTower = Assets.getBitmapData("assets/graphics/BeamTower.png");
-}
-	public function new(_x:Int, _y:Int, _startdirection:Int = 0, _rate:Float = 1, speed:Float = 1) {
+	private function load_image_assets():Void {
+		imgBeamTower = Assets.getBitmapData("assets/graphics/BeamTower.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _startdirection:Int = 0, _rate:Float = 1, speed:Float = 1) {
+		load_image_assets();
 		sprBeamTower = new Spritemap(imgBeamTower, 16, 40, animEnd);
 		super(_x + 8, _y + 16, sprBeamTower);
 

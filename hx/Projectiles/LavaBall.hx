@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import enemies.LavaBoss;
 import openfl.geom.Point;
@@ -15,7 +16,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class LavaBall extends Mobile {
-private var imgLavaBall:BitmapData;
+	private var imgLavaBall:BitmapData;
 	private var sprLavaBall:Spritemap;
 
 	public var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
@@ -23,12 +24,12 @@ private var imgLavaBall:BitmapData;
 	private var sc(default, never):Float = 0.5;
 	private var beenHit:Bool = false;
 
-private function load_image_assets():Void {
-imgLavaBall = Assets.getBitmapData("assets/graphics/LavaBall.png");
-}
-	public function new(_x:Int, _y:Int, _v:Point) {
+	private function load_image_assets():Void {
+		imgLavaBall = Assets.getBitmapData("assets/graphics/LavaBall.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _v:Point) {
+		load_image_assets();
 		sprLavaBall = new Spritemap(imgLavaBall, 48, 32);
 		super(_x, _y, sprLavaBall);
 		sprLavaBall.scale = sc;

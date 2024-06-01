@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.FP;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -16,8 +17,6 @@ class BossKey extends Pickup {
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0) {
-
-
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossKeys[_t], null, false);
 		setHitbox(8, 8, 4, 4);
 		keyType = _t;

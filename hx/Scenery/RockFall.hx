@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -12,7 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class RockFall extends Mobile {
-private var imgRockFall:BitmapData;
+	private var imgRockFall:BitmapData;
 	private var sprRockFall:Spritemap;
 
 	private var fallHeight(default, never):Int = 96;
@@ -23,12 +24,12 @@ private var imgRockFall:BitmapData;
 	private var goto:Int;
 	private var startingSpeed:Float = 6;
 
-private function load_image_assets():Void {
-imgRockFall = Assets.getBitmapData("assets/graphics/RockFall.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgRockFall = Assets.getBitmapData("assets/graphics/RockFall.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprRockFall = new Spritemap(imgRockFall, 64, 32, endAnim);
 		super(_x, _y - fallHeight, sprRockFall);
 		goto = _y;

@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.*;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -14,18 +15,18 @@ import openfl.display.BlendMode;
  * @author Time
  */
 class RockLock extends Activators {
-private var imgRockLock:BitmapData;
+	private var imgRockLock:BitmapData;
 	private var sprRockLock:Image;
 
 	private var normType:String = "Solid";
 	private var tag:Int;
 
-private function load_image_assets():Void {
-imgRockLock = Assets.getBitmapData("assets/graphics/RockLock.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgRockLock = Assets.getBitmapData("assets/graphics/RockLock.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprRockLock = new Image(imgRockLock);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRockLock, _t);
 		sprRockLock.centerOO();

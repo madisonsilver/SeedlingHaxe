@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -11,18 +12,18 @@ import net.flashpunk.graphics.Spritemap;
  * @author Time
  */
 class BurnableTree extends Tree {
-private var imgBurnableTreeBurn:BitmapData;
+	private var imgBurnableTreeBurn:BitmapData;
 	private var sprBurnableTreeBurn:Spritemap;
 
 	private var tag:Int;
 	private var burn:Bool = false;
 
-private function load_image_assets():Void {
-imgBurnableTreeBurn = Assets.getBitmapData("assets/graphics/BurnableTreeBurn.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgBurnableTreeBurn = Assets.getBitmapData("assets/graphics/BurnableTreeBurn.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprBurnableTreeBurn = new Spritemap(imgBurnableTreeBurn, 32, 32, burnEnd);
 		super(_x, _y, false, sprBurnableTreeBurn);
 		tag = _tag;

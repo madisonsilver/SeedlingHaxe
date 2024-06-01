@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import openfl.utils.Dictionary;
 import net.flashpunk.*;
@@ -18,8 +19,6 @@ class Graphiclist extends Graphic {
 	 * @param	...graphic		Graphic objects to add to the list.
 	 */
 	public function new(graphic:Array<Dynamic> = null) {
-
-
 		super();
 		for (g in graphic) {
 			add(g);

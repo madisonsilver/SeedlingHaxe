@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
@@ -13,8 +14,8 @@ import scenery.Tile;
  * @author Time
  */
 class SpinningAxe extends Entity {
-private var imgSpinningAxe:BitmapData;
-private var imgSpinningAxeRed:BitmapData;
+	private var imgSpinningAxe:BitmapData;
+	private var imgSpinningAxeRed:BitmapData;
 	private var sprSpinningAxe:Image;
 
 	private var length(default, never):Int = 32;
@@ -24,13 +25,13 @@ private var imgSpinningAxeRed:BitmapData;
 	private var force:Int = 5;
 	private var damage:Int = 1;
 
-private function load_image_assets():Void {
-imgSpinningAxe = Assets.getBitmapData("assets/graphics/SpinningAxe.png");
-imgSpinningAxeRed = Assets.getBitmapData("assets/graphics/SpinningAxeRed.png");
-}
-	public function new(_x:Int, _y:Int, _rate:Int, _colorType:Int = 0) {
+	private function load_image_assets():Void {
+		imgSpinningAxe = Assets.getBitmapData("assets/graphics/SpinningAxe.png");
+		imgSpinningAxeRed = Assets.getBitmapData("assets/graphics/SpinningAxeRed.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _rate:Int, _colorType:Int = 0) {
+		load_image_assets();
 		switch (_colorType) {
 			case 1:
 				sprSpinningAxe = new Image(imgSpinningAxeRed);

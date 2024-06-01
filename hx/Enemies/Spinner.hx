@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -14,7 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Spinner extends Enemy {
-private var imgSpinner:BitmapData;
+	private var imgSpinner:BitmapData;
 	private var sprSpinner:Spritemap;
 
 	private var tag:Int;
@@ -27,12 +28,12 @@ private var imgSpinner:BitmapData;
 
 	private var hitForce(default, never):Float = 4;
 
-private function load_image_assets():Void {
-imgSpinner = Assets.getBitmapData("assets/graphics/Spinner.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgSpinner = Assets.getBitmapData("assets/graphics/Spinner.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprSpinner = new Spritemap(imgSpinner, 18, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpinner);
 

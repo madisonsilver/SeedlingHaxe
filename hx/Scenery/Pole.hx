@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -13,8 +14,6 @@ class Pole extends Entity {
 	private var img:Int = 0;
 
 	public function new(_x:Int, _y:Int) {
-
-
 		super(_x + Tile.w / 2, _y + Tile.h / 2);
 		setHitbox(16, 16, 8, 8);
 		type = "Solid";

@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -20,16 +21,16 @@ class Inventory {
 	public var extended(get, set):Bool;
 
 	// NOT an entity, so render is called explicitly by Game.
-private static var imgInventory:BitmapData;
-private static var sprInventory : Image;
-private static var imgInventoryItems:BitmapData;
-private static var sprInventoryItems : Spritemap;
-private static var imgInventoryItemsSide:BitmapData;
-private static var sprInventoryItemsSide : Spritemap;
-private static var imgInventoryItemsTotem:BitmapData;
-private static var sprInventoryItemsTotem : Spritemap;
-private static var imgTank:BitmapData;
-private static var sprTank : Image;
+	private static var imgInventory:BitmapData;
+	private static var sprInventory:Image;
+	private static var imgInventoryItems:BitmapData;
+	private static var sprInventoryItems:Spritemap;
+	private static var imgInventoryItemsSide:BitmapData;
+	private static var sprInventoryItemsSide:Spritemap;
+	private static var imgInventoryItemsTotem:BitmapData;
+	private static var sprInventoryItemsTotem:Spritemap;
+	private static var imgTank:BitmapData;
+	private static var sprTank:Image;
 
 	public static var width:Int = sprInventory.width;
 	public static var height:Int = sprInventory.height;
@@ -82,23 +83,25 @@ private static var sprTank : Image;
 	];
 	private static var EXtexts:Array<Dynamic> = ["This new tab shows your keys and other items you've obtained."];
 
-private function load_image_assets():Void {
-imgInventory = Assets.getBitmapData("assets/graphics/Inventory.png");
-imgInventoryItems = Assets.getBitmapData("assets/graphics/InventoryItems.png");
-imgInventoryItemsSide = Assets.getBitmapData("assets/graphics/InventoryItemsSide.png");
-imgInventoryItemsTotem = Assets.getBitmapData("assets/graphics/InventoryItemsTotem.png");
-imgTank = Assets.getBitmapData("assets/graphics/tank.png");
-}
-private function initialize_image_assets():Void {
-sprInventory = new Image(imgInventory);
-sprInventoryItems = new Spritemap(imgInventoryItems, 17, 17);
-sprInventoryItemsSide = new Spritemap(imgInventoryItemsSide, 8, 8);
-sprInventoryItemsTotem = new Spritemap(imgInventoryItemsTotem, 16, 24);
-sprTank = new Image(imgTank);
-}
+	private function load_image_assets():Void {
+		imgInventory = Assets.getBitmapData("assets/graphics/Inventory.png");
+		imgInventoryItems = Assets.getBitmapData("assets/graphics/InventoryItems.png");
+		imgInventoryItemsSide = Assets.getBitmapData("assets/graphics/InventoryItemsSide.png");
+		imgInventoryItemsTotem = Assets.getBitmapData("assets/graphics/InventoryItemsTotem.png");
+		imgTank = Assets.getBitmapData("assets/graphics/tank.png");
+	}
+
+	private function initialize_image_assets():Void {
+		sprInventory = new Image(imgInventory);
+		sprInventoryItems = new Spritemap(imgInventoryItems, 17, 17);
+		sprInventoryItemsSide = new Spritemap(imgInventoryItemsSide, 8, 8);
+		sprInventoryItemsTotem = new Spritemap(imgInventoryItemsTotem, 16, 24);
+		sprTank = new Image(imgTank);
+	}
+
 	public function new() {
-initialize_image_assets();
-load_image_assets();
+		initialize_image_assets();
+		load_image_assets();
 		scale = scaleMin;
 		textScale = [textScaleMin, textScaleMin];
 		offset.x = offsetMin.x;

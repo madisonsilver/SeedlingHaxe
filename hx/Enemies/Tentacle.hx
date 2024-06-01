@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import net.flashpunk.Entity;
@@ -12,7 +13,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Tentacle extends Enemy {
-private var imgTentacle:BitmapData;
+	private var imgTentacle:BitmapData;
 	private var sprTentacle:Spritemap;
 
 	private var right:Bool;
@@ -21,12 +22,12 @@ private var imgTentacle:BitmapData;
 
 	private var force(default, never):Int = 2;
 
-private function load_image_assets():Void {
-imgTentacle = Assets.getBitmapData("assets/graphics/Tentacle.png");
-}
-	public function new(_x:Int, _y:Int, _parent:TentacleBeast = null, _right:Bool = true) {
+	private function load_image_assets():Void {
+		imgTentacle = Assets.getBitmapData("assets/graphics/Tentacle.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _parent:TentacleBeast = null, _right:Bool = true) {
+		load_image_assets();
 		sprTentacle = new Spritemap(imgTentacle, 80, 49, animEnd);
 		super(_x, _y, sprTentacle);
 

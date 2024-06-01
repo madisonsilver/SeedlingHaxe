@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
@@ -16,7 +17,7 @@ import net.flashpunk.utils.Draw;
 class Moonrock extends Entity {
 	public static var beam(get, set):Bool;
 
-private var imgMoonrock:BitmapData;
+	private var imgMoonrock:BitmapData;
 	private var sprMoonrock:Spritemap;
 
 	private var tag:Int;
@@ -43,12 +44,12 @@ private var imgMoonrock:BitmapData;
 	private var fallRate(default, never):Int = 20;
 	private var fallTo:Int;
 
-private function load_image_assets():Void {
-imgMoonrock = Assets.getBitmapData("assets/graphics/Moonrock.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgMoonrock = Assets.getBitmapData("assets/graphics/Moonrock.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprMoonrock = new Spritemap(imgMoonrock, 52, 52);
 		super(_x, _y, sprMoonrock);
 		fallTo = _y;

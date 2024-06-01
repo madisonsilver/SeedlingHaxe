@@ -1,6 +1,7 @@
 package nPCs;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -15,9 +16,9 @@ import scenery.Tile;
  * @author Time
  */
 class Watcher extends NPC {
-private var imgWatcher:BitmapData;
+	private var imgWatcher:BitmapData;
 	private var sprWatcher:Spritemap;
-private var imgWatcherPic:BitmapData;
+	private var imgWatcherPic:BitmapData;
 	private var sprWatcherPic:Image;
 
 	private var seedIndexMin(default, never):Int = 9; // The minimum index of talking at which the seed is shown
@@ -36,13 +37,13 @@ private var imgWatcherPic:BitmapData;
 	private var text:String;
 	private var text1:String;
 
-private override function load_image_assets():Void {
-imgWatcher = Assets.getBitmapData("assets/graphics/NPCs/Watcher.png");
-imgWatcherPic = Assets.getBitmapData("assets/graphics/NPCs/WatcherPic.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 4) {
+	private override function load_image_assets():Void {
+		imgWatcher = Assets.getBitmapData("assets/graphics/NPCs/Watcher.png");
+		imgWatcherPic = Assets.getBitmapData("assets/graphics/NPCs/WatcherPic.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 4) {
+		load_image_assets();
 		sprWatcher = new Spritemap(imgWatcher, 12, 15);
 		sprWatcherPic = new Image(imgWatcherPic);
 		super(_x, _y, sprWatcher, _tag, (Game.checkPersistence(_tag)) ? _text : _text1, _talkingSpeed);

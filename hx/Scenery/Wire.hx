@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -20,8 +21,6 @@ class Wire extends Entity {
 	private var offColor(default, never):Int = 0x404040;
 
 	public function new(_x:Int, _y:Int, _img:Int = -1) {
-
-
 		super(_x, _y);
 		type = "Wire";
 		setHitbox(16, 16);

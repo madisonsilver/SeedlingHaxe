@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -13,7 +14,7 @@ import scenery.Light;
  * @author Time
  */
 class LightBoss extends Enemy {
-private var imgLightBoss:BitmapData;
+	private var imgLightBoss:BitmapData;
 	private var sprLightBoss:Spritemap;
 
 	private var divisor(default, never):Int = 20;
@@ -30,12 +31,12 @@ private var imgLightBoss:BitmapData;
 	private var myLight:Light;
 	private var angleFace:Float;
 
-private function load_image_assets():Void {
-imgLightBoss = Assets.getBitmapData("assets/graphics/LightBoss.png");
-}
-	public function new(_x:Int, _y:Int, _id:Int, _parent:LightBossController) {
+	private function load_image_assets():Void {
+		imgLightBoss = Assets.getBitmapData("assets/graphics/LightBoss.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _id:Int, _parent:LightBossController) {
+		load_image_assets();
 		sprLightBoss = new Spritemap(imgLightBoss, 17, 16, animEnd);
 		super(_x, _y, sprLightBoss);
 		sprLightBoss.centerOO();

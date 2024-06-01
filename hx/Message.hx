@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Text;
@@ -34,8 +35,6 @@ class Message extends Entity {
 	// top-center aligned
 
 	public function new(_x:Int, _y:Int, _sign:Int) {
-
-
 		super(_x, _y);
 		Text.static_size = titleSize;
 		titleText = new Text(titles[_sign]);

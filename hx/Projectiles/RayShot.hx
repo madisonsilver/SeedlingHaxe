@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -15,18 +16,18 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class RayShot extends Mobile {
-private var imgRayShot:BitmapData;
+	private var imgRayShot:BitmapData;
 	private var sprRayShot:Spritemap;
 
 	private var force(default, never):Int = 3; // The knockback when hitting enemies
 	private var damage:Float = 100;
 
-private function load_image_assets():Void {
-imgRayShot = Assets.getBitmapData("assets/graphics/DeathRayShot.png");
-}
-	public function new(_x:Int, _y:Int, _v:Point) {
+	private function load_image_assets():Void {
+		imgRayShot = Assets.getBitmapData("assets/graphics/DeathRayShot.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _v:Point) {
+		load_image_assets();
 		sprRayShot = new Spritemap(imgRayShot, 8, 3, animEnd);
 		super(_x, _y, sprRayShot);
 		sprRayShot.centerOO();

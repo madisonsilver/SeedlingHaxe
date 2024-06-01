@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.FP;
 import scenery.Tile;
@@ -10,18 +11,18 @@ import scenery.Tile;
  * @author Time
  */
 class DarkShield extends Pickup {
-private var imgDarkShield:BitmapData;
+	private var imgDarkShield:BitmapData;
 	private var sprDarkShield:Image;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
-private function load_image_assets():Void {
-imgDarkShield = Assets.getBitmapData("assets/graphics/DarkShield.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgDarkShield = Assets.getBitmapData("assets/graphics/DarkShield.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprDarkShield = new Image(imgDarkShield);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkShield, null, false);
 		sprDarkShield.centerOO();

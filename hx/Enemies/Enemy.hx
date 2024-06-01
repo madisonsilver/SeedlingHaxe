@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.Graphic;
@@ -54,8 +55,6 @@ class Enemy extends Mobile {
 	public var dieSoundIndex:Int = 0; // 0 = small, 1 = big
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
-
-
 		super(_x, _y, _g);
 		type = "Enemy";
 	}

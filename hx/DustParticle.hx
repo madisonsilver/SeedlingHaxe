@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.utils.Draw;
 import net.flashpunk.FP;
@@ -18,8 +19,6 @@ class DustParticle extends Entity {
 	private var startY:Int;
 
 	public function new(_x:Int, _y:Int) {
-
-
 		h = w;
 		super(_x, _y);
 		startY = as3hx.Compat.parseInt(y - FP.camera.y);

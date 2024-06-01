@@ -1,5 +1,7 @@
 package net.flashpunk.utils;
-import openfl.utils.Assets;import openfl.display.BitmapData;
+
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 
 /**
  * Static class with useful easer functions that can be used by Tweens.

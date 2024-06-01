@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.FP;
@@ -18,8 +19,6 @@ class Backdrop extends Canvas {
 	 * @param	repeatY		Repeat vertically.
 	 */
 	public function new(texture:Dynamic, repeatX:Bool = true, repeatY:Bool = true) {
-
-
 		if (Std.is(texture, Class)) {
 			_texture = FP.getBitmap(texture);
 		} else if (Std.is(texture, BitmapData)) {

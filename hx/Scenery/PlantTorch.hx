@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -11,7 +12,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class PlantTorch extends Entity {
-private var imgPlantTorch:BitmapData;
+	private var imgPlantTorch:BitmapData;
 	private var sprPlantTorch:Spritemap;
 
 	private var frames(default, never):Array<Dynamic> = [0, 1, 2, 1];
@@ -22,12 +23,12 @@ private var imgPlantTorch:BitmapData;
 
 	// (This light turns off when the player gets far away)
 
-private function load_image_assets():Void {
-imgPlantTorch = Assets.getBitmapData("assets/graphics/PlantTorch.png");
-}
-	public function new(_x:Int, _y:Int, _color:Int = 0xFFFFFF, _flipped:Bool = false, _distance:Int = 100) {
+	private function load_image_assets():Void {
+		imgPlantTorch = Assets.getBitmapData("assets/graphics/PlantTorch.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _color:Int = 0xFFFFFF, _flipped:Bool = false, _distance:Int = 100) {
+		load_image_assets();
 		sprPlantTorch = new Spritemap(imgPlantTorch, 16, 16);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprPlantTorch);
 		sprPlantTorch.originX = 8;

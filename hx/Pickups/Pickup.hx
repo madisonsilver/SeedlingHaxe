@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Graphic;
 import net.flashpunk.FP;
@@ -38,8 +39,6 @@ class Pickup extends Mobile {
 	public var myVolume:Float = 0.5;
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null, _v:Point = null, _attract:Bool = true) {
-
-
 		specialTimer = specialTimerMax;
 		super(_x, _y, _g);
 		if (_v != null) {

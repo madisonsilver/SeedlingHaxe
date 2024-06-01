@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -12,7 +13,7 @@ import pickups.Coin;
  * @author Time
  */
 class Puncher extends Enemy {
-private var imgPuncher:BitmapData;
+	private var imgPuncher:BitmapData;
 	private var sprPuncher:Spritemap;
 
 	private var direction:Int = 3; // 0 = right, counter-clockwise from there.
@@ -26,12 +27,12 @@ private var imgPuncher:BitmapData;
 	private var attackRange(default, never):Int = 10; // Range at which the Puncher will attack the character
 	private var punchForce(default, never):Float = 5;
 
-private function load_image_assets():Void {
-imgPuncher = Assets.getBitmapData("assets/graphics/Puncher.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgPuncher = Assets.getBitmapData("assets/graphics/Puncher.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprPuncher = new Spritemap(imgPuncher, 20, 20, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPuncher);
 

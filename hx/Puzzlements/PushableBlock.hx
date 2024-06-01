@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.utils.Input;
@@ -13,7 +14,7 @@ import scenery.Tile;
  * @author Time
  */
 class PushableBlock extends Mobile {
-private var imgPushableBlock:BitmapData;
+	private var imgPushableBlock:BitmapData;
 	private var sprPushableBlock:Spritemap;
 
 	private var moveSpeed(default, never):Float = 0.5;
@@ -21,12 +22,12 @@ private var imgPushableBlock:BitmapData;
 	private var lTile:Point;
 	private var tile:Point;
 
-private function load_image_assets():Void {
-imgPushableBlock = Assets.getBitmapData("assets/graphics/PushableBlock.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgPushableBlock = Assets.getBitmapData("assets/graphics/PushableBlock.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprPushableBlock = new Spritemap(imgPushableBlock, 16, 16);
 		super(_x, _y, sprPushableBlock);
 		setHitbox(16, 16);

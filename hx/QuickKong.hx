@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.errors.Error;
 import haxe.Constraints.Function;
 import openfl.display.Loader;
@@ -81,8 +82,6 @@ class QuickKong {
 	public static var LOADED:Bool = false;
 
 	public function new() {
-
-
 		throw new Error("[QuickKong] Error: Do not create an instance of this class, as it contains all static functions");
 	}
 

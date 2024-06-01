@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -14,7 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class LavaBoss extends Enemy {
-private var imgLavaBoss:BitmapData;
+	private var imgLavaBoss:BitmapData;
 	private var sprLavaBoss:Spritemap;
 
 	private var shotSpeed(default, never):Int = 1;
@@ -22,12 +23,12 @@ private var imgLavaBoss:BitmapData;
 	private var lastHitType:String = "";
 	private var startAttacking:Bool = false;
 
-private function load_image_assets():Void {
-imgLavaBoss = Assets.getBitmapData("assets/graphics/LavaBoss.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgLavaBoss = Assets.getBitmapData("assets/graphics/LavaBoss.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprLavaBoss = new Spritemap(imgLavaBoss, 160, 82, endAnim);
 		super(_x + 48, _y + 40, sprLavaBoss);
 		sprLavaBoss.centerOO();

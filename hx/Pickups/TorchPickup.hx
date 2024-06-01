@@ -1,6 +1,7 @@
 package pickups;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
 import scenery.Tile;
@@ -11,18 +12,18 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class TorchPickup extends Pickup {
-private var imgTorchPickup:BitmapData;
+	private var imgTorchPickup:BitmapData;
 	private var sprTorchPickup:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
-private function load_image_assets():Void {
-imgTorchPickup = Assets.getBitmapData("assets/graphics/TorchPickup.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgTorchPickup = Assets.getBitmapData("assets/graphics/TorchPickup.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprTorchPickup = new Spritemap(imgTorchPickup, 12, 12);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTorchPickup, null, false);
 		sprTorchPickup.centerOO();

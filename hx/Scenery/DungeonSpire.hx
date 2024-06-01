@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
 
@@ -9,15 +10,15 @@ import net.flashpunk.graphics.Image;
  * @author Time
  */
 class DungeonSpire extends Entity {
-private var imgDungeonSpire:BitmapData;
+	private var imgDungeonSpire:BitmapData;
 	private var sprDungeonSpire:Image;
 
-private function load_image_assets():Void {
-imgDungeonSpire = Assets.getBitmapData("assets/graphics/DungeonSpire.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgDungeonSpire = Assets.getBitmapData("assets/graphics/DungeonSpire.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprDungeonSpire = new Image(imgDungeonSpire);
 		super(_x, _y, sprDungeonSpire);
 		sprDungeonSpire.y = -8;

@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 
@@ -9,15 +10,15 @@ import net.flashpunk.graphics.Spritemap;
  * @author Time
  */
 class OracleStatue extends Entity {
-private var imgOracleStatue:BitmapData;
+	private var imgOracleStatue:BitmapData;
 	private var sprOracleStatue:Spritemap;
 
-private function load_image_assets():Void {
-imgOracleStatue = Assets.getBitmapData("assets/graphics/OracleStatue.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgOracleStatue = Assets.getBitmapData("assets/graphics/OracleStatue.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprOracleStatue = new Spritemap(imgOracleStatue, 32, 48);
 		super(_x, _y, sprOracleStatue);
 		sprOracleStatue.y = -16;

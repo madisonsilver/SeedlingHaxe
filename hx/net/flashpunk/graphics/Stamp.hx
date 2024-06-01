@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.BitmapData;
 import openfl.display.DisplayObject;
 import openfl.geom.Point;
@@ -20,8 +21,6 @@ class Stamp extends Graphic {
 	 * @param	y			Y offset.
 	 */
 	public function new(source:Dynamic, x:Int = 0, y:Int = 0) {
-
-
 		super();
 		// set the origin
 		this.x = x;

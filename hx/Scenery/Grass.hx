@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -17,8 +18,6 @@ class Grass extends Entity {
 	private var alpha:Float = 1;
 
 	public function new(_x:Int, _y:Int) {
-
-
 		super(_x, _y, Game.sprGrass);
 		active = false;
 		layer = Std.int(-y);

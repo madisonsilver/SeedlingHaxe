@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -12,7 +13,7 @@ import net.flashpunk.graphics.Spritemap;
  * @author Time
  */
 class Bomb extends Mobile {
-private var imgBomb:BitmapData;
+	private var imgBomb:BitmapData;
 	private var sprBomb:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "ShieldBoss"];
@@ -24,12 +25,12 @@ private var imgBomb:BitmapData;
 	private var tMax(default, never):Int = 30;
 	private var t:Int;
 
-private function load_image_assets():Void {
-imgBomb = Assets.getBitmapData("assets/graphics/Bomb.png");
-}
-	public function new(_x:Int, _y:Int, _p:Point) {
+	private function load_image_assets():Void {
+		imgBomb = Assets.getBitmapData("assets/graphics/Bomb.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _p:Point) {
+		load_image_assets();
 		sprBomb = new Spritemap(imgBomb, 16, 16);
 		t = tMax;
 		super(_x, _y, sprBomb);

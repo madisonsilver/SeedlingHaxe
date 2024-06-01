@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -19,8 +20,6 @@ class Mobile extends Entity {
 	public var destroy:Bool = false;
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
-
-
 		super(_x, _y, _g);
 	}
 

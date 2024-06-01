@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -21,10 +22,10 @@ import pickups.Coin;
 			Eric ******... it was a tuesday, the 17th--friday the 13th was his birthday; OOOOH! Eric was walking the halls of his middle school when his geometry teacher came out--he was taking highschool geometry because he was advanced, but not at Andover, that fabled place.  He was a white person and Eric's parents didn't accept that a white man was teaching him.  Hear that? Racism.  Anyhow, there's this japanese 50 year old guy who looks pretty much like aqualung.  The weather isn't exactly ideal for his nose, and eric is learning geometry from him in a broom closet learning about 3d stuff, like cones and square prisms (as well as cylinders; and domes! HOHOHoooo)  It's going to be about ten years until he discovers porn, and fifteen until he sees a dick that he chooses to see.  Political?  He's going to see plenty of vaginas in his day.  and his girlfriends are going to ask if they are fat--have fat vaginas.  And so the teacher brought models, wooden ones.  But he says "oh I forgot my cylinders and domes!  SO I guess we're going to have to substitute."  So Eric has some trouble, so they try his finger and take measurements.  But Eric says that his finger is too small.  Problem with not using metric units--wrong conversion.  Anyways, so the teacher undid his belt, with that deadly clank (so nice in some situations).  And he pulled it down those hairless legs.  Uh.  To this day, Eric still remembers that it wasn't much bigger than his pinky finger--BUT IT WAS BIGGER!  measurable in inches... 1, 2... 2.25.  But anyways, Eric understood the sensation, as he felt it when he saw the men dancing on the television.  It has affected him to this very day.  Pre-med, anyone?
  */
 class BobSoldier extends Enemy {
-private var imgLameSword:BitmapData;
+	private var imgLameSword:BitmapData;
 	private var sprLameSword:Spritemap;
 
-private var imgBobSoldier:BitmapData;
+	private var imgBobSoldier:BitmapData;
 	private var sprBobSoldier:Spritemap;
 
 	public var moveSpeed:Float = 0.8;
@@ -49,13 +50,13 @@ private var imgBobSoldier:BitmapData;
 
 	public var hopSoundIndex:Int = 0;
 
-private function load_image_assets():Void {
-imgLameSword = Assets.getBitmapData("assets/graphics/LameSword.png");
-imgBobSoldier = Assets.getBitmapData("assets/graphics/BobSoldier.png");
-}
-	public function new(_x:Int, _y:Int, _g:Spritemap = null) {
+	private function load_image_assets():Void {
+		imgLameSword = Assets.getBitmapData("assets/graphics/LameSword.png");
+		imgBobSoldier = Assets.getBitmapData("assets/graphics/BobSoldier.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _g:Spritemap = null) {
+		load_image_assets();
 		sprBobSoldier = new Spritemap(imgBobSoldier, 10, 10, endAnim);
 		sprLameSword = new Spritemap(imgLameSword, 16, 5);
 		weaponLength = sprLameSword.width;

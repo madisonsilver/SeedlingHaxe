@@ -1,6 +1,7 @@
 package net.flashpunk.tweens.motion;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.errors.Error;
 import haxe.Constraints.Function;
 import openfl.geom.Point;
@@ -19,8 +20,6 @@ class QuadPath extends Motion {
 	 * @param	type		Tween type.
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
-
-
 		super(0, complete, type, null);
 		_curveT[0] = 0;
 	}

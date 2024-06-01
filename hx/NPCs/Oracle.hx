@@ -1,6 +1,7 @@
 package nPCs;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -10,9 +11,9 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Oracle extends NPC {
-private var imgOracle:BitmapData;
+	private var imgOracle:BitmapData;
 	private var sprOracle:Spritemap;
-private var imgOraclePic:BitmapData;
+	private var imgOraclePic:BitmapData;
 	private var sprOraclePic:Image;
 
 	private var wakenDistance(default, never):Int = 48;
@@ -22,13 +23,13 @@ private var imgOraclePic:BitmapData;
 
 	private var text2(default, never):String = "You have brought the seed. Good work.~Your purpose is fulfilled, but now you are not needed.~Goodbye.";
 
-private override function load_image_assets():Void {
-imgOracle = Assets.getBitmapData("assets/graphics/NPCs/Oracle.png");
-imgOraclePic = Assets.getBitmapData("assets/graphics/NPCs/OraclePic.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 10) {
+	private override function load_image_assets():Void {
+		imgOracle = Assets.getBitmapData("assets/graphics/NPCs/Oracle.png");
+		imgOraclePic = Assets.getBitmapData("assets/graphics/NPCs/OraclePic.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 10) {
+		load_image_assets();
 		sprOracle = new Spritemap(imgOracle, 16, 24, animEnd);
 		sprOraclePic = new Image(imgOraclePic);
 		super(_x, _y, sprOracle, _tag, (Game.cutscene[1] != null) ? text2 : ((Game.checkPersistence(_tag)) ? _text : _text1), _talkingSpeed);

@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.*;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
@@ -28,8 +29,6 @@ class BossLock extends Activators {
 	private var keyTimer:Int;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1) {
-
-
 		keyTimer = keyTimerMax;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossLocks[_t], -1);
 		myKey = Game.bossKeys[_t];

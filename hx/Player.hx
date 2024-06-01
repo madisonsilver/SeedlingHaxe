@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.utils.Dictionary;
 import enemies.Enemy;
 import enemies.Flyer;
@@ -56,30 +57,30 @@ class Player extends Mobile {
 	public var spearX(get, never):Int;
 	public var spearY(get, never):Int;
 
-private var imgShrum:BitmapData;
+	private var imgShrum:BitmapData;
 	// [Embed(source = "../assets/graphics/ShrumBlue.png")] private var imgShrumBlue:Class;
 	private var sprShrum:Spritemap;
-private var imgShrumDark:BitmapData;
+	private var imgShrumDark:BitmapData;
 
 	public var sprShrumDark:Spritemap;
 
-private var imgSlash:BitmapData;
+	private var imgSlash:BitmapData;
 	private var sprSlash:Spritemap;
-private var imgSlashDark:BitmapData;
+	private var imgSlashDark:BitmapData;
 	private var sprSlashDark:Spritemap;
-private var imgGhostSword:BitmapData;
+	private var imgGhostSword:BitmapData;
 	private var sprGhostSword:Spritemap;
-private var imgSpear:BitmapData;
+	private var imgSpear:BitmapData;
 	private var sprSpear:Spritemap;
-private var imgWand:BitmapData;
+	private var imgWand:BitmapData;
 	private var sprWand:Spritemap;
-private var imgFireWand:BitmapData;
+	private var imgFireWand:BitmapData;
 	private var sprFireWand:Spritemap;
-private var imgFire:BitmapData;
+	private var imgFire:BitmapData;
 	private var sprFire:Spritemap;
-private var imgDeathRay:BitmapData;
+	private var imgDeathRay:BitmapData;
 	private var sprDeathRay:Spritemap;
-private var imgShield:BitmapData;
+	private var imgShield:BitmapData;
 	private var sprShield:Spritemap;
 
 	// Right, Up, Left, Down, Primary, Secondary, Talk, Inventory, Inventory 1
@@ -407,22 +408,22 @@ private var imgShield:BitmapData;
 	private var coverAlpha:Float = 0;
 	private var coverAlphaRate:Float = 0.005;
 
-private function load_image_assets():Void {
-imgShrum = Assets.getBitmapData("assets/graphics/ShrumBlue.png");
-imgShrumDark = Assets.getBitmapData("assets/graphics/ShrumDark.png");
-imgSlash = Assets.getBitmapData("assets/graphics/Slash.png");
-imgSlashDark = Assets.getBitmapData("assets/graphics/SlashDark.png");
-imgGhostSword = Assets.getBitmapData("assets/graphics/GhostSword.png");
-imgSpear = Assets.getBitmapData("assets/graphics/GhostSpearStab.png");
-imgWand = Assets.getBitmapData("assets/graphics/Wand.png");
-imgFireWand = Assets.getBitmapData("assets/graphics/FireWand.png");
-imgFire = Assets.getBitmapData("assets/graphics/Fire.png");
-imgDeathRay = Assets.getBitmapData("assets/graphics/DeathRay.png");
-imgShield = Assets.getBitmapData("assets/graphics/Shield.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgShrum = Assets.getBitmapData("assets/graphics/ShrumBlue.png");
+		imgShrumDark = Assets.getBitmapData("assets/graphics/ShrumDark.png");
+		imgSlash = Assets.getBitmapData("assets/graphics/Slash.png");
+		imgSlashDark = Assets.getBitmapData("assets/graphics/SlashDark.png");
+		imgGhostSword = Assets.getBitmapData("assets/graphics/GhostSword.png");
+		imgSpear = Assets.getBitmapData("assets/graphics/GhostSpearStab.png");
+		imgWand = Assets.getBitmapData("assets/graphics/Wand.png");
+		imgFireWand = Assets.getBitmapData("assets/graphics/FireWand.png");
+		imgFire = Assets.getBitmapData("assets/graphics/Fire.png");
+		imgDeathRay = Assets.getBitmapData("assets/graphics/DeathRay.png");
+		imgShield = Assets.getBitmapData("assets/graphics/Shield.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprShrumDark = new Spritemap(imgShrumDark, 16, 16, endAnim);
 		sprShrum = new Spritemap(imgShrum, 16, 16);
 		sprGhostSword = new Spritemap(imgGhostSword, 24, 7, slashEnd);

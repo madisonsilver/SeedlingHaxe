@@ -1,5 +1,7 @@
 package net.flashpunk.utils;
-import openfl.utils.Assets;import openfl.display.BitmapData;
+
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 
 /**
  * Contains static key constants to be used by Input.

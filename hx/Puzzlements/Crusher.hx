@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import enemies.IceTurret;
 import openfl.geom.Point;
@@ -16,7 +17,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Crusher extends Activators {
-private var imgCrusher:BitmapData;
+	private var imgCrusher:BitmapData;
 	private var sprCrusher:Spritemap;
 
 	private var hitables(default, never):Dynamic = ["Player", "Solid", "Enemy", "ShieldBoss"];
@@ -33,12 +34,12 @@ private var imgCrusher:BitmapData;
 	private var force:Int = 1;
 	private var damage:Int = 1000; // KILL EVERYTHING
 
-private function load_image_assets():Void {
-imgCrusher = Assets.getBitmapData("assets/graphics/Crusher.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int) {
+	private function load_image_assets():Void {
+		imgCrusher = Assets.getBitmapData("assets/graphics/Crusher.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int) {
+		load_image_assets();
 		sprCrusher = new Spritemap(imgCrusher, 32, 32);
 		super(_x + Tile.w, _y + Tile.h, sprCrusher, _t);
 		(try cast(graphic, Image) catch (e:Dynamic) null).centerOO();

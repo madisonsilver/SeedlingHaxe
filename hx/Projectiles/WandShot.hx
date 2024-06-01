@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -16,9 +17,9 @@ import net.flashpunk.graphics.Image;
  * @author Time
  */
 class WandShot extends Mobile {
-private var imgWandShot:BitmapData;
+	private var imgWandShot:BitmapData;
 	private var sprWandShot:Spritemap;
-private var imgFireWandShot:BitmapData;
+	private var imgFireWandShot:BitmapData;
 	private var sprFireWandShot:Spritemap;
 
 	private var tilesMove(default, never):Int = 3; // The number of tiles that the shot will travel in a given direction.
@@ -34,13 +35,13 @@ private var imgFireWandShot:BitmapData;
 	private var fireVolume(default, never):Float = 0.6;
 	private var fizzleVolume(default, never):Float = 0.3;
 
-private function load_image_assets():Void {
-imgWandShot = Assets.getBitmapData("assets/graphics/WandShot.png");
-imgFireWandShot = Assets.getBitmapData("assets/graphics/FireWandShot.png");
-}
-	public function new(_x:Int, _y:Int, _v:Point, _fire:Bool = false) {
+	private function load_image_assets():Void {
+		imgWandShot = Assets.getBitmapData("assets/graphics/WandShot.png");
+		imgFireWandShot = Assets.getBitmapData("assets/graphics/FireWandShot.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _v:Point, _fire:Bool = false) {
+		load_image_assets();
 		sprWandShot = new Spritemap(imgWandShot, 7, 7, animEnd);
 		sprFireWandShot = new Spritemap(imgFireWandShot, 9, 9, animEnd);
 		super(_x, _y, sprWandShot);

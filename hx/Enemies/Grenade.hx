@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -14,7 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Grenade extends Enemy {
-private var imgGrenade:BitmapData;
+	private var imgGrenade:BitmapData;
 	private var sprGrenade:Spritemap;
 
 	private var hitRadius(default, never):Int = 20;
@@ -30,12 +31,12 @@ private var imgGrenade:BitmapData;
 	private var endY:Int;
 	private var activated:Bool;
 
-private function load_image_assets():Void {
-imgGrenade = Assets.getBitmapData("assets/graphics/Grenade.png");
-}
-	public function new(_x:Int, _y:Int, _active:Bool = false, _exTime:Int = 60) {
+	private function load_image_assets():Void {
+		imgGrenade = Assets.getBitmapData("assets/graphics/Grenade.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _active:Bool = false, _exTime:Int = 60) {
+		load_image_assets();
 		sprGrenade = new Spritemap(imgGrenade, 16, 16, animEnd);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);
 		endY = as3hx.Compat.parseInt(_y + Tile.h / 2);

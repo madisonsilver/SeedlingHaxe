@@ -1,6 +1,7 @@
 package projectiles;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.Enemy;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -13,7 +14,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Explosion extends Entity {
-private var imgExplosion:BitmapData;
+	private var imgExplosion:BitmapData;
 	private var sprExplosion:Spritemap;
 
 	private var animSpeed(default, never):Int = 20;
@@ -24,12 +25,12 @@ private var imgExplosion:BitmapData;
 	private var hitables:Dynamic;
 	private var damage:Int;
 
-private function load_image_assets():Void {
-imgExplosion = Assets.getBitmapData("assets/graphics/Explosion.png");
-}
-	public function new(_x:Int, _y:Int, _hit:Dynamic, _r:Int = 16, _d:Int = 1) {
+	private function load_image_assets():Void {
+		imgExplosion = Assets.getBitmapData("assets/graphics/Explosion.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _hit:Dynamic, _r:Int = 16, _d:Int = 1) {
+		load_image_assets();
 		sprExplosion = new Spritemap(imgExplosion, 128, 128, endAnim);
 		super(_x, _y, sprExplosion);
 		sprExplosion.add("explode", [0, 1, 2, 3, 4, 5, 6, 7], animSpeed);

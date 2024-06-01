@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.FP;
@@ -13,19 +14,19 @@ import projectiles.Arrow;
  * @author Time
  */
 class ArrowTrap extends Activators {
-private var imgArrowTrap:BitmapData;
+	private var imgArrowTrap:BitmapData;
 	private var sprArrowTrap:Spritemap;
 
 	private var shootTimer:Int = 0;
 	private var shootTimerMax(default, never):Int = 10;
 	private var shootDefault:Bool; // Whether it should default to shooting when not activated or vice versa
 
-private function load_image_assets():Void {
-imgArrowTrap = Assets.getBitmapData("assets/graphics/ArrowTrap.png");
-}
-	public function new(_x:Int, _y:Int, _t:Int = 0, _shoot:Bool = false) {
+	private function load_image_assets():Void {
+		imgArrowTrap = Assets.getBitmapData("assets/graphics/ArrowTrap.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _t:Int = 0, _shoot:Bool = false) {
+		load_image_assets();
 		sprArrowTrap = new Spritemap(imgArrowTrap, 16, 5);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + sprArrowTrap.height / 2), sprArrowTrap, _t);
 		sprArrowTrap.centerOO();

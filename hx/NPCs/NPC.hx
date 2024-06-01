@@ -1,6 +1,7 @@
 package nPCs;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import enemies.LightBossController;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -19,7 +20,7 @@ import scenery.Tile;
 class NPC extends Mobile {
 	public var talking(get, set):Bool;
 
-private var imgTalk:BitmapData;
+	private var imgTalk:BitmapData;
 	private var sprTalk:Spritemap;
 
 	public var talked:Bool = false; // If the player has already talked to him since he came in range
@@ -48,12 +49,12 @@ private var imgTalk:BitmapData;
 
 	public var align:String = "LEFT";
 
-private function load_image_assets():Void {
-imgTalk = Assets.getBitmapData("assets/graphics/NPCs/Talk.png");
-}
-	public function new(_x:Int, _y:Int, _g:Image, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 0, _lineLength:Int = 28) {
+	private function load_image_assets():Void {
+		imgTalk = Assets.getBitmapData("assets/graphics/NPCs/Talk.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _g:Image, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 0, _lineLength:Int = 28) {
+		load_image_assets();
 		sprTalk = new Spritemap(imgTalk, 10, 14);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);
 		lineLength = _lineLength;

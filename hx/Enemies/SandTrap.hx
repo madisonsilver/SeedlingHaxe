@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -11,7 +12,7 @@ import scenery.Tile;
  * @author Time
  */
 class SandTrap extends Enemy {
-private var imgSandTrap:BitmapData;
+	private var imgSandTrap:BitmapData;
 	private var sprSandTrap:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
@@ -19,12 +20,12 @@ private var imgSandTrap:BitmapData;
 
 	private var tag:Int;
 
-private function load_image_assets():Void {
-imgSandTrap = Assets.getBitmapData("assets/graphics/SandTrap.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1, _g:Spritemap = null) {
+	private function load_image_assets():Void {
+		imgSandTrap = Assets.getBitmapData("assets/graphics/SandTrap.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1, _g:Spritemap = null) {
+		load_image_assets();
 		sprSandTrap = new Spritemap(imgSandTrap, 14, 14, endAnim);
 		if (_g == null) {
 			_g = sprSandTrap;

@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.utils.Draw;
@@ -11,15 +12,15 @@ import net.flashpunk.FP;
  * @author Time
  */
 class FrozenBoss extends Entity {
-private var imgFrozenBoss:BitmapData;
+	private var imgFrozenBoss:BitmapData;
 	private var sprFrozenBoss:Image;
 
-private function load_image_assets():Void {
-imgFrozenBoss = Assets.getBitmapData("assets/graphics/FrozenBoss.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgFrozenBoss = Assets.getBitmapData("assets/graphics/FrozenBoss.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprFrozenBoss = new Image(imgFrozenBoss);
 		super(_x, _y, sprFrozenBoss);
 		setHitbox(80, 32, -32, -128);

@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.utils.Draw;
@@ -11,7 +12,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class FinalDoor extends Entity {
-private var imgFinalDoor:BitmapData;
+	private var imgFinalDoor:BitmapData;
 	private var sprFinalDoor:Spritemap;
 
 	private var seeDistance(default, never):Int = 32;
@@ -21,12 +22,12 @@ private var imgFinalDoor:BitmapData;
 
 	private var tag:Int;
 
-private function load_image_assets():Void {
-imgFinalDoor = Assets.getBitmapData("assets/graphics/FinalDoor.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgFinalDoor = Assets.getBitmapData("assets/graphics/FinalDoor.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprFinalDoor = new Spritemap(imgFinalDoor, 32, 32, animEnd);
 		super(_x + Tile.w, _y + Tile.h, sprFinalDoor);
 		sprFinalDoor.centerOO();

@@ -1,6 +1,7 @@
 package net.flashpunk.tweens.misc;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.errors.Error;
 import haxe.Constraints.Function;
 import net.flashpunk.Tween;
@@ -15,8 +16,6 @@ class VarTween extends Tween {
 	 * @param	type		Tween type.
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
-
-
 		super(0, type, complete);
 	}
 

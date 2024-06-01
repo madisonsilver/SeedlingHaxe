@@ -1,6 +1,7 @@
 package net.flashpunk.masks;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.*;
 import net.flashpunk.masks.Masklist;
 
@@ -15,8 +16,6 @@ class Masklist extends Hitbox {
 	 * @param	...mask		Masks to add to the list.
 	 */
 	public function new(mask:Array<Dynamic> = null) {
-
-
 		super();
 		for (m in mask) {
 			add(m);

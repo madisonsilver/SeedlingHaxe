@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -18,8 +19,6 @@ class Building extends Entity {
 	private static var moundFrames:Array<Dynamic> = [0, 1, 2, 1];
 
 	public function new(_x:Int, _y:Int, _t:Int = 0) {
-
-
 		super(_x, _y, Game.buildings[_t]);
 		Game.buildings[_t].y = -8;
 		mask = new Pixelmask(Game.buildingMasks[_t], 0, 0);

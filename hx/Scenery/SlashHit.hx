@@ -1,6 +1,7 @@
 package scenery;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -11,15 +12,15 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class SlashHit extends Entity {
-private var imgSlashHit:BitmapData;
+	private var imgSlashHit:BitmapData;
 	private var sprSlashHit:Spritemap;
 
-private function load_image_assets():Void {
-imgSlashHit = Assets.getBitmapData("assets/graphics/SlashHit.png");
-}
-	public function new(_x:Int, _y:Int, _scx:Float) {
+	private function load_image_assets():Void {
+		imgSlashHit = Assets.getBitmapData("assets/graphics/SlashHit.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _scx:Float) {
+		load_image_assets();
 		sprSlashHit = new Spritemap(imgSlashHit, 32, 16, endAnim);
 		super(_x, _y, sprSlashHit);
 		sprSlashHit.centerOO();

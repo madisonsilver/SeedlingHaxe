@@ -1,6 +1,7 @@
 package net.flashpunk.graphics;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.geom.Matrix;
@@ -26,8 +27,6 @@ class PreRotation extends Image {
 	 * @param	smooth			Make the rotated graphic appear less pixelly.
 	 */
 	public function new(source:Class<Dynamic>, frameCount:Int = 36, smooth:Bool = false) {
-
-
 		var r:BitmapData = Reflect.field(_rotated, Std.string(source));
 		_frame = new Rectangle(0, 0, Reflect.field(_size, Std.string(source)), Reflect.field(_size, Std.string(source)));
 		if (r == null)

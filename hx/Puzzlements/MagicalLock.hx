@@ -1,6 +1,7 @@
 package puzzlements;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
 import scenery.Tile;
@@ -11,21 +12,21 @@ import net.flashpunk.FP;
  * @author Time
  */
 class MagicalLock extends Entity {
-private var imgMagicalLock:BitmapData;
+	private var imgMagicalLock:BitmapData;
 	private var sprMagicalLock:Spritemap;
-private var imgMagicalLockFire:BitmapData;
+	private var imgMagicalLockFire:BitmapData;
 	private var sprMagicalLockFire:Spritemap;
 
 	private var tag:Int;
 	private var lockType:Int;
 
-private function load_image_assets():Void {
-imgMagicalLock = Assets.getBitmapData("assets/graphics/MagicalLock.png");
-imgMagicalLockFire = Assets.getBitmapData("assets/graphics/MagicalLockFire.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
+	private function load_image_assets():Void {
+		imgMagicalLock = Assets.getBitmapData("assets/graphics/MagicalLock.png");
+		imgMagicalLockFire = Assets.getBitmapData("assets/graphics/MagicalLockFire.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
+		load_image_assets();
 		sprMagicalLock = new Spritemap(imgMagicalLock, 22, 21, animEnd);
 		sprMagicalLockFire = new Spritemap(imgMagicalLockFire, 22, 21, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2);

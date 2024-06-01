@@ -1,4 +1,5 @@
-import openfl.utils.Assets;import openfl.display.BitmapData;
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 // import com.newgrounds.components.FlashAd;
 import openfl.display.*;
 import openfl.geom.Rectangle;
@@ -20,7 +21,7 @@ class Preloader extends Sprite {
 	private static inline var BG_COLOR:Int = 0x000000;
 	private static inline var FG_COLOR:Int = 0xFFFFFF;
 
-public static var imgNG:BitmapData;
+	public static var imgNG:BitmapData;
 	private static var sprNG:DisplayObject;
 
 	@:meta(Embed(source = "net/flashpunk/graphics/04B_03__.TTF", fontFamily = "default"))
@@ -54,12 +55,12 @@ public static var imgNG:BitmapData;
 	 */
 	private var promoRect:Rectangle;
 
-private function load_image_assets():Void {
-imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_large.png");
-}
-	public function new() {
+	private function load_image_assets():Void {
+		imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_large.png");
+	}
 
-load_image_assets();
+	public function new() {
+		load_image_assets();
 		super();
 		sprNG = new Bitmap(Assets.getBitmapData("assets/graphics/pixel_logo_large.png"));
 		URL = root.stage.loaderInfo.url;

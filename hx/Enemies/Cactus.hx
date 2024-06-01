@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
 import scenery.Tile;
@@ -10,18 +11,18 @@ import scenery.Tile;
  * @author Time
  */
 class Cactus extends Enemy {
-private var imgCactus:BitmapData;
+	private var imgCactus:BitmapData;
 	private var sprCactus:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 20; // The distance at which the cactus will start chomping from a player
 
-private function load_image_assets():Void {
-imgCactus = Assets.getBitmapData("assets/graphics/Cactus.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private function load_image_assets():Void {
+		imgCactus = Assets.getBitmapData("assets/graphics/Cactus.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprCactus = new Spritemap(imgCactus, 8, 8, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprCactus);
 		sprCactus.centerOO();

@@ -1,6 +1,7 @@
 package nPCs;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -10,18 +11,18 @@ import net.flashpunk.FP;
  * @author Time
  */
 class ForestCharacter extends NPC {
-private var imgForestChar:BitmapData;
+	private var imgForestChar:BitmapData;
 	private var sprForestChar:Spritemap;
-private var imgForestCharPic:BitmapData;
+	private var imgForestCharPic:BitmapData;
 	private var sprForestCharPic:Image;
 
-private override function load_image_assets():Void {
-imgForestChar = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacter.png");
-imgForestCharPic = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacterPic.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+	private override function load_image_assets():Void {
+		imgForestChar = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacter.png");
+		imgForestCharPic = Assets.getBitmapData("assets/graphics/NPCs/ForestCharacterPic.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+		load_image_assets();
 		sprForestChar = new Spritemap(imgForestChar, 8, 9);
 		sprForestCharPic = new Image(imgForestCharPic);
 		super(_x, _y, sprForestChar, _tag, _text, _talkingSpeed);

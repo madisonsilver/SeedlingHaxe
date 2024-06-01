@@ -1,6 +1,7 @@
 package net.flashpunk.debug;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.display.BlendMode;
@@ -37,8 +38,6 @@ class Console {
 	 * Constructor.
 	 */
 	public function new() {
-
-
 		Input.define("_ARROWS", [Key.RIGHT, Key.LEFT, Key.DOWN, Key.UP]);
 	}
 

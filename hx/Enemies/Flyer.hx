@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.FP;
 import net.flashpunk.graphics.Spritemap;
@@ -12,7 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Flyer extends Bob {
-private var imgFlyer:BitmapData;
+	private var imgFlyer:BitmapData;
 	private var sprFlyer:Spritemap;
 
 	private static inline var normalSpeed:Float = 1;
@@ -20,12 +21,12 @@ private var imgFlyer:BitmapData;
 	private static inline var dropForce:Int = 1;
 	private static inline var droppedFrame:Int = 10; // The frame at which the flyer is on the ground (when to hit the player)
 
-private override function load_image_assets():Void {
-imgFlyer = Assets.getBitmapData("assets/graphics/Flyer.png");
-}
-	public function new(_x:Int, _y:Int) {
+	private override function load_image_assets():Void {
+		imgFlyer = Assets.getBitmapData("assets/graphics/Flyer.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int) {
+		load_image_assets();
 		sprFlyer = new Spritemap(imgFlyer, 18, 26, endAnim);
 		super(_x, _y, sprFlyer);
 

@@ -1,6 +1,7 @@
 package net.flashpunk;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import openfl.utils.Dictionary;
 import net.flashpunk.utils.Input;
@@ -30,8 +31,6 @@ class World extends Tweener {
 	 * Constructor.
 	 */
 	public function new() {
-
-
 		super();
 	}
 

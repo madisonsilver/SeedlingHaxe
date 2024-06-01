@@ -1,6 +1,7 @@
 package enemies;
-import openfl.utils.Assets;import openfl.display.BitmapData;
 
+import openfl.utils.Assets;
+import openfl.display.BitmapData;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import net.flashpunk.graphics.Spritemap;
@@ -14,8 +15,8 @@ import puzzlements.Whirlpool;
  * @author Time
  */
 class TentacleBeast extends Enemy {
-private var imgTentacleBeastMask:BitmapData;
-private var imgTentacleBeast:BitmapData;
+	private var imgTentacleBeastMask:BitmapData;
+	private var imgTentacleBeast:BitmapData;
 	private var sprTentacleBeast:Spritemap;
 
 	private var sittingFrames(default, never):Array<Dynamic> = [0, 1, 2, 1];
@@ -34,13 +35,13 @@ private var imgTentacleBeast:BitmapData;
 
 	private var tag:Int;
 
-private function load_image_assets():Void {
-imgTentacleBeastMask = Assets.getBitmapData("assets/graphics/TentacleBeastMask.png");
-imgTentacleBeast = Assets.getBitmapData("assets/graphics/TentacleBeast.png");
-}
-	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+	private function load_image_assets():Void {
+		imgTentacleBeastMask = Assets.getBitmapData("assets/graphics/TentacleBeastMask.png");
+		imgTentacleBeast = Assets.getBitmapData("assets/graphics/TentacleBeast.png");
+	}
 
-load_image_assets();
+	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+		load_image_assets();
 		sprTentacleBeast = new Spritemap(imgTentacleBeast, 46, 44, animEnd);
 		super(_x + 24, _y + 24, sprTentacleBeast);
 		sprTentacleBeast.add("sink", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 8);

@@ -2101,7 +2101,7 @@ class Game extends World {
 	}
 
 	public function loadlevel(_level:String):Void {
-		var xml:Access = new Access(Xml.parse(_level));
+		var xml:Access = new Access(Xml.parse(_level)).node.level;
 
 		var e:Entity;
 		var o:Access;

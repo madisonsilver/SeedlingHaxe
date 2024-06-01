@@ -179,8 +179,8 @@ class Preloader extends Sprite {
 				}
 			}
 		}
-
-		var p:Float = (loaderInfo.bytesLoaded / loaderInfo.bytesTotal);
+ 
+		var p:Float = (loaderInfo!=null) ? (loaderInfo.bytesLoaded / loaderInfo.bytesTotal): 1;
 
 		progressBar.graphics.clear();
 		progressBar.graphics.beginFill(BG_COLOR);
@@ -216,7 +216,7 @@ class Preloader extends Sprite {
 	}
 
 	private function hasLoaded():Bool {
-		return (loaderInfo.bytesLoaded >= loaderInfo.bytesTotal);
+		return (loaderInfo == null) || (loaderInfo.bytesLoaded >= loaderInfo.bytesTotal);
 	}
 
 	private function startup():Void {

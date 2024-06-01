@@ -86,53 +86,46 @@ class Music {
 	private static var currentIndex:Int = -1;
 
 	private static var setNames:Array<String> = new Array<String>();
-	private static var soundsO:Dictionary<String, Array<Dynamic>> = new Dictionary();
-	private static var soundSwords:Array<Dynamic> = [sndSword1, sndSword2, sndSword3];
-	private static var soundStabs:Array<Dynamic> = [sndStab1, sndStab2, sndStab3];
-	private static var soundSplash:Array<Dynamic> = [sndSplash1, sndSplash2];
-	private static var soundSwim:Array<Dynamic> = [sndSwim1];
-	private static var soundArrow:Array<Dynamic> = [sndArrow1, sndArrow2];
-	private static var soundSwitch:Array<Dynamic> = [sndSwitch1];
-	private static var soundDrill:Array<Dynamic> = [sndDrill1, sndDrill1];
-	private static var soundEnemyHit:Array<Dynamic> = [sndEnemyHit1, sndEnemyHit2];
-	private static var soundMetal:Array<Dynamic> = [sndMetal1];
-	private static var soundEnemyHop:Array<Dynamic> = [sndEnemyHop1, sndEnemyHop2];
-	private static var soundChest:Array<Dynamic> = [sndChest1];
-	private static var soundRock:Array<Dynamic> = [sndRock1, sndRock2];
-	private static var soundLock:Array<Dynamic> = [sndLock1];
-	private static var soundEnergyBeam:Array<Dynamic> = [sndEnergyBeam1, sndEnergyBeam1, sndEnergyBeam1];
-	private static var soundEnergyPulse:Array<Dynamic> = [sndEnergyPulse1, sndEnergyPulse1];
-	private static var soundExplosion:Array<Dynamic> = [sndExplosion1, sndExplosion1, sndExplosion1];
-	private static var soundEnemyFall:Array<Dynamic> = [sndEnemyFall1, sndEnemyFall1, sndEnemyFall1];
-	private static var soundPushRock:Array<Dynamic> = [sndPushRock1];
-	private static var soundEnemyDie:Array<Dynamic> = [sndEnemyDie1, sndEnemyDie1];
-	private static var soundRoom:Array<Dynamic> = [sndRoom1, sndRoom2, sndRoom3, sndRoom4];
-	private static var soundHurt:Array<Dynamic> = [sndHurt1];
-	private static var soundGroundHit:Array<Dynamic> = [sndGroundHit1, sndGroundHit2];
-	private static var soundPlayerFall:Array<Dynamic> = [sndPlayerFall1];
-	private static var soundBossDie:Array<Dynamic> = [sndBossDie1, sndBossDie2, sndBossDie3, sndBossDie4, sndBossDie5];
-	private static var soundEnemyAttack:Array<Dynamic> = [sndEnemyAttack1, sndEnemyAttack2, sndEnemyAttack3, sndEnemyAttack4];
-	private static var soundBoss6Move:Array<Dynamic> = [
-		sndBoss6Move1,
-		sndBoss6Move2,
-		sndBoss6Move3,
-		sndBoss6Move1,
-		sndBoss6Move2,
-		sndBoss6Move3
-	];
-	private static var soundWandFire:Array<Dynamic> = [sndWandFire1, sndWandFire1];
-	private static var soundWandFizzle:Array<Dynamic> = [sndWandFizzle1, sndWandFizzle1];
-	private static var soundTurretShoot:Array<Dynamic> = [sndTurretShoot1, sndTurretShoot1, sndTurretShoot1];
-	private static var soundWind:Array<Dynamic> = [sndWind1, sndWind2];
-	private static var soundBurn:Array<Dynamic> = [sndBurn1];
-	private static var soundPunch:Array<Dynamic> = [sndPunch1];
-	private static var soundTentacle:Array<Dynamic> = [sndTentacle1, sndTentacle1, sndTentacle1, sndTentacle1];
-	private static var soundFire:Array<Dynamic> = [sndFire1];
-	private static var soundLava:Array<Dynamic> = [sndLava1, sndLava2, sndLava3];
-	private static var soundLight:Array<Dynamic> = [sndLight1];
-	private static var soundText:Array<Dynamic> = [sndText1, sndText2];
-	private static var soundOther:Array<Dynamic> = [sndOther1, sndOther2, sndOther3, sndOther4, sndOther5];
-	private static var sounds:Dictionary<String, Array<Dynamic>> = new Dictionary();
+	private static var soundsO:Dictionary<String, Array<Sfx>> = new Dictionary();
+	private static var soundSwords:Array<Sound>;
+	private static var soundStabs:Array<Sound>;
+	private static var soundSplash:Array<Sound>;
+	private static var soundSwim:Array<Sound>;
+	private static var soundArrow:Array<Sound>;
+	private static var soundSwitch:Array<Sound>;
+	private static var soundDrill:Array<Sound>;
+	private static var soundEnemyHit:Array<Sound>;
+	private static var soundMetal:Array<Sound>;
+	private static var soundEnemyHop:Array<Sound>;
+	private static var soundChest:Array<Sound>;
+	private static var soundRock:Array<Sound>;
+	private static var soundLock:Array<Sound>;
+	private static var soundEnergyBeam:Array<Sound>;
+	private static var soundEnergyPulse:Array<Sound>;
+	private static var soundExplosion:Array<Sound>;
+	private static var soundEnemyFall:Array<Sound>;
+	private static var soundPushRock:Array<Sound>;
+	private static var soundEnemyDie:Array<Sound>;
+	private static var soundRoom:Array<Sound>;
+	private static var soundHurt:Array<Sound>;
+	private static var soundGroundHit:Array<Sound>;
+	private static var soundPlayerFall:Array<Sound>;
+	private static var soundBossDie:Array<Sound>;
+	private static var soundEnemyAttack:Array<Sound>;
+	private static var soundBoss6Move:Array<Sound>;
+	private static var soundWandFire:Array<Sound>;
+	private static var soundWandFizzle:Array<Sound>;
+	private static var soundTurretShoot:Array<Sound>;
+	private static var soundWind:Array<Sound>;
+	private static var soundBurn:Array<Sound>;
+	private static var soundPunch:Array<Sound>;
+	private static var soundTentacle:Array<Sound>;
+	private static var soundFire:Array<Sound>;
+	private static var soundLava:Array<Sound>;
+	private static var soundLight:Array<Sound>;
+	private static var soundText:Array<Sound>;
+	private static var soundOther:Array<Sound>;
+	private static var sounds:Dictionary<String, Array<Sound>> = new Dictionary();
 	private static var sndYesMaster:Sound;
 	public static var sndOYesMaster:Sfx;
 
@@ -187,10 +180,7 @@ class Music {
 	private static var sndBoss:Sound;
 	public static var sndOBoss:Sfx;
 
-	public static var songs:Array<Dynamic> = [
-		sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic,
-		sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss
-	];
+	public static var songs:Array<Sfx>;
 
 	private static var overSong:Sfx; // The song that gets played over the background song on interruption
 	private static var bkgdSong:Sfx; // The song that represents the currently playing background music
@@ -318,12 +308,65 @@ class Music {
 		sndOBoss = new Sfx(sndBoss);
 	}
 
+	public static function initialize_sound_arrays() {
+		soundSwords = [sndSword1, sndSword2, sndSword3];
+	soundStabs = [sndStab1, sndStab2, sndStab3];
+	soundSplash = [sndSplash1, sndSplash2];
+	soundSwim = [sndSwim1];
+	soundArrow = [sndArrow1, sndArrow2];
+	soundSwitch = [sndSwitch1];
+	soundDrill = [sndDrill1, sndDrill1];
+	soundEnemyHit = [sndEnemyHit1, sndEnemyHit2];
+	soundMetal = [sndMetal1];
+	soundEnemyHop = [sndEnemyHop1, sndEnemyHop2];
+	soundChest = [sndChest1];
+	soundRock = [sndRock1, sndRock2];
+	soundLock = [sndLock1];
+	soundEnergyBeam = [sndEnergyBeam1, sndEnergyBeam1, sndEnergyBeam1];
+	soundEnergyPulse = [sndEnergyPulse1, sndEnergyPulse1];
+	soundExplosion = [sndExplosion1, sndExplosion1, sndExplosion1];
+	soundEnemyFall = [sndEnemyFall1, sndEnemyFall1, sndEnemyFall1];
+	soundPushRock = [sndPushRock1];
+	soundEnemyDie = [sndEnemyDie1, sndEnemyDie1];
+	soundRoom = [sndRoom1, sndRoom2, sndRoom3, sndRoom4];
+	soundHurt = [sndHurt1];
+	soundGroundHit = [sndGroundHit1, sndGroundHit2];
+	soundPlayerFall = [sndPlayerFall1];
+	soundBossDie = [sndBossDie1, sndBossDie2, sndBossDie3, sndBossDie4, sndBossDie5];
+	soundEnemyAttack = [sndEnemyAttack1, sndEnemyAttack2, sndEnemyAttack3, sndEnemyAttack4];
+	soundBoss6Move = [
+		sndBoss6Move1,
+		sndBoss6Move2,
+		sndBoss6Move3,
+		sndBoss6Move1,
+		sndBoss6Move2,
+		sndBoss6Move3
+	];
+	soundWandFire = [sndWandFire1, sndWandFire1];
+	soundWandFizzle = [sndWandFizzle1, sndWandFizzle1];
+	soundTurretShoot = [sndTurretShoot1, sndTurretShoot1, sndTurretShoot1];
+	soundWind = [sndWind1, sndWind2];
+	soundBurn = [sndBurn1];
+	soundPunch = [sndPunch1];
+	soundTentacle = [sndTentacle1, sndTentacle1, sndTentacle1, sndTentacle1];
+	soundFire = [sndFire1];
+	soundLava = [sndLava1, sndLava2, sndLava3];
+	soundLight = [sndLight1];
+	soundText = [sndText1, sndText2];
+	soundOther = [sndOther1, sndOther2, sndOther3, sndOther4, sndOther5];
+	}
+
 	public function new() {}
 
 	public static function begin():Void // called by Main
 	{
 		load_audio_assets();
 		initialize_audio_assets();
+		initialize_sound_arrays();
+		songs = [
+			sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic,
+			sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss
+		];
 
 		sounds["Sword"] = soundSwords;
 		sounds["Stab"] = soundStabs;

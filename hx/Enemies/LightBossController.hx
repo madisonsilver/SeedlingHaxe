@@ -40,6 +40,7 @@ class LightBossController extends Entity {
 
 	public function new(_x:Int, _y:Int, _flierNum:Int, _tag:Int = -1) {
 
+
 		super();
 
 		tag = _tag;

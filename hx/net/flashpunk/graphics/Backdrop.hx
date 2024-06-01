@@ -19,6 +19,7 @@ class Backdrop extends Canvas {
 	 */
 	public function new(texture:Dynamic, repeatX:Bool = true, repeatY:Bool = true) {
 
+
 		if (Std.is(texture, Class)) {
 			_texture = FP.getBitmap(texture);
 		} else if (Std.is(texture, BitmapData)) {

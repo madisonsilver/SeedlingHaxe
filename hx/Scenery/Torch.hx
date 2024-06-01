@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgTorch = Assets.getBitmapData("assets/graphics/Torch.png");
 }
 	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
+
 load_image_assets();
 		sprTorch = new Spritemap(imgTorch, 4, 10);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprTorch);

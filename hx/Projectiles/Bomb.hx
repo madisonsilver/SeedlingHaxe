@@ -28,6 +28,7 @@ private function load_image_assets():Void {
 imgBomb = Assets.getBitmapData("assets/graphics/Bomb.png");
 }
 	public function new(_x:Int, _y:Int, _p:Point) {
+
 load_image_assets();
 		sprBomb = new Spritemap(imgBomb, 16, 16);
 		t = tMax;

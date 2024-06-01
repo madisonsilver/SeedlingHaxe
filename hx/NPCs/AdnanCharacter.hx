@@ -20,6 +20,7 @@ imgAdnanCharacter = Assets.getBitmapData("assets/graphics/NPCs/AdnanCharacter.pn
 imgAdnanCharacterPic = Assets.getBitmapData("assets/graphics/NPCs/AdnanCharacterPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprAdnanCharacter = new Spritemap(imgAdnanCharacter, 8, 8);
 		sprAdnanCharacterPic = new Image(imgAdnanCharacterPic);

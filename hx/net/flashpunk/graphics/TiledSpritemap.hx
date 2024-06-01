@@ -24,6 +24,7 @@ class TiledSpritemap extends Spritemap {
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0, width:Int = 0, height:Int = 0, callback:Function = null) {
 
+
 		_imageWidth = width;
 		_imageHeight = height;
 		super(source, frameWidth, frameHeight, callback);

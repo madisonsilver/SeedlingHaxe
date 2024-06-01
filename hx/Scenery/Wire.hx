@@ -21,6 +21,7 @@ class Wire extends Entity {
 
 	public function new(_x:Int, _y:Int, _img:Int = -1) {
 
+
 		super(_x, _y);
 		type = "Wire";
 		setHitbox(16, 16);

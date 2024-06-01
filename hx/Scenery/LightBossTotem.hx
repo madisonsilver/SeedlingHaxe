@@ -23,6 +23,7 @@ private function load_image_assets():Void {
 imgLightBossTotem = Assets.getBitmapData("assets/graphics/LightBossTotem.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprLightBossTotem = new Image(imgLightBossTotem);
 		super(_x, _y, sprLightBossTotem);

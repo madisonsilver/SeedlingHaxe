@@ -24,6 +24,7 @@ class Pull extends Entity {
 
 	public function new(_x:Int, _y:Int, _d:Float, _f:Float) {
 
+
 		super(_x, _y);
 		setHitbox(Tile.w, Tile.h);
 		type = "Pull";

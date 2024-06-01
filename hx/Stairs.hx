@@ -18,6 +18,7 @@ private override function load_image_assets():Void {
 imgStairs = Assets.getBitmapData("assets/graphics/Stairs.png");
 }
 	public function new(_x:Int, _y:Int, _up:Bool = true, _flip:Bool = false, _to:Int = 0, _px:Int = 0, _py:Int = 0, _sign:Int = 0) {
+
 load_image_assets();
 		sprStairs = new Spritemap(imgStairs, 16, 16);
 		super(_x, _y, _to, _px, _py, true, -1, false, _sign);

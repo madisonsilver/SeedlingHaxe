@@ -18,6 +18,7 @@ private function load_image_assets():Void {
 imgSquishle = Assets.getBitmapData("assets/graphics/Squishle.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprSquishle = new Spritemap(imgSquishle, 16, 11);
 		super(_x, _y, sprSquishle);

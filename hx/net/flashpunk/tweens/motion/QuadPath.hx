@@ -20,6 +20,7 @@ class QuadPath extends Motion {
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
 
+
 		super(0, complete, type, null);
 		_curveT[0] = 0;
 	}

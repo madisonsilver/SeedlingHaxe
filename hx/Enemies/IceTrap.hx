@@ -21,6 +21,7 @@ private function load_image_assets():Void {
 imgIceTrap = Assets.getBitmapData("assets/graphics/IceTrap.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprIceTrap = new Spritemap(imgIceTrap, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprIceTrap);

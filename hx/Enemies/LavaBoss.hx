@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgLavaBoss = Assets.getBitmapData("assets/graphics/LavaBoss.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprLavaBoss = new Spritemap(imgLavaBoss, 160, 82, endAnim);
 		super(_x + 48, _y + 40, sprLavaBoss);

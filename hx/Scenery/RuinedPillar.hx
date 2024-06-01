@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgRuinedPillar = Assets.getBitmapData("assets/graphics/RuinedPillar.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprRuinedPillar = new Spritemap(imgRuinedPillar, 32, 48);
 		super(_x, _y, sprRuinedPillar);

@@ -38,6 +38,7 @@ class Console {
 	 */
 	public function new() {
 
+
 		Input.define("_ARROWS", [Key.RIGHT, Key.LEFT, Key.DOWN, Key.UP]);
 	}
 

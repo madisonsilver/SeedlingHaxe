@@ -17,6 +17,7 @@ class LinearMotion extends Motion {
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
 
+
 		super(0, complete, type, null);
 	}
 

@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgCactus = Assets.getBitmapData("assets/graphics/Cactus.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprCactus = new Spritemap(imgCactus, 8, 8, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprCactus);

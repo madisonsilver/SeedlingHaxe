@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgCover = Assets.getBitmapData("assets/graphics/Cover.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int, _g:Graphic = null) {
+
 load_image_assets();
 		sprCover = new Spritemap(imgCover, 16, 16);
 		if (_g == null) {

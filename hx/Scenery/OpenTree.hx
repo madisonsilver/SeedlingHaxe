@@ -12,6 +12,7 @@ import net.flashpunk.FP;
 class OpenTree extends Tree {
 	public function new(_x:Int, _y:Int) {
 
+
 		super(_x, _y);
 		active = true;
 	}

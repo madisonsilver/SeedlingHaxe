@@ -31,6 +31,7 @@ class Canvas extends Graphic {
 	 */
 	public function new(width:Int, height:Int) {
 
+
 		super();
 		_width = width;
 		_height = height;

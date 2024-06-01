@@ -21,6 +21,7 @@ class Stamp extends Graphic {
 	 */
 	public function new(source:Dynamic, x:Int = 0, y:Int = 0) {
 
+
 		super();
 		// set the origin
 		this.x = x;

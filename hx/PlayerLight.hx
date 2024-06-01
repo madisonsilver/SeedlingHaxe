@@ -22,6 +22,7 @@ private function load_image_assets():Void {
 imgPlayerLight = Assets.getBitmapData("assets/graphics/PlayerLight.png");
 }
 	public function new(_x:Int, _y:Int, _follow:Player) {
+
 load_image_assets();
 		sprPlayerLight = new Image(imgPlayerLight);
 		super(_x, _y, 100, 3, colors[0], true, 20);

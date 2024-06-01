@@ -27,6 +27,7 @@ imgShieldLockNorm = Assets.getBitmapData("assets/graphics/ShieldLockNorm.png");
 imgShieldLock = Assets.getBitmapData("assets/graphics/ShieldLock.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 1) {
+
 load_image_assets();
 		sprShieldLockNorm = new Spritemap(imgShieldLockNorm, 16, 16);
 		sprShieldLock = new Spritemap(imgShieldLock, 16, 16);

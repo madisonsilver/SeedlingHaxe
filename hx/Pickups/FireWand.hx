@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgFireWandPickup = Assets.getBitmapData("assets/graphics/FireWandPickup.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprFireWandPickup = new Spritemap(imgFireWandPickup, 5, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFireWandPickup, null, false);

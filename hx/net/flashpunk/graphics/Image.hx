@@ -74,6 +74,7 @@ class Image extends Graphic {
 	 */
 	public function new(source:Dynamic = null, clipRect:Rectangle = null) {
 
+
 		super();
 		if (Std.is(source, Class)) {
 			_source = FP.getBitmap(source);

@@ -19,6 +19,7 @@ class Building extends Entity {
 
 	public function new(_x:Int, _y:Int, _t:Int = 0) {
 
+
 		super(_x, _y, Game.buildings[_t]);
 		Game.buildings[_t].y = -8;
 		mask = new Pixelmask(Game.buildingMasks[_t], 0, 0);

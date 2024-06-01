@@ -25,6 +25,7 @@ private function load_image_assets():Void {
 imgFinalDoor = Assets.getBitmapData("assets/graphics/FinalDoor.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprFinalDoor = new Spritemap(imgFinalDoor, 32, 32, animEnd);
 		super(_x + Tile.w, _y + Tile.h, sprFinalDoor);

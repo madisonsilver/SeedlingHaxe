@@ -19,7 +19,7 @@ import scenery.FinalDoor;
  */
 class SealController extends Entity {
 private static var imgSeal:BitmapData;
-	private static var sprSeal:Spritemap = new Spritemap(imgSeal, 4, 4);
+private static var sprSeal : Spritemap;
 
 	public static inline var SEALS:Int = 16;
 
@@ -45,7 +45,11 @@ private static var imgSeal:BitmapData;
 private function load_image_assets():Void {
 imgSeal = Assets.getBitmapData("assets/graphics/Seal.png");
 }
+private function initialize_image_assets():Void {
+sprSeal = new Spritemap(imgSeal, 4, 4);
+}
 	public function new(_showNewest:Bool = true, _parent:FinalDoor = null, _text:String = "") {
+initialize_image_assets();
 load_image_assets();
 		super();
 		Game.freezeObjects = true;

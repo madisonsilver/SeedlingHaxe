@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgBossTotemShot = Assets.getBitmapData("assets/graphics/BossTotemShot.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprBossTotemShot = new Spritemap(imgBossTotemShot, 20, 20);
 		super(_x, _y, sprBossTotemShot);

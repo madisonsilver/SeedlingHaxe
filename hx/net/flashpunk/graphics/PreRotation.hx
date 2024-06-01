@@ -27,6 +27,7 @@ class PreRotation extends Image {
 	 */
 	public function new(source:Class<Dynamic>, frameCount:Int = 36, smooth:Bool = false) {
 
+
 		var r:BitmapData = Reflect.field(_rotated, Std.string(source));
 		_frame = new Rectangle(0, 0, Reflect.field(_size, Std.string(source)), Reflect.field(_size, Std.string(source)));
 		if (r == null)

@@ -21,6 +21,7 @@ private function load_image_assets():Void {
 imgShield = Assets.getBitmapData("assets/graphics/Shield.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprShield = new Spritemap(imgShield, 7, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprShield, null, false);

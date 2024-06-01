@@ -39,6 +39,7 @@ imgTentacleBeastMask = Assets.getBitmapData("assets/graphics/TentacleBeastMask.p
 imgTentacleBeast = Assets.getBitmapData("assets/graphics/TentacleBeast.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprTentacleBeast = new Spritemap(imgTentacleBeast, 46, 44, animEnd);
 		super(_x + 24, _y + 24, sprTentacleBeast);

@@ -19,6 +19,7 @@ class DustParticle extends Entity {
 
 	public function new(_x:Int, _y:Int) {
 
+
 		h = w;
 		super(_x, _y);
 		startY = as3hx.Compat.parseInt(y - FP.camera.y);

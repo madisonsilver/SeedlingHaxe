@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgBombPusher = Assets.getBitmapData("assets/graphics/BombPusher.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBombPusher = new Spritemap(imgBombPusher, 48, 48, endAnim);
 		super(Std.int(_x + Tile.w * 3 / 2), Std.int(_y + Tile.h * 3 / 2), sprBombPusher);

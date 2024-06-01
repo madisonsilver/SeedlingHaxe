@@ -32,6 +32,7 @@ private function load_image_assets():Void {
 imgIceTurret = Assets.getBitmapData("assets/graphics/IceTurret.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprIceTurret = new Spritemap(imgIceTurret, 32, 32, endAnim);
 		super(_x + Tile.w, _y + Tile.h, sprIceTurret);

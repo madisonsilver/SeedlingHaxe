@@ -20,6 +20,7 @@ imgRekcahdam = Assets.getBitmapData("assets/graphics/NPCs/Rekcahdam.png");
 imgRekcahdamPic = Assets.getBitmapData("assets/graphics/NPCs/RekcahdamPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprRekcahdam = new Spritemap(imgRekcahdam, 9, 10);
 		sprRekcahdamPic = new Image(imgRekcahdamPic);

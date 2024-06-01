@@ -52,6 +52,7 @@ private function load_image_assets():Void {
 imgTalk = Assets.getBitmapData("assets/graphics/NPCs/Talk.png");
 }
 	public function new(_x:Int, _y:Int, _g:Image, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 0, _lineLength:Int = 28) {
+
 load_image_assets();
 		sprTalk = new Spritemap(imgTalk, 10, 14);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), _g);

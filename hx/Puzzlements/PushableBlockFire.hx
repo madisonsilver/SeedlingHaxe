@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgPushableBlockFire = Assets.getBitmapData("assets/graphics/PushableBlockFire.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprPushableBlockFire = new Spritemap(imgPushableBlockFire, 16, 16);
 		super(_x, _y, sprPushableBlockFire);

@@ -37,6 +37,7 @@ private function load_image_assets():Void {
 imgCrusher = Assets.getBitmapData("assets/graphics/Crusher.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int) {
+
 load_image_assets();
 		sprCrusher = new Spritemap(imgCrusher, 32, 32);
 		super(_x + Tile.w, _y + Tile.h, sprCrusher, _t);

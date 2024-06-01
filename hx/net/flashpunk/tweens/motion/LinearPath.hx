@@ -20,6 +20,7 @@ class LinearPath extends Motion {
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
 
+
 		super(0, complete, type, null);
 		_pointD[0] = _pointT[0] = 0;
 	}

@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgWallFlyer = Assets.getBitmapData("assets/graphics/WallFlyer.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprWallFlyer = new Spritemap(imgWallFlyer, 20, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWallFlyer);

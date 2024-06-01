@@ -28,6 +28,7 @@ private override function load_image_assets():Void {
 imgLavaRunner = Assets.getBitmapData("assets/graphics/LavaRunner.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprLavaRunner = new Spritemap(imgLavaRunner, 20, 20, endAnim);
 		super(_x, _y, sprLavaRunner);

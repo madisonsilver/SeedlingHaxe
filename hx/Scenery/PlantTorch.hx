@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgPlantTorch = Assets.getBitmapData("assets/graphics/PlantTorch.png");
 }
 	public function new(_x:Int, _y:Int, _color:Int = 0xFFFFFF, _flipped:Bool = false, _distance:Int = 100) {
+
 load_image_assets();
 		sprPlantTorch = new Spritemap(imgPlantTorch, 16, 16);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprPlantTorch);

@@ -22,6 +22,7 @@ private function load_image_assets():Void {
 imgDarkSword = Assets.getBitmapData("assets/graphics/SwordDark.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprDarkSword = new Spritemap(imgDarkSword, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSword, null, false);

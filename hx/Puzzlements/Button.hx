@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgButton = Assets.getBitmapData("assets/graphics/Button.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int) {
+
 load_image_assets();
 		sprButton = new Spritemap(imgButton, 8, 8);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);

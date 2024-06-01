@@ -72,6 +72,7 @@ class Main extends Engine {
 
 	public function new() {
 
+
 		super(160, 160, FPS);
 		begin();
 	}

@@ -30,6 +30,7 @@ private function load_image_assets():Void {
 imgButtonRoom = Assets.getBitmapData("assets/graphics/ButtonRoom.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int, _flip:Bool, _room:Int) {
+
 load_image_assets();
 		sprButtonRoom = new Spritemap(imgButtonRoom, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButtonRoom, _t);

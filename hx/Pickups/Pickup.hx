@@ -39,6 +39,7 @@ class Pickup extends Mobile {
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null, _v:Point = null, _attract:Bool = true) {
 
+
 		specialTimer = specialTimerMax;
 		super(_x, _y, _g);
 		if (_v != null) {

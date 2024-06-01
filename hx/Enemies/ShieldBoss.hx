@@ -32,6 +32,7 @@ private function load_image_assets():Void {
 imgShieldBoss = Assets.getBitmapData("assets/graphics/ShieldBoss.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprShieldBoss = new Spritemap(imgShieldBoss, 56, 80, endAnim);
 		super(Std.int(_x + Tile.w * 1.5), _y + Tile.h * 2, sprShieldBoss);

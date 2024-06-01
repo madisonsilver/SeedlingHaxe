@@ -113,6 +113,7 @@ class Tile extends Entity {
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _grass:Bool = true, _g:Graphic = null, _pit:Bool = false, _continuous:Bool = false, _spray:Bool = true) {
 
+
 		super(_x + w / 2, _y + h / 2);
 		layer = LAYER;
 

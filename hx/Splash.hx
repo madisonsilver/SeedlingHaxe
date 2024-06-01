@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.display.DisplayObject;
@@ -57,6 +58,7 @@ imgRekcahdamLogo = Assets.getBitmapData("assets/graphics/rackemmap-162Wx158H.png
 imgMusicBy = Assets.getBitmapData("assets/graphics/musicby.png");
 }
 	public function new(_t:Int = 0) {
+
 load_image_assets();
 		percentageFinished = 1 - timerSplash / timerAll;
 		super();

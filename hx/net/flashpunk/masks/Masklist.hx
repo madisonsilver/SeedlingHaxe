@@ -16,6 +16,7 @@ class Masklist extends Hitbox {
 	 */
 	public function new(mask:Array<Dynamic> = null) {
 
+
 		super();
 		for (m in mask) {
 			add(m);

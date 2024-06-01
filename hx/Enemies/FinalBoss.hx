@@ -46,6 +46,7 @@ imgFinalBoss = Assets.getBitmapData("assets/graphics/FinalBoss.png");
 imgOwlPic = Assets.getBitmapData("assets/graphics/NPCs/OwlPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprFinalBoss = new Spritemap(imgFinalBoss, 16, 16, endAnim);
 		sprOwlPic = new Spritemap(imgOwlPic, 16, 16, endAnim);

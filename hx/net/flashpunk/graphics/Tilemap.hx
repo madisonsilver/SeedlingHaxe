@@ -30,6 +30,7 @@ class Tilemap extends Canvas {
 	 */
 	public function new(tileset:Dynamic, width:Int, height:Int, tileWidth:Int, tileHeight:Int) {
 
+
 		// set some tilemap information
 		_width = as3hx.Compat.parseInt(width - (width % tileWidth));
 		_height = as3hx.Compat.parseInt(height - (height % tileHeight));

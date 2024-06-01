@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgFeather = Assets.getBitmapData("assets/graphics/Feather.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprFeather = new Spritemap(imgFeather, 12, 12);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFeather, null, false);

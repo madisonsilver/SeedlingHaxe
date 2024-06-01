@@ -33,6 +33,7 @@ class Grid extends Hitbox {
 	 */
 	public function new(width:Int, height:Int, cellWidth:Int, cellHeight:Int, x:Int = 0, y:Int = 0) {
 
+
 		super();
 		// check for illegal grid size
 		if (width == 0 || height == 0 || cellWidth == 0 || cellHeight == 0) {

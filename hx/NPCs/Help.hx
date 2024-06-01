@@ -46,6 +46,7 @@ private function load_image_assets():Void {
 imgHelp = Assets.getBitmapData("assets/graphics/Help.png");
 }
 	public function new(_t:Int = 0, _button:Bool = true, _p:Point = null) {
+
 load_image_assets();
 		sprHelp = new Spritemap(imgHelp, 67, 44);
 		sc = scMin;

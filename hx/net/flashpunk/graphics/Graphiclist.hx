@@ -19,6 +19,7 @@ class Graphiclist extends Graphic {
 	 */
 	public function new(graphic:Array<Dynamic> = null) {
 
+
 		super();
 		for (g in graphic) {
 			add(g);

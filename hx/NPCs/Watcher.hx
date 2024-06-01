@@ -41,6 +41,7 @@ imgWatcher = Assets.getBitmapData("assets/graphics/NPCs/Watcher.png");
 imgWatcherPic = Assets.getBitmapData("assets/graphics/NPCs/WatcherPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 4) {
+
 load_image_assets();
 		sprWatcher = new Spritemap(imgWatcher, 12, 15);
 		sprWatcherPic = new Image(imgWatcherPic);

@@ -24,6 +24,7 @@ private override function load_image_assets():Void {
 imgFlyer = Assets.getBitmapData("assets/graphics/Flyer.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprFlyer = new Spritemap(imgFlyer, 18, 26, endAnim);
 		super(_x, _y, sprFlyer);

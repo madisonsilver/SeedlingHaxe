@@ -35,6 +35,7 @@ class Message extends Entity {
 
 	public function new(_x:Int, _y:Int, _sign:Int) {
 
+
 		super(_x, _y);
 		Text.static_size = titleSize;
 		titleText = new Text(titles[_sign]);

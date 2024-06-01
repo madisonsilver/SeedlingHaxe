@@ -47,6 +47,7 @@ private function load_image_assets():Void {
 imgMoonrock = Assets.getBitmapData("assets/graphics/Moonrock.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprMoonrock = new Spritemap(imgMoonrock, 52, 52);
 		super(_x, _y, sprMoonrock);

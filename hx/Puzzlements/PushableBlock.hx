@@ -25,6 +25,7 @@ private function load_image_assets():Void {
 imgPushableBlock = Assets.getBitmapData("assets/graphics/PushableBlock.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprPushableBlock = new Spritemap(imgPushableBlock, 16, 16);
 		super(_x, _y, sprPushableBlock);

@@ -22,6 +22,7 @@ imgSensei = Assets.getBitmapData("assets/graphics/NPCs/Sensei.png");
 imgSenseiPic = Assets.getBitmapData("assets/graphics/NPCs/SenseiPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprSensei = new Spritemap(imgSensei, 8, 8);
 		sprSenseiPic = new Image(imgSenseiPic);

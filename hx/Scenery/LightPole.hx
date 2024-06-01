@@ -33,6 +33,7 @@ private function load_image_assets():Void {
 imgLightPole = Assets.getBitmapData("assets/graphics/LightPole.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1, _color:Int = 0xFFFFFF, _invert:Bool = false) {
+
 load_image_assets();
 		sprLightPole = new Image(imgLightPole);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLightPole, _t);

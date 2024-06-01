@@ -29,6 +29,7 @@ imgSpinningAxe = Assets.getBitmapData("assets/graphics/SpinningAxe.png");
 imgSpinningAxeRed = Assets.getBitmapData("assets/graphics/SpinningAxeRed.png");
 }
 	public function new(_x:Int, _y:Int, _rate:Int, _colorType:Int = 0) {
+
 load_image_assets();
 		switch (_colorType) {
 			case 1:

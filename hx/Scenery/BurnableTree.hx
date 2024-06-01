@@ -21,6 +21,7 @@ private function load_image_assets():Void {
 imgBurnableTreeBurn = Assets.getBitmapData("assets/graphics/BurnableTreeBurn.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprBurnableTreeBurn = new Spritemap(imgBurnableTreeBurn, 32, 32, burnEnd);
 		super(_x, _y, false, sprBurnableTreeBurn);

@@ -42,6 +42,7 @@ private function load_image_assets():Void {
 imgPulser = Assets.getBitmapData("assets/graphics/Pulser.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int) {
+
 load_image_assets();
 		sprPulser = new Spritemap(imgPulser, 16, 16, endAnim);
 		radius = radiusMin;

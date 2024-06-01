@@ -82,6 +82,7 @@ class QuickKong {
 
 	public function new() {
 
+
 		throw new Error("[QuickKong] Error: Do not create an instance of this class, as it contains all static functions");
 	}
 

@@ -25,6 +25,7 @@ private function load_image_assets():Void {
 imgRayShot = Assets.getBitmapData("assets/graphics/DeathRayShot.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprRayShot = new Spritemap(imgRayShot, 8, 3, animEnd);
 		super(_x, _y, sprRayShot);

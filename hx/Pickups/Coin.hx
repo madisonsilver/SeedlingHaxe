@@ -17,6 +17,7 @@ private function load_image_assets():Void {
 imgCoin = Assets.getBitmapData("assets/graphics/Coin.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point = null) {
+
 load_image_assets();
 		sprCoin = new Spritemap(imgCoin, 4, 4);
 		super(_x, _y, sprCoin, _v);

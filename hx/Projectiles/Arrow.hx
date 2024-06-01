@@ -23,6 +23,7 @@ private function load_image_assets():Void {
 imgArrow = Assets.getBitmapData("assets/graphics/Arrow.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprArrow = new Image(imgArrow);
 		super(_x, _y, sprArrow);

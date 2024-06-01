@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgBrickWell = Assets.getBitmapData("assets/graphics/BrickWell.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBrickWell = new Image(imgBrickWell);
 		super(_x, _y, sprBrickWell);

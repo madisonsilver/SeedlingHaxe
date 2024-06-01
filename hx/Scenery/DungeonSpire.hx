@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgDungeonSpire = Assets.getBitmapData("assets/graphics/DungeonSpire.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprDungeonSpire = new Image(imgDungeonSpire);
 		super(_x, _y, sprDungeonSpire);

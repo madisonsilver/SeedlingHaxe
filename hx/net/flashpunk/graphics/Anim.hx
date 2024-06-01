@@ -21,6 +21,7 @@ class Anim {
 	 */
 	public function new(name:String, frames:Array<Dynamic>, frameRate:Float = 0, loop:Bool = true) {
 
+
 		_name = name;
 		_frames = frames;
 		_frameRate = frameRate;

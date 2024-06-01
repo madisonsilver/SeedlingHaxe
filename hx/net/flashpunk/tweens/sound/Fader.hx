@@ -16,6 +16,7 @@ class Fader extends Tween {
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
 
+
 		super(0, type, complete);
 	}
 

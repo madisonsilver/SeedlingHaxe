@@ -19,6 +19,7 @@ class SfxFader extends Tween {
 	 */
 	public function new(sfx:Sfx, complete:Function = null, type:Int = 0) {
 
+
 		super(0, type, finish);
 		_complete = complete;
 		_sfx = sfx;

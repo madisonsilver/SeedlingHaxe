@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgBar = Assets.getBitmapData("assets/graphics/Bar.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBar = new Image(imgBar);
 		super(_x, _y, sprBar);

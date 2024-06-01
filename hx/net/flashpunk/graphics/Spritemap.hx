@@ -47,6 +47,7 @@ class Spritemap extends Image {
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0, callback:Function = null) {
 
+
 		_rect = new Rectangle(0, 0, frameWidth, frameHeight);
 		super(source, _rect);
 		if (frameWidth == 0) {

@@ -6,6 +6,7 @@ class GetURL {
 
 	public function new(url:String, target:String = "_blank") {
 
+
 		request = new URLRequest(url);
 		flash.Lib.getURL(request, target);
 	}

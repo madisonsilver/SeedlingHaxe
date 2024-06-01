@@ -18,6 +18,7 @@ private function load_image_assets():Void {
 imgSlashHit = Assets.getBitmapData("assets/graphics/SlashHit.png");
 }
 	public function new(_x:Int, _y:Int, _scx:Float) {
+
 load_image_assets();
 		sprSlashHit = new Spritemap(imgSlashHit, 32, 16, endAnim);
 		super(_x, _y, sprSlashHit);

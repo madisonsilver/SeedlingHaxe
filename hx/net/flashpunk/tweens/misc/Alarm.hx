@@ -20,6 +20,7 @@ class Alarm extends Tween {
 	 */
 	public function new(duration:Float, complete:Function = null, type:Int = 0) {
 
+
 		super(duration, type, complete, null);
 	}
 

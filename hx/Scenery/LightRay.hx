@@ -18,6 +18,7 @@ class LightRay extends Entity {
 
 	public function new(_x:Int, _y:Int, _c:Int, _a:Float, _w:Int, _h:Int) {
 
+
 		super(_x, _y);
 		c = _c;
 		a = _a;

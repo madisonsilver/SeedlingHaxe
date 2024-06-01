@@ -20,6 +20,7 @@ private override function load_image_assets():Void {
 imgLightBossShot = Assets.getBitmapData("assets/graphics/LightBossShot.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprLightBossShot = new Spritemap(imgLightBossShot, 8, 8);
 		super(_x, _y, _v);

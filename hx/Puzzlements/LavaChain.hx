@@ -30,6 +30,7 @@ private function load_image_assets():Void {
 imgLavaChain = Assets.getBitmapData("assets/graphics/LavaChain.png");
 }
 	public function new(_x:Int, _y:Int, _d:Int) {
+
 load_image_assets();
 		sprLavaChain = new Spritemap(imgLavaChain, 64, 16, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprLavaChain);

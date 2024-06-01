@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgBed = Assets.getBitmapData("assets/graphics/Bed.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBed = new Image(imgBed);
 		super(_x, _y, sprBed);

@@ -28,6 +28,7 @@ private function load_image_assets():Void {
 imgExplosion = Assets.getBitmapData("assets/graphics/Explosion.png");
 }
 	public function new(_x:Int, _y:Int, _hit:Dynamic, _r:Int = 16, _d:Int = 1) {
+
 load_image_assets();
 		sprExplosion = new Spritemap(imgExplosion, 128, 128, endAnim);
 		super(_x, _y, sprExplosion);

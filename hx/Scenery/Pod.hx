@@ -29,6 +29,7 @@ imgPodBody = Assets.getBitmapData("assets/graphics/PodBody.png");
 imgPod = Assets.getBitmapData("assets/graphics/Pod.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprPodBody = new Image(imgPodBody);
 		sprPod = new Spritemap(imgPod, 24, 24, animEnd);

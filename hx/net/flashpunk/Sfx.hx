@@ -31,6 +31,7 @@ class Sfx {
 	 */
 	public function new(source:Class<Dynamic>, complete:Function = null) {
 
+
 		_sound = _sounds[source];
 		if (_sound == null) {
 			var new_sound = Type.createInstance(source, []);

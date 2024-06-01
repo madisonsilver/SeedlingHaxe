@@ -32,6 +32,7 @@ private function load_image_assets():Void {
 imgBob = Assets.getBitmapData("assets/graphics/Bob.png");
 }
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
+
 load_image_assets();
 		sprBob = new Spritemap(imgBob, 8, 8, endAnim);
 		if (_g == null) {

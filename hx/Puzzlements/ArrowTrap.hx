@@ -24,6 +24,7 @@ private function load_image_assets():Void {
 imgArrowTrap = Assets.getBitmapData("assets/graphics/ArrowTrap.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int = 0, _shoot:Bool = false) {
+
 load_image_assets();
 		sprArrowTrap = new Spritemap(imgArrowTrap, 16, 5);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + sprArrowTrap.height / 2), sprArrowTrap, _t);

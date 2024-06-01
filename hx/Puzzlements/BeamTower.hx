@@ -28,6 +28,7 @@ private function load_image_assets():Void {
 imgBeamTower = Assets.getBitmapData("assets/graphics/BeamTower.png");
 }
 	public function new(_x:Int, _y:Int, _startdirection:Int = 0, _rate:Float = 1, speed:Float = 1) {
+
 load_image_assets();
 		sprBeamTower = new Spritemap(imgBeamTower, 16, 40, animEnd);
 		super(_x + 8, _y + 16, sprBeamTower);

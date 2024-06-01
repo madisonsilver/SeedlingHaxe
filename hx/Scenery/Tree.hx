@@ -21,6 +21,7 @@ class Tree extends Entity {
 
 	public function new(_x:Int, _y:Int, _bare:Bool = false, _g:Graphic = null) {
 
+
 		super(_x + Tile.w, _y + Tile.h, _g);
 		setHitbox(32, 32, 16, 16);
 		type = "Tree";

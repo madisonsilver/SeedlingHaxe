@@ -22,6 +22,7 @@ private function load_image_assets():Void {
 imgRope = Assets.getBitmapData("assets/graphics/RopePulley.png");
 }
 	public function new(_x:Int, _y:Int, _xend:Int, _t:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprRope = new Spritemap(imgRope, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRope, _t);

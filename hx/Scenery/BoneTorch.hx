@@ -23,6 +23,7 @@ imgBoneTorch = Assets.getBitmapData("assets/graphics/BoneTorch.png");
 imgBoneTorch2 = Assets.getBitmapData("assets/graphics/BoneTorch2.png");
 }
 	public function new(_x:Int, _y:Int, _type:Int = 0, _color:Int = 0xFFFFFF, _flipped:Bool = false) {
+
 load_image_assets();
 		var lightOffset:Point = new Point();
 		switch (_type) {

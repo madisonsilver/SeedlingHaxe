@@ -33,6 +33,7 @@ class Engine extends MovieClip {
 	 */
 	public function new(width:Int, height:Int, frameRate:Float = 60, fixed:Bool = false) {
 
+
 		super();
 		// global game properties
 		FP.width = width;

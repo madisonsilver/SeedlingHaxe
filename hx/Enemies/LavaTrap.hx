@@ -31,6 +31,7 @@ imgLavaTrap = Assets.getBitmapData("assets/graphics/LavaTrap.png");
 imgLavaTrapTongue = Assets.getBitmapData("assets/graphics/LavaTrapTongue.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprLavaTrap = new Spritemap(imgLavaTrap, 16, 16, endAnim);
 		sprLavaTrapTongue = new Spritemap(imgLavaTrapTongue, 32, 6, tongueOut);

@@ -16,6 +16,7 @@ private override function load_image_assets():Void {
 imgTotem = Assets.getBitmapData("assets/graphics/Totem.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprTotem = new Spritemap(imgTotem, 32, 64);
 		// The weird tiles for the constructor are because NPC offsets by Tile.w/2, Tile.h/2 automagically.

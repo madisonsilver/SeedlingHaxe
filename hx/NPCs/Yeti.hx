@@ -22,6 +22,7 @@ imgYeti = Assets.getBitmapData("assets/graphics/NPCs/Yeti.png");
 imgYetiPic = Assets.getBitmapData("assets/graphics/NPCs/YetiPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprYeti = new Spritemap(imgYeti, 10, 12);
 		sprYetiPic = new Image(imgYetiPic);

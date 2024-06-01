@@ -24,6 +24,7 @@ imgMagicalLock = Assets.getBitmapData("assets/graphics/MagicalLock.png");
 imgMagicalLockFire = Assets.getBitmapData("assets/graphics/MagicalLockFire.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
+
 load_image_assets();
 		sprMagicalLock = new Spritemap(imgMagicalLock, 22, 21, animEnd);
 		sprMagicalLockFire = new Spritemap(imgMagicalLockFire, 22, 21, animEnd);

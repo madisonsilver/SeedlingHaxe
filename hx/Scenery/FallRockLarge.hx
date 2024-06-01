@@ -40,6 +40,7 @@ private function load_image_assets():Void {
 imgRockLarge = Assets.getBitmapData("assets/graphics/FallRockLarge.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _bRock:Bool = false, _tboss:Bool = false) {
+
 load_image_assets();
 		sprRock = new Image(imgRockLarge);
 		super(_x + Tile.w, _y + Tile.h, sprRock, _t);

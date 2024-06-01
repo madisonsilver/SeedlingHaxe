@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgBarstool = Assets.getBitmapData("assets/graphics/Barstool.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBarstool = new Image(imgBarstool);
 		super(_x + Tile.w / 4, _y + Tile.h / 4, sprBarstool);

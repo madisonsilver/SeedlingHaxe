@@ -29,6 +29,7 @@ class Emitter extends Graphic {
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0) {
 
+
 		super();
 		setSource(source, frameWidth, frameHeight);
 		active = true;

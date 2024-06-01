@@ -19,6 +19,7 @@ private function load_image_assets():Void {
 imgSeal = Assets.getBitmapData("assets/graphics/Seal.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point = null) {
+
 load_image_assets();
 		sprSeal = new Spritemap(imgSeal, 4, 4);
 		super(_x, _y, sprSeal, _v);

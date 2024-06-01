@@ -22,6 +22,7 @@ imgHermit = Assets.getBitmapData("assets/graphics/NPCs/Hermit.png");
 imgHermitPic = Assets.getBitmapData("assets/graphics/NPCs/HermitPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprHermit = new Spritemap(imgHermit, 10, 12);
 		sprHermitPic = new Image(imgHermitPic);

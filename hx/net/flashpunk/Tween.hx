@@ -44,6 +44,7 @@ class Tween {
 	 */
 	public function new(duration:Float, type:Int = 0, complete:Function = null, ease:Function = null) {
 
+
 		_target = duration;
 		_type = type;
 		this.complete = complete;

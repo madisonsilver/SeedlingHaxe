@@ -27,6 +27,7 @@ class Motion extends Tween {
 	 */
 	public function new(duration:Float, complete:Function = null, type:Int = 0, ease:Function = null) {
 
+
 		super(duration, type, complete, ease);
 	}
 }

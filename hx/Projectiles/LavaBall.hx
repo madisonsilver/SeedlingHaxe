@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgLavaBall = Assets.getBitmapData("assets/graphics/LavaBall.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprLavaBall = new Spritemap(imgLavaBall, 48, 32);
 		super(_x, _y, sprLavaBall);

@@ -22,6 +22,7 @@ imgBobBoss2Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss2Pic.png");
 imgBobBoss3Pic = Assets.getBitmapData("assets/graphics/NPCs/BobBoss3Pic.png");
 }
 	public function new(_x:Int, _y:Int, _st:Int = 0, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		pics = [imgBobBoss1Pic, imgBobBoss2Pic, imgBobBoss3Pic];
 		super(_x, _y, null, -1, _text, _talkingSpeed);

@@ -26,6 +26,7 @@ private function load_image_assets():Void {
 imgTurret = Assets.getBitmapData("assets/graphics/Turret.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprTurret = new Spritemap(imgTurret, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTurret);

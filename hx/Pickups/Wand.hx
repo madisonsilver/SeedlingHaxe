@@ -28,6 +28,7 @@ private function load_image_assets():Void {
 imgWandPickup = Assets.getBitmapData("assets/graphics/WandPickup.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprWandPickup = new Spritemap(imgWandPickup, 5, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWandPickup, null, false);

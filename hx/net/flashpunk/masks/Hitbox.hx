@@ -23,6 +23,7 @@ class Hitbox extends Mask {
 	 */
 	public function new(width:Int = 1, height:Int = 1, x:Int = 0, y:Int = 0) {
 
+
 		super();
 		_width = width;
 		_height = height;

@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgShieldStatue = Assets.getBitmapData("assets/graphics/ShieldStatue.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprShieldStatue = new Image(imgShieldStatue);
 		super(_x + Tile.w / 2, _y, sprShieldStatue);

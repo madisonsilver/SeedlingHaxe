@@ -25,6 +25,7 @@ imgTreeLargeMask = Assets.getBitmapData("assets/graphics/TreeLargeMask.png");
 imgTreeLarge = Assets.getBitmapData("assets/graphics/TreeLarge.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);
 		super(_x + 80, _y + 96, sprTreeLarge);

@@ -31,6 +31,7 @@ private function load_image_assets():Void {
 imgSpinner = Assets.getBitmapData("assets/graphics/Spinner.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprSpinner = new Spritemap(imgSpinner, 18, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpinner);

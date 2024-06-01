@@ -44,6 +44,7 @@ imgBobBoss3 = Assets.getBitmapData("assets/graphics/BobBoss3.png");
 imgBobBossWeapons = Assets.getBitmapData("assets/graphics/BobBossWeapons.png");
 }
 	public function new(_x:Int, _y:Int, _st:Int = 0) {
+
 load_image_assets();
 		sprBobBossWeapons = new Spritemap(imgBobBossWeapons, 24, 5);
 		nextBossTimer = nextBossTimerMax;

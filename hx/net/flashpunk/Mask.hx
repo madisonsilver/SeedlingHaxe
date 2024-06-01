@@ -24,6 +24,7 @@ class Mask {
 	 */
 	public function new() {
 
+
 		_class = cast((Type.resolveClass(Type.getClassName(Type.getClass(this)))), Class<Dynamic>);
 		_check[Mask] = collideMask;
 		_check[Masklist] = collideMasklist;

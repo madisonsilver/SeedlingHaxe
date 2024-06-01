@@ -19,6 +19,7 @@ private override function load_image_assets():Void {
 imgBulb = Assets.getBitmapData("assets/graphics/Bulb.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprBulb = new Spritemap(imgBulb, 16, 16, endAnim);
 		super(_x, _y, sprBulb);

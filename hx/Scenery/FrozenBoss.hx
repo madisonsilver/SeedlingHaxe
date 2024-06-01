@@ -18,6 +18,7 @@ private function load_image_assets():Void {
 imgFrozenBoss = Assets.getBitmapData("assets/graphics/FrozenBoss.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprFrozenBoss = new Image(imgFrozenBoss);
 		super(_x, _y, sprFrozenBoss);

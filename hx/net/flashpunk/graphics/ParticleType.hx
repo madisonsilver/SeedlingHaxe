@@ -22,6 +22,7 @@ class ParticleType {
 	 */
 	public function new(name:String, frames:Array<Dynamic>, source:BitmapData, frameWidth:Int, frameHeight:Int) {
 
+
 		_name = name;
 		_source = source;
 		_width = source.width;

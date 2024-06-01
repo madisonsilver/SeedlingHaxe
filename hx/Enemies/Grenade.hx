@@ -34,6 +34,7 @@ private function load_image_assets():Void {
 imgGrenade = Assets.getBitmapData("assets/graphics/Grenade.png");
 }
 	public function new(_x:Int, _y:Int, _active:Bool = false, _exTime:Int = 60) {
+
 load_image_assets();
 		sprGrenade = new Spritemap(imgGrenade, 16, 16, animEnd);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);

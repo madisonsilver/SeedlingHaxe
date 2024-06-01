@@ -327,83 +327,83 @@ class Game extends World {
 
 	/*TILES*/
 private static var imgGrass:BitmapData;
-	public static var sprGrass:Spritemap = new Spritemap(imgGrass, 3, 4);
+public static var sprGrass : Spritemap;
 private static var imgGround:BitmapData;
-	public static var sprGround:Spritemap = new Spritemap(imgGround, 16, 16);
+public static var sprGround : Spritemap;
 private static var imgWater:BitmapData;
-	public static var sprWater:Spritemap = new Spritemap(imgWater, 16, 16);
+public static var sprWater : Spritemap;
 private static var imgStone:BitmapData;
-	public static var sprStone:Spritemap = new Spritemap(imgStone, 16, 16);
+public static var sprStone : Spritemap;
 private static var imgBrick:BitmapData;
-	public static var sprBrick:Spritemap = new Spritemap(imgBrick, 16, 16);
+public static var sprBrick : Spritemap;
 private static var imgDirt:BitmapData;
-	public static var sprDirt:Spritemap = new Spritemap(imgDirt, 16, 16);
+public static var sprDirt : Spritemap;
 private static var imgDungeonTile:BitmapData;
-	public static var sprDungeonTile:Spritemap = new Spritemap(imgDungeonTile, 16, 16);
+public static var sprDungeonTile : Spritemap;
 private static var imgPit:BitmapData;
-	public static var sprPit:Spritemap = new Spritemap(imgPit, 16, 16);
+public static var sprPit : Spritemap;
 private static var imgShieldTile:BitmapData;
-	public static var sprShieldTile:Spritemap = new Spritemap(imgShieldTile, 16, 16);
+public static var sprShieldTile : Spritemap;
 private static var imgForest:BitmapData;
-	public static var sprForest:Spritemap = new Spritemap(imgForest, 16, 16);
+public static var sprForest : Spritemap;
 private static var imgCliff:BitmapData;
-	public static var sprCliff:Spritemap = new Spritemap(imgCliff, 16, 16);
+public static var sprCliff : Spritemap;
 private static var imgWood:BitmapData;
-	public static var sprWood:Spritemap = new Spritemap(imgWood, 16, 16);
+public static var sprWood : Spritemap;
 private static var imgWoodWalk:BitmapData;
-	public static var sprWoodWalk:Spritemap = new Spritemap(imgWoodWalk, 16, 16);
+public static var sprWoodWalk : Spritemap;
 private static var imgCave:BitmapData;
-	public static var sprCave:Spritemap = new Spritemap(imgCave, 16, 16);
+public static var sprCave : Spritemap;
 private static var imgWoodTree:BitmapData;
-	public static var sprWoodTree:Spritemap = new Spritemap(imgWoodTree, 16, 16);
+public static var sprWoodTree : Spritemap;
 private static var imgDarkTile:BitmapData;
-	public static var sprDarkTile:Spritemap = new Spritemap(imgDarkTile, 16, 16);
+public static var sprDarkTile : Spritemap;
 private static var imgIgneousTile:BitmapData;
-	public static var sprIgneousTile:Spritemap = new Spritemap(imgIgneousTile, 16, 16);
+public static var sprIgneousTile : Spritemap;
 private static var imgLava:BitmapData;
-	public static var sprLava:Spritemap = new Spritemap(imgLava, 16, 16);
+public static var sprLava : Spritemap;
 private static var imgBlueTile:BitmapData;
-	public static var sprBlueTile:Spritemap = new Spritemap(imgBlueTile, 16, 16);
+public static var sprBlueTile : Spritemap;
 private static var imgBlueTileWall:BitmapData;
-	public static var sprBlueTileWall:Spritemap = new Spritemap(imgBlueTileWall, 16, 16);
+public static var sprBlueTileWall : Spritemap;
 private static var imgBlueTileWallDark:BitmapData;
-	public static var sprBlueTileWallDark:Spritemap = new Spritemap(imgBlueTileWallDark, 16, 16);
+public static var sprBlueTileWallDark : Spritemap;
 private static var imgSnow:BitmapData;
-	public static var sprSnow:Spritemap = new Spritemap(imgSnow, 16, 16);
+public static var sprSnow : Spritemap;
 private static var imgIce:BitmapData;
-	public static var sprIce:Spritemap = new Spritemap(imgIce, 16, 16);
+public static var sprIce : Spritemap;
 private static var imgIceWall:BitmapData;
-	public static var sprIceWall:Spritemap = new Spritemap(imgIceWall, 16, 16);
+public static var sprIceWall : Spritemap;
 private static var imgIceWallLit:BitmapData;
-	public static var sprIceWallLit:Spritemap = new Spritemap(imgIceWallLit, 16, 16);
+public static var sprIceWallLit : Spritemap;
 private static var imgWaterfall:BitmapData;
-	public static var sprWaterfall:Spritemap = new Spritemap(imgWaterfall, 16, 16);
+public static var sprWaterfall : Spritemap;
 private static var imgBody:BitmapData;
-	public static var sprBody:Spritemap = new Spritemap(imgBody, 16, 16);
+public static var sprBody : Spritemap;
 private static var imgBodyWall:BitmapData;
-	public static var sprBodyWall:Spritemap = new Spritemap(imgBodyWall, 16, 16);
+public static var sprBodyWall : Spritemap;
 private static var imgGhostTile:BitmapData;
-	public static var sprGhostTile:Spritemap = new Spritemap(imgGhostTile, 16, 16);
+public static var sprGhostTile : Spritemap;
 public static var imgBridge:BitmapData;
-	public static var sprBridge:Spritemap = new Spritemap(imgBridge, 16, 16);
+public static var sprBridge : Spritemap;
 private static var imgGhostTileStep:BitmapData;
-	public static var sprGhostTileStep:Spritemap = new Spritemap(imgGhostTileStep, 16, 16);
+public static var sprGhostTileStep : Spritemap;
 private static var imgIgneousLava:BitmapData;
-	public static var sprIgneousLava:Spritemap = new Spritemap(imgIgneousLava, 16, 16);
+public static var sprIgneousLava : Spritemap;
 private static var imgOddTile:BitmapData;
-	public static var sprOddTile:Spritemap = new Spritemap(imgOddTile, 16, 16);
+public static var sprOddTile : Spritemap;
 private static var imgFuchTile:BitmapData;
-	public static var sprFuchTile:Spritemap = new Spritemap(imgFuchTile, 16, 16);
+public static var sprFuchTile : Spritemap;
 private static var imgOddTileWall:BitmapData;
-	public static var sprOddTileWall:Spritemap = new Spritemap(imgOddTileWall, 16, 16);
+public static var sprOddTileWall : Spritemap;
 private static var imgRockTile:BitmapData;
-	public static var sprRockTile:Spritemap = new Spritemap(imgRockTile, 16, 16);
+public static var sprRockTile : Spritemap;
 private static var imgRockyTile:BitmapData;
-	public static var sprRockyTile:Spritemap = new Spritemap(imgRockyTile, 16, 16);
+public static var sprRockyTile : Spritemap;
 
 	/*CLIFFSIDE*/
 private static var imgCliffSides:BitmapData;
-	public static var sprCliffSides:Spritemap = new Spritemap(imgCliffSides, 16, 16);
+public static var sprCliffSides : Spritemap;
 public static var imgCliffSidesMaskL:BitmapData;
 public static var imgCliffSidesMaskR:BitmapData;
 public static var imgCliffSidesMaskLU:BitmapData;
@@ -411,43 +411,43 @@ public static var imgCliffSidesMaskRU:BitmapData;
 public static var imgCliffSidesMaskU:BitmapData;
 
 private static var imgCliffStairs:BitmapData;
-	public static var sprCliffStairs:Spritemap = new Spritemap(imgCliffStairs, 16, 16);
+public static var sprCliffStairs : Spritemap;
 
 	/*BUILDINGS*/
 private static var imgBuilding:BitmapData;
-	public static var sprBuilding:Image = new Image(imgBuilding);
+public static var sprBuilding : Image;
 public static var imgBuildingMask:BitmapData;
 
 private static var imgBuilding1:BitmapData;
-	public static var sprBuilding1:Image = new Image(imgBuilding1);
+public static var sprBuilding1 : Image;
 public static var imgBuilding1Mask:BitmapData;
 
 private static var imgBuilding2:BitmapData;
-	public static var sprBuilding2:Image = new Image(imgBuilding2);
+public static var sprBuilding2 : Image;
 public static var imgBuilding2Mask:BitmapData;
 
 private static var imgBuilding3:BitmapData;
-	public static var sprBuilding3:Image = new Image(imgBuilding3);
+public static var sprBuilding3 : Image;
 public static var imgBuilding3Mask:BitmapData;
 
 private static var imgBuilding4:BitmapData;
-	public static var sprBuilding4:Image = new Image(imgBuilding4);
+public static var sprBuilding4 : Image;
 public static var imgBuilding4Mask:BitmapData;
 
 private static var imgBuilding5:BitmapData;
-	public static var sprBuilding5:Image = new Image(imgBuilding5);
+public static var sprBuilding5 : Image;
 public static var imgBuilding5Mask:BitmapData;
 
 private static var imgBuilding6:BitmapData;
-	public static var sprBuilding6:Image = new Image(imgBuilding6);
+public static var sprBuilding6 : Image;
 public static var imgBuilding6Mask:BitmapData;
 
 private static var imgBuilding7:BitmapData;
-	public static var sprBuilding7:Image = new Image(imgBuilding7);
+public static var sprBuilding7 : Image;
 public static var imgBuilding7Mask:BitmapData;
 
 private static var imgBuilding8:BitmapData;
-	public static var sprBuilding8:Spritemap = new Spritemap(imgBuilding8, 64, 64);
+public static var sprBuilding8 : Spritemap;
 public static var imgBuilding8Mask:BitmapData;
 
 	public static var buildings:Array<Dynamic> = [
@@ -475,62 +475,62 @@ public static var imgBuilding8Mask:BitmapData;
 
 	/*STATUES*/
 private static var imgStatues:BitmapData;
-	public static var sprStatues:Spritemap = new Spritemap(imgStatues, 48, 40);
+public static var sprStatues : Spritemap;
 
 	/*ROCKS*/
 private static var imgRock:BitmapData;
-	public static var sprRock:Image = new Image(imgRock);
+public static var sprRock : Image;
 
 private static var imgRock2:BitmapData;
-	public static var sprRock2:Image = new Image(imgRock2);
+public static var sprRock2 : Image;
 
 private static var imgRock3:BitmapData;
-	public static var sprRock3:Image = new Image(imgRock3);
+public static var sprRock3 : Image;
 
 private static var imgRock4:BitmapData;
-	public static var sprRock4:Image = new Image(imgRock4);
+public static var sprRock4 : Image;
 
 	public static var rocks:Array<Dynamic> = [sprRock, sprRock2, sprRock3, sprRock4];
 
 	/*OTHER*/
 private static var imgPole:BitmapData;
-	public static var sprPole:Spritemap = new Spritemap(imgPole, 16, 16);
+public static var sprPole : Spritemap;
 private static var imgWire:BitmapData;
-	public static var sprWire:Spritemap = new Spritemap(imgWire, 16, 16);
+public static var sprWire : Spritemap;
 
 private static var imgTree:BitmapData;
-	public static var sprTree:Spritemap = new Spritemap(imgTree, 32, 32);
+public static var sprTree : Spritemap;
 private static var imgTreeBare:BitmapData;
-	public static var sprTreeBare:Spritemap = new Spritemap(imgTreeBare, 32, 32);
+public static var sprTreeBare : Spritemap;
 private static var imgOpenTree:BitmapData;
-	public static var sprOpenTree:Spritemap = new Spritemap(imgOpenTree, 32, 32);
+public static var sprOpenTree : Spritemap;
 public static var imgOpenTreeMask:BitmapData;
 
 private static var imgBlizzard:BitmapData;
-	public static var sprBlizzard:Image = new Image(imgBlizzard);
+public static var sprBlizzard : Image;
 private static var imgLight:BitmapData;
-	public static var sprLight:Image = new Image(imgLight);
+public static var sprLight : Image;
 
 private static var imgSnowHill:BitmapData;
-	public static var sprSnowHill:Image = new Image(imgSnowHill);
+public static var sprSnowHill : Image;
 public static var imgSnowHillMask:BitmapData;
 
 public static var imgWaterfallSpray:BitmapData;
 
 private static var imgPitShadow:BitmapData;
-	public static var sprPitShadow:Spritemap = new Spritemap(imgPitShadow, 16, 16);
+public static var sprPitShadow : Spritemap;
 
 private static var imgDroplet:BitmapData;
-	public static var sprDroplet:Spritemap = new Spritemap(imgDroplet, 9, 5);
+public static var sprDroplet : Spritemap;
 
 private static var imgHealth:BitmapData;
-	public static var sprHealth:Spritemap = new Spritemap(imgHealth, 12, 12);
+public static var sprHealth : Spritemap;
 
 private static var imgBlurRegion:BitmapData;
-	public static var sprBlurRegion:Image = new Image(imgBlurRegion);
+public static var sprBlurRegion : Image;
 
 private static var imgBlurRegion2:BitmapData;
-	public static var sprBlurRegion2:Image = new Image(imgBlurRegion2);
+public static var sprBlurRegion2 : Image;
 
 private var imgTreeLarge:BitmapData;
 	private var sprTreeLarge:Spritemap;
@@ -549,26 +549,26 @@ private var imgMenuArrow:BitmapData;
 
 	/*BOSS KEYS/LOCKS*/
 private static var imgBossLock:BitmapData;
-	private static var sprBossLock:Spritemap = new Spritemap(imgBossLock, 16, 16);
+private static var sprBossLock : Spritemap;
 private static var imgBossLock1:BitmapData;
-	private static var sprBossLock1:Spritemap = new Spritemap(imgBossLock1, 16, 16);
+private static var sprBossLock1 : Spritemap;
 private static var imgBossLock2:BitmapData;
-	private static var sprBossLock2:Spritemap = new Spritemap(imgBossLock2, 16, 16);
+private static var sprBossLock2 : Spritemap;
 private static var imgBossLock3:BitmapData;
-	private static var sprBossLock3:Spritemap = new Spritemap(imgBossLock3, 16, 16);
+private static var sprBossLock3 : Spritemap;
 private static var imgBossLock4:BitmapData;
-	private static var sprBossLock4:Spritemap = new Spritemap(imgBossLock4, 16, 16);
+private static var sprBossLock4 : Spritemap;
 
 private static var imgBossKey:BitmapData;
-	public static var sprBossKey:Spritemap = new Spritemap(imgBossKey, 12, 16);
+public static var sprBossKey : Spritemap;
 private static var imgBossKey1:BitmapData;
-	public static var sprBossKey1:Spritemap = new Spritemap(imgBossKey1, 12, 16);
+public static var sprBossKey1 : Spritemap;
 private static var imgBossKey2:BitmapData;
-	public static var sprBossKey2:Spritemap = new Spritemap(imgBossKey2, 12, 16);
+public static var sprBossKey2 : Spritemap;
 private static var imgBossKey3:BitmapData;
-	public static var sprBossKey3:Spritemap = new Spritemap(imgBossKey3, 12, 16);
+public static var sprBossKey3 : Spritemap;
 private static var imgBossKey4:BitmapData;
-	public static var sprBossKey4:Spritemap = new Spritemap(imgBossKey4, 12, 16);
+public static var sprBossKey4 : Spritemap;
 
 	public static var bossLocks:Array<Dynamic> = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
 	public static var bossKeys:Array<Dynamic> = [sprBossKey, sprBossKey1, sprBossKey2, sprBossKey3, sprBossKey4];
@@ -901,7 +901,86 @@ imgBossKey2 = Assets.getBitmapData("assets/graphics/BossKey2.png");
 imgBossKey3 = Assets.getBitmapData("assets/graphics/BossKey3.png");
 imgBossKey4 = Assets.getBitmapData("assets/graphics/BossKey4.png");
 }
+private function initialize_image_assets():Void {
+sprGrass = new Spritemap(imgGrass, 3, 4);
+sprGround = new Spritemap(imgGround, 16, 16);
+sprWater = new Spritemap(imgWater, 16, 16);
+sprStone = new Spritemap(imgStone, 16, 16);
+sprBrick = new Spritemap(imgBrick, 16, 16);
+sprDirt = new Spritemap(imgDirt, 16, 16);
+sprDungeonTile = new Spritemap(imgDungeonTile, 16, 16);
+sprPit = new Spritemap(imgPit, 16, 16);
+sprShieldTile = new Spritemap(imgShieldTile, 16, 16);
+sprForest = new Spritemap(imgForest, 16, 16);
+sprCliff = new Spritemap(imgCliff, 16, 16);
+sprWood = new Spritemap(imgWood, 16, 16);
+sprWoodWalk = new Spritemap(imgWoodWalk, 16, 16);
+sprCave = new Spritemap(imgCave, 16, 16);
+sprWoodTree = new Spritemap(imgWoodTree, 16, 16);
+sprDarkTile = new Spritemap(imgDarkTile, 16, 16);
+sprIgneousTile = new Spritemap(imgIgneousTile, 16, 16);
+sprLava = new Spritemap(imgLava, 16, 16);
+sprBlueTile = new Spritemap(imgBlueTile, 16, 16);
+sprBlueTileWall = new Spritemap(imgBlueTileWall, 16, 16);
+sprBlueTileWallDark = new Spritemap(imgBlueTileWallDark, 16, 16);
+sprSnow = new Spritemap(imgSnow, 16, 16);
+sprIce = new Spritemap(imgIce, 16, 16);
+sprIceWall = new Spritemap(imgIceWall, 16, 16);
+sprIceWallLit = new Spritemap(imgIceWallLit, 16, 16);
+sprWaterfall = new Spritemap(imgWaterfall, 16, 16);
+sprBody = new Spritemap(imgBody, 16, 16);
+sprBodyWall = new Spritemap(imgBodyWall, 16, 16);
+sprGhostTile = new Spritemap(imgGhostTile, 16, 16);
+sprBridge = new Spritemap(imgBridge, 16, 16);
+sprGhostTileStep = new Spritemap(imgGhostTileStep, 16, 16);
+sprIgneousLava = new Spritemap(imgIgneousLava, 16, 16);
+sprOddTile = new Spritemap(imgOddTile, 16, 16);
+sprFuchTile = new Spritemap(imgFuchTile, 16, 16);
+sprOddTileWall = new Spritemap(imgOddTileWall, 16, 16);
+sprRockTile = new Spritemap(imgRockTile, 16, 16);
+sprRockyTile = new Spritemap(imgRockyTile, 16, 16);
+sprCliffSides = new Spritemap(imgCliffSides, 16, 16);
+sprCliffStairs = new Spritemap(imgCliffStairs, 16, 16);
+sprBuilding = new Image(imgBuilding);
+sprBuilding1 = new Image(imgBuilding1);
+sprBuilding2 = new Image(imgBuilding2);
+sprBuilding3 = new Image(imgBuilding3);
+sprBuilding4 = new Image(imgBuilding4);
+sprBuilding5 = new Image(imgBuilding5);
+sprBuilding6 = new Image(imgBuilding6);
+sprBuilding7 = new Image(imgBuilding7);
+sprBuilding8 = new Spritemap(imgBuilding8, 64, 64);
+sprStatues = new Spritemap(imgStatues, 48, 40);
+sprRock = new Image(imgRock);
+sprRock2 = new Image(imgRock2);
+sprRock3 = new Image(imgRock3);
+sprRock4 = new Image(imgRock4);
+sprPole = new Spritemap(imgPole, 16, 16);
+sprWire = new Spritemap(imgWire, 16, 16);
+sprTree = new Spritemap(imgTree, 32, 32);
+sprTreeBare = new Spritemap(imgTreeBare, 32, 32);
+sprOpenTree = new Spritemap(imgOpenTree, 32, 32);
+sprBlizzard = new Image(imgBlizzard);
+sprLight = new Image(imgLight);
+sprSnowHill = new Image(imgSnowHill);
+sprPitShadow = new Spritemap(imgPitShadow, 16, 16);
+sprDroplet = new Spritemap(imgDroplet, 9, 5);
+sprHealth = new Spritemap(imgHealth, 12, 12);
+sprBlurRegion = new Image(imgBlurRegion);
+sprBlurRegion2 = new Image(imgBlurRegion2);
+sprBossLock = new Spritemap(imgBossLock, 16, 16);
+sprBossLock1 = new Spritemap(imgBossLock1, 16, 16);
+sprBossLock2 = new Spritemap(imgBossLock2, 16, 16);
+sprBossLock3 = new Spritemap(imgBossLock3, 16, 16);
+sprBossLock4 = new Spritemap(imgBossLock4, 16, 16);
+sprBossKey = new Spritemap(imgBossKey, 12, 16);
+sprBossKey1 = new Spritemap(imgBossKey1, 12, 16);
+sprBossKey2 = new Spritemap(imgBossKey2, 12, 16);
+sprBossKey3 = new Spritemap(imgBossKey3, 12, 16);
+sprBossKey4 = new Spritemap(imgBossKey4, 12, 16);
+}
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
+initialize_image_assets();
 load_image_assets();
 		spGames = new Bitmap(imgGames);
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);

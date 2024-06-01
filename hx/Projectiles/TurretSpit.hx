@@ -23,6 +23,7 @@ private function load_image_assets():Void {
 imgTurretSpit = Assets.getBitmapData("assets/graphics/TurretSpit.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprTurretSpit = new Spritemap(imgTurretSpit, 12, 8);
 		super(_x, _y, sprTurretSpit);

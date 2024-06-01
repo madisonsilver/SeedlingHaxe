@@ -18,6 +18,7 @@ class Grass extends Entity {
 
 	public function new(_x:Int, _y:Int) {
 
+
 		super(_x, _y, Game.sprGrass);
 		active = false;
 		layer = Std.int(-y);

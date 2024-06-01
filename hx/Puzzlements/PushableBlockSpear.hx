@@ -10,6 +10,7 @@ import net.flashpunk.graphics.Image;
 class PushableBlockSpear extends PushableBlockFire {
 	public function new(_x:Int, _y:Int) {
 
+
 		super(_x, _y);
 		moveTypes = ["Spear"];
 		(try cast(graphic, Image) catch (e:Dynamic) null).color = 0x8822FF;

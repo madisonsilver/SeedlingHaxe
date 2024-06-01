@@ -27,6 +27,7 @@ imgOracle = Assets.getBitmapData("assets/graphics/NPCs/Oracle.png");
 imgOraclePic = Assets.getBitmapData("assets/graphics/NPCs/OraclePic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _text1:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprOracle = new Spritemap(imgOracle, 16, 24, animEnd);
 		sprOraclePic = new Image(imgOraclePic);

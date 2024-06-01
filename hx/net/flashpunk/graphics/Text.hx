@@ -38,6 +38,7 @@ class Text extends Image {
 	 */
 	public function new(text:String, x:Float = 0, y:Float = 0, width:Int = 0, height:Int = 0) {
 
+
 		_field.embedFonts = true;
 		_field.defaultTextFormat = _form = new TextFormat(Text.static_font, Text.static_size, 0xFFFFFF);
 		_field.text = _text = text;

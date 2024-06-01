@@ -32,6 +32,7 @@ private function load_image_assets():Void {
 imgOrb = Assets.getBitmapData("assets/graphics/Orb.png");
 }
 	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
+
 load_image_assets();
 		sprOrb = new Spritemap(imgOrb, 8, 8);
 		super(_x, _y, sprOrb);

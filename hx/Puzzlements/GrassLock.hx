@@ -15,6 +15,7 @@ private override function load_image_assets():Void {
 imgGrassLock = Assets.getBitmapData("assets/graphics/GrassLock.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprGrassLock = new Spritemap(imgGrassLock, 16, 16);
 		super(_x, _y, _t, _tag, sprGrassLock);

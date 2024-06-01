@@ -14,6 +14,7 @@ class Pole extends Entity {
 
 	public function new(_x:Int, _y:Int) {
 
+
 		super(_x + Tile.w / 2, _y + Tile.h / 2);
 		setHitbox(16, 16, 8, 8);
 		type = "Solid";

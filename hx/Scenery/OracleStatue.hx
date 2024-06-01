@@ -16,6 +16,7 @@ private function load_image_assets():Void {
 imgOracleStatue = Assets.getBitmapData("assets/graphics/OracleStatue.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprOracleStatue = new Spritemap(imgOracleStatue, 32, 48);
 		super(_x, _y, sprOracleStatue);

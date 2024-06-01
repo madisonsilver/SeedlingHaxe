@@ -17,6 +17,7 @@ class BossKey extends Pickup {
 
 	public function new(_x:Int, _y:Int, _t:Int = 0) {
 
+
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), Game.bossKeys[_t], null, false);
 		setHitbox(8, 8, 4, 4);
 		keyType = _t;

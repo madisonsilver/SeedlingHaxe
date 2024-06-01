@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgLittleStones = Assets.getBitmapData("assets/graphics/LittleStones.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprLittleStones = new Image(imgLittleStones);
 		super(_x, _y, sprLittleStones);

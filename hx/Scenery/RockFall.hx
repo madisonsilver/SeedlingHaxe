@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgRockFall = Assets.getBitmapData("assets/graphics/RockFall.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprRockFall = new Spritemap(imgRockFall, 64, 32, endAnim);
 		super(_x, _y - fallHeight, sprRockFall);

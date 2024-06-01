@@ -27,6 +27,7 @@ private function load_image_assets():Void {
 imgJelly = Assets.getBitmapData("assets/graphics/Jellyfish.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprJelly = new Spritemap(imgJelly, 14, 15, endAnim);
 		moveSpeed = moveSpeedNormal;

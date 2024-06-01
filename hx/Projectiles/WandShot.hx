@@ -39,6 +39,7 @@ imgWandShot = Assets.getBitmapData("assets/graphics/WandShot.png");
 imgFireWandShot = Assets.getBitmapData("assets/graphics/FireWandShot.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point, _fire:Bool = false) {
+
 load_image_assets();
 		sprWandShot = new Spritemap(imgWandShot, 7, 7, animEnd);
 		sprFireWandShot = new Spritemap(imgFireWandShot, 9, 9, animEnd);

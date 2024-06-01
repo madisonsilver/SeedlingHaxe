@@ -58,6 +58,7 @@ private function load_image_assets():Void {
 imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_large.png");
 }
 	public function new() {
+
 load_image_assets();
 		super();
 		sprNG = new Bitmap(Assets.getBitmapData("assets/graphics/pixel_logo_large.png"));

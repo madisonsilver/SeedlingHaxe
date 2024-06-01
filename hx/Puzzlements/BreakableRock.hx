@@ -21,6 +21,7 @@ class BreakableRock extends Entity {
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
 
+
 		super(_x + Tile.w / 2, _y + Tile.h / 2);
 
 		sprBreakableRock = new Spritemap(Assets.getBitmapData("assets/graphics/BreakableRock.png"), 16, 16, endAnim);

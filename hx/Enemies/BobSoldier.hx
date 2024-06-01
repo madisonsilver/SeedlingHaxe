@@ -54,6 +54,7 @@ imgLameSword = Assets.getBitmapData("assets/graphics/LameSword.png");
 imgBobSoldier = Assets.getBitmapData("assets/graphics/BobSoldier.png");
 }
 	public function new(_x:Int, _y:Int, _g:Spritemap = null) {
+
 load_image_assets();
 		sprBobSoldier = new Spritemap(imgBobSoldier, 10, 10, endAnim);
 		sprLameSword = new Spritemap(imgLameSword, 16, 5);

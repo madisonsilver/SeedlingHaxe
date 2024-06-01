@@ -22,6 +22,7 @@ private override function load_image_assets():Void {
 imgDarkTrap = Assets.getBitmapData("assets/graphics/DarkTrap.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprDarkTrap = new Spritemap(imgDarkTrap, 14, 14, endAnim);
 		super(_x, _y, _tag, sprDarkTrap);

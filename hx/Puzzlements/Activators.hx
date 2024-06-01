@@ -17,6 +17,7 @@ class Activators extends Entity {
 
 	public function new(_x:Int, _y:Int, _g:Graphic, _t:Int) {
 
+
 		super(_x, _y, _g);
 		t = _t;
 	}

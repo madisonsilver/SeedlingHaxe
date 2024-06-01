@@ -27,6 +27,7 @@ imgWitch = Assets.getBitmapData("assets/graphics/NPCs/Witch.png");
 imgWitchPic = Assets.getBitmapData("assets/graphics/NPCs/WitchPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprWitch = new Spritemap(imgWitch, 16, 13);
 		sprWitchPic = new Image(imgWitchPic);

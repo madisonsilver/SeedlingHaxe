@@ -55,6 +55,7 @@ class Enemy extends Mobile {
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
 
+
 		super(_x, _y, _g);
 		type = "Enemy";
 	}

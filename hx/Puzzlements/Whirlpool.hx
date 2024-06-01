@@ -32,6 +32,7 @@ private function load_image_assets():Void {
 imgWhirlpool = Assets.getBitmapData("assets/graphics/WhirlPool.png");
 }
 	public function new(_x:Int, _y:Int, _timer:Bool = false) {
+
 load_image_assets();
 		sprWhirlpool = new Spritemap(imgWhirlpool, 32, 32);
 		timerSet = timerSetGrow + timerSetLive + timerSetDies;

@@ -31,6 +31,7 @@ class World extends Tweener {
 	 */
 	public function new() {
 
+
 		super();
 	}
 

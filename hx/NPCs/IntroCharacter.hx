@@ -20,6 +20,7 @@ imgIntroChar = Assets.getBitmapData("assets/graphics/NPCs/IntroCharacter.png");
 imgIntroCharPic = Assets.getBitmapData("assets/graphics/NPCs/IntroCharacterPic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprIntroChar = new Spritemap(imgIntroChar, 8, 8);
 		sprIntroCharPic = new Image(imgIntroCharPic);

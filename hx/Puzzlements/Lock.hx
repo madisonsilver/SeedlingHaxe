@@ -28,6 +28,7 @@ private function load_image_assets():Void {
 imgLock = Assets.getBitmapData("assets/graphics/Lock.png");
 }
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _g:Graphic = null) {
+
 load_image_assets();
 		sprLock = new Spritemap(imgLock, 16, 16);
 		if (_g == null) {

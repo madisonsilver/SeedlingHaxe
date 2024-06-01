@@ -421,6 +421,7 @@ imgDeathRay = Assets.getBitmapData("assets/graphics/DeathRay.png");
 imgShield = Assets.getBitmapData("assets/graphics/Shield.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprShrumDark = new Spritemap(imgShrumDark, 16, 16, endAnim);
 		sprShrum = new Spritemap(imgShrum, 16, 16);

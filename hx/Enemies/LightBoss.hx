@@ -34,6 +34,7 @@ private function load_image_assets():Void {
 imgLightBoss = Assets.getBitmapData("assets/graphics/LightBoss.png");
 }
 	public function new(_x:Int, _y:Int, _id:Int, _parent:LightBossController) {
+
 load_image_assets();
 		sprLightBoss = new Spritemap(imgLightBoss, 17, 16, animEnd);
 		super(_x, _y, sprLightBoss);

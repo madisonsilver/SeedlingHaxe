@@ -20,6 +20,7 @@ imgKarlore = Assets.getBitmapData("assets/graphics/NPCs/Karlore.png");
 imgKarlorePic = Assets.getBitmapData("assets/graphics/NPCs/KarlorePic.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+
 load_image_assets();
 		sprKarlore = new Spritemap(imgKarlore, 20, 20);
 		sprKarlorePic = new Image(imgKarlorePic);

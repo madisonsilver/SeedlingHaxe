@@ -30,6 +30,7 @@ private function load_image_assets():Void {
 imgPuncher = Assets.getBitmapData("assets/graphics/Puncher.png");
 }
 	public function new(_x:Int, _y:Int) {
+
 load_image_assets();
 		sprPuncher = new Spritemap(imgPuncher, 20, 20, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPuncher);

@@ -22,6 +22,7 @@ private function load_image_assets():Void {
 imgIceBlast = Assets.getBitmapData("assets/graphics/IceBlast.png");
 }
 	public function new(_x:Int, _y:Int, _v:Point) {
+
 load_image_assets();
 		sprIceBlast = new Spritemap(imgIceBlast, 16, 7);
 		super(_x, _y, sprIceBlast);

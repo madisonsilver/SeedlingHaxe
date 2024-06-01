@@ -21,6 +21,7 @@ private function load_image_assets():Void {
 imgSpear = Assets.getBitmapData("assets/graphics/GhostSpear.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprSpear = new Spritemap(imgSpear, 20, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpear, null, false);

@@ -15,6 +15,7 @@ class CliffSide extends Entity {
 
 	public function new(_x:Int, _y:Int, _f:Int = 0) {
 
+
 		super(_x, _y);
 		frame = _f;
 

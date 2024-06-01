@@ -31,6 +31,7 @@ private function load_image_assets():Void {
 imgPortal = Assets.getBitmapData("assets/graphics/Portal.png");
 }
 	public function new(_x:Int, _y:Int, _to:Int = 0, _px:Int = 0, _py:Int = 0, _show:Bool = false, _tag:Int = -1, _invert:Bool = false, _sign:Int = -1) {
+
 load_image_assets();
 		sprPortal = new Spritemap(imgPortal, 18, 18);
 		super(_x, _y, sprPortal);

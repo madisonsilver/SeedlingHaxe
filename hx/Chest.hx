@@ -24,6 +24,7 @@ private function load_image_assets():Void {
 imgChest = Assets.getBitmapData("assets/graphics/Chest.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprChest = new Spritemap(imgChest, 16, 16);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprChest);

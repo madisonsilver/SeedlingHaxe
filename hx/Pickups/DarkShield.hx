@@ -20,6 +20,7 @@ private function load_image_assets():Void {
 imgDarkShield = Assets.getBitmapData("assets/graphics/DarkShield.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+
 load_image_assets();
 		sprDarkShield = new Image(imgDarkShield);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkShield, null, false);

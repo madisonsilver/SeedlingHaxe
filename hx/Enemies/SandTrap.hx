@@ -23,6 +23,7 @@ private function load_image_assets():Void {
 imgSandTrap = Assets.getBitmapData("assets/graphics/SandTrap.png");
 }
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _g:Spritemap = null) {
+
 load_image_assets();
 		sprSandTrap = new Spritemap(imgSandTrap, 14, 14, endAnim);
 		if (_g == null) {

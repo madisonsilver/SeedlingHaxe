@@ -22,6 +22,7 @@ class TiledImage extends Image {
 	 */
 	public function new(texture:Dynamic, width:Int = 0, height:Int = 0, clipRect:Rectangle = null) {
 
+
 		_width = width;
 		_height = height;
 		super(texture, clipRect);

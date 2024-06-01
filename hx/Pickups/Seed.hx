@@ -35,6 +35,7 @@ imgSeedBloody = Assets.getBitmapData("assets/graphics/SeedBloody.png");
 imgTreeGrow = Assets.getBitmapData("assets/graphics/TreeGrow.png");
 }
 	public function new(_x:Int, _y:Int, _bloody:Bool = false, _text:String = "", _tree:Bool = false) {
+
 load_image_assets();
 		sprSeed = new Spritemap(imgSeed, 9, 13);
 		sprSeedBloody = new Spritemap(imgSeedBloody, 11, 15);

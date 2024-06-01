@@ -189,19 +189,7 @@ class Game extends World {
 	public static var End_3:String;
 	public static var End_4:String;
 
-	public static var levels:Array<Dynamic> = [
-		OverWorld1, Building1, Dungeon1_Entrance, Dungeon1_1, Dungeon1_2, Dungeon1_3, Dungeon1_4, Dungeon1_5, Dungeon1_6, Dungeon1_7, Dungeon1_8, Dungeon1_9,
-		OverWorld1_1, Dungeon2_Entrance, Dungeon2_1, Dungeon2_2, Dungeon2_3, Dungeon2_4, Dungeon2_5, Dungeon2_Boss, Dungeon2_7, Dungeon3_Entrance, Dungeon3_1,
-		Dungeon3_2, Dungeon3_3, Dungeon3_4, Dungeon3_5, Dungeon3_6, Dungeon3_7, Dungeon3_8, Dungeon3_9, Dungeon3_10, Dungeon3_Boss, OverWorld1_witchhut,
-		OverWorld1_barhouse, OverWorld1_blandashurmin, OverWorld1_intree, OverWorld1_2, Dungeon4_Entrance, Dungeon4_1, Dungeon4_2, Dungeon4_3, Dungeon4_4,
-		Dungeon4_Boss, OverWorld1_3, Dungeon5_Entrance, Dungeon5_1, Dungeon5_2, Dungeon5_3, Dungeon5_4, Dungeon5_5, Dungeon5_6, Dungeon5_7, Dungeon5_8,
-		Dungeon5_9, Dungeon5_10, Dungeon5_11, Dungeon5_Boss, Dungeon5_DeadBoss, Dungeon6_Entrance, Dungeon6_1, Dungeon6_2, Dungeon6_3, Dungeon6_4, Dungeon6_5,
-		Dungeon6_6, Dungeon6_7, Dungeon6_8, Dungeon6_9, Dungeon6_Boss, Dungeon6_10, Dungeon7_Entrance, Dungeon7_1, Dungeon7_2, Dungeon7_3, Dungeon7_4,
-		Dungeon7_5, Dungeon7_6, Dungeon7_7, Dungeon7_8, Dungeon7_9, Dungeon7_10, Dungeon7_Boss, OverWorld_fallhole, OverWorld_fallhole1, OverWorld_d7entrance,
-		OverWorld_house, OverWorld1_4, OverWorld1_5, OverWorld1_6, OverWorld_waterfallcave, OverWorld_mountain, OverWorld_mountain1, OverWorld_finalboss,
-		OverWorld_treelarge, OverWorld_d6entrance, Dungeon7_11, Dungeon7_12, Dungeon8_Entrance, Dungeon8_1, Dungeon8_2, Dungeon8_3, Dungeon8_4, Dungeon8_5,
-		Dungeon8_6, Dungeon8_7, Dungeon8_8, Dungeon8_9, Dungeon8_10, Dungeon8_11, Dungeon8_12, End_1, End_Boss, End_2, End_3, End_4
-	];
+	public static var levels:Array<String>;
 
 	public static inline var bossMusic:Int = 13;
 	public static var levelMusics:Array<Dynamic> = [
@@ -986,12 +974,26 @@ class Game extends World {
 	}
 
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
+		//TODO: This has the potential to be slow when the Game object is recreated on death/loading.  Monitor performance and consider moving this to a "first time init" function.
 		load_level_assets();
 		load_image_assets();
 		initialize_image_assets();
 		bossLocks = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
 		bossKeys = [sprBossKey, sprBossKey1, sprBossKey2, sprBossKey3, sprBossKey4];
-
+		levels =  [
+			OverWorld1, Building1, Dungeon1_Entrance, Dungeon1_1, Dungeon1_2, Dungeon1_3, Dungeon1_4, Dungeon1_5, Dungeon1_6, Dungeon1_7, Dungeon1_8, Dungeon1_9,
+			OverWorld1_1, Dungeon2_Entrance, Dungeon2_1, Dungeon2_2, Dungeon2_3, Dungeon2_4, Dungeon2_5, Dungeon2_Boss, Dungeon2_7, Dungeon3_Entrance, Dungeon3_1,
+			Dungeon3_2, Dungeon3_3, Dungeon3_4, Dungeon3_5, Dungeon3_6, Dungeon3_7, Dungeon3_8, Dungeon3_9, Dungeon3_10, Dungeon3_Boss, OverWorld1_witchhut,
+			OverWorld1_barhouse, OverWorld1_blandashurmin, OverWorld1_intree, OverWorld1_2, Dungeon4_Entrance, Dungeon4_1, Dungeon4_2, Dungeon4_3, Dungeon4_4,
+			Dungeon4_Boss, OverWorld1_3, Dungeon5_Entrance, Dungeon5_1, Dungeon5_2, Dungeon5_3, Dungeon5_4, Dungeon5_5, Dungeon5_6, Dungeon5_7, Dungeon5_8,
+			Dungeon5_9, Dungeon5_10, Dungeon5_11, Dungeon5_Boss, Dungeon5_DeadBoss, Dungeon6_Entrance, Dungeon6_1, Dungeon6_2, Dungeon6_3, Dungeon6_4, Dungeon6_5,
+			Dungeon6_6, Dungeon6_7, Dungeon6_8, Dungeon6_9, Dungeon6_Boss, Dungeon6_10, Dungeon7_Entrance, Dungeon7_1, Dungeon7_2, Dungeon7_3, Dungeon7_4,
+			Dungeon7_5, Dungeon7_6, Dungeon7_7, Dungeon7_8, Dungeon7_9, Dungeon7_10, Dungeon7_Boss, OverWorld_fallhole, OverWorld_fallhole1, OverWorld_d7entrance,
+			OverWorld_house, OverWorld1_4, OverWorld1_5, OverWorld1_6, OverWorld_waterfallcave, OverWorld_mountain, OverWorld_mountain1, OverWorld_finalboss,
+			OverWorld_treelarge, OverWorld_d6entrance, Dungeon7_11, Dungeon7_12, Dungeon8_Entrance, Dungeon8_1, Dungeon8_2, Dungeon8_3, Dungeon8_4, Dungeon8_5,
+			Dungeon8_6, Dungeon8_7, Dungeon8_8, Dungeon8_9, Dungeon8_10, Dungeon8_11, Dungeon8_12, End_1, End_Boss, End_2, End_3, End_4
+		];
+	
 		spGames = new Bitmap(imgGames);
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);
 		sprLogo = new Spritemap(imgLogo, 152, 62);
@@ -2082,10 +2084,8 @@ class Game extends World {
 		FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
 	}
 
-	public function loadlevel(_level:Class<Dynamic>):Void {
-		var file:ByteArray = Type.createInstance(_level, []);
-		var str:String = file.readUTFBytes(file.length);
-		var xml:Access = new Access(Xml.parse(str));
+	public function loadlevel(_level:String):Void {
+		var xml:Access = new Access(Xml.parse(_level));
 
 		var e:Entity;
 		var o:Access;

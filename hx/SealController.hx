@@ -52,8 +52,9 @@ class SealController extends Entity {
 	}
 
 	public function new(_showNewest:Bool = true, _parent:FinalDoor = null, _text:String = "") {
-		initialize_image_assets();
 		load_image_assets();
+		initialize_image_assets();
+
 		super();
 		Game.freezeObjects = true;
 		layer = -FP.height * 2;

@@ -100,8 +100,9 @@ class Inventory {
 	}
 
 	public function new() {
-		initialize_image_assets();
 		load_image_assets();
+		initialize_image_assets();
+
 		width = sprInventory.width;
 		height = sprInventory.height;
 		offsetMin = new Point(-70, FP.screen.height / 2 - sprInventory.height / 2);

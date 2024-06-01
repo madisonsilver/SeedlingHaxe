@@ -983,8 +983,9 @@ class Game extends World {
 	}
 
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
-		initialize_image_assets();
 		load_image_assets();
+		initialize_image_assets();
+
 		spGames = new Bitmap(imgGames);
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);
 		sprLogo = new Spritemap(imgLogo, 152, 62);

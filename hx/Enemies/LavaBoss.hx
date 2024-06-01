@@ -197,7 +197,7 @@ class LavaBoss extends Enemy {
 							Std.int(y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2)));
 						lr.runRange = 1000;
 						lr.activeOffScreen = true;
-						lr.jump(!cast(i, Bool));
+						lr.jump(i == 0);
 					}
 				}
 			case "smashback":

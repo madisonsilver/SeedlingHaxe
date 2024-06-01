@@ -65,7 +65,7 @@ class Preloader extends Sprite {
 		sprNG = new Bitmap(Assets.getBitmapData("assets/graphics/pixel_logo_large.png"));
 		URL = root.stage.loaderInfo.url;
 
-		LOCAL = checkDomain() == 2;
+		LOCAL = checkDomain([""]) == 2;
 		JAYISGAMES = checkDomain(["jayisgames.com"]) == 1;
 		ARMORGAMES = checkDomain([
 			"http://games.armorgames.com",
@@ -228,8 +228,12 @@ class Preloader extends Sprite {
 		parent.removeChild(this);
 	}
 
-	public static function checkDomain(allowed:Dynamic = ""):Int {
-		return 1;
+	public static function checkDomain(allowed:Array<String>):Int {
+		if (allowed.contains("connorullmann.com")) {
+			return 1;
+		} else {
+			return 0;
+		}
 		/*
 			var url : String = Preloader.URL;
 			var startCheck : Int = as3hx.Compat.parseInt(url.indexOf("://") + 3);

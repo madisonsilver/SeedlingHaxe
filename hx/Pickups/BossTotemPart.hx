@@ -12,13 +12,13 @@ import scenery.Tile;
 class BossTotemPart extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/BossTotemParts.png"))
 	private var imgBossTotemPart:Class<Dynamic>;
-	private var sprBossTotemPart:Spritemap ;
+	private var sprBossTotemPart:Spritemap;
 
 	private var totemPart:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _t:Int) {
-sprBossTotemPart =  new Spritemap(imgBossTotemPart, 24, 24);
+		sprBossTotemPart = new Spritemap(imgBossTotemPart, 24, 24);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprBossTotemPart, new Point(), false);
 		sprBossTotemPart.frame = _t;
 		sprBossTotemPart.centerOO();

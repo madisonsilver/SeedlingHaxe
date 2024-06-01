@@ -11,12 +11,12 @@ import net.flashpunk.FP;
 class MoonrockPile extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/MoonrockPile.png"))
 	private var imgMoonrockPile:Class<Dynamic>;
-	private var sprMoonrockPile:Image ;
+	private var sprMoonrockPile:Image;
 
 	private var tag:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = 0) {
-sprMoonrockPile =  new Image(imgMoonrockPile);
+		sprMoonrockPile = new Image(imgMoonrockPile);
 		super(_x, _y, sprMoonrockPile);
 		setHitbox(sprMoonrockPile.width, sprMoonrockPile.height);
 		type = "Solid";

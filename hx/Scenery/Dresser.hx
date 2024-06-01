@@ -10,10 +10,10 @@ import net.flashpunk.graphics.Image;
 class Dresser extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Dresser.png"))
 	private var imgDresser:Class<Dynamic>;
-	private var sprDresser:Image ;
+	private var sprDresser:Image;
 
 	public function new(_x:Int, _y:Int) {
-sprDresser =  new Image(imgDresser);
+		sprDresser = new Image(imgDresser);
 		super(_x, _y, sprDresser);
 		sprDresser.y = -8;
 		sprDresser.originY = Std.int(-sprDresser.y);

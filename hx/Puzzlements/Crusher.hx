@@ -17,7 +17,7 @@ import net.flashpunk.utils.Draw;
 class Crusher extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Crusher.png"))
 	private var imgCrusher:Class<Dynamic>;
-	private var sprCrusher:Spritemap ;
+	private var sprCrusher:Spritemap;
 
 	private var hitables(default, never):Dynamic = ["Player", "Solid", "Enemy", "ShieldBoss"];
 	private var solids(default, never):Dynamic = ["Solid"];
@@ -34,7 +34,7 @@ class Crusher extends Activators {
 	private var damage:Int = 1000; // KILL EVERYTHING
 
 	public function new(_x:Int, _y:Int, _t:Int) {
-sprCrusher =  new Spritemap(imgCrusher, 32, 32);
+		sprCrusher = new Spritemap(imgCrusher, 32, 32);
 		super(_x + Tile.w, _y + Tile.h, sprCrusher, _t);
 		(try cast(graphic, Image) catch (e:Dynamic) null).centerOO();
 		setHitbox(32, 32, 16, 16);
@@ -110,7 +110,7 @@ sprCrusher =  new Spritemap(imgCrusher, 32, 32);
 
 	public function moveX(_xrel:Float):Entity // returns the object that is hit
 	{
-		var i : Int = 0;
+		var i:Int = 0;
 		while (i < Math.abs(_xrel)) {
 			var c:Entity = collideTypes(solids, x + Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel), y);
 			if (c == null) {
@@ -126,7 +126,7 @@ sprCrusher =  new Spritemap(imgCrusher, 32, 32);
 
 	public function moveY(_yrel:Float):Entity // returns the object that is hit
 	{
-		var i: Int = 0;
+		var i:Int = 0;
 		while (i < Math.abs(_yrel)) {
 			var c:Entity = collideTypes(solids, x, y + Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel));
 			if (c == null) {
@@ -135,7 +135,7 @@ sprCrusher =  new Spritemap(imgCrusher, 32, 32);
 				v.y = 0;
 				return c;
 			}
-			i+= 1;
+			i += 1;
 		}
 		return null;
 	}

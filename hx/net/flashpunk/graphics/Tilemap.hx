@@ -27,8 +27,8 @@ class Tilemap extends Canvas {
 	 * @param	tileWidth		Tile width.
 	 * @param	tileHeight		Tile height.
 	 */
-	public function new(tileset:Dynamic, width:Int, height:Int, tileWidth:Int, tileHeight:Int) // set some tilemap information
-	{
+	public function new(tileset:Dynamic, width:Int, height:Int, tileWidth:Int, tileHeight:Int) {
+		// set some tilemap information
 		_width = as3hx.Compat.parseInt(width - (width % tileWidth));
 		_height = as3hx.Compat.parseInt(height - (height % tileHeight));
 		_columns = as3hx.Compat.parseInt(_width / tileWidth);
@@ -47,7 +47,7 @@ class Tilemap extends Canvas {
 		} else if (Std.is(tileset, BitmapData)) {
 			_set = tileset;
 		}
-		if (!_set) {
+		if (_set == null) {
 			throw new Error("Invalid tileset graphic provided.");
 		}
 		_setColumns = as3hx.Compat.parseInt(_set.width / tileWidth);

@@ -12,13 +12,13 @@ import net.flashpunk.utils.Draw;
 class TorchPickup extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/TorchPickup.png"))
 	private var imgTorchPickup:Class<Dynamic>;
-	private var sprTorchPickup:Spritemap ;
+	private var sprTorchPickup:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprTorchPickup =  new Spritemap(imgTorchPickup, 12, 12);
+		sprTorchPickup = new Spritemap(imgTorchPickup, 12, 12);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTorchPickup, null, false);
 		sprTorchPickup.centerOO();
 		setHitbox(8, 8, 4, 4);

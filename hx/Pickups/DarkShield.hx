@@ -11,13 +11,13 @@ import scenery.Tile;
 class DarkShield extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/DarkShield.png"))
 	private var imgDarkShield:Class<Dynamic>;
-	private var sprDarkShield:Image ;
+	private var sprDarkShield:Image;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprDarkShield =  new Image(imgDarkShield);
+		sprDarkShield = new Image(imgDarkShield);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkShield, null, false);
 		sprDarkShield.centerOO();
 		setHitbox(9, 9, 5, 5);

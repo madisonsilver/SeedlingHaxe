@@ -10,10 +10,10 @@ import net.flashpunk.graphics.Image;
 class DungeonSpire extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/DungeonSpire.png"))
 	private var imgDungeonSpire:Class<Dynamic>;
-	private var sprDungeonSpire:Image ;
+	private var sprDungeonSpire:Image;
 
 	public function new(_x:Int, _y:Int) {
-sprDungeonSpire =  new Image(imgDungeonSpire);
+		sprDungeonSpire = new Image(imgDungeonSpire);
 		super(_x, _y, sprDungeonSpire);
 		sprDungeonSpire.y = -8;
 		sprDungeonSpire.originY = 8;

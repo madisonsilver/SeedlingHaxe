@@ -11,13 +11,13 @@ import scenery.Tile;
 class Conch extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/Conch.png"))
 	private var imgConch:Class<Dynamic>;
-	private var sprConch:Spritemap ;
+	private var sprConch:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprConch =  new Spritemap(imgConch, 8, 8);
+		sprConch = new Spritemap(imgConch, 8, 8);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprConch, null, false);
 		sprConch.centerOO();
 		setHitbox(8, 8, 4, 4);

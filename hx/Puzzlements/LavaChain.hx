@@ -17,7 +17,7 @@ import scenery.Tile;
 class LavaChain extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/LavaChain.png"))
 	private var imgLavaChain:Class<Dynamic>;
-	private var sprLavaChain:Spritemap ;
+	private var sprLavaChain:Spritemap;
 
 	private static var hitables:Dynamic = ["Player", "Enemy"];
 	private static inline var force:Int = 5;
@@ -27,7 +27,7 @@ class LavaChain extends Entity {
 	private var direction:Int;
 
 	public function new(_x:Int, _y:Int, _d:Int) {
-sprLavaChain =  new Spritemap(imgLavaChain, 64, 16, animEnd);
+		sprLavaChain = new Spritemap(imgLavaChain, 64, 16, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprLavaChain);
 
 		direction = _d;

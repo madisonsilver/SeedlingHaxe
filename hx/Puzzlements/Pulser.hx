@@ -17,12 +17,12 @@ import net.flashpunk.utils.Draw;
 class Pulser extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Pulser.png"))
 	private var imgPulser:Class<Dynamic>;
-	private var sprPulser:Spritemap ;
+	private var sprPulser:Spritemap;
 
 	private var radiusMin(default, never):Int = 10;
 	private var radiusMax(default, never):Int = 28;
 	private var radiusHit(default, never):Int = 22;
-	private var radius:Float ;
+	private var radius:Float;
 	private var radiusRate(default, never):Float = 0.8;
 
 	private var thicknessMin(default, never):Int = 1;
@@ -39,8 +39,8 @@ class Pulser extends Activators {
 	private var hitables(default, never):Dynamic = ["Player", "Solid", "Enemy"];
 
 	public function new(_x:Int, _y:Int, _t:Int) {
-sprPulser =  new Spritemap(imgPulser, 16, 16, endAnim);
-radius =  radiusMin;
+		sprPulser = new Spritemap(imgPulser, 16, 16, endAnim);
+		radius = radiusMin;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPulser, _t);
 		(try cast(graphic, Image) catch (e:Dynamic) null).centerOO();
 		(try cast(graphic, Spritemap) catch (e:Dynamic) null).add("pulse", [0, 1, 2, 3, 4], 20);

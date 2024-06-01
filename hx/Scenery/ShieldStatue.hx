@@ -10,10 +10,10 @@ import net.flashpunk.graphics.Image;
 class ShieldStatue extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/ShieldStatue.png"))
 	private var imgShieldStatue:Class<Dynamic>;
-	private var sprShieldStatue:Image ;
+	private var sprShieldStatue:Image;
 
 	public function new(_x:Int, _y:Int) {
-sprShieldStatue =  new Image(imgShieldStatue);
+		sprShieldStatue = new Image(imgShieldStatue);
 		super(_x + Tile.w / 2, _y, sprShieldStatue);
 		sprShieldStatue.y = -11;
 		sprShieldStatue.originY = 11;

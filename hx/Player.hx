@@ -988,8 +988,7 @@ class Player extends Mobile {
 			if (sprFire.frame >= fireHitFrameStart && sprFire.frame <= fireHitFrameEnd) {
 				var vc:Array<Entity> = new Array<Entity>();
 				for (i in 0...hitables.length) {
-					FP.world.collideRectInto(hitables[i], x - sprFire.originX, y - sprFire.originY, sprFire.width, sprFire.height,
-						vc);
+					FP.world.collideRectInto(hitables[i], x - sprFire.originX, y - sprFire.originY, sprFire.width, sprFire.height, vc);
 					for (e in vc) {
 						if (FP.distanceRects(x - originX, y - originY, width, height, e.x - e.originX, e.y - originY, e.width, e.height) > sprFire.width / 2)
 							// Only take those in a radius around the player, to cut off corners.

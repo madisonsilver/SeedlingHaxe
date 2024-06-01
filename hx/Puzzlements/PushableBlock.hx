@@ -14,7 +14,7 @@ import scenery.Tile;
 class PushableBlock extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/PushableBlock.png"))
 	private var imgPushableBlock:Class<Dynamic>;
-	private var sprPushableBlock:Spritemap ;
+	private var sprPushableBlock:Spritemap;
 
 	private var moveSpeed(default, never):Float = 0.5;
 	private var cTile:Point;
@@ -22,7 +22,7 @@ class PushableBlock extends Mobile {
 	private var tile:Point;
 
 	public function new(_x:Int, _y:Int) {
-sprPushableBlock =  new Spritemap(imgPushableBlock, 16, 16);
+		sprPushableBlock = new Spritemap(imgPushableBlock, 16, 16);
 		super(_x, _y, sprPushableBlock);
 		setHitbox(16, 16);
 		type = "Solid";

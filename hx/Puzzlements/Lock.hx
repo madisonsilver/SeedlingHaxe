@@ -17,7 +17,7 @@ class Lock extends Activators {
 	@:meta(Embed(source = "../../assets/graphics/Lock.png"))
 	private var imgLock:Class<Dynamic>;
 
-	public var sprLock:Spritemap ;
+	public var sprLock:Spritemap;
 
 	private var normType:String = "Solid";
 	private var tag:Int;
@@ -25,7 +25,7 @@ class Lock extends Activators {
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"];
 
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _g:Graphic = null) {
-sprLock =  new Spritemap(imgLock, 16, 16);
+		sprLock = new Spritemap(imgLock, 16, 16);
 		if (_g == null) {
 			_g = sprLock;
 		}

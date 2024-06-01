@@ -12,7 +12,7 @@ import net.flashpunk.FP;
 class Orb extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Orb.png"))
 	private var imgOrb:Class<Dynamic>;
-	private var sprOrb:Spritemap ;
+	private var sprOrb:Spritemap;
 
 	private var radiusMax:Int = 48;
 	private var radiusMin:Int = 40;
@@ -29,7 +29,7 @@ class Orb extends Entity {
 	private var myLight:Light;
 
 	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
-sprOrb =  new Spritemap(imgOrb, 8, 8);
+		sprOrb = new Spritemap(imgOrb, 8, 8);
 		super(_x, _y, sprOrb);
 		startX = Std.int(x);
 		startY = Std.int(y);

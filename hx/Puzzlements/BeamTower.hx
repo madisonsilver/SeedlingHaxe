@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class BeamTower extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/BeamTower.png"))
 	private var imgBeamTower:Class<Dynamic>;
-	private var sprBeamTower:Spritemap ;
+	private var sprBeamTower:Spritemap;
 
 	private var direction:Int;
 	private var rate:Float;
@@ -25,7 +25,7 @@ class BeamTower extends Entity {
 	private var playedSound:Bool = false;
 
 	public function new(_x:Int, _y:Int, _startdirection:Int = 0, _rate:Float = 1, speed:Float = 1) {
-sprBeamTower =  new Spritemap(imgBeamTower, 16, 40, animEnd);
+		sprBeamTower = new Spritemap(imgBeamTower, 16, 40, animEnd);
 		super(_x + 8, _y + 16, sprBeamTower);
 
 		sprBeamTower.originX = 8;
@@ -78,7 +78,7 @@ sprBeamTower =  new Spritemap(imgBeamTower, 16, 40, animEnd);
 					playedSound = true;
 				}
 				var rect:Rectangle = getRect(direction);
-				var p : Player = try cast(FP.world.collideRect("Player", rect.x, rect.y, rect.width, rect.height), Player) catch (e:Dynamic) null;
+				var p:Player = try cast(FP.world.collideRect("Player", rect.x, rect.y, rect.width, rect.height), Player) catch (e:Dynamic) null;
 				if (p != null) {
 					p.hit(null, force, new Point(x, y), damage);
 					Game.shake = 15;

@@ -11,13 +11,13 @@ import scenery.Tile;
 class DarkSuit extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/DarkSuit.png"))
 	private var imgDarkSuit:Class<Dynamic>;
-	private var sprDarkSuit:Image ;
+	private var sprDarkSuit:Image;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprDarkSuit =  new Image(imgDarkSuit);
+		sprDarkSuit = new Image(imgDarkSuit);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprDarkSuit, null, false);
 		sprDarkSuit.centerOO();
 		setHitbox(10, 10, 5, 5);

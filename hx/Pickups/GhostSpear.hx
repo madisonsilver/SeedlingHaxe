@@ -12,13 +12,13 @@ import scenery.Moonrock;
 class GhostSpear extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/GhostSpear.png"))
 	private var imgSpear:Class<Dynamic>;
-	private var sprSpear:Spritemap ;
+	private var sprSpear:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprSpear =  new Spritemap(imgSpear, 20, 7);
+		sprSpear = new Spritemap(imgSpear, 20, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpear, null, false);
 		sprSpear.centerOO();
 		setHitbox(12, 4, 6, 2);

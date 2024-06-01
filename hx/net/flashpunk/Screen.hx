@@ -30,8 +30,8 @@ class Screen {
 	/**
 	 * Constructor.
 	 */
-	public function new() // create screen buffers
-	{
+	public function new() {
+		// create screen buffers
 		Reflect.setField(_bitmap, Std.string(0), new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER));
 		Reflect.setField(_bitmap, Std.string(1), new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER));
 		FP.engine.addChild(_sprite);

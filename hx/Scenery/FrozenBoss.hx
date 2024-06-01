@@ -12,10 +12,10 @@ import net.flashpunk.FP;
 class FrozenBoss extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/FrozenBoss.png"))
 	private var imgFrozenBoss:Class<Dynamic>;
-	private var sprFrozenBoss:Image ;
+	private var sprFrozenBoss:Image;
 
 	public function new(_x:Int, _y:Int) {
-sprFrozenBoss =  new Image(imgFrozenBoss);
+		sprFrozenBoss = new Image(imgFrozenBoss);
 		super(_x, _y, sprFrozenBoss);
 		setHitbox(80, 32, -32, -128);
 		type = "Solid";

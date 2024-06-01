@@ -12,12 +12,12 @@ import net.flashpunk.FP;
 class Torch extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Torch.png"))
 	private var imgTorch:Class<Dynamic>;
-	private var sprTorch:Spritemap ;
+	private var sprTorch:Spritemap;
 
 	private var color:Int;
 
 	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
-sprTorch =  new Spritemap(imgTorch, 4, 10);
+		sprTorch = new Spritemap(imgTorch, 4, 10);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprTorch);
 		sprTorch.centerOO();
 		color = _c;

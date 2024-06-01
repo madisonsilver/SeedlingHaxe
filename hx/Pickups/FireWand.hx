@@ -14,7 +14,7 @@ import net.flashpunk.utils.Draw;
 class FireWand extends Pickup {
 	@:meta(Embed(source = "../../assets/graphics/FireWandPickup.png"))
 	private var imgFireWandPickup:Class<Dynamic>;
-	private var sprFireWandPickup:Spritemap ;
+	private var sprFireWandPickup:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
@@ -24,7 +24,7 @@ class FireWand extends Pickup {
 	private var tset:Int = 0;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
-sprFireWandPickup =  new Spritemap(imgFireWandPickup, 5, 9);
+		sprFireWandPickup = new Spritemap(imgFireWandPickup, 5, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFireWandPickup, null, false);
 		sprFireWandPickup.centerOO();
 		setHitbox(8, 8, 4, 4);

@@ -10,10 +10,10 @@ import net.flashpunk.graphics.Image;
 class Bar extends Entity {
 	@:meta(Embed(source = "../../assets/graphics/Bar.png"))
 	private var imgBar:Class<Dynamic>;
-	private var sprBar:Image ;
+	private var sprBar:Image;
 
 	public function new(_x:Int, _y:Int) {
-sprBar =  new Image(imgBar);
+		sprBar = new Image(imgBar);
 		super(_x, _y, sprBar);
 		setHitbox(64, 16);
 		sprBar.y = -4;

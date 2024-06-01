@@ -13,7 +13,7 @@ import net.flashpunk.graphics.Spritemap;
 class Bomb extends Mobile {
 	@:meta(Embed(source = "../../assets/graphics/Bomb.png"))
 	private var imgBomb:Class<Dynamic>;
-	private var sprBomb:Spritemap ;
+	private var sprBomb:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "ShieldBoss"];
 
@@ -22,11 +22,11 @@ class Bomb extends Mobile {
 	private var scale:Float = 0.5;
 
 	private var tMax(default, never):Int = 30;
-	private var t:Int ;
+	private var t:Int;
 
 	public function new(_x:Int, _y:Int, _p:Point) {
-sprBomb =  new Spritemap(imgBomb, 16, 16);
-t =  tMax;
+		sprBomb = new Spritemap(imgBomb, 16, 16);
+		t = tMax;
 		super(_x, _y, sprBomb);
 		sprBomb.centerOO();
 		v = new Point(_p.x - x, _p.y - y);

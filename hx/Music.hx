@@ -208,7 +208,7 @@ class Music {
 	private static var fadeRate:Float = 0;
 	private static var crossover:Bool = false;
 
-	private function load_audio_assets():Void {
+	public static function load_audio_assets():Void {
 		sndSword1 = Assets.getSound("assets/sound/Sword1.mp3");
 		sndSword2 = Assets.getSound("assets/sound/Sword2.mp3");
 		sndSword3 = Assets.getSound("assets/sound/Sword3.mp3");
@@ -297,7 +297,7 @@ class Music {
 		sndBoss = Assets.getSound("assets/sound/Fight Me Like A Boss.mp3");
 	}
 
-	private function initialize_audio_assets():Void {
+	public static function initialize_audio_assets():Void {
 		sndOYesMaster = new Sfx(sndYesMaster);
 		sndOFoundIt = new Sfx(sndFoundIt);
 		sndOSealPiece = new Sfx(sndSealPiece);

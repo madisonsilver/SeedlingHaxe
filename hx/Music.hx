@@ -6,148 +6,81 @@ import net.flashpunk.Sfx;
 import net.flashpunk.FP;
 import net.flashpunk.utils.Input;
 import net.flashpunk.utils.Key;
+import openfl.media.Sound;
 
 /**
  * ...
  * @author Time
  */
 class Music {
-	@:meta(Embed(source = "../assets/sound/Sword1.mp3"))
-	private static var sndSword1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Sword2.mp3"))
-	private static var sndSword2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Sword3.mp3"))
-	private static var sndSword3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/stab1.mp3"))
-	private static var sndStab1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/stab2.mp3"))
-	private static var sndStab2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/stab3.mp3"))
-	private static var sndStab3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/splash1.mp3"))
-	private static var sndSplash1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/splash2.mp3"))
-	private static var sndSplash2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/swim.mp3"))
-	private static var sndSwim1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/arrowLaunch.mp3"))
-	private static var sndArrow1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/arrowHit.mp3"))
-	private static var sndArrow2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/switch.mp3"))
-	private static var sndSwitch1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/smallEnemyHit.mp3"))
-	private static var sndEnemyHit1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/bigEnemyHit.mp3"))
-	private static var sndEnemyHit2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/metalHit.mp3"))
-	private static var sndMetal1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/enemyhop.mp3"))
-	private static var sndEnemyHop1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/bigenemyhop.mp3"))
-	private static var sndEnemyHop2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/chest.mp3"))
-	private static var sndChest1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/bigLock.mp3"))
-	private static var sndLock1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/BigRockHit.mp3"))
-	private static var sndRock1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/rockcrumble.mp3"))
-	private static var sndRock2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/drill.mp3"))
-	private static var sndDrill1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/energyBeam.mp3"))
-	private static var sndEnergyBeam1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/energyPulse.mp3"))
-	private static var sndEnergyPulse1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/explosion.mp3"))
-	private static var sndExplosion1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/enemyfall.mp3"))
-	private static var sndEnemyFall1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/pushrock.mp3"))
-	private static var sndPushRock1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/smallenemydie.mp3"))
-	private static var sndEnemyDie1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/nextroom.mp3"))
-	private static var sndRoom1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/upstairs.mp3"))
-	private static var sndRoom2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/downstairs.mp3"))
-	private static var sndRoom3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/teleport.mp3"))
-	private static var sndRoom4:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/hurt.mp3"))
-	private static var sndHurt1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/groundhit.mp3"))
-	private static var sndGroundHit1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/groundhit2.mp3"))
-	private static var sndGroundHit2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/playerfall.mp3"))
-	private static var sndPlayerFall1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4die.mp3"))
-	private static var sndBossDie1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4die2.mp3"))
-	private static var sndBossDie2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss6die.mp3"))
-	private static var sndBossDie3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss5rise.mp3"))
-	private static var sndBossDie4:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss5die.mp3"))
-	private static var sndBossDie5:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4beam.mp3"))
-	private static var sndEnemyAttack1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4beam2.mp3"))
-	private static var sndEnemyAttack2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4shoot.mp3"))
-	private static var sndEnemyAttack3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/enemyChomp.mp3"))
-	private static var sndEnemyAttack4:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss6move.mp3"))
-	private static var sndBoss6Move1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss6move1.mp3"))
-	private static var sndBoss6Move2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss6move2.mp3"))
-	private static var sndBoss6Move3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/wandfire.mp3"))
-	private static var sndWandFire1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/wandfizzle.mp3"))
-	private static var sndWandFizzle1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/turretFire.mp3"))
-	private static var sndTurretShoot1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/wind.mp3"))
-	private static var sndWind1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/ArcticWind.mp3"))
-	private static var sndWind2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/TreeBurning.mp3"))
-	private static var sndBurn1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/punch.mp3"))
-	private static var sndPunch1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/monstersplash.mp3"))
-	private static var sndTentacle1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/fireattack.mp3"))
-	private static var sndFire1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/LavaPunch.mp3"))
-	private static var sndLava1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/LavaClap.mp3"))
-	private static var sndLava2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Pop.mp3"))
-	private static var sndLava3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Light.mp3"))
-	private static var sndLight1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/text.mp3"))
-	private static var sndText1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/textNext.mp3"))
-	private static var sndText2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4start.mp3"))
-	private static var sndOther1:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/boss4walk.mp3"))
-	private static var sndOther2:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/turretIceFire.mp3"))
-	private static var sndOther3:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/ropeCut.mp3"))
-	private static var sndOther4:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/sound/Unapproved/crusher.mp3"))
-	private static var sndOther5:Class<Dynamic>;
+	private static var sndSword1:Sound;
+	private static var sndSword2:Sound;
+	private static var sndSword3:Sound;
+	private static var sndStab1:Sound;
+	private static var sndStab2:Sound;
+	private static var sndStab3:Sound;
+	private static var sndSplash1:Sound;
+	private static var sndSplash2:Sound;
+	private static var sndSwim1:Sound;
+	private static var sndArrow1:Sound;
+	private static var sndArrow2:Sound;
+	private static var sndSwitch1:Sound;
+	private static var sndEnemyHit1:Sound;
+	private static var sndEnemyHit2:Sound;
+	private static var sndMetal1:Sound;
+	private static var sndEnemyHop1:Sound;
+	private static var sndEnemyHop2:Sound;
+	private static var sndChest1:Sound;
+	private static var sndLock1:Sound;
+	private static var sndRock1:Sound;
+	private static var sndRock2:Sound;
+	private static var sndDrill1:Sound;
+	private static var sndEnergyBeam1:Sound;
+	private static var sndEnergyPulse1:Sound;
+	private static var sndExplosion1:Sound;
+	private static var sndEnemyFall1:Sound;
+	private static var sndPushRock1:Sound;
+	private static var sndEnemyDie1:Sound;
+	private static var sndRoom1:Sound;
+	private static var sndRoom2:Sound;
+	private static var sndRoom3:Sound;
+	private static var sndRoom4:Sound;
+	private static var sndHurt1:Sound;
+	private static var sndGroundHit1:Sound;
+	private static var sndGroundHit2:Sound;
+	private static var sndPlayerFall1:Sound;
+	private static var sndBossDie1:Sound;
+	private static var sndBossDie2:Sound;
+	private static var sndBossDie3:Sound;
+	private static var sndBossDie4:Sound;
+	private static var sndBossDie5:Sound;
+	private static var sndEnemyAttack1:Sound;
+	private static var sndEnemyAttack2:Sound;
+	private static var sndEnemyAttack3:Sound;
+	private static var sndEnemyAttack4:Sound;
+	private static var sndBoss6Move1:Sound;
+	private static var sndBoss6Move2:Sound;
+	private static var sndBoss6Move3:Sound;
+	private static var sndWandFire1:Sound;
+	private static var sndWandFizzle1:Sound;
+	private static var sndTurretShoot1:Sound;
+	private static var sndWind1:Sound;
+	private static var sndWind2:Sound;
+	private static var sndBurn1:Sound;
+	private static var sndPunch1:Sound;
+	private static var sndTentacle1:Sound;
+	private static var sndFire1:Sound;
+	private static var sndLava1:Sound;
+	private static var sndLava2:Sound;
+	private static var sndLava3:Sound;
+	private static var sndLight1:Sound;
+	private static var sndText1:Sound;
+	private static var sndText2:Sound;
+	private static var sndOther1:Sound;
+	private static var sndOther2:Sound;
+	private static var sndOther3:Sound;
+	private static var sndOther4:Sound;
+	private static var sndOther5:Sound;
 
 	private static var currentSet:String = "";
 	private static var currentIndex:Int = -1;
@@ -200,77 +133,59 @@ class Music {
 	private static var soundText:Array<Dynamic> = [sndText1, sndText2];
 	private static var soundOther:Array<Dynamic> = [sndOther1, sndOther2, sndOther3, sndOther4, sndOther5];
 	private static var sounds:Dictionary<String, Array<Dynamic>> = new Dictionary();
-	@:meta(Embed(source = "../assets/sound/Yes, Master.mp3"))
-	private static var sndYesMaster:Class<Dynamic>;
-	public static var sndOYesMaster:Sfx = new Sfx(sndYesMaster);
+	private static var sndYesMaster:Sound;
+	public static var sndOYesMaster:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Found It!.mp3"))
-	private static var sndFoundIt:Class<Dynamic>;
-	public static var sndOFoundIt:Sfx = new Sfx(sndFoundIt);
+	private static var sndFoundIt:Sound;
+	public static var sndOFoundIt:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/One Piece.mp3"))
-	private static var sndSealPiece:Class<Dynamic>;
-	public static var sndOSealPiece:Sfx = new Sfx(sndSealPiece);
+	private static var sndSealPiece:Sound;
+	public static var sndOSealPiece:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Of The Puzzle.mp3"))
-	private static var sndSeal:Class<Dynamic>;
-	public static var sndOSeal:Sfx = new Sfx(sndSeal);
+	private static var sndSeal:Sound;
+	public static var sndOSeal:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/The Key.mp3"))
-	private static var sndKey:Class<Dynamic>;
-	public static var sndOKey:Sfx = new Sfx(sndKey);
+	private static var sndKey:Sound;
+	public static var sndOKey:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/In The Beginning.mp3"))
-	private static var sndMenu:Class<Dynamic>;
-	public static var sndOMenu:Sfx = new Sfx(sndMenu);
+	private static var sndMenu:Sound;
+	public static var sndOMenu:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/A Warrior's Journey.mp3"))
-	private static var sndTheme:Class<Dynamic>;
-	public static var sndOTheme:Sfx = new Sfx(sndTheme);
+	private static var sndTheme:Sound;
+	public static var sndOTheme:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Warriors Don't Sleep.mp3"))
-	private static var sndThemeNight:Class<Dynamic>;
-	public static var sndOThemeNight:Sfx = new Sfx(sndThemeNight);
+	private static var sndThemeNight:Sound;
+	public static var sndOThemeNight:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/My Life's Purpose.mp3"))
-	private static var sndMyLifesPurpose:Class<Dynamic>;
-	public static var sndOMyLifesPurpose:Sfx = new Sfx(sndMyLifesPurpose);
+	private static var sndMyLifesPurpose:Sound;
+	public static var sndOMyLifesPurpose:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/The Watcher.mp3"))
-	private static var sndTheWatcher:Class<Dynamic>;
-	public static var sndOTheWatcher:Sfx = new Sfx(sndTheWatcher);
+	private static var sndTheWatcher:Sound;
+	public static var sndOTheWatcher:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/My First Dungeon.mp3"))
-	private static var sndMyFirstDungeon:Class<Dynamic>;
-	public static var sndOMyFirstDungeon:Sfx = new Sfx(sndMyFirstDungeon);
+	private static var sndMyFirstDungeon:Sound;
+	public static var sndOMyFirstDungeon:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Stuck In The Forest.mp3"))
-	private static var sndStuckInTheForest:Class<Dynamic>;
-	public static var sndOStuckInTheForest:Sfx = new Sfx(sndStuckInTheForest);
+	private static var sndStuckInTheForest:Sound;
+	public static var sndOStuckInTheForest:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Mysterious Magic.mp3"))
-	private static var sndMysteriousMagic:Class<Dynamic>;
-	public static var sndOMysteriousMagic:Sfx = new Sfx(sndMysteriousMagic);
+	private static var sndMysteriousMagic:Sound;
+	public static var sndOMysteriousMagic:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Cold Blooded.mp3"))
-	private static var sndColdBlooded:Class<Dynamic>;
-	public static var sndOColdBlooded:Sfx = new Sfx(sndColdBlooded);
+	private static var sndColdBlooded:Sound;
+	public static var sndOColdBlooded:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/How To Lose Your Shadow 101.mp3"))
-	private static var sndShadow:Class<Dynamic>;
-	public static var sndOShadow:Sfx = new Sfx(sndShadow);
+	private static var sndShadow:Sound;
+	public static var sndOShadow:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Lava Is Hot.mp3"))
-	private static var sndLavaIsHot:Class<Dynamic>;
-	public static var sndOLavaIsHot:Sfx = new Sfx(sndLavaIsHot);
+	private static var sndLavaIsHot:Sound;
+	public static var sndOLavaIsHot:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/The Sky.mp3"))
-	private static var sndTheSky:Class<Dynamic>;
-	public static var sndOTheSky:Sfx = new Sfx(sndTheSky);
+	private static var sndTheSky:Sound;
+	public static var sndOTheSky:Sfx;
 
-	@:meta(Embed(source = "../assets/sound/Fight Me Like A Boss.mp3"))
-	private static var sndBoss:Class<Dynamic>;
-	public static var sndOBoss:Sfx = new Sfx(sndBoss);
+	private static var sndBoss:Sound;
+	public static var sndOBoss:Sfx;
 
 	public static var songs:Array<Dynamic> = [
 		sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic,
@@ -293,7 +208,120 @@ class Music {
 	private static var fadeRate:Float = 0;
 	private static var crossover:Bool = false;
 
-	public function new() {}
+	private function load_audio_assets():Void {
+		sndSword1 = Assets.getSound("assets/sound/Sword1.mp3");
+		sndSword2 = Assets.getSound("assets/sound/Sword2.mp3");
+		sndSword3 = Assets.getSound("assets/sound/Sword3.mp3");
+		sndStab1 = Assets.getSound("assets/sound/Unapproved/stab1.mp3");
+		sndStab2 = Assets.getSound("assets/sound/Unapproved/stab2.mp3");
+		sndStab3 = Assets.getSound("assets/sound/Unapproved/stab3.mp3");
+		sndSplash1 = Assets.getSound("assets/sound/splash1.mp3");
+		sndSplash2 = Assets.getSound("assets/sound/splash2.mp3");
+		sndSwim1 = Assets.getSound("assets/sound/swim.mp3");
+		sndArrow1 = Assets.getSound("assets/sound/arrowLaunch.mp3");
+		sndArrow2 = Assets.getSound("assets/sound/arrowHit.mp3");
+		sndSwitch1 = Assets.getSound("assets/sound/switch.mp3");
+		sndEnemyHit1 = Assets.getSound("assets/sound/smallEnemyHit.mp3");
+		sndEnemyHit2 = Assets.getSound("assets/sound/bigEnemyHit.mp3");
+		sndMetal1 = Assets.getSound("assets/sound/metalHit.mp3");
+		sndEnemyHop1 = Assets.getSound("assets/sound/enemyhop.mp3");
+		sndEnemyHop2 = Assets.getSound("assets/sound/bigenemyhop.mp3");
+		sndChest1 = Assets.getSound("assets/sound/chest.mp3");
+		sndLock1 = Assets.getSound("assets/sound/bigLock.mp3");
+		sndRock1 = Assets.getSound("assets/sound/BigRockHit.mp3");
+		sndRock2 = Assets.getSound("assets/sound/rockcrumble.mp3");
+		sndDrill1 = Assets.getSound("assets/sound/drill.mp3");
+		sndEnergyBeam1 = Assets.getSound("assets/sound/energyBeam.mp3");
+		sndEnergyPulse1 = Assets.getSound("assets/sound/energyPulse.mp3");
+		sndExplosion1 = Assets.getSound("assets/sound/explosion.mp3");
+		sndEnemyFall1 = Assets.getSound("assets/sound/enemyfall.mp3");
+		sndPushRock1 = Assets.getSound("assets/sound/pushrock.mp3");
+		sndEnemyDie1 = Assets.getSound("assets/sound/smallenemydie.mp3");
+		sndRoom1 = Assets.getSound("assets/sound/nextroom.mp3");
+		sndRoom2 = Assets.getSound("assets/sound/upstairs.mp3");
+		sndRoom3 = Assets.getSound("assets/sound/downstairs.mp3");
+		sndRoom4 = Assets.getSound("assets/sound/Unapproved/teleport.mp3");
+		sndHurt1 = Assets.getSound("assets/sound/hurt.mp3");
+		sndGroundHit1 = Assets.getSound("assets/sound/groundhit.mp3");
+		sndGroundHit2 = Assets.getSound("assets/sound/groundhit2.mp3");
+		sndPlayerFall1 = Assets.getSound("assets/sound/playerfall.mp3");
+		sndBossDie1 = Assets.getSound("assets/sound/Unapproved/boss4die.mp3");
+		sndBossDie2 = Assets.getSound("assets/sound/Unapproved/boss4die2.mp3");
+		sndBossDie3 = Assets.getSound("assets/sound/Unapproved/boss6die.mp3");
+		sndBossDie4 = Assets.getSound("assets/sound/Unapproved/boss5rise.mp3");
+		sndBossDie5 = Assets.getSound("assets/sound/Unapproved/boss5die.mp3");
+		sndEnemyAttack1 = Assets.getSound("assets/sound/Unapproved/boss4beam.mp3");
+		sndEnemyAttack2 = Assets.getSound("assets/sound/Unapproved/boss4beam2.mp3");
+		sndEnemyAttack3 = Assets.getSound("assets/sound/Unapproved/boss4shoot.mp3");
+		sndEnemyAttack4 = Assets.getSound("assets/sound/Unapproved/enemyChomp.mp3");
+		sndBoss6Move1 = Assets.getSound("assets/sound/Unapproved/boss6move.mp3");
+		sndBoss6Move2 = Assets.getSound("assets/sound/Unapproved/boss6move1.mp3");
+		sndBoss6Move3 = Assets.getSound("assets/sound/Unapproved/boss6move2.mp3");
+		sndWandFire1 = Assets.getSound("assets/sound/wandfire.mp3");
+		sndWandFizzle1 = Assets.getSound("assets/sound/wandfizzle.mp3");
+		sndTurretShoot1 = Assets.getSound("assets/sound/Unapproved/turretFire.mp3");
+		sndWind1 = Assets.getSound("assets/sound/wind.mp3");
+		sndWind2 = Assets.getSound("assets/sound/ArcticWind.mp3");
+		sndBurn1 = Assets.getSound("assets/sound/TreeBurning.mp3");
+		sndPunch1 = Assets.getSound("assets/sound/punch.mp3");
+		sndTentacle1 = Assets.getSound("assets/sound/monstersplash.mp3");
+		sndFire1 = Assets.getSound("assets/sound/fireattack.mp3");
+		sndLava1 = Assets.getSound("assets/sound/LavaPunch.mp3");
+		sndLava2 = Assets.getSound("assets/sound/LavaClap.mp3");
+		sndLava3 = Assets.getSound("assets/sound/Pop.mp3");
+		sndLight1 = Assets.getSound("assets/sound/Light.mp3");
+		sndText1 = Assets.getSound("assets/sound/text.mp3");
+		sndText2 = Assets.getSound("assets/sound/Unapproved/textNext.mp3");
+		sndOther1 = Assets.getSound("assets/sound/Unapproved/boss4start.mp3");
+		sndOther2 = Assets.getSound("assets/sound/Unapproved/boss4walk.mp3");
+		sndOther3 = Assets.getSound("assets/sound/Unapproved/turretIceFire.mp3");
+		sndOther4 = Assets.getSound("assets/sound/Unapproved/ropeCut.mp3");
+		sndOther5 = Assets.getSound("assets/sound/Unapproved/crusher.mp3");
+		sndYesMaster = Assets.getSound("assets/sound/Yes, Master.mp3");
+		sndFoundIt = Assets.getSound("assets/sound/Found It!.mp3");
+		sndSealPiece = Assets.getSound("assets/sound/One Piece.mp3");
+		sndSeal = Assets.getSound("assets/sound/Of The Puzzle.mp3");
+		sndKey = Assets.getSound("assets/sound/The Key.mp3");
+		sndMenu = Assets.getSound("assets/sound/In The Beginning.mp3");
+		sndTheme = Assets.getSound("assets/sound/A Warrior's Journey.mp3");
+		sndThemeNight = Assets.getSound("assets/sound/Warriors Don't Sleep.mp3");
+		sndMyLifesPurpose = Assets.getSound("assets/sound/My Life's Purpose.mp3");
+		sndTheWatcher = Assets.getSound("assets/sound/The Watcher.mp3");
+		sndMyFirstDungeon = Assets.getSound("assets/sound/My First Dungeon.mp3");
+		sndStuckInTheForest = Assets.getSound("assets/sound/Stuck In The Forest.mp3");
+		sndMysteriousMagic = Assets.getSound("assets/sound/Mysterious Magic.mp3");
+		sndColdBlooded = Assets.getSound("assets/sound/Cold Blooded.mp3");
+		sndShadow = Assets.getSound("assets/sound/How To Lose Your Shadow 101.mp3");
+		sndLavaIsHot = Assets.getSound("assets/sound/Lava Is Hot.mp3");
+		sndTheSky = Assets.getSound("assets/sound/The Sky.mp3");
+		sndBoss = Assets.getSound("assets/sound/Fight Me Like A Boss.mp3");
+	}
+
+	private function initialize_audio_assets():Void {
+		sndOYesMaster = new Sfx(sndYesMaster);
+		sndOFoundIt = new Sfx(sndFoundIt);
+		sndOSealPiece = new Sfx(sndSealPiece);
+		sndOSeal = new Sfx(sndSeal);
+		sndOKey = new Sfx(sndKey);
+		sndOMenu = new Sfx(sndMenu);
+		sndOTheme = new Sfx(sndTheme);
+		sndOThemeNight = new Sfx(sndThemeNight);
+		sndOMyLifesPurpose = new Sfx(sndMyLifesPurpose);
+		sndOTheWatcher = new Sfx(sndTheWatcher);
+		sndOMyFirstDungeon = new Sfx(sndMyFirstDungeon);
+		sndOStuckInTheForest = new Sfx(sndStuckInTheForest);
+		sndOMysteriousMagic = new Sfx(sndMysteriousMagic);
+		sndOColdBlooded = new Sfx(sndColdBlooded);
+		sndOShadow = new Sfx(sndShadow);
+		sndOLavaIsHot = new Sfx(sndLavaIsHot);
+		sndOTheSky = new Sfx(sndTheSky);
+		sndOBoss = new Sfx(sndBoss);
+	}
+
+	public function new() {
+		load_audio_assets();
+		initialize_audio_assets();
+	}
 
 	public static function begin():Void // called by Main
 	{

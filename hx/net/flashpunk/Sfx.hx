@@ -30,13 +30,8 @@ class Sfx {
 	 * @param	source		The embedded sound class to use.
 	 * @param	complete	Optional callback function for when the sound finishes playing.
 	 */
-	public function new(source:Class<Dynamic>, complete:Function = null) {
-		_sound = _sounds[source];
-		if (_sound == null) {
-			var new_sound = Type.createInstance(source, []);
-			_sound = new_sound;
-			_sounds[source] = new_sound;
-		}
+	public function new(source:Sound, complete:Function = null) {
+		_sound = source;
 		this.complete = complete;
 	}
 

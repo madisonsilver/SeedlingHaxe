@@ -34,12 +34,12 @@ class Screen {
 	 */
 	public function new() {
 		// create screen buffers
-		Reflect.setField(_bitmap, Std.string(0), new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER));
-		Reflect.setField(_bitmap, Std.string(1), new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER));
+		_bitmap[0] = new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER);
+		_bitmap[1] = new Bitmap(new BitmapData(FP.width, FP.height, false, 0), PixelSnapping.NEVER);
 		FP.engine.addChild(_sprite);
-		_sprite.addChild(Reflect.field(_bitmap, Std.string(0))).visible = true;
-		_sprite.addChild(Reflect.field(_bitmap, Std.string(1))).visible = false;
-		FP.buffer = Reflect.field(_bitmap, Std.string(0)).bitmapData;
+		_sprite.addChild(_bitmap[0]).visible = true;
+		_sprite.addChild(_bitmap[1]).visible = false;
+		FP.buffer = _bitmap[0].bitmapData;
 		_width = FP.width;
 		_height = FP.height;
 		update();
@@ -50,7 +50,7 @@ class Screen {
 	 */
 	public function swap():Void {
 		_current = 1 - _current;
-		FP.buffer = Reflect.field(_bitmap, Std.string(_current)).bitmapData;
+		FP.buffer = _bitmap[_current].bitmapData;
 	}
 
 	/**
@@ -66,8 +66,8 @@ class Screen {
 	 */
 	public function redraw():Void // refresh the buffers
 	{
-		Reflect.setField(Reflect.field(_bitmap, Std.string(_current)), "visible", true);
-		Reflect.setField(Reflect.field(_bitmap, Std.string(1 - _current)), "visible", false);
+		_bitmap[_current].visible = true;
+		_bitmap[1 - _current].visible = false;
 	}
 
 	/** @private Re-applies transformation matrix. */
@@ -230,12 +230,11 @@ class Screen {
 	 * Whether screen smoothing should be used or not.
 	 */
 	private function get_smoothing():Bool {
-		return Reflect.field(_bitmap, Std.string(0)).smoothing;
+		return _bitmap[0].smoothing;
 	}
 
 	private function set_smoothing(value:Bool):Bool {
-		Reflect.setField(Reflect.field(_bitmap, Std.string(1)), "smoothing", value);
-		Reflect.setField(Reflect.field(_bitmap, Std.string(1)), "smoothing", value);
+		_bitmap[0].smoothing = _bitmap[1].smoothing = value;
 		return value;
 	}
 

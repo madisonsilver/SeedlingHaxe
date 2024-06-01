@@ -318,13 +318,13 @@ class Music {
 		sndOBoss = new Sfx(sndBoss);
 	}
 
-	public function new() {
-		load_audio_assets();
-		initialize_audio_assets();
-	}
+	public function new() {}
 
 	public static function begin():Void // called by Main
 	{
+		load_audio_assets();
+		initialize_audio_assets();
+
 		sounds["Sword"] = soundSwords;
 		sounds["Stab"] = soundStabs;
 		sounds["Splash"] = soundSplash;

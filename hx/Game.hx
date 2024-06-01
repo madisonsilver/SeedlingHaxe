@@ -969,9 +969,6 @@ class Game extends World {
 	}
 
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
-		Music.load_audio_assets(); //TODO: This could very easily become a performance nightmare later on.  Probably also the wrong time to load it
-		Music.initialize_audio_assets();
-
 		// TODO: This has the potential to be slow when the Game object is recreated on death/loading.  Monitor performance and consider moving this to a "first time init" function.
 		load_level_assets();
 		load_image_assets();

@@ -59,251 +59,135 @@ class Game extends World {
 	public static var talkingText(get, set):String;
 	public static var cameraTarget(get, set):Point;
 
-	/*0  */ @:meta(Embed(source = "../assets/levels/OverWorld.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1:Class<Dynamic>;
-	/*1  */ @:meta(Embed(source = "../assets/levels/Building1.oel", mimeType = "application/octet-stream"))
-	public static var Building1:Class<Dynamic>;
+	public static var OverWorld1:String;
+	public static var Building1:String;
 
-	/*2  */ @:meta(Embed(source = "../assets/levels/Dungeon1/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_Entrance:Class<Dynamic>;
-	/*3  */ @:meta(Embed(source = "../assets/levels/Dungeon1/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_1:Class<Dynamic>;
-	/*4  */ @:meta(Embed(source = "../assets/levels/Dungeon1/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_2:Class<Dynamic>;
-	/*5  */ @:meta(Embed(source = "../assets/levels/Dungeon1/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_3:Class<Dynamic>;
-	/*6  */ @:meta(Embed(source = "../assets/levels/Dungeon1/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_4:Class<Dynamic>;
-	/*7  */ @:meta(Embed(source = "../assets/levels/Dungeon1/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_5:Class<Dynamic>;
-	/*8  */ @:meta(Embed(source = "../assets/levels/Dungeon1/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_6:Class<Dynamic>;
-	/*9  */ @:meta(Embed(source = "../assets/levels/Dungeon1/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_7:Class<Dynamic>;
-	/*10 */ @:meta(Embed(source = "../assets/levels/Dungeon1/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_8:Class<Dynamic>;
-	/*11 */ @:meta(Embed(source = "../assets/levels/Dungeon1/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon1_9:Class<Dynamic>;
+	public static var Dungeon1_Entrance:String;
+	public static var Dungeon1_1:String;
+	public static var Dungeon1_2:String;
+	public static var Dungeon1_3:String;
+	public static var Dungeon1_4:String;
+	public static var Dungeon1_5:String;
+	public static var Dungeon1_6:String;
+	public static var Dungeon1_7:String;
+	public static var Dungeon1_8:String;
+	public static var Dungeon1_9:String;
 
-	/*12 */ @:meta(Embed(source = "../assets/levels/OverWorld/region1.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_1:Class<Dynamic>;
+	public static var OverWorld1_1:String;
 
-	/*13 */ @:meta(Embed(source = "../assets/levels/Dungeon2/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_Entrance:Class<Dynamic>;
-	/*14 */ @:meta(Embed(source = "../assets/levels/Dungeon2/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_1:Class<Dynamic>;
-	/*15 */ @:meta(Embed(source = "../assets/levels/Dungeon2/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_2:Class<Dynamic>;
-	/*16 */ @:meta(Embed(source = "../assets/levels/Dungeon2/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_3:Class<Dynamic>;
-	/*17 */ @:meta(Embed(source = "../assets/levels/Dungeon2/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_4:Class<Dynamic>;
-	/*18 */ @:meta(Embed(source = "../assets/levels/Dungeon2/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_5:Class<Dynamic>;
-	/*19 */ @:meta(Embed(source = "../assets/levels/Dungeon2/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_Boss:Class<Dynamic>;
-	/*20 */ @:meta(Embed(source = "../assets/levels/Dungeon2/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon2_7:Class<Dynamic>;
+	public static var Dungeon2_Entrance:String;
+	public static var Dungeon2_1:String;
+	public static var Dungeon2_2:String;
+	public static var Dungeon2_3:String;
+	public static var Dungeon2_4:String;
+	public static var Dungeon2_5:String;
+	public static var Dungeon2_Boss:String;
+	public static var Dungeon2_7:String;
 
-	/*21 */ @:meta(Embed(source = "../assets/levels/Dungeon3/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_Entrance:Class<Dynamic>;
-	/*22 */ @:meta(Embed(source = "../assets/levels/Dungeon3/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_1:Class<Dynamic>;
-	/*23 */ @:meta(Embed(source = "../assets/levels/Dungeon3/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_2:Class<Dynamic>;
-	/*24 */ @:meta(Embed(source = "../assets/levels/Dungeon3/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_3:Class<Dynamic>;
-	/*25 */ @:meta(Embed(source = "../assets/levels/Dungeon3/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_4:Class<Dynamic>;
-	/*26 */ @:meta(Embed(source = "../assets/levels/Dungeon3/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_5:Class<Dynamic>;
-	/*27 */ @:meta(Embed(source = "../assets/levels/Dungeon3/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_6:Class<Dynamic>;
-	/*28 */ @:meta(Embed(source = "../assets/levels/Dungeon3/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_7:Class<Dynamic>;
-	/*29 */ @:meta(Embed(source = "../assets/levels/Dungeon3/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_8:Class<Dynamic>;
-	/*30 */ @:meta(Embed(source = "../assets/levels/Dungeon3/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_9:Class<Dynamic>;
-	/*31 */ @:meta(Embed(source = "../assets/levels/Dungeon3/10.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_10:Class<Dynamic>;
-	/*32 */ @:meta(Embed(source = "../assets/levels/Dungeon3/11.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon3_Boss:Class<Dynamic>;
+	public static var Dungeon3_Entrance:String;
+	public static var Dungeon3_1:String;
+	public static var Dungeon3_2:String;
+	public static var Dungeon3_3:String;
+	public static var Dungeon3_4:String;
+	public static var Dungeon3_5:String;
+	public static var Dungeon3_6:String;
+	public static var Dungeon3_7:String;
+	public static var Dungeon3_8:String;
+	public static var Dungeon3_9:String;
+	public static var Dungeon3_10:String;
+	public static var Dungeon3_Boss:String;
 
-	/*33 */ @:meta(Embed(source = "../assets/levels/OverWorld/witchhut.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_witchhut:Class<Dynamic>;
-	/*34 */ @:meta(Embed(source = "../assets/levels/OverWorld/barhouse.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_barhouse:Class<Dynamic>;
-	/*35 */ @:meta(Embed(source = "../assets/levels/OverWorld/blandashurmin.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_blandashurmin:Class<Dynamic>;
-	/*36 */ @:meta(Embed(source = "../assets/levels/OverWorld/intree.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_intree:Class<Dynamic>;
-	/*37 */ @:meta(Embed(source = "../assets/levels/OverWorld/region2.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_2:Class<Dynamic>;
+	public static var OverWorld1_witchhut:String;
+	public static var OverWorld1_barhouse:String;
+	public static var OverWorld1_blandashurmin:String;
+	public static var OverWorld1_intree:String;
+	public static var OverWorld1_2:String;
 
-	/*38 */ @:meta(Embed(source = "../assets/levels/Dungeon4/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_Entrance:Class<Dynamic>;
-	/*39 */ @:meta(Embed(source = "../assets/levels/Dungeon4/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_1:Class<Dynamic>;
-	/*40 */ @:meta(Embed(source = "../assets/levels/Dungeon4/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_2:Class<Dynamic>;
-	/*41 */ @:meta(Embed(source = "../assets/levels/Dungeon4/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_3:Class<Dynamic>;
-	/*42 */ @:meta(Embed(source = "../assets/levels/Dungeon4/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_4:Class<Dynamic>;
-	/*43 */ @:meta(Embed(source = "../assets/levels/Dungeon4/Boss.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon4_Boss:Class<Dynamic>;
+	public static var Dungeon4_Entrance:String;
+	public static var Dungeon4_1:String;
+	public static var Dungeon4_2:String;
+	public static var Dungeon4_3:String;
+	public static var Dungeon4_4:String;
+	public static var Dungeon4_Boss:String;
 
-	/*44 */ @:meta(Embed(source = "../assets/levels/OverWorld/region3.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_3:Class<Dynamic>;
+	public static var OverWorld1_3:String;
 
-	/*45 */ @:meta(Embed(source = "../assets/levels/Dungeon5/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_Entrance:Class<Dynamic>;
-	/*46 */ @:meta(Embed(source = "../assets/levels/Dungeon5/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_1:Class<Dynamic>;
-	/*47 */ @:meta(Embed(source = "../assets/levels/Dungeon5/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_2:Class<Dynamic>;
-	/*48 */ @:meta(Embed(source = "../assets/levels/Dungeon5/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_3:Class<Dynamic>;
-	/*49 */ @:meta(Embed(source = "../assets/levels/Dungeon5/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_4:Class<Dynamic>;
-	/*50 */ @:meta(Embed(source = "../assets/levels/Dungeon5/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_5:Class<Dynamic>;
-	/*51 */ @:meta(Embed(source = "../assets/levels/Dungeon5/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_6:Class<Dynamic>;
-	/*52 */ @:meta(Embed(source = "../assets/levels/Dungeon5/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_7:Class<Dynamic>;
-	/*53 */ @:meta(Embed(source = "../assets/levels/Dungeon5/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_8:Class<Dynamic>;
-	/*54 */ @:meta(Embed(source = "../assets/levels/Dungeon5/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_9:Class<Dynamic>;
-	/*55 */ @:meta(Embed(source = "../assets/levels/Dungeon5/10.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_10:Class<Dynamic>;
-	/*56 */ @:meta(Embed(source = "../assets/levels/Dungeon5/11.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_11:Class<Dynamic>;
-	/*57 */ @:meta(Embed(source = "../assets/levels/Dungeon5/Boss.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_Boss:Class<Dynamic>;
-	/*58 */ @:meta(Embed(source = "../assets/levels/Dungeon5/DeadBoss.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon5_DeadBoss:Class<Dynamic>;
+	public static var Dungeon5_Entrance:String;
+	public static var Dungeon5_1:String;
+	public static var Dungeon5_2:String;
+	public static var Dungeon5_3:String;
+	public static var Dungeon5_4:String;
+	public static var Dungeon5_5:String;
+	public static var Dungeon5_6:String;
+	public static var Dungeon5_7:String;
+	public static var Dungeon5_8:String;
+	public static var Dungeon5_9:String;
+	public static var Dungeon5_10:String;
+	public static var Dungeon5_11:String;
+	public static var Dungeon5_Boss:String;
+	public static var Dungeon5_DeadBoss:String;
 
-	/*59 */ @:meta(Embed(source = "../assets/levels/Dungeon6/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_Entrance:Class<Dynamic>;
-	/*60 */ @:meta(Embed(source = "../assets/levels/Dungeon6/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_1:Class<Dynamic>;
-	/*61 */ @:meta(Embed(source = "../assets/levels/Dungeon6/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_2:Class<Dynamic>;
-	/*62 */ @:meta(Embed(source = "../assets/levels/Dungeon6/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_3:Class<Dynamic>;
-	/*63 */ @:meta(Embed(source = "../assets/levels/Dungeon6/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_4:Class<Dynamic>;
-	/*64 */ @:meta(Embed(source = "../assets/levels/Dungeon6/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_5:Class<Dynamic>;
-	/*65 */ @:meta(Embed(source = "../assets/levels/Dungeon6/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_6:Class<Dynamic>;
-	/*66 */ @:meta(Embed(source = "../assets/levels/Dungeon6/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_7:Class<Dynamic>;
-	/*67 */ @:meta(Embed(source = "../assets/levels/Dungeon6/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_8:Class<Dynamic>;
-	/*68 */ @:meta(Embed(source = "../assets/levels/Dungeon6/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_9:Class<Dynamic>;
-	/*69 */ @:meta(Embed(source = "../assets/levels/Dungeon6/Boss.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_Boss:Class<Dynamic>;
-	/*70 */ @:meta(Embed(source = "../assets/levels/Dungeon6/10.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon6_10:Class<Dynamic>;
+	public static var Dungeon6_Entrance:String;
+	public static var Dungeon6_1:String;
+	public static var Dungeon6_2:String;
+	public static var Dungeon6_3:String;
+	public static var Dungeon6_4:String;
+	public static var Dungeon6_5:String;
+	public static var Dungeon6_6:String;
+	public static var Dungeon6_7:String;
+	public static var Dungeon6_8:String;
+	public static var Dungeon6_9:String;
+	public static var Dungeon6_Boss:String;
+	public static var Dungeon6_10:String;
 
-	/*71 */ @:meta(Embed(source = "../assets/levels/Dungeon7/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_Entrance:Class<Dynamic>;
-	/*72 */ @:meta(Embed(source = "../assets/levels/Dungeon7/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_1:Class<Dynamic>;
-	/*73 */ @:meta(Embed(source = "../assets/levels/Dungeon7/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_2:Class<Dynamic>;
-	/*74 */ @:meta(Embed(source = "../assets/levels/Dungeon7/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_3:Class<Dynamic>;
-	/*75 */ @:meta(Embed(source = "../assets/levels/Dungeon7/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_4:Class<Dynamic>;
-	/*76 */ @:meta(Embed(source = "../assets/levels/Dungeon7/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_5:Class<Dynamic>;
-	/*77 */ @:meta(Embed(source = "../assets/levels/Dungeon7/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_6:Class<Dynamic>;
-	/*78 */ @:meta(Embed(source = "../assets/levels/Dungeon7/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_7:Class<Dynamic>;
-	/*79 */ @:meta(Embed(source = "../assets/levels/Dungeon7/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_8:Class<Dynamic>;
-	/*80 */ @:meta(Embed(source = "../assets/levels/Dungeon7/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_9:Class<Dynamic>;
-	/*81 */ @:meta(Embed(source = "../assets/levels/Dungeon7/10.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_10:Class<Dynamic>;
-	/*82 */ @:meta(Embed(source = "../assets/levels/Dungeon7/Boss.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_Boss:Class<Dynamic>;
+	public static var Dungeon7_Entrance:String;
+	public static var Dungeon7_1:String;
+	public static var Dungeon7_2:String;
+	public static var Dungeon7_3:String;
+	public static var Dungeon7_4:String;
+	public static var Dungeon7_5:String;
+	public static var Dungeon7_6:String;
+	public static var Dungeon7_7:String;
+	public static var Dungeon7_8:String;
+	public static var Dungeon7_9:String;
+	public static var Dungeon7_10:String;
+	public static var Dungeon7_Boss:String;
 
-	/*83 */ @:meta(Embed(source = "../assets/levels/OverWorld/fallhole.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_fallhole:Class<Dynamic>;
-	/*84 */ @:meta(Embed(source = "../assets/levels/OverWorld/fallhole1.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_fallhole1:Class<Dynamic>;
-	/*85 */ @:meta(Embed(source = "../assets/levels/OverWorld/d7entrance.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_d7entrance:Class<Dynamic>;
-	/*86 */ @:meta(Embed(source = "../assets/levels/OverWorld/house.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_house:Class<Dynamic>;
-	/*87 */ @:meta(Embed(source = "../assets/levels/OverWorld/region4.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_4:Class<Dynamic>;
-	/*88 */ @:meta(Embed(source = "../assets/levels/OverWorld/region5.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_5:Class<Dynamic>;
-	/*89 */ @:meta(Embed(source = "../assets/levels/OverWorld/region6.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld1_6:Class<Dynamic>;
-	/*90 */ @:meta(Embed(source = "../assets/levels/OverWorld/waterfallcave.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_waterfallcave:Class<Dynamic>;
-	/*91 */ @:meta(Embed(source = "../assets/levels/OverWorld/mountain.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_mountain:Class<Dynamic>;
-	/*92 */ @:meta(Embed(source = "../assets/levels/OverWorld/mountain1.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_mountain1:Class<Dynamic>;
-	/*93 */ @:meta(Embed(source = "../assets/levels/OverWorld/finalboss.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_finalboss:Class<Dynamic>;
-	/*94 */ @:meta(Embed(source = "../assets/levels/OverWorld/treelarge.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_treelarge:Class<Dynamic>;
-	/*95 */ @:meta(Embed(source = "../assets/levels/OverWorld/d6entrance.oel", mimeType = "application/octet-stream"))
-	public static var OverWorld_d6entrance:Class<Dynamic>;
-	/*96 */ @:meta(Embed(source = "../assets/levels/Dungeon7/11.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_11:Class<Dynamic>;
-	/*97 */ @:meta(Embed(source = "../assets/levels/Dungeon7/12.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon7_12:Class<Dynamic>;
+	public static var OverWorld_fallhole:String;
+	public static var OverWorld_fallhole1:String;
+	public static var OverWorld_d7entrance:String;
+	public static var OverWorld_house:String;
+	public static var OverWorld1_4:String;
+	public static var OverWorld1_5:String;
+	public static var OverWorld1_6:String;
+	public static var OverWorld_waterfallcave:String;
+	public static var OverWorld_mountain:String;
+	public static var OverWorld_mountain1:String;
+	public static var OverWorld_finalboss:String;
+	public static var OverWorld_treelarge:String;
+	public static var OverWorld_d6entrance:String;
+	public static var Dungeon7_11:String;
+	public static var Dungeon7_12:String;
 
-	/*98 */ @:meta(Embed(source = "../assets/levels/Dungeon8/Entrance.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_Entrance:Class<Dynamic>;
-	/*99 */ @:meta(Embed(source = "../assets/levels/Dungeon8/1.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_1:Class<Dynamic>;
-	/*100*/ @:meta(Embed(source = "../assets/levels/Dungeon8/2.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_2:Class<Dynamic>;
-	/*101*/ @:meta(Embed(source = "../assets/levels/Dungeon8/3.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_3:Class<Dynamic>;
-	/*102*/ @:meta(Embed(source = "../assets/levels/Dungeon8/4.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_4:Class<Dynamic>;
-	/*103*/ @:meta(Embed(source = "../assets/levels/Dungeon8/5.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_5:Class<Dynamic>;
-	/*104*/ @:meta(Embed(source = "../assets/levels/Dungeon8/6.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_6:Class<Dynamic>;
-	/*105*/ @:meta(Embed(source = "../assets/levels/Dungeon8/7.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_7:Class<Dynamic>;
-	/*106*/ @:meta(Embed(source = "../assets/levels/Dungeon8/8.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_8:Class<Dynamic>;
-	/*107*/ @:meta(Embed(source = "../assets/levels/Dungeon8/9.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_9:Class<Dynamic>;
-	/*108*/ @:meta(Embed(source = "../assets/levels/Dungeon8/10.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_10:Class<Dynamic>;
-	/*109*/ @:meta(Embed(source = "../assets/levels/Dungeon8/11.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_11:Class<Dynamic>;
-	/*110*/ @:meta(Embed(source = "../assets/levels/Dungeon8/12.oel", mimeType = "application/octet-stream"))
-	public static var Dungeon8_12:Class<Dynamic>;
+	public static var Dungeon8_Entrance:String;
+	public static var Dungeon8_1:String;
+	public static var Dungeon8_2:String;
+	public static var Dungeon8_3:String;
+	public static var Dungeon8_4:String;
+	public static var Dungeon8_5:String;
+	public static var Dungeon8_6:String;
+	public static var Dungeon8_7:String;
+	public static var Dungeon8_8:String;
+	public static var Dungeon8_9:String;
+	public static var Dungeon8_10:String;
+	public static var Dungeon8_11:String;
+	public static var Dungeon8_12:String;
 
-	/*111*/ @:meta(Embed(source = "../assets/levels/End/1.oel", mimeType = "application/octet-stream"))
-	public static var End_1:Class<Dynamic>;
-	/*112*/ @:meta(Embed(source = "../assets/levels/End/Boss.oel", mimeType = "application/octet-stream"))
-	public static var End_Boss:Class<Dynamic>;
-	/*113*/ @:meta(Embed(source = "../assets/levels/End/2.oel", mimeType = "application/octet-stream"))
-	public static var End_2:Class<Dynamic>;
-	/*114*/ @:meta(Embed(source = "../assets/levels/End/3.oel", mimeType = "application/octet-stream"))
-	public static var End_3:Class<Dynamic>;
-	/*115*/ @:meta(Embed(source = "../assets/levels/End/4.oel", mimeType = "application/octet-stream"))
-	public static var End_4:Class<Dynamic>;
+	public static var End_1:String;
+	public static var End_Boss:String;
+	public static var End_2:String;
+	public static var End_3:String;
+	public static var End_4:String;
 
 	public static var levels:Array<Dynamic> = [
 		OverWorld1, Building1, Dungeon1_Entrance, Dungeon1_1, Dungeon1_2, Dungeon1_3, Dungeon1_4, Dungeon1_5, Dungeon1_6, Dungeon1_7, Dungeon1_8, Dungeon1_9,
@@ -982,7 +866,127 @@ class Game extends World {
 		sprBossKey4 = new Spritemap(imgBossKey4, 12, 16);
 	}
 
+	private function load_level_assets():Void {
+		OverWorld1 = Assets.getText("assets/levels/OverWorld.oel");
+		Building1 = Assets.getText("assets/levels/Building1.oel");
+		Dungeon1_Entrance = Assets.getText("assets/levels/Dungeon1/Entrance.oel");
+		Dungeon1_1 = Assets.getText("assets/levels/Dungeon1/1.oel");
+		Dungeon1_2 = Assets.getText("assets/levels/Dungeon1/2.oel");
+		Dungeon1_3 = Assets.getText("assets/levels/Dungeon1/3.oel");
+		Dungeon1_4 = Assets.getText("assets/levels/Dungeon1/4.oel");
+		Dungeon1_5 = Assets.getText("assets/levels/Dungeon1/5.oel");
+		Dungeon1_6 = Assets.getText("assets/levels/Dungeon1/6.oel");
+		Dungeon1_7 = Assets.getText("assets/levels/Dungeon1/7.oel");
+		Dungeon1_8 = Assets.getText("assets/levels/Dungeon1/8.oel");
+		Dungeon1_9 = Assets.getText("assets/levels/Dungeon1/9.oel");
+		OverWorld1_1 = Assets.getText("assets/levels/OverWorld/region1.oel");
+		Dungeon2_Entrance = Assets.getText("assets/levels/Dungeon2/Entrance.oel");
+		Dungeon2_1 = Assets.getText("assets/levels/Dungeon2/1.oel");
+		Dungeon2_2 = Assets.getText("assets/levels/Dungeon2/2.oel");
+		Dungeon2_3 = Assets.getText("assets/levels/Dungeon2/3.oel");
+		Dungeon2_4 = Assets.getText("assets/levels/Dungeon2/4.oel");
+		Dungeon2_5 = Assets.getText("assets/levels/Dungeon2/5.oel");
+		Dungeon2_Boss = Assets.getText("assets/levels/Dungeon2/6.oel");
+		Dungeon2_7 = Assets.getText("assets/levels/Dungeon2/7.oel");
+		Dungeon3_Entrance = Assets.getText("assets/levels/Dungeon3/Entrance.oel");
+		Dungeon3_1 = Assets.getText("assets/levels/Dungeon3/1.oel");
+		Dungeon3_2 = Assets.getText("assets/levels/Dungeon3/2.oel");
+		Dungeon3_3 = Assets.getText("assets/levels/Dungeon3/3.oel");
+		Dungeon3_4 = Assets.getText("assets/levels/Dungeon3/4.oel");
+		Dungeon3_5 = Assets.getText("assets/levels/Dungeon3/5.oel");
+		Dungeon3_6 = Assets.getText("assets/levels/Dungeon3/6.oel");
+		Dungeon3_7 = Assets.getText("assets/levels/Dungeon3/7.oel");
+		Dungeon3_8 = Assets.getText("assets/levels/Dungeon3/8.oel");
+		Dungeon3_9 = Assets.getText("assets/levels/Dungeon3/9.oel");
+		Dungeon3_10 = Assets.getText("assets/levels/Dungeon3/10.oel");
+		Dungeon3_Boss = Assets.getText("assets/levels/Dungeon3/11.oel");
+		OverWorld1_witchhut = Assets.getText("assets/levels/OverWorld/witchhut.oel");
+		OverWorld1_barhouse = Assets.getText("assets/levels/OverWorld/barhouse.oel");
+		OverWorld1_blandashurmin = Assets.getText("assets/levels/OverWorld/blandashurmin.oel");
+		OverWorld1_intree = Assets.getText("assets/levels/OverWorld/intree.oel");
+		OverWorld1_2 = Assets.getText("assets/levels/OverWorld/region2.oel");
+		Dungeon4_Entrance = Assets.getText("assets/levels/Dungeon4/Entrance.oel");
+		Dungeon4_1 = Assets.getText("assets/levels/Dungeon4/1.oel");
+		Dungeon4_2 = Assets.getText("assets/levels/Dungeon4/2.oel");
+		Dungeon4_3 = Assets.getText("assets/levels/Dungeon4/3.oel");
+		Dungeon4_4 = Assets.getText("assets/levels/Dungeon4/4.oel");
+		Dungeon4_Boss = Assets.getText("assets/levels/Dungeon4/Boss.oel");
+		OverWorld1_3 = Assets.getText("assets/levels/OverWorld/region3.oel");
+		Dungeon5_Entrance = Assets.getText("assets/levels/Dungeon5/Entrance.oel");
+		Dungeon5_1 = Assets.getText("assets/levels/Dungeon5/1.oel");
+		Dungeon5_2 = Assets.getText("assets/levels/Dungeon5/2.oel");
+		Dungeon5_3 = Assets.getText("assets/levels/Dungeon5/3.oel");
+		Dungeon5_4 = Assets.getText("assets/levels/Dungeon5/4.oel");
+		Dungeon5_5 = Assets.getText("assets/levels/Dungeon5/5.oel");
+		Dungeon5_6 = Assets.getText("assets/levels/Dungeon5/6.oel");
+		Dungeon5_7 = Assets.getText("assets/levels/Dungeon5/7.oel");
+		Dungeon5_8 = Assets.getText("assets/levels/Dungeon5/8.oel");
+		Dungeon5_9 = Assets.getText("assets/levels/Dungeon5/9.oel");
+		Dungeon5_10 = Assets.getText("assets/levels/Dungeon5/10.oel");
+		Dungeon5_11 = Assets.getText("assets/levels/Dungeon5/11.oel");
+		Dungeon5_Boss = Assets.getText("assets/levels/Dungeon5/Boss.oel");
+		Dungeon5_DeadBoss = Assets.getText("assets/levels/Dungeon5/DeadBoss.oel");
+		Dungeon6_Entrance = Assets.getText("assets/levels/Dungeon6/Entrance.oel");
+		Dungeon6_1 = Assets.getText("assets/levels/Dungeon6/1.oel");
+		Dungeon6_2 = Assets.getText("assets/levels/Dungeon6/2.oel");
+		Dungeon6_3 = Assets.getText("assets/levels/Dungeon6/3.oel");
+		Dungeon6_4 = Assets.getText("assets/levels/Dungeon6/4.oel");
+		Dungeon6_5 = Assets.getText("assets/levels/Dungeon6/5.oel");
+		Dungeon6_6 = Assets.getText("assets/levels/Dungeon6/6.oel");
+		Dungeon6_7 = Assets.getText("assets/levels/Dungeon6/7.oel");
+		Dungeon6_8 = Assets.getText("assets/levels/Dungeon6/8.oel");
+		Dungeon6_9 = Assets.getText("assets/levels/Dungeon6/9.oel");
+		Dungeon6_Boss = Assets.getText("assets/levels/Dungeon6/Boss.oel");
+		Dungeon6_10 = Assets.getText("assets/levels/Dungeon6/10.oel");
+		Dungeon7_Entrance = Assets.getText("assets/levels/Dungeon7/Entrance.oel");
+		Dungeon7_1 = Assets.getText("assets/levels/Dungeon7/1.oel");
+		Dungeon7_2 = Assets.getText("assets/levels/Dungeon7/2.oel");
+		Dungeon7_3 = Assets.getText("assets/levels/Dungeon7/3.oel");
+		Dungeon7_4 = Assets.getText("assets/levels/Dungeon7/4.oel");
+		Dungeon7_5 = Assets.getText("assets/levels/Dungeon7/5.oel");
+		Dungeon7_6 = Assets.getText("assets/levels/Dungeon7/6.oel");
+		Dungeon7_7 = Assets.getText("assets/levels/Dungeon7/7.oel");
+		Dungeon7_8 = Assets.getText("assets/levels/Dungeon7/8.oel");
+		Dungeon7_9 = Assets.getText("assets/levels/Dungeon7/9.oel");
+		Dungeon7_10 = Assets.getText("assets/levels/Dungeon7/10.oel");
+		Dungeon7_Boss = Assets.getText("assets/levels/Dungeon7/Boss.oel");
+		OverWorld_fallhole = Assets.getText("assets/levels/OverWorld/fallhole.oel");
+		OverWorld_fallhole1 = Assets.getText("assets/levels/OverWorld/fallhole1.oel");
+		OverWorld_d7entrance = Assets.getText("assets/levels/OverWorld/d7entrance.oel");
+		OverWorld_house = Assets.getText("assets/levels/OverWorld/house.oel");
+		OverWorld1_4 = Assets.getText("assets/levels/OverWorld/region4.oel");
+		OverWorld1_5 = Assets.getText("assets/levels/OverWorld/region5.oel");
+		OverWorld1_6 = Assets.getText("assets/levels/OverWorld/region6.oel");
+		OverWorld_waterfallcave = Assets.getText("assets/levels/OverWorld/waterfallcave.oel");
+		OverWorld_mountain = Assets.getText("assets/levels/OverWorld/mountain.oel");
+		OverWorld_mountain1 = Assets.getText("assets/levels/OverWorld/mountain1.oel");
+		OverWorld_finalboss = Assets.getText("assets/levels/OverWorld/finalboss.oel");
+		OverWorld_treelarge = Assets.getText("assets/levels/OverWorld/treelarge.oel");
+		OverWorld_d6entrance = Assets.getText("assets/levels/OverWorld/d6entrance.oel");
+		Dungeon7_11 = Assets.getText("assets/levels/Dungeon7/11.oel");
+		Dungeon7_12 = Assets.getText("assets/levels/Dungeon7/12.oel");
+		Dungeon8_Entrance = Assets.getText("assets/levels/Dungeon8/Entrance.oel");
+		Dungeon8_1 = Assets.getText("assets/levels/Dungeon8/1.oel");
+		Dungeon8_2 = Assets.getText("assets/levels/Dungeon8/2.oel");
+		Dungeon8_3 = Assets.getText("assets/levels/Dungeon8/3.oel");
+		Dungeon8_4 = Assets.getText("assets/levels/Dungeon8/4.oel");
+		Dungeon8_5 = Assets.getText("assets/levels/Dungeon8/5.oel");
+		Dungeon8_6 = Assets.getText("assets/levels/Dungeon8/6.oel");
+		Dungeon8_7 = Assets.getText("assets/levels/Dungeon8/7.oel");
+		Dungeon8_8 = Assets.getText("assets/levels/Dungeon8/8.oel");
+		Dungeon8_9 = Assets.getText("assets/levels/Dungeon8/9.oel");
+		Dungeon8_10 = Assets.getText("assets/levels/Dungeon8/10.oel");
+		Dungeon8_11 = Assets.getText("assets/levels/Dungeon8/11.oel");
+		Dungeon8_12 = Assets.getText("assets/levels/Dungeon8/12.oel");
+		End_1 = Assets.getText("assets/levels/End/1.oel");
+		End_Boss = Assets.getText("assets/levels/End/Boss.oel");
+		End_2 = Assets.getText("assets/levels/End/2.oel");
+		End_3 = Assets.getText("assets/levels/End/3.oel");
+		End_4 = Assets.getText("assets/levels/End/4.oel");
+	}
+
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
+		load_level_assets();
 		load_image_assets();
 		initialize_image_assets();
 		bossLocks = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];

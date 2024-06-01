@@ -32,16 +32,16 @@ class Inventory {
 	private static var imgTank:BitmapData;
 	private static var sprTank:Image;
 
-	public static var width:Int = sprInventory.width;
-	public static var height:Int = sprInventory.height;
+	public static var width:Int;
+	public static var height:Int;
 	public static var help:Bool = true;
 
 	private var _open:Bool;
 
 	private var movementDivisor(default, never):Int = 5;
 
-	public static var offsetMin:Point = new Point(-70, FP.screen.height / 2 - sprInventory.height / 2);
-	public static var offsetMax:Point = new Point(0, offsetMin.y);
+	public static var offsetMin:Point;
+	public static var offsetMax:Point;
 	public static var offset:Point = new Point();
 
 	private var itemOffset:Point = new Point(40, 24);
@@ -102,6 +102,11 @@ class Inventory {
 	public function new() {
 		initialize_image_assets();
 		load_image_assets();
+		width = sprInventory.width;
+		height = sprInventory.height;
+		offsetMin = new Point(-70, FP.screen.height / 2 - sprInventory.height / 2);
+		offsetMax = new Point(0, offsetMin.y);
+
 		scale = scaleMin;
 		textScale = [textScaleMin, textScaleMin];
 		offset.x = offsetMin.x;

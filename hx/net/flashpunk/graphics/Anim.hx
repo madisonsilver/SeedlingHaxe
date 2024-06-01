@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 /**
  * Template used by Spritemap to define animations. Don't create
@@ -19,6 +20,7 @@ class Anim {
 	 * @param	loop		If the animation should loop.
 	 */
 	public function new(name:String, frames:Array<Dynamic>, frameRate:Float = 0, loop:Bool = true) {
+
 		_name = name;
 		_frames = frames;
 		_frameRate = frameRate;

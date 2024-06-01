@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.errors.Error;
 import openfl.display.BitmapData;
@@ -28,6 +29,7 @@ class Tilemap extends Canvas {
 	 * @param	tileHeight		Tile height.
 	 */
 	public function new(tileset:Dynamic, width:Int, height:Int, tileWidth:Int, tileHeight:Int) {
+
 		// set some tilemap information
 		_width = as3hx.Compat.parseInt(width - (width % tileWidth));
 		_height = as3hx.Compat.parseInt(height - (height % tileHeight));

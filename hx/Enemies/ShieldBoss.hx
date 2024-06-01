@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -11,8 +12,7 @@ import scenery.Tile;
  * @author Time
  */
 class ShieldBoss extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/ShieldBoss.png"))
-	private var imgShieldBoss:Class<Dynamic>;
+private var imgShieldBoss:BitmapData;
 	private var sprShieldBoss:Spritemap;
 
 	private var tag:Int;
@@ -28,7 +28,11 @@ class ShieldBoss extends Enemy {
 
 	private var playedSound:Bool = false;
 
+private function load_image_assets():Void {
+imgShieldBoss = Assets.getBitmapData("assets/graphics/ShieldBoss.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprShieldBoss = new Spritemap(imgShieldBoss, 56, 80, endAnim);
 		super(Std.int(_x + Tile.w * 1.5), _y + Tile.h * 2, sprShieldBoss);
 		sprShieldBoss.centerOO();

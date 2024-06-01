@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.BitmapData;
 import openfl.geom.Point;

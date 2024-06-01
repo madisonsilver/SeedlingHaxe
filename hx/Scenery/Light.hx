@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.utils.Draw;
@@ -35,6 +36,7 @@ class Light extends Entity {
 	 * @param	_smooth	smoothens the animations between radius sizes.
 	 */
 	public function new(_x:Int, _y:Int, _f:Int = 1, _l:Int = 1, _c:Int = 0xFFFFFF, _smooth:Bool = false, _rmin:Int = 28, _rmax:Int = 32, _a:Float = 0.2) {
+
 		super(_x, _y);
 		color = _c;
 		radiusMax = _rmax;

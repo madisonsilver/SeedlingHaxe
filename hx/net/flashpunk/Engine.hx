@@ -1,4 +1,5 @@
 package net.flashpunk;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -31,6 +32,7 @@ class Engine extends MovieClip {
 	 * @param	fixed			If a fixed-framerate should be used.
 	 */
 	public function new(width:Int, height:Int, frameRate:Float = 60, fixed:Bool = false) {
+
 		super();
 		// global game properties
 		FP.width = width;

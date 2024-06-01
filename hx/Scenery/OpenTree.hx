@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.masks.Pixelmask;
 import openfl.geom.Point;
@@ -10,6 +11,7 @@ import net.flashpunk.FP;
  */
 class OpenTree extends Tree {
 	public function new(_x:Int, _y:Int) {
+
 		super(_x, _y);
 		active = true;
 	}

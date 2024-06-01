@@ -1,4 +1,5 @@
 package pickups;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -10,14 +11,17 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class GhostSword extends Pickup {
-	@:meta(Embed(source = "../../assets/graphics/GhostSwordPickup.png"))
-	private var imgGhostSword:Class<Dynamic>;
+private var imgGhostSword:BitmapData;
 	private var sprGhostSword:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
+private function load_image_assets():Void {
+imgGhostSword = Assets.getBitmapData("assets/graphics/GhostSwordPickup.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprGhostSword = new Spritemap(imgGhostSword, 24, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprGhostSword, null, false);
 		sprGhostSword.centerOO();

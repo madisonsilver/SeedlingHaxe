@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -11,8 +12,7 @@ import scenery.Tile;
  * @author Time
  */
 class Turret extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/Turret.png"))
-	private var imgTurret:Class<Dynamic>;
+private var imgTurret:BitmapData;
 	private var sprTurret:Spritemap;
 
 	private var attackAnimSpeed(default, never):Int = 10;
@@ -22,7 +22,11 @@ class Turret extends Enemy {
 	private var shootTimer:Int = 0;
 	private var shotSpeed(default, never):Int = 3;
 
+private function load_image_assets():Void {
+imgTurret = Assets.getBitmapData("assets/graphics/Turret.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprTurret = new Spritemap(imgTurret, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprTurret);
 

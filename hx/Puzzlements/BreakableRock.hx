@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
@@ -19,6 +20,7 @@ class BreakableRock extends Entity {
 	private var rockType:Int;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
+
 		super(_x + Tile.w / 2, _y + Tile.h / 2);
 
 		sprBreakableRock = new Spritemap(Assets.getBitmapData("assets/graphics/BreakableRock.png"), 16, 16, endAnim);

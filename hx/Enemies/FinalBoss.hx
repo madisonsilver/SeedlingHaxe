@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -17,11 +18,9 @@ import net.flashpunk.utils.Key;
  * @author Time
  */
 class FinalBoss extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/FinalBoss.png"))
-	private var imgFinalBoss:Class<Dynamic>;
+private var imgFinalBoss:BitmapData;
 	private var sprFinalBoss:Spritemap;
-	@:meta(Embed(source = "../../assets/graphics/NPCs/OwlPic.png"))
-	private var imgOwlPic:Class<Dynamic>;
+private var imgOwlPic:BitmapData;
 	private var sprOwlPic:Spritemap;
 
 	public var moveSpeed:Float = 1;
@@ -42,7 +41,12 @@ class FinalBoss extends Enemy {
 
 	private var started:Bool = false;
 
+private function load_image_assets():Void {
+imgFinalBoss = Assets.getBitmapData("assets/graphics/FinalBoss.png");
+imgOwlPic = Assets.getBitmapData("assets/graphics/NPCs/OwlPic.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprFinalBoss = new Spritemap(imgFinalBoss, 16, 16, endAnim);
 		sprOwlPic = new Spritemap(imgOwlPic, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFinalBoss);

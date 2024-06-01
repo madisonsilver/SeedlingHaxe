@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -13,8 +14,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class PushableBlockFire extends Mobile {
-	@:meta(Embed(source = "../../assets/graphics/PushableBlockFire.png"))
-	private var imgPushableBlockFire:Class<Dynamic>;
+private var imgPushableBlockFire:BitmapData;
 	private var sprPushableBlockFire:Spritemap;
 
 	private var moveSpeed(default, never):Float = 0.5;
@@ -23,7 +23,11 @@ class PushableBlockFire extends Mobile {
 
 	public var moveTypes:Array<Dynamic> = ["Fire", "Pulse"];
 
+private function load_image_assets():Void {
+imgPushableBlockFire = Assets.getBitmapData("assets/graphics/PushableBlockFire.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprPushableBlockFire = new Spritemap(imgPushableBlockFire, 16, 16);
 		super(_x, _y, sprPushableBlockFire);
 		sprPushableBlockFire.color = 0xFF0000;

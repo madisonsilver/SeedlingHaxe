@@ -1,4 +1,5 @@
 package net.flashpunk.tweens.motion;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import net.flashpunk.Tween;
@@ -25,6 +26,7 @@ class Motion extends Tween {
 	 * @param	ease		Optional easer function.
 	 */
 	public function new(duration:Float, complete:Function = null, type:Int = 0, ease:Function = null) {
+
 		super(duration, type, complete, ease);
 	}
 }

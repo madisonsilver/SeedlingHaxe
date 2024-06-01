@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 /*
 	import com.newgrounds.*;
 	import com.newgrounds.components.MedalPopup;
@@ -70,6 +71,7 @@ class Main extends Engine {
 	private static var SUBMITTED_BADGES:Bool = false;
 
 	public function new() {
+
 		super(160, 160, FPS);
 		begin();
 	}

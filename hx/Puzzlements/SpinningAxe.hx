@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -12,10 +13,8 @@ import scenery.Tile;
  * @author Time
  */
 class SpinningAxe extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/SpinningAxe.png"))
-	private var imgSpinningAxe:Class<Dynamic>;
-	@:meta(Embed(source = "../../assets/graphics/SpinningAxeRed.png"))
-	private var imgSpinningAxeRed:Class<Dynamic>;
+private var imgSpinningAxe:BitmapData;
+private var imgSpinningAxeRed:BitmapData;
 	private var sprSpinningAxe:Image;
 
 	private var length(default, never):Int = 32;
@@ -25,7 +24,12 @@ class SpinningAxe extends Entity {
 	private var force:Int = 5;
 	private var damage:Int = 1;
 
+private function load_image_assets():Void {
+imgSpinningAxe = Assets.getBitmapData("assets/graphics/SpinningAxe.png");
+imgSpinningAxeRed = Assets.getBitmapData("assets/graphics/SpinningAxeRed.png");
+}
 	public function new(_x:Int, _y:Int, _rate:Int, _colorType:Int = 0) {
+load_image_assets();
 		switch (_colorType) {
 			case 1:
 				sprSpinningAxe = new Image(imgSpinningAxeRed);

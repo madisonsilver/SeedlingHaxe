@@ -1,4 +1,5 @@
 package pickups;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.BossTotem;
 import net.flashpunk.FP;
@@ -12,8 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Wand extends Pickup {
-	@:meta(Embed(source = "../../assets/graphics/WandPickup.png"))
-	private var imgWandPickup:Class<Dynamic>;
+private var imgWandPickup:BitmapData;
 	private var sprWandPickup:Spritemap;
 
 	private var tag:Int;
@@ -24,7 +24,11 @@ class Wand extends Pickup {
 	// When this is picked up, it will activate any tset = 0 object in the room.
 	private var tset:Int = 0;
 
+private function load_image_assets():Void {
+imgWandPickup = Assets.getBitmapData("assets/graphics/WandPickup.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprWandPickup = new Spritemap(imgWandPickup, 5, 9);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprWandPickup, null, false);
 		sprWandPickup.centerOO();

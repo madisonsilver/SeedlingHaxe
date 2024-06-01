@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.LightBoss;
 import net.flashpunk.Entity;
@@ -13,13 +14,16 @@ import net.flashpunk.FP;
 class LightBossTotem extends Entity {
 	public var die(get, set):Bool;
 
-	@:meta(Embed(source = "../../assets/graphics/LightBossTotem.png"))
-	private var imgLightBossTotem:Class<Dynamic>;
+private var imgLightBossTotem:BitmapData;
 	private var sprLightBossTotem:Image;
 
 	private var _die:Bool = false;
 
+private function load_image_assets():Void {
+imgLightBossTotem = Assets.getBitmapData("assets/graphics/LightBossTotem.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprLightBossTotem = new Image(imgLightBossTotem);
 		super(_x, _y, sprLightBossTotem);
 		setHitbox(16, 16);

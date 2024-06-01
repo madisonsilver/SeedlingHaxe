@@ -1,4 +1,5 @@
 package net.flashpunk.masks;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.*;
 
@@ -21,6 +22,7 @@ class Hitbox extends Mask {
 	 * @param	y			Y offset of the hitbox.
 	 */
 	public function new(width:Int = 1, height:Int = 1, x:Int = 0, y:Int = 0) {
+
 		super();
 		_width = width;
 		_height = height;

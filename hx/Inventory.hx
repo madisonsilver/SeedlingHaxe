@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -19,20 +20,15 @@ class Inventory {
 	public var extended(get, set):Bool;
 
 	// NOT an entity, so render is called explicitly by Game.
-	@:meta(Embed(source = "../assets/graphics/Inventory.png"))
-	private static var imgInventory:Class<Dynamic>;
+private static var imgInventory:BitmapData;
 	private static var sprInventory:Image = new Image(imgInventory);
-	@:meta(Embed(source = "../assets/graphics/InventoryItems.png"))
-	private static var imgInventoryItems:Class<Dynamic>;
+private static var imgInventoryItems:BitmapData;
 	private static var sprInventoryItems:Spritemap = new Spritemap(imgInventoryItems, 17, 17);
-	@:meta(Embed(source = "../assets/graphics/InventoryItemsSide.png"))
-	private static var imgInventoryItemsSide:Class<Dynamic>;
+private static var imgInventoryItemsSide:BitmapData;
 	private static var sprInventoryItemsSide:Spritemap = new Spritemap(imgInventoryItemsSide, 8, 8);
-	@:meta(Embed(source = "../assets/graphics/InventoryItemsTotem.png"))
-	private static var imgInventoryItemsTotem:Class<Dynamic>;
+private static var imgInventoryItemsTotem:BitmapData;
 	private static var sprInventoryItemsTotem:Spritemap = new Spritemap(imgInventoryItemsTotem, 16, 24);
-	@:meta(Embed(source = "../assets/graphics/tank.png"))
-	private static var imgTank:Class<Dynamic>;
+private static var imgTank:BitmapData;
 	private static var sprTank:Image = new Image(imgTank);
 
 	public static var width:Int = sprInventory.width;
@@ -86,7 +82,15 @@ class Inventory {
 	];
 	private static var EXtexts:Array<Dynamic> = ["This new tab shows your keys and other items you've obtained."];
 
+private function load_image_assets():Void {
+imgInventory = Assets.getBitmapData("assets/graphics/Inventory.png");
+imgInventoryItems = Assets.getBitmapData("assets/graphics/InventoryItems.png");
+imgInventoryItemsSide = Assets.getBitmapData("assets/graphics/InventoryItemsSide.png");
+imgInventoryItemsTotem = Assets.getBitmapData("assets/graphics/InventoryItemsTotem.png");
+imgTank = Assets.getBitmapData("assets/graphics/tank.png");
+}
 	public function new() {
+load_image_assets();
 		scale = scaleMin;
 		textScale = [textScaleMin, textScaleMin];
 		offset.x = offsetMin.x;

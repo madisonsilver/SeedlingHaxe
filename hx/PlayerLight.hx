@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
 import scenery.Light;
@@ -8,8 +9,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class PlayerLight extends Light {
-	@:meta(Embed(source = "../assets/graphics/PlayerLight.png"))
-	private var imgPlayerLight:Class<Dynamic>;
+private var imgPlayerLight:BitmapData;
 	private var sprPlayerLight:Image;
 
 	private var follow:Player;
@@ -18,7 +18,11 @@ class PlayerLight extends Light {
 	private var movementDivisor(default, never):Int = 5;
 	private var colors(default, never):Array<Dynamic> = [0xFFCC00, 0xFFFFFF, 0xFF0000, 0x00FF00, 0x0000FF];
 
+private function load_image_assets():Void {
+imgPlayerLight = Assets.getBitmapData("assets/graphics/PlayerLight.png");
+}
 	public function new(_x:Int, _y:Int, _follow:Player) {
+load_image_assets();
 		sprPlayerLight = new Image(imgPlayerLight);
 		super(_x, _y, 100, 3, colors[0], true, 20);
 		alpha = 0.5;

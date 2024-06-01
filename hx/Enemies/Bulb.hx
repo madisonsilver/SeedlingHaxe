@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.FP;
@@ -11,11 +12,14 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Bulb extends Bob {
-	@:meta(Embed(source = "../../assets/graphics/Bulb.png"))
-	private var imgBulb:Class<Dynamic>;
+private var imgBulb:BitmapData;
 	private var sprBulb:Spritemap;
 
+private override function load_image_assets():Void {
+imgBulb = Assets.getBitmapData("assets/graphics/Bulb.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprBulb = new Spritemap(imgBulb, 16, 16, endAnim);
 		super(_x, _y, sprBulb);
 

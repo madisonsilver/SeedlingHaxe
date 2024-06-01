@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Image;
@@ -14,16 +15,12 @@ import net.flashpunk.Entity;
  * @author Time
  */
 class BobBoss extends BobSoldier {
-	@:meta(Embed(source = "../../assets/graphics/BobBoss1.png"))
-	private static var imgBobBoss1:Class<Dynamic>;
-	@:meta(Embed(source = "../../assets/graphics/BobBoss2.png"))
-	private static var imgBobBoss2:Class<Dynamic>;
-	@:meta(Embed(source = "../../assets/graphics/BobBoss3.png"))
-	private static var imgBobBoss3:Class<Dynamic>;
+private static var imgBobBoss1:BitmapData;
+private static var imgBobBoss2:BitmapData;
+private static var imgBobBoss3:BitmapData;
 	private static var images:Array<Dynamic> = [imgBobBoss1, imgBobBoss2, imgBobBoss3];
 
-	@:meta(Embed(source = "../../assets/graphics/BobBossWeapons.png"))
-	private var imgBobBossWeapons:Class<Dynamic>;
+private var imgBobBossWeapons:BitmapData;
 	private var sprBobBossWeapons:Spritemap;
 
 	private var bossType:Int;
@@ -40,7 +37,14 @@ class BobBoss extends BobSoldier {
 		"Time is stasis.~You bring much conflict.~Is it my place to resist?~Seems I must."
 	];
 
+private override function load_image_assets():Void {
+imgBobBoss1 = Assets.getBitmapData("assets/graphics/BobBoss1.png");
+imgBobBoss2 = Assets.getBitmapData("assets/graphics/BobBoss2.png");
+imgBobBoss3 = Assets.getBitmapData("assets/graphics/BobBoss3.png");
+imgBobBossWeapons = Assets.getBitmapData("assets/graphics/BobBossWeapons.png");
+}
 	public function new(_x:Int, _y:Int, _st:Int = 0) {
+load_image_assets();
 		sprBobBossWeapons = new Spritemap(imgBobBossWeapons, 24, 5);
 		nextBossTimer = nextBossTimerMax;
 		formingTimer = formingTimerMax;

@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
@@ -12,8 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Whirlpool extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/WhirlPool.png"))
-	private var imgWhirlpool:Class<Dynamic>;
+private var imgWhirlpool:BitmapData;
 	private var sprWhirlpool:Spritemap;
 
 	private var whirlFrames(default, never):Array<Dynamic> = [0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1, 0, 1, 2, 1];
@@ -28,7 +28,11 @@ class Whirlpool extends Entity {
 
 	private var maxAlpha(default, never):Float = 0.5;
 
+private function load_image_assets():Void {
+imgWhirlpool = Assets.getBitmapData("assets/graphics/WhirlPool.png");
+}
 	public function new(_x:Int, _y:Int, _timer:Bool = false) {
+load_image_assets();
 		sprWhirlpool = new Spritemap(imgWhirlpool, 32, 32);
 		timerSet = timerSetGrow + timerSetLive + timerSetDies;
 		super(_x + Tile.w, _y + Tile.h, sprWhirlpool);

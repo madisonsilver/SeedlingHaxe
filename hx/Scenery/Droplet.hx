@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -23,6 +24,7 @@ class Droplet extends Entity {
 	private var player:Player;
 
 	public function new(_x:Int, _y:Int, _height:Int, _color:Int) {
+
 		super(_x, _y - _height);
 		startY = Std.int(y);
 		endY = _y;

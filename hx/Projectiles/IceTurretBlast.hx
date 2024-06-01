@@ -1,4 +1,5 @@
 package projectiles;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.Enemy;
 import openfl.geom.Point;
@@ -11,14 +12,17 @@ import net.flashpunk.graphics.Spritemap;
  * @author Time
  */
 class IceTurretBlast extends Mobile {
-	@:meta(Embed(source = "../../assets/graphics/IceBlast.png"))
-	private var imgIceBlast:Class<Dynamic>;
+private var imgIceBlast:BitmapData;
 	private var sprIceBlast:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
 	private var freezeTime(default, never):Int = 15;
 
+private function load_image_assets():Void {
+imgIceBlast = Assets.getBitmapData("assets/graphics/IceBlast.png");
+}
 	public function new(_x:Int, _y:Int, _v:Point) {
+load_image_assets();
 		sprIceBlast = new Spritemap(imgIceBlast, 16, 7);
 		super(_x, _y, sprIceBlast);
 		sprIceBlast.x = -8;

@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -10,16 +11,19 @@ import net.flashpunk.FP;
  * @author Time
  */
 class BoneTorch extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/BoneTorch.png"))
-	private var imgBoneTorch:Class<Dynamic>;
-	@:meta(Embed(source = "../../assets/graphics/BoneTorch2.png"))
-	private var imgBoneTorch2:Class<Dynamic>;
+private var imgBoneTorch:BitmapData;
+private var imgBoneTorch2:BitmapData;
 	private var sprBoneTorch:Spritemap;
 
 	private var frames(default, never):Array<Dynamic> = [0, 1, 2, 1];
 	private var loops(default, never):Int = 2;
 
+private function load_image_assets():Void {
+imgBoneTorch = Assets.getBitmapData("assets/graphics/BoneTorch.png");
+imgBoneTorch2 = Assets.getBitmapData("assets/graphics/BoneTorch2.png");
+}
 	public function new(_x:Int, _y:Int, _type:Int = 0, _color:Int = 0xFFFFFF, _flipped:Bool = false) {
+load_image_assets();
 		var lightOffset:Point = new Point();
 		switch (_type) {
 			case 0:

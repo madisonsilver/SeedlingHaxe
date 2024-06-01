@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -11,14 +12,17 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class DarkTrap extends SandTrap {
-	@:meta(Embed(source = "../../assets/graphics/DarkTrap.png"))
-	private var imgDarkTrap:Class<Dynamic>;
+private var imgDarkTrap:BitmapData;
 	private var sprDarkTrap:Spritemap;
 
 	private var deathCounter:Int = 30;
 	private var startDying:Bool = false;
 
+private override function load_image_assets():Void {
+imgDarkTrap = Assets.getBitmapData("assets/graphics/DarkTrap.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprDarkTrap = new Spritemap(imgDarkTrap, 14, 14, endAnim);
 		super(_x, _y, _tag, sprDarkTrap);
 

@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.errors.Error;
 import haxe.Constraints.Function;
@@ -45,6 +46,7 @@ class Spritemap extends Image {
 	 * @param	callback		Optional callback function for animation end.
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0, callback:Function = null) {
+
 		_rect = new Rectangle(0, 0, frameWidth, frameHeight);
 		super(source, _rect);
 		if (frameWidth == 0) {

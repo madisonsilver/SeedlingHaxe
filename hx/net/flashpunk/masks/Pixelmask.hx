@@ -1,4 +1,5 @@
 package net.flashpunk.masks;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.errors.Error;
 import openfl.display.BitmapData;
@@ -24,6 +25,7 @@ class Pixelmask extends Hitbox {
 	 * @param	y			Y offset of the mask.
 	 */
 	public function new(source:Dynamic, x:Int = 0, y:Int = 0) {
+
 		super();
 		// fetch mask data
 		if (Std.is(source, BitmapData)) {

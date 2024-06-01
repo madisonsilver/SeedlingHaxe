@@ -1,4 +1,5 @@
 package projectiles;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.Enemy;
 import enemies.LavaBoss;
@@ -14,8 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class BossTotemShot extends Mobile {
-	@:meta(Embed(source = "../../assets/graphics/BossTotemShot.png"))
-	private var imgBossTotemShot:Class<Dynamic>;
+private var imgBossTotemShot:BitmapData;
 	private var sprBossTotemShot:Spritemap;
 
 	public var hitables:Dynamic = ["Player", "Solid"];
@@ -23,7 +23,11 @@ class BossTotemShot extends Mobile {
 	private var roomBottom(default, never):Int = 384; // THE BOTTOM WALL OF THE ROOM TO DESTROY AT
 	private var spinRate(default, never):Int = -6;
 
+private function load_image_assets():Void {
+imgBossTotemShot = Assets.getBitmapData("assets/graphics/BossTotemShot.png");
+}
 	public function new(_x:Int, _y:Int, _v:Point) {
+load_image_assets();
 		sprBossTotemShot = new Spritemap(imgBossTotemShot, 20, 20);
 		super(_x, _y, sprBossTotemShot);
 		sprBossTotemShot.centerOO();

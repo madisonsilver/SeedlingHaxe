@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.*;
 import net.flashpunk.Graphic;
@@ -14,8 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Lock extends Activators {
-	@:meta(Embed(source = "../../assets/graphics/Lock.png"))
-	private var imgLock:Class<Dynamic>;
+private var imgLock:BitmapData;
 
 	public var sprLock:Spritemap;
 
@@ -24,7 +24,11 @@ class Lock extends Activators {
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"];
 
+private function load_image_assets():Void {
+imgLock = Assets.getBitmapData("assets/graphics/Lock.png");
+}
 	public function new(_x:Int, _y:Int, _t:Int, _tag:Int = -1, _g:Graphic = null) {
+load_image_assets();
 		sprLock = new Spritemap(imgLock, 16, 16);
 		if (_g == null) {
 			_g = sprLock;

@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.utils.Dictionary;
 import enemies.Enemy;
 import enemies.Flyer;
@@ -55,41 +56,30 @@ class Player extends Mobile {
 	public var spearX(get, never):Int;
 	public var spearY(get, never):Int;
 
-	@:meta(Embed(source = "../assets/graphics/ShrumBlue.png"))
-	private var imgShrum:Class<Dynamic>;
+private var imgShrum:BitmapData;
 	// [Embed(source = "../assets/graphics/ShrumBlue.png")] private var imgShrumBlue:Class;
 	private var sprShrum:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/ShrumDark.png"))
-	private var imgShrumDark:Class<Dynamic>;
+private var imgShrumDark:BitmapData;
 
 	public var sprShrumDark:Spritemap;
 
-	@:meta(Embed(source = "../assets/graphics/Slash.png"))
-	private var imgSlash:Class<Dynamic>;
+private var imgSlash:BitmapData;
 	private var sprSlash:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/SlashDark.png"))
-	private var imgSlashDark:Class<Dynamic>;
+private var imgSlashDark:BitmapData;
 	private var sprSlashDark:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/GhostSword.png"))
-	private var imgGhostSword:Class<Dynamic>;
+private var imgGhostSword:BitmapData;
 	private var sprGhostSword:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/GhostSpearStab.png"))
-	private var imgSpear:Class<Dynamic>;
+private var imgSpear:BitmapData;
 	private var sprSpear:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/Wand.png"))
-	private var imgWand:Class<Dynamic>;
+private var imgWand:BitmapData;
 	private var sprWand:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/FireWand.png"))
-	private var imgFireWand:Class<Dynamic>;
+private var imgFireWand:BitmapData;
 	private var sprFireWand:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/Fire.png"))
-	private var imgFire:Class<Dynamic>;
+private var imgFire:BitmapData;
 	private var sprFire:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/DeathRay.png"))
-	private var imgDeathRay:Class<Dynamic>;
+private var imgDeathRay:BitmapData;
 	private var sprDeathRay:Spritemap;
-	@:meta(Embed(source = "../assets/graphics/Shield.png"))
-	private var imgShield:Class<Dynamic>;
+private var imgShield:BitmapData;
 	private var sprShield:Spritemap;
 
 	// Right, Up, Left, Down, Primary, Secondary, Talk, Inventory, Inventory 1
@@ -417,7 +407,21 @@ class Player extends Mobile {
 	private var coverAlpha:Float = 0;
 	private var coverAlphaRate:Float = 0.005;
 
+private function load_image_assets():Void {
+imgShrum = Assets.getBitmapData("assets/graphics/ShrumBlue.png");
+imgShrumDark = Assets.getBitmapData("assets/graphics/ShrumDark.png");
+imgSlash = Assets.getBitmapData("assets/graphics/Slash.png");
+imgSlashDark = Assets.getBitmapData("assets/graphics/SlashDark.png");
+imgGhostSword = Assets.getBitmapData("assets/graphics/GhostSword.png");
+imgSpear = Assets.getBitmapData("assets/graphics/GhostSpearStab.png");
+imgWand = Assets.getBitmapData("assets/graphics/Wand.png");
+imgFireWand = Assets.getBitmapData("assets/graphics/FireWand.png");
+imgFire = Assets.getBitmapData("assets/graphics/Fire.png");
+imgDeathRay = Assets.getBitmapData("assets/graphics/DeathRay.png");
+imgShield = Assets.getBitmapData("assets/graphics/Shield.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprShrumDark = new Spritemap(imgShrumDark, 16, 16, endAnim);
 		sprShrum = new Spritemap(imgShrum, 16, 16);
 		sprGhostSword = new Spritemap(imgGhostSword, 24, 7, slashEnd);

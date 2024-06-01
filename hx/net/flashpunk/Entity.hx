@@ -1,4 +1,5 @@
 package net.flashpunk;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.masks.*;
@@ -61,6 +62,7 @@ class Entity extends Tweener {
 	 * @param	mask		Mask to assign to the Entity.
 	 */
 	public function new(x:Float = 0, y:Float = 0, graphic:Graphic = null, mask:Mask = null) {
+
 		super();
 		this.x = x;
 		this.y = y;

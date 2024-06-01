@@ -1,4 +1,5 @@
 package net.flashpunk.tweens.motion;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import openfl.geom.Point;
@@ -17,6 +18,7 @@ class QuadMotion extends Motion {
 	 * @param	type		Tween type.
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
+
 		super(0, complete, type, null);
 	}
 

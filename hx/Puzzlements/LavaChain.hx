@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.Enemy;
 import openfl.geom.Point;
@@ -15,8 +16,7 @@ import scenery.Tile;
  * @author Time
  */
 class LavaChain extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/LavaChain.png"))
-	private var imgLavaChain:Class<Dynamic>;
+private var imgLavaChain:BitmapData;
 	private var sprLavaChain:Spritemap;
 
 	private static var hitables:Dynamic = ["Player", "Enemy"];
@@ -26,7 +26,11 @@ class LavaChain extends Entity {
 	private var loops(default, never):Int = 2;
 	private var direction:Int;
 
+private function load_image_assets():Void {
+imgLavaChain = Assets.getBitmapData("assets/graphics/LavaChain.png");
+}
 	public function new(_x:Int, _y:Int, _d:Int) {
+load_image_assets();
 		sprLavaChain = new Spritemap(imgLavaChain, 64, 16, animEnd);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprLavaChain);
 

@@ -1,4 +1,5 @@
 package projectiles;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.Enemy;
 import openfl.geom.Point;
@@ -13,13 +14,16 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class TurretSpit extends Mobile {
-	@:meta(Embed(source = "../../assets/graphics/TurretSpit.png"))
-	private var imgTurretSpit:Class<Dynamic>;
+private var imgTurretSpit:BitmapData;
 	private var sprTurretSpit:Spritemap;
 
 	public var hitables:Dynamic = ["Player", "Tree", "Solid", "Shield"];
 
+private function load_image_assets():Void {
+imgTurretSpit = Assets.getBitmapData("assets/graphics/TurretSpit.png");
+}
 	public function new(_x:Int, _y:Int, _v:Point) {
+load_image_assets();
 		sprTurretSpit = new Spritemap(imgTurretSpit, 12, 8);
 		super(_x, _y, sprTurretSpit);
 		sprTurretSpit.x = -8;

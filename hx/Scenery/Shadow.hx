@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.BitmapData;
 import openfl.geom.Matrix;
@@ -21,6 +22,7 @@ class Shadow extends Entity {
 	private var myMatrix:Matrix;
 
 	public function new(_x:Int, _y:Int, _c:Int, _a:Float, _w:Int, _h:Int) {
+
 		super(_x, _y);
 		c = _c;
 		a = _a;

@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import openfl.geom.Point;
@@ -38,6 +39,7 @@ class LightBossController extends Entity {
 	private var text(default, never):String = "HOW FAR YOU HAVE COME, BEING OF THE LIGHT.~OUR OWN LIGHT WILL SWALLOW YOU. COME, MEET YOUR FATE.";
 
 	public function new(_x:Int, _y:Int, _flierNum:Int, _tag:Int = -1) {
+
 		super();
 
 		tag = _tag;

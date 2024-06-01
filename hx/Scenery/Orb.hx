@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -10,8 +11,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Orb extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/Orb.png"))
-	private var imgOrb:Class<Dynamic>;
+private var imgOrb:BitmapData;
 	private var sprOrb:Spritemap;
 
 	private var radiusMax:Int = 48;
@@ -28,7 +28,11 @@ class Orb extends Entity {
 	private var randVal(default, never):Float = Math.random();
 	private var myLight:Light;
 
+private function load_image_assets():Void {
+imgOrb = Assets.getBitmapData("assets/graphics/Orb.png");
+}
 	public function new(_x:Int, _y:Int, _c:Int = 0xFFFFFF) {
+load_image_assets();
 		sprOrb = new Spritemap(imgOrb, 8, 8);
 		super(_x, _y, sprOrb);
 		startX = Std.int(x);

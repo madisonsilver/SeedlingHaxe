@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import scenery.Tile;
@@ -22,6 +23,7 @@ class Pull extends Entity {
 	private var maxEntitiesAlpha(default, never):Int = 3; // The number of colliding entities at which the alpha will be one.
 
 	public function new(_x:Int, _y:Int, _d:Float, _f:Float) {
+
 		super(_x, _y);
 		setHitbox(Tile.w, Tile.h);
 		type = "Pull";

@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -11,8 +12,7 @@ import pickups.Coin;
  * @author Time
  */
 class Jellyfish extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/Jellyfish.png"))
-	private var imgJelly:Class<Dynamic>;
+private var imgJelly:BitmapData;
 	private var sprJelly:Spritemap;
 
 	public var moveSpeedNormal(default, never):Float = 0.8;
@@ -23,7 +23,11 @@ class Jellyfish extends Enemy {
 	private var dieFrames(default, never):Array<Dynamic> = [4, 5, 6, 7, 8, 9, 10, 11];
 	private var runRange(default, never):Int = 160; // Range at which the Jellyfish will run after the character
 
+private function load_image_assets():Void {
+imgJelly = Assets.getBitmapData("assets/graphics/Jellyfish.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprJelly = new Spritemap(imgJelly, 14, 15, endAnim);
 		moveSpeed = moveSpeedNormal;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprJelly);

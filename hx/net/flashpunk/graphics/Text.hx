@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.BitmapData;
 import openfl.geom.Point;
@@ -36,6 +37,7 @@ class Text extends Image {
 	 * @param	height		Image height (leave as 0 to size to the starting text string).
 	 */
 	public function new(text:String, x:Float = 0, y:Float = 0, width:Int = 0, height:Int = 0) {
+
 		_field.embedFonts = true;
 		_field.defaultTextFormat = _form = new TextFormat(Text.static_font, Text.static_size, 0xFFFFFF);
 		_field.text = _text = text;

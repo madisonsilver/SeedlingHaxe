@@ -1,4 +1,5 @@
 package net.flashpunk.tweens.sound;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import net.flashpunk.Sfx;
@@ -17,6 +18,7 @@ class SfxFader extends Tween {
 	 * @param	type		Tween type.
 	 */
 	public function new(sfx:Sfx, complete:Function = null, type:Int = 0) {
+
 		super(0, type, finish);
 		_complete = complete;
 		_sfx = sfx;

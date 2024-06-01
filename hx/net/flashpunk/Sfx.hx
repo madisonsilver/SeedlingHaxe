@@ -1,4 +1,5 @@
 package net.flashpunk;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import openfl.events.Event;
@@ -29,6 +30,7 @@ class Sfx {
 	 * @param	complete	Optional callback function for when the sound finishes playing.
 	 */
 	public function new(source:Class<Dynamic>, complete:Function = null) {
+
 		_sound = _sounds[source];
 		if (_sound == null) {
 			var new_sound = Type.createInstance(source, []);

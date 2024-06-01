@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import openfl.display.BitmapData;
@@ -22,6 +23,7 @@ class TiledSpritemap extends Spritemap {
 	 * @param	callback		Optional callback function for animation end.
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0, width:Int = 0, height:Int = 0, callback:Function = null) {
+
 		_imageWidth = width;
 		_imageHeight = height;
 		super(source, frameWidth, frameHeight, callback);

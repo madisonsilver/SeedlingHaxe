@@ -1,3 +1,5 @@
+import openfl.display.Bitmap;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.display.DisplayObject;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
@@ -12,16 +14,12 @@ import net.flashpunk.utils.Input;
  * @author Time
  */
 class Splash extends World {
-	@:meta(Embed(source = "../assets/graphics/pixel_logo_large.png"))
-	public static var imgNG:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/OctoLogo.png"))
-	public static var imgOctoLogo:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/rackemmap-162Wx158H.png"))
-	public static var imgRekcahdamLogo:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/musicby.png"))
-	public static var imgMusicBy:Class<Dynamic>;
+public static var imgNG:BitmapData;
+public static var imgOctoLogo:BitmapData;
+public static var imgRekcahdamLogo:BitmapData;
+public static var imgMusicBy:BitmapData;
 
-	private var spMusicBy:DisplayObject = Type.createInstance(imgMusicBy, []);
+	private var spMusicBy:DisplayObject;
 
 	public var sp:Array<DisplayObject> = new Array<DisplayObject>();
 
@@ -52,14 +50,23 @@ class Splash extends World {
 
 	public var percentageFinished:Float;
 
+private function load_image_assets():Void {
+imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_large.png");
+imgOctoLogo = Assets.getBitmapData("assets/graphics/OctoLogo.png");
+imgRekcahdamLogo = Assets.getBitmapData("assets/graphics/rackemmap-162Wx158H.png");
+imgMusicBy = Assets.getBitmapData("assets/graphics/musicby.png");
+}
 	public function new(_t:Int = 0) {
+load_image_assets();
 		percentageFinished = 1 - timerSplash / timerAll;
 		super();
 		t = _t;
 
-		sp.push(Type.createInstance(imgNG, []));
-		sp.push(Type.createInstance(imgOctoLogo, []));
-		sp.push(Type.createInstance(imgRekcahdamLogo, []));
+		spMusicBy = new Bitmap(imgMusicBy);
+
+		sp.push(new Bitmap(imgNG));
+		sp.push(new Bitmap(imgOctoLogo));
+		sp.push(new Bitmap(imgRekcahdamLogo));
 
 		for (i in 0...sp.length) {
 			sp[i].visible = false;

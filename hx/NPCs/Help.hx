@@ -1,4 +1,5 @@
 package nPCs;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -14,8 +15,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Help extends Entity {
-	@:meta(Embed(source = "../../assets/graphics/Help.png"))
-	private var imgHelp:Class<Dynamic>;
+private var imgHelp:BitmapData;
 	private var sprHelp:Spritemap;
 
 	// Inventory
@@ -42,7 +42,11 @@ class Help extends Entity {
 	private var timeExtraHelp:Int = 240;
 	private var texts(default, never):Array<Dynamic> = ["press V", "press M to mute", "press an arrow key", "press X or C"];
 
+private function load_image_assets():Void {
+imgHelp = Assets.getBitmapData("assets/graphics/Help.png");
+}
 	public function new(_t:Int = 0, _button:Bool = true, _p:Point = null) {
+load_image_assets();
 		sprHelp = new Spritemap(imgHelp, 67, 44);
 		sc = scMin;
 		super(0, 0, sprHelp);

@@ -1,4 +1,5 @@
 package net.flashpunk;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import openfl.geom.Point;

@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -11,11 +12,9 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class LavaTrap extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/LavaTrap.png"))
-	private var imgLavaTrap:Class<Dynamic>;
+private var imgLavaTrap:BitmapData;
 	private var sprLavaTrap:Spritemap;
-	@:meta(Embed(source = "../../assets/graphics/LavaTrapTongue.png"))
-	private var imgLavaTrapTongue:Class<Dynamic>;
+private var imgLavaTrapTongue:BitmapData;
 	private var sprLavaTrapTongue:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
@@ -27,7 +26,12 @@ class LavaTrap extends Enemy {
 	private var attached:Player;
 	private var wait:Bool = true;
 
+private function load_image_assets():Void {
+imgLavaTrap = Assets.getBitmapData("assets/graphics/LavaTrap.png");
+imgLavaTrapTongue = Assets.getBitmapData("assets/graphics/LavaTrapTongue.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprLavaTrap = new Spritemap(imgLavaTrap, 16, 16, endAnim);
 		sprLavaTrapTongue = new Spritemap(imgLavaTrapTongue, 32, 6, tongueOut);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLavaTrap);

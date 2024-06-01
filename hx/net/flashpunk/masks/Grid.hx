@@ -1,4 +1,5 @@
 package net.flashpunk.masks;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.errors.Error;
 import openfl.display.Bitmap;
@@ -31,6 +32,7 @@ class Grid extends Hitbox {
 	 * @param	y				Y offset of the grid.
 	 */
 	public function new(width:Int, height:Int, cellWidth:Int, cellHeight:Int, x:Int = 0, y:Int = 0) {
+
 		super();
 		// check for illegal grid size
 		if (width == 0 || height == 0 || cellWidth == 0 || cellHeight == 0) {

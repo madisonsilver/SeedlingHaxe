@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.utils.Draw;
@@ -16,6 +17,7 @@ class LightRay extends Entity {
 	private var h:Int;
 
 	public function new(_x:Int, _y:Int, _c:Int, _a:Float, _w:Int, _h:Int) {
+
 		super(_x, _y);
 		c = _c;
 		a = _a;

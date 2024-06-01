@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.FP;
 import net.flashpunk.graphics.Spritemap;
@@ -10,8 +11,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class LavaRunner extends Bob {
-	@:meta(Embed(source = "../../assets/graphics/LavaRunner.png"))
-	private var imgLavaRunner:Class<Dynamic>;
+private var imgLavaRunner:BitmapData;
 	private var sprLavaRunner:Spritemap;
 
 	private static inline var waterFrameAddition:Int = 5;
@@ -24,7 +24,11 @@ class LavaRunner extends Bob {
 	private var startY:Int;
 	private var inAir:Bool = false;
 
+private override function load_image_assets():Void {
+imgLavaRunner = Assets.getBitmapData("assets/graphics/LavaRunner.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprLavaRunner = new Spritemap(imgLavaRunner, 20, 20, endAnim);
 		super(_x, _y, sprLavaRunner);
 		startY = Std.int(y);

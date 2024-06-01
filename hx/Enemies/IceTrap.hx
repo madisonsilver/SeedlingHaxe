@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -10,14 +11,17 @@ import scenery.Tile;
  * @author Time
  */
 class IceTrap extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/IceTrap.png"))
-	private var imgIceTrap:Class<Dynamic>;
+private var imgIceTrap:BitmapData;
 	private var sprIceTrap:Spritemap;
 
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 8; // The distance at which the ice trap will start chomping from a player
 
+private function load_image_assets():Void {
+imgIceTrap = Assets.getBitmapData("assets/graphics/IceTrap.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprIceTrap = new Spritemap(imgIceTrap, 16, 16, endAnim);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprIceTrap);
 

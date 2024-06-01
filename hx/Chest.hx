@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import openfl.geom.Point;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -11,8 +12,7 @@ import pickups.Coin;
  * @author Time
  */
 class Chest extends Entity {
-	@:meta(Embed(source = "../assets/graphics/Chest.png"))
-	private var imgChest:Class<Dynamic>;
+private var imgChest:BitmapData;
 	private var sprChest:Spritemap;
 
 	private var openTimerMax(default, never):Int = 60;
@@ -20,7 +20,11 @@ class Chest extends Entity {
 	private var coins:Int = Math.floor(Math.random() * 4 + 8);
 	private var tag:Int;
 
+private function load_image_assets():Void {
+imgChest = Assets.getBitmapData("assets/graphics/Chest.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprChest = new Spritemap(imgChest, 16, 16);
 		super(_x + Tile.w / 2, _y + Tile.h / 2, sprChest);
 		sprChest.centerOO();

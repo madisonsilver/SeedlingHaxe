@@ -1,4 +1,5 @@
 package net.flashpunk.tweens.motion;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.errors.Error;
 import haxe.Constraints.Function;
@@ -18,6 +19,7 @@ class LinearPath extends Motion {
 	 * @param	type		Tween type.
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
+
 		super(0, complete, type, null);
 		_pointD[0] = _pointT[0] = 0;
 	}

@@ -1,4 +1,5 @@
 package nPCs;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.graphics.Image;
 import net.flashpunk.graphics.Spritemap;
@@ -9,16 +10,19 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Hermit extends NPC {
-	@:meta(Embed(source = "../../assets/graphics/NPCs/Hermit.png"))
-	private var imgHermit:Class<Dynamic>;
+private var imgHermit:BitmapData;
 	private var sprHermit:Spritemap;
-	@:meta(Embed(source = "../../assets/graphics/NPCs/HermitPic.png"))
-	private var imgHermitPic:Class<Dynamic>;
+private var imgHermitPic:BitmapData;
 	private var sprHermitPic:Image;
 
 	private var standAnimFrames(default, never):Array<Dynamic> = [0, 2];
 
+private override function load_image_assets():Void {
+imgHermit = Assets.getBitmapData("assets/graphics/NPCs/Hermit.png");
+imgHermitPic = Assets.getBitmapData("assets/graphics/NPCs/HermitPic.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _text:String = "", _talkingSpeed:Int = 10) {
+load_image_assets();
 		sprHermit = new Spritemap(imgHermit, 10, 12);
 		sprHermitPic = new Image(imgHermitPic);
 		super(_x, _y, sprHermit, _tag, _text, _talkingSpeed);

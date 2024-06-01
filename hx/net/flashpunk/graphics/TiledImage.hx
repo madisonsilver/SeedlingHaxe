@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.BitmapData;
 import openfl.display.Graphics;
@@ -20,6 +21,7 @@ class TiledImage extends Image {
 	 * @param	clipRect	An optional area of the source texture to use (eg. a tile from a tileset).
 	 */
 	public function new(texture:Dynamic, width:Int = 0, height:Int = 0, clipRect:Rectangle = null) {
+
 		_width = width;
 		_height = height;
 		super(texture, clipRect);

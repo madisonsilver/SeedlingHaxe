@@ -1,4 +1,5 @@
 package pickups;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -10,14 +11,17 @@ import scenery.Moonrock;
  * @author Time
  */
 class GhostSpear extends Pickup {
-	@:meta(Embed(source = "../../assets/graphics/GhostSpear.png"))
-	private var imgSpear:Class<Dynamic>;
+private var imgSpear:BitmapData;
 	private var sprSpear:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
+private function load_image_assets():Void {
+imgSpear = Assets.getBitmapData("assets/graphics/GhostSpear.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprSpear = new Spritemap(imgSpear, 20, 7);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprSpear, null, false);
 		sprSpear.centerOO();

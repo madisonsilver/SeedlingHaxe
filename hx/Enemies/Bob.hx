@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Graphic;
@@ -12,8 +13,7 @@ import pickups.Coin;
  * @author Time
  */
 class Bob extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/Bob.png"))
-	private var imgBob:Class<Dynamic>;
+private var imgBob:BitmapData;
 	private var sprBob:Spritemap;
 
 	public var moveSpeed:Float = 0.5;
@@ -28,7 +28,11 @@ class Bob extends Enemy {
 
 	public var hopSoundIndex:Int = 0;
 
+private function load_image_assets():Void {
+imgBob = Assets.getBitmapData("assets/graphics/Bob.png");
+}
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
+load_image_assets();
 		sprBob = new Spritemap(imgBob, 8, 8, endAnim);
 		if (_g == null) {
 			_g = sprBob;

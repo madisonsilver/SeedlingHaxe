@@ -1,4 +1,5 @@
 package net.flashpunk.tweens.misc;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import haxe.Constraints.Function;
 import net.flashpunk.Tween;
@@ -18,6 +19,7 @@ class NumTween extends Tween {
 	 * @param	type		Tween type.
 	 */
 	public function new(complete:Function = null, type:Int = 0) {
+
 		super(0, type, complete);
 	}
 

@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.Enemy;
 import enemies.IceTurret;
@@ -15,8 +16,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Pulser extends Activators {
-	@:meta(Embed(source = "../../assets/graphics/Pulser.png"))
-	private var imgPulser:Class<Dynamic>;
+private var imgPulser:BitmapData;
 	private var sprPulser:Spritemap;
 
 	private var radiusMin(default, never):Int = 10;
@@ -38,7 +38,11 @@ class Pulser extends Activators {
 
 	private var hitables(default, never):Dynamic = ["Player", "Solid", "Enemy"];
 
+private function load_image_assets():Void {
+imgPulser = Assets.getBitmapData("assets/graphics/Pulser.png");
+}
 	public function new(_x:Int, _y:Int, _t:Int) {
+load_image_assets();
 		sprPulser = new Spritemap(imgPulser, 16, 16, endAnim);
 		radius = radiusMin;
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprPulser, _t);

@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.Graphic;
@@ -15,6 +16,7 @@ class Activators extends Entity {
 	public var tSet:Int;
 
 	public function new(_x:Int, _y:Int, _g:Graphic, _t:Int) {
+
 		super(_x, _y, _g);
 		t = _t;
 	}

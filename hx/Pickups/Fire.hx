@@ -1,4 +1,5 @@
 package pickups;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.graphics.Spritemap;
 import net.flashpunk.FP;
@@ -10,14 +11,17 @@ import scenery.Moonrock;
  * @author Time
  */
 class Fire extends Pickup {
-	@:meta(Embed(source = "../../assets/graphics/FirePickup.png"))
-	private var imgFire:Class<Dynamic>;
+private var imgFire:BitmapData;
 	private var sprFire:Spritemap;
 
 	private var tag:Int;
 	private var doActions:Bool = true;
 
+private function load_image_assets():Void {
+imgFire = Assets.getBitmapData("assets/graphics/FirePickup.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprFire = new Spritemap(imgFire, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprFire, null, false);
 		sprFire.centerOO();

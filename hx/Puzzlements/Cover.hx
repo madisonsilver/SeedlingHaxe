@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import enemies.*;
 import net.flashpunk.Entity;
@@ -13,8 +14,7 @@ import scenery.Tile;
  * @author Time
  */
 class Cover extends Activators {
-	@:meta(Embed(source = "../../assets/graphics/Cover.png"))
-	private var imgCover:Class<Dynamic>;
+private var imgCover:BitmapData;
 
 	public var sprCover:Spritemap;
 
@@ -22,7 +22,11 @@ class Cover extends Activators {
 
 	private var hitables:Dynamic = ["Solid", "Player"];
 
+private function load_image_assets():Void {
+imgCover = Assets.getBitmapData("assets/graphics/Cover.png");
+}
 	public function new(_x:Int, _y:Int, _t:Int, _g:Graphic = null) {
+load_image_assets();
 		sprCover = new Spritemap(imgCover, 16, 16);
 		if (_g == null) {
 			_g = sprCover;

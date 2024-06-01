@@ -1,3 +1,4 @@
+import openfl.utils.Assets;import openfl.display.BitmapData;
 import enemies.*;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -325,191 +326,129 @@ class Game extends World {
 	];
 
 	/*TILES*/
-	@:meta(Embed(source = "../assets/graphics/Grass.png"))
-	private static var imgGrass:Class<Dynamic>;
+private static var imgGrass:BitmapData;
 	public static var sprGrass:Spritemap = new Spritemap(imgGrass, 3, 4);
-	@:meta(Embed(source = "../assets/graphics/Shore.png"))
-	private static var imgGround:Class<Dynamic>;
+private static var imgGround:BitmapData;
 	public static var sprGround:Spritemap = new Spritemap(imgGround, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Water.png"))
-	private static var imgWater:Class<Dynamic>;
+private static var imgWater:BitmapData;
 	public static var sprWater:Spritemap = new Spritemap(imgWater, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Stone.png"))
-	private static var imgStone:Class<Dynamic>;
+private static var imgStone:BitmapData;
 	public static var sprStone:Spritemap = new Spritemap(imgStone, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Brick.png"))
-	private static var imgBrick:Class<Dynamic>;
+private static var imgBrick:BitmapData;
 	public static var sprBrick:Spritemap = new Spritemap(imgBrick, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Dirt.png"))
-	private static var imgDirt:Class<Dynamic>;
+private static var imgDirt:BitmapData;
 	public static var sprDirt:Spritemap = new Spritemap(imgDirt, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/DungeonTile.png"))
-	private static var imgDungeonTile:Class<Dynamic>;
+private static var imgDungeonTile:BitmapData;
 	public static var sprDungeonTile:Spritemap = new Spritemap(imgDungeonTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Pit.png"))
-	private static var imgPit:Class<Dynamic>;
+private static var imgPit:BitmapData;
 	public static var sprPit:Spritemap = new Spritemap(imgPit, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/ShieldTile.png"))
-	private static var imgShieldTile:Class<Dynamic>;
+private static var imgShieldTile:BitmapData;
 	public static var sprShieldTile:Spritemap = new Spritemap(imgShieldTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/ForestTile.png"))
-	private static var imgForest:Class<Dynamic>;
+private static var imgForest:BitmapData;
 	public static var sprForest:Spritemap = new Spritemap(imgForest, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Cliff.png"))
-	private static var imgCliff:Class<Dynamic>;
+private static var imgCliff:BitmapData;
 	public static var sprCliff:Spritemap = new Spritemap(imgCliff, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Wood.png"))
-	private static var imgWood:Class<Dynamic>;
+private static var imgWood:BitmapData;
 	public static var sprWood:Spritemap = new Spritemap(imgWood, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/WoodWalk.png"))
-	private static var imgWoodWalk:Class<Dynamic>;
+private static var imgWoodWalk:BitmapData;
 	public static var sprWoodWalk:Spritemap = new Spritemap(imgWoodWalk, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Cave.png"))
-	private static var imgCave:Class<Dynamic>;
+private static var imgCave:BitmapData;
 	public static var sprCave:Spritemap = new Spritemap(imgCave, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/WoodTree.png"))
-	private static var imgWoodTree:Class<Dynamic>;
+private static var imgWoodTree:BitmapData;
 	public static var sprWoodTree:Spritemap = new Spritemap(imgWoodTree, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/DarkTile.png"))
-	private static var imgDarkTile:Class<Dynamic>;
+private static var imgDarkTile:BitmapData;
 	public static var sprDarkTile:Spritemap = new Spritemap(imgDarkTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/IgneousTile.png"))
-	private static var imgIgneousTile:Class<Dynamic>;
+private static var imgIgneousTile:BitmapData;
 	public static var sprIgneousTile:Spritemap = new Spritemap(imgIgneousTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Lava2.png"))
-	private static var imgLava:Class<Dynamic>;
+private static var imgLava:BitmapData;
 	public static var sprLava:Spritemap = new Spritemap(imgLava, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BlueStone.png"))
-	private static var imgBlueTile:Class<Dynamic>;
+private static var imgBlueTile:BitmapData;
 	public static var sprBlueTile:Spritemap = new Spritemap(imgBlueTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BlueStoneWall.png"))
-	private static var imgBlueTileWall:Class<Dynamic>;
+private static var imgBlueTileWall:BitmapData;
 	public static var sprBlueTileWall:Spritemap = new Spritemap(imgBlueTileWall, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BlueStoneWallDark.png"))
-	private static var imgBlueTileWallDark:Class<Dynamic>;
+private static var imgBlueTileWallDark:BitmapData;
 	public static var sprBlueTileWallDark:Spritemap = new Spritemap(imgBlueTileWallDark, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Snow.png"))
-	private static var imgSnow:Class<Dynamic>;
+private static var imgSnow:BitmapData;
 	public static var sprSnow:Spritemap = new Spritemap(imgSnow, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Ice.png"))
-	private static var imgIce:Class<Dynamic>;
+private static var imgIce:BitmapData;
 	public static var sprIce:Spritemap = new Spritemap(imgIce, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/IceWall.png"))
-	private static var imgIceWall:Class<Dynamic>;
+private static var imgIceWall:BitmapData;
 	public static var sprIceWall:Spritemap = new Spritemap(imgIceWall, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/IceWallLit.png"))
-	private static var imgIceWallLit:Class<Dynamic>;
+private static var imgIceWallLit:BitmapData;
 	public static var sprIceWallLit:Spritemap = new Spritemap(imgIceWallLit, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Waterfall.png"))
-	private static var imgWaterfall:Class<Dynamic>;
+private static var imgWaterfall:BitmapData;
 	public static var sprWaterfall:Spritemap = new Spritemap(imgWaterfall, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Body.png"))
-	private static var imgBody:Class<Dynamic>;
+private static var imgBody:BitmapData;
 	public static var sprBody:Spritemap = new Spritemap(imgBody, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BodyWall.png"))
-	private static var imgBodyWall:Class<Dynamic>;
+private static var imgBodyWall:BitmapData;
 	public static var sprBodyWall:Spritemap = new Spritemap(imgBodyWall, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/GhostTile.png"))
-	private static var imgGhostTile:Class<Dynamic>;
+private static var imgGhostTile:BitmapData;
 	public static var sprGhostTile:Spritemap = new Spritemap(imgGhostTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/OpenBridge.png"))
-	public static var imgBridge:Class<Dynamic>;
+public static var imgBridge:BitmapData;
 	public static var sprBridge:Spritemap = new Spritemap(imgBridge, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/GhostTileStep.png"))
-	private static var imgGhostTileStep:Class<Dynamic>;
+private static var imgGhostTileStep:BitmapData;
 	public static var sprGhostTileStep:Spritemap = new Spritemap(imgGhostTileStep, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/IgneousLava.png"))
-	private static var imgIgneousLava:Class<Dynamic>;
+private static var imgIgneousLava:BitmapData;
 	public static var sprIgneousLava:Spritemap = new Spritemap(imgIgneousLava, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/OddTile.png"))
-	private static var imgOddTile:Class<Dynamic>;
+private static var imgOddTile:BitmapData;
 	public static var sprOddTile:Spritemap = new Spritemap(imgOddTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/FuchTile.png"))
-	private static var imgFuchTile:Class<Dynamic>;
+private static var imgFuchTile:BitmapData;
 	public static var sprFuchTile:Spritemap = new Spritemap(imgFuchTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/OddTileWall.png"))
-	private static var imgOddTileWall:Class<Dynamic>;
+private static var imgOddTileWall:BitmapData;
 	public static var sprOddTileWall:Spritemap = new Spritemap(imgOddTileWall, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/RockTile.png"))
-	private static var imgRockTile:Class<Dynamic>;
+private static var imgRockTile:BitmapData;
 	public static var sprRockTile:Spritemap = new Spritemap(imgRockTile, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/RockyTile.png"))
-	private static var imgRockyTile:Class<Dynamic>;
+private static var imgRockyTile:BitmapData;
 	public static var sprRockyTile:Spritemap = new Spritemap(imgRockyTile, 16, 16);
 
 	/*CLIFFSIDE*/
-	@:meta(Embed(source = "../assets/graphics/CliffSide.png"))
-	private static var imgCliffSides:Class<Dynamic>;
+private static var imgCliffSides:BitmapData;
 	public static var sprCliffSides:Spritemap = new Spritemap(imgCliffSides, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/CliffSideMaskL.png"))
-	public static var imgCliffSidesMaskL:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/CliffSideMaskR.png"))
-	public static var imgCliffSidesMaskR:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/CliffSideMaskLU.png"))
-	public static var imgCliffSidesMaskLU:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/CliffSideMaskRU.png"))
-	public static var imgCliffSidesMaskRU:Class<Dynamic>;
-	@:meta(Embed(source = "../assets/graphics/CliffSideMaskU.png"))
-	public static var imgCliffSidesMaskU:Class<Dynamic>;
+public static var imgCliffSidesMaskL:BitmapData;
+public static var imgCliffSidesMaskR:BitmapData;
+public static var imgCliffSidesMaskLU:BitmapData;
+public static var imgCliffSidesMaskRU:BitmapData;
+public static var imgCliffSidesMaskU:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/CliffStairs.png"))
-	private static var imgCliffStairs:Class<Dynamic>;
+private static var imgCliffStairs:BitmapData;
 	public static var sprCliffStairs:Spritemap = new Spritemap(imgCliffStairs, 16, 16);
 
 	/*BUILDINGS*/
-	@:meta(Embed(source = "../assets/graphics/Building.png"))
-	private static var imgBuilding:Class<Dynamic>;
+private static var imgBuilding:BitmapData;
 	public static var sprBuilding:Image = new Image(imgBuilding);
-	@:meta(Embed(source = "../assets/graphics/BuildingMask.png"))
-	public static var imgBuildingMask:Class<Dynamic>;
+public static var imgBuildingMask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building1.png"))
-	private static var imgBuilding1:Class<Dynamic>;
+private static var imgBuilding1:BitmapData;
 	public static var sprBuilding1:Image = new Image(imgBuilding1);
-	@:meta(Embed(source = "../assets/graphics/Building1Mask.png"))
-	public static var imgBuilding1Mask:Class<Dynamic>;
+public static var imgBuilding1Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building2.png"))
-	private static var imgBuilding2:Class<Dynamic>;
+private static var imgBuilding2:BitmapData;
 	public static var sprBuilding2:Image = new Image(imgBuilding2);
-	@:meta(Embed(source = "../assets/graphics/Building2Mask.png"))
-	public static var imgBuilding2Mask:Class<Dynamic>;
+public static var imgBuilding2Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building3.png"))
-	private static var imgBuilding3:Class<Dynamic>;
+private static var imgBuilding3:BitmapData;
 	public static var sprBuilding3:Image = new Image(imgBuilding3);
-	@:meta(Embed(source = "../assets/graphics/Building3Mask.png"))
-	public static var imgBuilding3Mask:Class<Dynamic>;
+public static var imgBuilding3Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building4.png"))
-	private static var imgBuilding4:Class<Dynamic>;
+private static var imgBuilding4:BitmapData;
 	public static var sprBuilding4:Image = new Image(imgBuilding4);
-	@:meta(Embed(source = "../assets/graphics/Building4Mask.png"))
-	public static var imgBuilding4Mask:Class<Dynamic>;
+public static var imgBuilding4Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building5.png"))
-	private static var imgBuilding5:Class<Dynamic>;
+private static var imgBuilding5:BitmapData;
 	public static var sprBuilding5:Image = new Image(imgBuilding5);
-	@:meta(Embed(source = "../assets/graphics/Building5Mask.png"))
-	public static var imgBuilding5Mask:Class<Dynamic>;
+public static var imgBuilding5Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building6.png"))
-	private static var imgBuilding6:Class<Dynamic>;
+private static var imgBuilding6:BitmapData;
 	public static var sprBuilding6:Image = new Image(imgBuilding6);
-	@:meta(Embed(source = "../assets/graphics/Building6Mask.png"))
-	public static var imgBuilding6Mask:Class<Dynamic>;
+public static var imgBuilding6Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building7.png"))
-	private static var imgBuilding7:Class<Dynamic>;
+private static var imgBuilding7:BitmapData;
 	public static var sprBuilding7:Image = new Image(imgBuilding7);
-	@:meta(Embed(source = "../assets/graphics/Building7Mask.png"))
-	public static var imgBuilding7Mask:Class<Dynamic>;
+public static var imgBuilding7Mask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Building8.png"))
-	private static var imgBuilding8:Class<Dynamic>;
+private static var imgBuilding8:BitmapData;
 	public static var sprBuilding8:Spritemap = new Spritemap(imgBuilding8, 64, 64);
-	@:meta(Embed(source = "../assets/graphics/Building8Mask.png"))
-	public static var imgBuilding8Mask:Class<Dynamic>;
+public static var imgBuilding8Mask:BitmapData;
 
 	public static var buildings:Array<Dynamic> = [
 		sprBuilding,
@@ -535,136 +474,100 @@ class Game extends World {
 	];
 
 	/*STATUES*/
-	@:meta(Embed(source = "../assets/graphics/Statues.png"))
-	private static var imgStatues:Class<Dynamic>;
+private static var imgStatues:BitmapData;
 	public static var sprStatues:Spritemap = new Spritemap(imgStatues, 48, 40);
 
 	/*ROCKS*/
-	@:meta(Embed(source = "../assets/graphics/Rock.png"))
-	private static var imgRock:Class<Dynamic>;
+private static var imgRock:BitmapData;
 	public static var sprRock:Image = new Image(imgRock);
 
-	@:meta(Embed(source = "../assets/graphics/Rock2.png"))
-	private static var imgRock2:Class<Dynamic>;
+private static var imgRock2:BitmapData;
 	public static var sprRock2:Image = new Image(imgRock2);
 
-	@:meta(Embed(source = "../assets/graphics/Rock3.png"))
-	private static var imgRock3:Class<Dynamic>;
+private static var imgRock3:BitmapData;
 	public static var sprRock3:Image = new Image(imgRock3);
 
-	@:meta(Embed(source = "../assets/graphics/Rock4.png"))
-	private static var imgRock4:Class<Dynamic>;
+private static var imgRock4:BitmapData;
 	public static var sprRock4:Image = new Image(imgRock4);
 
 	public static var rocks:Array<Dynamic> = [sprRock, sprRock2, sprRock3, sprRock4];
 
 	/*OTHER*/
-	@:meta(Embed(source = "../assets/graphics/Pole.png"))
-	private static var imgPole:Class<Dynamic>;
+private static var imgPole:BitmapData;
 	public static var sprPole:Spritemap = new Spritemap(imgPole, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/Wire.png"))
-	private static var imgWire:Class<Dynamic>;
+private static var imgWire:BitmapData;
 	public static var sprWire:Spritemap = new Spritemap(imgWire, 16, 16);
 
-	@:meta(Embed(source = "../assets/graphics/Tree2.png"))
-	private static var imgTree:Class<Dynamic>;
+private static var imgTree:BitmapData;
 	public static var sprTree:Spritemap = new Spritemap(imgTree, 32, 32);
-	@:meta(Embed(source = "../assets/graphics/TreeBare.png"))
-	private static var imgTreeBare:Class<Dynamic>;
+private static var imgTreeBare:BitmapData;
 	public static var sprTreeBare:Spritemap = new Spritemap(imgTreeBare, 32, 32);
-	@:meta(Embed(source = "../assets/graphics/OpenTree.png"))
-	private static var imgOpenTree:Class<Dynamic>;
+private static var imgOpenTree:BitmapData;
 	public static var sprOpenTree:Spritemap = new Spritemap(imgOpenTree, 32, 32);
-	@:meta(Embed(source = "../assets/graphics/OpenTreeMask.png"))
-	public static var imgOpenTreeMask:Class<Dynamic>;
+public static var imgOpenTreeMask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/Blizzard.png"))
-	private static var imgBlizzard:Class<Dynamic>;
+private static var imgBlizzard:BitmapData;
 	public static var sprBlizzard:Image = new Image(imgBlizzard);
-	@:meta(Embed(source = "../assets/graphics/Light.png"))
-	private static var imgLight:Class<Dynamic>;
+private static var imgLight:BitmapData;
 	public static var sprLight:Image = new Image(imgLight);
 
-	@:meta(Embed(source = "../assets/graphics/SnowHill.png"))
-	private static var imgSnowHill:Class<Dynamic>;
+private static var imgSnowHill:BitmapData;
 	public static var sprSnowHill:Image = new Image(imgSnowHill);
-	@:meta(Embed(source = "../assets/graphics/SnowHillMask.png"))
-	public static var imgSnowHillMask:Class<Dynamic>;
+public static var imgSnowHillMask:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/WaterfallSpray.png"))
-	public static var imgWaterfallSpray:Class<Dynamic>;
+public static var imgWaterfallSpray:BitmapData;
 
-	@:meta(Embed(source = "../assets/graphics/PitShadow.png"))
-	private static var imgPitShadow:Class<Dynamic>;
+private static var imgPitShadow:BitmapData;
 	public static var sprPitShadow:Spritemap = new Spritemap(imgPitShadow, 16, 16);
 
-	@:meta(Embed(source = "../assets/graphics/Droplet.png"))
-	private static var imgDroplet:Class<Dynamic>;
+private static var imgDroplet:BitmapData;
 	public static var sprDroplet:Spritemap = new Spritemap(imgDroplet, 9, 5);
 
-	@:meta(Embed(source = "../assets/graphics/Health.png"))
-	private static var imgHealth:Class<Dynamic>;
+private static var imgHealth:BitmapData;
 	public static var sprHealth:Spritemap = new Spritemap(imgHealth, 12, 12);
 
-	@:meta(Embed(source = "../assets/graphics/BlurRegion.png"))
-	private static var imgBlurRegion:Class<Dynamic>;
+private static var imgBlurRegion:BitmapData;
 	public static var sprBlurRegion:Image = new Image(imgBlurRegion);
 
-	@:meta(Embed(source = "../assets/graphics/BlurRegion2.png"))
-	private static var imgBlurRegion2:Class<Dynamic>;
+private static var imgBlurRegion2:BitmapData;
 	public static var sprBlurRegion2:Image = new Image(imgBlurRegion2);
 
-	@:meta(Embed(source = "../assets/graphics/TreeLarge.png"))
-	private var imgTreeLarge:Class<Dynamic>;
+private var imgTreeLarge:BitmapData;
 	private var sprTreeLarge:Spritemap;
 
-	@:meta(Embed(source = "../assets/graphics/Logo2.png"))
-	private var imgLogo:Class<Dynamic>;
+private var imgLogo:BitmapData;
 	private var sprLogo:Spritemap;
 
-	@:meta(Embed(source = "../assets/graphics/pixel_logo_medium.png"))
-	private var imgNG:Class<Dynamic>;
+private var imgNG:BitmapData;
 	private var sprNG:Spritemap;
 
-	@:meta(Embed(source = "../assets/graphics/promos.png"))
-	private var imgGames:Class<Dynamic>;
+private var imgGames:BitmapData;
 	private var spGames:DisplayObject;
 
-	@:meta(Embed(source = "../assets/graphics/MenuArrow.png"))
-	private var imgMenuArrow:Class<Dynamic>;
+private var imgMenuArrow:BitmapData;
 	private var sprMenuArrow:Spritemap;
 
 	/*BOSS KEYS/LOCKS*/
-	@:meta(Embed(source = "../assets/graphics/BossLock.png"))
-	private static var imgBossLock:Class<Dynamic>;
+private static var imgBossLock:BitmapData;
 	private static var sprBossLock:Spritemap = new Spritemap(imgBossLock, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BossLock1.png"))
-	private static var imgBossLock1:Class<Dynamic>;
+private static var imgBossLock1:BitmapData;
 	private static var sprBossLock1:Spritemap = new Spritemap(imgBossLock1, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BossLock2.png"))
-	private static var imgBossLock2:Class<Dynamic>;
+private static var imgBossLock2:BitmapData;
 	private static var sprBossLock2:Spritemap = new Spritemap(imgBossLock2, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BossLock3.png"))
-	private static var imgBossLock3:Class<Dynamic>;
+private static var imgBossLock3:BitmapData;
 	private static var sprBossLock3:Spritemap = new Spritemap(imgBossLock3, 16, 16);
-	@:meta(Embed(source = "../assets/graphics/BossLock4.png"))
-	private static var imgBossLock4:Class<Dynamic>;
+private static var imgBossLock4:BitmapData;
 	private static var sprBossLock4:Spritemap = new Spritemap(imgBossLock4, 16, 16);
 
-	@:meta(Embed(source = "../assets/graphics/BossKey.png"))
-	private static var imgBossKey:Class<Dynamic>;
+private static var imgBossKey:BitmapData;
 	public static var sprBossKey:Spritemap = new Spritemap(imgBossKey, 12, 16);
-	@:meta(Embed(source = "../assets/graphics/BossKey1.png"))
-	private static var imgBossKey1:Class<Dynamic>;
+private static var imgBossKey1:BitmapData;
 	public static var sprBossKey1:Spritemap = new Spritemap(imgBossKey1, 12, 16);
-	@:meta(Embed(source = "../assets/graphics/BossKey2.png"))
-	private static var imgBossKey2:Class<Dynamic>;
+private static var imgBossKey2:BitmapData;
 	public static var sprBossKey2:Spritemap = new Spritemap(imgBossKey2, 12, 16);
-	@:meta(Embed(source = "../assets/graphics/BossKey3.png"))
-	private static var imgBossKey3:Class<Dynamic>;
+private static var imgBossKey3:BitmapData;
 	public static var sprBossKey3:Spritemap = new Spritemap(imgBossKey3, 12, 16);
-	@:meta(Embed(source = "../assets/graphics/BossKey4.png"))
-	private static var imgBossKey4:Class<Dynamic>;
+private static var imgBossKey4:BitmapData;
 	public static var sprBossKey4:Spritemap = new Spritemap(imgBossKey4, 12, 16);
 
 	public static var bossLocks:Array<Dynamic> = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
@@ -898,8 +801,109 @@ class Game extends World {
 	 */
 	private var cutsceneTimer:Array<Dynamic> = [[3 * Main.FPS, 210], []]; // used for live counting.
 
+private function load_image_assets():Void {
+imgGrass = Assets.getBitmapData("assets/graphics/Grass.png");
+imgGround = Assets.getBitmapData("assets/graphics/Shore.png");
+imgWater = Assets.getBitmapData("assets/graphics/Water.png");
+imgStone = Assets.getBitmapData("assets/graphics/Stone.png");
+imgBrick = Assets.getBitmapData("assets/graphics/Brick.png");
+imgDirt = Assets.getBitmapData("assets/graphics/Dirt.png");
+imgDungeonTile = Assets.getBitmapData("assets/graphics/DungeonTile.png");
+imgPit = Assets.getBitmapData("assets/graphics/Pit.png");
+imgShieldTile = Assets.getBitmapData("assets/graphics/ShieldTile.png");
+imgForest = Assets.getBitmapData("assets/graphics/ForestTile.png");
+imgCliff = Assets.getBitmapData("assets/graphics/Cliff.png");
+imgWood = Assets.getBitmapData("assets/graphics/Wood.png");
+imgWoodWalk = Assets.getBitmapData("assets/graphics/WoodWalk.png");
+imgCave = Assets.getBitmapData("assets/graphics/Cave.png");
+imgWoodTree = Assets.getBitmapData("assets/graphics/WoodTree.png");
+imgDarkTile = Assets.getBitmapData("assets/graphics/DarkTile.png");
+imgIgneousTile = Assets.getBitmapData("assets/graphics/IgneousTile.png");
+imgLava = Assets.getBitmapData("assets/graphics/Lava2.png");
+imgBlueTile = Assets.getBitmapData("assets/graphics/BlueStone.png");
+imgBlueTileWall = Assets.getBitmapData("assets/graphics/BlueStoneWall.png");
+imgBlueTileWallDark = Assets.getBitmapData("assets/graphics/BlueStoneWallDark.png");
+imgSnow = Assets.getBitmapData("assets/graphics/Snow.png");
+imgIce = Assets.getBitmapData("assets/graphics/Ice.png");
+imgIceWall = Assets.getBitmapData("assets/graphics/IceWall.png");
+imgIceWallLit = Assets.getBitmapData("assets/graphics/IceWallLit.png");
+imgWaterfall = Assets.getBitmapData("assets/graphics/Waterfall.png");
+imgBody = Assets.getBitmapData("assets/graphics/Body.png");
+imgBodyWall = Assets.getBitmapData("assets/graphics/BodyWall.png");
+imgGhostTile = Assets.getBitmapData("assets/graphics/GhostTile.png");
+imgBridge = Assets.getBitmapData("assets/graphics/OpenBridge.png");
+imgGhostTileStep = Assets.getBitmapData("assets/graphics/GhostTileStep.png");
+imgIgneousLava = Assets.getBitmapData("assets/graphics/IgneousLava.png");
+imgOddTile = Assets.getBitmapData("assets/graphics/OddTile.png");
+imgFuchTile = Assets.getBitmapData("assets/graphics/FuchTile.png");
+imgOddTileWall = Assets.getBitmapData("assets/graphics/OddTileWall.png");
+imgRockTile = Assets.getBitmapData("assets/graphics/RockTile.png");
+imgRockyTile = Assets.getBitmapData("assets/graphics/RockyTile.png");
+imgCliffSides = Assets.getBitmapData("assets/graphics/CliffSide.png");
+imgCliffSidesMaskL = Assets.getBitmapData("assets/graphics/CliffSideMaskL.png");
+imgCliffSidesMaskR = Assets.getBitmapData("assets/graphics/CliffSideMaskR.png");
+imgCliffSidesMaskLU = Assets.getBitmapData("assets/graphics/CliffSideMaskLU.png");
+imgCliffSidesMaskRU = Assets.getBitmapData("assets/graphics/CliffSideMaskRU.png");
+imgCliffSidesMaskU = Assets.getBitmapData("assets/graphics/CliffSideMaskU.png");
+imgCliffStairs = Assets.getBitmapData("assets/graphics/CliffStairs.png");
+imgBuilding = Assets.getBitmapData("assets/graphics/Building.png");
+imgBuildingMask = Assets.getBitmapData("assets/graphics/BuildingMask.png");
+imgBuilding1 = Assets.getBitmapData("assets/graphics/Building1.png");
+imgBuilding1Mask = Assets.getBitmapData("assets/graphics/Building1Mask.png");
+imgBuilding2 = Assets.getBitmapData("assets/graphics/Building2.png");
+imgBuilding2Mask = Assets.getBitmapData("assets/graphics/Building2Mask.png");
+imgBuilding3 = Assets.getBitmapData("assets/graphics/Building3.png");
+imgBuilding3Mask = Assets.getBitmapData("assets/graphics/Building3Mask.png");
+imgBuilding4 = Assets.getBitmapData("assets/graphics/Building4.png");
+imgBuilding4Mask = Assets.getBitmapData("assets/graphics/Building4Mask.png");
+imgBuilding5 = Assets.getBitmapData("assets/graphics/Building5.png");
+imgBuilding5Mask = Assets.getBitmapData("assets/graphics/Building5Mask.png");
+imgBuilding6 = Assets.getBitmapData("assets/graphics/Building6.png");
+imgBuilding6Mask = Assets.getBitmapData("assets/graphics/Building6Mask.png");
+imgBuilding7 = Assets.getBitmapData("assets/graphics/Building7.png");
+imgBuilding7Mask = Assets.getBitmapData("assets/graphics/Building7Mask.png");
+imgBuilding8 = Assets.getBitmapData("assets/graphics/Building8.png");
+imgBuilding8Mask = Assets.getBitmapData("assets/graphics/Building8Mask.png");
+imgStatues = Assets.getBitmapData("assets/graphics/Statues.png");
+imgRock = Assets.getBitmapData("assets/graphics/Rock.png");
+imgRock2 = Assets.getBitmapData("assets/graphics/Rock2.png");
+imgRock3 = Assets.getBitmapData("assets/graphics/Rock3.png");
+imgRock4 = Assets.getBitmapData("assets/graphics/Rock4.png");
+imgPole = Assets.getBitmapData("assets/graphics/Pole.png");
+imgWire = Assets.getBitmapData("assets/graphics/Wire.png");
+imgTree = Assets.getBitmapData("assets/graphics/Tree2.png");
+imgTreeBare = Assets.getBitmapData("assets/graphics/TreeBare.png");
+imgOpenTree = Assets.getBitmapData("assets/graphics/OpenTree.png");
+imgOpenTreeMask = Assets.getBitmapData("assets/graphics/OpenTreeMask.png");
+imgBlizzard = Assets.getBitmapData("assets/graphics/Blizzard.png");
+imgLight = Assets.getBitmapData("assets/graphics/Light.png");
+imgSnowHill = Assets.getBitmapData("assets/graphics/SnowHill.png");
+imgSnowHillMask = Assets.getBitmapData("assets/graphics/SnowHillMask.png");
+imgWaterfallSpray = Assets.getBitmapData("assets/graphics/WaterfallSpray.png");
+imgPitShadow = Assets.getBitmapData("assets/graphics/PitShadow.png");
+imgDroplet = Assets.getBitmapData("assets/graphics/Droplet.png");
+imgHealth = Assets.getBitmapData("assets/graphics/Health.png");
+imgBlurRegion = Assets.getBitmapData("assets/graphics/BlurRegion.png");
+imgBlurRegion2 = Assets.getBitmapData("assets/graphics/BlurRegion2.png");
+imgTreeLarge = Assets.getBitmapData("assets/graphics/TreeLarge.png");
+imgLogo = Assets.getBitmapData("assets/graphics/Logo2.png");
+imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_medium.png");
+imgGames = Assets.getBitmapData("assets/graphics/promos.png");
+imgMenuArrow = Assets.getBitmapData("assets/graphics/MenuArrow.png");
+imgBossLock = Assets.getBitmapData("assets/graphics/BossLock.png");
+imgBossLock1 = Assets.getBitmapData("assets/graphics/BossLock1.png");
+imgBossLock2 = Assets.getBitmapData("assets/graphics/BossLock2.png");
+imgBossLock3 = Assets.getBitmapData("assets/graphics/BossLock3.png");
+imgBossLock4 = Assets.getBitmapData("assets/graphics/BossLock4.png");
+imgBossKey = Assets.getBitmapData("assets/graphics/BossKey.png");
+imgBossKey1 = Assets.getBitmapData("assets/graphics/BossKey1.png");
+imgBossKey2 = Assets.getBitmapData("assets/graphics/BossKey2.png");
+imgBossKey3 = Assets.getBitmapData("assets/graphics/BossKey3.png");
+imgBossKey4 = Assets.getBitmapData("assets/graphics/BossKey4.png");
+}
 	public function new(_level:Int = -1, _playerx:Int = 80, _playery:Int = 128, _restart:Bool = false, _menuState:Int = -1) {
-		spGames = Type.createInstance(imgGames, []);
+load_image_assets();
+		spGames = new Bitmap(imgGames);
 		sprTreeLarge = new Spritemap(imgTreeLarge, 160, 192);
 		sprLogo = new Spritemap(imgLogo, 152, 62);
 		sprNG = new Spritemap(imgNG, 87, 75);

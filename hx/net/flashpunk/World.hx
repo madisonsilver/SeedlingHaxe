@@ -1,4 +1,5 @@
 package net.flashpunk;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import openfl.utils.Dictionary;
@@ -29,6 +30,7 @@ class World extends Tweener {
 	 * Constructor.
 	 */
 	public function new() {
+
 		super();
 	}
 

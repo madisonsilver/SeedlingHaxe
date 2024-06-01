@@ -1,4 +1,5 @@
 package puzzlements;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Spritemap;
@@ -10,13 +11,16 @@ import scenery.Tile;
  * @author Time
  */
 class Button extends Activators {
-	@:meta(Embed(source = "../../assets/graphics/Button.png"))
-	private var imgButton:Class<Dynamic>;
+private var imgButton:BitmapData;
 	private var sprButton:Spritemap;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
 
+private function load_image_assets():Void {
+imgButton = Assets.getBitmapData("assets/graphics/Button.png");
+}
 	public function new(_x:Int, _y:Int, _t:Int) {
+load_image_assets();
 		sprButton = new Spritemap(imgButton, 8, 8);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprButton, _t);
 		sprButton.centerOO();

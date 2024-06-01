@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.display.BitmapData;
 import openfl.display.Graphics;
@@ -29,6 +30,7 @@ class Canvas extends Graphic {
 	 * @param	height		Height of the canvas.
 	 */
 	public function new(width:Int, height:Int) {
+
 		super();
 		_width = width;
 		_height = height;

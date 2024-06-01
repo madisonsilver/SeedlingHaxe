@@ -1,4 +1,5 @@
 package net.flashpunk.graphics;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.utils.Dictionary;
 import openfl.errors.Error;
@@ -27,6 +28,7 @@ class Emitter extends Graphic {
 	 * @param	frameHeight		Frame height.
 	 */
 	public function new(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0) {
+
 		super();
 		setSource(source, frameWidth, frameHeight);
 		active = true;

@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -13,8 +14,7 @@ import puzzlements.Activators;
  * @author Time
  */
 class LightPole extends Activators {
-	@:meta(Embed(source = "../../assets/graphics/LightPole.png"))
-	private var imgLightPole:Class<Dynamic>;
+private var imgLightPole:BitmapData;
 	private var sprLightPole:Image;
 
 	private var loops(default, never):Float = 1.5;
@@ -29,7 +29,11 @@ class LightPole extends Activators {
 	private var tag:Int;
 	private var invert:Bool;
 
+private function load_image_assets():Void {
+imgLightPole = Assets.getBitmapData("assets/graphics/LightPole.png");
+}
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1, _color:Int = 0xFFFFFF, _invert:Bool = false) {
+load_image_assets();
 		sprLightPole = new Image(imgLightPole);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprLightPole, _t);
 		startY = Std.int(y);

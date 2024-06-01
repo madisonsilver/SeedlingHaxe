@@ -1,4 +1,5 @@
 package scenery;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.Entity;
@@ -13,6 +14,7 @@ class CliffSide extends Entity {
 	private var frame:Int;
 
 	public function new(_x:Int, _y:Int, _f:Int = 0) {
+
 		super(_x, _y);
 		frame = _f;
 

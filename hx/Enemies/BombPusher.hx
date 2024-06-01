@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import net.flashpunk.graphics.Spritemap;
@@ -12,8 +13,7 @@ import scenery.Tile;
  * @author Time
  */
 class BombPusher extends Enemy {
-	@:meta(Embed(source = "../../assets/graphics/BombPusher.png"))
-	private var imgBombPusher:Class<Dynamic>;
+private var imgBombPusher:BitmapData;
 	private var sprBombPusher:Spritemap;
 
 	private var sitAnimation(default, never):Array<Dynamic> = [0, 3];
@@ -22,7 +22,11 @@ class BombPusher extends Enemy {
 	private var shotTime:Int = 0;
 	private var maxDistance(default, never):Int = 256;
 
+private function load_image_assets():Void {
+imgBombPusher = Assets.getBitmapData("assets/graphics/BombPusher.png");
+}
 	public function new(_x:Int, _y:Int) {
+load_image_assets();
 		sprBombPusher = new Spritemap(imgBombPusher, 48, 48, endAnim);
 		super(Std.int(_x + Tile.w * 3 / 2), Std.int(_y + Tile.h * 3 / 2), sprBombPusher);
 		sprBombPusher.centerOO();

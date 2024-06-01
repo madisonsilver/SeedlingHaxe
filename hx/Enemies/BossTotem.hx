@@ -1,4 +1,5 @@
 package enemies;
+import openfl.utils.Assets;import openfl.display.BitmapData;
 
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
@@ -17,8 +18,7 @@ import projectiles.BossTotemShot;
 class BossTotem extends Enemy {
 	public var state(get, set):Int;
 
-	@:meta(Embed(source = "../../assets/graphics/BossTotem.png"))
-	private var imgBossTotem:Class<Dynamic>;
+private var imgBossTotem:BitmapData;
 	private var sprBossTotem:Spritemap;
 
 	// General rules for arrays: arms then legs.
@@ -228,7 +228,11 @@ class BossTotem extends Enemy {
 
 	private var playedSound:Bool = false;
 
+private function load_image_assets():Void {
+imgBossTotem = Assets.getBitmapData("assets/graphics/BossTotem.png");
+}
 	public function new(_x:Int, _y:Int, _tag:Int = -1) {
+load_image_assets();
 		sprBossTotem = new Spritemap(imgBossTotem, 32, 48);
 		super(_x, _y, sprBossTotem);
 		startY = _y;

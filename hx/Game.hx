@@ -2624,7 +2624,7 @@ class Game extends World {
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),teleporter) type: null */ in xml.nodes.objects[0].nodes.teleporter) {
 				add(new Teleporter(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.to), Std.parseInt(o.att.playerx),
 					Std.parseInt(o.att.playery), Std.parseInt(o.att.show) != 0, (Std.string(Std.parseInt(o.att.tag)) == "") ? -1 : Std.parseInt(o.att.tag),
-					Std.parseInt(o.att.invert) != 0, Std.parseInt(o.att.sign)));
+					Std.parseInt(o.att.invert) != 0, o.has.sign ? Std.parseInt(o.att.sign) : 0)); // TODO: Is this the correct default behavior for sign?
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldboss) type: null */ in xml.nodes.objects[0].nodes.shieldboss) {
 				add(new ShieldBoss(Std.parseInt(o.att.x), Std.parseInt(o.att.y), Std.parseInt(o.att.tag)));

@@ -1178,7 +1178,7 @@ class Game extends World {
 		musicUpdate();
 
 		if (Input.released(muteKey)) {
-			FP.volume = as3hx.Compat.parseInt(FP.volume == 0 || Math.isNaN(FP.volume));
+			FP.volume = (FP.volume == 0 || Math.isNaN(FP.volume)) ? 1 : 0;
 			Input.clear();
 		} else {
 			menuAndRestart();

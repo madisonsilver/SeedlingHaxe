@@ -281,22 +281,22 @@ class Screen {
 	private var _matrix:Matrix = new Matrix();
 
 	/** @private */
-	private var _x:Int;
+	private var _x:Int = 0;
 
 	/** @private */
-	private var _y:Int;
+	private var _y:Int = 0;
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
-	private var _originX:Int;
+	private var _originX:Int = 0;
 
 	/** @private */
-	private var _originY:Int;
+	private var _originY:Int = 0;
 
 	/** @private */
 	private var _scaleX:Float = 1;

@@ -82,10 +82,10 @@ class Drill extends Enemy {
 					var tox:Int = Std.int(x);
 					var toy:Int = Std.int(y);
 					if (Math.abs(player.x - x) > Tile.w / 2) {
-						tox += as3hx.Compat.parseInt((2 * as3hx.Compat.parseInt(player.x > x) - 1) * Tile.w);
+						tox += Std.int((2 * (player.x > x ? 1 : 0) - 1) * Tile.w);
 					}
 					if (Math.abs(player.y - y) > Tile.h / 2) {
-						toy += as3hx.Compat.parseInt((2 * as3hx.Compat.parseInt(player.y > y) - 1) * Tile.h);
+						toy += Std.int((2 * (player.y > y ? 1 : 0) - 1) * Tile.h);
 					}
 					if (tox != x && collideTypes(solids, tox, y) == null) {
 						x = tox;

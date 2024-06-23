@@ -1200,7 +1200,7 @@ class Game extends World {
 		if (time % (dayLength + nightLength) == 0) {
 			daysPassed++;
 		}
-		todaysTime = as3hx.Compat.parseInt(time % (dayLength + nightLength));
+		todaysTime = Std.int(time % (dayLength + nightLength));
 
 		if (menu) {
 			var cursor:String = MouseCursor.ARROW;
@@ -1390,7 +1390,7 @@ class Game extends World {
 		}
 
 		if (menu) {
-			menuState = as3hx.Compat.parseInt((menuState + menuStates) % menuStates);
+			menuState = Std.int((menuState + menuStates) % menuStates);
 			var stateInterval:Int = FP.screen.width;
 			var divisor:Int = 10;
 			if (menuTween != null) {
@@ -1456,7 +1456,7 @@ class Game extends World {
 			var g:Int = Std.int(Math.min(Math.max(maxIndex(hist[2]) + range, range), 255));
 			var b:Int = Std.int(Math.min(Math.max(maxIndex(hist[3]) + range, range), 255));
 			var minCol:Int = FP.getColorRGB(Std.int(Math.max(r - range * 2, 0)), Std.int(Math.max(g - range * 2, 0)), Std.int(Math.max(b - range * 2, 0)));
-			var col:Int = as3hx.Compat.parseInt(0xFF000000 + (FP.getColorRGB(r, g, b) - minCol) / cols.length * i + minCol);
+			var col:Int = Std.int(0xFF000000 + (FP.getColorRGB(r, g, b) - minCol) / cols.length * i + minCol);
 			c.threshold(c, c.rect, new Point(), "<", col);
 			c.threshold(c, c.rect, new Point(), ">=", col, cols[i]);
 			temp.draw(c, null, null, BlendMode.HARDLIGHT);
@@ -1601,7 +1601,7 @@ class Game extends World {
 				|| cameraTarget.y > FP.height - FP.screen.height
 				|| cameraTarget.y < -1) {
 				undrawCover();
-				menuIndex = as3hx.Compat.parseInt((menuIndex + 1) % menuLevels.length);
+				menuIndex = Std.int((menuIndex + 1) % menuLevels.length);
 				FP.world = new Game(level, Std.int(playerPosition.x), Std.int(playerPosition.y));
 				return;
 			}
@@ -1633,7 +1633,7 @@ class Game extends World {
 		}
 		spGames.visible = true;
 
-		var rectW:Int = as3hx.Compat.parseInt((spGames.width * FP.screen.scale + 4) / 2);
+		var rectW:Int = Std.int((spGames.width * FP.screen.scale + 4) / 2);
 		Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW), Std.int(FP.camera.y), rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
 
 		spGames.alpha = tweenScale;
@@ -1658,7 +1658,7 @@ class Game extends World {
 			menuScroll -= tweenScale * menuScrollSpeed;
 		}
 
-		var rectW:Int = as3hx.Compat.parseInt(tweenScale * (menuMaxWidthCredits + rectToTextMargin));
+		var rectW:Int = Std.int(tweenScale * (menuMaxWidthCredits + rectToTextMargin));
 		Draw.rect(Std.int(FP.camera.x + basePos.x + _xoff - rectW), Std.int(FP.camera.y), rectW * 2, FP.screen.height, 0, tweenScale * maxRectAlpha);
 
 		var height:Int = 0;
@@ -1671,7 +1671,7 @@ class Game extends World {
 			text.alpha = text.scaleX = tweenScale;
 			text.color = 0x88FF44;
 			drawTextBold(text, null, 0x002200);
-			height += as3hx.Compat.parseInt(text.height + titleToTextMargin);
+			height += Std.int(text.height + titleToTextMargin);
 
 			menuMaxWidthCredits = Std.int(Math.max(text.width / 2, menuMaxWidthCredits));
 
@@ -1686,7 +1686,7 @@ class Game extends World {
 				textName.color = 0x8844FF;
 				textName.render(new Point(), new Point());
 				// drawTextBold(textName, null, 0x000044);
-				height += as3hx.Compat.parseInt(textName.height + ((j + 1 < menuCreditsNames[i].length) ? nameToNameMargin : sectionToSectionMargin));
+				height += Std.int(textName.height + ((j + 1 < menuCreditsNames[i].length) ? nameToNameMargin : sectionToSectionMargin));
 				menuMaxWidthCredits = Std.int(Math.max(textName.width / 2, menuMaxWidthCredits));
 			}
 		}
@@ -1780,7 +1780,7 @@ class Game extends World {
 	}
 
 	public static function health(hits:Int, hitsMax:Int):Void {
-		healthc = as3hx.Compat.parseInt(hitsMax - hits - 1);
+		healthc = Std.int(hitsMax - hits - 1);
 		healths = hitsMax;
 	}
 
@@ -1790,9 +1790,9 @@ class Game extends World {
 		}
 		var cols:Int = 2;
 		for (i in 0...healths) {
-			sprHealth.frame = as3hx.Compat.parseInt(i > healthc);
-			sprHealth.render(new Point(FP.screen.width - sprHealth.width - as3hx.Compat.parseInt(i % cols) * (sprHealth.width - 1),
-				as3hx.Compat.parseInt(i / 2) * (sprHealth.height - 1)),
+			sprHealth.frame = (i > healthc ? 1 : 0);
+			sprHealth.render(new Point(FP.screen.width - sprHealth.width - Std.int(i % cols) * (sprHealth.width - 1),
+				Std.int(i / 2) * (sprHealth.height - 1)),
 				new Point());
 		}
 	}
@@ -1865,7 +1865,7 @@ class Game extends World {
 				sprLight.scaleY = blizzardCircleRadius / sprLight.height;
 				sprLight.centerOO();
 				sprLight.blend = BlendMode.DARKEN;
-				var lightsToDraw:Int = as3hx.Compat.parseInt(10 * snowAlpha);
+				var lightsToDraw:Int = Std.int(10 * snowAlpha);
 				for (i in 0...lightsToDraw) {
 					sprLight.render(new Point(p.x, p.y), FP.camera);
 				}
@@ -1921,7 +1921,7 @@ class Game extends World {
 				speakingColor, speakingAlpha);
 			var minM:Int = 4; // The margin between the image border and the text area
 			var textToImageMargin:Int = 8; // The distance between the text and the image
-			var d:Int = as3hx.Compat.parseInt(FP.screen.height / n);
+			var d:Int = Std.int(FP.screen.height / n);
 			Text.static_size = 8;
 
 			// Scrolling text
@@ -1954,7 +1954,7 @@ class Game extends World {
 			var t:Text = new Text(fullString);
 			var w:Int = textToImageMargin; // The distance of the text to the left edge.
 			if (talkingPic != null) {
-				var m:Int = as3hx.Compat.parseInt((d - talkingPic.height * talkingPic.scale) / 2);
+				var m:Int = Std.int((d - talkingPic.height * talkingPic.scale) / 2);
 				Draw.rect(Std.int(FP.camera.x + minM), Std.int(FP.camera.y + FP.screen.height * (n - 1) / n + minM), m * 2
 					+ talkingPic.width
 					- minM * 2,
@@ -1963,16 +1963,16 @@ class Game extends World {
 					- minM * 2, 0xFFFFFF, 1);
 				talkingPic.render(new Point(m, FP.screen.height * (n - 1) / n + m), new Point());
 				if (talkingPic != null) {
-					w += as3hx.Compat.parseInt(m + talkingPic.width * talkingPic.scale);
+					w += Std.int(m + talkingPic.width * talkingPic.scale);
 				}
 			}
 			var alignOffsetX:Int = 0;
 			switch (ALIGN) {
 				case "LEFT":
 				case "CENTER":
-					alignOffsetX = as3hx.Compat.parseInt((FP.screen.width - w - t.width) / 2);
+					alignOffsetX = Std.int((FP.screen.width - w - t.width) / 2);
 				case "RIGHT":
-					alignOffsetX = as3hx.Compat.parseInt((FP.screen.width - w) - t.width);
+					alignOffsetX = Std.int((FP.screen.width - w) - t.width);
 				default:
 			}
 			t.render(new Point(w + alignOffsetX, FP.screen.height * (n - 1 / 2) / n - t.height / 2 + 1), new Point());
@@ -2028,7 +2028,7 @@ class Game extends World {
 
 	public function totalEnemies():Int // return typeCount("Enemy") + typeCount("ShieldBoss");
 	{
-		return as3hx.Compat.parseInt(classCount(Bob) + classCount(BobSoldier) + classCount(BobBoss) + classCount(Flyer) + classCount(Jellyfish)
+		return Std.int(classCount(Bob) + classCount(BobSoldier) + classCount(BobBoss) + classCount(Flyer) + classCount(Jellyfish)
 			+ classCount(Cactus) + classCount(SandTrap) + classCount(ShieldBoss) + classCount(Spinner) + classCount(WallFlyer) + classCount(Puncher)
 			+ classCount(Drill) + classCount(Turret) + classCount(IceTurret) + classCount(BossTotem) + classCount(Tentacle) + classCount(TentacleBeast)
 			+ classCount(Grenade) + classCount(DarkTrap) + classCount(LightBoss) + classCount(LavaRunner) + classCount(Bulb) + classCount(Squishle)
@@ -2046,7 +2046,7 @@ class Game extends World {
 	public static function worldFrame(n:Int,
 			loops:Float = 1):Int // n is the number of values to return (1..n) and loops is the number of animation loops to go over.
 	{
-		return as3hx.Compat.parseInt((time % (timePerFrame * loops)) / (timePerFrame * loops / Math.max(n, 1)));
+		return Std.int((time % (timePerFrame * loops)) / (timePerFrame * loops / Math.max(n, 1)));
 	}
 
 	public function view():Void {
@@ -2293,7 +2293,7 @@ class Game extends World {
 					fallthroughOffset = new Point(Std.parseInt(o.att.x), Std.parseInt(o.att.y));
 					var tempOffset:Point = new Point(Std.parseInt(o.att.xOff), Std.parseInt(o.att.yOff));
 					fallthroughOffset = new Point(fallthroughOffset.x + tempOffset.x, fallthroughOffset.y + tempOffset.y);
-					fallthroughSign = as3hx.Compat.parseInt(Std.parseInt(o.att.sign) - 1);
+					fallthroughSign = Std.int(Std.parseInt(o.att.sign) - 1);
 				}
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),droplet) type: null */ in xml.nodes.objects[0].nodes.droplet) {

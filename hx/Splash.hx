@@ -77,9 +77,9 @@ class Splash extends World {
 		}
 
 		spMusicBy.visible = false;
-		rows = as3hx.Compat.parseInt(sp[rek].height / frameHeight);
-		cols = as3hx.Compat.parseInt(sp[rek].width / frameWidth);
-		frameCount = as3hx.Compat.parseInt(rows * cols);
+		rows = Std.int(sp[rek].height / frameHeight);
+		cols = Std.int(sp[rek].width / frameWidth);
+		frameCount = Std.int(rows * cols);
 	}
 
 	override public function begin():Void {

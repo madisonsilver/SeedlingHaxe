@@ -31,16 +31,16 @@ class Tilemap extends Canvas {
 	 */
 	public function new(tileset:Dynamic, width:Int, height:Int, tileWidth:Int, tileHeight:Int) {
 		// set some tilemap information
-		_width = as3hx.Compat.parseInt(width - (width % tileWidth));
-		_height = as3hx.Compat.parseInt(height - (height % tileHeight));
-		_columns = as3hx.Compat.parseInt(_width / tileWidth);
-		_rows = as3hx.Compat.parseInt(_height / tileHeight);
+		_width = Std.int(width - (width % tileWidth));
+		_height = Std.int(height - (height % tileHeight));
+		_columns = Std.int(_width / tileWidth);
+		_rows = Std.int(_height / tileHeight);
 		_map = new BitmapData(_columns, _rows, false, 0);
 		_tile = new Rectangle(0, 0, tileWidth, tileHeight);
 
 		// create the canvas
-		_maxWidth -= as3hx.Compat.parseInt(_maxWidth % tileWidth);
-		_maxHeight -= as3hx.Compat.parseInt(_maxHeight % tileHeight);
+		_maxWidth -= Std.int(_maxWidth % tileWidth);
+		_maxHeight -= Std.int(_maxHeight % tileHeight);
 		super(_width, _height);
 
 		// load the tileset graphic
@@ -52,8 +52,8 @@ class Tilemap extends Canvas {
 		if (_set == null) {
 			throw new Error("Invalid tileset graphic provided.");
 		}
-		_setColumns = as3hx.Compat.parseInt(_set.width / tileWidth);
-		_setRows = as3hx.Compat.parseInt(_set.height / tileHeight);
+		_setColumns = Std.int(_set.width / tileWidth);
+		_setRows = Std.int(_set.height / tileHeight);
 		_setCount = _setColumns * _setRows;
 	}
 
@@ -72,7 +72,7 @@ class Tilemap extends Canvas {
 		column %= _columns;
 		row %= _rows;
 		_tile.x = (index % _setColumns) * _tile.width;
-		_tile.y = as3hx.Compat.parseInt(index / _setColumns) * _tile.height;
+		_tile.y = Std.int(index / _setColumns) * _tile.height;
 		_map.setPixel(column, row, index);
 		draw(column * _tile.width, row * _tile.height, _set, _tile);
 	}
@@ -126,8 +126,8 @@ class Tilemap extends Canvas {
 		column %= _columns;
 		row %= _rows;
 		var c:Int = column;
-		var r:Int = as3hx.Compat.parseInt(column + width);
-		var b:Int = as3hx.Compat.parseInt(row + height);
+		var r:Int = Std.int(column + width);
+		var b:Int = Std.int(row + height);
 		var u:Bool = usePositions;
 		usePositions = false;
 		while (row < b) {
@@ -158,8 +158,8 @@ class Tilemap extends Canvas {
 		column %= _columns;
 		row %= _rows;
 		var c:Int = column;
-		var r:Int = as3hx.Compat.parseInt(column + width);
-		var b:Int = as3hx.Compat.parseInt(row + height);
+		var r:Int = Std.int(column + width);
+		var b:Int = Std.int(row + height);
 		var u:Bool = usePositions;
 		usePositions = false;
 		while (row < b) {
@@ -196,7 +196,7 @@ class Tilemap extends Canvas {
 				if (col[x] == "") {
 					continue;
 				}
-				setTile(x, y, as3hx.Compat.parseInt(col[x]));
+				setTile(x, y, Std.int(col[x]));
 			}
 		}
 	}
@@ -231,7 +231,7 @@ class Tilemap extends Canvas {
 	 * @return	Index of the tile.
 	 */
 	public function getIndex(tilesColumn:Int, tilesRow:Int):Int {
-		return as3hx.Compat.parseInt((tilesRow % _setRows) * _setColumns + (tilesColumn % _setColumns));
+		return Std.int((tilesRow % _setRows) * _setColumns + (tilesColumn % _setColumns));
 	}
 
 	/**

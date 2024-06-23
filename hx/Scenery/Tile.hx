@@ -134,7 +134,7 @@ class Tile extends Entity {
 	}
 
 	override public function render():Void {
-		if (!onScreen(as3hx.Compat.parseInt(t == 32) * 16)) {
+		if (!onScreen((t == 32 ? 1 : 0) * 16)) {
 			return;
 		}
 		var phases:Int = 100;
@@ -285,7 +285,7 @@ class Tile extends Entity {
 				drawMyEdges();
 			case 25:
 				Game.sprWaterfall.frame = (Game.worldFrame(waterfallFrames, 0.8) + Math.floor(randVal * waterfallFrames)) % waterfallFrames
-					+ waterfallFrames * as3hx.Compat.parseInt(continuous);
+					+ waterfallFrames * (continuous ? 1 : 0);
 				Game.sprWaterfall.render(new Point(x, y), FP.camera);
 				if (pit) {
 					Game.sprPitShadow.render(new Point(x, y), FP.camera);
@@ -296,20 +296,20 @@ class Tile extends Entity {
 				}
 			case 26:
 				Game.sprBody.flipped = randVal < 0.5;
-				Game.sprBody.angle = 180 * (as3hx.Compat.parseInt(2 * randVal) - 1);
+				Game.sprBody.angle = 180 * (Std.int(2 * randVal) - 1);
 				loops = 1;
 				Game.sprBody.frame = bodyFrames[
-					(Game.worldFrame(bodyFrames.length, loops) + as3hx.Compat.parseInt(randVal * bodyFrames.length)) % bodyFrames.length
+					(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length
 				];
 				Game.sprBody.render(new Point(x, y), FP.camera);
 				Game.sprBody.flipped = false;
 				drawMyEdges();
 			case 27:
 				Game.sprBodyWall.flipped = randVal < 0.5;
-				Game.sprBodyWall.angle = 180 * (as3hx.Compat.parseInt(2 * randVal) - 1);
+				Game.sprBodyWall.angle = 180 * (Std.int(2 * randVal) - 1);
 				loops = 2;
 				Game.sprBodyWall.frame = bodyFrames[
-					(Game.worldFrame(bodyFrames.length, loops) + as3hx.Compat.parseInt(randVal * bodyFrames.length)) % bodyFrames.length
+					(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length
 				];
 				Game.sprBodyWall.render(new Point(x, y), FP.camera);
 				Game.sprBodyWall.flipped = false;
@@ -333,7 +333,7 @@ class Tile extends Entity {
 				} else if (bridgeOpeningTimer > 0) {
 					bridgeOpeningTimer--;
 					Game.sprBridge.frame = openingBridge[
-						as3hx.Compat.parseInt((1 - bridgeOpeningTimer / bridgeOpeningTimerMax) * openingBridge.length)
+						Std.int((1 - bridgeOpeningTimer / bridgeOpeningTimerMax) * openingBridge.length)
 					];
 					Game.sprBridge.blend = BlendMode.INVERT;
 					type = "Solid";

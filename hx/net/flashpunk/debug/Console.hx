@@ -198,7 +198,7 @@ class Console {
 		_debReadText0.width = 80;
 		_debReadText0.height = 20;
 		_debReadText1.width = 160;
-		_debReadText1.height = as3hx.Compat.parseInt(height / 4);
+		_debReadText1.height = Std.int(height / 4);
 		_debReadText0.x = 2;
 		_debReadText0.y = 3;
 		_debReadText1.x = 2;
@@ -687,14 +687,14 @@ class Console {
 			{
 				_logRead.graphics.beginFill(0xFFFFFF, 1);
 				var h:Int = Std.int(FP.clamp(_logBar.height * (_logLines / LOG.length), 12, _logBar.height - 4));
-				var y:Int = as3hx.Compat.parseInt(_logBar.y + 2 + (_logBar.height - 16) * _logScroll);
+				var y:Int = Std.int(_logBar.y + 2 + (_logBar.height - 16) * _logScroll);
 				_logRead.graphics.drawRoundRectComplex(_logBar.x + 2, y, 12, 12, 6, 6, 6, 6);
 			}
 
 			// Display the log text lines.
 			if (LOG.length != 0) {
 				var i:Int = (LOG.length > _logLines) ? Math.round((LOG.length - _logLines) * _logScroll) : 0;
-				var n:Int = as3hx.Compat.parseInt(i + Math.min(_logLines, LOG.length));
+				var n:Int = Std.int(i + Math.min(_logLines, LOG.length));
 				var s:String = "";
 				while (i < n) {
 					s += LOG[i++] + "\n";
@@ -777,7 +777,7 @@ class Console {
 		_debReadText1.height = _debReadText1.y + _debReadText1.textHeight + 4;
 
 		// The debug panel.
-		_debRead.y = as3hx.Compat.parseInt(height - _debReadText1.height);
+		_debRead.y = Std.int(height - _debReadText1.height);
 		_debRead.graphics.clear();
 		_debRead.graphics.beginFill(0, .75);
 		_debRead.graphics.drawRoundRectComplex(0, 0, _debReadText0.width, 20, 0, 20, 0, 0);
@@ -792,7 +792,7 @@ class Console {
 	/** @private Updates the Button panel. */
 	private function updateButtons():Void // Button visibility.
 	{
-		_butRead.x = _fpsInfo.x + _fpsInfo.width + as3hx.Compat.parseInt((_entRead.x - (_fpsInfo.x + _fpsInfo.width)) / 2) - 30;
+		_butRead.x = _fpsInfo.x + _fpsInfo.width + Std.int((_entRead.x - (_fpsInfo.x + _fpsInfo.width)) / 2) - 30;
 		_butDebug.visible = !_debug;
 		_butOutput.visible = _debug;
 		_butPlay.visible = FP.engine.paused;
@@ -842,11 +842,11 @@ class Console {
 	 * Get the unscaled screen size for the Console.
 	 */
 	private function get_width():Int {
-		return as3hx.Compat.parseInt(FP.screen.width * FP.screen.scaleX * FP.screen.scale);
+		return Std.int(FP.screen.width * FP.screen.scaleX * FP.screen.scale);
 	}
 
 	private function get_height():Int {
-		return as3hx.Compat.parseInt(FP.screen.height * FP.screen.scaleY * FP.screen.scale);
+		return Std.int(FP.screen.height * FP.screen.scaleY * FP.screen.scale);
 	}
 
 	// Console state information.

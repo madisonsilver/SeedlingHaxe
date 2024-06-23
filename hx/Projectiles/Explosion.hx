@@ -44,7 +44,7 @@ class Explosion extends Entity {
 		type = "Explosion";
 		sprExplosion.scale = radius * 2 / sprExplosion.width; // Assume that the explosion sprite is circular.
 		sprExplosion.angle = Math.random() * 360;
-		radius *= as3hx.Compat.parseInt(radiusCoeff); // radius now represents the hitable area of the explosion.
+		radius *= Std.int(radiusCoeff); // radius now represents the hitable area of the explosion.
 
 		layer = -FP.height;
 	}

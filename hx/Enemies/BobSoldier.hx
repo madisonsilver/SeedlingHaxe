@@ -150,7 +150,7 @@ class BobSoldier extends Enemy {
 	public function swordSpinningStop(ang:Float = 0):Void {
 		swordSpin[swordIndex] = ang;
 		swordSpinning = false;
-		swordIndex = as3hx.Compat.parseInt((swordIndex + 1) % swords);
+		swordIndex = Std.int((swordIndex + 1) % swords);
 	}
 
 	public function swordHitting():Void {

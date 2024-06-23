@@ -319,7 +319,7 @@ class Player extends Mobile {
 	public static function hasKeyNumber():Int {
 		var n:Int = 0;
 		for (i in 0...totalKeys) {
-			n += as3hx.Compat.parseInt(hasKey(i));
+			n += (hasKey(i) ? 1 : 0);
 		}
 		return n;
 	}
@@ -337,7 +337,7 @@ class Player extends Mobile {
 	public static function hasTotemPartNumber():Int {
 		var n:Int = 0;
 		for (i in 0...totemParts) {
-			n += as3hx.Compat.parseInt(hasTotemPart(i));
+			n += (hasTotemPart(i) ? 1 : 0);
 		}
 		return n;
 	}
@@ -495,13 +495,13 @@ class Player extends Mobile {
 		type = "Player";
 		setHitbox(Std.int(normalHitbox.width), Std.int(normalHitbox.height), Std.int(normalHitbox.x), Std.int(normalHitbox.y));
 
-		checkOffsetY = as3hx.Compat.parseInt(-originY + height - 2);
+		checkOffsetY = Std.int(-originY + height - 2);
 	}
 
 	override public function check():Void {
 		super.check();
 		if (fallFromCeiling) {
-			y = as3hx.Compat.parseInt(FP.camera.y - (height - originY));
+			y = Std.int(FP.camera.y - (height - originY));
 		}
 		if (Game.cheats) {
 			hasSword = true;
@@ -595,7 +595,7 @@ class Player extends Mobile {
 				moveSpeed = moveSpeeds[state];
 				if (inWater || inLava) {
 					f = Mobile.WATER_FRICTION;
-					moveSpeed = moveSpeeds[state] + 0.25 * as3hx.Compat.parseInt(Music.soundPosition("Swim") < 0.1);
+					moveSpeed = moveSpeeds[state] + 0.25 * (Music.soundPosition("Swim") < 0.1 ? 1 : 0);
 					if (v.length > 0 && !Music.soundIsPlaying("Swim")) {
 						Music.playSound("Swim");
 					}
@@ -680,7 +680,7 @@ class Player extends Mobile {
 		}
 		// Sloppy hacky code for making the death animation in the final (bad) scene work.
 		if (g == sprShrumDark) {
-			var s:Int = as3hx.Compat.parseInt(2 * colW);
+			var s:Int = Std.int(2 * colW);
 			g.add("die", [s, s, s, s, s, s, s, s + 1, s + 2, s + 3, s + 4, s + 5, s + 6, s + 7, s + 8], 3.5);
 			g.add("dead", [s + 8], 0);
 		}
@@ -751,14 +751,14 @@ class Player extends Mobile {
 			receiveInput = false;
 			directionFace = 3;
 			var divisor:Int = 10;
-			x += as3hx.Compat.parseInt((Math.floor(fallInPitPos.x / Tile.w) * Tile.w + Tile.w / 2 - x) / divisor);
-			y += as3hx.Compat.parseInt((Math.floor(fallInPitPos.y / Tile.h) * Tile.h + Tile.h / 2 - y) / divisor);
+			x += Std.int((Math.floor(fallInPitPos.x / Tile.w) * Tile.w + Tile.w / 2 - x) / divisor);
+			y += Std.int((Math.floor(fallInPitPos.y / Tile.h) * Tile.h + Tile.h / 2 - y) / divisor);
 			(try cast(graphic, Image) catch (e:Dynamic) null).angle += fallSpinSpeed;
 			(try cast(graphic, Image) catch (e:Dynamic) null).alpha -= fallAlphaSpeed;
 			if ((try cast(graphic, Image) catch (e:Dynamic) null).alpha <= 0) {
 				if (Game.fallthroughLevel > -1) {
-					x = as3hx.Compat.parseInt(Math.floor(Math.max(fallInPitPos.x - Game.fallthroughOffset.x, 0) / Tile.w) * Tile.w);
-					y = as3hx.Compat.parseInt(Math.floor(Math.max(fallInPitPos.y - Game.fallthroughOffset.y, 0) / Tile.h) * Tile.h);
+					x = Std.int(Math.floor(Math.max(fallInPitPos.x - Game.fallthroughOffset.x, 0) / Tile.w) * Tile.w);
+					y = Std.int(Math.floor(Math.max(fallInPitPos.y - Game.fallthroughOffset.y, 0) / Tile.h) * Tile.h);
 					Game.setFallFromCeiling = true;
 					Game.sign = Game.fallthroughSign;
 					FP.world = new Game(Game.fallthroughLevel, Std.int(x), Std.int(y));
@@ -1062,8 +1062,8 @@ class Player extends Mobile {
 				(try cast(e, Tile) catch (e:Dynamic) null).bridgeOpeningTimer--;
 			}
 		} else if (Std.is(e, PushableBlockSpear)) {
-			(try cast(e, PushableBlockSpear) catch (e:Dynamic) null).hit(new Point(as3hx.Compat.parseInt(spearDirection % 2 == 0) * (spearDirection - 1),
-				as3hx.Compat.parseInt(spearDirection % 2 == 1) * (2 - spearDirection)),
+			(try cast(e, PushableBlockSpear) catch (e:Dynamic) null).hit(new Point((spearDirection % 2 == 0 ? 1 : 0) * (spearDirection - 1),
+				(spearDirection % 2 == 1 ? 1 : 0) * (2 - spearDirection)),
 				t, true);
 		} else if (Std.is(e, PushableBlockFire)) {
 			(try cast(e, PushableBlockFire) catch (e:Dynamic) null).hit(new Point(x, y), t);
@@ -1104,8 +1104,8 @@ class Player extends Mobile {
 			if (direction == 1 && v.x == 0) {
 				shieldObj.setHitbox(sprShield.width, sprShield.height, Std.int(sprShield.width / 2), Std.int(sprShield.height / 2));
 				shieldObj.x = x - shieldOffset.x;
-				shieldObj.y = y - shieldOffset.y + as3hx.Compat.parseInt(slashing);
-				sprShield.frame = 2 * as3hx.Compat.parseInt(hasDarkShield);
+				shieldObj.y = y - shieldOffset.y + (slashing ? 1 : 0);
+				sprShield.frame = 2 * (hasDarkShield ? 1 : 0);
 				sprShield.alpha = (try cast(graphic, Image) catch (e:Dynamic) null).alpha;
 				sprShield.render(new Point(shieldObj.x, shieldObj.y), FP.camera);
 			}
@@ -1144,8 +1144,8 @@ class Player extends Mobile {
 			if (direction == 3 && v.x == 0) {
 				shieldObj.setHitbox(sprShield.width, sprShield.height, Std.int(sprShield.width / 2), Std.int(sprShield.height / 2));
 				shieldObj.x = x + shieldOffset.x;
-				shieldObj.y = y + shieldOffset.y - as3hx.Compat.parseInt(slashing);
-				sprShield.frame = 2 * as3hx.Compat.parseInt(hasDarkShield);
+				shieldObj.y = y + shieldOffset.y - (slashing ? 1 : 0);
+				sprShield.frame = 2 * (hasDarkShield ? 1 : 0);
 				sprShield.alpha = (try cast(graphic, Image) catch (e:Dynamic) null).alpha;
 				sprShield.render(new Point(shieldObj.x, shieldObj.y), FP.camera);
 			} else if (v.x < 0 || (v.x == 0 && direction == 2)) {
@@ -1153,14 +1153,14 @@ class Player extends Mobile {
 				shieldObj.x = x - shieldSideOffset.x;
 				shieldObj.y = y + shieldSideOffset.y;
 				sprShield.alpha = (try cast(graphic, Image) catch (e:Dynamic) null).alpha;
-				sprShield.frame = 1 + 2 * as3hx.Compat.parseInt(hasDarkShield);
+				sprShield.frame = 1 + 2 * (hasDarkShield ? 1 : 0);
 				sprShield.render(new Point(shieldObj.x, shieldObj.y), FP.camera);
 			} else if (v.x > 0 || (v.x == 0 && direction == 0)) {
 				shieldObj.setHitbox(3, sprShield.height, 2, Std.int(sprShield.height / 2));
 				shieldObj.x = x + shieldSideOffset.x;
 				shieldObj.y = y + shieldSideOffset.y;
 				sprShield.alpha = (try cast(graphic, Image) catch (e:Dynamic) null).alpha;
-				sprShield.frame = 1 + 2 * as3hx.Compat.parseInt(hasDarkShield);
+				sprShield.frame = 1 + 2 * (hasDarkShield ? 1 : 0);
 				sprShield.render(new Point(shieldObj.x, shieldObj.y), FP.camera);
 			}
 		}
@@ -1176,7 +1176,7 @@ class Player extends Mobile {
 			if (hasGhostSword) {
 				var animFrames:Int = ghostSwordAnimFrames[slashingSprite.currentAnim];
 				slashingSprite.angle += 90 - 180 * slashingSprite.index / (animFrames - 1);
-				slashingSprite.angle -= 45 * as3hx.Compat.parseInt(slashingSprite.currentAnim == "slashnarrow");
+				slashingSprite.angle -= 45 * (slashingSprite.currentAnim == "slashnarrow" ? 1 : 0);
 			}
 			slashingSprite.render(new Point(x, y), FP.camera);
 			Draw.setTarget((try cast(FP.world, Game) catch (e:Dynamic) null).nightBmp, FP.camera);
@@ -1228,11 +1228,11 @@ class Player extends Mobile {
 	}
 
 	private function get_spearX():Int {
-		return as3hx.Compat.parseInt(x + spearOffset.x * (spearDirection % 2) * (spearDirection - 2));
+		return Std.int(x + spearOffset.x * (spearDirection % 2) * (spearDirection - 2));
 	}
 
 	private function get_spearY():Int {
-		return as3hx.Compat.parseInt(y + spearOffset.y * (spearDirection % 2) + (1 - (spearDirection % 2)) + as3hx.Compat.parseInt(spearDirection == 2));
+		return Std.int(y + spearOffset.y * (spearDirection % 2) + (1 - (spearDirection % 2)) + (spearDirection == 2 ? 1 : 0));
 	}
 
 	public function renderSpear():Void {
@@ -1248,7 +1248,7 @@ class Player extends Mobile {
 		var rMin:Int = 4;
 		var rMax:Int = 20;
 		var extra:Int = 4;
-		var r:Int = as3hx.Compat.parseInt(rMin + fireTimer / fireTimerMax * (rMax - rMin)); // + Game.worldFrame(2) * extra;
+		var r:Int = Std.int(rMin + fireTimer / fireTimerMax * (rMax - rMin)); // + Game.worldFrame(2) * extra;
 
 		Draw.circlePlus(Std.int(x), Std.int(y), r, 0xFF0000, fireTimer / fireTimerMax * a);
 		Draw.circlePlus(Std.int(x), Std.int(y), r * 2 / 3, 0xFF8800, fireTimer / fireTimerMax * a);
@@ -1523,7 +1523,7 @@ class Player extends Mobile {
 			}
 			var c:Entity = collideTypes(solids, x + d, y);
 			if (c == null && (c_s == null || hitsTimer > 0)) {
-				x += as3hx.Compat.parseInt(d);
+				x += Std.int(d);
 			} else if (c != null) {
 				return c;
 			} else {
@@ -1542,7 +1542,7 @@ class Player extends Mobile {
 			}
 			var c:Entity = collideTypes(solids, x, y + d);
 			if (c == null && (c_s == null || hitsTimer > 0)) {
-				y += as3hx.Compat.parseInt(d);
+				y += Std.int(d);
 			} else if (c != null) {
 				return c;
 			} else {

@@ -31,7 +31,7 @@ class Backdrop extends Canvas {
 		_repeatY = repeatY;
 		_textWidth = _texture.width;
 		_textHeight = _texture.height;
-		super(FP.width * as3hx.Compat.parseInt(repeatX) + _textWidth, FP.height * as3hx.Compat.parseInt(repeatY) + _textHeight);
+		super(FP.width * Std.int(repeatX) + _textWidth, FP.height * Std.int(repeatY) + _textHeight);
 		FP.rect.x = FP.rect.y = 0;
 		FP.rect.width = _width;
 		FP.rect.height = _height;

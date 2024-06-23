@@ -18,7 +18,7 @@ class Statue extends NPC {
 	private var frame:Int;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _text:String = "", _talkingSpeed:Int = 10) {
-		super(_x + Tile.w, Std.int(_y - Tile.h / 2 + Tile.h * as3hx.Compat.parseInt(_t == 0)), Game.sprStatues, -1, _text, _talkingSpeed, 34);
+		super(_x + Tile.w, Std.int(_y - Tile.h / 2 + Tile.h * (_t == 0 ? 1 : 0)), Game.sprStatues, -1, _text, _talkingSpeed, 34);
 		facePlayer = false;
 		frame = _t;
 		type = "Solid";

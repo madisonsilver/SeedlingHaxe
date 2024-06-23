@@ -97,7 +97,7 @@ class LightBossController extends Entity {
 
 	public function flyCircle():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = as3hx.Compat.parseInt(radiusCircleMin
+		radiusCircle = Std.int(radiusCircleMin
 			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;
@@ -114,7 +114,7 @@ class LightBossController extends Entity {
 
 	public function flyCircleInvert():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = as3hx.Compat.parseInt(radiusCircleMin
+		radiusCircle = Std.int(radiusCircleMin
 			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;
@@ -135,7 +135,7 @@ class LightBossController extends Entity {
 
 	public function flyCircleDouble():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = as3hx.Compat.parseInt(radiusCircleMin
+		radiusCircle = Std.int(radiusCircleMin
 			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;

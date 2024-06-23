@@ -90,14 +90,14 @@ class World extends Tweener {
 	 * X position of the mouse in the World.
 	 */
 	private function get_mouseX():Int {
-		return as3hx.Compat.parseInt(FP.screen.mouseX + FP.camera.x);
+		return Std.int(FP.screen.mouseX + FP.camera.x);
 	}
 
 	/**
 	 * Y position of the mouse in the world.
 	 */
 	private function get_mouseY():Int {
-		return as3hx.Compat.parseInt(FP.screen.mouseY + FP.camera.y);
+		return Std.int(FP.screen.mouseY + FP.camera.y);
 	}
 
 	/**
@@ -803,7 +803,7 @@ class World extends Tweener {
 		if (_updateFirst == null) {
 			return null;
 		}
-		return try cast(_renderLast[as3hx.Compat.parseInt(_layerList[_layerList.length - 1])], Entity) catch (e:Dynamic) null;
+		return try cast(_renderLast[Std.int(_layerList[_layerList.length - 1])], Entity) catch (e:Dynamic) null;
 	}
 
 	/**
@@ -813,7 +813,7 @@ class World extends Tweener {
 		if (_updateFirst == null) {
 			return null;
 		}
-		return try cast(_renderFirst[as3hx.Compat.parseInt(_layerList[0])], Entity) catch (e:Dynamic) null;
+		return try cast(_renderFirst[Std.int(_layerList[0])], Entity) catch (e:Dynamic) null;
 	}
 
 	/**
@@ -823,7 +823,7 @@ class World extends Tweener {
 		if (_updateFirst == null) {
 			return 0;
 		}
-		return as3hx.Compat.parseInt(_layerList[_layerList.length - 1]);
+		return Std.int(_layerList[_layerList.length - 1]);
 	}
 
 	/**
@@ -833,7 +833,7 @@ class World extends Tweener {
 		if (_updateFirst == null) {
 			return 0;
 		}
-		return as3hx.Compat.parseInt(_layerList[0]);
+		return Std.int(_layerList[0]);
 	}
 
 	/**

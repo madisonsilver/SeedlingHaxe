@@ -42,8 +42,8 @@ class Canvas extends Graphic {
 		var w:Int;
 		var h:Int;
 		var i:Int;
-		var ww:Int = as3hx.Compat.parseInt(_width % _maxWidth);
-		var hh:Int = as3hx.Compat.parseInt(_height % _maxHeight);
+		var ww:Int = Std.int(_width % _maxWidth);
+		var hh:Int = Std.int(_height % _maxHeight);
 		if (ww == 0) {
 			ww = _maxWidth;
 		}
@@ -221,8 +221,8 @@ class Canvas extends Graphic {
 			return value;
 		}
 		_tint = _colorTransform;
-		_tint.redMultiplier = (as3hx.Compat.parseInt(_color >> 16) & 0xFF) / 255;
-		_tint.greenMultiplier = (as3hx.Compat.parseInt(_color >> 8) & 0xFF) / 255;
+		_tint.redMultiplier = (Std.int(_color >> 16) & 0xFF) / 255;
+		_tint.greenMultiplier = (Std.int(_color >> 8) & 0xFF) / 255;
 		_tint.blueMultiplier = (_color & 0xFF) / 255;
 		_tint.alphaMultiplier = _alpha;
 		return value;
@@ -251,8 +251,8 @@ class Canvas extends Graphic {
 			return value;
 		}
 		_tint = _colorTransform;
-		_tint.redMultiplier = (as3hx.Compat.parseInt(_color >> 16) & 0xFF) / 255;
-		_tint.greenMultiplier = (as3hx.Compat.parseInt(_color >> 8) & 0xFF) / 255;
+		_tint.redMultiplier = (Std.int(_color >> 16) & 0xFF) / 255;
+		_tint.greenMultiplier = (Std.int(_color >> 8) & 0xFF) / 255;
 		_tint.blueMultiplier = (_color & 0xFF) / 255;
 		_tint.alphaMultiplier = _alpha;
 		return value;

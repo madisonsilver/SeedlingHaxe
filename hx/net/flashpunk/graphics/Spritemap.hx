@@ -59,7 +59,7 @@ class Spritemap extends Image {
 		_height = this.source.height;
 		_columns = Std.int(_width / _rect.width);
 		_rows = Std.int(_height / _rect.height);
-		_frameCount = as3hx.Compat.parseInt(_columns * _rows);
+		_frameCount = Std.int(_columns * _rows);
 		this.callback = callback;
 		updateBuffer();
 		active = true;
@@ -71,7 +71,7 @@ class Spritemap extends Image {
 	override public function updateBuffer():Void // get position of the current frame
 	{
 		_rect.x = _rect.width * _frame;
-		_rect.y = as3hx.Compat.parseInt(_rect.x / _width) * _rect.height;
+		_rect.y = Std.int(_rect.x / _width) * _rect.height;
 		_rect.x %= _width;
 		if (_flipped) {
 			_rect.x = (_width - _rect.width) - _rect.x;
@@ -106,7 +106,7 @@ class Spritemap extends Image {
 					}
 				}
 				if (_anim != null) {
-					_frame = as3hx.Compat.parseInt(_anim._frames[_index]);
+					_frame = Std.int(_anim._frames[_index]);
 				}
 				updateBuffer();
 			}
@@ -149,7 +149,7 @@ class Spritemap extends Image {
 		}
 		_index = 0;
 		_timer = 0;
-		_frame = as3hx.Compat.parseInt(_anim._frames[0]);
+		_frame = Std.int(_anim._frames[0]);
 		complete = false;
 		updateBuffer();
 		return _anim;
@@ -162,7 +162,7 @@ class Spritemap extends Image {
 	 * @return	Frame index.
 	 */
 	public function getFrame(column:Int = 0, row:Int = 0):Int {
-		return as3hx.Compat.parseInt((row % _rows) * _columns + (column % _columns));
+		return Std.int((row % _rows) * _columns + (column % _columns));
 	}
 
 	/**
@@ -173,7 +173,7 @@ class Spritemap extends Image {
 	 */
 	public function setFrame(column:Int = 0, row:Int = 0):Void {
 		_anim = null;
-		var frame:Int = as3hx.Compat.parseInt((row % _rows) * _columns + (column % _columns));
+		var frame:Int = Std.int((row % _rows) * _columns + (column % _columns));
 		if (_frame == frame) {
 			return;
 		}
@@ -200,7 +200,7 @@ class Spritemap extends Image {
 		_anim = null;
 		value %= _frameCount;
 		if (value < 0) {
-			value = as3hx.Compat.parseInt(_frameCount + value);
+			value = Std.int(_frameCount + value);
 		}
 		if (_frame == value) {
 			return value;
@@ -226,7 +226,7 @@ class Spritemap extends Image {
 			return value;
 		}
 		_index = value;
-		_frame = as3hx.Compat.parseInt(_anim._frames[_index]);
+		_frame = Std.int(_anim._frames[_index]);
 		updateBuffer();
 		return value;
 	}

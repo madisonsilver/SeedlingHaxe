@@ -193,9 +193,9 @@ class Draw {
 		}
 		x -= Std.int(_camera.x);
 		y -= Std.int(_camera.y);
-		var f:Int = as3hx.Compat.parseInt(1 - radius);
+		var f:Int = Std.int(1 - radius);
 		var fx:Int = 1;
-		var fy:Int = as3hx.Compat.parseInt(-2 * radius);
+		var fy:Int = Std.int(-2 * radius);
 		var xx:Int = 0;
 		var yy:Int = radius;
 		_target.setPixel(x, y + radius, color);
@@ -257,8 +257,8 @@ class Draw {
 			if (color < 0xFF000000) {
 				color += 0xFF000000;
 			}
-			var x:Int = as3hx.Compat.parseInt(e.x - e.originX - _camera.x);
-			var y:Int = as3hx.Compat.parseInt(e.y - e.originY - _camera.y);
+			var x:Int = Std.int(e.x - e.originX - _camera.x);
+			var y:Int = Std.int(e.y - e.originY - _camera.y);
 			_rect.x = x;
 			_rect.y = y;
 			_rect.width = e.width;

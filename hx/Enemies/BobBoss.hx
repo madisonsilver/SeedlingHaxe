@@ -116,7 +116,7 @@ class BobBoss extends BobSoldier {
 			formingTimer--;
 			(try cast(graphic, Spritemap) catch (e:Dynamic) null).alpha = 1 - formingTimer / formingTimerMax;
 				(try cast(graphic, Spritemap) catch (e:Dynamic) null).scale = 1 + formingTimer / formingTimerMax;
-			var v:Int = as3hx.Compat.parseInt(255 * (1 - formingTimer / formingTimerMax));
+			var v:Int = Std.int(255 * (1 - formingTimer / formingTimerMax));
 			(try cast(graphic, Spritemap) catch (e:Dynamic) null).color = FP.getColorRGB(v, 255, v);
 		} else {
 			super.update();

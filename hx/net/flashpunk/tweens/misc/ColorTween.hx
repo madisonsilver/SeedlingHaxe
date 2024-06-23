@@ -46,14 +46,14 @@ class ColorTween extends Tween {
 		fromColor = fromColor & 0xFFFFFF;
 		toColor = toColor & 0xFFFFFF;
 		color = fromColor;
-		_r = as3hx.Compat.parseInt(fromColor >> 16) & 0xFF;
-		_g = as3hx.Compat.parseInt(fromColor >> 8) & 0xFF;
+		_r = Std.int(fromColor >> 16) & 0xFF;
+		_g = Std.int(fromColor >> 8) & 0xFF;
 		_b = fromColor & 0xFF;
 		_startR = _r / 255;
 		_startG = _g / 255;
 		_startB = _b / 255;
-		_rangeR = ((as3hx.Compat.parseInt(toColor >> 16) & 0xFF) / 255) - _startR;
-		_rangeG = ((as3hx.Compat.parseInt(toColor >> 8) & 0xFF) / 255) - _startG;
+		_rangeR = ((Std.int(toColor >> 16) & 0xFF) / 255) - _startR;
+		_rangeG = ((Std.int(toColor >> 8) & 0xFF) / 255) - _startG;
 		_rangeB = ((toColor & 0xFF) / 255) - _startB;
 		_startA = alpha = fromAlpha;
 		_rangeA = toAlpha - alpha;
@@ -66,10 +66,10 @@ class ColorTween extends Tween {
 	override public function update():Void {
 		super.update();
 		alpha = _startA + _rangeA * _t;
-		_r = as3hx.Compat.parseInt((_startR + _rangeR * _t) * 255);
-		_g = as3hx.Compat.parseInt((_startG + _rangeG * _t) * 255);
-		_b = as3hx.Compat.parseInt((_startB + _rangeB * _t) * 255);
-		color = as3hx.Compat.parseInt(_r << 16 | _g << 8) | _b;
+		_r = Std.int((_startR + _rangeR * _t) * 255);
+		_g = Std.int((_startG + _rangeG * _t) * 255);
+		_b = Std.int((_startB + _rangeB * _t) * 255);
+		color = Std.int(_r << 16 | _g << 8) | _b;
 	}
 
 	/**

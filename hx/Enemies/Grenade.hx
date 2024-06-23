@@ -39,7 +39,7 @@ class Grenade extends Enemy {
 		load_image_assets();
 		sprGrenade = new Spritemap(imgGrenade, 16, 16, animEnd);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2 - fallHeight), sprGrenade);
-		endY = as3hx.Compat.parseInt(_y + Tile.h / 2);
+		endY = Std.int(_y + Tile.h / 2);
 		startY = Std.int(y);
 
 		hitsMax = 1;

@@ -148,10 +148,10 @@ class Masklist extends Hitbox {
 					t = h._y;
 				}
 				if (h._x + h._width > r) {
-					r = as3hx.Compat.parseInt(h._x + h._width);
+					r = Std.int(h._x + h._width);
 				}
 				if (h._y + h._height > b) {
-					b = as3hx.Compat.parseInt(h._y + h._height);
+					b = Std.int(h._y + h._height);
 				}
 			}
 		}
@@ -159,8 +159,8 @@ class Masklist extends Hitbox {
 		// update hitbox bounds
 		_x = l;
 		_y = t;
-		_width = as3hx.Compat.parseInt(r - l);
-		_height = as3hx.Compat.parseInt(b - t);
+		_width = Std.int(r - l);
+		_height = Std.int(b - t);
 		super.update();
 	}
 

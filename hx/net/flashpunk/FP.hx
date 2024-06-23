@@ -207,19 +207,19 @@ class FP {
 		if (t >= 1) {
 			return toColor;
 		}
-		var a:Int = as3hx.Compat.parseInt(fromColor >> 24) & 0xFF;
-		var r:Int = as3hx.Compat.parseInt(fromColor >> 16) & 0xFF;
-		var g:Int = as3hx.Compat.parseInt(fromColor >> 8) & 0xFF;
+		var a:Int = Std.int(fromColor >> 24) & 0xFF;
+		var r:Int = Std.int(fromColor >> 16) & 0xFF;
+		var g:Int = Std.int(fromColor >> 8) & 0xFF;
 		var b:Int = fromColor & 0xFF;
-		var dA:Int = as3hx.Compat.parseInt((as3hx.Compat.parseInt(toColor >> 24) & 0xFF) - a);
-		var dR:Int = as3hx.Compat.parseInt((as3hx.Compat.parseInt(toColor >> 16) & 0xFF) - r);
-		var dG:Int = as3hx.Compat.parseInt((as3hx.Compat.parseInt(toColor >> 8) & 0xFF) - g);
-		var dB:Int = as3hx.Compat.parseInt((toColor & 0xFF) - b);
-		a += as3hx.Compat.parseInt(dA * t);
-		r += as3hx.Compat.parseInt(dR * t);
-		g += as3hx.Compat.parseInt(dG * t);
-		b += as3hx.Compat.parseInt(dB * t);
-		return as3hx.Compat.parseInt(a << 24 | r << 16 | g << 8 | b);
+		var dA:Int = Std.int((Std.int(toColor >> 24) & 0xFF) - a);
+		var dR:Int = Std.int((Std.int(toColor >> 16) & 0xFF) - r);
+		var dG:Int = Std.int((Std.int(toColor >> 8) & 0xFF) - g);
+		var dB:Int = Std.int((toColor & 0xFF) - b);
+		a += Std.int(dA * t);
+		r += Std.int(dR * t);
+		g += Std.int(dG * t);
+		b += Std.int(dB * t);
+		return Std.int(a << 24 | r << 16 | g << 8 | b);
 	}
 
 	/**
@@ -433,7 +433,7 @@ class FP {
 	 * Randomizes the random seed using Flash's Math.random() function.
 	 */
 	public static function randomizeSeed():Void {
-		randomSeed = as3hx.Compat.parseInt(2147483647 * Math.random());
+		randomSeed = Std.int(2147483647 * Math.random());
 	}
 
 	/**
@@ -451,7 +451,7 @@ class FP {
 	 */
 	public static function rand(amount:Int):Int {
 		_seed = (_seed * 16807) % 2147483647;
-		return as3hx.Compat.parseInt((_seed / 2147483647) * amount);
+		return Std.int((_seed / 2147483647) * amount);
 	}
 
 	/**
@@ -501,7 +501,7 @@ class FP {
 	 * @return	The color uint.
 	 */
 	public static function getColorRGB(R:Int = 0, G:Int = 0, B:Int = 0):Int {
-		return as3hx.Compat.parseInt(R << 16 | G << 8 | B);
+		return Std.int(R << 16 | G << 8 | B);
 	}
 
 	/**
@@ -510,7 +510,7 @@ class FP {
 	 * @return	A uint from 0 to 255.
 	 */
 	public static function getRed(color:Int):Int {
-		return as3hx.Compat.parseInt(as3hx.Compat.parseInt(color >> 16) & 0xFF);
+		return Std.int(Std.int(color >> 16) & 0xFF);
 	}
 
 	/**
@@ -519,7 +519,7 @@ class FP {
 	 * @return	A uint from 0 to 255.
 	 */
 	public static function getGreen(color:Int):Int {
-		return as3hx.Compat.parseInt(as3hx.Compat.parseInt(color >> 8) & 0xFF);
+		return Std.int(Std.int(color >> 8) & 0xFF);
 	}
 
 	/**
@@ -528,7 +528,7 @@ class FP {
 	 * @return	A uint from 0 to 255.
 	 */
 	public static function getBlue(color:Int):Int {
-		return as3hx.Compat.parseInt(color & 0xFF);
+		return Std.int(color & 0xFF);
 	}
 
 	/**
@@ -549,7 +549,7 @@ class FP {
 	 */
 	public static function timeFlag():Int {
 		var t:Int = Math.round(haxe.Timer.stamp() * 1000);
-		var e:Int = as3hx.Compat.parseInt(t - _time);
+		var e:Int = Std.int(t - _time);
 		_time = t;
 		return e;
 	}

@@ -49,7 +49,7 @@ class Button extends Activators {
 		}
 		_active = a;
 		activateAll(this, t, activate);
-		sprButton.frame = as3hx.Compat.parseInt(_active);
+		sprButton.frame = (_active ? 1 : 0);
 		return a;
 	}
 

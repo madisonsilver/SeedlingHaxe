@@ -65,10 +65,10 @@ class Light extends Entity {
 	public function draw():Void {
 		var c_radius:Int;
 		if (smooth) {
-			c_radius = as3hx.Compat.parseInt((radiusMax - radiusMin) * (Math.sin(Game.worldFrame(frames, loops) / (frames - 1) * 2 * Math.PI) + 1) / 2
+			c_radius = Std.int((radiusMax - radiusMin) * (Math.sin(Game.worldFrame(frames, loops) / (frames - 1) * 2 * Math.PI) + 1) / 2
 				+ radiusMin);
 		} else {
-			c_radius = as3hx.Compat.parseInt((radiusMax - radiusMin) * Game.worldFrame(frames, loops) / (frames - 1) + radiusMin);
+			c_radius = Std.int((radiusMax - radiusMin) * Game.worldFrame(frames, loops) / (frames - 1) + radiusMin);
 		}
 		Draw.circlePlus(Std.int(x), Std.int(y), c_radius, color, alpha);
 		Draw.circlePlus(Std.int(x), Std.int(y), c_radius * i_radius_factor, color, alpha);

@@ -76,8 +76,8 @@ class FireWand extends Pickup {
 		sprFireWandPickup.y = -sprFireWandPickup.originY + 2 * Math.sin(2 * Math.PI * (Game.time % Game.timePerFrame) / Game.timePerFrame);
 		super.render();
 
-		var offsetX:Int = as3hx.Compat.parseInt(sprFireWandPickup.x + 3);
-		var offsetY:Int = as3hx.Compat.parseInt(sprFireWandPickup.y + 1);
+		var offsetX:Int = Std.int(sprFireWandPickup.x + 3);
+		var offsetY:Int = Std.int(sprFireWandPickup.y + 1);
 		var radiusMax:Int = 20;
 		var radiusMin:Int = 14;
 		var color:Int = 0xFF8800;

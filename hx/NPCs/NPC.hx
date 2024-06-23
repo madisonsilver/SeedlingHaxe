@@ -144,7 +144,7 @@ class NPC extends Mobile {
 	public static function endlineText(s0:String, lineL:Int):String {
 		var s:String = s0.substr(0, s0.length); // So that I'm not going by reference
 
-		var pos:Int = as3hx.Compat.parseInt(lineL - 1);
+		var pos:Int = Std.int(lineL - 1);
 		while (pos < s.length) {
 			var pchar:String = s.substr(pos, 1);
 			while (validChar(pchar)) {
@@ -157,7 +157,7 @@ class NPC extends Mobile {
 			}
 			if (pos < s.length) {
 				var start:String = s.substring(0, pos);
-				var end:String = s.substring(pos + as3hx.Compat.parseInt(pchar == " "), s.length);
+				var end:String = s.substring(pos + (pchar == " " ? 1 : 0), s.length);
 				s = start + "\n" + end;
 			}
 			pos += lineL;
@@ -196,7 +196,7 @@ class NPC extends Mobile {
 			}
 			if (inRange) {
 				if (facePlayer && graphic != null) {
-					(try cast(graphic, Image) catch (e:Dynamic) null).scaleX = as3hx.Compat.parseInt(x < p.x) * 2 - 1;
+					(try cast(graphic, Image) catch (e:Dynamic) null).scaleX = (x < p.x ? 1 : 0) * 2 - 1;
 				}
 				if ((hitKey || !keyNeeded) && !Game.talking && !Game.inventory.open) {
 					startTalking();

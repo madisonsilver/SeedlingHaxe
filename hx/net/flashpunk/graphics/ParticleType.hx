@@ -98,11 +98,11 @@ class ParticleType {
 	public function setColor(start:Int = 0xFFFFFF, finish:Int = 0, ease:Function = null):ParticleType {
 		start = start & 0xFFFFFF;
 		finish = finish & 0xFFFFFF;
-		_red = (as3hx.Compat.parseInt(start >> 16) & 0xFF) / 255;
-		_green = (as3hx.Compat.parseInt(start >> 8) & 0xFF) / 255;
+		_red = (Std.int(start >> 16) & 0xFF) / 255;
+		_green = (Std.int(start >> 8) & 0xFF) / 255;
 		_blue = (start & 0xFF) / 255;
-		_redRange = (as3hx.Compat.parseInt(finish >> 16) & 0xFF) / 255 - _red;
-		_greenRange = (as3hx.Compat.parseInt(finish >> 8) & 0xFF) / 255 - _green;
+		_redRange = (Std.int(finish >> 16) & 0xFF) / 255 - _red;
+		_greenRange = (Std.int(finish >> 8) & 0xFF) / 255 - _green;
 		_blueRange = (finish & 0xFF) / 255 - _blue;
 		_colorEase = ease;
 		createBuffer();

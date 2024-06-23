@@ -26,7 +26,7 @@ class Stairs extends Teleporter {
 		super(_x, _y, _to, _px, _py, true, -1, false, _sign);
 		up = _up;
 		graphic = sprStairs;
-		sprStairs.frame = as3hx.Compat.parseInt(!up);
+		sprStairs.frame = (!up ? 1 : 0);
 		if (up) {
 			soundIndex = 1;
 		} else {

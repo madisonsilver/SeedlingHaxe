@@ -115,11 +115,11 @@ class Preloader extends Sprite {
 				promoRect = new Rectangle(flashAd.x, flashAd.y, flashAd.width, flashAd.height); */
 		}
 
-		w = as3hx.Compat.parseInt(stage.stageWidth * 0.8);
+		w = Std.int(stage.stageWidth * 0.8);
 		h = 20;
 
-		px = as3hx.Compat.parseInt((sw - w) * 0.5);
-		py = as3hx.Compat.parseInt((sh + promoRect.y + promoRect.height - h) / 2);
+		px = Std.int((sw - w) * 0.5);
+		py = Std.int((sh + promoRect.y + promoRect.height - h) / 2);
 
 		graphics.beginFill(BG_COLOR);
 		graphics.drawRect(0, 0, sw, sh);
@@ -187,7 +187,7 @@ class Preloader extends Sprite {
 		progressBar.graphics.drawRect(px, py, p * w, h);
 		progressBar.graphics.endFill();
 
-		text.text = (hasLoaded()) ? "Done!" : as3hx.Compat.parseInt(p * 100) + "%";
+		text.text = (hasLoaded()) ? "Done!" : Std.int(p * 100) + "%";
 		text.x = (sw - text.width) * 0.5;
 	}
 
@@ -236,12 +236,12 @@ class Preloader extends Sprite {
 		}
 		/*
 			var url : String = Preloader.URL;
-			var startCheck : Int = as3hx.Compat.parseInt(url.indexOf("://") + 3);
+			var startCheck : Int = Std.int(url.indexOf("://") + 3);
 			if (url.substr(0, startCheck) == "file://")
 			{
 				return 2;
 			}
-			var domainLen : Int = as3hx.Compat.parseInt(url.indexOf("/", startCheck) - startCheck);
+			var domainLen : Int = Std.int(url.indexOf("/", startCheck) - startCheck);
 			var host : String = url.substr(startCheck, domainLen);
 			if (Std.is(allowed, String))
 			{

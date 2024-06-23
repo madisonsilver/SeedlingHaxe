@@ -92,8 +92,8 @@ class Wand extends Pickup {
 		sprWandPickup.y = -sprWandPickup.originY + 2 * Math.sin(2 * Math.PI * (Game.time % Game.timePerFrame) / Game.timePerFrame);
 		super.render();
 
-		var offsetX:Int = as3hx.Compat.parseInt(sprWandPickup.x + 3);
-		var offsetY:Int = as3hx.Compat.parseInt(sprWandPickup.y + 1);
+		var offsetX:Int = Std.int(sprWandPickup.x + 3);
+		var offsetY:Int = Std.int(sprWandPickup.y + 1);
 		var radiusMax:Int = 20;
 		var radiusMin:Int = 14;
 		var color:Int = 0xFFFF00;

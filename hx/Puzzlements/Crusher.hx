@@ -62,10 +62,10 @@ class Crusher extends Activators {
 					type = "Solid";
 					if (c == null) {
 						for (i in 0...directions.length) {
-							var offsetX:Int = as3hx.Compat.parseInt(-originX + intDist * ((directions[i].x < 0) ? directions[i].x : 0));
-							var offsetY:Int = as3hx.Compat.parseInt(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
-							var w:Int = as3hx.Compat.parseInt(width + intDist * Math.abs(directions[i].x));
-							var h:Int = as3hx.Compat.parseInt(height + intDist * Math.abs(directions[i].y));
+							var offsetX:Int = Std.int(-originX + intDist * ((directions[i].x < 0) ? directions[i].x : 0));
+							var offsetY:Int = Std.int(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
+							var w:Int = Std.int(width + intDist * Math.abs(directions[i].x));
+							var h:Int = Std.int(height + intDist * Math.abs(directions[i].y));
 							if (FP.world.collideRect("Player", x + offsetX, y + offsetY, w, h) != null) {
 								v.x = directions[i].x * speed;
 								v.y = directions[i].y * speed;
@@ -104,10 +104,10 @@ class Crusher extends Activators {
 		Draw.setTarget((try cast(FP.world, Game) catch (e:Dynamic) null).nightBmp, FP.camera);
 		super.render();
 		for (i in 0...directions.length) {
-			var offsetX:Int = as3hx.Compat.parseInt(-originX + intDist * ((directions[i].x < 0) ? directions[i].x : 0));
-			var offsetY:Int = as3hx.Compat.parseInt(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
-			var w:Int = as3hx.Compat.parseInt(width + intDist * Math.abs(directions[i].x));
-			var h:Int = as3hx.Compat.parseInt(height + intDist * Math.abs(directions[i].y));
+			var offsetX:Int = Std.int(-originX + intDist * ((directions[i].x < 0) ? directions[i].x : 0));
+			var offsetY:Int = Std.int(-originY + intDist * ((directions[i].y < 0) ? directions[i].y : 0));
+			var w:Int = Std.int(width + intDist * Math.abs(directions[i].x));
+			var h:Int = Std.int(height + intDist * Math.abs(directions[i].y));
 			Draw.rect(Std.int(x + offsetX), Std.int(y + offsetY), w, h);
 		}
 		Draw.resetTarget();

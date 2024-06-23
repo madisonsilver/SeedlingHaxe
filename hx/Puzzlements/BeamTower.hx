@@ -39,7 +39,7 @@ class BeamTower extends Entity {
 		sprBeamTower.x = -sprBeamTower.originX;
 		sprBeamTower.y = -sprBeamTower.originY;
 
-		var animSpeed:Int = as3hx.Compat.parseInt(10 * speed);
+		var animSpeed:Int = Std.int(10 * speed);
 		sprBeamTower.add("right", [1, 2], animSpeed);
 		sprBeamTower.add("up", [3, 4], animSpeed);
 		sprBeamTower.add("left", [5, 6], animSpeed);
@@ -176,7 +176,7 @@ class BeamTower extends Entity {
 
 	public function animEnd():Void {
 		if (sprBeamTower.currentAnim == "sit") {
-			direction = as3hx.Compat.parseInt((direction + rate + 4) % 4);
+			direction = Std.int((direction + rate + 4) % 4);
 			sprBeamTower.play(getAnimation(direction));
 		} else {
 			sprBeamTower.play("sit");

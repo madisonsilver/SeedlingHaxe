@@ -116,7 +116,7 @@ class TentacleBeast extends Enemy {
 				var cWhirl:Whirlpool;
 				var cTent:Tentacle;
 
-				var whirlpoolDist:Int = as3hx.Compat.parseInt(16 + Tile.w * 2); // Radii of both whirlpools, plus the minimum margin in between them
+				var whirlpoolDist:Int = Std.int(16 + Tile.w * 2); // Radii of both whirlpools, plus the minimum margin in between them
 				var vW:Array<Whirlpool> = new Array<Whirlpool>();
 				FP.world.getClass(Whirlpool, vW);
 
@@ -127,10 +127,10 @@ class TentacleBeast extends Enemy {
 				var tries:Int = 0;
 				var created:Int = 0;
 				while (FP.world.classCount(Whirlpool) + created < maxWhirlpools && tries <= 100) {
-					xpos = as3hx.Compat.parseInt(Math.random() * (spawnRect.width - whirlpoolMargin.x - whirlpoolMargin.width)
+					xpos = Std.int(Math.random() * (spawnRect.width - whirlpoolMargin.x - whirlpoolMargin.width)
 						+ spawnRect.x
 						+ whirlpoolMargin.x);
-					ypos = as3hx.Compat.parseInt(Math.random() * (spawnRect.height - whirlpoolMargin.y - whirlpoolMargin.height)
+					ypos = Std.int(Math.random() * (spawnRect.height - whirlpoolMargin.y - whirlpoolMargin.height)
 						+ spawnRect.y
 						+ whirlpoolMargin.y);
 
@@ -154,8 +154,8 @@ class TentacleBeast extends Enemy {
 				}
 				cont = true;
 				if (FP.world.classCount(Tentacle) < maxTentacles) {
-					xpos = as3hx.Compat.parseInt(Math.random() * (spawnRect.width - tentacleMargin.x - tentacleMargin.width) + spawnRect.x + tentacleMargin.x);
-					ypos = as3hx.Compat.parseInt(Math.random() * (spawnRect.height - tentacleMargin.y - tentacleMargin.height)
+					xpos = Std.int(Math.random() * (spawnRect.width - tentacleMargin.x - tentacleMargin.width) + spawnRect.x + tentacleMargin.x);
+					ypos = Std.int(Math.random() * (spawnRect.height - tentacleMargin.y - tentacleMargin.height)
 						+ spawnRect.y
 						+ tentacleMargin.y);
 

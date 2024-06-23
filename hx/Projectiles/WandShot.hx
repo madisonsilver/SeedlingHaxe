@@ -69,7 +69,7 @@ class WandShot extends Mobile {
 		}
 
 		// Only works in the four cardinal directions correctly (if Tile.w == Tile.h)
-		lifeMax = as3hx.Compat.parseInt(tilesMove * Tile.w / v.length);
+		lifeMax = Std.int(tilesMove * Tile.w / v.length);
 		life = lifeMax;
 
 		solids.push("Enemy");

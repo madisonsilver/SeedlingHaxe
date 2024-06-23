@@ -68,7 +68,7 @@ class Spinner extends Enemy {
 	override public function update():Void {
 		super.update();
 
-		var hammerLength:Int = as3hx.Compat.parseInt(sprSpinner.width - sprSpinner.originX);
+		var hammerLength:Int = Std.int(sprSpinner.width - sprSpinner.originX);
 		hammerAngle = (Game.time % Game.timePerFrame) / Game.timePerFrame * 2 * Math.PI;
 		var player:Player = try cast(FP.world.collideLine("Player", Std.int(x), Std.int(y), Std.int(x + hammerLength * Math.cos(hammerAngle)),
 			Std.int(y + hammerLength * Math.sin(hammerAngle))), Player) catch (e:Dynamic) null;

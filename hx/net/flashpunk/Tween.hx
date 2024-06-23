@@ -110,7 +110,7 @@ class Tween {
 	}
 
 	private function set_percent(value:Float):Float {
-		_time = as3hx.Compat.parseInt(_target * value);
+		_time = Std.int(_target * value);
 		return value;
 	}
 

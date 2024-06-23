@@ -42,10 +42,10 @@ class Text extends Image {
 		_field.defaultTextFormat = _form = new TextFormat(Text.static_font, Text.static_size, 0xFFFFFF);
 		_field.text = _text = text;
 		if (width == 0) {
-			width = as3hx.Compat.parseInt(_field.textWidth + 4);
+			width = Std.int(_field.textWidth + 4);
 		}
 		if (height == 0) {
-			height = as3hx.Compat.parseInt(_field.textHeight + 4);
+			height = Std.int(_field.textHeight + 4);
 		}
 		_source = new BitmapData(width, height, true, 0);
 		super(_source);
@@ -57,8 +57,8 @@ class Text extends Image {
 	/** @private Updates the drawing buffer. */
 	override public function updateBuffer():Void {
 		_field.setTextFormat(_form);
-		_field.width = _width = as3hx.Compat.parseInt(_field.textWidth + 4);
-		_field.height = _height = as3hx.Compat.parseInt(_field.textHeight + 4);
+		_field.width = _width = Std.int(_field.textWidth + 4);
+		_field.height = _height = Std.int(_field.textHeight + 4);
 		_source.fillRect(_sourceRect, 0);
 		_source.draw(_field);
 		super.updateBuffer();
@@ -66,8 +66,8 @@ class Text extends Image {
 
 	/** @private Centers the Text's originX/Y to its center. */
 	override public function centerOrigin():Void {
-		originX = as3hx.Compat.parseInt(_width / 2);
-		originY = as3hx.Compat.parseInt(_height / 2);
+		originX = Std.int(_width / 2);
+		originY = Std.int(_height / 2);
 	}
 
 	/**

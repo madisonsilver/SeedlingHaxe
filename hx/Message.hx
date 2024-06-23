@@ -56,7 +56,7 @@ class Message extends Entity {
 			}
 		}
 
-		var h:Int = as3hx.Compat.parseInt(titleText.height + subtitleText.height);
+		var h:Int = Std.int(titleText.height + subtitleText.height);
 		Draw.rect(Std.int(FP.camera.x), Std.int(y + FP.camera.y), FP.screen.width, Std.int(h * 5 / 6), rectColor, Math.min(alpha, 1));
 
 		titleText.alpha = subtitleText.alpha = Math.min(1, alpha);

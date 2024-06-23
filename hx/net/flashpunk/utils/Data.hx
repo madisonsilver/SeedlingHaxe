@@ -47,7 +47,7 @@ class Data {
 	 * @return	The property value, or defaultValue if the property is not assigned.
 	 */
 	public static function readInt(name:String, defaultValue:Int = 0):Int {
-		return as3hx.Compat.parseInt(read(name, defaultValue));
+		return Std.int(read(name, defaultValue));
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Data {
 	 * @return	The property value, or defaultValue if the property is not assigned.
 	 */
 	public static function readUint(name:String, defaultValue:Int = 0):Int {
-		return as3hx.Compat.parseInt(read(name, defaultValue));
+		return Std.int(read(name, defaultValue));
 	}
 
 	/**

@@ -87,7 +87,7 @@ class LightBoss extends Enemy {
 		}
 		v.normalize(Math.min(v.length, maxSpeed));
 		(try cast(graphic, Image) catch (e:Dynamic) null).angle = angleFace * FP.DEG;
-		normalColor = as3hx.Compat.parseInt(0xFFFFFF * (1 - hits / hitsMax));
+		normalColor = Std.int(0xFFFFFF * (1 - hits / hitsMax));
 	}
 
 	override public function startDeath(t:String = ""):Void {

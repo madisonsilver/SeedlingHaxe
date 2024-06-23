@@ -203,14 +203,14 @@ class Inventory {
 					// Up
 				{
 					{
-						selected = as3hx.Compat.parseInt((selected - 1 + items.length) % items.length);
+						selected = Std.int((selected - 1 + items.length) % items.length);
 					}
 				}
 				if (Input.released(p.keys[3]))
 					// Down
 				{
 					{
-						selected = as3hx.Compat.parseInt((selected + 1) % items.length);
+						selected = Std.int((selected + 1) % items.length);
 					}
 				}
 				if (Input.released(p.keys[4]))

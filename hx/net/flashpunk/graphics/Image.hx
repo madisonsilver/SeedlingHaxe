@@ -185,8 +185,8 @@ class Image extends Graphic {
 			return value;
 		}
 		_tint = _colorTransform;
-		_tint.redMultiplier = (as3hx.Compat.parseInt(_color >> 16) & 0xFF) / 255;
-		_tint.greenMultiplier = (as3hx.Compat.parseInt(_color >> 8) & 0xFF) / 255;
+		_tint.redMultiplier = (Std.int(_color >> 16) & 0xFF) / 255;
+		_tint.greenMultiplier = (Std.int(_color >> 8) & 0xFF) / 255;
 		_tint.blueMultiplier = (_color & 0xFF) / 255;
 		_tint.alphaMultiplier = _alpha;
 		updateBuffer();
@@ -211,8 +211,8 @@ class Image extends Graphic {
 			return value;
 		}
 		_tint = _colorTransform;
-		_tint.redMultiplier = (as3hx.Compat.parseInt(_color >> 16) & 0xFF) / 255;
-		_tint.greenMultiplier = (as3hx.Compat.parseInt(_color >> 8) & 0xFF) / 255;
+		_tint.redMultiplier = (Std.int(_color >> 16) & 0xFF) / 255;
+		_tint.greenMultiplier = (Std.int(_color >> 8) & 0xFF) / 255;
 		_tint.blueMultiplier = (_color & 0xFF) / 255;
 		_tint.alphaMultiplier = _alpha;
 		updateBuffer();
@@ -257,8 +257,8 @@ class Image extends Graphic {
 	 * Centers the Image's originX/Y to its center.
 	 */
 	public function centerOrigin():Void {
-		originX = as3hx.Compat.parseInt(_bufferRect.width / 2);
-		originY = as3hx.Compat.parseInt(_bufferRect.height / 2);
+		originX = Std.int(_bufferRect.width / 2);
+		originY = Std.int(_bufferRect.height / 2);
 	}
 
 	/**

@@ -59,10 +59,10 @@ class Grid extends Hitbox {
 	private function collideMask(other:Mask):Bool {
 		_rect.x = other.parent.x - other.parent.originX - parent.x + parent.originX;
 		_rect.y = other.parent.y - other.parent.originY - parent.y + parent.originY;
-		_point.x = as3hx.Compat.parseInt((_rect.x + other.parent.width - 1) / _cell.width) + 1;
-		_point.y = as3hx.Compat.parseInt((_rect.y + other.parent.height - 1) / _cell.height) + 1;
-		_rect.x = as3hx.Compat.parseInt(_rect.x / _cell.width);
-		_rect.y = as3hx.Compat.parseInt(_rect.y / _cell.height);
+		_point.x = Std.int((_rect.x + other.parent.width - 1) / _cell.width) + 1;
+		_point.y = Std.int((_rect.y + other.parent.height - 1) / _cell.height) + 1;
+		_rect.x = Std.int(_rect.x / _cell.width);
+		_rect.y = Std.int(_rect.y / _cell.height);
 		_rect.width = _point.x - _rect.x;
 		_rect.height = _point.y - _rect.y;
 		return _data.hitTest(FP.zero, 1, _rect);
@@ -72,10 +72,10 @@ class Grid extends Hitbox {
 	private function collideHitbox(other:Hitbox):Bool {
 		_rect.x = other.parent.x + other._x - parent.x - _x;
 		_rect.y = other.parent.y + other._y - parent.y - _y;
-		_point.x = as3hx.Compat.parseInt((_rect.x + other._width - 1) / _cell.width) + 1;
-		_point.y = as3hx.Compat.parseInt((_rect.y + other._height - 1) / _cell.height) + 1;
-		_rect.x = as3hx.Compat.parseInt(_rect.x / _cell.width);
-		_rect.y = as3hx.Compat.parseInt(_rect.y / _cell.height);
+		_point.x = Std.int((_rect.x + other._width - 1) / _cell.width) + 1;
+		_point.y = Std.int((_rect.y + other._height - 1) / _cell.height) + 1;
+		_rect.x = Std.int(_rect.x / _cell.width);
+		_rect.y = Std.int(_rect.y / _cell.height);
 		_rect.width = _point.x - _rect.x;
 		_rect.height = _point.y - _rect.y;
 		return _data.hitTest(FP.zero, 1, _rect);
@@ -83,10 +83,10 @@ class Grid extends Hitbox {
 
 	/** @private Collides against a Pixelmask. */
 	private function collidePixelmask(other:Pixelmask):Bool {
-		var x1:Int = as3hx.Compat.parseInt(other.parent.x + other._x - parent.x - _x);
-		var y1:Int = as3hx.Compat.parseInt(other.parent.y + other._y - parent.y - _y);
-		var x2:Int = as3hx.Compat.parseInt((x1 + other._width - 1) / _cell.width);
-		var y2:Int = as3hx.Compat.parseInt((y1 + other._height - 1) / _cell.height);
+		var x1:Int = Std.int(other.parent.x + other._x - parent.x - _x);
+		var y1:Int = Std.int(other.parent.y + other._y - parent.y - _y);
+		var x2:Int = Std.int((x1 + other._width - 1) / _cell.width);
+		var y2:Int = Std.int((y1 + other._height - 1) / _cell.height);
 		_point.x = x1;
 		_point.y = y1;
 		x1 /= _cell.width;

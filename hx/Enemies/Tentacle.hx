@@ -49,11 +49,11 @@ class Tentacle extends Enemy {
 		sprTentacle.add("cut", [17, 18, 19, 20], dAnimSpeed);
 		sprTentacle.play("rise");
 
-		hitRect = new Rectangle(66 * as3hx.Compat.parseInt(!right), 6, 66, 8);
+		hitRect = new Rectangle(66 * (!right ? 1 : 0), 6, 66, 8);
 
 		setHitbox(16, 4, 8, 2);
 
-		sprTentacle.scaleX = 2 * as3hx.Compat.parseInt(right) - 1;
+		sprTentacle.scaleX = 2 * (right ? 1 : 0) - 1;
 		type = "Enemy";
 
 		hitsMax = 1;

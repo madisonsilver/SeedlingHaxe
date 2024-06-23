@@ -94,8 +94,8 @@ class LavaRunner extends Bob {
 
 	public function jump(right:Bool):Void {
 		jumpV = -3;
-		startY = as3hx.Compat.parseInt(y + Tile.h);
-		angleSpin *= as3hx.Compat.parseInt(as3hx.Compat.parseInt(right) * 2 - 1);
+		startY = Std.int(y + Tile.h);
+		angleSpin *= Std.int((right ? 1 : 0) * 2 - 1);
 		inAir = true;
 	}
 

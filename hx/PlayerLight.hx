@@ -35,13 +35,13 @@ class PlayerLight extends Light {
 
 	override public function update():Void {
 		var wf:Int = Game.worldFrame(frames, colorLoops);
-		color = FP.colorLerp(colors[as3hx.Compat.parseInt(wf / frames * colors.length)],
-			colors[as3hx.Compat.parseInt(wf / frames * colors.length + 1) % colors.length],
-			wf / frames * colors.length - as3hx.Compat.parseInt(wf / frames * colors.length));
+		color = FP.colorLerp(colors[Std.int(wf / frames * colors.length)],
+			colors[Std.int(wf / frames * colors.length + 1) % colors.length],
+			wf / frames * colors.length - Std.int(wf / frames * colors.length));
 		sprPlayerLight.color = color;
 		if (follow != null) {
-			x += as3hx.Compat.parseInt((follow.x + follow.myLightPosition.x - x) / movementDivisor);
-			y += as3hx.Compat.parseInt((follow.y + follow.myLightPosition.y - y) / movementDivisor);
+			x += Std.int((follow.x + follow.myLightPosition.x - x) / movementDivisor);
+			y += Std.int((follow.y + follow.myLightPosition.y - y) / movementDivisor);
 		}
 		super.update();
 	}

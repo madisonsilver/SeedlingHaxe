@@ -53,7 +53,7 @@ class Emitter extends Graphic {
 		_height = _source.height;
 		_frameWidth = (frameWidth != 0) ? frameWidth : _width;
 		_frameHeight = (frameHeight != 0) ? frameHeight : _height;
-		_frameCount = as3hx.Compat.parseInt(as3hx.Compat.parseInt(_width / _frameWidth) * as3hx.Compat.parseInt(_height / _frameHeight));
+		_frameCount = Std.int(Std.int(_width / _frameWidth) * Std.int(_height / _frameHeight));
 	}
 
 	override public function update():Void // quit if there are no particles
@@ -133,8 +133,8 @@ class Emitter extends Graphic {
 			_point.y = point.y + p._y + p._moveY * td;
 
 			// get frame
-			rect.x = rect.width * type._frames[as3hx.Compat.parseInt(td * type._frameCount)];
-			rect.y = as3hx.Compat.parseInt(rect.x / type._width) * rect.height;
+			rect.x = rect.width * type._frames[Std.int(td * type._frameCount)];
+			rect.y = Std.int(rect.x / type._width) * rect.height;
 			rect.x %= type._width;
 
 			// draw particle

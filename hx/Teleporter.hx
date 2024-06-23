@@ -50,7 +50,7 @@ class Teleporter extends Entity {
 		visible = _show;
 		tag = _tag;
 		invert = _invert;
-		sign = as3hx.Compat.parseInt(_sign - 1); // takes the value of _sign - 1 because zero should become -1 (to negate all of the levels where it defaults to zero)
+		sign = Std.int(_sign - 1); // takes the value of _sign - 1 because zero should become -1 (to negate all of the levels where it defaults to zero)
 
 		if (visible) {
 			soundIndex = 3;

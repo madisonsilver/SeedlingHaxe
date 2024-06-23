@@ -35,19 +35,19 @@ class PreRotation extends Image {
 			var temp:BitmapData = (Type.createInstance(source, [])).bitmapData;
 			var size:Int = Reflect.setField(_size, Std.string(source), Math.ceil(FP.distance(0, 0, temp.width, temp.height)));
 			_frame.width = _frame.height = size;
-			var width:Int = as3hx.Compat.parseInt(_frame.width * frameCount);
+			var width:Int = Std.int(_frame.width * frameCount);
 			var height:Int = _frame.height;
 			if (width > _MAX_WIDTH) {
-				width = as3hx.Compat.parseInt(_MAX_WIDTH - (_MAX_WIDTH % _frame.width));
-				height = as3hx.Compat.parseInt(Math.ceil(frameCount / (width / _frame.width)) * _frame.height);
+				width = Std.int(_MAX_WIDTH - (_MAX_WIDTH % _frame.width));
+				height = Std.int(Math.ceil(frameCount / (width / _frame.width)) * _frame.height);
 			}
 			r = new BitmapData(width, height, true, 0);
 			var m:Matrix = FP.matrix;
 			var a:Float = 0;
 			var aa:Float = (Math.PI * 2) / -frameCount;
-			var ox:Int = as3hx.Compat.parseInt(temp.width / 2);
-			var oy:Int = as3hx.Compat.parseInt(temp.height / 2);
-			var o:Int = as3hx.Compat.parseInt(_frame.width / 2);
+			var ox:Int = Std.int(temp.width / 2);
+			var oy:Int = Std.int(temp.height / 2);
+			var o:Int = Std.int(_frame.width / 2);
 			var x:Int = 0;
 			var y:Int = 0;
 			while (y < height) {
@@ -76,11 +76,11 @@ class PreRotation extends Image {
 		if (frameAngle < 0) {
 			frameAngle += 360;
 		}
-		_current = as3hx.Compat.parseInt(_frameCount * (frameAngle / 360));
+		_current = Std.int(_frameCount * (frameAngle / 360));
 		if (_last != _current) {
 			_last = _current;
 			_frame.x = _frame.width * _last;
-			_frame.y = as3hx.Compat.parseInt(_frame.x / _width) * _frame.height;
+			_frame.y = Std.int(_frame.x / _width) * _frame.height;
 			_frame.x %= _width;
 			updateBuffer();
 		}

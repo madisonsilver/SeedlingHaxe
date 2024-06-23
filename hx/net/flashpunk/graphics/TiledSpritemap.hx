@@ -45,15 +45,15 @@ class TiledSpritemap extends Spritemap {
 	override public function updateBuffer():Void // get position of the current frame
 	{
 		_rect.x = _rect.width * _frame;
-		_rect.y = as3hx.Compat.parseInt(_rect.x / _width) * _rect.height;
+		_rect.y = Std.int(_rect.x / _width) * _rect.height;
 		_rect.x %= _width;
 		if (_flipped) {
 			_rect.x = (_width - _rect.width) - _rect.x;
 		}
 
 		// render it repeated to the buffer
-		var xx:Int = as3hx.Compat.parseInt(as3hx.Compat.parseInt(_offsetX) % _imageWidth);
-		var yy:Int = as3hx.Compat.parseInt(as3hx.Compat.parseInt(_offsetY) % _imageHeight);
+		var xx:Int = Std.int(Std.int(_offsetX) % _imageWidth);
+		var yy:Int = Std.int(Std.int(_offsetY) % _imageHeight);
 		if (xx >= 0) {
 			xx -= _imageWidth;
 		}

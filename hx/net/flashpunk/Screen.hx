@@ -101,7 +101,7 @@ class Screen {
 	 * X offset of the screen.
 	 */
 	private function get_x():Int {
-		return as3hx.Compat.parseInt(_x);
+		return Std.int(_x);
 	}
 
 	private function set_x(value:Int):Int {
@@ -117,7 +117,7 @@ class Screen {
 	 * Y offset of the screen.
 	 */
 	private function get_y():Int {
-		return as3hx.Compat.parseInt(_y);
+		return Std.int(_y);
 	}
 
 	private function set_y(value:Int):Int {
@@ -256,14 +256,14 @@ class Screen {
 	 * X position of the mouse on the screen.
 	 */
 	private function get_mouseX():Int {
-		return as3hx.Compat.parseInt((FP.stage.mouseX - _x) / (_scaleX * _scale));
+		return Std.int((FP.stage.mouseX - _x) / (_scaleX * _scale));
 	}
 
 	/**
 	 * Y position of the mouse on the screen.
 	 */
 	private function get_mouseY():Int {
-		return as3hx.Compat.parseInt((FP.stage.mouseY - _y) / (_scaleY * _scale));
+		return Std.int((FP.stage.mouseY - _y) / (_scaleY * _scale));
 	}
 
 	// Screen infromation.

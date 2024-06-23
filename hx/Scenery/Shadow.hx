@@ -30,7 +30,7 @@ class Shadow extends Entity {
 		h = _h;
 		layer = Std.int(-(y));
 
-		myBmp = new BitmapData(w, h, true, as3hx.Compat.parseInt(a * 255) * 0x01000000 + c);
+		myBmp = new BitmapData(w, h, true, Std.int(a * 255) * 0x01000000 + c);
 	}
 
 	override public function render():Void {

@@ -28,7 +28,7 @@ class RopeStart extends Activators {
 		sprRope = new Spritemap(imgRope, 16, 16);
 		super(Std.int(_x + Tile.w / 2), Std.int(_y + Tile.h / 2), sprRope, _t);
 		sprRope.centerOO();
-		xend = as3hx.Compat.parseInt(_xend + Tile.w / 2);
+		xend = Std.int(_xend + Tile.w / 2);
 		type = "Rope";
 		setHitbox(_xend - _x + 16, 16, 8, 8);
 		layer = Std.int(-(y - originY + height / 2));

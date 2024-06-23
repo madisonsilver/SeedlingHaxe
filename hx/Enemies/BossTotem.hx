@@ -441,7 +441,7 @@ class BossTotem extends Enemy {
 
 	override public function render():Void {
 		var frame:Int = Math.floor(currentFrame);
-		var frameUp:Int = as3hx.Compat.parseInt(Math.ceil(currentFrame) % Reflect.field(animateFrames, currentAnimation));
+		var frameUp:Int = Std.int(Math.ceil(currentFrame) % Reflect.field(animateFrames, currentAnimation));
 		var armsPos:Point = new Point();
 		var armsAng:Int = 0;
 		headPos = new Point();
@@ -460,43 +460,43 @@ class BossTotem extends Enemy {
 			case "attack":
 				armsPos = armsAttacksPos[frameUp].clone().add(armsAttacksPos[frame].clone());
 				armsPos.normalize(armsPos.length / 2);
-				armsAng = as3hx.Compat.parseInt((armsAttacksAng[frameUp] + armsAttacksAng[frame]) / 2);
+				armsAng = Std.int((armsAttacksAng[frameUp] + armsAttacksAng[frame]) / 2);
 				headPos = headAttacksPos[frameUp].clone().add(headAttacksPos[frame].clone());
 				headPos.normalize(headPos.length / 2);
-				headAng = as3hx.Compat.parseInt((headAttacksAng[frameUp] + headAttacksAng[frame]) / 2);
+				headAng = Std.int((headAttacksAng[frameUp] + headAttacksAng[frame]) / 2);
 				legsPos = legsAttacksPos[frameUp].clone().add(legsAttacksPos[frame].clone());
 				legsPos.normalize(legsPos.length / 2);
-				legsAng = as3hx.Compat.parseInt((legsAttacksAng[frameUp] + legsAttacksAng[frame]) / 2);
+				legsAng = Std.int((legsAttacksAng[frameUp] + legsAttacksAng[frame]) / 2);
 			case "rest":
 				armsPos = armsRestingPos[frameUp].clone().add(armsRestingPos[frame].clone());
 				armsPos.normalize(armsPos.length / 2);
-				armsAng = as3hx.Compat.parseInt((armsRestingAng[frameUp] + armsRestingAng[frame]) / 2);
+				armsAng = Std.int((armsRestingAng[frameUp] + armsRestingAng[frame]) / 2);
 				headPos = headRestingPos[frameUp].clone().add(headRestingPos[frame].clone());
 				headPos.normalize(headPos.length / 2);
-				headAng = as3hx.Compat.parseInt((headRestingAng[frameUp] + headRestingAng[frame]) / 2);
+				headAng = Std.int((headRestingAng[frameUp] + headRestingAng[frame]) / 2);
 				legsPos = legsRestingPos[frameUp].clone().add(legsRestingPos[frame].clone());
 				legsPos.normalize(legsPos.length / 2);
-				legsAng = as3hx.Compat.parseInt((legsRestingAng[frameUp] + legsRestingAng[frame]) / 2);
+				legsAng = Std.int((legsRestingAng[frameUp] + legsRestingAng[frame]) / 2);
 			case "walk":
 				armsPos = armsWalkingPos[frameUp].clone().add(armsWalkingPos[frame].clone());
 				armsPos.normalize(armsPos.length / 2);
-				armsAng = as3hx.Compat.parseInt((armsWalkingAng[frameUp] + armsWalkingAng[frame]) / 2);
+				armsAng = Std.int((armsWalkingAng[frameUp] + armsWalkingAng[frame]) / 2);
 				headPos = headWalkingPos[frameUp].clone().add(headWalkingPos[frame].clone());
 				headPos.normalize(headPos.length / 2);
-				headAng = as3hx.Compat.parseInt((headWalkingAng[frameUp] + headWalkingAng[frame]) / 2);
+				headAng = Std.int((headWalkingAng[frameUp] + headWalkingAng[frame]) / 2);
 				legsPos = legsWalkingPos[frameUp].clone().add(legsWalkingPos[frame].clone());
 				legsPos.normalize(legsPos.length / 2);
-				legsAng = as3hx.Compat.parseInt((legsWalkingAng[frameUp] + legsWalkingAng[frame]) / 2);
+				legsAng = Std.int((legsWalkingAng[frameUp] + legsWalkingAng[frame]) / 2);
 			case "jump":
 				armsPos = armsJumpingPos[frameUp].clone().add(armsJumpingPos[frame].clone());
 				armsPos.normalize(armsPos.length / 2);
-				armsAng = as3hx.Compat.parseInt((armsJumpingAng[frameUp] + armsJumpingAng[frame]) / 2);
+				armsAng = Std.int((armsJumpingAng[frameUp] + armsJumpingAng[frame]) / 2);
 				headPos = headJumpingPos[frameUp].clone().add(headJumpingPos[frame].clone());
 				headPos.normalize(headPos.length / 2);
-				headAng = as3hx.Compat.parseInt((headJumpingAng[frameUp] + headJumpingAng[frame]) / 2);
+				headAng = Std.int((headJumpingAng[frameUp] + headJumpingAng[frame]) / 2);
 				legsPos = legsJumpingPos[frameUp].clone().add(legsJumpingPos[frame].clone());
 				legsPos.normalize(legsPos.length / 2);
-				legsAng = as3hx.Compat.parseInt((legsJumpingAng[frameUp] + legsJumpingAng[frame]) / 2);
+				legsAng = Std.int((legsJumpingAng[frameUp] + legsJumpingAng[frame]) / 2);
 			default:
 				armsPos = armsRestingPos[0].clone();
 				armsAng = 0;
@@ -521,14 +521,14 @@ class BossTotem extends Enemy {
 		var rumbleRandDist:Float = (Math.random() - 0.5) * rumbleDistMax * rumble;
 		armsPos.x = (armsPos.x - defArmsPos.x) * val + defArmsPos.x + rumbleRandDist;
 		armsPos.y = (armsPos.y - defArmsPos.y) * val + defArmsPos.y + rumbleRandDist;
-		armsAng = as3hx.Compat.parseInt((armsAng - defArmsAng) * val + defArmsAng + rumbleRandAngle);
+		armsAng = Std.int((armsAng - defArmsAng) * val + defArmsAng + rumbleRandAngle);
 		headPos.x = (headPos.x - defHeadPos.x) * val + defHeadPos.x + rumbleRandDist;
 		headPos.y = (headPos.y - defHeadPos.y) * val + defHeadPos.y + rumbleRandDist;
-		headAng = as3hx.Compat.parseInt((headAng - defHeadAng) * val + defHeadAng + rumbleRandAngle);
+		headAng = Std.int((headAng - defHeadAng) * val + defHeadAng + rumbleRandAngle);
 		legsPos.x = (legsPos.x - defLegsPos.x) * val + defLegsPos.x + rumbleRandDist;
 		legsPos.y = (legsPos.y - defLegsPos.y) * val + defLegsPos.y + rumbleRandDist;
-		legsAng = as3hx.Compat.parseInt((legsAng - defLegsAng) * val + defLegsAng + rumbleRandAngle);
-		bodyAng = as3hx.Compat.parseInt(bodyAngMax * (1 - val));
+		legsAng = Std.int((legsAng - defLegsAng) * val + defLegsAng + rumbleRandAngle);
+		bodyAng = Std.int(bodyAngMax * (1 - val));
 
 		// Legs
 		sprBossTotem.frame = 2;
@@ -586,7 +586,7 @@ class BossTotem extends Enemy {
 		var i:Int = 0;
 		while (i < FP.width) {
 			laserTo = new Point(laserStart.x, laserStart.y + i);
-			if (FP.world.collideRect("Solid", x + laserTo.x * dir - as3hx.Compat.parseInt(dir < 0) * laserWidth, y + laserTo.y, laserWidth, 1) != null) {
+			if (FP.world.collideRect("Solid", x + laserTo.x * dir - (dir < 0 ? 1 : 0) * laserWidth, y + laserTo.y, laserWidth, 1) != null) {
 				break;
 			}
 			i += 1;

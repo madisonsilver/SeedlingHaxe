@@ -59,10 +59,10 @@ class PushableBlockFire extends Mobile {
 
 		if (collideTypes(solids, gridPos(Std.int(x), Std.int(y)).x, gridPos(Std.int(x), Std.int(y)).y) == null) {
 			if (Math.abs(v.x) <= 0.01) {
-				x = Std.int(as3hx.Compat.parseInt(gridPos(Std.int(x), Std.int(y)).x));
+				x = Std.int(Std.int(gridPos(Std.int(x), Std.int(y)).x));
 			}
 			if (Math.abs(v.y) <= 0.01) {
-				y = Std.int(as3hx.Compat.parseInt(gridPos(Std.int(x), Std.int(y)).y));
+				y = Std.int(Std.int(gridPos(Std.int(x), Std.int(y)).y));
 			}
 		}
 	}

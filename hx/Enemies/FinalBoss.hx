@@ -143,7 +143,7 @@ class FinalBoss extends Enemy {
 			}
 		} else if (rockfallTime == 0) {
 			pods[cpod].open = true;
-			cpod = as3hx.Compat.parseInt((cpod + 1 + pods.length) % pods.length);
+			cpod = Std.int((cpod + 1 + pods.length) % pods.length);
 			hitThisSequence = false;
 			rockfallTime--;
 		} else if (v.length <= moveSpeed) {

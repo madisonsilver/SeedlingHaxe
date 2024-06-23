@@ -50,7 +50,7 @@ class ButtonRoom extends Activators {
 		activate = _active;
 		if (collide("Wire", x, y + Tile.h) != null) {
 			frameAdd = 2;
-			sprButtonRoom.frame = as3hx.Compat.parseInt(activate) + frameAdd;
+			sprButtonRoom.frame = (activate ? 1 : 0) + frameAdd;
 		}
 	}
 
@@ -90,7 +90,7 @@ class ButtonRoom extends Activators {
 				} else {
 					Game.setPersistence(t, persist, room);
 				}
-				sprButtonRoom.frame = as3hx.Compat.parseInt(_active) + frameAdd;
+				sprButtonRoom.frame = (_active ? 1 : 0) + frameAdd;
 				Game.setPersistence(tag, !activate);
 			}
 		}

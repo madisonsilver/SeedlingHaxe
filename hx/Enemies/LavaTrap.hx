@@ -134,7 +134,7 @@ class LavaTrap extends Enemy {
 	}
 
 	public function getTongueLength():Int {
-		return as3hx.Compat.parseInt(sprLavaTrapTongue.frame / sprLavaTrapTongue.frameCount * tongueLengths.length);
+		return Std.int(sprLavaTrapTongue.frame / sprLavaTrapTongue.frameCount * tongueLengths.length);
 	}
 
 	override public function layering():Void {}

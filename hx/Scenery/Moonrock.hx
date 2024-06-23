@@ -88,7 +88,7 @@ class Moonrock extends Entity {
 				}
 			}
 			if ((beam && canBeam) || trigger) {
-				playersDirection(as3hx.Compat.parseInt(p.x > x + sprMoonrock.width / 2) * 2);
+				playersDirection(((p.x > x + sprMoonrock.width / 2) ? 1 : 0) * 2);
 			}
 			if (beam && canBeam) {
 				Game.cameraTarget = new Point(x - FP.screen.width / 2, fallTo - FP.screen.height / 2);
@@ -177,8 +177,8 @@ class Moonrock extends Entity {
 			0xFFFFFF, 0.5);
 		for (i in 0...20) {
 			var c:Int = FP.getColorRGB(Std.int(192 + 64 * Math.random()), Std.int(192 + 64 * Math.random()), Std.int(192 * Math.random()));
-			var dx:Int = as3hx.Compat.parseInt(Tile.w * 2 * Math.random() - Tile.w); // The distance each beam can be from the center
-			var dy:Int = as3hx.Compat.parseInt(Tile.h * 2 * Math.random() - Tile.h);
+			var dx:Int = Std.int(Tile.w * 2 * Math.random() - Tile.w); // The distance each beam can be from the center
+			var dy:Int = Std.int(Tile.h * 2 * Math.random() - Tile.h);
 			var alpha:Float = Math.random() / 2;
 			var thick:Float = Math.random() * 3 + 0.5;
 			Draw.linePlus(Std.int(x + sprMoonrock.width / 2 + dx - m), Std.int(y + sprMoonrock.height / 2 - m), Std.int(x + sprMoonrock.width / 2 + dx - m),

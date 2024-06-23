@@ -91,7 +91,7 @@ class LavaChain extends Entity {
 	}
 
 	public function getRect(_d:Int):Rectangle {
-		var w:Int = as3hx.Compat.parseInt((try cast(graphic, Image) catch (e:Dynamic) null).width - Tile.w);
+		var w:Int = Std.int((try cast(graphic, Image) catch (e:Dynamic) null).width - Tile.w);
 		var h:Int = 4;
 		var rect:Rectangle;
 		switch (_d) {

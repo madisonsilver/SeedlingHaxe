@@ -49,12 +49,12 @@ class Image extends Graphic {
 	/**
 	 * X origin of the image, determines transformation point.
 	 */
-	public var originX:Int;
+	public var originX:Int = 0;
 
 	/**
 	 * Y origin of the image, determines transformation point.
 	 */
-	public var originY:Int;
+	public var originY:Int = 0;
 
 	/**
 	 * Optional blend mode to use when drawing this image.

@@ -193,5 +193,5 @@ class Sfx {
 	// Stored Sound objects.
 
 	/** @private */
-	private static var _sounds:Dictionary<Class<Dynamic>, Dynamic> = new Dictionary();
+	private static var _sounds:Map<String, Dynamic> = new Map();
 }

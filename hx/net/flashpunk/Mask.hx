@@ -25,8 +25,8 @@ class Mask {
 	 */
 	public function new() {
 		_class = cast((Type.resolveClass(Type.getClassName(Type.getClass(this)))), Class<Dynamic>);
-		_check[Mask] = collideMask;
-		_check[Masklist] = collideMasklist;
+		_check[Type.getClassName(Mask)] = collideMask;
+		_check[Type.getClassName(Masklist)] = collideMasklist;
 	}
 
 	/**
@@ -35,11 +35,11 @@ class Mask {
 	 * @return	If the Masks overlap.
 	 */
 	public function collide(mask:Mask):Bool {
-		if (_check[mask._class] != null) {
-			return _check[mask._class](mask);
+		if (_check[Type.getClassName(mask._class)] != null) {
+			return _check[Type.getClassName(mask._class)](mask);
 		}
-		if (mask._check[_class] != null) {
-			return mask._check[_class](this);
+		if (mask._check[Type.getClassName(_class)] != null) {
+			return mask._check[Type.getClassName(_class)](this);
 		}
 		return false;
 	}
@@ -75,5 +75,5 @@ class Mask {
 	private var _class:Class<Dynamic>;
 
 	/** @private */
-	private var _check:Dictionary<Class<Dynamic>, (Dynamic) -> Bool> = new Dictionary();
+	private var _check:Map<String, (Dynamic) -> Bool> = new Map();
 }

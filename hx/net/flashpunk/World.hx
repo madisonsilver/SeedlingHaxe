@@ -215,9 +215,9 @@ class World extends Tweener {
 	 * @return	The new Entity object.
 	 */
 	public function create(classType:Class<Dynamic>, addToWorld:Bool = true):Entity {
-		var e:Entity = Reflect.field(_recycled, Std.string(classType));
+		var e:Entity = _recycled[Type.getClassName(classType)];
 		if (e != null) {
-			Reflect.setField(_recycled, Std.string(classType), e._recycleNext);
+			_recycled[Type.getClassName(classType)] = e._recycleNext;
 			e._recycleNext = null;
 		} else {
 			e = Type.createInstance(classType, []);
@@ -238,8 +238,8 @@ class World extends Tweener {
 		if (e._world != this) {
 			return e;
 		}
-		e._recycleNext = _recycled[e._class];
-		_recycled[e._class] = e;
+		e._recycleNext = _recycled[Type.getClassName(e._class)];
+		_recycled[Type.getClassName(e._class)] = e;
 		return remove(e);
 	}
 
@@ -248,7 +248,7 @@ class World extends Tweener {
 	 * @param	classType		The Class type to clear.
 	 */
 	public function clearRecycled(classType:Class<Dynamic>):Void {
-		var e:Entity = Reflect.field(_recycled, Std.string(classType));
+		var e:Entity = _recycled[Type.getClassName(classType)];
 		var n:Entity;
 		while (e != null) {
 			n = e._recycleNext;
@@ -261,7 +261,7 @@ class World extends Tweener {
 	 * Clears stored recycled Entities of all Class types.
 	 */
 	public function clearRecycledAll():Void {
-		for (classType in Reflect.fields(_recycled)) {
+		for (classType in _recycled.keys()) {
 			clearRecycled(Type.getClass(classType));
 		}
 	}
@@ -715,7 +715,7 @@ class World extends Tweener {
 	 * @return	How many Entities of Class exist in the World.
 	 */
 	public function classCount(c:Class<Dynamic>):Int {
-		return try cast(Reflect.field(_classCount, Std.string(c)), Int) catch (e:Dynamic) null;
+		return _classCount[Type.getClassName(c)];
 	}
 
 	/**
@@ -974,10 +974,10 @@ class World extends Tweener {
 		e._updatePrev = null;
 		_updateFirst = e;
 		_count++;
-		if (_classCount[e._class] == null) {
-			_classCount[e._class] = 0;
+		if (_classCount[Type.getClassName(e._class)] == null) {
+			_classCount[Type.getClassName(e._class)] = 0;
 		}
-		_classCount[e._class]++;
+		_classCount[Type.getClassName(e._class)]++;
 	}
 
 	/** @private Removes Entity from the update list. */
@@ -995,7 +995,7 @@ class World extends Tweener {
 		e._updateNext = e._updatePrev = null;
 
 		_count--;
-		_classCount[e._class]--;
+		_classCount[Type.getClassName(e._class)]--;
 	}
 
 	/** @private Adds Entity to the render list. */
@@ -1170,7 +1170,7 @@ class World extends Tweener {
 	private var _tempArray:Array<Dynamic> = [];
 
 	/** @private */
-	private var _classCount:Dictionary<Class<Dynamic>, Int> = new Dictionary();
+	private var _classCount:Map<String, Int> = new Map();
 
 	/** @private */ @:allow(net.flashpunk)
 	private var _typeFirst:Dictionary<String, Entity> = new Dictionary();
@@ -1179,5 +1179,5 @@ class World extends Tweener {
 	private var _typeCount:Dictionary<String, Int> = new Dictionary();
 
 	/** @private */
-	private var _recycled:Dictionary<Class<Dynamic>, Entity> = new Dictionary();
+	private var _recycled:Map<String, Entity> = new Map();
 }

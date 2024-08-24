@@ -28,8 +28,8 @@ class Hitbox extends Mask {
 		_height = height;
 		_x = x;
 		_y = y;
-		_check[Mask] = collideMask;
-		_check[Hitbox] = collideHitbox;
+		_check[Type.getClassName(Mask)] = collideMask;
+		_check[Type.getClassName(Hitbox)] = collideHitbox;
 	}
 
 	/** @private Collides against an Entity. */

@@ -715,7 +715,12 @@ class World extends Tweener {
 	 * @return	How many Entities of Class exist in the World.
 	 */
 	public function classCount(c:Class<Dynamic>):Int {
-		return _classCount[Type.getClassName(c)];
+		var count: Null<Int> = _classCount[Type.getClassName(c)];
+		if (count == null){
+			return 0;
+		} else {
+			return count;
+		}
 	}
 
 	/**

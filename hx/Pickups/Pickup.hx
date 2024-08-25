@@ -25,7 +25,7 @@ class Pickup extends Mobile {
 
 	public var playerHit:Player;
 	public var special:Bool = false;
-	public var specialTimer:Int;
+	public var specialTimer:Int = 0;
 
 	private var DEF_TEXT_SPEED(default, never):Int = 6;
 

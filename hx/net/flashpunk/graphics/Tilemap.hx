@@ -183,9 +183,9 @@ class Tilemap extends Canvas {
 		var row:Array<Dynamic> = str.split(rowSep);
 		var rows:Int = row.length;
 		var col:Array<Dynamic>;
-		var cols:Int;
-		var x:Int;
-		var y:Int;
+		var cols:Int = 0;
+		var x:Int = 0;
+		var y:Int = 0;
 		for (y in 0...rows) {
 			if (row[y] == "") {
 				continue;
@@ -208,8 +208,8 @@ class Tilemap extends Canvas {
 	 */
 	public function saveToString(columnSep:String = ",", rowSep:String = "\n"):String {
 		var s:String = "";
-		var x:Int;
-		var y:Int;
+		var x:Int = 0;
+		var y:Int = 0;
 		for (y in 0..._rows) {
 			for (x in 0..._columns) {
 				s += getTile(x, y);
@@ -254,10 +254,10 @@ class Tilemap extends Canvas {
 	private var _map:BitmapData;
 
 	/** @private */
-	private var _columns:Int;
+	private var _columns:Int = 0;
 
 	/** @private */
-	private var _rows:Int;
+	private var _rows:Int = 0;
 
 	// Tileset information.
 
@@ -265,13 +265,13 @@ class Tilemap extends Canvas {
 	private var _set:BitmapData;
 
 	/** @private */
-	private var _setColumns:Int;
+	private var _setColumns:Int = 0;
 
 	/** @private */
-	private var _setRows:Int;
+	private var _setRows:Int = 0;
 
 	/** @private */
-	private var _setCount:Int;
+	private var _setCount:Int = 0;
 
 	/** @private */
 	private var _tile:Rectangle;

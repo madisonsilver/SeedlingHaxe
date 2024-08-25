@@ -36,16 +36,16 @@ class Splash extends World {
 
 	private var frameWidth(default, never):Int = 162;
 	private var frameHeight(default, never):Int = 158;
-	private var rows:Int;
-	private var cols:Int;
-	private var frameCount:Int;
+	private var rows:Int = 0;
+	private var cols:Int = 0;
+	private var frameCount:Int = 0;
 	private var frameSpeed(default, never):Float = 0.1;
 	private var frame:Float = 0;
 	private var extraFadeFrames(default, never):Int = 3;
 
 	public static inline var rek:Int = 2;
 
-	private var t:Int;
+	private var t:Int = 0;
 
 	private static inline var timerSplash:Int = 150;
 

@@ -15,7 +15,7 @@ class BurnableTree extends Tree {
 	private var imgBurnableTreeBurn:BitmapData;
 	private var sprBurnableTreeBurn:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var burn:Bool = false;
 
 	private function load_image_assets():Void {

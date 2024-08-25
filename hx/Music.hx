@@ -310,50 +310,50 @@ class Music {
 
 	public static function initialize_sound_arrays() {
 		soundSwords = [sndSword1, sndSword2, sndSword3];
-	soundStabs = [sndStab1, sndStab2, sndStab3];
-	soundSplash = [sndSplash1, sndSplash2];
-	soundSwim = [sndSwim1];
-	soundArrow = [sndArrow1, sndArrow2];
-	soundSwitch = [sndSwitch1];
-	soundDrill = [sndDrill1, sndDrill1];
-	soundEnemyHit = [sndEnemyHit1, sndEnemyHit2];
-	soundMetal = [sndMetal1];
-	soundEnemyHop = [sndEnemyHop1, sndEnemyHop2];
-	soundChest = [sndChest1];
-	soundRock = [sndRock1, sndRock2];
-	soundLock = [sndLock1];
-	soundEnergyBeam = [sndEnergyBeam1, sndEnergyBeam1, sndEnergyBeam1];
-	soundEnergyPulse = [sndEnergyPulse1, sndEnergyPulse1];
-	soundExplosion = [sndExplosion1, sndExplosion1, sndExplosion1];
-	soundEnemyFall = [sndEnemyFall1, sndEnemyFall1, sndEnemyFall1];
-	soundPushRock = [sndPushRock1];
-	soundEnemyDie = [sndEnemyDie1, sndEnemyDie1];
-	soundRoom = [sndRoom1, sndRoom2, sndRoom3, sndRoom4];
-	soundHurt = [sndHurt1];
-	soundGroundHit = [sndGroundHit1, sndGroundHit2];
-	soundPlayerFall = [sndPlayerFall1];
-	soundBossDie = [sndBossDie1, sndBossDie2, sndBossDie3, sndBossDie4, sndBossDie5];
-	soundEnemyAttack = [sndEnemyAttack1, sndEnemyAttack2, sndEnemyAttack3, sndEnemyAttack4];
-	soundBoss6Move = [
-		sndBoss6Move1,
-		sndBoss6Move2,
-		sndBoss6Move3,
-		sndBoss6Move1,
-		sndBoss6Move2,
-		sndBoss6Move3
-	];
-	soundWandFire = [sndWandFire1, sndWandFire1];
-	soundWandFizzle = [sndWandFizzle1, sndWandFizzle1];
-	soundTurretShoot = [sndTurretShoot1, sndTurretShoot1, sndTurretShoot1];
-	soundWind = [sndWind1, sndWind2];
-	soundBurn = [sndBurn1];
-	soundPunch = [sndPunch1];
-	soundTentacle = [sndTentacle1, sndTentacle1, sndTentacle1, sndTentacle1];
-	soundFire = [sndFire1];
-	soundLava = [sndLava1, sndLava2, sndLava3];
-	soundLight = [sndLight1];
-	soundText = [sndText1, sndText2];
-	soundOther = [sndOther1, sndOther2, sndOther3, sndOther4, sndOther5];
+		soundStabs = [sndStab1, sndStab2, sndStab3];
+		soundSplash = [sndSplash1, sndSplash2];
+		soundSwim = [sndSwim1];
+		soundArrow = [sndArrow1, sndArrow2];
+		soundSwitch = [sndSwitch1];
+		soundDrill = [sndDrill1, sndDrill1];
+		soundEnemyHit = [sndEnemyHit1, sndEnemyHit2];
+		soundMetal = [sndMetal1];
+		soundEnemyHop = [sndEnemyHop1, sndEnemyHop2];
+		soundChest = [sndChest1];
+		soundRock = [sndRock1, sndRock2];
+		soundLock = [sndLock1];
+		soundEnergyBeam = [sndEnergyBeam1, sndEnergyBeam1, sndEnergyBeam1];
+		soundEnergyPulse = [sndEnergyPulse1, sndEnergyPulse1];
+		soundExplosion = [sndExplosion1, sndExplosion1, sndExplosion1];
+		soundEnemyFall = [sndEnemyFall1, sndEnemyFall1, sndEnemyFall1];
+		soundPushRock = [sndPushRock1];
+		soundEnemyDie = [sndEnemyDie1, sndEnemyDie1];
+		soundRoom = [sndRoom1, sndRoom2, sndRoom3, sndRoom4];
+		soundHurt = [sndHurt1];
+		soundGroundHit = [sndGroundHit1, sndGroundHit2];
+		soundPlayerFall = [sndPlayerFall1];
+		soundBossDie = [sndBossDie1, sndBossDie2, sndBossDie3, sndBossDie4, sndBossDie5];
+		soundEnemyAttack = [sndEnemyAttack1, sndEnemyAttack2, sndEnemyAttack3, sndEnemyAttack4];
+		soundBoss6Move = [
+			sndBoss6Move1,
+			sndBoss6Move2,
+			sndBoss6Move3,
+			sndBoss6Move1,
+			sndBoss6Move2,
+			sndBoss6Move3
+		];
+		soundWandFire = [sndWandFire1, sndWandFire1];
+		soundWandFizzle = [sndWandFizzle1, sndWandFizzle1];
+		soundTurretShoot = [sndTurretShoot1, sndTurretShoot1, sndTurretShoot1];
+		soundWind = [sndWind1, sndWind2];
+		soundBurn = [sndBurn1];
+		soundPunch = [sndPunch1];
+		soundTentacle = [sndTentacle1, sndTentacle1, sndTentacle1, sndTentacle1];
+		soundFire = [sndFire1];
+		soundLava = [sndLava1, sndLava2, sndLava3];
+		soundLight = [sndLight1];
+		soundText = [sndText1, sndText2];
+		soundOther = [sndOther1, sndOther2, sndOther3, sndOther4, sndOther5];
 	}
 
 	public function new() {}
@@ -364,8 +364,8 @@ class Music {
 		initialize_audio_assets();
 		initialize_sound_arrays();
 		songs = [
-			sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest, sndOMysteriousMagic,
-			sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss
+			sndOTheme, sndOThemeNight, sndOMenu, sndOYesMaster, sndOMyLifesPurpose, sndOTheWatcher, sndOMyFirstDungeon, sndOStuckInTheForest,
+			sndOMysteriousMagic, sndOColdBlooded, sndOShadow, sndOLavaIsHot, sndOTheSky, sndOBoss
 		];
 
 		sounds["Sword"] = soundSwords;
@@ -630,7 +630,7 @@ class Music {
 	 * @return	the sound that is played
 	 */
 	public static function playSound(strInd:String, intInd:Int = -1, vol:Float = 1, pan:Float = 0):Sfx {
-		var cplayIndex:Int;
+		var cplayIndex:Int = 0;
 		if (intInd == -1) {
 			do {
 				cplayIndex = Math.floor(Math.random() * sounds[strInd].length);

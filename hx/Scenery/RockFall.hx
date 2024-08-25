@@ -21,7 +21,7 @@ class RockFall extends Mobile {
 	private var force(default, never):Int = 3;
 	private var damage(default, never):Int = 1;
 	private var angleRate:Int = 5;
-	private var goto:Int;
+	private var goto:Int = 0;
 	private var startingSpeed:Float = 6;
 
 	private function load_image_assets():Void {

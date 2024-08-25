@@ -100,7 +100,7 @@ class Player extends Mobile {
 	private var onWaterfall:Bool = false;
 	private var inWater:Bool = false;
 	private var inLava:Bool = false;
-	private var checkOffsetY:Int; // Set in the constructor--determines the relative position at which the state is checked.
+	private var checkOffsetY:Int = 0; // Set in the constructor--determines the relative position at which the state is checked.
 
 	private static inline final dMS = 0.8; // Walking speed
 	private static inline final dMSstair:Float = 0.4; // Walking speed on stairs
@@ -370,7 +370,7 @@ class Player extends Mobile {
 
 	public var fallFromCeiling:Bool = false;
 
-	private var yStart:Int;
+	private var yStart:Int = 0;
 	private var bouncedFromCeiling:Bool = false;
 
 	public var receiveInput:Bool = true;
@@ -1063,8 +1063,7 @@ class Player extends Mobile {
 			}
 		} else if (Std.is(e, PushableBlockSpear)) {
 			(try cast(e, PushableBlockSpear) catch (e:Dynamic) null).hit(new Point((spearDirection % 2 == 0 ? 1 : 0) * (spearDirection - 1),
-				(spearDirection % 2 == 1 ? 1 : 0) * (2 - spearDirection)),
-				t, true);
+				(spearDirection % 2 == 1 ? 1 : 0) * (2 - spearDirection)), t, true);
 		} else if (Std.is(e, PushableBlockFire)) {
 			(try cast(e, PushableBlockFire) catch (e:Dynamic) null).hit(new Point(x, y), t);
 		} else if (Std.is(e, LavaBall)) {

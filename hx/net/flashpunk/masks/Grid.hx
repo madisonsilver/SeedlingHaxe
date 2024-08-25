@@ -189,10 +189,10 @@ class Grid extends Hitbox {
 	private var _data:BitmapData;
 
 	/** @private */
-	private var _columns:Int;
+	private var _columns:Int = 0;
 
 	/** @private */
-	private var _rows:Int;
+	private var _rows:Int = 0;
 
 	/** @private */
 	private var _cell:Rectangle;

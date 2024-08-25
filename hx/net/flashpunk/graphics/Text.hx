@@ -138,10 +138,10 @@ class Text extends Image {
 	private var _field:TextField = new TextField();
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
 	private var _form:TextFormat;
@@ -153,7 +153,7 @@ class Text extends Image {
 	private var _font:String;
 
 	/** @private */
-	private var _size:Int;
+	private var _size:Int = 0;
 
 	// Default font family.
 	// Use this option when compiling with Flex SDK 4

@@ -18,7 +18,7 @@ class Spinner extends Enemy {
 	private var imgSpinner:BitmapData;
 	private var sprSpinner:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	public var moveSpeed:Float = 1;

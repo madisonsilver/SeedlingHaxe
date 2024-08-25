@@ -127,10 +127,10 @@ class TiledSpritemap extends Spritemap {
 	private var _graphics:Graphics = FP.sprite.graphics;
 
 	/** @private */
-	private var _imageWidth:Int;
+	private var _imageWidth:Int = 0;
 
 	/** @private */
-	private var _imageHeight:Int;
+	private var _imageHeight:Int = 0;
 
 	/** @private */
 	private var _offsetX:Float = 0;

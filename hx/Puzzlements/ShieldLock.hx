@@ -15,7 +15,7 @@ class ShieldLock extends Lock {
 	private var sprShieldLock:Spritemap;
 
 	private var p:Player;
-	private var shieldType:Int;
+	private var shieldType:Int = 0;
 
 	/**
 	 * @param	_x		The x-placement of the block

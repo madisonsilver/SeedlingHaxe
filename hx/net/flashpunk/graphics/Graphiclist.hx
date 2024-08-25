@@ -149,7 +149,7 @@ class Graphiclist extends Graphic {
 	private var _temp:Array<Graphic> = new Array<Graphic>();
 
 	/** @private */
-	private var _count:Int;
+	private var _count:Int = 0;
 
 	/** @private */
 	private var _point:Point = new Point();

@@ -110,7 +110,7 @@ class Main extends Engine {
 	}
 
 	public static function printItems():Void {
-		var i:Int;
+		var i:Int = 0;
 		trace("-------------------------");
 		trace("P-Pos:    " + playerPositionX + ", " + playerPositionY);
 		trace("Level:    " + level);

@@ -17,7 +17,7 @@ class FireWand extends Pickup {
 	private var imgFireWandPickup:BitmapData;
 	private var sprFireWandPickup:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private var alphaRate(default, never):Float = 0.01;

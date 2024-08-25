@@ -117,10 +117,10 @@ class TiledImage extends Image {
 	private var _texture:BitmapData;
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
 	private var _offsetX:Float = 0;

@@ -20,7 +20,7 @@ class Moonrock extends Entity {
 	private var imgMoonrock:BitmapData;
 	private var sprMoonrock:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var trigger:Bool = false;
 
@@ -42,7 +42,7 @@ class Moonrock extends Entity {
 	private var cameraTimer:Int = 0;
 
 	private var fallRate(default, never):Int = 20;
-	private var fallTo:Int;
+	private var fallTo:Int = 0;
 
 	private function load_image_assets():Void {
 		imgMoonrock = Assets.getBitmapData("assets/graphics/Moonrock.png");

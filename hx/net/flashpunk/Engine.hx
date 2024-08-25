@@ -303,16 +303,16 @@ class Engine extends MovieClip {
 	// Debug timing information.
 
 	/** @private */
-	private var _updateTime:Int;
+	private var _updateTime:Int = 0;
 
 	/** @private */
-	private var _renderTime:Int;
+	private var _renderTime:Int = 0;
 
 	/** @private */
-	private var _gameTime:Int;
+	private var _gameTime:Int = 0;
 
 	/** @private */
-	private var _flashTime:Int;
+	private var _flashTime:Int = 0;
 
 	// Game constants.
 

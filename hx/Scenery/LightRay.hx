@@ -12,10 +12,10 @@ import openfl.display.BlendMode;
  * @author Time
  */
 class LightRay extends Entity {
-	private var c:Int;
+	private var c:Int = 0;
 	private var a:Float;
-	private var w:Int;
-	private var h:Int;
+	private var w:Int = 0;
+	private var h:Int = 0;
 
 	public function new(_x:Int, _y:Int, _c:Int, _a:Float, _w:Int, _h:Int) {
 		super(_x, _y);

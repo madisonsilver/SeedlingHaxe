@@ -11,14 +11,14 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Light extends Entity {
-	private var radiusMax:Int;
+	private var radiusMax:Int = 0;
 
-	public var radiusMin:Int;
+	public var radiusMin:Int = 0;
 	public var alpha:Float;
-	public var color:Int;
+	public var color:Int = 0;
 
-	private var frames:Int;
-	private var loops:Int;
+	private var frames:Int = 0;
+	private var loops:Int = 0;
 	private var smooth:Bool;
 
 	public var i_radius_factor:Float = 0.5;
@@ -63,10 +63,9 @@ class Light extends Entity {
 	}
 
 	public function draw():Void {
-		var c_radius:Int;
+		var c_radius:Int = 0;
 		if (smooth) {
-			c_radius = Std.int((radiusMax - radiusMin) * (Math.sin(Game.worldFrame(frames, loops) / (frames - 1) * 2 * Math.PI) + 1) / 2
-				+ radiusMin);
+			c_radius = Std.int((radiusMax - radiusMin) * (Math.sin(Game.worldFrame(frames, loops) / (frames - 1) * 2 * Math.PI) + 1) / 2 + radiusMin);
 		} else {
 			c_radius = Std.int((radiusMax - radiusMin) * Game.worldFrame(frames, loops) / (frames - 1) + radiusMin);
 		}

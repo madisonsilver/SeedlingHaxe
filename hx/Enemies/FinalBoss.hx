@@ -38,7 +38,7 @@ class FinalBoss extends Enemy {
 	private var cpod:Int = 0; // The pod that you're currently going to
 	private var hitThisSequence:Bool = false;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var started:Bool = false;
 

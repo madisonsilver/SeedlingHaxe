@@ -12,7 +12,7 @@ import net.flashpunk.masks.Pixelmask;
  * @author Time
  */
 class CliffSide extends Entity {
-	private var frame:Int;
+	private var frame:Int = 0;
 
 	public function new(_x:Int, _y:Int, _f:Int = 0) {
 		super(_x, _y);

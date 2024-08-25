@@ -22,7 +22,7 @@ class LavaRunner extends Bob {
 	private var jumpV:Float = 0;
 	private var g(default, never):Float = 0.2;
 	private var angleSpin:Int = 10;
-	private var startY:Int;
+	private var startY:Int = 0;
 	private var inAir:Bool = false;
 
 	private override function load_image_assets():Void {

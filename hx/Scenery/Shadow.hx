@@ -15,10 +15,10 @@ import openfl.display.BlendMode;
  * @author Time
  */
 class Shadow extends Entity {
-	private var c:Int;
+	private var c:Int = 0;
 	private var a:Float;
-	private var w:Int;
-	private var h:Int;
+	private var w:Int = 0;
+	private var h:Int = 0;
 	private var myBmp:BitmapData;
 	private var myMatrix:Matrix;
 

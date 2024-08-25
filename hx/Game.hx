@@ -1298,7 +1298,7 @@ class Game extends World {
 								// If we're all done showing the text, go ahead and reactivate the player.
 							{
 								{
-									// cTextIndex = cutsceneText[0][cutsceneText[0].length - 1]; TODO: Literally what is happening here??
+									// cTextIndex = cutsceneText[0][cutsceneText[0].length - 1]; TODO: Figure out what this does
 									cutsceneTimer[0][0] = -1;
 									talking = false;
 									freezeObjects = false;
@@ -1792,8 +1792,7 @@ class Game extends World {
 		for (i in 0...healths) {
 			sprHealth.frame = (i > healthc ? 1 : 0);
 			sprHealth.render(new Point(FP.screen.width - sprHealth.width - Std.int(i % cols) * (sprHealth.width - 1),
-				Std.int(i / 2) * (sprHealth.height - 1)),
-				new Point());
+				Std.int(i / 2) * (sprHealth.height - 1)), new Point());
 		}
 	}
 
@@ -2028,11 +2027,11 @@ class Game extends World {
 
 	public function totalEnemies():Int // return typeCount("Enemy") + typeCount("ShieldBoss");
 	{
-		return Std.int(classCount(Bob) + classCount(BobSoldier) + classCount(BobBoss) + classCount(Flyer) + classCount(Jellyfish)
-			+ classCount(Cactus) + classCount(SandTrap) + classCount(ShieldBoss) + classCount(Spinner) + classCount(WallFlyer) + classCount(Puncher)
-			+ classCount(Drill) + classCount(Turret) + classCount(IceTurret) + classCount(BossTotem) + classCount(Tentacle) + classCount(TentacleBeast)
-			+ classCount(Grenade) + classCount(DarkTrap) + classCount(LightBoss) + classCount(LavaRunner) + classCount(Bulb) + classCount(Squishle)
-			+ classCount(FinalBoss) + classCount(Enemy));
+		return Std.int(classCount(Bob) + classCount(BobSoldier) + classCount(BobBoss) + classCount(Flyer) + classCount(Jellyfish) + classCount(Cactus)
+			+ classCount(SandTrap) + classCount(ShieldBoss) + classCount(Spinner) + classCount(WallFlyer) + classCount(Puncher) + classCount(Drill)
+			+ classCount(Turret) + classCount(IceTurret) + classCount(BossTotem) + classCount(Tentacle) + classCount(TentacleBeast) + classCount(Grenade)
+			+ classCount(DarkTrap) + classCount(LightBoss) + classCount(LavaRunner) + classCount(Bulb) + classCount(Squishle) + classCount(FinalBoss)
+			+ classCount(Enemy));
 	}
 
 	public static function checkPersistence(tag:Int, _l:Int = -1):Bool {

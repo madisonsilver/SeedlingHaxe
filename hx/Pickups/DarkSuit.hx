@@ -14,7 +14,7 @@ class DarkSuit extends Pickup {
 	private var imgDarkSuit:BitmapData;
 	private var sprDarkSuit:Image;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

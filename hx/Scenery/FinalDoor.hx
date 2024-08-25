@@ -20,7 +20,7 @@ class FinalDoor extends Entity {
 
 	public var mySealController:SealController;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgFinalDoor = Assets.getBitmapData("assets/graphics/FinalDoor.png");

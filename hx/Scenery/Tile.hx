@@ -138,7 +138,7 @@ class Tile extends Entity {
 			return;
 		}
 		var phases:Int = 100;
-		var loops:Int;
+		var loops:Int = 0;
 		var maxAlpha:Float;
 		switch (t) {
 			case 0:
@@ -298,9 +298,7 @@ class Tile extends Entity {
 				Game.sprBody.flipped = randVal < 0.5;
 				Game.sprBody.angle = 180 * (Std.int(2 * randVal) - 1);
 				loops = 1;
-				Game.sprBody.frame = bodyFrames[
-					(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length
-				];
+				Game.sprBody.frame = bodyFrames[(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length];
 				Game.sprBody.render(new Point(x, y), FP.camera);
 				Game.sprBody.flipped = false;
 				drawMyEdges();
@@ -308,9 +306,7 @@ class Tile extends Entity {
 				Game.sprBodyWall.flipped = randVal < 0.5;
 				Game.sprBodyWall.angle = 180 * (Std.int(2 * randVal) - 1);
 				loops = 2;
-				Game.sprBodyWall.frame = bodyFrames[
-					(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length
-				];
+				Game.sprBodyWall.frame = bodyFrames[(Game.worldFrame(bodyFrames.length, loops) + Std.int(randVal * bodyFrames.length)) % bodyFrames.length];
 				Game.sprBodyWall.render(new Point(x, y), FP.camera);
 				Game.sprBodyWall.flipped = false;
 				drawMyEdges();
@@ -332,9 +328,7 @@ class Tile extends Entity {
 					type = "Solid";
 				} else if (bridgeOpeningTimer > 0) {
 					bridgeOpeningTimer--;
-					Game.sprBridge.frame = openingBridge[
-						Std.int((1 - bridgeOpeningTimer / bridgeOpeningTimerMax) * openingBridge.length)
-					];
+					Game.sprBridge.frame = openingBridge[Std.int((1 - bridgeOpeningTimer / bridgeOpeningTimerMax) * openingBridge.length)];
 					Game.sprBridge.blend = BlendMode.INVERT;
 					type = "Solid";
 				} else if (bridgeOpeningTimer <= 0) {

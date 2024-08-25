@@ -14,7 +14,7 @@ class Feather extends Pickup {
 	private var imgFeather:BitmapData;
 	private var sprFeather:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

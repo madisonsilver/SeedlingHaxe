@@ -32,8 +32,8 @@ class Inventory {
 	private static var imgTank:BitmapData;
 	private static var sprTank:Image;
 
-	public static var width:Int;
-	public static var height:Int;
+	public static var width:Int = 0;
+	public static var height:Int = 0;
 	public static var help:Bool = true;
 
 	private var _open:Bool;

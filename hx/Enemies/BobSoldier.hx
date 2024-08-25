@@ -37,7 +37,7 @@ class BobSoldier extends Enemy {
 	public var attackRange(default, never):Int = 32; // Range at which the Bob will attack the character
 
 	public var weapon:Spritemap;
-	public var weaponLength:Int;
+	public var weaponLength:Int = 0;
 
 	public var swordSpinning:Bool = false;
 	public var swordIndex:Int = 0;

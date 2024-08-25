@@ -912,7 +912,7 @@ class Console {
 	private var _logReadText1:TextField = new TextField();
 
 	/** @private */
-	private var _logHeight:Int;
+	private var _logHeight:Int = 0;
 
 	/** @private */
 	private var _logBar:Rectangle;
@@ -943,7 +943,7 @@ class Console {
 	private var _debReadText1:TextField = new TextField();
 
 	/** @private */
-	private var _debWidth:Int;
+	private var _debWidth:Int = 0;
 
 	// Button panel information
 

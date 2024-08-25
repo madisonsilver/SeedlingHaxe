@@ -37,11 +37,11 @@ class Canvas extends Graphic {
 		_refWidth = Math.ceil(width / _maxWidth);
 		_refHeight = Math.ceil(height / _maxHeight);
 		_ref = new BitmapData(_refWidth, _refHeight, false, 0);
-		var x:Int;
-		var y:Int;
-		var w:Int;
-		var h:Int;
-		var i:Int;
+		var x:Int = 0;
+		var y:Int = 0;
+		var w:Int = 0;
+		var h:Int = 0;
+		var i:Int = 0;
 		var ww:Int = Std.int(_width % _maxWidth);
 		var hh:Int = Std.int(_height % _maxHeight);
 		if (ww == 0) {
@@ -71,8 +71,8 @@ class Canvas extends Graphic {
 		point.y += y - camera.y * scrollY;
 
 		// render the buffers
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 		var buffer:BitmapData;
 		var px:Float = point.x;
 		while (yy < _refHeight) {
@@ -103,8 +103,8 @@ class Canvas extends Graphic {
 	 * @param	rect		Optional area of the source image to draw from. If null, the entire BitmapData will be drawn.
 	 */
 	public function draw(x:Int, y:Int, source:BitmapData, rect:Rectangle = null):Void {
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 		for (buffer /* AS3HX WARNING could not determine type for var: buffer exp: EIdent(_buffers) type: null */ in _buffers) {
 			_point.x = x - xx;
 			_point.y = y - yy;
@@ -124,8 +124,8 @@ class Canvas extends Graphic {
 	 * @param	alpha		Fill alpha.
 	 */
 	public function fill(rect:Rectangle, color:Int = 0, alpha:Float = 1):Void {
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 		var buffer:BitmapData;
 		if (alpha >= 1) {
 			_rect.width = rect.width;
@@ -163,8 +163,8 @@ class Canvas extends Graphic {
 	 * @param	texture		Fill texture.
 	 */
 	public function fillTexture(rect:Rectangle, texture:BitmapData):Void {
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 		for (buffer /* AS3HX WARNING could not determine type for var: buffer exp: EIdent(_buffers) type: null */ in _buffers) {
 			_graphics.clear();
 			_graphics.beginBitmapFill(texture);
@@ -187,8 +187,8 @@ class Canvas extends Graphic {
 	 */
 	public function drawGraphic(x:Int, y:Int, source:Graphic):Void {
 		var temp:BitmapData = FP.buffer;
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 		for (buffer /* AS3HX WARNING could not determine type for var: buffer exp: EIdent(_buffers) type: null */ in _buffers) {
 			FP.buffer = buffer;
 			_point.x = x - xx;
@@ -278,10 +278,10 @@ class Canvas extends Graphic {
 	private var _buffers:Array<BitmapData> = new Array<BitmapData>();
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
 	private var _maxWidth:Int = 4000;
@@ -312,10 +312,10 @@ class Canvas extends Graphic {
 	private var _ref:BitmapData;
 
 	/** @private */
-	private var _refWidth:Int;
+	private var _refWidth:Int = 0;
 
 	/** @private */
-	private var _refHeight:Int;
+	private var _refHeight:Int = 0;
 
 	// Global objects.
 

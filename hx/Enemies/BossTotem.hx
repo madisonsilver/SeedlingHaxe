@@ -224,7 +224,7 @@ class BossTotem extends Enemy {
 	private var waitAtTopTimeMax(default, never):Int = 30;
 	private var waitAtTopTime:Int = 0;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private var playedSound:Bool = false;

@@ -19,7 +19,7 @@ class PlantTorch extends Entity {
 	private var loops(default, never):Float = 1;
 	private var myLight:Light;
 
-	private var distance:Int; // The maximal distance that any light is shown to the player
+	private var distance:Int = 0; // The maximal distance that any light is shown to the player
 
 	// (This light turns off when the player gets far away)
 

@@ -14,7 +14,7 @@ import net.flashpunk.FP;
  * @author Time
  */
 class Building extends Entity {
-	private var buildingType:Int;
+	private var buildingType:Int = 0;
 
 	private static var moundFrames:Array<Dynamic> = [0, 1, 2, 1];
 
@@ -43,7 +43,7 @@ class Building extends Entity {
 	override public function render():Void {
 		if (buildingType == 8) {
 			var moundLoops:Int = 1;
-			(cast Game.buildings[buildingType]: Spritemap).frame = moundFrames[Game.worldFrame(moundFrames.length, moundLoops)];
+			(cast Game.buildings[buildingType] : Spritemap).frame = moundFrames[Game.worldFrame(moundFrames.length, moundLoops)];
 			Draw.setTarget((try cast(FP.world, Game) catch (e:Dynamic) null).nightBmp, FP.camera);
 			super.render();
 			Draw.resetTarget();

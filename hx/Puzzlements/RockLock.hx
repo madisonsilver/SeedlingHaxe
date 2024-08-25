@@ -19,7 +19,7 @@ class RockLock extends Activators {
 	private var sprRockLock:Image;
 
 	private var normType:String = "Solid";
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgRockLock = Assets.getBitmapData("assets/graphics/RockLock.png");

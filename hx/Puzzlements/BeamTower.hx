@@ -17,7 +17,7 @@ class BeamTower extends Entity {
 	private var imgBeamTower:BitmapData;
 	private var sprBeamTower:Spritemap;
 
-	private var direction:Int;
+	private var direction:Int = 0;
 	private var rate:Float;
 
 	private var force(default, never):Int = 5;

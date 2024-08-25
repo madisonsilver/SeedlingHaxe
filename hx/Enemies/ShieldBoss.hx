@@ -16,7 +16,7 @@ class ShieldBoss extends Enemy {
 	private var imgShieldBoss:BitmapData;
 	private var sprShieldBoss:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var openShieldFrame(default, never):Int = 2;
 	private var retaliation:Bool = false;

@@ -19,7 +19,7 @@ class LavaBoss extends Enemy {
 	private var sprLavaBoss:Spritemap;
 
 	private var shotSpeed(default, never):Int = 1;
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var lastHitType:String = "";
 	private var startAttacking:Bool = false;
 

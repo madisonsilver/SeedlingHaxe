@@ -14,7 +14,7 @@ class MoonrockPile extends Entity {
 	private var imgMoonrockPile:BitmapData;
 	private var sprMoonrockPile:Image;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgMoonrockPile = Assets.getBitmapData("assets/graphics/MoonrockPile.png");

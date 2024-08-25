@@ -14,16 +14,16 @@ class Teleporter extends Entity {
 	private var imgPortal:BitmapData;
 	private var sprPortal:Spritemap;
 
-	private var to:Int;
+	private var to:Int = 0;
 	private var playerPos:Point;
 
 	private var playerTouching:Bool = false;
 	private var renderLight:Bool = true;
 
-	private var tag:Int; // True = exists, false = doesn't exist
+	private var tag:Int = 0; // True = exists, false = doesn't exist
 	private var invert:Bool; // If this is true, it inverts the rules for the tag
 	private var deactivated:Bool = false; // If true, then doesn't render or do player stuff
-	private var sign:Int; // Displays text in the room that this teleporter teleports to (text in Message.as)
+	private var sign:Int = 0; // Displays text in the room that this teleporter teleports to (text in Message.as)
 
 	public var sound:String = "Room";
 	public var soundIndex:Int = 0;

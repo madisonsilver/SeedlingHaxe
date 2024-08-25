@@ -14,7 +14,7 @@ class Activators extends Entity {
 	public var t(get, set):Int;
 
 	public var _active:Bool = false;
-	public var tSet:Int;
+	public var tSet:Int = 0;
 
 	public function new(_x:Int, _y:Int, _g:Graphic, _t:Int) {
 		super(_x, _y, _g);

@@ -15,10 +15,10 @@ import nPCs.NPC;
  */
 class LightBossController extends Entity {
 	private static inline var moveDiv:Int = 10;
-	private static var flierNumber:Int;
+	private static var flierNumber:Int = 0;
 	private static var spinCenter:Point;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var spin:Float = 0;
 	private var spinRate:Float = FP.RAD;
@@ -97,8 +97,7 @@ class LightBossController extends Entity {
 
 	public function flyCircle():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = Std.int(radiusCircleMin
-			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
+		radiusCircle = Std.int(radiusCircleMin + (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;
 			myFliers[i].goto = new Point(spinCenter.x + radiusCircle * Math.cos(a), spinCenter.y + radiusCircle * Math.sin(a));
@@ -114,8 +113,7 @@ class LightBossController extends Entity {
 
 	public function flyCircleInvert():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = Std.int(radiusCircleMin
-			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
+		radiusCircle = Std.int(radiusCircleMin + (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;
 			if (i % 2 == 0) {
@@ -135,8 +133,7 @@ class LightBossController extends Entity {
 
 	public function flyCircleDouble():Void {
 		var cFrame:Int = Game.worldFrame(radiusCircleFrames, loopsPerCircle);
-		radiusCircle = Std.int(radiusCircleMin
-			+ (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
+		radiusCircle = Std.int(radiusCircleMin + (radiusCircleMax - radiusCircleMin) * (Math.sin(cFrame / radiusCircleFrames * 2 * Math.PI) + 1) / 2);
 		for (i in 0...myFliers.length) {
 			var a:Float = i / myFliers.length * 2 * Math.PI + spin;
 			if (i % 2 == 0) {

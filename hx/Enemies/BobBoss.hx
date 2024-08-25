@@ -24,13 +24,13 @@ class BobBoss extends BobSoldier {
 	private var imgBobBossWeapons:BitmapData;
 	private var sprBobBossWeapons:Spritemap;
 
-	private var bossType:Int;
+	private var bossType:Int = 0;
 
 	private var nextBossTimerMax(default, never):Int = 120;
-	private var nextBossTimer:Int; // The time between bosses.
+	private var nextBossTimer:Int = 0; // The time between bosses.
 
 	private var formingTimerMax(default, never):Int = 60;
-	private var formingTimer:Int; // The time after creation that this boss does its animation before beginning its actions.
+	private var formingTimer:Int = 0; // The time after creation that this boss does its animation before beginning its actions.
 
 	private var text(default, never):Array<Dynamic> = [
 		"..., ...?~...~...!",

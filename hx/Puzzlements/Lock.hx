@@ -21,7 +21,7 @@ class Lock extends Activators {
 	public var sprLock:Spritemap;
 
 	private var normType:String = "Solid";
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"];
 

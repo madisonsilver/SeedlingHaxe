@@ -17,7 +17,7 @@ class ColorTween extends Tween {
 	/**
 	 * The current color.
 	 */
-	public var color:Int;
+	public var color:Int = 0;
 
 	/**
 	 * The current alpha.
@@ -96,13 +96,13 @@ class ColorTween extends Tween {
 	// Color information.
 
 	/** @private */
-	private var _r:Int;
+	private var _r:Int = 0;
 
 	/** @private */
-	private var _g:Int;
+	private var _g:Int = 0;
 
 	/** @private */
-	private var _b:Int;
+	private var _b:Int = 0;
 
 	/** @private */
 	private var _startA:Float;

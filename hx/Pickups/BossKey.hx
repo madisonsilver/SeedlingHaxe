@@ -13,7 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class BossKey extends Pickup {
-	private var keyType:Int;
+	private var keyType:Int = 0;
 	private var doActions:Bool = true;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0) {

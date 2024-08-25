@@ -19,9 +19,9 @@ class ButtonRoom extends Activators {
 	private var hitables:Dynamic = ["Player", "Enemy", "Solid"]; // Things that push down the button
 	private var flip:Bool; // Changes the actions of the button so that there's persistence in the room.
 	// Defaults to pushed is true, and unpushed is false.
-	private var room:Int;
+	private var room:Int = 0;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var frameAdd:Int = 0;
 

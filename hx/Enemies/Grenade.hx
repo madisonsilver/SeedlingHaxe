@@ -25,10 +25,10 @@ class Grenade extends Enemy {
 	private var force(default, never):Int = 2;
 	private var hitFrames(default, never):Array<Dynamic> = [5, 6, 7];
 
-	private var explodeTime:Int;
+	private var explodeTime:Int = 0;
 	private var myLight:Light;
-	private var startY:Int;
-	private var endY:Int;
+	private var startY:Int = 0;
+	private var endY:Int = 0;
 	private var activated:Bool;
 
 	private function load_image_assets():Void {

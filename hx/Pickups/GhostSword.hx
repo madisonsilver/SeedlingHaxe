@@ -15,7 +15,7 @@ class GhostSword extends Pickup {
 	private var imgGhostSword:BitmapData;
 	private var sprGhostSword:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

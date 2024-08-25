@@ -26,7 +26,7 @@ class LightBoss extends Enemy {
 
 	private var parent:LightBossController;
 
-	public var id:Int;
+	public var id:Int = 0;
 
 	private var myLight:Light;
 	private var angleFace:Float;

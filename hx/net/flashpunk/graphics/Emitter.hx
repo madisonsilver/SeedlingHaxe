@@ -276,7 +276,7 @@ class Emitter extends Graphic {
 	private var _cache:Particle;
 
 	/** @private */
-	private var _particleCount:Int;
+	private var _particleCount:Int = 0;
 
 	// Source information.
 
@@ -284,19 +284,19 @@ class Emitter extends Graphic {
 	private var _source:BitmapData;
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
-	private var _frameWidth:Int;
+	private var _frameWidth:Int = 0;
 
 	/** @private */
-	private var _frameHeight:Int;
+	private var _frameHeight:Int = 0;
 
 	/** @private */
-	private var _frameCount:Int;
+	private var _frameCount:Int = 0;
 
 	// Drawing information.
 

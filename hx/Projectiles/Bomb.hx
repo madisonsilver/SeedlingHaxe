@@ -23,7 +23,7 @@ class Bomb extends Mobile {
 	private var scale:Float = 0.5;
 
 	private var tMax(default, never):Int = 30;
-	private var t:Int;
+	private var t:Int = 0;
 
 	private function load_image_assets():Void {
 		imgBomb = Assets.getBitmapData("assets/graphics/Bomb.png");

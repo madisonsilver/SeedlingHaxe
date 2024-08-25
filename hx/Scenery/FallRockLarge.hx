@@ -23,13 +23,13 @@ class FallRockLarge extends Activators {
 	private var bossRock:Bool;
 	private var thirdBoss:Bool;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private var trigger:Bool = false;
 
 	private var fallRate(default, never):Float = 0.6;
 	private var vy:Float = 0;
-	private var fallTo:Int;
+	private var fallTo:Int = 0;
 
 	private var cameraTimerMax(default, never):Int = 90; // The length of time that the camera focuses after this hits
 	private var cameraTimer:Int = -1;

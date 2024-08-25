@@ -27,9 +27,9 @@ class NPC extends Mobile {
 
 	private var _talking:Bool = false;
 
-	public var tag:Int;
+	public var tag:Int = 0;
 
-	public var lineLength:Int;
+	public var lineLength:Int = 0;
 	public var talkRange:Int = 24;
 	public var inRange:Bool = false;
 	public var myPic:Image;
@@ -39,7 +39,7 @@ class NPC extends Mobile {
 	public var facePlayer:Bool = true;
 	public var charToTalkMargin:Int = 2; // The distance from the character image to the prompt
 
-	public var talkingSpeed:Int; // Matches up with Game.framesPerCharacter; sets the speed of each letter entering the screen.
+	public var talkingSpeed:Int = 0; // Matches up with Game.framesPerCharacter; sets the speed of each letter entering the screen.
 
 	// Measured in frames/character.
 	public var temporary:Bool = false;

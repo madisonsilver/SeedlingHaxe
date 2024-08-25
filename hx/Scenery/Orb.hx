@@ -18,10 +18,10 @@ class Orb extends Entity {
 	private var radiusMax:Int = 48;
 	private var radiusMin:Int = 40;
 	private var alpha:Float = 0.2;
-	private var color:Int;
+	private var color:Int = 0;
 
-	private var startX:Int;
-	private var startY:Int;
+	private var startX:Int = 0;
+	private var startY:Int = 0;
 
 	private var moveRadius(default, never):Int = 5;
 	private var phases(default, never):Int = 100;

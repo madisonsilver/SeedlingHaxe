@@ -15,7 +15,7 @@ class GhostSpear extends Pickup {
 	private var imgSpear:BitmapData;
 	private var sprSpear:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

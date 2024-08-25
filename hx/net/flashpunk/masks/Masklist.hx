@@ -180,5 +180,5 @@ class Masklist extends Hitbox {
 	private var _temp:Array<Mask> = new Array<Mask>();
 
 	/** @private */
-	private var _count:Int;
+	private var _count:Int = 0;
 }

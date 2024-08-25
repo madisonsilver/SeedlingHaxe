@@ -16,8 +16,8 @@ class RopeStart extends Activators {
 	private var imgRope:BitmapData;
 	private var sprRope:Spritemap;
 
-	private var tag:Int;
-	private var xend:Int;
+	private var tag:Int = 0;
+	private var xend:Int = 0;
 
 	private function load_image_assets():Void {
 		imgRope = Assets.getBitmapData("assets/graphics/RopePulley.png");

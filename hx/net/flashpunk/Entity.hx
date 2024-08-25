@@ -38,22 +38,22 @@ class Entity extends Tweener {
 	/**
 	 * Width of the Entity's hitbox.
 	 */
-	public var width:Int;
+	public var width:Int = 0;
 
 	/**
 	 * Height of the Entity's hitbox.
 	 */
-	public var height:Int;
+	public var height:Int = 0;
 
 	/**
 	 * X origin of the Entity's hitbox.
 	 */
-	public var originX:Int;
+	public var originX:Int = 0;
 
 	/**
 	 * Y origin of the Entity's hitbox.
 	 */
-	public var originY:Int;
+	public var originY:Int = 0;
 
 	/**
 	 * Constructor. Can be usd to place the Entity and assign a graphic and mask.
@@ -557,7 +557,7 @@ class Entity extends Tweener {
 	private var _type:String = "";
 
 	/** @private */ @:allow(net.flashpunk)
-	private var _layer:Int;
+	private var _layer:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk)
 	private var _updatePrev:Entity;

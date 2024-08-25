@@ -15,7 +15,7 @@ class BossTotemPart extends Pickup {
 	private var imgBossTotemPart:BitmapData;
 	private var sprBossTotemPart:Spritemap;
 
-	private var totemPart:Int;
+	private var totemPart:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

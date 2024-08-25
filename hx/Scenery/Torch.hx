@@ -15,7 +15,7 @@ class Torch extends Entity {
 	private var imgTorch:BitmapData;
 	private var sprTorch:Spritemap;
 
-	private var color:Int;
+	private var color:Int = 0;
 
 	private function load_image_assets():Void {
 		imgTorch = Assets.getBitmapData("assets/graphics/Torch.png");

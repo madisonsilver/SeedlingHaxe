@@ -17,8 +17,8 @@ class BreakableRock extends Entity {
 	private var sprBreakableRock:Spritemap;
 	private var sprBreakableRockGhost:Spritemap;
 
-	private var tag:Int;
-	private var rockType:Int;
+	private var tag:Int = 0;
+	private var rockType:Int = 0;
 
 	public function new(_x:Int, _y:Int, _tag:Int = -1, _type:Int = 0) {
 		super(_x + Tile.w / 2, _y + Tile.h / 2);

@@ -13,7 +13,7 @@ import net.flashpunk.utils.Draw;
  * @author Time
  */
 class Wire extends Entity {
-	private var img:Int;
+	private var img:Int = 0;
 
 	public var on:Bool = false;
 

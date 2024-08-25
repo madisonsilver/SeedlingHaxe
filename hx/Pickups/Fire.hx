@@ -15,7 +15,7 @@ class Fire extends Pickup {
 	private var imgFire:BitmapData;
 	private var sprFire:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

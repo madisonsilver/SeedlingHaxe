@@ -17,8 +17,8 @@ import net.flashpunk.utils.Draw;
  */
 class BossLock extends Activators {
 	private var normType:String = "Solid";
-	private var keyType:Int; // corresponds to a player variable "hasKey" which is an array of booleans denoting if they've picked up the right key.
-	private var tag:Int;
+	private var keyType:Int = 0; // corresponds to a player variable "hasKey" which is an array of booleans denoting if they've picked up the right key.
+	private var tag:Int = 0;
 	private var myKey:Spritemap;
 
 	// These are placeholders values for use on the sprite when drawn from the Game class
@@ -26,7 +26,7 @@ class BossLock extends Activators {
 	private var alpha:Float = 1;
 
 	private var keyTimerMax(default, never):Int = 60;
-	private var keyTimer:Int;
+	private var keyTimer:Int = 0;
 
 	public function new(_x:Int, _y:Int, _t:Int = 0, _tag:Int = -1) {
 		keyTimer = keyTimerMax;

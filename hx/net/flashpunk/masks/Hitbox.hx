@@ -145,14 +145,14 @@ class Hitbox extends Mask {
 	// Hitbox information.
 
 	/** @private */ @:allow(net.flashpunk.masks)
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk.masks)
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk.masks)
-	private var _x:Int;
+	private var _x:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk.masks)
-	private var _y:Int;
+	private var _y:Int = 0;
 }

@@ -36,12 +36,12 @@ class FP {
 	/**
 	 * Width of the game.
 	 */
-	public static var width:Int;
+	public static var width:Int = 0;
 
 	/**
 	 * Height of the game.
 	 */
-	public static var height:Int;
+	public static var height:Int = 0;
 
 	/**
 	 * If the game is running at a fixed framerate.
@@ -617,7 +617,7 @@ class FP {
 	public static function shuffle(a:Dynamic):Void {
 		if (Std.is(a, Array) || Std.is(a, Array /*Vector.<T> call?*/)) {
 			var i:Int = a.length;
-			var j:Int;
+			var j:Int = 0;
 			var t:Dynamic;
 			while (--i > 0) {
 				t = Reflect.field(a, Std.string(i));
@@ -752,19 +752,19 @@ class FP {
 	// Time information.
 
 	/** @private */ @:allow(net.flashpunk)
-	private static var _time:Int;
+	private static var _time:Int = 0;
 
 	/** @private */
-	public static var _updateTime:Int;
+	public static var _updateTime:Int = 0;
 
 	/** @private */
-	public static var _renderTime:Int;
+	public static var _renderTime:Int = 0;
 
 	/** @private */
-	public static var _gameTime:Int;
+	public static var _gameTime:Int = 0;
 
 	/** @private */
-	public static var _flashTime:Int;
+	public static var _flashTime:Int = 0;
 
 	// Bitmap storage.
 
@@ -777,7 +777,7 @@ class FP {
 	private static var _seed:Int = 0;
 
 	/** @private */
-	private static var _getSeed:Int;
+	private static var _getSeed:Int = 0;
 
 	// Volume control.
 

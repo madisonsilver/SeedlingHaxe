@@ -16,11 +16,11 @@ class Droplet extends Entity {
 	private var frameRate(default, never):Float = 0.6;
 	private var maxDist(default, never):Int = 80;
 
-	private var startY:Int;
-	private var endY:Int;
+	private var startY:Int = 0;
+	private var endY:Int = 0;
 	private var v:Point = new Point();
 	private var frame:Float = 0;
-	private var color:Int;
+	private var color:Int = 0;
 
 	private var player:Player;
 

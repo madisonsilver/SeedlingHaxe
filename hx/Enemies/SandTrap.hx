@@ -18,7 +18,7 @@ class SandTrap extends Enemy {
 	private var chompAnimSpeed(default, never):Int = 10;
 	private var chompRange(default, never):Int = 20; // The distance at which the cactus will start chomping from a player
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgSandTrap = Assets.getBitmapData("assets/graphics/SandTrap.png");

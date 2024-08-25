@@ -16,7 +16,7 @@ class Sword extends Pickup {
 	private var imgSword:BitmapData;
 	private var sprSword:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

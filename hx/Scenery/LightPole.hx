@@ -25,9 +25,9 @@ class LightPole extends Activators {
 	private var hitsTimer:Int = 0;
 
 	private var myLight:Light;
-	private var color:Int;
-	private var startY:Int;
-	private var tag:Int;
+	private var color:Int = 0;
+	private var startY:Int = 0;
+	private var tag:Int = 0;
 	private var invert:Bool;
 
 	private function load_image_assets():Void {

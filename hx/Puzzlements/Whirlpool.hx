@@ -24,7 +24,7 @@ class Whirlpool extends Entity {
 	private var timerSetGrow(default, never):Int = 150;
 	private var timerSetLive(default, never):Int = 60;
 	private var timerSetDies(default, never):Int = 30;
-	private var timerSet:Int;
+	private var timerSet:Int = 0;
 	private var useTimer:Bool;
 
 	private var maxAlpha(default, never):Float = 0.5;

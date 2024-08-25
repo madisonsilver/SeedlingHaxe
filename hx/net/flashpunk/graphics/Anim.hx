@@ -85,7 +85,7 @@ class Anim {
 	private var _frameRate:Float;
 
 	/** @private */ @:allow(net.flashpunk.graphics)
-	private var _frameCount:Int;
+	private var _frameCount:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk.graphics)
 	private var _loop:Bool;

@@ -71,10 +71,10 @@ class Backdrop extends Canvas {
 	private var _texture:BitmapData;
 
 	/** @private */
-	private var _textWidth:Int;
+	private var _textWidth:Int = 0;
 
 	/** @private */
-	private var _textHeight:Int;
+	private var _textHeight:Int = 0;
 
 	/** @private */
 	private var _repeatX:Bool;

@@ -17,7 +17,7 @@ class Wand extends Pickup {
 	private var imgWandPickup:BitmapData;
 	private var sprWandPickup:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private var doBossActions:Bool = true;

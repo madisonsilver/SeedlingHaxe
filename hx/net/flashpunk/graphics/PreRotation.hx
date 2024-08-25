@@ -90,13 +90,13 @@ class PreRotation extends Image {
 	// Rotation information.
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
 	private var _frame:Rectangle;
 
 	/** @private */
-	private var _frameCount:Int;
+	private var _frameCount:Int = 0;
 
 	/** @private */
 	private var _last:Int = -1;

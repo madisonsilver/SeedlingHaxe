@@ -265,19 +265,19 @@ class Spritemap extends Image {
 	private var _rect:Rectangle;
 
 	/** @private */
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */
-	private var _height:Int;
+	private var _height:Int = 0;
 
 	/** @private */
-	private var _columns:Int;
+	private var _columns:Int = 0;
 
 	/** @private */
-	private var _rows:Int;
+	private var _rows:Int = 0;
 
 	/** @private */
-	private var _frameCount:Int;
+	private var _frameCount:Int = 0;
 
 	/** @private */
 	private var _anims:Dictionary<String, Anim> = new Dictionary();
@@ -286,10 +286,10 @@ class Spritemap extends Image {
 	private var _anim:Anim;
 
 	/** @private */
-	private var _index:Int;
+	private var _index:Int = 0;
 
 	/** @private */
-	private var _frame:Int;
+	private var _frame:Int = 0;
 
 	/** @private */
 	private var _timer:Float = 0;

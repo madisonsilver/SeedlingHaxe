@@ -124,7 +124,7 @@ class Tween {
 	// Tween information.
 
 	/** @private */
-	private var _type:Int;
+	private var _type:Int = 0;
 
 	/** @private */
 	private var _ease:Function;

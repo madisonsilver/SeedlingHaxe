@@ -19,7 +19,7 @@ class Chest extends Entity {
 	private var openTimerMax(default, never):Int = 60;
 	private var openTimer:Int = 0;
 	private var coins:Int = Math.floor(Math.random() * 4 + 8);
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgChest = Assets.getBitmapData("assets/graphics/Chest.png");

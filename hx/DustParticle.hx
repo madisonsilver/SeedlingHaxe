@@ -10,13 +10,13 @@ import net.flashpunk.FP;
  */
 class DustParticle extends Entity {
 	private var w(default, never):Int = (cast Math.random() * 3 + 1:Int);
-	private var h:Int;
+	private var h:Int = 0;
 	private var c(default, never):Int = FP.getColorRGB((cast Math.random() * 64 + 192:Int), (cast Math.random() * 64 + 192:Int), 0);
 	private var a:Float = Math.random() / 2 + 0.5;
 
 	private var m(default, never):Float = Math.random() * 2 + 1;
-	private var startT:Int;
-	private var startY:Int;
+	private var startT:Int = 0;
+	private var startY:Int = 0;
 
 	public function new(_x:Int, _y:Int) {
 		h = w;

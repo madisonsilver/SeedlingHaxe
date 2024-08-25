@@ -15,7 +15,7 @@ class Shield extends Pickup {
 	private var imgShield:BitmapData;
 	private var sprShield:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

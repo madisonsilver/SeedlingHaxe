@@ -21,9 +21,9 @@ class Explosion extends Entity {
 	private var force(default, never):Int = 4;
 	private var radiusCoeff(default, never):Float = 0.65; // so that the fringes of the explosion image aren't included for collision.
 
-	private var radius:Int;
+	private var radius:Int = 0;
 	private var hitables:Dynamic;
-	private var damage:Int;
+	private var damage:Int = 0;
 
 	private function load_image_assets():Void {
 		imgExplosion = Assets.getBitmapData("assets/graphics/Explosion.png");

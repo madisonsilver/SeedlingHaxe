@@ -14,7 +14,7 @@ class DarkShield extends Pickup {
 	private var imgDarkShield:BitmapData;
 	private var sprDarkShield:Image;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

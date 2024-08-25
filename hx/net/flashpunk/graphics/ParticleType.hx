@@ -127,7 +127,7 @@ class ParticleType {
 	private var _source:BitmapData;
 
 	/** @private */ @:allow(net.flashpunk.graphics)
-	private var _width:Int;
+	private var _width:Int = 0;
 
 	/** @private */ @:allow(net.flashpunk.graphics)
 	private var _frame:Rectangle;
@@ -136,7 +136,7 @@ class ParticleType {
 	private var _frames:Array<Dynamic>;
 
 	/** @private */ @:allow(net.flashpunk.graphics)
-	private var _frameCount:Int;
+	private var _frameCount:Int = 0;
 
 	// Motion information.
 

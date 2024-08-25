@@ -43,12 +43,12 @@ class Preloader extends Sprite {
 	private var progressBar:Shape;
 	private var text:TextField;
 
-	private var px:Int;
-	private var py:Int;
-	private var w:Int;
-	private var h:Int;
-	private var sw:Int;
-	private var sh:Int;
+	private var px:Int = 0;
+	private var py:Int = 0;
+	private var w:Int = 0;
+	private var h:Int = 0;
+	private var sw:Int = 0;
+	private var sh:Int = 0;
 
 	/*
 		private var flashAd : FlashAd;
@@ -179,8 +179,8 @@ class Preloader extends Sprite {
 				}
 			}
 		}
- 
-		var p:Float = (loaderInfo!=null) ? (loaderInfo.bytesLoaded / loaderInfo.bytesTotal): 1;
+
+		var p:Float = (loaderInfo != null) ? (loaderInfo.bytesLoaded / loaderInfo.bytesTotal) : 1;
 
 		progressBar.graphics.clear();
 		progressBar.graphics.beginFill(BG_COLOR);

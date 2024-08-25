@@ -67,8 +67,8 @@ class Draw {
 		var screen:BitmapData = _target;
 		var X:Float = Math.abs(x2 - x1);
 		var Y:Float = Math.abs(y2 - y1);
-		var xx:Int;
-		var yy:Int;
+		var xx:Int = 0;
+		var yy:Int = 0;
 
 		// draw a single pixel
 		if (X == 0) {

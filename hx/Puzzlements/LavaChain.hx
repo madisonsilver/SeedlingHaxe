@@ -25,7 +25,7 @@ class LavaChain extends Entity {
 	private static inline var damage:Int = 1;
 
 	private var loops(default, never):Int = 2;
-	private var direction:Int;
+	private var direction:Int = 0;
 
 	private function load_image_assets():Void {
 		imgLavaChain = Assets.getBitmapData("assets/graphics/LavaChain.png");

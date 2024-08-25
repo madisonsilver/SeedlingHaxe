@@ -17,7 +17,7 @@ class HealthPickup extends Pickup {
 	private var sprHealth:Spritemap;
 
 	private var angleRate(default, never):Int = 10;
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

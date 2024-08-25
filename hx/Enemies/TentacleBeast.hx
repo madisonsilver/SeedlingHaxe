@@ -33,7 +33,7 @@ class TentacleBeast extends Enemy {
 	private var activated:Bool = false;
 	private var dead:Bool = false;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 
 	private function load_image_assets():Void {
 		imgTentacleBeastMask = Assets.getBitmapData("assets/graphics/TentacleBeastMask.png");
@@ -111,8 +111,8 @@ class TentacleBeast extends Enemy {
 		if (activated && !dead) {
 			if (sprTentacleBeast.currentAnim == "") {
 				var cont:Bool = true;
-				var xpos:Int;
-				var ypos:Int;
+				var xpos:Int = 0;
+				var ypos:Int = 0;
 				var cWhirl:Whirlpool;
 				var cTent:Tentacle;
 
@@ -127,12 +127,8 @@ class TentacleBeast extends Enemy {
 				var tries:Int = 0;
 				var created:Int = 0;
 				while (FP.world.classCount(Whirlpool) + created < maxWhirlpools && tries <= 100) {
-					xpos = Std.int(Math.random() * (spawnRect.width - whirlpoolMargin.x - whirlpoolMargin.width)
-						+ spawnRect.x
-						+ whirlpoolMargin.x);
-					ypos = Std.int(Math.random() * (spawnRect.height - whirlpoolMargin.y - whirlpoolMargin.height)
-						+ spawnRect.y
-						+ whirlpoolMargin.y);
+					xpos = Std.int(Math.random() * (spawnRect.width - whirlpoolMargin.x - whirlpoolMargin.width) + spawnRect.x + whirlpoolMargin.x);
+					ypos = Std.int(Math.random() * (spawnRect.height - whirlpoolMargin.y - whirlpoolMargin.height) + spawnRect.y + whirlpoolMargin.y);
 
 					for (cTent in v) {
 						if (FP.distance(xpos, ypos, cTent.x, cTent.y) <= whirlpoolDist) {
@@ -155,9 +151,7 @@ class TentacleBeast extends Enemy {
 				cont = true;
 				if (FP.world.classCount(Tentacle) < maxTentacles) {
 					xpos = Std.int(Math.random() * (spawnRect.width - tentacleMargin.x - tentacleMargin.width) + spawnRect.x + tentacleMargin.x);
-					ypos = Std.int(Math.random() * (spawnRect.height - tentacleMargin.y - tentacleMargin.height)
-						+ spawnRect.y
-						+ tentacleMargin.y);
+					ypos = Std.int(Math.random() * (spawnRect.height - tentacleMargin.y - tentacleMargin.height) + spawnRect.y + tentacleMargin.y);
 
 					for (cTent in v) {
 						if (FP.distance(xpos, ypos, cTent.x, cTent.y) <= tentacleDistance) {

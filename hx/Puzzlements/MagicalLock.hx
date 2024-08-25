@@ -17,8 +17,8 @@ class MagicalLock extends Entity {
 	private var imgMagicalLockFire:BitmapData;
 	private var sprMagicalLockFire:Spritemap;
 
-	private var tag:Int;
-	private var lockType:Int;
+	private var tag:Int = 0;
+	private var lockType:Int = 0;
 
 	private function load_image_assets():Void {
 		imgMagicalLock = Assets.getBitmapData("assets/graphics/MagicalLock.png");

@@ -16,7 +16,7 @@ class DarkSword extends Pickup {
 	private var imgDarkSword:BitmapData;
 	private var sprDarkSword:Spritemap;
 
-	private var tag:Int;
+	private var tag:Int = 0;
 	private var doActions:Bool = true;
 
 	private function load_image_assets():Void {

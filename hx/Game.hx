@@ -1281,35 +1281,29 @@ class Game extends World {
 					} else if (cutsceneTimer[0][1] > 0)
 						// Pan the camera over the first dungeon for some time, and don't proceed with text.
 					{
-						{
-							proceedText = false;
-							cutsceneTimer[0][1]--;
-							cameraSpeedDivisor = 50;
-							cameraTarget = new Point(256, 272);
-						}
+						proceedText = false;
+						cutsceneTimer[0][1]--;
+						cameraSpeedDivisor = 50;
+						cameraTarget = new Point(256, 272);
 					}
 					// Once the timer is up, reset the camera and let the text continue.
 					else {
+						resetCamera();
+						resetCameraSpeed();
+						proceedText = true;
+						if (cTextIndex >= cutsceneText[0].length)
+							// If we're all done showing the text, go ahead and reactivate the player.
 						{
-							resetCamera();
-							resetCameraSpeed();
-							proceedText = true;
-							if (cTextIndex >= cutsceneText[0].length)
-								// If we're all done showing the text, go ahead and reactivate the player.
-							{
-								{
-									// cTextIndex = cutsceneText[0][cutsceneText[0].length - 1]; TODO: Figure out what this does
-									cutsceneTimer[0][0] = -1;
-									talking = false;
-									freezeObjects = false;
-									p.directionFace = -1;
-									p.receiveInput = true;
-									cutscene[0] = false;
-									timeRate = 1;
-									ALIGN = "LEFT";
-									add(new Help(2));
-								}
-							}
+							// cTextIndex = cutsceneText[0][cutsceneText[0].length - 1]; TODO: Figure out what this does
+							cutsceneTimer[0][0] = -1;
+							talking = false;
+							freezeObjects = false;
+							p.directionFace = -1;
+							p.receiveInput = true;
+							cutscene[0] = false;
+							timeRate = 1;
+							ALIGN = "LEFT";
+							add(new Help(2));
 						}
 					}
 

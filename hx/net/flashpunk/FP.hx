@@ -158,7 +158,8 @@ class FP {
 	 * @return	A randomly chosen one of the provided parameters.
 	 */
 	public static function choose(objs:Array<Dynamic> = null):Dynamic {
-		var c:Dynamic = ((objs.length == 1 && (Std.isOfType(objs[0], Array) || Std.isOfType(objs[0], Array /*Vector.<T> call?*/)))) ? objs[0] : objs;
+		var c:Dynamic = ((objs.length == 1
+			&& (Std.isOfType(objs[0], Array) || Std.isOfType(objs[0], Array /*Vector.<T> call?*/)))) ? objs[0] : objs;
 		return Reflect.field(c, Std.string(rand(c.length)));
 	}
 

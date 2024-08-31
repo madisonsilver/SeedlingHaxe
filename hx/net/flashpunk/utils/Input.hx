@@ -6,6 +6,7 @@ import openfl.display.Stage;
 import openfl.events.KeyboardEvent;
 import openfl.events.MouseEvent;
 import openfl.ui.Keyboard;
+import openfl.utils.Dictionary;
 import net.flashpunk.*;
 
 /**
@@ -93,8 +94,8 @@ class Input {
 	 * @param	name		String to map the input to.
 	 * @param	...keys		The keys to use for the Input.
 	 */
-	public static function define(name:String, keys:Array<Dynamic> = null):Void {
-		Reflect.setField(_control, name, keys);
+	public static function define(name:String, keys:Array<Int> = null):Void {
+		_control[name] = keys;
 	}
 
 	/**
@@ -104,7 +105,7 @@ class Input {
 	 */
 	public static function check(input:Dynamic):Bool {
 		if (Std.is(input, String)) {
-			var v:Array<Int> = Reflect.field(_control, Std.string(input));
+			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- != 0) {
 				if (v[i] < 0) {
@@ -113,13 +114,13 @@ class Input {
 					}
 					continue;
 				}
-				if (Reflect.field(_key, Std.string(v[i])) != null) {
+				if (_key[v[i]] != null) {
 					return true;
 				}
 			}
 			return false;
 		}
-		return (input < 0) ? _keyNum > 0 : Reflect.field(_key, Std.string(input));
+		return (input < 0) ? _keyNum > 0 : _key[input];
 	}
 
 	/**
@@ -129,7 +130,7 @@ class Input {
 	 */
 	public static function pressed(input:Dynamic):Bool {
 		if (Std.is(input, String)) {
-			var v:Array<Int> = Reflect.field(_control, Std.string(input));
+			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- != 0) {
 				if ((v[i] < 0 && _press.length != 0) || _press.indexOf(v[i]) >= 0) {
@@ -148,7 +149,7 @@ class Input {
 	 */
 	public static function released(input:Dynamic):Bool {
 		if (Std.is(input, String)) {
-			var v:Array<Int> = Reflect.field(_control, Std.string(input));
+			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- > 0) {
 				if ((v[i] < 0 && _release.length > 0) || _release.indexOf(v[i]) >= 0) {
@@ -166,7 +167,7 @@ class Input {
 	 * @return	A Vector of keys.
 	 */
 	public static function keys(name:String):Array<Int> {
-		return try (cast Reflect.field(_control, name) : Array<Int>) catch (e:Dynamic) null;
+		return _control[name];
 	}
 
 	/** @private Called by Engine to enable keyboard input on the stage. */
@@ -236,7 +237,7 @@ class Input {
 		}
 
 		// update the keystate
-		if (_key[code] == null) {
+		if (!_key[code]) {
 			_key[code] = true;
 			_keyNum++;
 			_press[_pressNum++] = code;
@@ -247,7 +248,7 @@ class Input {
 	private static function onKeyUp(e:KeyboardEvent):Void // get the keycode and update the keystate
 	{
 		var code:Int = e.keyCode;
-		if (_key[code] != null) {
+		if (_key[code]) {
 			_key[code] = false;
 			_keyNum--;
 			_release[_releaseNum++] = code;
@@ -307,7 +308,7 @@ class Input {
 	private static var _releaseNum:Int = 0;
 
 	/** @private */
-	private static var _control:Dynamic = {};
+	private static var _control:Dictionary<String, Array<Int>> = new Dictionary();
 
 	/** @private */
 	private static var _mouseWheelDelta:Int = 0;

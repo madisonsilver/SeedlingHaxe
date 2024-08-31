@@ -14,8 +14,8 @@ class LittleStones extends Entity {
 	private var imgLittleStones:BitmapData;
 	private var sprLittleStones:Image;
 
-	private var grassPosX:Dynamic = [1, 1, 9, 5, 1];
-	private var grassPosY:Dynamic = [14, 9, 14, 1, 6];
+	private var grassPosX:Array<Int> = [1, 1, 9, 5, 1];
+	private var grassPosY:Array<Int> = [14, 9, 14, 1, 6];
 
 	private function load_image_assets():Void {
 		imgLittleStones = Assets.getBitmapData("assets/graphics/LittleStones.png");
@@ -27,7 +27,7 @@ class LittleStones extends Entity {
 		super(_x, _y, sprLittleStones);
 		layer = Std.int(-y);
 		for (i in 0...grassPosX.length) {
-			FP.world.add(new Grass(x + Reflect.field(grassPosX, Std.string(i)), y + Reflect.field(grassPosY, Std.string(i))));
+			FP.world.add(new Grass(Std.int(x + grassPosX[i]), Std.int(y + grassPosY[i])));
 		}
 	}
 }

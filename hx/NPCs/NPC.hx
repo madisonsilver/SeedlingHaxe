@@ -33,7 +33,7 @@ class NPC extends Mobile {
 	public var talkRange:Int = 24;
 	public var inRange:Bool = false;
 	public var myPic:Image;
-	public var myText:Dynamic = [];
+	public var myText:Array<String> = [];
 	public var myCurrentText:Int = 0;
 
 	public var facePlayer:Bool = true;
@@ -128,7 +128,7 @@ class NPC extends Mobile {
 
 	override public function render():Void {
 		super.render();
-		if (inRange && !talked && showTalk && Reflect.field(myText, Std.string(0)).length > 0) {
+		if (inRange && !talked && showTalk && myText[0].length > 0) {
 			var talkBobsPerLoop:Float = 1.25; // The number of times sprTalk bobs up and down per animation loop
 			sprTalk.frame = Game.worldFrame(sprTalk.frameCount, 1 / talkBobsPerLoop);
 			sprTalk.render(new Point(x, y - originY - charToTalkMargin), FP.camera);
@@ -137,7 +137,7 @@ class NPC extends Mobile {
 
 	public function lineWrap():Void {
 		for (i in 0...myText.length) {
-			Reflect.setField(myText, Std.string(i), endlineText(Reflect.field(myText, Std.string(i)), lineLength));
+			Reflect.setField(myText, Std.string(i), endlineText(myText[i], lineLength));
 		}
 	}
 
@@ -171,7 +171,7 @@ class NPC extends Mobile {
 
 	public function talk():Void {
 		var p:Player = try cast(FP.world.nearestToEntity("Player", this), Player) catch (e:Dynamic) null;
-		if (p != null && Reflect.field(myText, Std.string(0)).length > 0) {
+		if (p != null && myText[0].length > 0) {
 			inRange = FP.distance(x, y, p.x, p.y) <= talkRange;
 			var hitKey:Bool = Input.released(p.keys[6]);
 
@@ -179,10 +179,10 @@ class NPC extends Mobile {
 				Game.freezeObjects = true;
 				if (hitKey) {
 					Music.playSound("Text", 1, 0.3);
-					if (Game.currentCharacter >= Reflect.field(myText, Std.string(myCurrentText)).length) {
+					if (Game.currentCharacter >= myText[myCurrentText].length) {
 						myCurrentText++;
 					} else {
-						Game.currentCharacter = Std.int(Reflect.field(myText, Std.string(myCurrentText)).length - 1);
+						Game.currentCharacter = Std.int(myText[myCurrentText].length - 1);
 					}
 					if (myCurrentText >= myText.length) {
 						talking = false;
@@ -230,7 +230,7 @@ class NPC extends Mobile {
 			doneTalking();
 		} else {
 			Game.talking = true;
-			Game.talkingText = Reflect.field(myText, Std.string(myCurrentText));
+			Game.talkingText = myText[myCurrentText];
 			Game.talkingPic = myPic;
 			Game.framesPerCharacter = talkingSpeed;
 			Game.ALIGN = align;

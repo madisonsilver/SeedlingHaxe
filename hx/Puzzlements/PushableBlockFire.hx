@@ -35,7 +35,8 @@ class PushableBlockFire extends Mobile {
 		sprPushableBlockFire.color = 0xFF0000;
 		setHitbox(16, 16);
 		type = "Solid";
-		solids.push("Enemy", "Player");
+		solids.push("Enemy");
+		solids.push("Player");
 
 		tile = getPos(Std.int(x), Std.int(y));
 	}

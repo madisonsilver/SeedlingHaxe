@@ -124,7 +124,8 @@ class IceTurret extends Enemy {
 				setHitbox(16, 16, 8, 8);
 				(try cast(graphic, Spritemap) catch (e:Dynamic) null).play("dead");
 				destroy = false;
-				solids.push("Enemy", "Player");
+				solids.push("Enemy");
+				solids.push("Player");
 			}
 		}
 	}

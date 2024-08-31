@@ -15,7 +15,7 @@ class Mobile extends Entity {
 	public static inline var WATER_FRICTION:Float = 0.5;
 
 	public var f:Float = DEFAULT_FRICTION; // Frictional constant
-	public var solids:Dynamic = ["Solid", "Tree", "Rock", "Rope", "ShieldBoss"];
+	public var solids:Array<String> = ["Solid", "Tree", "Rock", "Rope", "ShieldBoss"];
 	public var v:Point = new Point();
 	public var destroy:Bool = false;
 

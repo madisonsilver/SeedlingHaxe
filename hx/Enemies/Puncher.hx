@@ -54,7 +54,8 @@ class Puncher extends Enemy {
 
 		setHitbox(12, 12, 6, 4);
 
-		solids.push("Enemy", "Player");
+		solids.push("Enemy");
+		solids.push("Player");
 
 		damage = 1;
 	}

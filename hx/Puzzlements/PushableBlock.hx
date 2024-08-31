@@ -32,7 +32,8 @@ class PushableBlock extends Mobile {
 		super(_x, _y, sprPushableBlock);
 		setHitbox(16, 16);
 		type = "Solid";
-		solids.push("Enemy", "Player");
+		solids.push("Enemy");
+		solids.push("Player");
 
 		tile = new Point(Math.floor(x / Tile.w), Math.floor(y / Tile.h));
 		cTile = tile;

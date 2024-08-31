@@ -48,7 +48,8 @@ class LavaRunner extends Bob {
 		moveSpeed = normalSpeed;
 		hitsMax = 2;
 
-		solids.push("LavaBoss", "Enemy");
+		solids.push("LavaBoss");
+		solids.push("Enemy");
 	}
 
 	override public function update():Void {

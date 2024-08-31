@@ -70,7 +70,7 @@ class Pod extends Entity {
 						fb.v.x = fb.v.y = 0;
 					}
 			}*/ {
-			if (Std.is(e, Player)) {
+			if (Std.isOfType(e, Player)) {
 				var p:Player = try cast(e, Player) catch (e:Dynamic) null;
 				if (sprPod.currentAnim == "closed") {
 					p.x = x;

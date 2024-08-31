@@ -74,9 +74,9 @@ class RayShot extends Mobile {
 	}
 
 	public function checkEntity(_e:Entity):Void {
-		if (Std.is(_e, Enemy)) {
+		if (Std.isOfType(_e, Enemy)) {
 			(try cast(_e, Enemy) catch (e:Dynamic) null).hit(force, new Point(x, y), damage);
-		} else if (Std.is(_e, MagicalLock)) {
+		} else if (Std.isOfType(_e, MagicalLock)) {
 			(try cast(_e, MagicalLock) catch (e:Dynamic) null).hit(100);
 		}
 		destroy = true;

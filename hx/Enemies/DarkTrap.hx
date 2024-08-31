@@ -36,7 +36,7 @@ class DarkTrap extends SandTrap {
 		var v:Array<Light> = new Array<Light>();
 		FP.world.getClass(Light, v);
 		for (light in v) {
-			if (!(Std.is(light, PlayerLight))
+			if (!(Std.isOfType(light, PlayerLight))
 				&& FP.distance(x, y, light.x, light.y) <= light.radiusMin
 				&& !light.darkLight
 				&& !startDying) {

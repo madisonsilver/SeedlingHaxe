@@ -30,9 +30,9 @@ class Stamp extends Graphic {
 		if (source == null) {
 			return;
 		}
-		if (Std.is(source, Class)) {
+		if (Std.isOfType(source, Class)) {
 			_source = FP.getBitmap(source);
-		} else if (Std.is(source, BitmapData)) {
+		} else if (Std.isOfType(source, BitmapData)) {
 			_source = source;
 		}
 		if (_source != null) {

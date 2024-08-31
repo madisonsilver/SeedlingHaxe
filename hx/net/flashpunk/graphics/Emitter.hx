@@ -41,9 +41,9 @@ class Emitter extends Graphic {
 	 * @param	frameHeight		Frame height.
 	 */
 	public function setSource(source:Dynamic, frameWidth:Int = 0, frameHeight:Int = 0):Void {
-		if (Std.is(source, Class)) {
+		if (Std.isOfType(source, Class)) {
 			_source = FP.getBitmap(source);
-		} else if (Std.is(source, BitmapData)) {
+		} else if (Std.isOfType(source, BitmapData)) {
 			_source = source;
 		}
 		if (_source == null) {

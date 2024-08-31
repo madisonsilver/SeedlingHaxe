@@ -19,9 +19,9 @@ class Backdrop extends Canvas {
 	 * @param	repeatY		Repeat vertically.
 	 */
 	public function new(texture:Dynamic, repeatX:Bool = true, repeatY:Bool = true) {
-		if (Std.is(texture, Class)) {
+		if (Std.isOfType(texture, Class)) {
 			_texture = FP.getBitmap(texture);
-		} else if (Std.is(texture, BitmapData)) {
+		} else if (Std.isOfType(texture, BitmapData)) {
 			_texture = texture;
 		}
 		if (!_texture) {

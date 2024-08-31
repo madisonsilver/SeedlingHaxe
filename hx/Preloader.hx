@@ -243,7 +243,7 @@ class Preloader extends Sprite {
 			}
 			var domainLen : Int = Std.int(url.indexOf("/", startCheck) - startCheck);
 			var host : String = url.substr(startCheck, domainLen);
-			if (Std.is(allowed, String))
+			if (Std.isOfType(allowed, String))
 			{
 				allowed = [allowed];
 			}

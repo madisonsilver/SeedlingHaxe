@@ -146,7 +146,7 @@ class World extends Tweener {
 	 */
 	public function addList(list:Array<Dynamic> = null):Void {
 		var e:Entity;
-		if (Std.is(list[0], Array)) {
+		if (Std.isOfType(list[0], Array)) {
 			for (e in (cast list[0] : Array<Dynamic>)) {
 				add(e);
 			}
@@ -163,7 +163,7 @@ class World extends Tweener {
 	 */
 	public function removeList(list:Array<Dynamic> = null):Void {
 		var e:Entity;
-		if (Std.is(list[0], Array)) {
+		if (Std.isOfType(list[0], Array)) {
 			for (e in (cast list[0] : Array<Dynamic>)) {
 				remove(e);
 			}
@@ -571,7 +571,7 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate with collided Entities.
 	 */
 	public function collideRectInto(type:String, rX:Float, rY:Float, rWidth:Float, rHeight:Float, into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _typeFirst[type];
 			var n:Int = into.length;
 			while (e != null) {
@@ -593,7 +593,7 @@ class World extends Tweener {
 	 * @return	The provided Array.
 	 */
 	public function collidePointInto(type:String, pX:Float, pY:Float, into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _typeFirst[type];
 			var n:Int = into.length;
 			while (e != null) {
@@ -859,7 +859,7 @@ class World extends Tweener {
 	 * @return	The same array, populated.
 	 */
 	public function getType(type:String, into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _typeFirst[type];
 			var n:Int = into.length;
 			while (e != null) {
@@ -876,7 +876,7 @@ class World extends Tweener {
 	 * @return	The same array, populated.
 	 */
 	public function getClass(c:Class<Dynamic>, into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _updateFirst;
 			var n:Int = into.length;
 			while (e != null) {
@@ -895,7 +895,7 @@ class World extends Tweener {
 	 * @return	The same array, populated.
 	 */
 	public function getLayer(layer:Int, into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _renderLast[layer];
 			var n:Int = into.length;
 			while (e != null) {
@@ -911,7 +911,7 @@ class World extends Tweener {
 	 * @return	The same array, populated.
 	 */
 	public function getAll(into:Dynamic):Void {
-		if (Std.is(into, Array) || Std.is(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
 			var e:Entity = _updateFirst;
 			var n:Int = into.length;
 			while (e != null) {

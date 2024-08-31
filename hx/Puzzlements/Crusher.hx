@@ -88,9 +88,9 @@ class Crusher extends Activators {
 			collideInto(Reflect.field(hitables, Std.string(i)), x, y, v);
 		}
 		for (c in v) {
-			if (Std.is(c, Player)) {
+			if (Std.isOfType(c, Player)) {
 				(try cast(c, Player) catch (e:Dynamic) null).hit(null, force, new Point(x, y), damage);
-			} else if (Std.is(c, Enemy)) {
+			} else if (Std.isOfType(c, Enemy)) {
 				(try cast(c, Enemy) catch (e:Dynamic) null).hit(force, new Point(x, y), damage, "Crusher");
 			}
 		}

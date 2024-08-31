@@ -57,33 +57,33 @@ class Wire extends Entity {
 		var types:Dynamic = ["Wire", "ButtonRoom"];
 		c = collideTypes(types, x + Tile.w, y);
 		if (c != null) {
-			if (Std.is(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
+			if (Std.isOfType(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
 				on = (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate;
-			} else if (Std.is(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
+			} else if (Std.isOfType(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
 				on = (try cast(c, Wire) catch (e:Dynamic) null).on;
 			}
 		}
 		c = collideTypes(types, x, y - Tile.h);
 		if (c != null) {
-			if (Std.is(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
+			if (Std.isOfType(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
 				on = (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate;
-			} else if (Std.is(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
+			} else if (Std.isOfType(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
 				on = (try cast(c, Wire) catch (e:Dynamic) null).on;
 			}
 		}
 		c = collideTypes(types, x - Tile.w, y);
 		if (c != null) {
-			if (Std.is(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
+			if (Std.isOfType(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
 				on = (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate;
-			} else if (Std.is(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
+			} else if (Std.isOfType(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
 				on = (try cast(c, Wire) catch (e:Dynamic) null).on;
 			}
 		}
 		c = collideTypes(types, x, y + Tile.h);
 		if (c != null) {
-			if (Std.is(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
+			if (Std.isOfType(c, ButtonRoom) && (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate) {
 				on = (try cast(c, ButtonRoom) catch (e:Dynamic) null).activate;
-			} else if (Std.is(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
+			} else if (Std.isOfType(c, Wire) && (try cast(c, Wire) catch (e:Dynamic) null).on) {
 				on = (try cast(c, Wire) catch (e:Dynamic) null).on;
 			}
 		}

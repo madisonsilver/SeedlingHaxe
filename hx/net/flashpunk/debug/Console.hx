@@ -82,7 +82,7 @@ class Console {
 			for (i in properties) {
 				WATCH_LIST.push(i);
 			}
-		} else if (Std.is(properties[0], Array)) {
+		} else if (Std.isOfType(properties[0], Array)) {
 			for (i in (cast properties[0] : Array<Dynamic>)) {
 				WATCH_LIST.push(i);
 			}

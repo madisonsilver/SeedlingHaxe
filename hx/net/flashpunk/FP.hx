@@ -158,7 +158,7 @@ class FP {
 	 * @return	A randomly chosen one of the provided parameters.
 	 */
 	public static function choose(objs:Array<Dynamic> = null):Dynamic {
-		var c:Dynamic = ((objs.length == 1 && (Std.is(objs[0], Array) || Std.is(objs[0], Array /*Vector.<T> call?*/)))) ? objs[0] : objs;
+		var c:Dynamic = ((objs.length == 1 && (Std.isOfType(objs[0], Array) || Std.isOfType(objs[0], Array /*Vector.<T> call?*/)))) ? objs[0] : objs;
 		return Reflect.field(c, Std.string(rand(c.length)));
 	}
 
@@ -615,7 +615,7 @@ class FP {
 	 * @param	a		The Object to shuffle (an Array or Vector).
 	 */
 	public static function shuffle(a:Dynamic):Void {
-		if (Std.is(a, Array) || Std.is(a, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(a, Array) || Std.isOfType(a, Array /*Vector.<T> call?*/)) {
 			var i:Int = a.length;
 			var j:Int = 0;
 			var t:Dynamic;
@@ -633,7 +633,7 @@ class FP {
 	 * @param	ascending	If it should be sorted ascending (true) or descending (false).
 	 */
 	public static function sort(object:Dynamic, ascending:Bool = true):Void {
-		if (Std.is(object, Array) || Std.is(object, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(object, Array) || Std.isOfType(object, Array /*Vector.<T> call?*/)) {
 			quicksort(object, 0, (cast object.length - 1:Int), ascending);
 		}
 	}
@@ -645,7 +645,7 @@ class FP {
 	 * @param	ascending	If it should be sorted ascending (true) or descending (false).
 	 */
 	public static function sortBy(object:Dynamic, property:String, ascending:Bool = true):Void {
-		if (Std.is(object, Array) || Std.is(object, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(object, Array) || Std.isOfType(object, Array /*Vector.<T> call?*/)) {
 			quicksortBy(object, 0, (cast(object.length - 1) : Int), ascending, property);
 		}
 	}

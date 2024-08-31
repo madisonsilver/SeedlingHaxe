@@ -90,13 +90,13 @@ class Pulser extends Activators {
 			if (FP.distanceRectPoint(x, y, c.x - c.originX, c.y - c.originY, c.width, c.height) > radiusHit) {
 				continue;
 			}
-			if (Std.is(c, PushableBlockFire)) {
+			if (Std.isOfType(c, PushableBlockFire)) {
 				(try cast(c, PushableBlockFire) catch (e:Dynamic) null).hit(new Point(x, y), "Pulse");
-			} else if (Std.is(c, IceTurret)) {
+			} else if (Std.isOfType(c, IceTurret)) {
 				(try cast(c, IceTurret) catch (e:Dynamic) null).bump(new Point(x, y), "Pulse");
-			} else if (Std.is(c, Enemy)) {
+			} else if (Std.isOfType(c, Enemy)) {
 				(try cast(c, Enemy) catch (e:Dynamic) null).hit(force, new Point(x, y), damage, "Pulse");
-			} else if (Std.is(c, Player)) {
+			} else if (Std.isOfType(c, Player)) {
 				(try cast(c, Player) catch (e:Dynamic) null).hit(null, force, new Point(x, y), damage);
 			}
 		}

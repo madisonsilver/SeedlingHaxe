@@ -104,7 +104,7 @@ class Input {
 	 * @return	True or false.
 	 */
 	public static function check(input:Dynamic):Bool {
-		if (Std.is(input, String)) {
+		if (Std.isOfType(input, String)) {
 			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- != 0) {
@@ -129,7 +129,7 @@ class Input {
 	 * @return	True or false.
 	 */
 	public static function pressed(input:Dynamic):Bool {
-		if (Std.is(input, String)) {
+		if (Std.isOfType(input, String)) {
 			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- != 0) {
@@ -148,7 +148,7 @@ class Input {
 	 * @return	True or false.
 	 */
 	public static function released(input:Dynamic):Bool {
-		if (Std.is(input, String)) {
+		if (Std.isOfType(input, String)) {
 			var v:Array<Int> = _control[input];
 			var i:Int = v.length;
 			while (i-- > 0) {

@@ -92,7 +92,7 @@ class BurnableTree extends Tree {
 		}
 
 		for (t in trees) {
-			if (Std.is(t, Tree) && t != this) {
+			if (Std.isOfType(t, Tree) && t != this) {
 				(try cast(t, Tree) catch (e:Dynamic) null).frame = (try cast(t, Tree) catch (e:Dynamic) null).getFrame();
 			}
 		}

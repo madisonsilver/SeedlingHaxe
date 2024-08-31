@@ -28,15 +28,15 @@ class Pole extends Entity {
 	override public function check():Void {
 		img = 0;
 		var c:Entity = collide("Solid", x + 1, y);
-		if (c != null && Std.is(c, Pole)) {
+		if (c != null && Std.isOfType(c, Pole)) {
 			img++;
 		}
 		c = collide("Solid", x - 1, y);
-		if (c != null && Std.is(c, Pole)) {
+		if (c != null && Std.isOfType(c, Pole)) {
 			img += 2;
 		}
 		c = collide("Solid", x, y + 1);
-		if (c != null && Std.is(c, Pole)) {
+		if (c != null && Std.isOfType(c, Pole)) {
 			img += 4;
 		}
 	}

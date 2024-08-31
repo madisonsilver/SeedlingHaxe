@@ -80,9 +80,9 @@ class NPC extends Mobile {
 	override public function removed():Void {
 		super.removed();
 		if (parent != null) {
-			if (Std.is(parent, Pickup)) {
+			if (Std.isOfType(parent, Pickup)) {
 				(try cast(parent, Pickup) catch (e:Dynamic) null).myText = null;
-			} else if (Std.is(parent, LightBossController)) {
+			} else if (Std.isOfType(parent, LightBossController)) {
 				(try cast(parent, LightBossController) catch (e:Dynamic) null).myText = null;
 			}
 		}

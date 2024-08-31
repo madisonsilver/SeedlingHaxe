@@ -880,15 +880,15 @@ class Player extends Mobile {
 				FP.world.collideRectInto(hitables[i], rect.x, rect.y, rect.width, rect.height, v);
 			}
 			for (i in 0...v.length) {
-				if ((FP.distance(x, y, v[i].x, v[i].y) <= slashingSprite.width * slashingSprite.scaleX && Std.is(v[i], Grass))
+				if ((FP.distance(x, y, v[i].x, v[i].y) <= slashingSprite.width * slashingSprite.scaleX && Std.isOfType(v[i], Grass))
 					|| (FP.distanceRectPoint(x, y, v[i].x - v[i].originX, v[i].y - v[i].originY, v[i].width,
 						v[i].height) <= slashingSprite.width * slashingSprite.scaleX
-						&& !(Std.is(v[i], Grass)))) {
+						&& !(Std.isOfType(v[i], Grass)))) {
 					if ((FP.world.collideLine("Solid", Std.int(x), Std.int(y), Std.int(v[i].x), Std.int(v[i].y)) == null)
 						|| hasGhostSword
 						|| v[i].type == "Solid"
 						|| v[i].type == "Rope"
-						|| Std.is(v[i], Flyer)) {
+						|| Std.isOfType(v[i], Flyer)) {
 						if (hasGhostSword) {
 							spearDirection = direction;
 						}
@@ -1038,37 +1038,37 @@ class Player extends Mobile {
 		if (Game.freezeObjects) {
 			return;
 		}
-		if (Std.is(e, Enemy)) {
-			if (Std.is(e, IceTurret)) {
+		if (Std.isOfType(e, Enemy)) {
+			if (Std.isOfType(e, IceTurret)) {
 				(try cast(e, IceTurret) catch (e:Dynamic) null).bump(new Point(x, y), t);
 			}
 			(try cast(e, Enemy) catch (e:Dynamic) null).hit(f, new Point(x, y), d, t);
-		} else if (Std.is(e, Grass)) {
+		} else if (Std.isOfType(e, Grass)) {
 			(try cast(e, Grass) catch (e:Dynamic) null).cut(t);
-		} else if (Std.is(e, BreakableRock)) {
+		} else if (Std.isOfType(e, BreakableRock)) {
 			(try cast(e, BreakableRock) catch (e:Dynamic) null).hit((hasGhostSword) ? 1 : 0);
-		} else if (Std.is(e, RopeStart)) {
+		} else if (Std.isOfType(e, RopeStart)) {
 			(try cast(e, RopeStart) catch (e:Dynamic) null).hit();
-		} else if (Std.is(e, ShieldBoss)) {
+		} else if (Std.isOfType(e, ShieldBoss)) {
 			(try cast(e, ShieldBoss) catch (e:Dynamic) null).hit(0, null, d);
-		} else if (Std.is(e, LightPole)) {
+		} else if (Std.isOfType(e, LightPole)) {
 			if (t == "Spear") {
 				(try cast(e, LightPole) catch (e:Dynamic) null).hit();
 			}
-		} else if (Std.is(e, Tree)) {
+		} else if (Std.isOfType(e, Tree)) {
 			(try cast(e, Tree) catch (e:Dynamic) null).hit(t);
-		} else if (Std.is(e, Tile)) {
+		} else if (Std.isOfType(e, Tile)) {
 			if (t == "Spear") {
 				(try cast(e, Tile) catch (e:Dynamic) null).bridgeOpeningTimer--;
 			}
-		} else if (Std.is(e, PushableBlockSpear)) {
+		} else if (Std.isOfType(e, PushableBlockSpear)) {
 			(try cast(e, PushableBlockSpear) catch (e:Dynamic) null).hit(new Point((spearDirection % 2 == 0 ? 1 : 0) * (spearDirection - 1),
 				(spearDirection % 2 == 1 ? 1 : 0) * (2 - spearDirection)), t, true);
-		} else if (Std.is(e, PushableBlockFire)) {
+		} else if (Std.isOfType(e, PushableBlockFire)) {
 			(try cast(e, PushableBlockFire) catch (e:Dynamic) null).hit(new Point(x, y), t);
-		} else if (Std.is(e, LavaBall)) {
+		} else if (Std.isOfType(e, LavaBall)) {
 			(try cast(e, LavaBall) catch (e:Dynamic) null).hit();
-		} else if (Std.is(e, Watcher)) {
+		} else if (Std.isOfType(e, Watcher)) {
 			(try cast(e, Watcher) catch (e:Dynamic) null).hit();
 		}
 	}

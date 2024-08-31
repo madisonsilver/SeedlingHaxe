@@ -169,7 +169,7 @@ class Enemy extends Mobile {
 
 	public function hitPlayer():Void {
 		if (!destroy
-			&& (!(Std.is(graphic, Spritemap)) || (try cast(graphic, Spritemap) catch (e:Dynamic) null).currentAnim != "die")
+			&& (!(Std.isOfType(graphic, Spritemap)) || (try cast(graphic, Spritemap) catch (e:Dynamic) null).currentAnim != "die")
 			&& hitsTimer <= 0) {
 			var p:Player = try cast(collide("Player", x, y), Player) catch (e:Dynamic) null;
 			if (p != null) {
@@ -197,7 +197,7 @@ class Enemy extends Mobile {
 	public function knockback(f:Float = 0, p:Point = null):Void {
 		if (p != null
 			&& !destroy
-			&& (!(Std.is(graphic, Spritemap)) || (try cast(graphic, Spritemap) catch (e:Dynamic) null).currentAnim != "die")) {
+			&& (!(Std.isOfType(graphic, Spritemap)) || (try cast(graphic, Spritemap) catch (e:Dynamic) null).currentAnim != "die")) {
 			var a:Float = Math.atan2(y - p.y, x - p.x);
 			v.x += f * Math.cos(a);
 			v.y += f * Math.sin(a);

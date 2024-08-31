@@ -44,9 +44,9 @@ class Tilemap extends Canvas {
 		super(_width, _height);
 
 		// load the tileset graphic
-		if (Std.is(tileset, Class)) {
+		if (Std.isOfType(tileset, Class)) {
 			_set = FP.getBitmap(tileset);
-		} else if (Std.is(tileset, BitmapData)) {
+		} else if (Std.isOfType(tileset, BitmapData)) {
 			_set = tileset;
 		}
 		if (_set == null) {

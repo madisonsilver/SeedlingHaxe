@@ -36,7 +36,7 @@ class Button extends Activators {
 		collideTypesInto(hitables, x, y, v);
 		var tempCheck:Bool = false;
 		for (c in v) {
-			if (c != null && !(Std.is(c, Cover))) {
+			if (c != null && !(Std.isOfType(c, Cover))) {
 				tempCheck = true;
 			}
 		}

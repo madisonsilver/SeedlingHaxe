@@ -28,10 +28,10 @@ class Pixelmask extends Hitbox {
 	public function new(source:Dynamic, x:Int = 0, y:Int = 0) {
 		super();
 		// fetch mask data
-		if (Std.is(source, BitmapData)) {
+		if (Std.isOfType(source, BitmapData)) {
 			_data = source;
 		}
-		if (Std.is(source, Class)) {
+		if (Std.isOfType(source, Class)) {
 			_data = FP.getBitmap(source);
 		}
 		if (_data == null) {

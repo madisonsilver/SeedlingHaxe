@@ -54,7 +54,7 @@ class Cover extends Activators {
 			collideTypesInto(hitables, x, y, v);
 			if (v.length > 0) {
 				for (c in v) {
-					if (Std.is(c, Chest))
+					if (Std.isOfType(c, Chest))
 						// Anything that can go underneath a cover can go here
 					{
 						{

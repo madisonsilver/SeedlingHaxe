@@ -75,10 +75,10 @@ class Image extends Graphic {
 	 */
 	public function new(source:Dynamic = null, clipRect:Rectangle = null) {
 		super();
-		if (Std.is(source, Class)) {
+		if (Std.isOfType(source, Class)) {
 			_source = FP.getBitmap(source);
 			_class = Std.string(source);
-		} else if (Std.is(source, BitmapData)) {
+		} else if (Std.isOfType(source, BitmapData)) {
 			_source = source;
 		}
 		if (_source == null) {

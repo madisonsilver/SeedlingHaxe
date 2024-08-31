@@ -81,9 +81,9 @@ class LavaChain extends Entity {
 			var hit:Entity = FP.world.collideRect(Reflect.field(hitables, Std.string(i)), rect.x, rect.y, rect.width, rect.height);
 			if (hit != null) {
 				var hitPos:Point = getHitPos(new Point(hit.x, hit.y), direction);
-				if (Std.is(hit, Enemy)) {
+				if (Std.isOfType(hit, Enemy)) {
 					(try cast(hit, Enemy) catch (e:Dynamic) null).hit(force, hitPos, damage, "LavaChain");
-				} else if (Std.is(hit, Player)) {
+				} else if (Std.isOfType(hit, Player)) {
 					(try cast(hit, Player) catch (e:Dynamic) null).hit(null, force, hitPos, damage);
 				}
 			}

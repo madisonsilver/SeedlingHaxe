@@ -125,7 +125,7 @@ class Moonrock extends Entity {
 			}
 
 			var stairs:Entity = collide("Teleporter", x, y);
-			if (Std.is(stairs, Stairs)) {
+			if (Std.isOfType(stairs, Stairs)) {
 				FP.world.add(new Teleporter(Std.int(stairs.x), Std.int(stairs.y), 2, 48, 32));
 				Game.setPersistence(0, false, 2);
 				FP.world.remove(stairs);

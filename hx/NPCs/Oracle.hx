@@ -33,8 +33,8 @@ class Oracle extends NPC {
 		load_image_assets();
 		sprOracle = new Spritemap(imgOracle, 16, 24, animEnd);
 		sprOraclePic = new Image(imgOraclePic);
-		super(_x, _y, sprOracle, _tag, (Game.cutscene[1] != null) ? text2 : ((Game.checkPersistence(_tag)) ? _text : _text1), _talkingSpeed);
-		if (Game.cutscene[1] != null) {
+		super(_x, _y, sprOracle, _tag, (Game.cutscene[1]) ? text2 : ((Game.checkPersistence(_tag)) ? _text : _text1), _talkingSpeed);
+		if (Game.cutscene[1]) {
 			text = text1 = text2;
 		} else {
 			text = _text;
@@ -84,7 +84,7 @@ class Oracle extends NPC {
 
 	override public function doneTalking():Void {
 		super.doneTalking();
-		if (Game.cutscene[1] != null) {
+		if (Game.cutscene[1]) {
 			var p:Player = try cast(FP.world.nearestToPoint("Player", x, y), Player) catch (e:Dynamic) null;
 			if (p == null || p.graphic != p.sprShrumDark) {
 				exitToMenu();

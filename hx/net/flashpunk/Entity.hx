@@ -140,7 +140,7 @@ class Entity extends Tweener {
 	 * @return	The first Entity collided with, or null if none were collided.
 	 */
 	public function collide(type:String, x:Float, y:Float):Entity {
-		var e:Entity = Reflect.field(FP._world._typeFirst, type);
+		var e:Entity = FP._world._typeFirst[type];
 		if (!collidable || e == null) {
 			return null;
 		}

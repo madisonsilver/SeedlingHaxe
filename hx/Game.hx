@@ -1261,7 +1261,7 @@ class Game extends World {
 			}
 
 			// The starting wind/text scene.
-			if (cutscene[0] != null) {
+			if (cutscene[0]) {
 				ALIGN = "CENTER";
 				freezeObjects = true;
 				p.receiveInput = false;
@@ -1309,14 +1309,14 @@ class Game extends World {
 
 					talkingText = cutsceneText[0][cTextIndex];
 				}
-			} else if (cutscene[1] != null) {
+			} else if (cutscene[1]) {
 				p.directionFace = 1;
 				p.receiveInput = false;
 				p.v.y = -1;
 				if (p.y <= 64) {
 					p.v.y = 0;
 				}
-			} else if (cutscene[2] != null) {
+			} else if (cutscene[2]) {
 				p.receiveInput = false;
 				p.visible = false;
 				p.active = false;
@@ -1969,7 +1969,7 @@ class Game extends World {
 				default:
 			}
 			t.render(new Point(w + alignOffsetX, FP.screen.height * (n - 1 / 2) / n - t.height / 2 + 1), new Point());
-			if (currentCharacter > talkingText.length && cutscene[0] == null) {
+			if (currentCharacter > talkingText.length && !cutscene[0]) {
 				var text:Text = new Text("<X>");
 				var pt:Point = new Point(FP.screen.width - text.width, FP.screen.height - d - text.height / 2);
 				drawTextBold(text, pt);

@@ -157,10 +157,8 @@ class FP {
 	 * @param	...objs		The Objects you want to randomly choose from. Can be ints, Numbers, Points, etc.
 	 * @return	A randomly chosen one of the provided parameters.
 	 */
-	public static function choose(objs:Array<Dynamic> = null):Dynamic {
-		var c:Dynamic = ((objs.length == 1
-			&& (Std.isOfType(objs[0], Array) || Std.isOfType(objs[0], Array /*Vector.<T> call?*/)))) ? objs[0] : objs;
-		return Reflect.field(c, Std.string(rand(c.length)));
+	 @:generic public static function choose<T>(objs:Array<T> = null):T {
+		return objs[rand(objs.length)];
 	}
 
 	/**

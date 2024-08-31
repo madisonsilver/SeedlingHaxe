@@ -72,9 +72,6 @@ class Spritemap extends Image {
 	{
 		_rect.x = _rect.width * _frame;
 		_rect.y = Std.int(_rect.x / _width) * _rect.height;
-		if (_width == 0) {
-			trace(_width);
-		}
 		if (_width != 0) {
 			_rect.x %= _width;
 		} else {

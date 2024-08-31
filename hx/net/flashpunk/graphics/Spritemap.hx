@@ -72,7 +72,14 @@ class Spritemap extends Image {
 	{
 		_rect.x = _rect.width * _frame;
 		_rect.y = Std.int(_rect.x / _width) * _rect.height;
-		_rect.x %= _width;
+		if (_width == 0) {
+			trace(_width);
+		}
+		if (_width != 0) {
+			_rect.x %= _width;
+		} else {
+			_rect.x = Math.NaN; // TODO: Is this correct behavior on non-JS platforms?
+		}
 		if (_flipped) {
 			_rect.x = (_width - _rect.width) - _rect.x;
 		}

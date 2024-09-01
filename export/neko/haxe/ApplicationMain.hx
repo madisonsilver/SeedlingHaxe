@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "1";
+		app.meta["build"] = "63";
 		app.meta["company"] = "MadisonSilver";
 		app.meta["file"] = "$SeedlingHTML";
 		app.meta["name"] = "SeedlingHTML";

@@ -137,7 +137,7 @@ class NPC extends Mobile {
 
 	public function lineWrap():Void {
 		for (i in 0...myText.length) {
-			Reflect.setField(myText, Std.string(i), endlineText(myText[i], lineLength));
+			myText[i] = endlineText(myText[i], lineLength);
 		}
 	}
 

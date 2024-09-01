@@ -450,7 +450,14 @@ class Main extends Engine {
 	}
 
 	public static function levelPersistenceSet(i:Int, j:Int, _t:Bool):Void {
-		SAVE_FILE.data.levelPersistence[i * Game.tagsPerLevel + j] = _t;
+		var pos: Int = i * Game.tagsPerLevel + j;
+		if (pos < 0){
+			trace('Attempted to write to negative tag $pos (i=$i, j=$j, _t=$_t)');
+			return;
+		}
+
+		var persistence : Array<Bool> = cast (SAVE_FILE.data.levelPersistence);
+		SAVE_FILE.data.levelPersistence[pos] = _t;
 	}
 
 	public static function clearSave():Void {

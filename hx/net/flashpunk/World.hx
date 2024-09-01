@@ -859,7 +859,7 @@ class World extends Tweener {
 	 * @return	The same array, populated.
 	 */
 	public function getType(type:String, into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
+		if (Std.isOfType(into, Array)) {
 			var e:Entity = _typeFirst[type];
 			var n:Int = into.length;
 			while (e != null) {
@@ -1167,9 +1167,9 @@ class World extends Tweener {
 	private var _count:Int = 0;
 
 	// Render information.
-	private var _renderFirst:Array<Dynamic> = [];
-	private var _renderLast:Array<Dynamic> = [];
-	private var _layerList:Array<Dynamic> = [];
+	private var _renderFirst:Array<Entity> = [];
+	private var _renderLast:Array<Entity> = [];
+	private var _layerList:Array<Int> = [];
 	private var _layerCount:Array<Int> = [];
 	private var _layerSort:Bool;
 	private var _tempArray:Array<Dynamic> = [];
@@ -1178,7 +1178,7 @@ class World extends Tweener {
 	private var _classCount:Map<String, Int> = new Map();
 
 	/** @private */ @:allow(net.flashpunk)
-	private var _typeFirst:Dictionary<String, Entity> = new Dictionary();
+	private var _typeFirst:Map<String, Entity> = new Map();
 
 	/** @private */
 	private var _typeCount:Map<String, Int> = new Map();

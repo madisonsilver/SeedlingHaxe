@@ -267,7 +267,7 @@ class Engine extends MovieClip {
 			return;
 		}
 		FP._world.end();
-		if (FP._world != null && FP._world.autoClear != null && FP._world._tween != null) {
+		if (FP._world != null && FP._world.autoClear && FP._world._tween != null) {
 			FP._world.clearTweens();
 		}
 		FP._world = FP._goto;

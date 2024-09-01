@@ -114,7 +114,7 @@ class Input {
 					}
 					continue;
 				}
-				if (_key[v[i]] != null) {
+				if (_key[v[i]]) {
 					return true;
 				}
 			}

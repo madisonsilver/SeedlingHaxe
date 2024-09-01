@@ -40,7 +40,7 @@ class Droplet extends Entity {
 		var checkW:Int = 6;
 		var tileHit:Tile = try cast(FP.world.collideRect("Tile", x - checkW / 2, endY, checkW, 1), Tile) catch (e:Dynamic) null;
 		if (FP.world.collideRect("Solid", x - checkW / 2, endY, checkW, 1) != null
-			|| (tileHit != null && tileHit.t == 6 /* PIT */) != null || tileHit == null) {
+			|| (tileHit != null && tileHit.t == 6 /* PIT */) || tileHit == null) {
 			FP.world.remove(this);
 		} else {
 			var tileHitTemp:Tile;

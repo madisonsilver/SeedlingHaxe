@@ -616,13 +616,15 @@ class World extends Tweener {
 	 */
 	public function nearestToRect(type:String, x:Float, y:Float, width:Float, height:Float):Entity {
 		var n:Entity = _typeFirst[type];
-		var nearDist:Float = as3hx.Compat.FLOAT_MAX;
+		var nearDist:Float = 0;
+		var nearDistSet:Bool = false;
 		var near:Entity = null;
 		var dist:Float;
 		while (n != null) {
 			dist = squareRects(x, y, width, height, n.x - n.originX, n.y - n.originY, n.width, n.height);
-			if (dist < nearDist) {
+			if (!nearDistSet || dist < nearDist) {
 				nearDist = dist;
+				nearDistSet = true;
 				near = n;
 			}
 			n = n._typeNext;
@@ -642,15 +644,17 @@ class World extends Tweener {
 			return nearestToRect(type, e.x - e.originX, e.y - e.originY, e.width, e.height);
 		}
 		var n:Entity = _typeFirst[type];
-		var nearDist:Float = as3hx.Compat.FLOAT_MAX;
+		var nearDist:Float = 0;
+		var nearDistSet:Bool = false;
 		var near:Entity = null;
 		var dist:Float;
 		var x:Float = e.x - e.originX;
 		var y:Float = e.y - e.originY;
 		while (n != null) {
 			dist = (x - n.x) * (x - n.x) + (y - n.y) * (y - n.y);
-			if (dist < nearDist) {
+			if (!nearDistSet || dist < nearDist) {
 				nearDist = dist;
+				nearDistSet = true;
 				near = n;
 			}
 			n = n._typeNext;
@@ -668,14 +672,16 @@ class World extends Tweener {
 	 */
 	public function nearestToPoint(type:String, x:Float, y:Float, useHitboxes:Bool = false):Entity {
 		var n:Entity = _typeFirst[type];
-		var nearDist:Float = as3hx.Compat.FLOAT_MAX;
+		var nearDist:Float = 0;
+		var nearDistSet:Bool = false;
 		var near:Entity = null;
 		var dist:Float;
 		if (useHitboxes) {
 			while (n != null) {
 				dist = squarePointRect(x, y, n.x - n.originX, n.y - n.originY, n.width, n.height);
-				if (dist < nearDist) {
+				if (!nearDistSet || dist < nearDist) {
 					nearDist = dist;
+					nearDistSet = true;
 					near = n;
 				}
 				n = n._typeNext;
@@ -684,8 +690,9 @@ class World extends Tweener {
 		}
 		while (n != null) {
 			dist = (x - n.x) * (x - n.x) + (y - n.y) * (y - n.y);
-			if (dist < nearDist) {
+			if (!nearDistSet || dist < nearDist) {
 				nearDist = dist;
+				nearDistSet=true;
 				near = n;
 			}
 			n = n._typeNext;

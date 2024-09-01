@@ -669,7 +669,7 @@ class Game extends World {
 	 */
 	private var cutsceneTimer:Array<Dynamic> = [[3 * Main.FPS, 210], []]; // used for live counting.
 
-	public static function extract_int(o: Access, x: String): Int {
+	public static function extract_int(o:Access, x:String):Int {
 		if (o.has.resolve(x)) {
 			return Std.parseInt(o.att.resolve(x));
 		} else {
@@ -2294,7 +2294,7 @@ class Game extends World {
 					fallthroughOffset = new Point(extract_int(o, "x"), extract_int(o, "y"));
 					var tempOffset:Point = new Point(extract_int(o, "xOff"), extract_int(o, "yOff"));
 					fallthroughOffset = new Point(fallthroughOffset.x + tempOffset.x, fallthroughOffset.y + tempOffset.y);
-					fallthroughSign = Std.int((o.has.sign ? extract_int(o, "sign") : 0)-1);
+					fallthroughSign = Std.int((o.has.sign ? extract_int(o, "sign") : 0) - 1);
 				}
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),droplet) type: null */ in xml.nodes.objects[0].nodes.droplet) {
@@ -2370,8 +2370,7 @@ class Game extends World {
 				add(new IceTurret(extract_int(o, "x"), extract_int(o, "y")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),beamtower) type: null */ in xml.nodes.objects[0].nodes.beamtower) {
-				add(new BeamTower(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "direction"), extract_int(o, "rate"),
-					extract_int(o, "speed")));
+				add(new BeamTower(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "direction"), extract_int(o, "rate"), extract_int(o, "speed")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),grenade) type: null */ in xml.nodes.objects[0].nodes.grenade) {
 				add(new Grenade(extract_int(o, "x"), extract_int(o, "y")));
@@ -2494,8 +2493,8 @@ class Game extends World {
 				add(new Button(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),buttonroom) type: null */ in xml.nodes.objects[0].nodes.buttonroom) {
-				add(new ButtonRoom(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset"), extract_int(o, "tag"),
-					extract_int(o, "flip") != 0, extract_int(o, "room")));
+				add(new ButtonRoom(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset"), extract_int(o, "tag"), extract_int(o, "flip") != 0,
+					extract_int(o, "room")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),arrowtrap) type: null */ in xml.nodes.objects[0].nodes.arrowtrap) {
 				add(new ArrowTrap(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset"), extract_int(o, "shoot") != 0));
@@ -2574,8 +2573,7 @@ class Game extends World {
 				add(new BoneTorch(extract_int(o, "x"), extract_int(o, "y"), 1, extract_int(o, "c"), extract_int(o, "flip") != 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),planttorch) type: null */ in xml.nodes.objects[0].nodes.planttorch) {
-				add(new PlantTorch(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "c"), extract_int(o, "flip") != 0,
-					extract_int(o, "distance")));
+				add(new PlantTorch(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "c"), extract_int(o, "flip") != 0, extract_int(o, "distance")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightpole) type: null */ in xml.nodes.objects[0].nodes.lightpole) {
 				add(new LightPole(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset"), extract_int(o, "tag"), extract_int(o, "c"),
@@ -2615,17 +2613,17 @@ class Game extends World {
 				add(new PushableBlockSpear(extract_int(o, "x"), extract_int(o, "y")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),stairsup) type: null */ in xml.nodes.objects[0].nodes.stairsup) {
-				add(new Stairs(extract_int(o, "x"), extract_int(o, "y"), true, extract_int(o, "flip") != 0, extract_int(o, "to"),
-					extract_int(o, "playerx"), extract_int(o, "playery"),  o.has.sign ? extract_int(o, "sign") : 0));
+				add(new Stairs(extract_int(o, "x"), extract_int(o, "y"), true, extract_int(o, "flip") != 0, extract_int(o, "to"), extract_int(o, "playerx"),
+					extract_int(o, "playery"), o.has.sign ? extract_int(o, "sign") : 0));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),stairsdown) type: null */ in xml.nodes.objects[0].nodes.stairsdown) {
-				add(new Stairs(extract_int(o, "x"), extract_int(o, "y"), false, extract_int(o, "flip") != 0, extract_int(o, "to"),
-					extract_int(o, "playerx"), extract_int(o, "playery"), o.has.sign ? extract_int(o, "sign") : 0)); // TODO: Is this the correct default behavior for sign?
+				add(new Stairs(extract_int(o, "x"), extract_int(o, "y"), false, extract_int(o, "flip") != 0, extract_int(o, "to"), extract_int(o, "playerx"),
+					extract_int(o, "playery"), o.has.sign ? extract_int(o, "sign") : 0)); // TODO: Is this the correct default behavior for sign?
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),teleporter) type: null */ in xml.nodes.objects[0].nodes.teleporter) {
-				add(new Teleporter(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "to"), extract_int(o, "playerx"),
-					extract_int(o, "playery"), extract_int(o, "show") != 0, (Std.string(extract_int(o, "tag")) == "") ? -1 : extract_int(o, "tag"),
-					extract_int(o, "invert") != 0, o.has.sign ? extract_int(o, "sign") : 0)); // TODO: Is this the correct default behavior for sign?
+				add(new Teleporter(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "to"), extract_int(o, "playerx"), extract_int(o, "playery"),
+					extract_int(o, "show") != 0, (Std.string(extract_int(o, "tag")) == "") ? -1 : extract_int(o, "tag"), extract_int(o, "invert") != 0,
+					o.has.sign ? extract_int(o, "sign") : 0)); // TODO: Is this the correct default behavior for sign?
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shieldboss) type: null */ in xml.nodes.objects[0].nodes.shieldboss) {
 				add(new ShieldBoss(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tag")));
@@ -2715,8 +2713,8 @@ class Game extends World {
 				add(new Spinner(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tag")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightray) type: null */ in xml.nodes.objects[0].nodes.lightray) {
-				add(new LightRay(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_int(o, "alpha"),
-					extract_int(o, "width"), extract_int(o, "height")));
+				add(new LightRay(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_int(o, "alpha"), extract_int(o, "width"),
+					extract_int(o, "height")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shadow) type: null */ in xml.nodes.objects[0].nodes.shadow) {
 				add(new Shadow(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_int(o, "alpha"), extract_int(o, "width"),

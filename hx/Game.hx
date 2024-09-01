@@ -671,7 +671,21 @@ class Game extends World {
 
 	public static function extract_int(o:Access, x:String):Int {
 		if (o.has.resolve(x)) {
-			return Std.parseInt(o.att.resolve(x));
+			var text = o.att.resolve(x);
+			var int = Std.parseInt(text);
+			var float = Std.parseFloat(text);
+			if (float != int){
+				trace('Int conversion error?  $text -> $int != $float');
+			}
+			return int;
+		} else {
+			return 0;
+		}
+	}
+
+	public static function extract_float(o:Access, x:String):Float {
+		if (o.has.resolve(x)) {
+			return Std.parseFloat(o.att.resolve(x));
 		} else {
 			return 0;
 		}
@@ -2512,7 +2526,7 @@ class Game extends World {
 				add(new Seed(extract_int(o, "x"), extract_int(o, "y"), false, o.att.text, cutscene[2]));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),pull) type: null */ in xml.nodes.objects[0].nodes.pull) {
-				add(new Pull(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "direction"), extract_int(o, "force")));
+				add(new Pull(extract_int(o, "x"), extract_int(o, "y"), extract_float(o, "direction"), extract_int(o, "force")));
 			} // o.@direction goes from 0-1
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),fallrock) type: null */ in xml.nodes.objects[0].nodes.fallrock) {
 				add(new FallRock(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tset"), extract_int(o, "tag")));
@@ -2713,11 +2727,11 @@ class Game extends World {
 				add(new Spinner(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "tag")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),lightray) type: null */ in xml.nodes.objects[0].nodes.lightray) {
-				add(new LightRay(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_int(o, "alpha"), extract_int(o, "width"),
+				add(new LightRay(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_float(o, "alpha"), extract_int(o, "width"),
 					extract_int(o, "height")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),shadow) type: null */ in xml.nodes.objects[0].nodes.shadow) {
-				add(new Shadow(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_int(o, "alpha"), extract_int(o, "width"),
+				add(new Shadow(extract_int(o, "x"), extract_int(o, "y"), extract_int(o, "color"), extract_float(o, "alpha"), extract_int(o, "width"),
 					extract_int(o, "height")));
 			}
 			for (o /* AS3HX WARNING could not determine type for var: o exp: EField(EArray(EField(EIdent(xml),objects),EConst(CInt(0))),rope) type: null */ in xml.nodes.objects[0].nodes.rope) {

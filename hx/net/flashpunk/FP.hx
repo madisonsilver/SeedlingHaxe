@@ -157,7 +157,7 @@ class FP {
 	 * @param	...objs		The Objects you want to randomly choose from. Can be ints, Numbers, Points, etc.
 	 * @return	A randomly chosen one of the provided parameters.
 	 */
-	 @:generic public static function choose<T>(objs:Array<T> = null):T {
+	@:generic public static function choose<T>(objs:Array<T> = null):T {
 		return objs[rand(objs.length)];
 	}
 
@@ -621,7 +621,7 @@ class FP {
 			while (--i > 0) {
 				t = Reflect.field(a, Std.string(i));
 				Reflect.setField(a, Std.string(i), Reflect.field(a, Std.string(j = FP.rand(i + 1))));
-				Reflect.setField(a, Std.string(j), t);
+				a[j] = t;
 			}
 		}
 	}
@@ -666,7 +666,7 @@ class FP {
 				if (i <= j) {
 					t = Reflect.field(a, Std.string(i));
 					Reflect.setField(a, Std.string(i++), Reflect.field(a, Std.string(j)));
-					Reflect.setField(a, Std.string(j--), t);
+					a[j--] = t;
 				}
 			}
 		} else {
@@ -680,7 +680,7 @@ class FP {
 				if (i <= j) {
 					t = Reflect.field(a, Std.string(i));
 					Reflect.setField(a, Std.string(i++), Reflect.field(a, Std.string(j)));
-					Reflect.setField(a, Std.string(j--), t);
+					a[j--] = t;
 				}
 			}
 		}
@@ -709,7 +709,7 @@ class FP {
 				if (i <= j) {
 					t = Reflect.field(a, Std.string(i));
 					Reflect.setField(a, Std.string(i++), Reflect.field(a, Std.string(j)));
-					Reflect.setField(a, Std.string(j--), t);
+					a[j--] = t;
 				}
 			}
 		} else {
@@ -723,7 +723,7 @@ class FP {
 				if (i <= j) {
 					t = Reflect.field(a, Std.string(i));
 					Reflect.setField(a, Std.string(i++), Reflect.field(a, Std.string(j)));
-					Reflect.setField(a, Std.string(j--), t);
+					a[j--] = t;
 				}
 			}
 		}

@@ -763,9 +763,11 @@ class Console {
 				var e:Entity = SELECT_LIST[0];
 				s += "\n\n- " + Std.string(e) + " -\n";
 				for (i /* AS3HX WARNING could not determine type for var: i exp: EIdent(WATCH_LIST) type: null */ in WATCH_LIST) {
-					if (Reflect.hasField(e, i)) {
-						s += "\n" + i + ": " + Std.string(Reflect.field(e, i));
-					}
+					trace("Debugging functionality disabled");
+					/*
+						if (Reflect.hasField(e, i)) {
+							s += "\n" + i + ": " + Std.string(e[ i]);
+					}*/
 				}
 			}
 		}

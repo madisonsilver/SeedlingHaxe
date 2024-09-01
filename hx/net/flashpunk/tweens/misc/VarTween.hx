@@ -30,19 +30,19 @@ class VarTween extends Tween {
 	public function tween(object:Dynamic, property:String, to:Float, duration:Float, ease:Function = null):Void {
 		throw new Error("This function is not implemented in the updated version.");
 		/*
-		_object = object;
-		_property = property;
-		if (!object.exists(property)) {
-			throw new Error("The Object does not have the property\"" + property + "\", or it is not accessible.");
-		}
-		var a:Dynamic = as3hx.Compat.parseFloat(Reflect.field(_object, property));
-		if (a == null) {
-			throw new Error("The property \"" + property + "\" is not numeric.");
-		}
-		_start = Reflect.field(_object, property);
-		_range = to - _start;
-		_target = duration;
-		start();*/
+			_object = object;
+			_property = property;
+			if (!object.exists(property)) {
+				throw new Error("The Object does not have the property\"" + property + "\", or it is not accessible.");
+			}
+			var a:Dynamic = as3hx.Compat.parseFloat(_object[ property]);
+			if (a == null) {
+				throw new Error("The property \"" + property + "\" is not numeric.");
+			}
+			_start = _object[ property];
+			_range = to - _start;
+			_target = duration;
+			start(); */
 	}
 
 	/** @private Updates the Tween. */

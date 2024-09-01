@@ -46,7 +46,7 @@ class Main extends Engine {
 	public static inline var SAVE_NAME:String = "shrumsave";
 	public static var SAVE_FILE:SharedObject;
 	public static var tempPersistence:Array<Dynamic>;
-	public static var badges:Dynamic = [
+	public static var badges:Array<String> = [
 		"The Quest",
 		"Sardol",
 		"Mower",
@@ -276,7 +276,8 @@ class Main extends Engine {
 	}
 
 	public static function hasBadge(s:String):Bool {
-		return Reflect.field(SAVE_FILE.data.hasBadge, s);
+		var _hasBadgeTemp:Map<String, Bool> = cast SAVE_FILE.data.hasBadge;
+		return _hasBadgeTemp[s];
 	}
 
 	private static function set_hasSword(_t:Bool):Bool {
@@ -405,7 +406,8 @@ class Main extends Engine {
 	}
 
 	public static function hasBadgeSet(s:String, _t:Bool):Void {
-		Reflect.setField(SAVE_FILE.data.hasBadge, s, _t);
+		var _hasBadgeTemp:Map<String, Bool> = cast SAVE_FILE.data.hasBadge;
+		_hasBadgeTemp[s] = _t;
 	}
 
 	private static function get_playerPositionX():Int {
@@ -445,18 +447,18 @@ class Main extends Engine {
 	}
 
 	public static function levelPersistence(i:Int, j:Int):Bool {
-		var persistence : Array<Bool> = cast (SAVE_FILE.data.levelPersistence); //TODO: This fixes typing on HL.  Behaves correctly on save?
+		var persistence:Array<Bool> = cast(SAVE_FILE.data.levelPersistence); // TODO: This fixes typing on HL.  Behaves correctly on save?
 		return persistence[i * Game.tagsPerLevel + j];
 	}
 
 	public static function levelPersistenceSet(i:Int, j:Int, _t:Bool):Void {
-		var pos: Int = i * Game.tagsPerLevel + j;
-		if (pos < 0){
+		var pos:Int = i * Game.tagsPerLevel + j;
+		if (pos < 0) {
 			trace('Attempted to write to negative tag $pos (i=$i, j=$j, _t=$_t)');
 			return;
 		}
 
-		var persistence : Array<Bool> = cast (SAVE_FILE.data.levelPersistence);
+		var persistence:Array<Bool> = cast(SAVE_FILE.data.levelPersistence);
 		SAVE_FILE.data.levelPersistence[pos] = _t;
 	}
 
@@ -511,14 +513,14 @@ class Main extends Engine {
 		grassCut = grassCut;
 
 		if (!SAVE_FILE.data.hasBadge) {
-			var _hasBadge:Dynamic = {};
+			var _hasBadge:Map<String, Bool> = new Map();
 			for (i in 0...badges.length) {
-				Reflect.setField(_hasBadge, Std.string(Reflect.field(badges, Std.string(i))), false);
+				_hasBadge[badges[i]] = false;
 			}
 			SAVE_FILE.data.hasBadge = _hasBadge;
 		} else {
 			for (i in 0...badges.length) {
-				hasBadgeSet(Reflect.field(badges, Std.string(i)), hasBadge(Reflect.field(badges, Std.string(i))));
+				hasBadgeSet(badges[i], hasBadge(badges[i]));
 			}
 		}
 		if (!SAVE_FILE.data.hasKey) {

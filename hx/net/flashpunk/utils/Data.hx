@@ -21,7 +21,7 @@ class Data {
 		var data:Dynamic = loadData(file);
 		_data = {};
 		for (i in Reflect.fields(data)) {
-			Reflect.setField(_data, i, Reflect.field(data, i));
+			_data[i] = data[i];
 		}
 	}
 
@@ -35,7 +35,7 @@ class Data {
 		}
 		var data:Dynamic = loadData(file);
 		for (i in Reflect.fields(_data)) {
-			Reflect.setField(data, i, Reflect.field(_data, i));
+			data[i] = _data[i];
 		}
 		_shared.flush(SIZE);
 	}
@@ -86,7 +86,7 @@ class Data {
 	 * @param	value		Value to write.
 	 */
 	public static function writeInt(name:String, value:Int = 0):Void {
-		Reflect.setField(_data, name, value);
+		_data[name] = value;
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Data {
 	 * @param	value		Value to write.
 	 */
 	public static function writeUint(name:String, value:Int = 0):Void {
-		Reflect.setField(_data, name, value);
+		_data[name] = value;
 	}
 
 	/**
@@ -104,7 +104,7 @@ class Data {
 	 * @param	value		Value to write.
 	 */
 	public static function writeBool(name:String, value:Bool = true):Void {
-		Reflect.setField(_data, name, value);
+		_data[name] = value;
 	}
 
 	/**
@@ -113,13 +113,13 @@ class Data {
 	 * @param	value		Value to write.
 	 */
 	public static function writeString(name:String, value:String = ""):Void {
-		Reflect.setField(_data, name, value);
+		_data[name] = value;
 	}
 
 	/** @private Reads a property from the data object. */
 	private static function read(name:String, defaultValue:Dynamic):Dynamic {
 		if (_data.exists(name)) {
-			return Reflect.field(_data, name);
+			return _data[name];
 		}
 		return defaultValue;
 	}

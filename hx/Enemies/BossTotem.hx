@@ -180,8 +180,8 @@ class BossTotem extends Enemy {
 
 	// Number of frames per animation.
 	private var animate:Bool = true; // Whether or not the animations for all of the body parts will proceed
-	private var animateFrames:Dynamic = {};
-	private var animateRate(default, never):Dynamic = {};
+	private var animateFrames:Map<String, Int> = new Map();
+	private var animateRate(default, never):Map<String, Float> = new Map();
 
 	private var currentFrame:Float = 0;
 	private var currentAnimation:String = "rest";
@@ -239,15 +239,15 @@ class BossTotem extends Enemy {
 		super(_x, _y, sprBossTotem);
 		startY = _y;
 
-		Reflect.setField(animateFrames, "attack", 14);
-		Reflect.setField(animateFrames, "rest", 8);
-		Reflect.setField(animateFrames, "walk", 8);
-		Reflect.setField(animateFrames, "jump", 8);
+		animateFrames["attack"] = 14;
+		animateFrames["rest"] = 8;
+		animateFrames["walk"] = 8;
+		animateFrames["jump"] = 8;
 
-		Reflect.setField(animateRate, "attack", 0.3);
-		Reflect.setField(animateRate, "rest", 0.1);
-		Reflect.setField(animateRate, "walk", 0.2);
-		Reflect.setField(animateRate, "jump", 0.5);
+		animateRate["attack"] = 0.3;
+		animateRate["rest"] = 0.1;
+		animateRate["walk"] = 0.2;
+		animateRate["jump"] = 0.5;
 		setHitbox(80, 32, 40, -12);
 
 		activeOffScreen = true;
@@ -313,8 +313,8 @@ class BossTotem extends Enemy {
 						laserWidth = laserWidthDef;
 						laserCol = laserColDef;
 						laserHitTime = 0;
-						if (currentFrame + Reflect.field(animateRate, currentAnimation) * rate >= Reflect.field(animateFrames, currentAnimation)) {
-							currentFrame = Reflect.field(animateFrames, currentAnimation) - 1;
+						if (currentFrame + animateRate[currentAnimation] * rate >= animateFrames[currentAnimation]) {
+							currentFrame = animateFrames[currentAnimation] - 1;
 							animate = false;
 						}
 						if (y <= startY - 32) {
@@ -335,7 +335,7 @@ class BossTotem extends Enemy {
 							FP.world.add(new BossTotemShot(Std.int(x + shotPosition.x), Std.int(y + shotPosition.y), shotSpeed));
 							FP.world.add(new BossTotemShot(Std.int(x - shotPosition.x), Std.int(y + shotPosition.y), new Point(-shotSpeed.x, shotSpeed.y)));
 						}
-						if (currentFrame + Reflect.field(animateRate, currentAnimation) * rate >= Reflect.field(animateFrames, currentAnimation)) {
+						if (currentFrame + animateRate[currentAnimation] * rate >= animateFrames[currentAnimation]) {
 							state = 1;
 						}
 					} else {
@@ -360,7 +360,7 @@ class BossTotem extends Enemy {
 					}
 				}
 				if (animate) {
-					currentFrame = (currentFrame + Reflect.field(animateRate, currentAnimation) * rate) % Reflect.field(animateFrames, currentAnimation);
+					currentFrame = (currentFrame + animateRate[currentAnimation] * rate) % animateFrames[currentAnimation];
 				}
 			}
 		}
@@ -441,7 +441,7 @@ class BossTotem extends Enemy {
 
 	override public function render():Void {
 		var frame:Int = Math.floor(currentFrame);
-		var frameUp:Int = Std.int(Math.ceil(currentFrame) % Reflect.field(animateFrames, currentAnimation));
+		var frameUp:Int = Std.int(Math.ceil(currentFrame) % animateFrames[currentAnimation]);
 		var armsPos:Point = new Point();
 		var armsAng:Int = 0;
 		headPos = new Point();

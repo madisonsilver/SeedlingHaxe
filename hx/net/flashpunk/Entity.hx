@@ -350,7 +350,7 @@ class Entity extends Tweener {
 					&& e.collidable
 					&& e != this) {
 					if (_mask == null || e._mask.collide(HITBOX)) {
-						Reflect.setField(array, Std.string(n++), e);
+						array[n++] = e;
 					}
 				}
 				e = e._typeNext;
@@ -369,7 +369,7 @@ class Entity extends Tweener {
 				&& e.collidable
 				&& e != this) {
 				if (_mask.collide((e._mask != null) ? e._mask : e.HITBOX)) {
-					Reflect.setField(array, Std.string(n++), e);
+					array[n++] = e;
 				}
 			}
 			e = e._typeNext;

@@ -26,8 +26,8 @@ class BossTotem extends Enemy {
 	// "Pos" constants are points for the positions of arms and legs relative to the head depending
 	// on the frame of the animation.
 	private var headBase(default, never):Point = new Point();
-	private var headRestingAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0];
-	private var headRestingPos(default, never):Array<Dynamic> = [
+	private var headRestingAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0];
+	private var headRestingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(0, 0),
 		new Point(0, 1),
@@ -37,8 +37,8 @@ class BossTotem extends Enemy {
 		new Point(0, 1),
 		new Point(0, 0)
 	];
-	private var headWalkingAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0];
-	private var headWalkingPos(default, never):Array<Dynamic> = [
+	private var headWalkingAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0];
+	private var headWalkingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(0, 1),
 		new Point(0, 2),
@@ -48,8 +48,8 @@ class BossTotem extends Enemy {
 		new Point(0, 2),
 		new Point(0, 1)
 	];
-	private var headJumpingAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0];
-	private var headJumpingPos(default, never):Array<Dynamic> = [
+	private var headJumpingAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0];
+	private var headJumpingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(0, -1),
 		new Point(0, -2),
@@ -59,15 +59,15 @@ class BossTotem extends Enemy {
 		new Point(0, -6),
 		new Point(0, -7)
 	];
-	private var headAttacksAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0];
-	private var headAttacksPos(default, never):Array<Dynamic> = [
+	private var headAttacksAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0];
+	private var headAttacksPos(default, never):Array<Point> = [
 		new Point(0, 0), new Point(0, 1), new Point(0, 1), new Point(0, 2), new Point(0, 2), new Point(0, 4), new Point(0, 4), new Point(0, 8),
 		new Point(0, 6), new Point(0, 4), new Point(0, 2), new Point(0, 1), new Point(0, 1), new Point(0, 0)];
 
 	private var armsBase(default, never):Point = new Point(23, 0);
-	private var armsRestingAng(default, never):Array<Dynamic> = [0, 2, 4, 8, 9, 8, 4, 2];
+	private var armsRestingAng(default, never):Array<Int> = [0, 2, 4, 8, 9, 8, 4, 2];
 
-	private static var armsRestingPos:Array<Dynamic> = [
+	private static var armsRestingPos:Array<Point> = [
 		new Point(0, 0),
 		new Point(0, 1),
 		new Point(0, 2),
@@ -78,8 +78,8 @@ class BossTotem extends Enemy {
 		new Point(0, 1)
 	];
 
-	private var armsWalkingAng(default, never):Array<Dynamic> = [0, 2, 4, 8, 9, 8, 4, 2];
-	private var armsWalkingPos(default, never):Array<Dynamic> = [
+	private var armsWalkingAng(default, never):Array<Int> = [0, 2, 4, 8, 9, 8, 4, 2];
+	private var armsWalkingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(1, 1),
 		new Point(1, 2),
@@ -89,8 +89,8 @@ class BossTotem extends Enemy {
 		new Point(1, 2),
 		new Point(0, 1)
 	];
-	private var armsJumpingAng(default, never):Array<Dynamic> = [0, 3, 6, 9, 12, 15, 18, 21, 24];
-	private var armsJumpingPos(default, never):Array<Dynamic> = [
+	private var armsJumpingAng(default, never):Array<Int> = [0, 3, 6, 9, 12, 15, 18, 21, 24];
+	private var armsJumpingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(-2, -1),
 		new Point(-6, -2),
@@ -116,14 +116,14 @@ class BossTotem extends Enemy {
 												new Point(-6, 13),
 												new Point(-3, 9),
 												new Point(-1, 4)); */
-	private var armsAttacksAng(default, never):Array<Dynamic> = [0, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 5];
-	private var armsAttacksPos(default, never):Array<Dynamic> = [
+	private var armsAttacksAng(default, never):Array<Int> = [0, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 5];
+	private var armsAttacksPos(default, never):Array<Point> = [
 		new Point(0, 0), new Point(-1, 4), new Point(-1, 9), new Point(-1, 13), new Point(-1, 17), new Point(-1, 30), new Point(-1, 40), new Point(-1, 44),
 		new Point(-1, 40), new Point(-1, 30), new Point(-1, 20), new Point(-1, 13), new Point(-1, 9), new Point(-1, 4)];
 
 	private var legsBase(default, never):Point = new Point(6, 16);
-	private var legsRestingAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0];
-	private var legsRestingPos(default, never):Array<Dynamic> = [
+	private var legsRestingAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0];
+	private var legsRestingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(0, 0),
 		new Point(1, 0),
@@ -133,8 +133,8 @@ class BossTotem extends Enemy {
 		new Point(0, 0),
 		new Point(0, 0)
 	];
-	private var legsWalkingAng(default, never):Array<Dynamic> = [0, -5, -10, -5, 0, -5, -10, -5];
-	private var legsWalkingPos(default, never):Array<Dynamic> = [
+	private var legsWalkingAng(default, never):Array<Int> = [0, -5, -10, -5, 0, -5, -10, -5];
+	private var legsWalkingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(0, 2),
 		new Point(1, 4),
@@ -144,8 +144,8 @@ class BossTotem extends Enemy {
 		new Point(1, -4),
 		new Point(0, -2)
 	];
-	private var legsJumpingAng(default, never):Array<Dynamic> = [0, -1, -2, -3, -4, -5, -6, -7, -8];
-	private var legsJumpingPos(default, never):Array<Dynamic> = [
+	private var legsJumpingAng(default, never):Array<Int> = [0, -1, -2, -3, -4, -5, -6, -7, -8];
+	private var legsJumpingPos(default, never):Array<Point> = [
 		new Point(0, 0),
 		new Point(1, 0),
 		new Point(2, 0),
@@ -155,8 +155,8 @@ class BossTotem extends Enemy {
 		new Point(6, 0),
 		new Point(7, 0)
 	];
-	private var legsAttacksAng(default, never):Array<Dynamic> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-	private var legsAttacksPos(default, never):Array<Dynamic> = [
+	private var legsAttacksAng(default, never):Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	private var legsAttacksPos(default, never):Array<Point> = [
 		new Point(0, 0), new Point(1, 0), new Point(1, 0), new Point(1, 0), new Point(2, 0), new Point(2, 0), new Point(1, 0), new Point(0, 0),
 		new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0)];
 	private var headOrigin(default, never):Point = new Point(16, 47);
@@ -187,7 +187,7 @@ class BossTotem extends Enemy {
 	private var currentAnimation:String = "rest";
 
 	private var _state:Int = 0; // 0 = resting, 1 = walking, 2 = attacking, 3 = jumping, 4 = special
-	private var stateAnimations:Array<Dynamic> = ["rest", "walk", "attack", "jump", "special"];
+	private var stateAnimations:Array<String> = ["rest", "walk", "attack", "jump", "special"];
 
 	private var attackDistance(default, never):Int = 60;
 	private var maxYPosition(default, never):Int = 352; // maxYPosition is the location at which the boss will teleport back to the top.

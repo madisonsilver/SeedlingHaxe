@@ -445,7 +445,8 @@ class Main extends Engine {
 	}
 
 	public static function levelPersistence(i:Int, j:Int):Bool {
-		return SAVE_FILE.data.levelPersistence[i * Game.tagsPerLevel + j];
+		var persistence : Array<Bool> = cast (SAVE_FILE.data.levelPersistence); //TODO: This fixes typing on HL.  Behaves correctly on save?
+		return persistence[i * Game.tagsPerLevel + j];
 	}
 
 	public static function levelPersistenceSet(i:Int, j:Int, _t:Bool):Void {
@@ -547,7 +548,7 @@ class Main extends Engine {
 			}
 		}
 		if (!SAVE_FILE.data.levelPersistence) {
-			var tempPersistence:Array<Dynamic> = [];
+			var tempPersistence:Array<Bool> = [];
 			for (i in 0...Game.levels.length) {
 				for (j in 0...Game.tagsPerLevel) {
 					tempPersistence.push(true);

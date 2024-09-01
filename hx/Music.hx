@@ -260,7 +260,7 @@ class Music {
 		sndLava2 = Assets.getSound("assets/sound/LavaClap.ogg");
 		sndLava3 = Assets.getSound("assets/sound/Pop.ogg");
 		sndLight1 = Assets.getSound("assets/sound/Light.ogg");
-		sndText1 = Assets.getSound("assets/sound/text.ogg");
+		sndText1 = Assets.getSound("assets/sound/text.wav"); //The ogg transformation corrupted the file
 		sndText2 = Assets.getSound("assets/sound/Unapproved/textNext.ogg");
 		sndOther1 = Assets.getSound("assets/sound/Unapproved/boss4start.ogg");
 		sndOther2 = Assets.getSound("assets/sound/Unapproved/boss4walk.ogg");
@@ -640,6 +640,11 @@ class Music {
 		}
 		currentSet = strInd;
 		currentIndex = cplayIndex;
+		trace(soundsO);
+		trace(soundsO[currentSet]);
+		trace(soundsO[currentSet][currentIndex]);
+		trace(currentSet);
+		trace(currentIndex);
 		soundsO[currentSet][currentIndex].play(vol, pan);
 		return soundsO[currentSet][currentIndex];
 	}

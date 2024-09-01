@@ -1759,7 +1759,7 @@ class Game extends World {
 		sprLogo.alpha = (menuAlphaDivisor == 0) ? 1 : Math.max(1 - Math.abs(_xoff) / menuAlphaDivisor, 0);
 		sprLogo.y += offset;
 		sprLogo.color = 0;
-		sprLogo.render(renderPt.clone(), new Point());
+		sprLogo.render(renderPt.clone(), new Point()); //TODO: I think there's something weird with the shadow
 		sprLogo.y -= offset;
 		sprLogo.color = 0xFFFFFF;
 		sprLogo.render(renderPt.clone(), new Point());

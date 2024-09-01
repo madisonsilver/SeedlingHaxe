@@ -2126,7 +2126,7 @@ class Game extends World {
 
 		if (xml.hasNode.objects) {
 			if (xml.nodes.objects[0].hasNode.lightalpha) {
-				lightAlpha = minLightAlpha + as3hx.Compat.parseFloat(xml.nodes.objects[0].node.lightalpha.att.alpha);
+				lightAlpha = minLightAlpha + Std.parseFloat(xml.nodes.objects[0].node.lightalpha.att.alpha);
 			}
 			if (xml.nodes.objects[0].hasNode.daynight) {
 				dayNight = true;

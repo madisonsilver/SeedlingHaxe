@@ -28,6 +28,8 @@ class VarTween extends Tween {
 	 * @param	ease		Optional easer function.
 	 */
 	public function tween(object:Dynamic, property:String, to:Float, duration:Float, ease:Function = null):Void {
+		throw new Error("This function is not implemented in the updated version.");
+		/*
 		_object = object;
 		_property = property;
 		if (!object.exists(property)) {
@@ -40,7 +42,7 @@ class VarTween extends Tween {
 		_start = Reflect.field(_object, property);
 		_range = to - _start;
 		_target = duration;
-		start();
+		start();*/
 	}
 
 	/** @private Updates the Tween. */

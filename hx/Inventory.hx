@@ -133,7 +133,7 @@ class Inventory {
 
 	public static function addItem(i:Int, pos:Int = -1):Void {
 		if (pos >= 0) {
-			as3hx.Compat.arraySplice(items, pos, 0, [i]);
+			items.insert(pos, i);
 		} else {
 			items.push(i);
 		}

@@ -19,7 +19,7 @@ class BobBoss extends BobSoldier {
 	private static var imgBobBoss1:BitmapData;
 	private static var imgBobBoss2:BitmapData;
 	private static var imgBobBoss3:BitmapData;
-	private static var images:Array<Dynamic> = [imgBobBoss1, imgBobBoss2, imgBobBoss3];
+	private static var images:Array<BitmapData> = [];
 
 	private var imgBobBossWeapons:BitmapData;
 	private var sprBobBossWeapons:Spritemap;
@@ -48,6 +48,7 @@ class BobBoss extends BobSoldier {
 
 	public function new(_x:Int, _y:Int, _st:Int = 0) {
 		load_image_assets();
+		images = [imgBobBoss1, imgBobBoss2, imgBobBoss3];
 		sprBobBossWeapons = new Spritemap(imgBobBossWeapons, 24, 5);
 		nextBossTimer = nextBossTimerMax;
 		formingTimer = formingTimerMax;

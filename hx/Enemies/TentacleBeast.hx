@@ -118,11 +118,11 @@ class TentacleBeast extends Enemy {
 
 				var whirlpoolDist:Int = Std.int(16 + Tile.w * 2); // Radii of both whirlpools, plus the minimum margin in between them
 				var vW:Array<Whirlpool> = new Array<Whirlpool>();
-				FP.world.getClass(Whirlpool, vW);
+				FP.world.getClass(Whirlpool, cast vW);
 
 				var tentacleDistance:Int = 32;
 				var v:Array<Tentacle> = new Array<Tentacle>();
-				FP.world.getClass(Tentacle, v);
+				FP.world.getClass(Tentacle, cast v);
 
 				var tries:Int = 0;
 				var created:Int = 0;

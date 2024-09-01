@@ -61,7 +61,7 @@ class Wand extends Pickup {
 				// Activate falling blocks
 			{
 				var v:Array<Activators> = new Array<Activators>();
-				FP.world.getClass(Activators, v);
+				FP.world.getClass(Activators, cast v);
 				for (n in v) {
 					if (n.t == tset) {
 						n.activate = true;

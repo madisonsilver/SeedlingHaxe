@@ -1380,13 +1380,13 @@ class Game extends World {
 		cover();
 
 		var v:Array<Help> = new Array<Help>();
-		getClass(Help, v);
+		getClass(Help, cast v);
 		for (h in v) {
 			h.render();
 		}
 
 		var vm:Array<Message> = new Array<Message>();
-		getClass(Message, vm);
+		getClass(Message, cast vm);
 		for (m in vm) {
 			m.render();
 		}
@@ -2265,7 +2265,7 @@ class Game extends World {
 
 		if (!menu) {
 			var v:Array<Player> = new Array<Player>();
-			getClass(Player, v);
+			getClass(Player, cast v);
 			if (v.length > 0) {
 				for (p in v) {
 					p.x = playerPosition.x;

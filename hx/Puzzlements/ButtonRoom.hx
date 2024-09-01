@@ -81,7 +81,7 @@ class ButtonRoom extends Activators {
 				}
 				if (room == -1) {
 					var v:Array<Activators> = new Array<Activators>();
-					FP.world.getClass(Activators, v);
+					FP.world.getClass(Activators, cast v);
 					for (i in 0...v.length) {
 						if (v[i] != this && v[i].t == t) {
 							v[i].activate = persist;

@@ -55,7 +55,7 @@ class Button extends Activators {
 
 	public static function activateAll(_exclude:Activators, _t:Int, _activate:Bool):Void {
 		var v:Array<Activators> = new Array<Activators>();
-		FP.world.getClass(Activators, v);
+		FP.world.getClass(Activators, cast v);
 		for (i in 0...v.length) {
 			if (v[i] != _exclude && v[i].t == _t) {
 				v[i].activate = _activate;

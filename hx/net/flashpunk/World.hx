@@ -570,16 +570,14 @@ class World extends Tweener {
 	 * @param	rHeight		Height of the rectangle.
 	 * @param	into		The Array or Vector to populate with collided Entities.
 	 */
-	public function collideRectInto(type:String, rX:Float, rY:Float, rWidth:Float, rHeight:Float, into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
-			var e:Entity = _typeFirst[type];
-			var n:Int = into.length;
-			while (e != null) {
-				if (e.collideRect(e.x, e.y, rX, rY, rWidth, rHeight)) {
-					Reflect.setField(into, Std.string(n++), e);
-				}
-				e = e._typeNext;
+	public function collideRectInto(type:String, rX:Float, rY:Float, rWidth:Float, rHeight:Float, into:Array<Entity>):Void {
+		var e:Entity = _typeFirst[type];
+		var n:Int = into.length;
+		while (e != null) {
+			if (e.collideRect(e.x, e.y, rX, rY, rWidth, rHeight)) {
+				into[n++] = e;
 			}
+			e = e._typeNext;
 		}
 	}
 
@@ -592,16 +590,14 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate with collided Entities.
 	 * @return	The provided Array.
 	 */
-	public function collidePointInto(type:String, pX:Float, pY:Float, into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
-			var e:Entity = _typeFirst[type];
-			var n:Int = into.length;
-			while (e != null) {
-				if (e.collidePoint(e.x, e.y, pX, pY)) {
-					Reflect.setField(into, Std.string(n++), e);
-				}
-				e = e._typeNext;
+	public function collidePointInto(type:String, pX:Float, pY:Float, into:Array<Entity>):Void {
+		var e:Entity = _typeFirst[type];
+		var n:Int = into.length;
+		while (e != null) {
+			if (e.collidePoint(e.x, e.y, pX, pY)) {
+				into[n++] = e;
 			}
+			e = e._typeNext;
 		}
 	}
 
@@ -692,7 +688,7 @@ class World extends Tweener {
 			dist = (x - n.x) * (x - n.x) + (y - n.y) * (y - n.y);
 			if (!nearDistSet || dist < nearDist) {
 				nearDist = dist;
-				nearDistSet=true;
+				nearDistSet = true;
 				near = n;
 			}
 			n = n._typeNext;
@@ -865,14 +861,12 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate.
 	 * @return	The same array, populated.
 	 */
-	public function getType(type:String, into:Dynamic):Void {
-		if (Std.isOfType(into, Array)) {
-			var e:Entity = _typeFirst[type];
-			var n:Int = into.length;
-			while (e != null) {
-				Reflect.setField(into, Std.string(n++), e);
-				e = e._typeNext;
-			}
+	public function getType(type:String, into:Array<Entity>):Void {
+		var e:Entity = _typeFirst[type];
+		var n:Int = into.length;
+		while (e != null) {
+			into[n++] = e;
+			e = e._typeNext;
 		}
 	}
 
@@ -882,16 +876,14 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate.
 	 * @return	The same array, populated.
 	 */
-	public function getClass(c:Class<Dynamic>, into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
-			var e:Entity = _updateFirst;
-			var n:Int = into.length;
-			while (e != null) {
-				if (Std.isOfType(e, c)) {
-					Reflect.setField(into, Std.string(n++), e);
-				}
-				e = e._updateNext;
+	public function getClass(c:Class<Dynamic>, into:Array<Entity>):Void {
+		var e:Entity = _updateFirst;
+		var n:Int = into.length;
+		while (e != null) {
+			if (Std.isOfType(e, c)) {
+				into[n++] = e;
 			}
+			e = e._updateNext;
 		}
 	}
 
@@ -901,14 +893,12 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate.
 	 * @return	The same array, populated.
 	 */
-	public function getLayer(layer:Int, into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
-			var e:Entity = _renderLast[layer];
-			var n:Int = into.length;
-			while (e != null) {
-				Reflect.setField(into, Std.string(n++), e);
-				e = e._updatePrev;
-			}
+	public function getLayer(layer:Int, into:Array<Entity>):Void {
+		var e:Entity = _renderLast[layer];
+		var n:Int = into.length;
+		while (e != null) {
+			into[n++] = e;
+			e = e._updatePrev;
 		}
 	}
 
@@ -917,14 +907,12 @@ class World extends Tweener {
 	 * @param	into		The Array or Vector to populate.
 	 * @return	The same array, populated.
 	 */
-	public function getAll(into:Dynamic):Void {
-		if (Std.isOfType(into, Array) || Std.isOfType(into, Array /*Vector.<T> call?*/)) {
-			var e:Entity = _updateFirst;
-			var n:Int = into.length;
-			while (e != null) {
-				Reflect.setField(into, Std.string(n++), e);
-				e = e._updateNext;
-			}
+	public function getAll<T>(into:Array<Entity>):Void {
+		var e:Entity = _updateFirst;
+		var n:Int = into.length;
+		while (e != null) {
+			into[n++] = e;
+			e = e._updateNext;
 		}
 	}
 
@@ -968,7 +956,7 @@ class World extends Tweener {
 		// sort the depth list
 		if (_layerSort) {
 			if (_layerList.length > 1) {
-				_layerList.sort(function (x,y) return x-y);
+				_layerList.sort(function(x, y) return x - y);
 			}
 			_layerSort = false;
 		}

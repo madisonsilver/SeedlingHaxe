@@ -392,9 +392,9 @@ class BossTotem extends Enemy {
 			laserCol = laserColMax;
 			var players:Array<Player> = new Array<Player>();
 			var rect:Rectangle = getLaserRect(1, headPos, laserPos);
-			FP.world.collideRectInto("Player", rect.x, rect.y, rect.width, rect.height, players);
+			FP.world.collideRectInto("Player", rect.x, rect.y, rect.width, rect.height, cast players);
 			rect = getLaserRect(-1, headPos, laserPos);
-			FP.world.collideRectInto("Player", rect.x, rect.y, rect.width, rect.height, players);
+			FP.world.collideRectInto("Player", rect.x, rect.y, rect.width, rect.height, cast players);
 			hitPlayers(players);
 			Game.shake = laserHitTimeMax * 2;
 			Music.playSound("Enemy Attack", 0, 0.15);

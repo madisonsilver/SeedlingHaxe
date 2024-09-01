@@ -81,7 +81,7 @@ class RopeStart extends Activators {
 	override private function set_activate(a:Bool):Bool {
 		_active = a;
 		var v:Array<Activators> = new Array<Activators>();
-		FP.world.getClass(Activators, v);
+		FP.world.getClass(Activators, cast v);
 		for (i in 0...v.length) {
 			if (v[i] != this && v[i].t == t) {
 				v[i].activate = activate;

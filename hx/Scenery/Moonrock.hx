@@ -79,7 +79,7 @@ class Moonrock extends Entity {
 			}
 			canBeam = false;
 			var vp:Array<Player> = new Array<Player>();
-			FP.world.getClass(Player, vp);
+			FP.world.getClass(Player, cast vp);
 			var p:Player = null;
 			for (temp_p in vp) {
 				p = temp_p;
@@ -146,7 +146,7 @@ class Moonrock extends Entity {
 
 	public function playersDirection(d:Int):Void {
 		var vp:Array<Player> = new Array<Player>();
-		FP.world.getClass(Player, vp);
+		FP.world.getClass(Player, cast vp);
 		for (p in vp) {
 			p.directionFace = d;
 		}

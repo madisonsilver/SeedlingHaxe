@@ -115,15 +115,15 @@ class Player extends Mobile {
 		"", "swim-", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "swim-", "", "", "", "", "", "", "", "swim-", "", "", "", "", "", "", "", "",
 		"", "", "", ""
 	]; // whether the player is on the ground, swimming, etc.
-	private var moveSpeeds(default, never):Array<Dynamic> = [
+	private var moveSpeeds(default, never):Array<Float> = [
 		dMS, dMSwater, dMS, dMS, dMS, dMS, dMS, dMS, dMS, dMS, dMSstair, dMS, dMS, dMS, dMS, dMS, dMS, dMSwater, dMS, dMS, dMS, dMS, dMS, dMS, dMS,
 		dMSwater / 2, dMS, dMS, dMS, dMS, dMSstair, dMS, dMS, dMS, dMS, dMS, dMS, dMS
 	];
-	private var walkAnimSpeeds(default, never):Array<Dynamic> = [
+	private var walkAnimSpeeds(default, never):Array<Int> = [
 		dwAS, dwASwater, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS, dwASstair, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS, dwASwater, dwAS, dwAS, dwAS, dwAS,
 		dwAS, dwAS, dwAS, dwASwater, dwAS, dwAS, dwAS, dwAS, dwASstair, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS, dwAS
 	];
-	private var standAnimSpeeds(default, never):Array<Dynamic> = [
+	private var standAnimSpeeds(default, never):Array<Int> = [
 		dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS,
 		dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS, dsAS
 	];
@@ -1514,7 +1514,8 @@ class Player extends Mobile {
 	}
 
 	override public function moveX(_xrel:Float):Entity {
-		for (i in 0...Std.int(Math.abs(_xrel))) {
+		var i: Float = 0;
+		while (i < Math.abs(_xrel)) {
 			var d:Float = Math.min(1, Math.abs(_xrel) - i) * FP.sign(_xrel);
 			var c_s:Entity = null;
 			if (shieldObj != null) {
@@ -1522,18 +1523,20 @@ class Player extends Mobile {
 			}
 			var c:Entity = collideTypes(solids, x + d, y);
 			if (c == null && (c_s == null || hitsTimer > 0)) {
-				x += Std.int(d);
+				x += d;
 			} else if (c != null) {
 				return c;
 			} else {
 				return c_s;
 			}
+			i++;
 		}
 		return null;
 	}
 
 	override public function moveY(_yrel:Float):Entity {
-		for (i in 0...Std.int(Math.abs(_yrel))) {
+		var i: Float = 0;
+		while (i < Math.abs(_yrel)) {
 			var d:Float = Math.min(1, Math.abs(_yrel) - i) * FP.sign(_yrel);
 			var c_s:Entity = null;
 			if (shieldObj != null) {
@@ -1541,12 +1544,13 @@ class Player extends Mobile {
 			}
 			var c:Entity = collideTypes(solids, x, y + d);
 			if (c == null && (c_s == null || hitsTimer > 0)) {
-				y += Std.int(d);
+				y += d;
 			} else if (c != null) {
 				return c;
 			} else {
 				return c_s;
 			}
+			i++;
 		}
 		return null;
 	}

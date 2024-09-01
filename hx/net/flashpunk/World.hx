@@ -961,7 +961,7 @@ class World extends Tweener {
 		// sort the depth list
 		if (_layerSort) {
 			if (_layerList.length > 1) {
-				FP.sort(_layerList, true);
+				_layerList.sort(function (x,y) return x-y);
 			}
 			_layerSort = false;
 		}

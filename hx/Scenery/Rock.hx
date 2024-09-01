@@ -4,6 +4,7 @@ import openfl.utils.Assets;
 import openfl.display.BitmapData;
 import net.flashpunk.Entity;
 import net.flashpunk.graphics.Image;
+import Game;
 
 /**
  * ...

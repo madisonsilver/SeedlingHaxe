@@ -358,7 +358,7 @@ class Game extends World {
 	private static var imgRock4:BitmapData;
 	public static var sprRock4:Image;
 
-	public static var rocks:Array<Dynamic> = [sprRock, sprRock2, sprRock3, sprRock4];
+	public static var rocks:Array<Image> = [];
 
 	/*OTHER*/
 	private static var imgPole:BitmapData;
@@ -995,6 +995,7 @@ class Game extends World {
 		load_level_assets();
 		load_image_assets();
 		initialize_image_assets();
+		rocks = [sprRock, sprRock2, sprRock3, sprRock4];
 		bossLocks = [sprBossLock, sprBossLock1, sprBossLock2, sprBossLock3, sprBossLock4];
 		bossKeys = [sprBossKey, sprBossKey1, sprBossKey2, sprBossKey3, sprBossKey4];
 		levels = [

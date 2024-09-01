@@ -706,7 +706,7 @@ class World extends Tweener {
 	 * @return	How many Entities of type exist in the World.
 	 */
 	public function typeCount(type:String):Int {
-		return try cast(Reflect.field(_typeCount, type), Int) catch (e:Dynamic) null;
+		return _typeCount[type];
 	}
 
 	/**
@@ -729,7 +729,7 @@ class World extends Tweener {
 	 * @return	How many Entities are on the layer.
 	 */
 	public function layerCount(layer:Int):Int {
-		return try cast(_layerCount[layer], Int) catch (e:Dynamic) null;
+		return _layerCount[layer];
 	}
 
 	/**
@@ -846,7 +846,7 @@ class World extends Tweener {
 	 */
 	private function get_uniqueTypes():Int {
 		var i:Int = 0;
-		for (type in Reflect.fields(_typeCount)) {
+		for (type in _typeCount.iterator()) {
 			i++;
 		}
 		return i;
@@ -1170,7 +1170,7 @@ class World extends Tweener {
 	private var _renderFirst:Array<Dynamic> = [];
 	private var _renderLast:Array<Dynamic> = [];
 	private var _layerList:Array<Dynamic> = [];
-	private var _layerCount:Array<Dynamic> = [];
+	private var _layerCount:Array<Int> = [];
 	private var _layerSort:Bool;
 	private var _tempArray:Array<Dynamic> = [];
 
@@ -1181,7 +1181,7 @@ class World extends Tweener {
 	private var _typeFirst:Dictionary<String, Entity> = new Dictionary();
 
 	/** @private */
-	private var _typeCount:Dictionary<String, Int> = new Dictionary();
+	private var _typeCount:Map<String, Int> = new Map();
 
 	/** @private */
 	private var _recycled:Map<String, Entity> = new Map();

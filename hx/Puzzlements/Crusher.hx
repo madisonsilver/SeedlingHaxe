@@ -85,7 +85,7 @@ class Crusher extends Activators {
 	public function hit():Void {
 		var v:Array<Entity> = new Array<Entity>();
 		for (i in 0...hitables.length) {
-			collideInto(Reflect.field(hitables, Std.string(i)), x, y, v);
+			collideInto(hitables[i], x, y, v);
 		}
 		for (c in v) {
 			if (Std.isOfType(c, Player)) {

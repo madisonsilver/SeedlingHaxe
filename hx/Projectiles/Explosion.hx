@@ -54,7 +54,7 @@ class Explosion extends Entity {
 		Music.playSoundDistPlayer(Std.int(x), Std.int(y), "Explosion", -1, 120);
 		var v:Array<Entity> = new Array<Entity>();
 		for (i in 0...hitables.length) {
-			FP.world.collideRectInto(Reflect.field(hitables, Std.string(i)), x - radius, y - radius, radius * 2, radius * 2, v);
+			FP.world.collideRectInto(hitables[i], x - radius, y - radius, radius * 2, radius * 2, v);
 		}
 		for (c in v) {
 			if (FP.distance(x, y, c.x, c.y) <= radius) {

@@ -84,7 +84,7 @@ class Pulser extends Activators {
 	public function hit():Void {
 		var v:Array<Entity> = new Array<Entity>();
 		for (i in 0...hitables.length) {
-			FP.world.collideRectInto(Reflect.field(hitables, Std.string(i)), x - radiusHit, y - radiusHit, radiusHit * 2, radiusHit * 2, v);
+			FP.world.collideRectInto(hitables[i], x - radiusHit, y - radiusHit, radiusHit * 2, radiusHit * 2, v);
 		}
 		for (c in v) {
 			if (FP.distanceRectPoint(x, y, c.x - c.originX, c.y - c.originY, c.width, c.height) > radiusHit) {

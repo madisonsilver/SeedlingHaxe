@@ -512,7 +512,7 @@ class Main extends Engine {
 		secondary = secondary;
 		grassCut = grassCut;
 
-		if (!SAVE_FILE.data.hasBadge) {
+		if (SAVE_FILE.data.hasBadge == null) {
 			var _hasBadge:Map<String, Bool> = new Map();
 			for (i in 0...badges.length) {
 				_hasBadge[badges[i]] = false;
@@ -523,7 +523,7 @@ class Main extends Engine {
 				hasBadgeSet(badges[i], hasBadge(badges[i]));
 			}
 		}
-		if (!SAVE_FILE.data.hasKey) {
+		if (SAVE_FILE.data.hasKey == null) {
 			var _hasKey:Array<Dynamic> = [];
 			for (i in 0...Player.totalKeys) {
 				_hasKey[i] = false;
@@ -534,7 +534,7 @@ class Main extends Engine {
 				hasKeySet(i, hasKey(i));
 			}
 		}
-		if (!SAVE_FILE.data.hasTotemPart) {
+		if (SAVE_FILE.data.hasTotemPart == null) {
 			var _hasTotemPart:Array<Dynamic> = [];
 			for (i in 0...Player.totemParts) {
 				_hasTotemPart[i] = false;
@@ -545,7 +545,7 @@ class Main extends Engine {
 				hasTotemPartSet(i, hasTotemPart(i));
 			}
 		}
-		if (!SAVE_FILE.data.hasSealPart) {
+		if (SAVE_FILE.data.hasSealPart == null) {
 			var _hasSealPart:Array<Dynamic> = [];
 			for (i in 0...SealController.SEALS) {
 				_hasSealPart[i] = -1;
@@ -556,7 +556,7 @@ class Main extends Engine {
 				hasSealPartSet(i, hasSealPart(i));
 			}
 		}
-		if (!SAVE_FILE.data.levelPersistence) {
+		if (SAVE_FILE.data.levelPersistence == null) {
 			var tempPersistence:Array<Bool> = [];
 			for (i in 0...Game.levels.length) {
 				for (j in 0...Game.tagsPerLevel) {

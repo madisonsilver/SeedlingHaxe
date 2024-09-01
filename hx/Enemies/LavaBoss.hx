@@ -184,17 +184,15 @@ class LavaBoss extends Enemy {
 				sprLavaBoss.play("smashback");
 				Music.playSound("Lava", 0);
 
-				var xpos:Dynamic = [-34, 34];
-				var ypos:Dynamic = [32, 32];
+				var xpos:Array<Int> = [-34, 34];
+				var ypos:Array<Int> = [32, 32];
 				for (i in 0...xpos.length)
 					// This area covered must be >= the area covered by the hitbox of the lava runner,
 				{
 					// or else they will stick on top of one another.
-					if (FP.world.collideRect("Enemy", x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2,
-						y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2, Tile.w, Tile.h) == null) {
+					if (FP.world.collideRect("Enemy", x + xpos[i] - Tile.w / 2, y + ypos[i] - Tile.h / 2, Tile.w, Tile.h) == null) {
 						var lr:LavaRunner;
-						FP.world.add(lr = new LavaRunner(Std.int(x + Reflect.field(xpos, Std.string(i)) - Tile.w / 2),
-							Std.int(y + Reflect.field(ypos, Std.string(i)) - Tile.h / 2)));
+						FP.world.add(lr = new LavaRunner(Std.int(x + xpos[i] - Tile.w / 2), Std.int(y + ypos[i] - Tile.h / 2)));
 						lr.runRange = 1000;
 						lr.activeOffScreen = true;
 						lr.jump(i == 0);

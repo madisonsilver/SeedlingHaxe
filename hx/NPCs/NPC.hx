@@ -191,7 +191,7 @@ class NPC extends Mobile {
 						}
 						return;
 					}
-					Game.talkingText = Reflect.field(myText, Std.string(myCurrentText));
+					Game.talkingText = myText[myCurrentText];
 				}
 			}
 			if (inRange) {

@@ -101,7 +101,7 @@ class Watcher extends NPC {
 				}
 				sprWatcher.frame = sprWatcher.frameCount - 1;
 			} else {
-				sprWatcher.frame = Reflect.field(dieFrames, Std.string(hits - 1));
+				sprWatcher.frame = dieFrames[hits - 1];
 			}
 		}
 		(text == "") ? layer = Std.int(-(y + Tile.h * 8)) : layer = Std.int(-(y - originY + height * 2 / 3));

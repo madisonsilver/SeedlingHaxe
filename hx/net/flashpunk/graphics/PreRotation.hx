@@ -27,13 +27,13 @@ class PreRotation extends Image {
 	 * @param	smooth			Make the rotated graphic appear less pixelly.
 	 */
 	public function new(source:Class<Dynamic>, frameCount:Int = 36, smooth:Bool = false) {
-		var r:BitmapData = Reflect.field(_rotated, Std.string(source));
-		_frame = new Rectangle(0, 0, Reflect.field(_size, Std.string(source)), Reflect.field(_size, Std.string(source)));
+		var r:BitmapData = _rotated[source];
+		_frame = new Rectangle(0, 0, _size[source], _size[source]);
 		if (r == null)
 			// produce a rotated bitmap strip
 		{
 			var temp:BitmapData = (Type.createInstance(source, [])).bitmapData;
-			var size:Int = Reflect.setField(_size, Std.string(source), Math.ceil(FP.distance(0, 0, temp.width, temp.height)));
+			var size:Int = _size[source] = Math.ceil(FP.distance(0, 0, temp.width, temp.height));
 			_frame.width = _frame.height = size;
 			var width:Int = Std.int(_frame.width * frameCount);
 			var height:Int = _frame.height;

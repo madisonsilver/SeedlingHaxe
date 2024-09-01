@@ -108,7 +108,7 @@ class Seed extends Pickup {
 
 	override public function render():Void {
 		if (!tree) {
-			(try cast(graphic, Spritemap) catch (e:Dynamic) null).frame = Reflect.field(sitFrames, Std.string(Game.worldFrame(sitFrames.length)));
+			(try cast(graphic, Spritemap) catch (e:Dynamic) null).frame = sitFrames[Game.worldFrame(sitFrames.length)];
 		}
 		super.render();
 	}

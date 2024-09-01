@@ -78,7 +78,7 @@ class LavaChain extends Entity {
 	public function reach():Void {
 		var rect:Rectangle = getRect(direction);
 		for (i in 0...hitables.length) {
-			var hit:Entity = FP.world.collideRect(Reflect.field(hitables, Std.string(i)), rect.x, rect.y, rect.width, rect.height);
+			var hit:Entity = FP.world.collideRect(hitables[i], rect.x, rect.y, rect.width, rect.height);
 			if (hit != null) {
 				var hitPos:Point = getHitPos(new Point(hit.x, hit.y), direction);
 				if (Std.isOfType(hit, Enemy)) {

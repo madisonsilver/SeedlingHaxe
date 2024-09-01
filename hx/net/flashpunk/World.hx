@@ -1167,10 +1167,10 @@ class World extends Tweener {
 	private var _count:Int = 0;
 
 	// Render information.
-	private var _renderFirst:Array<Entity> = [];
-	private var _renderLast:Array<Entity> = [];
+	private var _renderFirst:Map<Int, Entity> = new Map();
+	private var _renderLast:Map<Int, Entity> = new Map();
 	private var _layerList:Array<Int> = [];
-	private var _layerCount:Array<Int> = [];
+	private var _layerCount:Map<Int, Int> = new Map();
 	private var _layerSort:Bool;
 	private var _tempArray:Array<Dynamic> = [];
 

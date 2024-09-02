@@ -181,12 +181,16 @@ class Image extends Graphic {
 		}
 		_alpha = value;
 		if (_alpha == 1 && _color == 0xFFFFFF) {
-			_tint = null;
+			/* 
+			TODO: Something is wrong with setting the tint to null here (BossTotem won't display)
+			Commenting it is a workaround but will require more investigation later
+			_tint = null;  
 			return value;
+			*/
 		}
 		_tint = _colorTransform;
-		_tint.redMultiplier = (Std.int(_color >> 16) & 0xFF) / 255;
-		_tint.greenMultiplier = (Std.int(_color >> 8) & 0xFF) / 255;
+		_tint.redMultiplier = ((_color >> 16) & 0xFF) / 255;
+		_tint.greenMultiplier = ((_color >> 8) & 0xFF) / 255;
 		_tint.blueMultiplier = (_color & 0xFF) / 255;
 		_tint.alphaMultiplier = _alpha;
 		updateBuffer();

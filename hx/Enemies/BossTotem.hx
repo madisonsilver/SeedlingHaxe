@@ -441,7 +441,7 @@ class BossTotem extends Enemy {
 
 	override public function render():Void {
 		var frame:Int = Math.floor(currentFrame);
-		var frameUp:Int = Std.int(Math.ceil(currentFrame) % animateFrames[currentAnimation]);
+		var frameUp:Int = Math.ceil(currentFrame) % animateFrames[currentAnimation];
 		var armsPos:Point = new Point();
 		var armsAng:Int = 0;
 		headPos = new Point();
@@ -621,7 +621,6 @@ class BossTotem extends Enemy {
 
 		(try cast(graphic, Image) catch (e:Dynamic) null).blend = BlendMode.NORMAL;
 		(try cast(graphic, Image) catch (e:Dynamic) null).scale -= r;
-
 		super.render();
 
 		x = temp.x;

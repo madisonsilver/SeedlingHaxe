@@ -674,8 +674,14 @@ class Game extends World {
 			var text = o.att.resolve(x);
 			var int = Std.parseInt(text);
 			var float = Std.parseFloat(text);
-			if (float != int){
-				trace('Int conversion error?  $text -> $int != $float');
+			if (text.substr(0, 2) == "0x"){
+				if (int == 0 && text != "0x000000"){
+					trace('Int conversion error?  $text -> $int');
+				}
+			} else {
+				if (float != int){
+					trace('Int conversion error?  $text -> $int != $float');
+				}
 			}
 			return int;
 		} else {
@@ -1886,7 +1892,7 @@ class Game extends World {
 					sprLight.render(new Point(p.x, p.y), FP.camera);
 				}
 			}
-			FP.buffer.draw(snowBmp, null, null, BlendMode.ADD);
+			FP.buffer.draw(snowBmp, null, null, BlendMode.ADD); //TODO: This isn't displaying properly
 		}
 		FP.buffer.draw(nightBmp, null,
 			new ColorTransform(1, 1, 1, 1 - (currentLightAlpha * lightAlpha) * (1 - minDarkness) - Math.min(minDarkness, lightAlpha)), BlendMode.MULTIPLY);

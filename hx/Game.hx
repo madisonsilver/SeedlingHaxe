@@ -1,3 +1,4 @@
+import openfl.display.MovieClip;
 import openfl.utils.Assets;
 import openfl.display.BitmapData;
 import enemies.*;
@@ -1892,7 +1893,14 @@ class Game extends World {
 					sprLight.render(new Point(p.x, p.y), FP.camera);
 				}
 			}
-			FP.buffer.draw(snowBmp, null, null, BlendMode.ADD); //TODO: This isn't displaying properly
+			/*This is a workaround for 
+			https://github.com/openfl/openfl/issues/2151
+			FP.buffer.draw(snowBmp, null, null, BlendMode.ADD); */ 
+			var tempBmp = new MovieClip();
+			tempBmp.graphics.beginBitmapFill(snowBmp);
+			tempBmp.graphics.drawRect(0, 0, FP.screen.width, FP.screen.height);
+			FP.buffer.draw(tempBmp, null, null, BlendMode.ADD);
+
 		}
 		FP.buffer.draw(nightBmp, null,
 			new ColorTransform(1, 1, 1, 1 - (currentLightAlpha * lightAlpha) * (1 - minDarkness) - Math.min(minDarkness, lightAlpha)), BlendMode.MULTIPLY);

@@ -30,7 +30,7 @@ class Whirlpool extends Entity {
 	private var maxAlpha(default, never):Float = 0.5;
 
 	private function load_image_assets():Void {
-		imgWhirlpool = Assets.getBitmapData("assets/graphics/WhirlPool.png");
+		imgWhirlpool = Assets.getBitmapData("assets/graphics/Whirlpool.png");
 	}
 
 	public function new(_x:Int, _y:Int, _timer:Bool = false) {

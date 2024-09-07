@@ -39,6 +39,13 @@ class Console {
 	 */
 	public function new() {
 		Input.define("_ARROWS", [Key.RIGHT, Key.LEFT, Key.DOWN, Key.UP]);
+
+		CONSOLE_LOGO = Assets.getBitmapData("assets/fp/console_logo.png");
+		CONSOLE_DEBUG = Assets.getBitmapData("assets/fp/console_debug.png");
+		CONSOLE_OUTPUT = Assets.getBitmapData("assets/fp/console_output.png");
+		CONSOLE_PLAY = Assets.getBitmapData("assets/fp/console_play.png");
+		CONSOLE_PAUSE = Assets.getBitmapData("assets/fp/console_pause.png");
+		CONSOLE_STEP = Assets.getBitmapData("assets/fp/console_step.png");
 	}
 
 	/**
@@ -108,7 +115,7 @@ class Console {
 		// The transparent FlashPunk logo overlay bitmap.
 		_sprite.addChild(_back);
 		_back.bitmapData = new BitmapData(width, height, true, 0xFFFFFFFF);
-		var b:BitmapData = Type.createInstance(CONSOLE_LOGO, []).bitmapData;
+		var b:BitmapData = CONSOLE_LOGO;
 		FP.matrix.identity();
 		FP.matrix.tx = Math.max((_back.bitmapData.width - b.width) / 2, 0);
 		FP.matrix.ty = Math.max((_back.bitmapData.height - b.height) / 2, 0);
@@ -208,11 +215,11 @@ class Console {
 
 		// The button panel buttons.
 		_sprite.addChild(_butRead);
-		_butRead.addChild(_butDebug = Type.createInstance(CONSOLE_DEBUG, []));
-		_butRead.addChild(_butOutput = Type.createInstance(CONSOLE_OUTPUT, []));
-		_butRead.addChild(_butPlay = Type.createInstance(CONSOLE_PLAY, [])).x = 20;
-		_butRead.addChild(_butPause = Type.createInstance(CONSOLE_PAUSE, [])).x = 20;
-		_butRead.addChild(_butStep = Type.createInstance(CONSOLE_STEP, [])).x = 40;
+		_butRead.addChild(_butDebug = new Bitmap(CONSOLE_DEBUG));
+		_butRead.addChild(_butOutput = new Bitmap(CONSOLE_OUTPUT));
+		_butRead.addChild(_butPlay = new Bitmap(CONSOLE_PLAY)).x = 20;
+		_butRead.addChild(_butPause = new Bitmap(CONSOLE_PAUSE)).x = 20;
+		_butRead.addChild(_butStep = new Bitmap(CONSOLE_STEP)).x = 40;
 		updateButtons();
 
 		// The button panel.
@@ -1005,16 +1012,10 @@ class Console {
 	// Embedded assets.
 	@:meta(Embed(source = "../graphics/04B_03__.TTF", fontFamily = "console"))
 	private var FONT_SMALL(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_logo.png"))
-	private var CONSOLE_LOGO(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_debug.png"))
-	private var CONSOLE_DEBUG(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_output.png"))
-	private var CONSOLE_OUTPUT(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_play.png"))
-	private var CONSOLE_PLAY(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_pause.png"))
-	private var CONSOLE_PAUSE(default, never):Class<Dynamic>;
-	@:meta(Embed(source = "console_step.png"))
-	private var CONSOLE_STEP(default, never):Class<Dynamic>;
+	private var CONSOLE_LOGO:BitmapData;
+	private var CONSOLE_DEBUG:BitmapData;
+	private var CONSOLE_OUTPUT:BitmapData;
+	private var CONSOLE_PLAY:BitmapData;
+	private var CONSOLE_PAUSE:BitmapData;
+	private var CONSOLE_STEP:BitmapData;
 }

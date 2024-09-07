@@ -34,7 +34,7 @@ class Enemy extends Mobile {
 
 	public var canFallInPit:Bool = true;
 	public var fallInPit:Bool = false;
-	public var fallSpinSpeed(default, never):Int = Std.int(8 * FP.choose([-1, 1]));
+	public var fallSpinSpeed:Int;
 	public var fallAlphaSpeed(default, never):Float = 0.05;
 
 	public var hitByFire:Bool = false;
@@ -55,6 +55,8 @@ class Enemy extends Mobile {
 	public var dieSoundIndex:Int = 0; // 0 = small, 1 = big
 
 	public function new(_x:Int, _y:Int, _g:Graphic = null) {
+		fallSpinSpeed = Std.int(8 * FP.choose([-1, 1]));
+
 		super(_x, _y, _g);
 		type = "Enemy";
 	}

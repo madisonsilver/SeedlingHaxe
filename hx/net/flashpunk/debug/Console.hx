@@ -844,6 +844,7 @@ class Console {
 		_format.size = size;
 		_format.color = color;
 		_format.align = align;
+		_format.font = Preloader.FONT.fontName;
 		return _format;
 	}
 

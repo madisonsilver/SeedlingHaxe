@@ -24,8 +24,7 @@ class Preloader extends Sprite {
 	public static var imgNG:BitmapData;
 	private static var sprNG:DisplayObject;
 
-	@:meta(Embed(source = "net/flashpunk/graphics/04B_03__.TTF", fontFamily = "default"))
-	private static var FONT:Class<Dynamic>;
+	public static var FONT:Font;
 
 	// Ignore everything else
 	public static var LOCAL:Bool = false;
@@ -57,6 +56,8 @@ class Preloader extends Sprite {
 
 	private function load_image_assets():Void {
 		imgNG = Assets.getBitmapData("assets/graphics/pixel_logo_large.png");
+		FONT = Assets.getFont("assets/a4b03/04B_03__.TTF");
+		Font.registerFont(FONT);
 	}
 
 	public function new() {

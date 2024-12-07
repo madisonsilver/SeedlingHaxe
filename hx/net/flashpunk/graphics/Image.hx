@@ -181,12 +181,9 @@ class Image extends Graphic {
 		}
 		_alpha = value;
 		if (_alpha == 1 && _color == 0xFFFFFF) {
-			/* 
-			TODO: Something is wrong with setting the tint to null here (BossTotem won't display)
-			Commenting it is a workaround but will require more investigation later
-			_tint = null;  
+			_tint = null;
+			updateBuffer();
 			return value;
-			*/
 		}
 		_tint = _colorTransform;
 		_tint.redMultiplier = ((_color >> 16) & 0xFF) / 255;

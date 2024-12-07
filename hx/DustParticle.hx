@@ -28,6 +28,7 @@ class DustParticle extends Entity {
 	}
 
 	override public function update():Void {
+		// TODO: The DustParticles incorrectly unload en masse when they reach the edge of the screen.
 		x = (Game.time - startT) * m + FP.camera.x;
 		y = FP.camera.y + startY + Math.sin((Game.time - startT) / m) * m;
 

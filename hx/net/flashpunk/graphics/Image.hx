@@ -212,6 +212,7 @@ class Image extends Graphic {
 		_color = value;
 		if (_alpha == 1 && _color == 0xFFFFFF) {
 			_tint = null;
+			updateBuffer();
 			return value;
 		}
 		_tint = _colorTransform;

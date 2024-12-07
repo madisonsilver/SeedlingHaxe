@@ -44,6 +44,7 @@ class Main extends Engine {
 	public static var level(get, set):Int;
 
 	public static inline var SAVE_NAME:String = "shrumsave";
+	// TODO: SAVE_FILE is really finicky, including target-dependent behavior.  Refactor/replace?
 	public static var SAVE_FILE:SharedObject;
 	public static var tempPersistence:Array<Dynamic>;
 	public static var badges:Array<String> = [
@@ -236,7 +237,7 @@ class Main extends Engine {
 	}
 
 	private static function get_time():Float {
-		if (!SAVE_FILE.data.time) {
+		if (SAVE_FILE.data.time == null) {
 			return Game.dayLength / 2;
 		}
 		return SAVE_FILE.data.time;

@@ -48,7 +48,7 @@ class Teleporter extends Entity {
 		sprPortal.play("spin");
 
 		visible = _show;
-		tag = _tag;
+		tag = -1; // TODO: Setting a tag to a value of -1 fixes the teleporter in mountain1.oel, but might interfere with telporters elsewhere.  Investigate teleporter logic.
 		invert = _invert;
 		sign = Std.int(_sign - 1); // takes the value of _sign - 1 because zero should become -1 (to negate all of the levels where it defaults to zero)
 
